@@ -52,6 +52,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(libs.bundles.ktor)
             implementation(libs.lifecycle.viewmodel.compose)
+            
             api(libs.moko.permissions)
             api(libs.moko.permissions.compose)
 
@@ -78,7 +79,7 @@ buildkonfig {
         val apiKey: String = properties.getProperty("API_KEY")
             ?: error("API_KEY is required")
 
-        buildConfigField(STRING, "API_KEY", "\"$apiKey\"")
+        buildConfigField(STRING, "API_KEY", apiKey)
     }
 }
 

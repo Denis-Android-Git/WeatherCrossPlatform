@@ -15,25 +15,29 @@ import dev.icerock.moko.permissions.PermissionState
 import dev.icerock.moko.permissions.compose.BindEffect
 import dev.icerock.moko.permissions.compose.rememberPermissionsControllerFactory
 import org.example.weathercrossplatform.data.locationservice.LocationService
+import org.example.weathercrossplatform.data.repo_impl.WeatherRepoImpl
 import org.example.weathercrossplatform.viewmodels.PermissionsViewModel
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 @Preview
 fun App(
-    locationService: LocationService
+    locationService: LocationService,
+    weatherRepoImpl: WeatherRepoImpl
 ) {
     MaterialTheme {
 
         val factory = rememberPermissionsControllerFactory()
+
         val controller by rememberUpdatedState(factory.createPermissionsController())
         BindEffect(controller)
 
         val permissionsViewModel = viewModel {
-            PermissionsViewModel(controller, locationService)
+            PermissionsViewModel(controller, locationService, weatherRepoImpl)
         }
         val state by permissionsViewModel.state.collectAsStateWithLifecycle()
-        val coordinates by permissionsViewModel.coordinates.collectAsStateWithLifecycle()
+        val currentWeather by permissionsViewModel.currentWeather.collectAsStateWithLifecycle()
+        val error by permissionsViewModel.errorText.collectAsStateWithLifecycle()
         Column(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center
@@ -41,7 +45,12 @@ fun App(
             when (state) {
                 PermissionState.Granted -> {
                     Text(text = "Granted")
-                    Text(text = if (coordinates == null) "Not yet" else "${coordinates?.latitude}, ${coordinates?.longitude}")
+                    currentWeather?.let {
+                        Text(text = "${currentWeather?.current?.tempC}, ${currentWeather?.location?.name}")
+                    }
+                    error?.let {
+                        Text(text = it)
+                    }
                 }
 
                 PermissionState.DeniedAlways -> {

@@ -13,18 +13,24 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.locationservice.LocationService
-import org.example.weathercrossplatform.domain.models.Coordinates
+import org.example.weathercrossplatform.data.repo_impl.WeatherRepoImpl
+import org.example.weathercrossplatform.data.utils.onError
+import org.example.weathercrossplatform.data.utils.onSuccess
+import org.example.weathercrossplatform.network.dto.CurrentWeatherDto
 
 class PermissionsViewModel(
     private val permissionsController: PermissionsController,
-    private val locationService: LocationService
+    private val locationService: LocationService,
+    private val weatherRepoImpl: WeatherRepoImpl
 ) : ViewModel() {
     private var _state = MutableStateFlow(PermissionState.NotDetermined)
     val state = _state.asStateFlow()
 
-    private var _coordinates = MutableStateFlow<Coordinates?>(null)
-    val coordinates = _coordinates.asStateFlow()
+    private var _currentWeather = MutableStateFlow<CurrentWeatherDto?>(null)
+    val currentWeather = _currentWeather.asStateFlow()
 
+    private var _errorText = MutableStateFlow<String?>(null)
+    val errorText = _errorText.asStateFlow()
 
     init {
         viewModelScope.launch {
@@ -44,11 +50,19 @@ class PermissionsViewModel(
                     PermissionState.Granted
                 }
                 locationService.getLocation().collect { coordinates ->
-                    _coordinates.update {
-                        coordinates
-                    }
+                    val query = "${coordinates.latitude},${coordinates.longitude}"
+                    weatherRepoImpl.getCurrentWeather(query)
+                        .onSuccess { weather ->
+                            _currentWeather.update {
+                                weather
+                            }
+                        }
+                        .onError { networkError ->
+                            _errorText.update {
+                                networkError.name
+                            }
+                        }
                 }
-
             } catch (e: DeniedAlwaysException) {
                 _state.update {
                     PermissionState.DeniedAlways

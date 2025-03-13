@@ -17,7 +17,7 @@ import org.example.weathercrossplatform.domain.models.Coordinates
 actual class LocationService(
     context: Context
 ) {
-    val locationClient = LocationServices.getFusedLocationProviderClient(context)
+    private val locationClient = LocationServices.getFusedLocationProviderClient(context)
 
     @RequiresPermission(allOf = [Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION])
     actual suspend fun getLocation(): Flow<Coordinates> = callbackFlow {
