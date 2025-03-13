@@ -1,8 +1,7 @@
-import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import java.util.Properties
-import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -72,7 +71,6 @@ buildkonfig {
     packageName = "com.example.weathercrossplatform"
 
     defaultConfigs {
-        // Load local.properties to get API_KEY
         val properties = Properties()
         val localPropertiesFile = rootProject.file("local.properties")
         localPropertiesFile.inputStream().use { properties.load(it) }
