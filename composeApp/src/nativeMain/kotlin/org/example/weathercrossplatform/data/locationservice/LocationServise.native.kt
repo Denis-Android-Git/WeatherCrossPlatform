@@ -13,11 +13,10 @@ import platform.CoreLocation.kCLLocationAccuracyBest
 import platform.Foundation.NSError
 import platform.darwin.NSObject
 
-actual class LocationService : NSObject(), CLLocationManagerDelegateProtocol {
+actual class LocationService {
     private val locationManager = CLLocationManager()
 
     init {
-        locationManager.delegate = this
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
 
