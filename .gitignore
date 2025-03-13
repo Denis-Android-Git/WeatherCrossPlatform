@@ -1,7 +1,0 @@
-/composeApp/build/bin/iosArm64/debugFramework/ComposeApp.framework/ComposeApp
-/composeApp/build/bin/iosSimulatorArm64/debugFramework/ComposeApp.framework/ComposeApp
-/composeApp/build/xcode-frameworks/Debug/iphoneos18.2/ComposeApp.framework/ComposeApp
-/composeApp/build/xcode-frameworks/Debug/iphonesimulator18.2/ComposeApp.framework/ComposeApp
-local.properties
-composeApp/build/buildkonfig/commonMain/com/example/weathercrossplatform/BuildKonfig.kt
-.gitignore
