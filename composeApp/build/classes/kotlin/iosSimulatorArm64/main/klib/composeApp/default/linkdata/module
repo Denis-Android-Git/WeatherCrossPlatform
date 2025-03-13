@@ -1,0 +1,2 @@
+
+!<WeatherCrossPlatform:composeApp>: com.example.weathercrossplatform: org.example.weathercrossplatform:5org.example.weathercrossplatform.data.locationservice:/org.example.weathercrossplatform.data.repo_impl:+org.example.weathercrossplatform.data.utils:.org.example.weathercrossplatform.domain.models:,org.example.weathercrossplatform.domain.repo:,org.example.weathercrossplatform.network.dto:+org.example.weathercrossplatform.viewmodels:3weathercrossplatform.composeapp.generated.resources
