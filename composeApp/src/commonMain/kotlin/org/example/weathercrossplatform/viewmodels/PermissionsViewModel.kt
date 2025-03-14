@@ -1,5 +1,8 @@
 package org.example.weathercrossplatform.viewmodels
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.icerock.moko.permissions.DeniedAlwaysException
@@ -8,26 +11,18 @@ import dev.icerock.moko.permissions.Permission
 import dev.icerock.moko.permissions.PermissionState
 import dev.icerock.moko.permissions.PermissionsController
 import dev.icerock.moko.permissions.RequestCanceledException
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class PermissionsViewModel(
     private val permissionsController: PermissionsController
 ) : ViewModel() {
 
-    private var _state = MutableStateFlow(PermissionState.NotDetermined)
-    val state = _state.asStateFlow()
+    var state by mutableStateOf(PermissionState.NotDetermined)
+        private set
 
     init {
         viewModelScope.launch {
-
-            _state.update {
-                permissionsController.getPermissionState(Permission.LOCATION)
-            }
-
-            checkPermissions()
+            state = permissionsController.getPermissionState(Permission.LOCATION)
         }
     }
 
@@ -35,17 +30,11 @@ class PermissionsViewModel(
         viewModelScope.launch {
             try {
                 permissionsController.providePermission(Permission.LOCATION)
-                _state.update {
-                    PermissionState.Granted
-                }
+                state = PermissionState.Granted
             } catch (e: DeniedAlwaysException) {
-                _state.update {
-                    PermissionState.DeniedAlways
-                }
+                state = PermissionState.DeniedAlways
             } catch (e: DeniedException) {
-                _state.update {
-                    PermissionState.Denied
-                }
+                state = PermissionState.Denied
             } catch (e: RequestCanceledException) {
                 e.printStackTrace()
             }

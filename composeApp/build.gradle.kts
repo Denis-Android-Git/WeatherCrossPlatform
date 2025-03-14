@@ -42,6 +42,7 @@ kotlin {
             implementation(libs.play.services.location)
             implementation(libs.koin.android)
             implementation(libs.koin.androidx.compose)
+            implementation(libs.ktor.client.android)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -56,11 +57,13 @@ kotlin {
             implementation(libs.lifecycle.viewmodel.compose)
             api(libs.moko.permissions)
             api(libs.moko.permissions.compose)
-
             api(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
             implementation(libs.navigation.compose)
+            implementation(libs.coil.compose)
+            implementation(libs.coil.network.ktor3)
+
 
         }
         nativeMain.dependencies {

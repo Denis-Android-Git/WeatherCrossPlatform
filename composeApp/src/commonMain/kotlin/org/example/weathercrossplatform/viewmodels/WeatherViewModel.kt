@@ -18,6 +18,7 @@ class WeatherViewModel(
     private val locationService: LocationService,
     private val weatherRepoImpl: WeatherRepoImpl
 ) : ViewModel() {
+
     private val coordinates = MutableStateFlow<Coordinates?>(null)
 
     private val _weather = MutableStateFlow<CurrentWeatherDto?>(null)
