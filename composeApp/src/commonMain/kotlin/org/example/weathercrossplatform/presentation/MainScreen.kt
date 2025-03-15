@@ -6,30 +6,46 @@ import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.LocationOn
+import androidx.compose.material.icons.outlined.Place
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 
 @Composable
 fun MainScreen(
-    weatherMainScreenState: WeatherMainScreenState
+    isLoading: Boolean,
+    image: String,
+    usEpaIndex: Int,
+    locationName: String,
+    temp: String,
+    condition: String,
+    feelsLikeC: String,
+    error: String
 ) {
     val scrollState = rememberScrollState()
+
+    val textColor by remember { mutableStateOf(Color.White) }
+
     Box(
         modifier = Modifier.fillMaxSize()
             .background(
@@ -43,73 +59,146 @@ fun MainScreen(
             )
     ) {
         AnimatedVisibility(
-            visible = weatherMainScreenState.isLoading,
+            visible = isLoading,
             modifier = Modifier.align(Alignment.Center)
         ) {
             CircularProgressIndicator()
         }
         AnimatedVisibility(
-            visible = !weatherMainScreenState.isLoading
+            visible = !isLoading
         ) {
 
-            val icon =
-                weatherMainScreenState.weatherDto?.current?.condition?.icon?.replace(
-                    "//",
-                    "https://"
-                )
             val airQualityText =
-                when (weatherMainScreenState.weatherDto?.current?.airQuality?.usEpaIndex) {
-                    in 0..50 -> "Качество воздуха: Хорошо"
-                    in 51..100 -> "Качество воздуха: Умеренно"
-                    in 101..150 -> "Качество воздуха: Плохое для чувствительных групп"
-                    in 151..200 -> "Качество воздуха: Плохое"
-                    in 201..300 -> "Качество воздуха: Очень Плохое"
-                    else -> "Качество воздуха: Опасно"
+                when (usEpaIndex) {
+                    1 -> "Хорошо"
+                    2 -> "Умеренно"
+                    3 -> "Плохое для чувствительных групп"
+                    4 -> "Плохое"
+                    5 -> "Очень Плохое"
+                    6 -> "Опасно"
+                    else -> ""
                 }
 
-            println("airQualityText = ${weatherMainScreenState.weatherDto?.current?.airQuality?.usEpaIndex}")
+            println("airQualityText = $usEpaIndex")
 
-            Column(
-                modifier = Modifier.fillMaxSize()
-                    .scrollable(
-                        scrollState,
-                        orientation = Orientation.Vertical
-                    )
-            ) {
-                Box(modifier = Modifier.fillMaxWidth()) {
-                    AsyncImage(
-                        model = icon,
-                        modifier = Modifier.fillMaxWidth(),
-                        contentDescription = null
-                    )
+            Box(modifier = Modifier.fillMaxSize()) {
+                AsyncImage(
+                    model = image,
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.FillHeight,
+                    contentDescription = null
+                )
+                Column(
+                    modifier = Modifier.fillMaxSize()
+                        .scrollable(
+                            scrollState,
+                            orientation = Orientation.Vertical
+                        )
+                ) {
                     Column(
-                        modifier = Modifier.padding(start = 16.dp, top = 40.dp)
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 160.dp)
                     ) {
-                        weatherMainScreenState.weatherDto?.let {
-                            Text(text = it.location.name, color = Color.White, fontSize = 20.sp)
-                            Icon(
-                                imageVector = Icons.Filled.LocationOn,
-                                contentDescription = null
+                        Icon(
+                            imageVector = Icons.Outlined.Place,
+                            contentDescription = null,
+                            modifier = Modifier
+                                .padding(start = 52.dp, bottom = 3.dp)
+                                .size(15.dp),
+                            tint = Color.White
+                        )
+                        Box(
+                            modifier = Modifier
+                                .padding(start = 36.dp)
+                                .background(
+                                    color = Color.Black.copy(alpha = 0.2f),
+                                    shape = RoundedCornerShape(16.dp)
+                                )
+                        ) {
+                            Text(
+                                modifier = Modifier.padding(
+                                    vertical = 2.dp,
+                                    horizontal = 16.dp
+                                ),
+                                text = locationName, color = textColor, fontSize = 20.sp
+                            )
+                        }
+                        Box(
+                            modifier = Modifier
+                                .padding(start = 36.dp, top = 16.dp)
+                                .background(
+                                    color = Color.Black.copy(alpha = 0.2f),
+                                    shape = RoundedCornerShape(16.dp)
+                                )
+                        ) {
+                            Text(
+                                modifier = Modifier.padding(
+                                    vertical = 2.dp,
+                                    horizontal = 16.dp
+                                ),
+                                text = "$temp ℃",
+                                color = textColor,
+                                fontSize = 85.sp
+                            )
+                        }
+                        Column(
+                            modifier = Modifier
+                                .padding(start = 36.dp, top = 16.dp)
+                                .background(
+                                    color = Color.Black.copy(alpha = 0.2f),
+                                    shape = RoundedCornerShape(16.dp)
+                                )
+                        ) {
+                            Text(
+                                modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 2.dp),
+                                text = "Ощущается $feelsLikeC ℃", color = textColor
                             )
                             Text(
-                                text = it.current.tempC.toString(),
-                                color = Color.White,
-                                fontSize = 25.sp
+                                modifier = Modifier.padding(start = 16.dp, bottom = 2.dp),
+                                text = condition, color = textColor
                             )
-                            Text(text = it.current.condition.text)
-                            Text(text = "Ощущается ${it.current.feelsLikeC}")
-
-                            Text(text = airQualityText)
+                        }
+                        Box(
+                            modifier = Modifier
+                                .align(Alignment.CenterHorizontally)
+                                .padding(top = 16.dp)
+                                .background(
+                                    color = Color.White.copy(alpha = 0.2f),
+                                    shape = RoundedCornerShape(16.dp)
+                                )
+                        ) {
+                            Row(
+                                modifier = Modifier.padding(
+                                    vertical = 6.dp,
+                                    horizontal = 16.dp
+                                )
+                            ) {
+                                Text(
+                                    text = "Качество воздуха: ", color = textColor
+                                )
+                                Text(
+                                    text = airQualityText, color = when (airQualityText) {
+                                        "Хорошо" -> Color.Green
+                                        "Умеренно" -> Color(0xff47e6d0)
+                                        "Плохое для чувствительных групп" -> Color.Yellow
+                                        "Плохое" -> Color(0xFF996600)
+                                        "Очень Плохое" -> Color(0xFFCC3300)
+                                        "Опасно" -> Color(0xFFFF0000)
+                                        else -> Color.Green
+                                    }
+                                )
+                            }
                         }
                     }
                 }
             }
         }
         AnimatedVisibility(
-            visible = weatherMainScreenState.error.isNotEmpty(),
+            visible = error.isNotEmpty(),
             modifier = Modifier.align(Alignment.Center)
         ) {
-            Text(text = weatherMainScreenState.error)
+            Text(text = error)
         }
     }
 }

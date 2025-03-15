@@ -1,17 +1,8 @@
 package org.example.weathercrossplatform.presentation
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import coil3.compose.AsyncImage
-import coil3.compose.AsyncImagePainter
-import coil3.compose.SubcomposeAsyncImage
-import coil3.compose.SubcomposeAsyncImageContent
 import org.example.weathercrossplatform.viewmodels.WeatherViewModel
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -21,7 +12,15 @@ fun MainScreenState(
 ) {
     val weatherMainScreenState by weatherViewModel.weatherScreenState.collectAsStateWithLifecycle()
 
+
     MainScreen(
-        weatherMainScreenState = weatherMainScreenState
+        isLoading = weatherMainScreenState.isLoading,
+        image = weatherMainScreenState.image,
+        usEpaIndex = weatherMainScreenState.weatherDto?.current?.airQuality?.usEpaIndex ?: 0,
+        locationName = weatherMainScreenState.weatherDto?.location?.name ?: "",
+        temp = weatherMainScreenState.weatherDto?.current?.tempC.toString(),
+        condition = weatherMainScreenState.weatherDto?.current?.condition?.text ?: "",
+        feelsLikeC = weatherMainScreenState.weatherDto?.current?.feelsLikeC.toString(),
+        error = weatherMainScreenState.error
     )
 }

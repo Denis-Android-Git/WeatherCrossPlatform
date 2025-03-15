@@ -44,6 +44,19 @@ class WeatherViewModel(
                     val query = "${it.latitude},${it.longitude}"
                     weatherRepoImpl.getCurrentWeather(query)
                         .onSuccess { weather ->
+                            val imageQuery = if (weather.current.condition.text=="Ясно") "sunny" else weather.current.condition.text
+                            weatherRepoImpl.getImageList(imageQuery)
+                                .onSuccess { imageList ->
+                                    val image = imageList.photos.take(15).random().src.large
+                                    _weatherScreenState.value = _weatherScreenState.value.copy(
+                                        image = image
+                                    )
+                                }
+                                .onError { error ->
+                                    _weatherScreenState.value = _weatherScreenState.value.copy(
+                                        error = error.name
+                                    )
+                                }
                             _weatherScreenState.value = _weatherScreenState.value.copy(
                                 isLoading = false,
                                 weatherDto = weather

@@ -52,7 +52,6 @@ fun App() {
                     }
 
                     else -> {
-                        Text(text = "Else")
                         scope.launch {
                             delay(100)
                             permissionsViewModel.checkPermissions()

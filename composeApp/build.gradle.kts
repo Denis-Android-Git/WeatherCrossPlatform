@@ -88,8 +88,11 @@ buildkonfig {
 
         val apiKey: String = properties.getProperty("API_KEY")
             ?: error("API_KEY is required")
+        val apiKey2: String = properties.getProperty("API_KEY2")
+            ?: error("API_KEY is required")
 
         buildConfigField(STRING, "API_KEY", apiKey)
+        buildConfigField(STRING, "API_KEY2", apiKey2)
     }
 }
 

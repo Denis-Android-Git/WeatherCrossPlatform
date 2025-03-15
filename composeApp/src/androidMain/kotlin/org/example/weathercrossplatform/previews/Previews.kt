@@ -1,13 +1,20 @@
 package org.example.weathercrossplatform.previews
 
 import androidx.compose.runtime.Composable
-import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
+import androidx.compose.ui.tooling.preview.Preview
 import org.example.weathercrossplatform.presentation.MainScreen
 
-@androidx.compose.ui.tooling.preview.Preview
+@Preview
 @Composable
 fun Test() {
     MainScreen(
-        weatherMainScreenState = WeatherMainScreenState()
+        isLoading = false,
+        image = "",
+        usEpaIndex = 6,
+        locationName = "Here",
+        temp = "20",
+        condition = "Good",
+        feelsLikeC = "25",
+        error = ""
     )
 }

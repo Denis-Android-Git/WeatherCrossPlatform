@@ -22,8 +22,7 @@ actual class LocationService(
     @RequiresPermission(allOf = [Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION])
     actual suspend fun getLocation(): Flow<Coordinates> = callbackFlow {
 
-        val request = LocationRequest.Builder(10000L)
-            .setIntervalMillis(10000L)
+        val request = LocationRequest.Builder(1)
             .setPriority(Priority.PRIORITY_HIGH_ACCURACY)
             .build()
 
@@ -31,6 +30,7 @@ actual class LocationService(
             override fun onLocationResult(locationResult: LocationResult) {
                 locationResult.locations.lastOrNull()?.let {
                     trySend(Coordinates(it.latitude, it.longitude))
+                    locationClient.removeLocationUpdates(this)
                 }
             }
         }
