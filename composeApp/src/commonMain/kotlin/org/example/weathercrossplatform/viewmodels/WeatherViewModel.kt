@@ -12,7 +12,7 @@ import org.example.weathercrossplatform.data.repo_impl.WeatherRepoImpl
 import org.example.weathercrossplatform.data.utils.onError
 import org.example.weathercrossplatform.data.utils.onSuccess
 import org.example.weathercrossplatform.domain.models.Coordinates
-import org.example.weathercrossplatform.network.dto.CurrentWeatherDto
+import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 
 class WeatherViewModel(
     private val locationService: LocationService,
@@ -21,11 +21,8 @@ class WeatherViewModel(
 
     private val coordinates = MutableStateFlow<Coordinates?>(null)
 
-    private val _weather = MutableStateFlow<CurrentWeatherDto?>(null)
-    val weather = _weather.asStateFlow()
-
-    private val _error = MutableStateFlow<String?>(null)
-    val error = _error.asStateFlow()
+    private val _weatherScreenState = MutableStateFlow(WeatherMainScreenState())
+    val weatherScreenState = _weatherScreenState.asStateFlow()
 
     init {
         viewModelScope.launch {
@@ -39,17 +36,24 @@ class WeatherViewModel(
 
     init {
         viewModelScope.launch {
+            _weatherScreenState.value = _weatherScreenState.value.copy(
+                isLoading = true
+            )
             coordinates.collectLatest { coordinates ->
                 coordinates?.let {
                     val query = "${it.latitude},${it.longitude}"
                     weatherRepoImpl.getCurrentWeather(query)
                         .onSuccess { weather ->
-                            _weather.update {
-                                weather
-                            }
+                            _weatherScreenState.value = _weatherScreenState.value.copy(
+                                isLoading = false,
+                                weatherDto = weather
+                            )
                         }
                         .onError { networkError ->
-                            _error.value = networkError.name
+                            _weatherScreenState.value = _weatherScreenState.value.copy(
+                                isLoading = false,
+                                error = networkError.name
+                            )
                         }
                 }
             }
