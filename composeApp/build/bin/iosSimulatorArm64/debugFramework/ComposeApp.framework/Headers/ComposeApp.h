@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class ComposeAppAirQuality, ComposeAppAirQualityCompanion, ComposeAppCondition, ComposeAppConditionCompanion, ComposeAppCoordinates, ComposeAppCurrent, ComposeAppCurrentCompanion, ComposeAppCurrentWeatherDto, ComposeAppCurrentWeatherDtoCompanion, ComposeAppImageListDto, ComposeAppImageListDtoCompanion, ComposeAppKoin_coreBeanDefinition<T>, ComposeAppKoin_coreCallbacks<T>, ComposeAppKoin_coreExtensionManager, ComposeAppKoin_coreInstanceFactory<T>, ComposeAppKoin_coreInstanceFactoryCompanion, ComposeAppKoin_coreInstanceRegistry, ComposeAppKoin_coreKind, ComposeAppKoin_coreKoin, ComposeAppKoin_coreKoinApplication, ComposeAppKoin_coreKoinApplicationCompanion, ComposeAppKoin_coreKoinDefinition<R>, ComposeAppKoin_coreLevel, ComposeAppKoin_coreLockable, ComposeAppKoin_coreLogger, ComposeAppKoin_coreModule, ComposeAppKoin_coreParametersHolder, ComposeAppKoin_corePropertyRegistry, ComposeAppKoin_coreResolutionContext, ComposeAppKoin_coreScope, ComposeAppKoin_coreScopeDSL, ComposeAppKoin_coreScopeRegistry, ComposeAppKoin_coreScopeRegistryCompanion, ComposeAppKoin_coreSingleInstanceFactory<T>, ComposeAppKotlinAbstractCoroutineContextElement, ComposeAppKotlinAbstractCoroutineContextKey<B, E>, ComposeAppKotlinArray<T>, ComposeAppKotlinByteArray, ComposeAppKotlinByteIterator, ComposeAppKotlinCancellationException, ComposeAppKotlinEnum<E>, ComposeAppKotlinEnumCompanion, ComposeAppKotlinException, ComposeAppKotlinIllegalStateException, ComposeAppKotlinKTypeProjection, ComposeAppKotlinKTypeProjectionCompanion, ComposeAppKotlinKVariance, ComposeAppKotlinLazyThreadSafetyMode, ComposeAppKotlinNothing, ComposeAppKotlinRuntimeException, ComposeAppKotlinThrowable, ComposeAppKotlinUnit, ComposeAppKotlinx_coroutines_coreCoroutineDispatcher, ComposeAppKotlinx_coroutines_coreCoroutineDispatcherKey, ComposeAppKotlinx_io_coreBuffer, ComposeAppKotlinx_serialization_coreSerialKind, ComposeAppKotlinx_serialization_coreSerializersModule, ComposeAppKtor_client_coreHttpClient, ComposeAppKtor_client_coreHttpClientCall, ComposeAppKtor_client_coreHttpClientCallCompanion, ComposeAppKtor_client_coreHttpClientConfig<T>, ComposeAppKtor_client_coreHttpClientEngineConfig, ComposeAppKtor_client_coreHttpReceivePipeline, ComposeAppKtor_client_coreHttpReceivePipelinePhases, ComposeAppKtor_client_coreHttpRequestBuilder, ComposeAppKtor_client_coreHttpRequestBuilderCompanion, ComposeAppKtor_client_coreHttpRequestData, ComposeAppKtor_client_coreHttpRequestPipeline, ComposeAppKtor_client_coreHttpRequestPipelinePhases, ComposeAppKtor_client_coreHttpResponse, ComposeAppKtor_client_coreHttpResponseContainer, ComposeAppKtor_client_coreHttpResponseData, ComposeAppKtor_client_coreHttpResponsePipeline, ComposeAppKtor_client_coreHttpResponsePipelinePhases, ComposeAppKtor_client_coreHttpSendPipeline, ComposeAppKtor_client_coreHttpSendPipelinePhases, ComposeAppKtor_client_coreProxyConfig, ComposeAppKtor_eventsEventDefinition<T>, ComposeAppKtor_eventsEvents, ComposeAppKtor_httpContentType, ComposeAppKtor_httpContentTypeCompanion, ComposeAppKtor_httpHeaderValueParam, ComposeAppKtor_httpHeaderValueWithParameters, ComposeAppKtor_httpHeaderValueWithParametersCompanion, ComposeAppKtor_httpHeadersBuilder, ComposeAppKtor_httpHttpMethod, ComposeAppKtor_httpHttpMethodCompanion, ComposeAppKtor_httpHttpProtocolVersion, ComposeAppKtor_httpHttpProtocolVersionCompanion, ComposeAppKtor_httpHttpStatusCode, ComposeAppKtor_httpHttpStatusCodeCompanion, ComposeAppKtor_httpOutgoingContent, ComposeAppKtor_httpURLBuilder, ComposeAppKtor_httpURLBuilderCompanion, ComposeAppKtor_httpURLProtocol, ComposeAppKtor_httpURLProtocolCompanion, ComposeAppKtor_httpUrl, ComposeAppKtor_httpUrlCompanion, ComposeAppKtor_utilsAttributeKey<T>, ComposeAppKtor_utilsGMTDate, ComposeAppKtor_utilsGMTDateCompanion, ComposeAppKtor_utilsMonth, ComposeAppKtor_utilsMonthCompanion, ComposeAppKtor_utilsPipeline<TSubject, TContext>, ComposeAppKtor_utilsPipelinePhase, ComposeAppKtor_utilsStringValuesBuilderImpl, ComposeAppKtor_utilsTypeInfo, ComposeAppKtor_utilsWeekDay, ComposeAppKtor_utilsWeekDayCompanion, ComposeAppLifecycle_viewmodelViewModel, ComposeAppLocation, ComposeAppLocationCompanion, ComposeAppLocationService, ComposeAppNetworkError, ComposeAppPermissionsPermission, ComposeAppPermissionsPermissionState, ComposeAppPhoto, ComposeAppPhotoCompanion, ComposeAppResultError<__covariant E>, ComposeAppResultSuccess<__covariant D>, ComposeAppSrc, ComposeAppSrcCompanion, ComposeAppSystemLocale, ComposeAppWeatherMainScreenState, ComposeAppWeatherRepoImpl, UIViewController;
+@class ComposeAppAirQuality, ComposeAppAirQualityCompanion, ComposeAppAstro, ComposeAppAstroCompanion, ComposeAppCondition, ComposeAppConditionCompanion, ComposeAppCoordinates, ComposeAppCurrent, ComposeAppCurrentCompanion, ComposeAppDay, ComposeAppDayCompanion, ComposeAppForecast, ComposeAppForecastCompanion, ComposeAppForecastDto, ComposeAppForecastDtoCompanion, ComposeAppForecastday, ComposeAppForecastdayCompanion, ComposeAppHour, ComposeAppHourCompanion, ComposeAppImageListDto, ComposeAppImageListDtoCompanion, ComposeAppKoin_coreBeanDefinition<T>, ComposeAppKoin_coreCallbacks<T>, ComposeAppKoin_coreExtensionManager, ComposeAppKoin_coreInstanceFactory<T>, ComposeAppKoin_coreInstanceFactoryCompanion, ComposeAppKoin_coreInstanceRegistry, ComposeAppKoin_coreKind, ComposeAppKoin_coreKoin, ComposeAppKoin_coreKoinApplication, ComposeAppKoin_coreKoinApplicationCompanion, ComposeAppKoin_coreKoinDefinition<R>, ComposeAppKoin_coreLevel, ComposeAppKoin_coreLockable, ComposeAppKoin_coreLogger, ComposeAppKoin_coreModule, ComposeAppKoin_coreParametersHolder, ComposeAppKoin_corePropertyRegistry, ComposeAppKoin_coreResolutionContext, ComposeAppKoin_coreScope, ComposeAppKoin_coreScopeDSL, ComposeAppKoin_coreScopeRegistry, ComposeAppKoin_coreScopeRegistryCompanion, ComposeAppKoin_coreSingleInstanceFactory<T>, ComposeAppKotlinAbstractCoroutineContextElement, ComposeAppKotlinAbstractCoroutineContextKey<B, E>, ComposeAppKotlinArray<T>, ComposeAppKotlinByteArray, ComposeAppKotlinByteIterator, ComposeAppKotlinCancellationException, ComposeAppKotlinEnum<E>, ComposeAppKotlinEnumCompanion, ComposeAppKotlinException, ComposeAppKotlinIllegalStateException, ComposeAppKotlinKTypeProjection, ComposeAppKotlinKTypeProjectionCompanion, ComposeAppKotlinKVariance, ComposeAppKotlinLazyThreadSafetyMode, ComposeAppKotlinNothing, ComposeAppKotlinRuntimeException, ComposeAppKotlinThrowable, ComposeAppKotlinUnit, ComposeAppKotlinx_coroutines_coreCoroutineDispatcher, ComposeAppKotlinx_coroutines_coreCoroutineDispatcherKey, ComposeAppKotlinx_io_coreBuffer, ComposeAppKotlinx_serialization_coreSerialKind, ComposeAppKotlinx_serialization_coreSerializersModule, ComposeAppKtor_client_coreHttpClient, ComposeAppKtor_client_coreHttpClientCall, ComposeAppKtor_client_coreHttpClientCallCompanion, ComposeAppKtor_client_coreHttpClientConfig<T>, ComposeAppKtor_client_coreHttpClientEngineConfig, ComposeAppKtor_client_coreHttpReceivePipeline, ComposeAppKtor_client_coreHttpReceivePipelinePhases, ComposeAppKtor_client_coreHttpRequestBuilder, ComposeAppKtor_client_coreHttpRequestBuilderCompanion, ComposeAppKtor_client_coreHttpRequestData, ComposeAppKtor_client_coreHttpRequestPipeline, ComposeAppKtor_client_coreHttpRequestPipelinePhases, ComposeAppKtor_client_coreHttpResponse, ComposeAppKtor_client_coreHttpResponseContainer, ComposeAppKtor_client_coreHttpResponseData, ComposeAppKtor_client_coreHttpResponsePipeline, ComposeAppKtor_client_coreHttpResponsePipelinePhases, ComposeAppKtor_client_coreHttpSendPipeline, ComposeAppKtor_client_coreHttpSendPipelinePhases, ComposeAppKtor_client_coreProxyConfig, ComposeAppKtor_eventsEventDefinition<T>, ComposeAppKtor_eventsEvents, ComposeAppKtor_httpContentType, ComposeAppKtor_httpContentTypeCompanion, ComposeAppKtor_httpHeaderValueParam, ComposeAppKtor_httpHeaderValueWithParameters, ComposeAppKtor_httpHeaderValueWithParametersCompanion, ComposeAppKtor_httpHeadersBuilder, ComposeAppKtor_httpHttpMethod, ComposeAppKtor_httpHttpMethodCompanion, ComposeAppKtor_httpHttpProtocolVersion, ComposeAppKtor_httpHttpProtocolVersionCompanion, ComposeAppKtor_httpHttpStatusCode, ComposeAppKtor_httpHttpStatusCodeCompanion, ComposeAppKtor_httpOutgoingContent, ComposeAppKtor_httpURLBuilder, ComposeAppKtor_httpURLBuilderCompanion, ComposeAppKtor_httpURLProtocol, ComposeAppKtor_httpURLProtocolCompanion, ComposeAppKtor_httpUrl, ComposeAppKtor_httpUrlCompanion, ComposeAppKtor_utilsAttributeKey<T>, ComposeAppKtor_utilsGMTDate, ComposeAppKtor_utilsGMTDateCompanion, ComposeAppKtor_utilsMonth, ComposeAppKtor_utilsMonthCompanion, ComposeAppKtor_utilsPipeline<TSubject, TContext>, ComposeAppKtor_utilsPipelinePhase, ComposeAppKtor_utilsStringValuesBuilderImpl, ComposeAppKtor_utilsTypeInfo, ComposeAppKtor_utilsWeekDay, ComposeAppKtor_utilsWeekDayCompanion, ComposeAppLifecycle_viewmodelViewModel, ComposeAppLocation, ComposeAppLocationCompanion, ComposeAppLocationService, ComposeAppNetworkError, ComposeAppPermissionsPermission, ComposeAppPermissionsPermissionState, ComposeAppPhotoData, ComposeAppPhotoDataCompanion, ComposeAppResultError<__covariant E>, ComposeAppResultSuccess<__covariant D>, ComposeAppSystemLocale, ComposeAppUrls, ComposeAppUrlsCompanion, ComposeAppWeatherMainScreenState, ComposeAppWeatherRepoImpl, UIViewController;
 
 @protocol ComposeAppError, ComposeAppKoin_coreKoinComponent, ComposeAppKoin_coreKoinExtension, ComposeAppKoin_coreKoinScopeComponent, ComposeAppKoin_coreQualifier, ComposeAppKoin_coreScopeCallback, ComposeAppKotlinAnnotation, ComposeAppKotlinAutoCloseable, ComposeAppKotlinComparable, ComposeAppKotlinContinuation, ComposeAppKotlinContinuationInterceptor, ComposeAppKotlinCoroutineContext, ComposeAppKotlinCoroutineContextElement, ComposeAppKotlinCoroutineContextKey, ComposeAppKotlinFunction, ComposeAppKotlinIterator, ComposeAppKotlinKAnnotatedElement, ComposeAppKotlinKClass, ComposeAppKotlinKClassifier, ComposeAppKotlinKDeclarationContainer, ComposeAppKotlinKType, ComposeAppKotlinLazy, ComposeAppKotlinMapEntry, ComposeAppKotlinSequence, ComposeAppKotlinSuspendFunction2, ComposeAppKotlinx_coroutines_coreChildHandle, ComposeAppKotlinx_coroutines_coreChildJob, ComposeAppKotlinx_coroutines_coreCoroutineScope, ComposeAppKotlinx_coroutines_coreDisposableHandle, ComposeAppKotlinx_coroutines_coreFlow, ComposeAppKotlinx_coroutines_coreFlowCollector, ComposeAppKotlinx_coroutines_coreJob, ComposeAppKotlinx_coroutines_coreParentJob, ComposeAppKotlinx_coroutines_coreRunnable, ComposeAppKotlinx_coroutines_coreSelectClause, ComposeAppKotlinx_coroutines_coreSelectClause0, ComposeAppKotlinx_coroutines_coreSelectInstance, ComposeAppKotlinx_coroutines_coreSharedFlow, ComposeAppKotlinx_coroutines_coreStateFlow, ComposeAppKotlinx_io_coreRawSink, ComposeAppKotlinx_io_coreRawSource, ComposeAppKotlinx_io_coreSink, ComposeAppKotlinx_io_coreSource, ComposeAppKotlinx_serialization_coreCompositeDecoder, ComposeAppKotlinx_serialization_coreCompositeEncoder, ComposeAppKotlinx_serialization_coreDecoder, ComposeAppKotlinx_serialization_coreDeserializationStrategy, ComposeAppKotlinx_serialization_coreEncoder, ComposeAppKotlinx_serialization_coreKSerializer, ComposeAppKotlinx_serialization_coreSerialDescriptor, ComposeAppKotlinx_serialization_coreSerializationStrategy, ComposeAppKotlinx_serialization_coreSerializersModuleCollector, ComposeAppKtor_client_coreHttpClientEngine, ComposeAppKtor_client_coreHttpClientEngineCapability, ComposeAppKtor_client_coreHttpClientPlugin, ComposeAppKtor_client_coreHttpRequest, ComposeAppKtor_httpHeaders, ComposeAppKtor_httpHttpMessage, ComposeAppKtor_httpHttpMessageBuilder, ComposeAppKtor_httpParameters, ComposeAppKtor_httpParametersBuilder, ComposeAppKtor_ioByteReadChannel, ComposeAppKtor_ioCloseable, ComposeAppKtor_utilsAttributes, ComposeAppKtor_utilsStringValues, ComposeAppKtor_utilsStringValuesBuilder, ComposeAppPermissionsPermissionsControllerProtocol, ComposeAppResult, ComposeAppWeatherRepo;
 
@@ -171,25 +171,26 @@ __attribute__((swift_name("LocationService")))
  *   kotlinx.serialization.Serializable
 */
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("CurrentWeatherDto")))
-@interface ComposeAppCurrentWeatherDto : ComposeAppBase
-- (instancetype)initWithCurrent:(ComposeAppCurrent *)current location:(ComposeAppLocation *)location __attribute__((swift_name("init(current:location:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) ComposeAppCurrentWeatherDtoCompanion *companion __attribute__((swift_name("companion")));
-- (ComposeAppCurrentWeatherDto *)doCopyCurrent:(ComposeAppCurrent *)current location:(ComposeAppLocation *)location __attribute__((swift_name("doCopy(current:location:)")));
+__attribute__((swift_name("ForecastDto")))
+@interface ComposeAppForecastDto : ComposeAppBase
+- (instancetype)initWithCurrent:(ComposeAppCurrent *)current forecast:(ComposeAppForecast *)forecast location:(ComposeAppLocation *)location __attribute__((swift_name("init(current:forecast:location:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) ComposeAppForecastDtoCompanion *companion __attribute__((swift_name("companion")));
+- (ComposeAppForecastDto *)doCopyCurrent:(ComposeAppCurrent *)current forecast:(ComposeAppForecast *)forecast location:(ComposeAppLocation *)location __attribute__((swift_name("doCopy(current:forecast:location:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) ComposeAppCurrent *current __attribute__((swift_name("current")));
+@property (readonly) ComposeAppForecast *forecast __attribute__((swift_name("forecast")));
 @property (readonly) ComposeAppLocation *location __attribute__((swift_name("location")));
 @end
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("CurrentWeatherDto.Companion")))
-@interface ComposeAppCurrentWeatherDtoCompanion : ComposeAppBase
+__attribute__((swift_name("ForecastDto.Companion")))
+@interface ComposeAppForecastDtoCompanion : ComposeAppBase
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppCurrentWeatherDtoCompanion *shared __attribute__((swift_name("shared")));
+@property (class, readonly, getter=shared) ComposeAppForecastDtoCompanion *shared __attribute__((swift_name("shared")));
 - (id<ComposeAppKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end
 
@@ -201,13 +202,13 @@ __attribute__((swift_name("CurrentWeatherDto.Companion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ImageListDto")))
 @interface ComposeAppImageListDto : ComposeAppBase
-- (instancetype)initWithPhotos:(NSArray<ComposeAppPhoto *> *)photos __attribute__((swift_name("init(photos:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithResults:(NSArray<ComposeAppPhotoData *> *)results __attribute__((swift_name("init(results:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) ComposeAppImageListDtoCompanion *companion __attribute__((swift_name("companion")));
-- (ComposeAppImageListDto *)doCopyPhotos:(NSArray<ComposeAppPhoto *> *)photos __attribute__((swift_name("doCopy(photos:)")));
+- (ComposeAppImageListDto *)doCopyResults:(NSArray<ComposeAppPhotoData *> *)results __attribute__((swift_name("doCopy(results:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSArray<ComposeAppPhoto *> *photos __attribute__((swift_name("photos")));
+@property (readonly) NSArray<ComposeAppPhotoData *> *results __attribute__((swift_name("results")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -370,6 +371,60 @@ __attribute__((swift_name("AirQuality.Companion")))
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) ComposeAppAirQualityCompanion *shared __attribute__((swift_name("shared")));
+- (id<ComposeAppKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Astro")))
+@interface ComposeAppAstro : ComposeAppBase
+- (instancetype)initWithIsMoonUp:(int32_t)isMoonUp isSunUp:(int32_t)isSunUp moonIllumination:(int32_t)moonIllumination moonPhase:(NSString *)moonPhase moonrise:(NSString *)moonrise moonset:(NSString *)moonset sunrise:(NSString *)sunrise sunset:(NSString *)sunset __attribute__((swift_name("init(isMoonUp:isSunUp:moonIllumination:moonPhase:moonrise:moonset:sunrise:sunset:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) ComposeAppAstroCompanion *companion __attribute__((swift_name("companion")));
+- (ComposeAppAstro *)doCopyIsMoonUp:(int32_t)isMoonUp isSunUp:(int32_t)isSunUp moonIllumination:(int32_t)moonIllumination moonPhase:(NSString *)moonPhase moonrise:(NSString *)moonrise moonset:(NSString *)moonset sunrise:(NSString *)sunrise sunset:(NSString *)sunset __attribute__((swift_name("doCopy(isMoonUp:isSunUp:moonIllumination:moonPhase:moonrise:moonset:sunrise:sunset:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="is_moon_up")
+*/
+@property (readonly) int32_t isMoonUp __attribute__((swift_name("isMoonUp")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="is_sun_up")
+*/
+@property (readonly) int32_t isSunUp __attribute__((swift_name("isSunUp")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="moon_illumination")
+*/
+@property (readonly) int32_t moonIllumination __attribute__((swift_name("moonIllumination")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="moon_phase")
+*/
+@property (readonly) NSString *moonPhase __attribute__((swift_name("moonPhase")));
+@property (readonly) NSString *moonrise __attribute__((swift_name("moonrise")));
+@property (readonly) NSString *moonset __attribute__((swift_name("moonset")));
+@property (readonly) NSString *sunrise __attribute__((swift_name("sunrise")));
+@property (readonly) NSString *sunset __attribute__((swift_name("sunset")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Astro.Companion")))
+@interface ComposeAppAstroCompanion : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppAstroCompanion *shared __attribute__((swift_name("shared")));
 - (id<ComposeAppKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end
 
@@ -606,6 +661,405 @@ __attribute__((swift_name("Current.Companion")))
  *   kotlinx.serialization.Serializable
 */
 __attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Day")))
+@interface ComposeAppDay : ComposeAppBase
+- (instancetype)initWithAvghumidity:(int32_t)avghumidity avgTempC:(double)avgTempC avgTempF:(double)avgTempF avgVisKm:(double)avgVisKm avgVisMiles:(double)avgVisMiles condition:(ComposeAppCondition *)condition dailyChanceOfRain:(int32_t)dailyChanceOfRain dailyChanceOfSnow:(int32_t)dailyChanceOfSnow dailyWillItRain:(int32_t)dailyWillItRain dailyWillItSnow:(int32_t)dailyWillItSnow maxTempC:(double)maxTempC maxTempF:(double)maxTempF maxWindKph:(double)maxWindKph maxWindMph:(double)maxWindMph minTempC:(double)minTempC minTempF:(double)minTempF totalPrecipIn:(double)totalPrecipIn totalPrecipMm:(double)totalPrecipMm totalSnowCm:(double)totalSnowCm uv:(double)uv __attribute__((swift_name("init(avghumidity:avgTempC:avgTempF:avgVisKm:avgVisMiles:condition:dailyChanceOfRain:dailyChanceOfSnow:dailyWillItRain:dailyWillItSnow:maxTempC:maxTempF:maxWindKph:maxWindMph:minTempC:minTempF:totalPrecipIn:totalPrecipMm:totalSnowCm:uv:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) ComposeAppDayCompanion *companion __attribute__((swift_name("companion")));
+- (ComposeAppDay *)doCopyAvghumidity:(int32_t)avghumidity avgTempC:(double)avgTempC avgTempF:(double)avgTempF avgVisKm:(double)avgVisKm avgVisMiles:(double)avgVisMiles condition:(ComposeAppCondition *)condition dailyChanceOfRain:(int32_t)dailyChanceOfRain dailyChanceOfSnow:(int32_t)dailyChanceOfSnow dailyWillItRain:(int32_t)dailyWillItRain dailyWillItSnow:(int32_t)dailyWillItSnow maxTempC:(double)maxTempC maxTempF:(double)maxTempF maxWindKph:(double)maxWindKph maxWindMph:(double)maxWindMph minTempC:(double)minTempC minTempF:(double)minTempF totalPrecipIn:(double)totalPrecipIn totalPrecipMm:(double)totalPrecipMm totalSnowCm:(double)totalSnowCm uv:(double)uv __attribute__((swift_name("doCopy(avghumidity:avgTempC:avgTempF:avgVisKm:avgVisMiles:condition:dailyChanceOfRain:dailyChanceOfSnow:dailyWillItRain:dailyWillItSnow:maxTempC:maxTempF:maxWindKph:maxWindMph:minTempC:minTempF:totalPrecipIn:totalPrecipMm:totalSnowCm:uv:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="avgtemp_c")
+*/
+@property (readonly) double avgTempC __attribute__((swift_name("avgTempC")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="avgtemp_f")
+*/
+@property (readonly) double avgTempF __attribute__((swift_name("avgTempF")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="avgvis_km")
+*/
+@property (readonly) double avgVisKm __attribute__((swift_name("avgVisKm")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="avgvis_miles")
+*/
+@property (readonly) double avgVisMiles __attribute__((swift_name("avgVisMiles")));
+@property (readonly) int32_t avghumidity __attribute__((swift_name("avghumidity")));
+@property (readonly) ComposeAppCondition *condition __attribute__((swift_name("condition")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="daily_chance_of_rain")
+*/
+@property (readonly) int32_t dailyChanceOfRain __attribute__((swift_name("dailyChanceOfRain")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="daily_chance_of_snow")
+*/
+@property (readonly) int32_t dailyChanceOfSnow __attribute__((swift_name("dailyChanceOfSnow")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="daily_will_it_rain")
+*/
+@property (readonly) int32_t dailyWillItRain __attribute__((swift_name("dailyWillItRain")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="daily_will_it_snow")
+*/
+@property (readonly) int32_t dailyWillItSnow __attribute__((swift_name("dailyWillItSnow")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="maxtemp_c")
+*/
+@property (readonly) double maxTempC __attribute__((swift_name("maxTempC")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="maxtemp_f")
+*/
+@property (readonly) double maxTempF __attribute__((swift_name("maxTempF")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="maxwind_kph")
+*/
+@property (readonly) double maxWindKph __attribute__((swift_name("maxWindKph")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="maxwind_mph")
+*/
+@property (readonly) double maxWindMph __attribute__((swift_name("maxWindMph")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="mintemp_c")
+*/
+@property (readonly) double minTempC __attribute__((swift_name("minTempC")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="mintemp_f")
+*/
+@property (readonly) double minTempF __attribute__((swift_name("minTempF")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="totalprecip_in")
+*/
+@property (readonly) double totalPrecipIn __attribute__((swift_name("totalPrecipIn")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="totalprecip_mm")
+*/
+@property (readonly) double totalPrecipMm __attribute__((swift_name("totalPrecipMm")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="totalsnow_cm")
+*/
+@property (readonly) double totalSnowCm __attribute__((swift_name("totalSnowCm")));
+@property (readonly) double uv __attribute__((swift_name("uv")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Day.Companion")))
+@interface ComposeAppDayCompanion : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppDayCompanion *shared __attribute__((swift_name("shared")));
+- (id<ComposeAppKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Forecast")))
+@interface ComposeAppForecast : ComposeAppBase
+- (instancetype)initWithForecastday:(NSArray<ComposeAppForecastday *> *)forecastday __attribute__((swift_name("init(forecastday:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) ComposeAppForecastCompanion *companion __attribute__((swift_name("companion")));
+- (ComposeAppForecast *)doCopyForecastday:(NSArray<ComposeAppForecastday *> *)forecastday __attribute__((swift_name("doCopy(forecastday:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSArray<ComposeAppForecastday *> *forecastday __attribute__((swift_name("forecastday")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Forecast.Companion")))
+@interface ComposeAppForecastCompanion : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppForecastCompanion *shared __attribute__((swift_name("shared")));
+- (id<ComposeAppKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Forecastday")))
+@interface ComposeAppForecastday : ComposeAppBase
+- (instancetype)initWithAstro:(ComposeAppAstro *)astro date:(NSString *)date dateEpoch:(int32_t)dateEpoch day:(ComposeAppDay *)day hour:(NSArray<ComposeAppHour *> *)hour __attribute__((swift_name("init(astro:date:dateEpoch:day:hour:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) ComposeAppForecastdayCompanion *companion __attribute__((swift_name("companion")));
+- (ComposeAppForecastday *)doCopyAstro:(ComposeAppAstro *)astro date:(NSString *)date dateEpoch:(int32_t)dateEpoch day:(ComposeAppDay *)day hour:(NSArray<ComposeAppHour *> *)hour __attribute__((swift_name("doCopy(astro:date:dateEpoch:day:hour:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) ComposeAppAstro *astro __attribute__((swift_name("astro")));
+@property (readonly) NSString *date __attribute__((swift_name("date")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="date_epoch")
+*/
+@property (readonly) int32_t dateEpoch __attribute__((swift_name("dateEpoch")));
+@property (readonly) ComposeAppDay *day __attribute__((swift_name("day")));
+@property (readonly) NSArray<ComposeAppHour *> *hour __attribute__((swift_name("hour")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Forecastday.Companion")))
+@interface ComposeAppForecastdayCompanion : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppForecastdayCompanion *shared __attribute__((swift_name("shared")));
+- (id<ComposeAppKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Hour")))
+@interface ComposeAppHour : ComposeAppBase
+- (instancetype)initWithChanceOfRain:(int32_t)chanceOfRain chanceOfSnow:(int32_t)chanceOfSnow cloud:(int32_t)cloud condition:(ComposeAppCondition *)condition dewPointC:(double)dewPointC dewPointF:(double)dewPointF feelsLikeC:(double)feelsLikeC feelsLikeF:(double)feelsLikeF gustKph:(double)gustKph gustMph:(double)gustMph heatIndexC:(double)heatIndexC heatIndexF:(double)heatIndexF humidity:(int32_t)humidity isDay:(int32_t)isDay precipIn:(double)precipIn precipMm:(double)precipMm pressureIn:(double)pressureIn pressureMb:(double)pressureMb snowCm:(double)snowCm tempC:(double)tempC tempF:(double)tempF time:(NSString *)time timeEpoch:(int32_t)timeEpoch uv:(double)uv visKm:(double)visKm visMiles:(double)visMiles willItRain:(int32_t)willItRain willItSnow:(int32_t)willItSnow windDegree:(int32_t)windDegree windDir:(NSString *)windDir windKph:(double)windKph windMph:(double)windMph windChillC:(double)windChillC windChillF:(double)windChillF __attribute__((swift_name("init(chanceOfRain:chanceOfSnow:cloud:condition:dewPointC:dewPointF:feelsLikeC:feelsLikeF:gustKph:gustMph:heatIndexC:heatIndexF:humidity:isDay:precipIn:precipMm:pressureIn:pressureMb:snowCm:tempC:tempF:time:timeEpoch:uv:visKm:visMiles:willItRain:willItSnow:windDegree:windDir:windKph:windMph:windChillC:windChillF:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) ComposeAppHourCompanion *companion __attribute__((swift_name("companion")));
+- (ComposeAppHour *)doCopyChanceOfRain:(int32_t)chanceOfRain chanceOfSnow:(int32_t)chanceOfSnow cloud:(int32_t)cloud condition:(ComposeAppCondition *)condition dewPointC:(double)dewPointC dewPointF:(double)dewPointF feelsLikeC:(double)feelsLikeC feelsLikeF:(double)feelsLikeF gustKph:(double)gustKph gustMph:(double)gustMph heatIndexC:(double)heatIndexC heatIndexF:(double)heatIndexF humidity:(int32_t)humidity isDay:(int32_t)isDay precipIn:(double)precipIn precipMm:(double)precipMm pressureIn:(double)pressureIn pressureMb:(double)pressureMb snowCm:(double)snowCm tempC:(double)tempC tempF:(double)tempF time:(NSString *)time timeEpoch:(int32_t)timeEpoch uv:(double)uv visKm:(double)visKm visMiles:(double)visMiles willItRain:(int32_t)willItRain willItSnow:(int32_t)willItSnow windDegree:(int32_t)windDegree windDir:(NSString *)windDir windKph:(double)windKph windMph:(double)windMph windChillC:(double)windChillC windChillF:(double)windChillF __attribute__((swift_name("doCopy(chanceOfRain:chanceOfSnow:cloud:condition:dewPointC:dewPointF:feelsLikeC:feelsLikeF:gustKph:gustMph:heatIndexC:heatIndexF:humidity:isDay:precipIn:precipMm:pressureIn:pressureMb:snowCm:tempC:tempF:time:timeEpoch:uv:visKm:visMiles:willItRain:willItSnow:windDegree:windDir:windKph:windMph:windChillC:windChillF:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="chance_of_rain")
+*/
+@property (readonly) int32_t chanceOfRain __attribute__((swift_name("chanceOfRain")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="chance_of_snow")
+*/
+@property (readonly) int32_t chanceOfSnow __attribute__((swift_name("chanceOfSnow")));
+@property (readonly) int32_t cloud __attribute__((swift_name("cloud")));
+@property (readonly) ComposeAppCondition *condition __attribute__((swift_name("condition")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="dewpoint_c")
+*/
+@property (readonly) double dewPointC __attribute__((swift_name("dewPointC")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="dewpoint_f")
+*/
+@property (readonly) double dewPointF __attribute__((swift_name("dewPointF")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="feelslike_c")
+*/
+@property (readonly) double feelsLikeC __attribute__((swift_name("feelsLikeC")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="feelslike_f")
+*/
+@property (readonly) double feelsLikeF __attribute__((swift_name("feelsLikeF")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="gust_kph")
+*/
+@property (readonly) double gustKph __attribute__((swift_name("gustKph")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="gust_mph")
+*/
+@property (readonly) double gustMph __attribute__((swift_name("gustMph")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="heatindex_c")
+*/
+@property (readonly) double heatIndexC __attribute__((swift_name("heatIndexC")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="heatindex_f")
+*/
+@property (readonly) double heatIndexF __attribute__((swift_name("heatIndexF")));
+@property (readonly) int32_t humidity __attribute__((swift_name("humidity")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="is_day")
+*/
+@property (readonly) int32_t isDay __attribute__((swift_name("isDay")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="precip_in")
+*/
+@property (readonly) double precipIn __attribute__((swift_name("precipIn")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="precip_mm")
+*/
+@property (readonly) double precipMm __attribute__((swift_name("precipMm")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="pressure_in")
+*/
+@property (readonly) double pressureIn __attribute__((swift_name("pressureIn")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="pressure_mb")
+*/
+@property (readonly) double pressureMb __attribute__((swift_name("pressureMb")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="snow_cm")
+*/
+@property (readonly) double snowCm __attribute__((swift_name("snowCm")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="temp_c")
+*/
+@property (readonly) double tempC __attribute__((swift_name("tempC")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="temp_f")
+*/
+@property (readonly) double tempF __attribute__((swift_name("tempF")));
+@property (readonly) NSString *time __attribute__((swift_name("time")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="time_epoch")
+*/
+@property (readonly) int32_t timeEpoch __attribute__((swift_name("timeEpoch")));
+@property (readonly) double uv __attribute__((swift_name("uv")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="vis_km")
+*/
+@property (readonly) double visKm __attribute__((swift_name("visKm")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="vis_miles")
+*/
+@property (readonly) double visMiles __attribute__((swift_name("visMiles")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="will_it_rain")
+*/
+@property (readonly) int32_t willItRain __attribute__((swift_name("willItRain")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="will_it_snow")
+*/
+@property (readonly) int32_t willItSnow __attribute__((swift_name("willItSnow")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="windchill_c")
+*/
+@property (readonly) double windChillC __attribute__((swift_name("windChillC")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="windchill_f")
+*/
+@property (readonly) double windChillF __attribute__((swift_name("windChillF")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="wind_degree")
+*/
+@property (readonly) int32_t windDegree __attribute__((swift_name("windDegree")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="wind_dir")
+*/
+@property (readonly) NSString *windDir __attribute__((swift_name("windDir")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="wind_kph")
+*/
+@property (readonly) double windKph __attribute__((swift_name("windKph")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="wind_mph")
+*/
+@property (readonly) double windMph __attribute__((swift_name("windMph")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Hour.Companion")))
+@interface ComposeAppHourCompanion : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppHourCompanion *shared __attribute__((swift_name("shared")));
+- (id<ComposeAppKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Location")))
 @interface ComposeAppLocation : ComposeAppBase
 - (instancetype)initWithCountry:(NSString *)country lat:(double)lat localtime:(NSString *)localtime localTimeEpoch:(int32_t)localTimeEpoch lon:(double)lon name:(NSString *)name region:(NSString *)region tzId:(NSString *)tzId __attribute__((swift_name("init(country:lat:localtime:localTimeEpoch:lon:name:region:tzId:)"))) __attribute__((objc_designated_initializer));
@@ -650,24 +1104,24 @@ __attribute__((swift_name("Location.Companion")))
  *   kotlinx.serialization.Serializable
 */
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Photo")))
-@interface ComposeAppPhoto : ComposeAppBase
-- (instancetype)initWithSrc:(ComposeAppSrc *)src __attribute__((swift_name("init(src:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) ComposeAppPhotoCompanion *companion __attribute__((swift_name("companion")));
-- (ComposeAppPhoto *)doCopySrc:(ComposeAppSrc *)src __attribute__((swift_name("doCopy(src:)")));
+__attribute__((swift_name("PhotoData")))
+@interface ComposeAppPhotoData : ComposeAppBase
+- (instancetype)initWithUrls:(ComposeAppUrls *)urls __attribute__((swift_name("init(urls:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) ComposeAppPhotoDataCompanion *companion __attribute__((swift_name("companion")));
+- (ComposeAppPhotoData *)doCopyUrls:(ComposeAppUrls *)urls __attribute__((swift_name("doCopy(urls:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) ComposeAppSrc *src __attribute__((swift_name("src")));
+@property (readonly) ComposeAppUrls *urls __attribute__((swift_name("urls")));
 @end
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Photo.Companion")))
-@interface ComposeAppPhotoCompanion : ComposeAppBase
+__attribute__((swift_name("PhotoData.Companion")))
+@interface ComposeAppPhotoDataCompanion : ComposeAppBase
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppPhotoCompanion *shared __attribute__((swift_name("shared")));
+@property (class, readonly, getter=shared) ComposeAppPhotoDataCompanion *shared __attribute__((swift_name("shared")));
 - (id<ComposeAppKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end
 
@@ -677,41 +1131,49 @@ __attribute__((swift_name("Photo.Companion")))
  *   kotlinx.serialization.Serializable
 */
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Src")))
-@interface ComposeAppSrc : ComposeAppBase
-- (instancetype)initWithLarge:(NSString *)large medium:(NSString *)medium small:(NSString *)small __attribute__((swift_name("init(large:medium:small:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) ComposeAppSrcCompanion *companion __attribute__((swift_name("companion")));
-- (ComposeAppSrc *)doCopyLarge:(NSString *)large medium:(NSString *)medium small:(NSString *)small __attribute__((swift_name("doCopy(large:medium:small:)")));
+__attribute__((swift_name("Urls")))
+@interface ComposeAppUrls : ComposeAppBase
+- (instancetype)initWithFull:(NSString *)full raw:(NSString *)raw regular:(NSString *)regular small:(NSString *)small smallS3:(NSString *)smallS3 thumb:(NSString *)thumb __attribute__((swift_name("init(full:raw:regular:small:smallS3:thumb:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) ComposeAppUrlsCompanion *companion __attribute__((swift_name("companion")));
+- (ComposeAppUrls *)doCopyFull:(NSString *)full raw:(NSString *)raw regular:(NSString *)regular small:(NSString *)small smallS3:(NSString *)smallS3 thumb:(NSString *)thumb __attribute__((swift_name("doCopy(full:raw:regular:small:smallS3:thumb:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *large __attribute__((swift_name("large")));
-@property (readonly) NSString *medium __attribute__((swift_name("medium")));
+@property (readonly) NSString *full __attribute__((swift_name("full")));
+@property (readonly) NSString *raw __attribute__((swift_name("raw")));
+@property (readonly) NSString *regular __attribute__((swift_name("regular")));
 @property (readonly) NSString *small __attribute__((swift_name("small")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="small_s3")
+*/
+@property (readonly) NSString *smallS3 __attribute__((swift_name("smallS3")));
+@property (readonly) NSString *thumb __attribute__((swift_name("thumb")));
 @end
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Src.Companion")))
-@interface ComposeAppSrcCompanion : ComposeAppBase
+__attribute__((swift_name("Urls.Companion")))
+@interface ComposeAppUrlsCompanion : ComposeAppBase
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppSrcCompanion *shared __attribute__((swift_name("shared")));
+@property (class, readonly, getter=shared) ComposeAppUrlsCompanion *shared __attribute__((swift_name("shared")));
 - (id<ComposeAppKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("WeatherMainScreenState")))
 @interface ComposeAppWeatherMainScreenState : ComposeAppBase
-- (instancetype)initWithIsLoading:(BOOL)isLoading weatherDto:(ComposeAppCurrentWeatherDto * _Nullable)weatherDto error:(NSString *)error image:(NSString *)image __attribute__((swift_name("init(isLoading:weatherDto:error:image:)"))) __attribute__((objc_designated_initializer));
-- (ComposeAppWeatherMainScreenState *)doCopyIsLoading:(BOOL)isLoading weatherDto:(ComposeAppCurrentWeatherDto * _Nullable)weatherDto error:(NSString *)error image:(NSString *)image __attribute__((swift_name("doCopy(isLoading:weatherDto:error:image:)")));
+- (instancetype)initWithIsLoading:(BOOL)isLoading weatherDto:(ComposeAppForecastDto * _Nullable)weatherDto error:(NSString *)error image:(NSString *)image __attribute__((swift_name("init(isLoading:weatherDto:error:image:)"))) __attribute__((objc_designated_initializer));
+- (ComposeAppWeatherMainScreenState *)doCopyIsLoading:(BOOL)isLoading weatherDto:(ComposeAppForecastDto * _Nullable)weatherDto error:(NSString *)error image:(NSString *)image __attribute__((swift_name("doCopy(isLoading:weatherDto:error:image:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) NSString *error __attribute__((swift_name("error")));
 @property (readonly) NSString *image __attribute__((swift_name("image")));
 @property (readonly) BOOL isLoading __attribute__((swift_name("isLoading")));
-@property (readonly) ComposeAppCurrentWeatherDto * _Nullable weatherDto __attribute__((swift_name("weatherDto")));
+@property (readonly) ComposeAppForecastDto * _Nullable weatherDto __attribute__((swift_name("weatherDto")));
 @end
 
 __attribute__((swift_name("Lifecycle_viewmodelViewModel")))

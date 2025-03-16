@@ -9,39 +9,40 @@ import io.ktor.client.plugins.logging.LogLevel
 import io.ktor.client.plugins.logging.Logger
 import io.ktor.client.plugins.logging.Logging
 import io.ktor.client.request.get
-import io.ktor.client.request.header
 import io.ktor.client.request.parameter
 import io.ktor.serialization.kotlinx.json.json
 import io.ktor.util.network.UnresolvedAddressException
 import kotlinx.serialization.SerializationException
 import kotlinx.serialization.json.Json
 import org.example.weathercrossplatform.data.locale.SystemLocale
+import org.example.weathercrossplatform.data.network.dto.ForecastDto
+import org.example.weathercrossplatform.data.network.dto.ImageListDto
 import org.example.weathercrossplatform.data.utils.NetworkError
 import org.example.weathercrossplatform.data.utils.Result
 import org.example.weathercrossplatform.domain.repo.WeatherRepo
-import org.example.weathercrossplatform.data.network.dto.CurrentWeatherDto
-import org.example.weathercrossplatform.data.network.dto.ImageListDto
 
 const val BASE_URL_WEATHER = "https://api.weatherapi.com/v1"
-const val BASE_URL_IMAGES = "https://api.pexels.com/v1/search"
+const val BASE_URL_IMAGES = "https://api.unsplash.com/search/photos?page=1"
 
 class WeatherRepoImpl(
     private val httpClient: HttpClient,
     private val systemLocale: SystemLocale
 ) : WeatherRepo {
 
-    override suspend fun getCurrentWeather(query: String): Result<CurrentWeatherDto, NetworkError> {
+    override suspend fun getCurrentWeather(query: String): Result<ForecastDto, NetworkError> {
 
         val language = systemLocale.getSystemLanguage()
 
         val response = try {
             httpClient.get(
-                urlString = "$BASE_URL_WEATHER/current.json"
+                urlString = "$BASE_URL_WEATHER/forecast.json"
             ) {
                 parameter("key", BuildKonfig.API_KEY)
                 parameter("q", query)
                 parameter("aqi", "yes")
                 parameter("lang", language)
+                parameter("days", 3)
+
             }
         } catch (e: UnresolvedAddressException) {
             return Result.Error(NetworkError.NO_INTERNET)
@@ -50,7 +51,7 @@ class WeatherRepoImpl(
         }
         return when (response.status.value) {
             in 200..299 -> {
-                val result = response.body<CurrentWeatherDto>()
+                val result = response.body<ForecastDto>()
                 Result.Success(result)
             }
 
@@ -68,8 +69,8 @@ class WeatherRepoImpl(
             httpClient.get(
                 urlString = BASE_URL_IMAGES
             ) {
-                header("Authorization", BuildKonfig.API_KEY2)
-                parameter("query", query)
+                parameter("client_id", BuildKonfig.API_KEY2)
+                parameter("query", "$query sky")
                 parameter("orientation", "portrait")
             }
         } catch (e: UnresolvedAddressException) {

@@ -1,10 +1,10 @@
 package org.example.weathercrossplatform.domain.models
 
-import org.example.weathercrossplatform.data.network.dto.CurrentWeatherDto
+import org.example.weathercrossplatform.data.network.dto.ForecastDto
 
 data class WeatherMainScreenState(
     val isLoading: Boolean = false,
-    val weatherDto: CurrentWeatherDto? = null,
+    val weatherDto: ForecastDto? = null,
     val error: String = "",
     val image: String = ""
 )

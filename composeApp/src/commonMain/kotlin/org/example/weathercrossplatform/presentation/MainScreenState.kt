@@ -21,6 +21,7 @@ fun MainScreenState(
         temp = weatherMainScreenState.weatherDto?.current?.tempC.toString(),
         condition = weatherMainScreenState.weatherDto?.current?.condition?.text ?: "",
         feelsLikeC = weatherMainScreenState.weatherDto?.current?.feelsLikeC.toString(),
-        error = weatherMainScreenState.error
+        error = weatherMainScreenState.error,
+        forecastList = weatherMainScreenState.weatherDto?.forecast?.forecastday
     )
 }

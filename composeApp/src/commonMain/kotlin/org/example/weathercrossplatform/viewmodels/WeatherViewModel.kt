@@ -44,23 +44,29 @@ class WeatherViewModel(
                     val query = "${it.latitude},${it.longitude}"
                     weatherRepoImpl.getCurrentWeather(query)
                         .onSuccess { weather ->
-                            val imageQuery = if (weather.current.condition.text=="Ясно") "sunny" else weather.current.condition.text
+
+                            val imageQuery = when (weather.current.condition.text) {
+                                "Ясно" -> "clear"
+                                "Солнечно" -> "sunny"
+                                else -> weather.current.condition.text
+                            }
+
                             weatherRepoImpl.getImageList(imageQuery)
                                 .onSuccess { imageList ->
-                                    val image = imageList.photos.take(15).random().src.large
+                                    val image = imageList.results.take(30).random().urls.regular
                                     _weatherScreenState.value = _weatherScreenState.value.copy(
-                                        image = image
+                                        image = image,
+                                        isLoading = false,
+                                        weatherDto = weather
                                     )
                                 }
                                 .onError { error ->
                                     _weatherScreenState.value = _weatherScreenState.value.copy(
-                                        error = error.name
+                                        error = error.name,
+                                        isLoading = false,
+                                        weatherDto = weather
                                     )
                                 }
-                            _weatherScreenState.value = _weatherScreenState.value.copy(
-                                isLoading = false,
-                                weatherDto = weather
-                            )
                         }
                         .onError { networkError ->
                             _weatherScreenState.value = _weatherScreenState.value.copy(

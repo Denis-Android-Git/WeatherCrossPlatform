@@ -2,8 +2,6 @@ package org.example.weathercrossplatform.presentation
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
-import androidx.compose.foundation.gestures.Orientation
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -13,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Place
 import androidx.compose.material3.CircularProgressIndicator
@@ -30,6 +29,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
+import org.example.weathercrossplatform.domain.models.Forecastday
 
 @Composable
 fun MainScreen(
@@ -40,7 +40,8 @@ fun MainScreen(
     temp: String,
     condition: String,
     feelsLikeC: String,
-    error: String
+    error: String,
+    forecastList: List<Forecastday>?
 ) {
     val scrollState = rememberScrollState()
 
@@ -89,108 +90,116 @@ fun MainScreen(
                     contentDescription = null
                 )
                 Column(
-                    modifier = Modifier.fillMaxSize()
-                        .scrollable(
-                            scrollState,
-                            orientation = Orientation.Vertical
-                        )
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 160.dp)
                 ) {
+                    Icon(
+                        imageVector = Icons.Outlined.Place,
+                        contentDescription = null,
+                        modifier = Modifier
+                            .padding(start = 52.dp, bottom = 3.dp)
+                            .size(15.dp),
+                        tint = Color.White
+                    )
+                    Box(
+                        modifier = Modifier
+                            .padding(start = 36.dp)
+                            .background(
+                                color = Color.Black.copy(alpha = 0.2f),
+                                shape = RoundedCornerShape(16.dp)
+                            )
+                    ) {
+                        Text(
+                            modifier = Modifier.padding(
+                                vertical = 2.dp,
+                                horizontal = 16.dp
+                            ),
+                            text = locationName, color = textColor, fontSize = 20.sp
+                        )
+                    }
+                    Box(
+                        modifier = Modifier
+                            .padding(start = 36.dp, top = 16.dp)
+                            .background(
+                                color = Color.Black.copy(alpha = 0.2f),
+                                shape = RoundedCornerShape(16.dp)
+                            )
+                    ) {
+                        Text(
+                            modifier = Modifier.padding(
+                                vertical = 2.dp,
+                                horizontal = 16.dp
+                            ),
+                            text = "$temp ℃",
+                            color = textColor,
+                            fontSize = 85.sp
+                        )
+                    }
                     Column(
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(top = 160.dp)
+                            .padding(start = 36.dp, top = 16.dp)
+                            .background(
+                                color = Color.Black.copy(alpha = 0.2f),
+                                shape = RoundedCornerShape(16.dp)
+                            )
                     ) {
-                        Icon(
-                            imageVector = Icons.Outlined.Place,
-                            contentDescription = null,
-                            modifier = Modifier
-                                .padding(start = 52.dp, bottom = 3.dp)
-                                .size(15.dp),
-                            tint = Color.White
+                        Text(
+                            modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 2.dp),
+                            text = "Ощущается $feelsLikeC ℃", color = textColor
                         )
-                        Box(
-                            modifier = Modifier
-                                .padding(start = 36.dp)
-                                .background(
-                                    color = Color.Black.copy(alpha = 0.2f),
-                                    shape = RoundedCornerShape(16.dp)
-                                )
+                        Text(
+                            modifier = Modifier.padding(start = 16.dp, bottom = 2.dp),
+                            text = condition, color = textColor
+                        )
+                    }
+                    Box(
+                        modifier = Modifier
+                            .align(Alignment.CenterHorizontally)
+                            .padding(top = 16.dp)
+                            .background(
+                                color = Color.White.copy(alpha = 0.2f),
+                                shape = RoundedCornerShape(16.dp)
+                            )
+                    ) {
+                        Row(
+                            modifier = Modifier.padding(
+                                vertical = 6.dp,
+                                horizontal = 16.dp
+                            )
                         ) {
                             Text(
-                                modifier = Modifier.padding(
-                                    vertical = 2.dp,
-                                    horizontal = 16.dp
-                                ),
-                                text = locationName, color = textColor, fontSize = 20.sp
-                            )
-                        }
-                        Box(
-                            modifier = Modifier
-                                .padding(start = 36.dp, top = 16.dp)
-                                .background(
-                                    color = Color.Black.copy(alpha = 0.2f),
-                                    shape = RoundedCornerShape(16.dp)
-                                )
-                        ) {
-                            Text(
-                                modifier = Modifier.padding(
-                                    vertical = 2.dp,
-                                    horizontal = 16.dp
-                                ),
-                                text = "$temp ℃",
-                                color = textColor,
-                                fontSize = 85.sp
-                            )
-                        }
-                        Column(
-                            modifier = Modifier
-                                .padding(start = 36.dp, top = 16.dp)
-                                .background(
-                                    color = Color.Black.copy(alpha = 0.2f),
-                                    shape = RoundedCornerShape(16.dp)
-                                )
-                        ) {
-                            Text(
-                                modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 2.dp),
-                                text = "Ощущается $feelsLikeC ℃", color = textColor
+                                text = "Качество воздуха: ", color = textColor
                             )
                             Text(
-                                modifier = Modifier.padding(start = 16.dp, bottom = 2.dp),
-                                text = condition, color = textColor
+                                text = airQualityText, color = when (airQualityText) {
+                                    "Хорошо" -> Color.Green
+                                    "Умеренно" -> Color(0xff47e6d0)
+                                    "Плохое для чувствительных групп" -> Color.Yellow
+                                    "Плохое" -> Color(0xFF996600)
+                                    "Очень Плохое" -> Color(0xFFCC3300)
+                                    "Опасно" -> Color(0xFFFF0000)
+                                    else -> Color.Green
+                                }
                             )
-                        }
-                        Box(
-                            modifier = Modifier
-                                .align(Alignment.CenterHorizontally)
-                                .padding(top = 16.dp)
-                                .background(
-                                    color = Color.White.copy(alpha = 0.2f),
-                                    shape = RoundedCornerShape(16.dp)
-                                )
-                        ) {
-                            Row(
-                                modifier = Modifier.padding(
-                                    vertical = 6.dp,
-                                    horizontal = 16.dp
-                                )
-                            ) {
-                                Text(
-                                    text = "Качество воздуха: ", color = textColor
-                                )
-                                Text(
-                                    text = airQualityText, color = when (airQualityText) {
-                                        "Хорошо" -> Color.Green
-                                        "Умеренно" -> Color(0xff47e6d0)
-                                        "Плохое для чувствительных групп" -> Color.Yellow
-                                        "Плохое" -> Color(0xFF996600)
-                                        "Очень Плохое" -> Color(0xFFCC3300)
-                                        "Опасно" -> Color(0xFFFF0000)
-                                        else -> Color.Green
-                                    }
-                                )
-                            }
                         }
                     }
+                }
+                Column(
+                    modifier = Modifier.fillMaxWidth()
+                        .verticalScroll(scrollState)
+                        .padding(top = 500.dp)
+                ) {
+                    forecastList?.let {
+                        ForecastElement(
+                            forecastList = it
+                        )
+                    }
+
+//                    ForecastElement()
+//                    ForecastElement()
+//                    ForecastElement()
+
                 }
             }
         }
