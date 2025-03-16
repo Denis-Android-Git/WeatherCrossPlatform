@@ -1219,6 +1219,12 @@ __attribute__((swift_name("WeatherViewModel")))
 @end
 
 __attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Height_nativeKt")))
+@interface ComposeAppHeight_nativeKt : ComposeAppBase
++ (double)pxToPoint:(int32_t)receiver __attribute__((swift_name("pxToPoint(_:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("InitKoinKt")))
 @interface ComposeAppInitKoinKt : ComposeAppBase
 + (void)doInitKoinConfig:(void (^ _Nullable)(ComposeAppKoin_coreKoinApplication *))config __attribute__((swift_name("doInitKoin(config:)")));

@@ -2,13 +2,16 @@ package org.example.weathercrossplatform.presentation
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -26,9 +29,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.Layout
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
+import org.example.weathercrossplatform.data.utils.getScreenHeight
 import org.example.weathercrossplatform.domain.models.Forecastday
 
 @Composable
@@ -185,21 +191,35 @@ fun MainScreen(
                         }
                     }
                 }
+                val density = LocalDensity.current
+
+                val systemBarsHeightDp = with(density) {
+                    WindowInsets.systemBars.getBottom(this).toDp() //на айфоне не работает
+                }
+                val height = getScreenHeight() - 160.dp - systemBarsHeightDp
                 Column(
                     modifier = Modifier.fillMaxWidth()
                         .verticalScroll(scrollState)
-                        .padding(top = 500.dp)
+                        .padding(top = height),
+                    verticalArrangement = Arrangement.spacedBy(6.dp)
                 ) {
                     forecastList?.let {
                         ForecastElement(
                             forecastList = it
                         )
+                        ForecastElement(
+                            forecastList = it
+
+                        )
+                        ForecastElement(
+                            forecastList = it
+
+                        )
+                        ForecastElement(
+                            forecastList = it
+
+                        )
                     }
-
-//                    ForecastElement()
-//                    ForecastElement()
-//                    ForecastElement()
-
                 }
             }
         }
@@ -210,4 +230,41 @@ fun MainScreen(
             Text(text = error)
         }
     }
+}
+
+
+@Composable
+fun App() {
+    val screenSize = remember { mutableStateOf(Pair(-1, -1)) }
+    Layout(
+        content = {
+            Box(modifier = Modifier.fillMaxSize()) {
+                Text(
+                    "Screen size: ${screenSize.value.first}x${screenSize.value.second}px",
+                    modifier = Modifier.align(Alignment.Center)
+                )
+            }
+        },
+        measurePolicy = { measurables, constraints ->
+            // Use the max width and height from the constraints
+            val width = constraints.maxWidth
+            val height = constraints.maxHeight
+
+            screenSize.value = Pair(width, height)
+            println("Width: $width, height: $height")
+
+            // Measure and place children composables
+            val placeables = measurables.map { measurable ->
+                measurable.measure(constraints)
+            }
+
+            layout(width, height) {
+                var yPosition = 0
+                placeables.forEach { placeable ->
+                    placeable.placeRelative(x = 0, y = yPosition)
+                    yPosition += placeable.height
+                }
+            }
+        }
+    )
 }
