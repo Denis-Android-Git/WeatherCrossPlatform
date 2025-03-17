@@ -6,12 +6,10 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -30,11 +28,10 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.Layout
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import org.example.weathercrossplatform.data.utils.getScreenHeight
+import org.example.weathercrossplatform.data.utils.GetScreenHeight
 import org.example.weathercrossplatform.domain.models.Forecastday
 
 @Composable
@@ -191,12 +188,9 @@ fun MainScreen(
                         }
                     }
                 }
-                val density = LocalDensity.current
 
-                val systemBarsHeightDp = with(density) {
-                    WindowInsets.systemBars.getBottom(this).toDp() //на айфоне не работает
-                }
-                val height = getScreenHeight() - 160.dp - systemBarsHeightDp
+                val height = GetScreenHeight.getScreenHeight() - 160.dp - GetScreenHeight.getBottomBarHeight()
+
                 Column(
                     modifier = Modifier.fillMaxWidth()
                         .verticalScroll(scrollState)

@@ -2,7 +2,9 @@ package org.example.weathercrossplatform.presentation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import org.example.weathercrossplatform.data.utils.GetScreenHeight
 import org.example.weathercrossplatform.viewmodels.WeatherViewModel
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -11,7 +13,6 @@ fun MainScreenState(
     weatherViewModel: WeatherViewModel = koinViewModel()
 ) {
     val weatherMainScreenState by weatherViewModel.weatherScreenState.collectAsStateWithLifecycle()
-
 
     MainScreen(
         isLoading = weatherMainScreenState.isLoading,
