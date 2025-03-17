@@ -70,7 +70,7 @@ class WeatherRepoImpl(
                 urlString = BASE_URL_IMAGES
             ) {
                 parameter("client_id", BuildKonfig.API_KEY2)
-                parameter("query", "$query sky")
+                parameter("query", query)
                 parameter("orientation", "portrait")
             }
         } catch (e: UnresolvedAddressException) {

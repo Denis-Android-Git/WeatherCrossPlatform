@@ -45,11 +45,12 @@ class WeatherViewModel(
                     weatherRepoImpl.getCurrentWeather(query)
                         .onSuccess { weather ->
 
-                            val imageQuery = when (weather.current.condition.text) {
-                                "Ясно" -> "clear"
-                                "Солнечно" -> "sunny"
-                                else -> weather.current.condition.text
-                            }
+                            val imageQuery = weather.current.condition.text
+//                            {
+//                                "Ясно" -> "clear"
+//                                "Солнечно" -> "sunny"
+//                                else -> weather.current.condition.text
+//                            }
 
                             weatherRepoImpl.getImageList(imageQuery)
                                 .onSuccess { imageList ->
