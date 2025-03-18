@@ -201,18 +201,6 @@ fun MainScreen(
                         ForecastElement(
                             forecastList = it
                         )
-                        ForecastElement(
-                            forecastList = it
-
-                        )
-                        ForecastElement(
-                            forecastList = it
-
-                        )
-                        ForecastElement(
-                            forecastList = it
-
-                        )
                     }
                 }
             }
