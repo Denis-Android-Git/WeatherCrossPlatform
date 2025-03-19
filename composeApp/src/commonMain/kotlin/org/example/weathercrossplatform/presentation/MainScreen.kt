@@ -189,17 +189,21 @@ fun MainScreen(
                     }
                 }
 
-                val height = GetScreenHeight.getScreenHeight() - 160.dp - GetScreenHeight.getBottomBarHeight()
+                val height =
+                    GetScreenHeight.getScreenHeight() - 160.dp - GetScreenHeight.getBottomBarHeight()
 
                 Column(
                     modifier = Modifier.fillMaxWidth()
                         .verticalScroll(scrollState)
-                        .padding(top = height),
+                        .padding(top = height, bottom = 20.dp),
                     verticalArrangement = Arrangement.spacedBy(6.dp)
                 ) {
-                    forecastList?.let {
+                    forecastList?.let { forecastListDayList ->
                         ForecastElement(
-                            forecastList = it
+                            forecastList = forecastListDayList
+                        )
+                        HourForecastElement(
+                            hours = forecastListDayList[0].hour
                         )
                     }
                 }

@@ -52,6 +52,7 @@ class WeatherViewModel(
                             val imageQuery = when (weather.current.condition.text) {
                                 "Солнечно" -> "sunny"
                                 "Ясно" -> "clear sky"
+                                "Переменная облачность" -> "cloudy"
                                 else -> weather.current.condition.text
                             }
 
@@ -59,7 +60,7 @@ class WeatherViewModel(
 
                             weatherRepoImpl.getImageList(imageQuery)
                                 .onSuccess { imageList ->
-                                    val image = emptyList<PhotoData>().take(30).random().urls.regular
+                                    val image = imageList.results.take(30).random().urls.regular
                                     _weatherScreenState.value = _weatherScreenState.value.copy(
                                         image = image,
                                         isLoading = false,
