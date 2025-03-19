@@ -329,6 +329,7 @@
     <string name="call_notification_screening_text">Screening an incoming call</string>
     <string name="close_drawer">"Close navigation menu"</string>
     <string name="close_sheet">"Close sheet"</string>
+    <string name="com.google.firebase.crashlytics.mapping_file_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">00000000000000000000000000000000</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t work unless you enable Google Play services.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Enable Google Play services</string>
@@ -349,7 +350,13 @@
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="default_error_message">"Invalid input"</string>
     <string name="default_popup_window_title" ns2:ignore="ExtraTranslation">"Pop-Up Window"</string>
+    <string name="default_web_client_id" translatable="false">489991034740-te6j9hlhhdk1lr7nkn7seijj6b5ilf4k.apps.googleusercontent.com</string>
     <string name="dropdown_menu">"Dropdown menu"</string>
+    <string name="gcm_defaultSenderId" translatable="false">489991034740</string>
+    <string name="google_api_key" translatable="false">AIzaSyAW1_XPMmSYpyNMxVVt2PgM6rpdVvASBZE</string>
+    <string name="google_app_id" translatable="false">1:489991034740:android:365bd428d3a4480065be21</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAW1_XPMmSYpyNMxVVt2PgM6rpdVvASBZE</string>
+    <string name="google_storage_bucket" translatable="false">my-first-project-f998e.firebasestorage.app</string>
     <string name="in_progress">In progress</string>
     <string name="indeterminate">Partially checked</string>
     <string name="m3c_bottom_sheet_collapse_description">Collapse bottom sheet</string>
@@ -415,6 +422,7 @@
     <string name="m3c_tooltip_pane_description">Tooltip</string>
     <string name="navigation_menu">"Navigation menu"</string>
     <string name="not_selected">Not selected</string>
+    <string name="project_id" translatable="false">my-first-project-f998e</string>
     <string name="range_end">"Range end"</string>
     <string name="range_start">"Range start"</string>
     <string name="search_menu_title">Search</string>

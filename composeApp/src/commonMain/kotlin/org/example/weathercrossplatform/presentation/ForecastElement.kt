@@ -1,6 +1,7 @@
 package org.example.weathercrossplatform.presentation
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -35,7 +36,8 @@ fun ForecastElement(
     ) {
         Row(
             modifier = Modifier.padding(start = 16.dp, top = 16.dp),
-            verticalAlignment = Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(3.dp)
         ) {
             Icon(
                 imageVector = Icons.Filled.DateRange,

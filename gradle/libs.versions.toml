@@ -17,6 +17,15 @@ koin = "4.0.2"
 koinComposeMultiplatform = "4.0.2"
 navigationCompose = "2.8.0-alpha02"
 coil = "3.1.0"
+
+#Firebase android
+firebase-android-bom = "33.10.0"
+#Gradle
+gradlePlugins-crashlytics = "3.0.2"
+gradlePlugins-google-services = "4.4.2"
+#Gitlive
+firebase-gitlive-sdk = "1.12.0"
+
 #androidx-appcompat = "1.7.0"
 #androidx-constraintlayout = "2.2.1"
 #androidx-core-ktx = "1.15.0"
@@ -27,6 +36,12 @@ coil = "3.1.0"
 
 
 [libraries]
+#Firebase
+firebase = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-android-bom" }
+crashlytics = { module = "com.google.firebase:firebase-crashlytics" }
+#Gitlive
+gitlive-firebase-kotlin-crashlytics = { module = "dev.gitlive:firebase-crashlytics", version.ref = "firebase-gitlive-sdk" }
+
 #
 #kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 #kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
@@ -65,6 +80,8 @@ play-services-location = { group = "com.google.android.gms", name = "play-servic
 
 
 [plugins]
+crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "gradlePlugins-crashlytics" }
+google-services = { id = "com.google.gms.google-services", version.ref = "gradlePlugins-google-services" }
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }

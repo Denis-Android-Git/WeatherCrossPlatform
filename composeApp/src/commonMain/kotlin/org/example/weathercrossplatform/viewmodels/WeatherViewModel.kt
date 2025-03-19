@@ -12,6 +12,7 @@ import org.example.weathercrossplatform.data.repo_impl.WeatherRepoImpl
 import org.example.weathercrossplatform.data.utils.onError
 import org.example.weathercrossplatform.data.utils.onSuccess
 import org.example.weathercrossplatform.domain.models.Coordinates
+import org.example.weathercrossplatform.domain.models.PhotoData
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 
 class WeatherViewModel(
@@ -42,6 +43,9 @@ class WeatherViewModel(
             coordinates.collectLatest { coordinates ->
                 coordinates?.let {
                     val query = "${it.latitude},${it.longitude}"
+
+                    println("query=$query")
+
                     weatherRepoImpl.getCurrentWeather(query)
                         .onSuccess { weather ->
 
@@ -55,7 +59,7 @@ class WeatherViewModel(
 
                             weatherRepoImpl.getImageList(imageQuery)
                                 .onSuccess { imageList ->
-                                    val image = imageList.results.take(30).random().urls.regular
+                                    val image = emptyList<PhotoData>().take(30).random().urls.regular
                                     _weatherScreenState.value = _weatherScreenState.value.copy(
                                         image = image,
                                         isLoading = false,

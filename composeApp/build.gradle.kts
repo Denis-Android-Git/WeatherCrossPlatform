@@ -10,6 +10,8 @@ plugins {
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.buildkonfig)
+    alias(libs.plugins.google.services)
+    alias(libs.plugins.crashlytics)
 }
 
 kotlin {
@@ -64,8 +66,7 @@ kotlin {
             implementation(libs.navigation.compose)
             implementation(libs.coil.compose)
             implementation(libs.coil.network.ktor3)
-
-
+            api(libs.gitlive.firebase.kotlin.crashlytics)
         }
         nativeMain.dependencies {
             implementation(libs.ktor.client.darwin)
