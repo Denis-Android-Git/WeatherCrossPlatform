@@ -5,7 +5,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import org.example.weathercrossplatform.presentation.ForecastRowItem
 
-
 @Preview
 @Composable
 private fun Preview() {
