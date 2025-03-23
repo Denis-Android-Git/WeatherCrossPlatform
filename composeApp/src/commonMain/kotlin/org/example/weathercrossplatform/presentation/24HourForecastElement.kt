@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -71,7 +72,7 @@ fun HourForecastElement(
 @Composable
 fun ForecastRowItem(
     temp: String,
-    icon: String,
+    icon: Any,
     wind: String,
     time: String,
     previousTemp: Float,
@@ -115,12 +116,12 @@ fun ForecastRowItem(
                             (boxHeight - ((temp.toFloat() - minTemp) / tempRange) * boxHeight - 110).toDp()
                         }),
                     text = "$temp°",
-                    color = Color.LightGray
+                    color = Color.White
                 )
             }
         }
-        AsyncImage(model = icon, contentDescription = null)
-        Text(text = "$wind km/h", color = Color.LightGray)
-        Text(text = time, color = Color.LightGray)
+        AsyncImage(model = icon, contentDescription = null, modifier = Modifier.size(40.dp))
+        Text(text = "$wind km/h", color = Color.White)
+        Text(text = time, color = Color.White)
     }
 }

@@ -12,7 +12,6 @@ import org.example.weathercrossplatform.data.repo_impl.WeatherRepoImpl
 import org.example.weathercrossplatform.data.utils.onError
 import org.example.weathercrossplatform.data.utils.onSuccess
 import org.example.weathercrossplatform.domain.models.Coordinates
-import org.example.weathercrossplatform.domain.models.PhotoData
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 
 class WeatherViewModel(
@@ -37,51 +36,58 @@ class WeatherViewModel(
 
     init {
         viewModelScope.launch {
-            _weatherScreenState.value = _weatherScreenState.value.copy(
-                isLoading = true
-            )
-            coordinates.collectLatest { coordinates ->
-                coordinates?.let {
-                    val query = "${it.latitude},${it.longitude}"
+            try {
+                _weatherScreenState.value = _weatherScreenState.value.copy(
+                    isLoading = true
+                )
+                coordinates.collectLatest { coordinates ->
+                    coordinates?.let {
+                        val query = "${it.latitude},${it.longitude}"
 
-                    println("query=$query")
+                        println("query=$query")
 
-                    weatherRepoImpl.getCurrentWeather(query)
-                        .onSuccess { weather ->
+                        weatherRepoImpl.getCurrentWeather(query)
+                            .onSuccess { weather ->
 
-                            val imageQuery = when (weather.current.condition.text) {
-                                "Солнечно" -> "sunny"
-                                "Ясно" -> "clear sky"
-                                "Переменная облачность" -> "cloudy"
-                                else -> weather.current.condition.text
+                                val imageQuery = when (weather.current.condition.text) {
+                                    "Солнечно" -> "sunny"
+                                    "Ясно" -> "clear sky"
+                                    "Переменная облачность" -> "cloudy"
+                                    else -> weather.current.condition.text
+                                }
+
+                                println("imageQuery=$imageQuery")
+
+                                weatherRepoImpl.getImageList(imageQuery)
+                                    .onSuccess { imageList ->
+                                        val image = imageList.results.take(30).random().urls.regular
+                                        _weatherScreenState.value = _weatherScreenState.value.copy(
+                                            image = image,
+                                            isLoading = false,
+                                            weatherDto = weather
+                                        )
+                                    }
+                                    .onError { error ->
+                                        _weatherScreenState.value = _weatherScreenState.value.copy(
+                                            error = error.name,
+                                            isLoading = false,
+                                            weatherDto = weather
+                                        )
+                                    }
                             }
-
-                            println("imageQuery=$imageQuery")
-
-                            weatherRepoImpl.getImageList(imageQuery)
-                                .onSuccess { imageList ->
-                                    val image = imageList.results.take(30).random().urls.regular
-                                    _weatherScreenState.value = _weatherScreenState.value.copy(
-                                        image = image,
-                                        isLoading = false,
-                                        weatherDto = weather
-                                    )
-                                }
-                                .onError { error ->
-                                    _weatherScreenState.value = _weatherScreenState.value.copy(
-                                        error = error.name,
-                                        isLoading = false,
-                                        weatherDto = weather
-                                    )
-                                }
-                        }
-                        .onError { networkError ->
-                            _weatherScreenState.value = _weatherScreenState.value.copy(
-                                isLoading = false,
-                                error = networkError.name
-                            )
-                        }
+                            .onError { networkError ->
+                                _weatherScreenState.value = _weatherScreenState.value.copy(
+                                    isLoading = false,
+                                    error = networkError.name
+                                )
+                            }
+                    }
                 }
+            } catch (e: Exception) {
+                _weatherScreenState.value = _weatherScreenState.value.copy(
+                    isLoading = false,
+                    error = e.message.toString()
+                )
             }
         }
     }

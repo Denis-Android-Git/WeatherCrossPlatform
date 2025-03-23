@@ -28,6 +28,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.Layout
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
@@ -38,11 +39,11 @@ import org.example.weathercrossplatform.domain.models.Forecastday
 fun MainScreen(
     isLoading: Boolean,
     image: String,
-    usEpaIndex: Int,
-    locationName: String,
-    temp: String,
-    condition: String,
-    feelsLikeC: String,
+    usEpaIndex: Int?,
+    locationName: String?,
+    temp: String?,
+    condition: String?,
+    feelsLikeC: String?,
     error: String,
     forecastList: List<Forecastday>?
 ) {
@@ -69,7 +70,7 @@ fun MainScreen(
             CircularProgressIndicator()
         }
         AnimatedVisibility(
-            visible = !isLoading
+            visible = !isLoading && locationName != null
         ) {
 
             val airQualityText =
@@ -118,7 +119,7 @@ fun MainScreen(
                                 vertical = 2.dp,
                                 horizontal = 16.dp
                             ),
-                            text = locationName, color = textColor, fontSize = 20.sp
+                            text = locationName.toString(), color = textColor, fontSize = 20.sp
                         )
                     }
                     Box(
@@ -153,7 +154,7 @@ fun MainScreen(
                         )
                         Text(
                             modifier = Modifier.padding(start = 16.dp, bottom = 2.dp),
-                            text = condition, color = textColor
+                            text = condition.toString(), color = textColor
                         )
                     }
                     Box(
@@ -213,7 +214,7 @@ fun MainScreen(
             visible = error.isNotEmpty(),
             modifier = Modifier.align(Alignment.Center)
         ) {
-            Text(text = error)
+            Text(text = error, textAlign = TextAlign.Center)
         }
     }
 }
