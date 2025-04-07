@@ -153,7 +153,7 @@ fun MainScreen(
                             text = "Ощущается $feelsLikeC ℃", color = textColor
                         )
                         Text(
-                            modifier = Modifier.padding(start = 16.dp, bottom = 2.dp),
+                            modifier = Modifier.padding(start = 16.dp, bottom = 2.dp, end = 16.dp),
                             text = condition.toString(), color = textColor
                         )
                     }
