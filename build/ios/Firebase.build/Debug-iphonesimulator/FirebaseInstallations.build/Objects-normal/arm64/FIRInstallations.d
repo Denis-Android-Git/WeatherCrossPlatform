@@ -1,0 +1,24 @@
+dependencies: \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseInstallations/Source/Library/FIRInstallations.m \
+  /Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseInstallations.build/DerivedSources/resource_bundle_accessor.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/Foundation.framework/Modules/module.modulemap \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseInstallations/Source/Library/Public/FirebaseInstallations/FIRInstallations.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/module.modulemap \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Extension/FirebaseCoreInternal.h \
+  /Users/mac/Desktop/WeatherCrossPlatform/build/ios/GeneratedModuleMaps-iphonesimulator/FirebaseCore.modulemap \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Extension/FIRAppInternal.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Extension/FIRComponent.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Extension/FIRComponentContainer.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Extension/FIRComponentType.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Extension/FIRHeartbeatLogger.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Extension/FIRLibrary.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Extension/FIRLogger.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseInstallations/Source/Library/FIRInstallationsAuthTokenResultInternal.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseInstallations/Source/Library/Public/FirebaseInstallations/FIRInstallationsAuthTokenResult.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseInstallations/Source/Library/Errors/FIRInstallationsErrorUtil.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseInstallations/Source/Library/Public/FirebaseInstallations/FIRInstallationsErrors.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseInstallations/Source/Library/FIRInstallationsItem.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseInstallations/Source/Library/InstallationsIDController/FIRInstallationsStatus.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseInstallations/Source/Library/FIRInstallationsLogger.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseInstallations/Source/Library/InstallationsIDController/FIRInstallationsIDController.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseInstallations/Source/Library/InstallationsStore/FIRInstallationsStoredAuthToken.h

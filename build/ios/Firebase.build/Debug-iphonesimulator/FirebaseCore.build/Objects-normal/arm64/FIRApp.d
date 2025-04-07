@@ -1,0 +1,24 @@
+dependencies: \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/include/Darwin.modulemap \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Sources/FIRApp.m \
+  /Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseCore.build/DerivedSources/resource_bundle_accessor.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/Foundation.framework/Modules/module.modulemap \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/include/ObjectiveC.modulemap \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/UIKit.framework/Modules/module.modulemap \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Sources/Public/FirebaseCore/FIRApp.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Sources/FIRAnalyticsConfiguration.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Sources/FIRBundleUtil.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Sources/FIRComponentContainerInternal.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Extension/FIRComponentContainer.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Extension/FIRLibrary.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Sources/FIRConfigurationInternal.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Sources/Public/FirebaseCore/FIRConfiguration.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Sources/Public/FirebaseCore/FIRLoggerLevel.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Sources/FIRFirebaseUserAgent.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Extension/FIRAppInternal.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Extension/FIRHeartbeatLogger.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Extension/FIRLogger.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Sources/FIROptionsInternal.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Sources/Public/FirebaseCore/FIROptions.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Sources/Public/FirebaseCore/FIRVersion.h \
+  /Users/mac/Desktop/WeatherCrossPlatform/build/ios/GeneratedModuleMaps-iphonesimulator/GoogleUtilities-Environment.modulemap

@@ -1,0 +1,23 @@
+moduledependenciestarget: \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/module.modulemap \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromises.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+All.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromiseError.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk/System/Library/Frameworks/Foundation.framework/Modules/module.modulemap \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Always.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Any.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Async.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Await.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Catch.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Delay.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Do.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Race.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Recover.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Reduce.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Retry.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Then.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Timeout.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Validate.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Wrap.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Testing.h

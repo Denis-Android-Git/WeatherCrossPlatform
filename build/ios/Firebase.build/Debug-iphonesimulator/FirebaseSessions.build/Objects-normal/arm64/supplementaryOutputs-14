@@ -1,0 +1,18 @@
+"/Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseSessions/Sources/Settings/RemoteSettings.swift":
+  object: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/RemoteSettings.o"
+  diagnostics: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/RemoteSettings.dia"
+  swift-dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/RemoteSettings.swiftdeps"
+  const-values: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/RemoteSettings.swiftconstvalues"
+  dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/RemoteSettings.d"
+"/Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseSessions/Sources/Settings/SDKDefaultSettings.swift":
+  swift-dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SDKDefaultSettings.swiftdeps"
+  object: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SDKDefaultSettings.o"
+  const-values: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SDKDefaultSettings.swiftconstvalues"
+  dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SDKDefaultSettings.d"
+  diagnostics: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SDKDefaultSettings.dia"
+"/Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseSessions/Sources/Settings/LocalOverrideSettings.swift":
+  object: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/LocalOverrideSettings.o"
+  const-values: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/LocalOverrideSettings.swiftconstvalues"
+  dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/LocalOverrideSettings.d"
+  swift-dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/LocalOverrideSettings.swiftdeps"
+  diagnostics: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/LocalOverrideSettings.dia"

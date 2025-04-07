@@ -1,0 +1,25 @@
+dependencies: \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/include/Darwin.modulemap \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/Crashlytics/Controllers/FIRCLSManagerData.m \
+  /Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseCrashlytics.build/DerivedSources/resource_bundle_accessor.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/Foundation.framework/Modules/module.modulemap \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/include/TargetConditionals.modulemap \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/Crashlytics/Controllers/FIRCLSManagerData.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/Crashlytics/Components/FIRCLSApplication.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/Crashlytics/Controllers/FIRCLSContextManager.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/Crashlytics/Models/FIRCLSFileManager.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/Crashlytics/Models/FIRCLSInternalReport.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/Crashlytics/Helpers/FIRCLSFeatures.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/Crashlytics/Helpers/FIRCLSDefines.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/Crashlytics/Models/FIRCLSSettings.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/FBLPromises/include/module.modulemap \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/Crashlytics/Models/FIRCLSExecutionIdentifierModel.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/Crashlytics/Models/FIRCLSInstallIdentifierModel.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/Crashlytics/Private/FIRCLSOnDemandModel_Private.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/Crashlytics/Models/FIRCLSOnDemandModel.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/Crashlytics/Private/FIRCLSExistingReportManager_Private.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/Crashlytics/Controllers/FIRCLSExistingReportManager.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/Crashlytics/Private/FIRExceptionModel_Private.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/Crashlytics/Public/FirebaseCrashlytics/FIRExceptionModel.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/Crashlytics/Public/FirebaseCrashlytics/FIRStackFrame.h \
+  /Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/Crashlytics/Settings/Models/FIRCLSApplicationIdentifierModel.h

@@ -1,0 +1,18 @@
+"/Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseSessions/Sources/Public/SessionsProvider.swift":
+  object: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionsProvider.o"
+  const-values: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionsProvider.swiftconstvalues"
+  dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionsProvider.d"
+  swift-dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionsProvider.swiftdeps"
+  diagnostics: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionsProvider.dia"
+"/Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseSessions/Sources/SessionCoordinator.swift":
+  diagnostics: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionCoordinator.dia"
+  swift-dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionCoordinator.swiftdeps"
+  const-values: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionCoordinator.swiftconstvalues"
+  dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionCoordinator.d"
+  object: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionCoordinator.o"
+"/Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseSessions/Sources/Public/SessionsSubscriber.swift":
+  object: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionsSubscriber.o"
+  const-values: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionsSubscriber.swiftconstvalues"
+  diagnostics: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionsSubscriber.dia"
+  dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionsSubscriber.d"
+  swift-dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionsSubscriber.swiftdeps"

@@ -1,0 +1,18 @@
+"/Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseSessions/Sources/Public/SessionsDependencies.swift":
+  diagnostics: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionsDependencies.dia"
+  const-values: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionsDependencies.swiftconstvalues"
+  object: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionsDependencies.o"
+  dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionsDependencies.d"
+  swift-dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SessionsDependencies.swiftdeps"
+"/Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseSessions/Sources/Logger.swift":
+  const-values: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/Logger.swiftconstvalues"
+  dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/Logger.d"
+  diagnostics: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/Logger.dia"
+  swift-dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/Logger.swiftdeps"
+  object: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/Logger.o"
+"/Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseSessions/Sources/NetworkInfo.swift":
+  const-values: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/NetworkInfo.swiftconstvalues"
+  dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/NetworkInfo.d"
+  swift-dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/NetworkInfo.swiftdeps"
+  object: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/NetworkInfo.o"
+  diagnostics: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/NetworkInfo.dia"

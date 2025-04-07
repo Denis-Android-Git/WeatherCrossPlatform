@@ -1,0 +1,18 @@
+"/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Promises.build/Debug-iphonesimulator/Promises.build/DerivedSources/resource_bundle_accessor.swift":
+  dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Promises.build/Debug-iphonesimulator/Promises.build/Objects-normal/arm64/resource_bundle_accessor.d"
+  swift-dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Promises.build/Debug-iphonesimulator/Promises.build/Objects-normal/arm64/resource_bundle_accessor.swiftdeps"
+  const-values: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Promises.build/Debug-iphonesimulator/Promises.build/Objects-normal/arm64/resource_bundle_accessor.swiftconstvalues"
+  object: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Promises.build/Debug-iphonesimulator/Promises.build/Objects-normal/arm64/resource_bundle_accessor.o"
+  diagnostics: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Promises.build/Debug-iphonesimulator/Promises.build/Objects-normal/arm64/resource_bundle_accessor.dia"
+"/Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/Promises/Promise+Always.swift":
+  dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Promises.build/Debug-iphonesimulator/Promises.build/Objects-normal/arm64/Promise+Always.d"
+  swift-dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Promises.build/Debug-iphonesimulator/Promises.build/Objects-normal/arm64/Promise+Always.swiftdeps"
+  diagnostics: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Promises.build/Debug-iphonesimulator/Promises.build/Objects-normal/arm64/Promise+Always.dia"
+  const-values: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Promises.build/Debug-iphonesimulator/Promises.build/Objects-normal/arm64/Promise+Always.swiftconstvalues"
+  object: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Promises.build/Debug-iphonesimulator/Promises.build/Objects-normal/arm64/Promise+Always.o"
+"/Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/promises/Sources/Promises/Promise+All.swift":
+  const-values: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Promises.build/Debug-iphonesimulator/Promises.build/Objects-normal/arm64/Promise+All.swiftconstvalues"
+  diagnostics: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Promises.build/Debug-iphonesimulator/Promises.build/Objects-normal/arm64/Promise+All.dia"
+  swift-dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Promises.build/Debug-iphonesimulator/Promises.build/Objects-normal/arm64/Promise+All.swiftdeps"
+  object: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Promises.build/Debug-iphonesimulator/Promises.build/Objects-normal/arm64/Promise+All.o"
+  dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Promises.build/Debug-iphonesimulator/Promises.build/Objects-normal/arm64/Promise+All.d"

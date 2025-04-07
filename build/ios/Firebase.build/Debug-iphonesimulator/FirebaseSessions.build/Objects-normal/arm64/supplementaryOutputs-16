@@ -1,0 +1,18 @@
+"/Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseSessions/Sources/Settings/SettingsProtocol.swift":
+  dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SettingsProtocol.d"
+  swift-dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SettingsProtocol.swiftdeps"
+  const-values: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SettingsProtocol.swiftconstvalues"
+  diagnostics: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SettingsProtocol.dia"
+  object: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SettingsProtocol.o"
+"/Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseSessions/Sources/Settings/SettingsProvider.swift":
+  const-values: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SettingsProvider.swiftconstvalues"
+  object: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SettingsProvider.o"
+  swift-dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SettingsProvider.swiftdeps"
+  diagnostics: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SettingsProvider.dia"
+  dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/SettingsProvider.d"
+"/Users/mac/Library/Developer/Xcode/DerivedData/iosApp-fmcbiguycbtojgcghgegdzeljrab/SourcePackages/checkouts/firebase-ios-sdk/FirebaseSessions/Sources/Time.swift":
+  const-values: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/Time.swiftconstvalues"
+  diagnostics: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/Time.dia"
+  dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/Time.d"
+  object: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/Time.o"
+  swift-dependencies: "/Users/mac/Desktop/WeatherCrossPlatform/build/ios/Firebase.build/Debug-iphonesimulator/FirebaseSessions.build/Objects-normal/arm64/Time.swiftdeps"

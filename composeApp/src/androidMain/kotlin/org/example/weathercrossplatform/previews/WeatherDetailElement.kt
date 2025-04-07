@@ -8,8 +8,10 @@ import org.example.weathercrossplatform.presentation.WeatherDetailElement
 @Composable
 private fun Preview() {
     WeatherDetailElement(
-        title = "Humidity",
+        title = "Wind",
         description = "32 %",
-        progress = 0.3f
+        humidityProgress = 0.3f,
+        windProgress = 0.8f,
+        rotation = 320f
     )
 }
