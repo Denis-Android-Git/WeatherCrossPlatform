@@ -22,10 +22,13 @@ import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.arrow_downward
 
 @Composable
-fun PressureIndicator(progress: Float, maxValue: Float = 2f) {
+fun PressureIndicator(
+    modifier: Modifier = Modifier,
+    progress: Float, maxValue: Float = 2f) {
     Box(
-        modifier = Modifier
-            .size(50.dp),
+        modifier = modifier
+            .padding(16.dp)
+            .size(45.dp),
         contentAlignment = Alignment.Center
     ) {
         Canvas(modifier = Modifier.fillMaxSize()) {

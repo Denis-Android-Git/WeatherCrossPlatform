@@ -20,6 +20,7 @@ fun WeatherDetailElement(
     description: String,
     humidityProgress: Float,
     windProgress: Float,
+    pressureProgress: Float,
     rotation: Float
 ) {
     Column(
@@ -52,6 +53,12 @@ fun WeatherDetailElement(
                     modifier = Modifier.align(Alignment.End),
                     progress = windProgress,
                     rotation = rotation
+                )
+            }
+            "Pressure" -> {
+                PressureIndicator(
+                    modifier = Modifier.align(Alignment.End),
+                    progress = pressureProgress,
                 )
             }
         }
