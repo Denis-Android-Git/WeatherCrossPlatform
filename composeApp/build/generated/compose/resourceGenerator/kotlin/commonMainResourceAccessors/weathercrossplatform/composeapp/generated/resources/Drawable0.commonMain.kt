@@ -9,6 +9,9 @@ import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.InternalResourceApi
 
 private object CommonMainDrawable0 {
+  public val arrow_downward: DrawableResource by 
+      lazy { init_arrow_downward() }
+
   public val compose_multiplatform: DrawableResource by 
       lazy { init_compose_multiplatform() }
 
@@ -21,10 +24,23 @@ private object CommonMainDrawable0 {
 
 @InternalResourceApi
 internal fun _collectCommonMainDrawable0Resources(map: MutableMap<String, DrawableResource>) {
+  map.put("arrow_downward", CommonMainDrawable0.arrow_downward)
   map.put("compose_multiplatform", CommonMainDrawable0.compose_multiplatform)
   map.put("water_drop", CommonMainDrawable0.water_drop)
   map.put("wind_arrow", CommonMainDrawable0.wind_arrow)
 }
+
+internal val Res.drawable.arrow_downward: DrawableResource
+  get() = CommonMainDrawable0.arrow_downward
+
+private fun init_arrow_downward(): DrawableResource =
+    org.jetbrains.compose.resources.DrawableResource(
+  "drawable:arrow_downward",
+    setOf(
+      org.jetbrains.compose.resources.ResourceItem(setOf(),
+    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/arrow_downward.png", -1, -1),
+    )
+)
 
 internal val Res.drawable.compose_multiplatform: DrawableResource
   get() = CommonMainDrawable0.compose_multiplatform
