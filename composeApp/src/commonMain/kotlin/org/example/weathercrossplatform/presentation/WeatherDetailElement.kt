@@ -12,16 +12,21 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import org.example.weathercrossplatform.presentation.icons.CloudsIcon
+import org.example.weathercrossplatform.presentation.icons.HumidityIcon
+import org.example.weathercrossplatform.presentation.icons.PressureIndicator
+import org.example.weathercrossplatform.presentation.icons.WindIcon
 
 
 @Composable
 fun WeatherDetailElement(
     title: String,
     description: String,
-    humidityProgress: Float,
+    humidity: Float,
     windProgress: Float,
     pressureProgress: Float,
-    rotation: Float
+    cloudsProgress: Float,
+    windRotation: Float
 ) {
     Column(
         modifier = Modifier
@@ -44,7 +49,7 @@ fun WeatherDetailElement(
             "Humidity" -> {
                 HumidityIcon(
                     modifier = Modifier.align(Alignment.End),
-                    progress = humidityProgress
+                    progress = humidity
                 )
             }
 
@@ -52,13 +57,21 @@ fun WeatherDetailElement(
                 WindIcon(
                     modifier = Modifier.align(Alignment.End),
                     progress = windProgress,
-                    rotation = rotation
+                    rotation = windRotation
                 )
             }
+
             "Pressure" -> {
                 PressureIndicator(
                     modifier = Modifier.align(Alignment.End),
                     progress = pressureProgress,
+                )
+            }
+
+            "Clouds" -> {
+                CloudsIcon(
+                    modifier = Modifier.align(Alignment.End),
+                    progress = cloudsProgress,
                 )
             }
         }

@@ -6,5 +6,6 @@ data class WeatherMainScreenState(
     val isLoading: Boolean = false,
     val weatherDto: ForecastDto? = null,
     val error: String = "",
-    val image: String = ""
+    val image: String = "",
+    val weatherItemList: List<WeatherItem> = emptyList()
 )

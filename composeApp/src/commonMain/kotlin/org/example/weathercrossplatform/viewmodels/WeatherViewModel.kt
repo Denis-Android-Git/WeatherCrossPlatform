@@ -12,6 +12,7 @@ import org.example.weathercrossplatform.data.repo_impl.WeatherRepoImpl
 import org.example.weathercrossplatform.data.utils.onError
 import org.example.weathercrossplatform.data.utils.onSuccess
 import org.example.weathercrossplatform.domain.models.Coordinates
+import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 
 class WeatherViewModel(
@@ -49,6 +50,16 @@ class WeatherViewModel(
                         weatherRepoImpl.getCurrentWeather(query)
                             .onSuccess { weather ->
 
+                                println("windRotation = ${weather.current.windDegree}, ${weather.current.windDir}")
+
+                                val weatherItemList = createWeatherItemList(
+                                    humidity = weather.current.humidity,
+                                    windSpeed = weather.current.windKph,
+                                    windRotation = weather.current.windDegree,
+                                    pressure = weather.current.pressureMb,
+                                    clouds = weather.current.cloud
+                                )
+
                                 val imageQuery = when (weather.current.condition.text) {
                                     "Солнечно" -> "sunny"
                                     "Ясно" -> "clear sky"
@@ -64,14 +75,16 @@ class WeatherViewModel(
                                         _weatherScreenState.value = _weatherScreenState.value.copy(
                                             image = image,
                                             isLoading = false,
-                                            weatherDto = weather
+                                            weatherDto = weather,
+                                            weatherItemList = weatherItemList
                                         )
                                     }
                                     .onError { error ->
                                         _weatherScreenState.value = _weatherScreenState.value.copy(
                                             error = error.name,
                                             isLoading = false,
-                                            weatherDto = weather
+                                            weatherDto = weather,
+                                            weatherItemList = weatherItemList
                                         )
                                     }
                             }
@@ -90,5 +103,40 @@ class WeatherViewModel(
                 )
             }
         }
+    }
+
+    private fun createWeatherItemList(
+        humidity: Int,
+        windSpeed: Double,
+        windRotation: Int,
+        pressure: Double,
+        clouds: Int
+    ): List<WeatherItem> {
+        return listOf(
+            WeatherItem(
+                title = "Humidity",
+                description = "$humidity %",
+                progress = humidity * 0.01.toFloat(),
+                rotation = 0f
+            ),
+            WeatherItem(
+                title = "Wind",
+                description = "$windSpeed km/h",
+                progress = (windSpeed * 0.01).toFloat(),
+                rotation = windRotation.toFloat()
+            ),
+            WeatherItem(
+                title = "Pressure",
+                description = "$pressure mmHg",
+                progress = (pressure * 0.001).toFloat(),
+                rotation = 0f
+            ),
+            WeatherItem(
+                title = "Clouds",
+                description = "$clouds %",
+                progress = clouds * 0.01.toFloat(),
+                rotation = 0f
+            )
+        )
     }
 }

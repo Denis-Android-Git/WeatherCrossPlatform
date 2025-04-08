@@ -12,6 +12,9 @@ private object CommonMainDrawable0 {
   public val arrow_downward: DrawableResource by 
       lazy { init_arrow_downward() }
 
+  public val clouds: DrawableResource by 
+      lazy { init_clouds() }
+
   public val compose_multiplatform: DrawableResource by 
       lazy { init_compose_multiplatform() }
 
@@ -25,6 +28,7 @@ private object CommonMainDrawable0 {
 @InternalResourceApi
 internal fun _collectCommonMainDrawable0Resources(map: MutableMap<String, DrawableResource>) {
   map.put("arrow_downward", CommonMainDrawable0.arrow_downward)
+  map.put("clouds", CommonMainDrawable0.clouds)
   map.put("compose_multiplatform", CommonMainDrawable0.compose_multiplatform)
   map.put("water_drop", CommonMainDrawable0.water_drop)
   map.put("wind_arrow", CommonMainDrawable0.wind_arrow)
@@ -39,6 +43,17 @@ private fun init_arrow_downward(): DrawableResource =
     setOf(
       org.jetbrains.compose.resources.ResourceItem(setOf(),
     "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/arrow_downward.png", -1, -1),
+    )
+)
+
+internal val Res.drawable.clouds: DrawableResource
+  get() = CommonMainDrawable0.clouds
+
+private fun init_clouds(): DrawableResource = org.jetbrains.compose.resources.DrawableResource(
+  "drawable:clouds",
+    setOf(
+      org.jetbrains.compose.resources.ResourceItem(setOf(),
+    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/clouds.png", -1, -1),
     )
 )
 

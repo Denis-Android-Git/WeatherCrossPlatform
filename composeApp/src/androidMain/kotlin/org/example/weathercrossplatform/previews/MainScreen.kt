@@ -16,6 +16,7 @@ private fun Preview() {
         condition = "Good",
         feelsLikeC = "25",
         error = "",
-        forecastList = null
+        forecastList = null,
+        weatherItemList = emptyList()
     )
 }

@@ -6,10 +6,15 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -34,6 +39,7 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import org.example.weathercrossplatform.data.utils.GetScreenHeight
 import org.example.weathercrossplatform.domain.models.Forecastday
+import org.example.weathercrossplatform.domain.models.WeatherItem
 
 @Composable
 fun MainScreen(
@@ -45,7 +51,8 @@ fun MainScreen(
     condition: String?,
     feelsLikeC: String?,
     error: String,
-    forecastList: List<Forecastday>?
+    forecastList: List<Forecastday>?,
+    weatherItemList: List<WeatherItem>
 ) {
     val scrollState = rememberScrollState()
 
@@ -195,6 +202,7 @@ fun MainScreen(
 
                 Column(
                     modifier = Modifier.fillMaxWidth()
+                        .fillMaxHeight()
                         .verticalScroll(scrollState)
                         .padding(top = height, bottom = 20.dp),
                     verticalArrangement = Arrangement.spacedBy(6.dp)
@@ -206,6 +214,27 @@ fun MainScreen(
                         HourForecastElement(
                             hours = forecastListDayList[0].hour
                         )
+                        LazyVerticalGrid(
+                            columns = GridCells.Fixed(2),
+                            modifier = Modifier.height(370.dp)
+                                .fillMaxWidth()
+                                .padding(horizontal = 6.dp),
+                            horizontalArrangement = Arrangement.spacedBy(6.dp),
+                            verticalArrangement = Arrangement.spacedBy(6.dp),
+                            userScrollEnabled = false
+                        ) {
+                            items(weatherItemList) { item ->
+                                WeatherDetailElement(
+                                    title = item.title,
+                                    description = item.description,
+                                    humidity = weatherItemList[0].progress,
+                                    windProgress = weatherItemList[1].progress,
+                                    pressureProgress = weatherItemList[2].progress,
+                                    cloudsProgress = weatherItemList[3].progress,
+                                    windRotation = weatherItemList[1].rotation
+                                )
+                            }
+                        }
                     }
                 }
             }
