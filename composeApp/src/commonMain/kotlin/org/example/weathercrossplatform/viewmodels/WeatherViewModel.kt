@@ -26,22 +26,14 @@ class WeatherViewModel(
     val weatherScreenState = _weatherScreenState.asStateFlow()
 
     init {
-        viewModelScope.launch {
-            locationService.getLocation().collectLatest { position ->
-                coordinates.update {
-                    position
-                }
-            }
-        }
+        refreshPosition()
     }
 
     init {
         viewModelScope.launch {
             try {
-                _weatherScreenState.value = _weatherScreenState.value.copy(
-                    isLoading = true
-                )
                 coordinates.collectLatest { coordinates ->
+
                     coordinates?.let {
                         val query = "${it.latitude},${it.longitude}"
 
@@ -101,6 +93,19 @@ class WeatherViewModel(
                     isLoading = false,
                     error = e.message.toString()
                 )
+            }
+        }
+    }
+
+    fun refreshPosition() {
+        viewModelScope.launch {
+            _weatherScreenState.value = _weatherScreenState.value.copy(
+                isLoading = true
+            )
+            locationService.getLocation().collectLatest { position ->
+                coordinates.update {
+                    position
+                }
             }
         }
     }

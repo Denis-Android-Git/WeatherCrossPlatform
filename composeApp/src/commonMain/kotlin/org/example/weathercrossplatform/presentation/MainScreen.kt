@@ -21,7 +21,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Place
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -72,12 +71,6 @@ fun MainScreen(
             )
     ) {
         AnimatedVisibility(
-            visible = isLoading,
-            modifier = Modifier.align(Alignment.Center)
-        ) {
-            CircularProgressIndicator()
-        }
-        AnimatedVisibility(
             visible = !isLoading && locationName != null
         ) {
 
@@ -102,7 +95,7 @@ fun MainScreen(
                     contentDescription = null
                 )
                 val scrollState = rememberScrollState()
-                val maxScrollToFade = 1250f
+                val maxScrollToFade = 1000f
                 val animatedAlpha by animateFloatAsState(
                     targetValue = (1f - (scrollState.value / maxScrollToFade)).coerceIn(0f, 1f)
                 )
