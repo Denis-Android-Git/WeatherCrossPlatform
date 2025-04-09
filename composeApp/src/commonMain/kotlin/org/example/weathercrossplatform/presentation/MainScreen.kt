@@ -1,6 +1,7 @@
 package org.example.weathercrossplatform.presentation
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -31,6 +32,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.text.style.TextAlign
@@ -54,7 +56,6 @@ fun MainScreen(
     forecastList: List<Forecastday>?,
     weatherItemList: List<WeatherItem>
 ) {
-    val scrollState = rememberScrollState()
 
     val textColor by remember { mutableStateOf(Color.White) }
 
@@ -100,10 +101,18 @@ fun MainScreen(
                     contentScale = ContentScale.FillHeight,
                     contentDescription = null
                 )
+                val scrollState = rememberScrollState()
+                val maxScrollToFade = 1250f
+                val animatedAlpha by animateFloatAsState(
+                    targetValue = (1f - (scrollState.value / maxScrollToFade)).coerceIn(0f, 1f)
+                )
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = 160.dp)
+                        .graphicsLayer {
+                            alpha = animatedAlpha
+                        }
                 ) {
                     Icon(
                         imageVector = Icons.Outlined.Place,
