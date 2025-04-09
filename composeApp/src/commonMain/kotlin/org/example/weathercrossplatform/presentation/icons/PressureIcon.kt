@@ -24,7 +24,7 @@ import weathercrossplatform.composeapp.generated.resources.arrow_downward
 @Composable
 fun PressureIndicator(
     modifier: Modifier = Modifier,
-    progress: Float, maxValue: Float = 2f) {
+    progress: Float, maxValue: Float = 1.5f) {
     Box(
         modifier = modifier
             .padding(16.dp)
