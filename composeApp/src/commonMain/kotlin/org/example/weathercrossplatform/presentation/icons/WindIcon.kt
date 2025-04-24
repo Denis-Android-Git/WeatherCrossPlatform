@@ -25,6 +25,9 @@ fun WindIcon(
     progress: Float,
     rotation: Float
 ) {
+
+    val progressValue = (progress / 0.5f).coerceAtMost(1f)
+
     Box(
         modifier = modifier
             .padding(16.dp),
@@ -32,7 +35,7 @@ fun WindIcon(
     ) {
         CircularProgressIndicator(
             modifier = Modifier.size(60.dp),
-            progress = { progress },
+            progress = { progressValue },
             color = Color.Red
         )
         Icon(

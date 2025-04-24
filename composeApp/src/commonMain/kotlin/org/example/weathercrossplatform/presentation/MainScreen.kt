@@ -151,7 +151,7 @@ fun MainScreen(
                     }
                     Column(
                         modifier = Modifier
-                            .padding(start = 36.dp, top = 16.dp)
+                            .padding(start = 36.dp, top = 16.dp, end = 36.dp)
                             .background(
                                 color = Color.Black.copy(alpha = 0.2f),
                                 shape = RoundedCornerShape(16.dp)

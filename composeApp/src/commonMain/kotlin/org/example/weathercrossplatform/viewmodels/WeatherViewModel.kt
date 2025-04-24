@@ -2,6 +2,8 @@ package org.example.weathercrossplatform.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
@@ -14,6 +16,7 @@ import org.example.weathercrossplatform.data.utils.onSuccess
 import org.example.weathercrossplatform.domain.models.Coordinates
 import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
+import kotlin.math.roundToInt
 
 class WeatherViewModel(
     private val locationService: LocationService,
@@ -43,12 +46,13 @@ class WeatherViewModel(
                             .onSuccess { weather ->
 
                                 println("windRotation = ${weather.current.windDegree}, ${weather.current.windDir}")
+                                println("pressure = ${weather.current.pressureMb}, ${weather.current.pressureIn}")
 
                                 val weatherItemList = createWeatherItemList(
                                     humidity = weather.current.humidity,
                                     windSpeed = weather.current.windKph,
                                     windRotation = weather.current.windDegree,
-                                    pressure = weather.current.pressureMb,
+                                    pressure = (weather.current.pressureMb * 0.75).roundToInt(),//перевод в мм ртутного столба
                                     clouds = weather.current.cloud
                                 )
 
@@ -56,6 +60,7 @@ class WeatherViewModel(
                                     "Солнечно" -> "sunny"
                                     "Ясно" -> "clear sky"
                                     "Переменная облачность" -> "cloudy"
+                                    "Местами грозы" -> "thunderstorm"
                                     else -> weather.current.condition.text
                                 }
 
@@ -98,7 +103,7 @@ class WeatherViewModel(
     }
 
     fun refreshPosition() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             _weatherScreenState.value = _weatherScreenState.value.copy(
                 isLoading = true
             )
@@ -114,7 +119,7 @@ class WeatherViewModel(
         humidity: Int,
         windSpeed: Double,
         windRotation: Int,
-        pressure: Double,
+        pressure: Int,
         clouds: Int
     ): List<WeatherItem> {
         return listOf(
