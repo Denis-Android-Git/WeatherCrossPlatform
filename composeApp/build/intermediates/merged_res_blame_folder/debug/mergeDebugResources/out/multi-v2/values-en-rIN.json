@@ -4,7 +4,7 @@
             "outputFile": "org.example.weathercrossplatform.composeApp-mergeDebugResources-67:/values-en-rIN/values-en-rIN.xml",
             "map": [
                 {
-                    "source": "/Users/mac/.gradle/caches/8.13/transforms/646d008dd74bdfa2bdd4071325c3835d/transformed/material3-release/res/values-en-rIN/values-en-rIN.xml",
+                    "source": "/Users/mac/.gradle/caches/8.14/transforms/eb10fa3079c0e6f066665fb3d82b41fa/transformed/material3-release/res/values-en-rIN/values-en-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,41 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/mac/.gradle/caches/8.13/transforms/4a357cdf99b4164b7b96e6ba97c383c2/transformed/ui-release/res/values-en-rIN/values-en-rIN.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,197,279,373,472,559,641,730,819,903,981,1063,1136,1212,1284,1354,1431,1497",
-                        "endColumns": "91,81,93,98,86,81,88,88,83,77,81,72,75,71,69,76,65,120",
-                        "endOffsets": "192,274,368,467,554,636,725,814,898,976,1058,1131,1207,1279,1349,1426,1492,1613"
-                    },
-                    "to": {
-                        "startLines": "36,37,38,39,40,41,42,100,101,102,103,105,106,107,108,110,111,112",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3481,3573,3655,3749,3848,3935,4017,10220,10309,10393,10471,10636,10709,10785,10857,11028,11105,11171",
-                        "endColumns": "91,81,93,98,86,81,88,88,83,77,81,72,75,71,69,76,65,120",
-                        "endOffsets": "3568,3650,3744,3843,3930,4012,4101,10304,10388,10466,10548,10704,10780,10852,10922,11100,11166,11287"
-                    }
-                },
-                {
-                    "source": "/Users/mac/.gradle/caches/8.13/transforms/7f2ffc7fcda3da839b1144f7961e6171/transformed/foundation-release/res/values-en-rIN/values-en-rIN.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,141",
-                        "endColumns": "85,84",
-                        "endOffsets": "136,221"
-                    },
-                    "to": {
-                        "startLines": "113,114",
-                        "startColumns": "4,4",
-                        "startOffsets": "11292,11378",
-                        "endColumns": "85,84",
-                        "endOffsets": "11373,11458"
-                    }
-                },
-                {
-                    "source": "/Users/mac/.gradle/caches/8.13/transforms/17a9dfa1de6502e30f909745a097db2a/transformed/core-1.15.0/res/values-en-rIN/values-en-rIN.xml",
+                    "source": "/Users/mac/.gradle/caches/8.14/transforms/5655443178e85a4885ad2032c134a90a/transformed/core-1.15.0/res/values-en-rIN/values-en-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -72,7 +38,41 @@
                     }
                 },
                 {
-                    "source": "/Users/mac/.gradle/caches/8.13/transforms/a8ff065e0bd1d1bebf7a63469bb6606b/transformed/appcompat-1.7.0/res/values-en-rIN/values-en-rIN.xml",
+                    "source": "/Users/mac/.gradle/caches/8.14/transforms/99903ea2451fa5a16c4caddbbfdab639/transformed/foundation-release/res/values-en-rIN/values-en-rIN.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,141",
+                        "endColumns": "85,84",
+                        "endOffsets": "136,221"
+                    },
+                    "to": {
+                        "startLines": "113,114",
+                        "startColumns": "4,4",
+                        "startOffsets": "11292,11378",
+                        "endColumns": "85,84",
+                        "endOffsets": "11373,11458"
+                    }
+                },
+                {
+                    "source": "/Users/mac/.gradle/caches/8.14/transforms/954fa9c7cbdb2b0a262de7f6ad4f125d/transformed/ui-release/res/values-en-rIN/values-en-rIN.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,197,279,373,472,559,641,730,819,903,981,1063,1136,1212,1284,1354,1431,1497",
+                        "endColumns": "91,81,93,98,86,81,88,88,83,77,81,72,75,71,69,76,65,120",
+                        "endOffsets": "192,274,368,467,554,636,725,814,898,976,1058,1131,1207,1279,1349,1426,1492,1613"
+                    },
+                    "to": {
+                        "startLines": "36,37,38,39,40,41,42,100,101,102,103,105,106,107,108,110,111,112",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3481,3573,3655,3749,3848,3935,4017,10220,10309,10393,10471,10636,10709,10785,10857,11028,11105,11171",
+                        "endColumns": "91,81,93,98,86,81,88,88,83,77,81,72,75,71,69,76,65,120",
+                        "endOffsets": "3568,3650,3744,3843,3930,4012,4101,10304,10388,10466,10548,10704,10780,10852,10922,11100,11166,11287"
+                    }
+                },
+                {
+                    "source": "/Users/mac/.gradle/caches/8.14/transforms/b9d3f42cf6750ed7209f075758503480/transformed/appcompat-1.7.0/res/values-en-rIN/values-en-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

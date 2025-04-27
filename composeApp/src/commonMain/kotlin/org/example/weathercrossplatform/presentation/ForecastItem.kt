@@ -1,8 +1,10 @@
 package org.example.weathercrossplatform.presentation
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.HorizontalDivider
@@ -26,15 +28,22 @@ fun ForecastItem(
     Column(
         modifier = Modifier.fillMaxWidth()
     ) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
+        Box(
+            modifier = Modifier.fillMaxWidth()
         ) {
             Text(text = date, color = Color.White)
-            AsyncImage(model = icon, contentDescription = null)
-            Text(text = "$low ℃", color = Color.White)
-            Text(text = "$high ℃", color = Color.White)
+            AsyncImage(
+                model = icon, contentDescription = null,
+                modifier = Modifier.padding(start = 130.dp)
+            )
+            Text(
+                text = "$low ℃", color = Color.White,
+                modifier = Modifier.padding(start = 200.dp)
+            )
+            Text(
+                text = "$high ℃", color = Color.White,
+                modifier = Modifier.align(Alignment.CenterEnd)
+            )
 
         }
         HorizontalDivider(

@@ -10,7 +10,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
@@ -51,9 +51,13 @@ fun ForecastElement(
             modifier = Modifier.padding(horizontal = 16.dp),
             contentPadding = PaddingValues(2.dp)
         ) {
-            items(forecastList) {
+            itemsIndexed(forecastList) { index, it ->
                 ForecastItem(
-                    date = it.date,
+                    date = when (index) {
+                        0 -> "Сегодня"
+                        1 -> "Завтра"
+                        else -> it.date
+                    },
                     low = it.day.minTempC.toString(),
                     high = it.day.maxTempC.toString(),
                     image = it.day.condition.icon

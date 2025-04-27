@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -204,7 +203,6 @@ fun MainScreen(
 
                 Column(
                     modifier = Modifier.fillMaxWidth()
-                        .fillMaxHeight()
                         .verticalScroll(scrollState)
                         .padding(top = height, bottom = 20.dp),
                     verticalArrangement = Arrangement.spacedBy(6.dp)
@@ -218,7 +216,7 @@ fun MainScreen(
                         )
                         LazyVerticalGrid(
                             columns = GridCells.Fixed(2),
-                            modifier = Modifier.height(370.dp)
+                            modifier = Modifier.height(600.dp)
                                 .fillMaxWidth()
                                 .padding(horizontal = 6.dp),
                             horizontalArrangement = Arrangement.spacedBy(6.dp),
@@ -233,7 +231,8 @@ fun MainScreen(
                                     windProgress = weatherItemList[1].progress,
                                     pressureProgress = weatherItemList[2].progress,
                                     cloudsProgress = weatherItemList[3].progress,
-                                    windRotation = weatherItemList[1].rotation
+                                    windRotation = weatherItemList[1].rotation,
+                                    uvIndex = weatherItemList[4].uvIndex.toString()
                                 )
                             }
                         }

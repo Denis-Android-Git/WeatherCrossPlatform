@@ -7,11 +7,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
-import org.example.weathercrossplatform.presentation.icons.WindIcon
+import org.example.weathercrossplatform.presentation.icons.UvIcon
 
 
 @Composable
-fun Test () {
+fun Test() {
     val state = remember {
         MutableTransitionState(false).apply {
             targetState = true
@@ -39,10 +39,8 @@ fun Test () {
 @Preview
 @Composable
 private fun Preview() {
-Test()
 
-//    WindIcon(
-//        progress = 0.5f,
-//        rotation = 100f,
-//    )
+    UvIcon(
+        uvIndex = "1"
+    )
 }

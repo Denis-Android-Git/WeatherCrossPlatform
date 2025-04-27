@@ -47,13 +47,15 @@ class WeatherViewModel(
 
                                 println("windRotation = ${weather.current.windDegree}, ${weather.current.windDir}")
                                 println("pressure = ${weather.current.pressureMb}, ${weather.current.pressureIn}")
+                                println("uv = ${weather.current.uv}")
 
                                 val weatherItemList = createWeatherItemList(
                                     humidity = weather.current.humidity,
                                     windSpeed = weather.current.windKph,
                                     windRotation = weather.current.windDegree,
                                     pressure = (weather.current.pressureMb * 0.75).roundToInt(),//перевод в мм ртутного столба
-                                    clouds = weather.current.cloud
+                                    clouds = weather.current.cloud,
+                                    uvIndex = weather.current.uv.toInt()
                                 )
 
                                 val imageQuery = when (weather.current.condition.text) {
@@ -120,7 +122,8 @@ class WeatherViewModel(
         windSpeed: Double,
         windRotation: Int,
         pressure: Int,
-        clouds: Int
+        clouds: Int,
+        uvIndex: Int
     ): List<WeatherItem> {
         return listOf(
             WeatherItem(
@@ -146,6 +149,18 @@ class WeatherViewModel(
                 description = "$clouds %",
                 progress = clouds * 0.01.toFloat(),
                 rotation = 0f
+            ),
+            WeatherItem(
+                title = "Uv",
+                description = when(uvIndex) {
+                    in 0..2 -> "Low"
+                    in 3..5 -> "Moderate"
+                    in 6..8 -> "High"
+                    in 8..11 -> "Extreme"
+                    else -> ""
+                },
+                rotation = 0f,
+                uvIndex = uvIndex
             )
         )
     }

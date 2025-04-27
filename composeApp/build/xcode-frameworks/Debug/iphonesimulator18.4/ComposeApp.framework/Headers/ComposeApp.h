@@ -1174,8 +1174,8 @@ __attribute__((swift_name("Urls.Companion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("WeatherItem")))
 @interface ComposeAppWeatherItem : ComposeAppBase
-- (instancetype)initWithTitle:(NSString *)title description:(NSString *)description progress:(float)progress rotation:(float)rotation __attribute__((swift_name("init(title:description:progress:rotation:)"))) __attribute__((objc_designated_initializer));
-- (ComposeAppWeatherItem *)doCopyTitle:(NSString *)title description:(NSString *)description progress:(float)progress rotation:(float)rotation __attribute__((swift_name("doCopy(title:description:progress:rotation:)")));
+- (instancetype)initWithTitle:(NSString *)title description:(NSString *)description progress:(float)progress rotation:(float)rotation uvIndex:(int32_t)uvIndex __attribute__((swift_name("init(title:description:progress:rotation:uvIndex:)"))) __attribute__((objc_designated_initializer));
+- (ComposeAppWeatherItem *)doCopyTitle:(NSString *)title description:(NSString *)description progress:(float)progress rotation:(float)rotation uvIndex:(int32_t)uvIndex __attribute__((swift_name("doCopy(title:description:progress:rotation:uvIndex:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
@@ -1183,6 +1183,7 @@ __attribute__((swift_name("WeatherItem")))
 @property (readonly) float progress __attribute__((swift_name("progress")));
 @property (readonly) float rotation __attribute__((swift_name("rotation")));
 @property (readonly) NSString *title __attribute__((swift_name("title")));
+@property (readonly) int32_t uvIndex __attribute__((swift_name("uvIndex")));
 @end
 
 __attribute__((objc_subclassing_restricted))

@@ -14,6 +14,7 @@ private fun Preview() {
         windProgress = 0.8f,
         windRotation = 320f,
         pressureProgress = 1.2f,
-        cloudsProgress = 0.5f
+        cloudsProgress = 0.5f,
+        uvIndex = "2"
     )
 }

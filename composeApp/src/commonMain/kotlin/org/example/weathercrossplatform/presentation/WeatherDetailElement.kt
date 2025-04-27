@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.sp
 import org.example.weathercrossplatform.presentation.icons.CloudsIcon
 import org.example.weathercrossplatform.presentation.icons.HumidityIcon
 import org.example.weathercrossplatform.presentation.icons.PressureIndicator
+import org.example.weathercrossplatform.presentation.icons.UvIcon
 import org.example.weathercrossplatform.presentation.icons.WindIcon
 
 
@@ -26,7 +27,8 @@ fun WeatherDetailElement(
     windProgress: Float,
     pressureProgress: Float,
     cloudsProgress: Float,
-    windRotation: Float
+    windRotation: Float,
+    uvIndex: String
 ) {
     Column(
         modifier = Modifier
@@ -72,6 +74,12 @@ fun WeatherDetailElement(
                 CloudsIcon(
                     modifier = Modifier.align(Alignment.End),
                     progress = cloudsProgress,
+                )
+            }
+            "Uv" -> {
+                UvIcon(
+                    modifier = Modifier.align(Alignment.End),
+                    uvIndex = uvIndex
                 )
             }
         }
