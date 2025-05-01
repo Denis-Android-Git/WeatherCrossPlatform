@@ -7,7 +7,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
-import org.example.weathercrossplatform.presentation.icons.UvIcon
+import org.example.weathercrossplatform.presentation.icons.FeelsLikeIcon
 
 
 @Composable
@@ -40,7 +40,7 @@ fun Test() {
 @Composable
 private fun Preview() {
 
-    UvIcon(
-        uvIndex = "1"
+    FeelsLikeIcon(
+        rotationAngle = 50f
     )
 }

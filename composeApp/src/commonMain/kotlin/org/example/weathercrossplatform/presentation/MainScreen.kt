@@ -232,7 +232,8 @@ fun MainScreen(
                                     pressureProgress = weatherItemList[2].progress,
                                     cloudsProgress = weatherItemList[3].progress,
                                     windRotation = weatherItemList[1].rotation,
-                                    uvIndex = weatherItemList[4].uvIndex.toString()
+                                    uvIndex = weatherItemList[4].uvIndex.toString(),
+                                    feelsLikeRotation = weatherItemList[5].rotation
                                 )
                             }
                         }

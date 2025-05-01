@@ -15,6 +15,7 @@ private fun Preview() {
         windRotation = 320f,
         pressureProgress = 1.2f,
         cloudsProgress = 0.5f,
-        uvIndex = "2"
+        uvIndex = "2",
+        feelsLikeRotation = 5f
     )
 }

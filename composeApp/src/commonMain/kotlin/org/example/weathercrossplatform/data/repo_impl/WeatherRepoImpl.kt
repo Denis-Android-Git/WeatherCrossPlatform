@@ -12,9 +12,6 @@ import io.ktor.client.request.get
 import io.ktor.client.request.parameter
 import io.ktor.serialization.kotlinx.json.json
 import io.ktor.util.network.UnresolvedAddressException
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.IO
-import kotlinx.coroutines.withContext
 import kotlinx.serialization.SerializationException
 import kotlinx.serialization.json.Json
 import org.example.weathercrossplatform.data.locale.SystemLocale
@@ -33,69 +30,65 @@ class WeatherRepoImpl(
 ) : WeatherRepo {
 
     override suspend fun getCurrentWeather(query: String): Result<ForecastDto, NetworkError> {
-        return withContext(Dispatchers.IO) {
-            val language = systemLocale.getSystemLanguage()
+        val language = systemLocale.getSystemLanguage()
 
-            val response = try {
-                httpClient.get(
-                    urlString = "$BASE_URL_WEATHER/forecast.json"
-                ) {
-                    parameter("key", BuildKonfig.API_KEY)
-                    parameter("q", query)
-                    parameter("aqi", "yes")
-                    parameter("lang", language)
-                    parameter("days", 3)
+        val response = try {
+            httpClient.get(
+                urlString = "$BASE_URL_WEATHER/forecast.json"
+            ) {
+                parameter("key", BuildKonfig.API_KEY)
+                parameter("q", query)
+                parameter("aqi", "yes")
+                parameter("lang", language)
+                parameter("days", 3)
 
-                }
-            } catch (e: UnresolvedAddressException) {
-                return@withContext Result.Error(NetworkError.NO_INTERNET)
-            } catch (e: SerializationException) {
-                return@withContext Result.Error(NetworkError.SERIALIZATION)
             }
-            return@withContext when (response.status.value) {
-                in 200..299 -> {
-                    val result = response.body<ForecastDto>()
-                    Result.Success(result)
-                }
-
-                401 -> Result.Error(NetworkError.UNAUTHORIZED)
-                409 -> Result.Error(NetworkError.CONFLICT)
-                408 -> Result.Error(NetworkError.REQUEST_TIMEOUT)
-                413 -> Result.Error(NetworkError.PAYLOAD_TOO_LARGE)
-                in 500..599 -> Result.Error(NetworkError.SERVER_ERROR)
-                else -> Result.Error(NetworkError.UNKNOWN)
+        } catch (e: UnresolvedAddressException) {
+            return Result.Error(NetworkError.NO_INTERNET)
+        } catch (e: SerializationException) {
+            return Result.Error(NetworkError.SERIALIZATION)
+        }
+        return when (response.status.value) {
+            in 200..299 -> {
+                val result = response.body<ForecastDto>()
+                Result.Success(result)
             }
+
+            401 -> Result.Error(NetworkError.UNAUTHORIZED)
+            409 -> Result.Error(NetworkError.CONFLICT)
+            408 -> Result.Error(NetworkError.REQUEST_TIMEOUT)
+            413 -> Result.Error(NetworkError.PAYLOAD_TOO_LARGE)
+            in 500..599 -> Result.Error(NetworkError.SERVER_ERROR)
+            else -> Result.Error(NetworkError.UNKNOWN)
         }
     }
 
     override suspend fun getImageList(query: String): Result<ImageListDto, NetworkError> {
-        return withContext(Dispatchers.IO) {
-            val response = try {
-                httpClient.get(
-                    urlString = BASE_URL_IMAGES
-                ) {
-                    parameter("client_id", BuildKonfig.API_KEY2)
-                    parameter("query", query)
-                    parameter("orientation", "portrait")
-                }
-            } catch (e: UnresolvedAddressException) {
-                return@withContext Result.Error(NetworkError.NO_INTERNET)
-            } catch (e: SerializationException) {
-                return@withContext Result.Error(NetworkError.SERIALIZATION)
+        val response = try {
+            httpClient.get(
+                urlString = BASE_URL_IMAGES
+            ) {
+                parameter("client_id", BuildKonfig.API_KEY2)
+                parameter("query", query)
+                parameter("orientation", "portrait")
             }
-            return@withContext when (response.status.value) {
-                in 200..299 -> {
-                    val result = response.body<ImageListDto>()
-                    Result.Success(result)
-                }
+        } catch (e: UnresolvedAddressException) {
+            return Result.Error(NetworkError.NO_INTERNET)
+        } catch (e: SerializationException) {
+            return Result.Error(NetworkError.SERIALIZATION)
+        }
+        return when (response.status.value) {
+            in 200..299 -> {
+                val result = response.body<ImageListDto>()
+                Result.Success(result)
+            }
 
-                401 -> Result.Error(NetworkError.UNAUTHORIZED)
-                409 -> Result.Error(NetworkError.CONFLICT)
-                408 -> Result.Error(NetworkError.REQUEST_TIMEOUT)
-                413 -> Result.Error(NetworkError.PAYLOAD_TOO_LARGE)
-                in 500..599 -> Result.Error(NetworkError.SERVER_ERROR)
-                else -> Result.Error(NetworkError.UNKNOWN)
-            }
+            401 -> Result.Error(NetworkError.UNAUTHORIZED)
+            409 -> Result.Error(NetworkError.CONFLICT)
+            408 -> Result.Error(NetworkError.REQUEST_TIMEOUT)
+            413 -> Result.Error(NetworkError.PAYLOAD_TOO_LARGE)
+            in 500..599 -> Result.Error(NetworkError.SERVER_ERROR)
+            else -> Result.Error(NetworkError.UNKNOWN)
         }
     }
 }

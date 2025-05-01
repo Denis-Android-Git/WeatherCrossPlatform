@@ -45,5 +45,4 @@ actual class LocationService(
             locationClient.removeLocationUpdates(locationCallback)
         }
     }
-
 }

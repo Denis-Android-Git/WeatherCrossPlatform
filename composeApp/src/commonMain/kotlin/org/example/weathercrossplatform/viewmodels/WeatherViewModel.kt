@@ -33,7 +33,7 @@ class WeatherViewModel(
     }
 
     init {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             try {
                 coordinates.collectLatest { coordinates ->
 
@@ -55,7 +55,12 @@ class WeatherViewModel(
                                     windRotation = weather.current.windDegree,
                                     pressure = (weather.current.pressureMb * 0.75).roundToInt(),//перевод в мм ртутного столба
                                     clouds = weather.current.cloud,
-                                    uvIndex = weather.current.uv.toInt()
+                                    uvIndex = weather.current.uv.toInt(),
+                                    feelsLike = weather.current.feelsLikeC,
+                                    rotationFeelsLike = calculateRotationAngle(
+                                        weather.current.tempC,
+                                        weather.current.feelsLikeC
+                                    )
                                 )
 
                                 val imageQuery = when (weather.current.condition.text) {
@@ -123,7 +128,9 @@ class WeatherViewModel(
         windRotation: Int,
         pressure: Int,
         clouds: Int,
-        uvIndex: Int
+        uvIndex: Int,
+        feelsLike: Double,
+        rotationFeelsLike: Float
     ): List<WeatherItem> {
         return listOf(
             WeatherItem(
@@ -152,7 +159,7 @@ class WeatherViewModel(
             ),
             WeatherItem(
                 title = "Uv",
-                description = when(uvIndex) {
+                description = when (uvIndex) {
                     in 0..2 -> "Low"
                     in 3..5 -> "Moderate"
                     in 6..8 -> "High"
@@ -161,7 +168,16 @@ class WeatherViewModel(
                 },
                 rotation = 0f,
                 uvIndex = uvIndex
+            ),
+            WeatherItem(
+                title = "Feels Like",
+                description = "$feelsLike°C",
+                rotation = rotationFeelsLike,
             )
         )
+    }
+    private fun calculateRotationAngle(temperature: Double, feelsLike: Double): Float {
+        val diff = feelsLike - temperature
+        return (diff * 20).toFloat()
     }
 }

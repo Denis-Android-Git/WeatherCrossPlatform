@@ -514,7 +514,7 @@
 		</data>
 		<key>WeatherCrossPlatform.debug.dylib</key>
 		<data>
-		kK6s9vZUF98MsgVJQEyk28IBiu0=
+		7ijAVVIg+cCCbSXur9cIxDY2K/Y=
 		</data>
 		<key>__preview.dylib</key>
 		<data>
@@ -531,6 +531,10 @@
 		<key>compose-resources/composeResources/weathercrossplatform.composeapp.generated.resources/drawable/compose-multiplatform.xml</key>
 		<data>
 		/CoElbRNkpgcE58BEQ6j4C7ogg0=
+		</data>
+		<key>compose-resources/composeResources/weathercrossplatform.composeapp.generated.resources/drawable/feels_like_arrow.png</key>
+		<data>
+		LNa/yLuZvvenglA5D9Soy7oCE7E=
 		</data>
 		<key>compose-resources/composeResources/weathercrossplatform.composeapp.generated.resources/drawable/water_drop.png</key>
 		<data>
@@ -1450,7 +1454,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			P46xNKRfc63c/M3IKBlY4l4wBieGYTTzYpKoORdCm78=
+			6hGkuHpru2+j4qjLtOC4D4e+aaNvv8jq3lW0Y+3jl9M=
 			</data>
 		</dict>
 		<key>__preview.dylib</key>
@@ -1479,6 +1483,13 @@
 			<key>hash2</key>
 			<data>
 			e0lMkVAeUgeOREgmWHBcsSBQAMrsDdk5yF7W4xEKq2M=
+			</data>
+		</dict>
+		<key>compose-resources/composeResources/weathercrossplatform.composeapp.generated.resources/drawable/feels_like_arrow.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			DrArOK/ubmQ5xgZhLPgccXRY9+WHBc4lJ2II1YAdVf0=
 			</data>
 		</dict>
 		<key>compose-resources/composeResources/weathercrossplatform.composeapp.generated.resources/drawable/water_drop.png</key>

@@ -1,4 +1,0 @@
-org.example.weathercrossplatform.test.composeApp-androidTest-0 /Users/mac/Desktop/WeatherCrossPlatform/composeApp/build/generated/res/resValues/androidTest/debug
-org.example.weathercrossplatform.test.composeApp-mergeDebugAndroidTestResources-1 /Users/mac/Desktop/WeatherCrossPlatform/composeApp/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
-org.example.weathercrossplatform.test.composeApp-mergeDebugAndroidTestResources-2 /Users/mac/Desktop/WeatherCrossPlatform/composeApp/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
-org.example.weathercrossplatform.test.composeApp-debugAndroidTest-3 /Users/mac/Desktop/WeatherCrossPlatform/composeApp/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources

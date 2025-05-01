@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.example.weathercrossplatform.presentation.icons.CloudsIcon
+import org.example.weathercrossplatform.presentation.icons.FeelsLikeIcon
 import org.example.weathercrossplatform.presentation.icons.HumidityIcon
 import org.example.weathercrossplatform.presentation.icons.PressureIndicator
 import org.example.weathercrossplatform.presentation.icons.UvIcon
@@ -28,6 +29,7 @@ fun WeatherDetailElement(
     pressureProgress: Float,
     cloudsProgress: Float,
     windRotation: Float,
+    feelsLikeRotation: Float,
     uvIndex: String
 ) {
     Column(
@@ -76,10 +78,18 @@ fun WeatherDetailElement(
                     progress = cloudsProgress,
                 )
             }
+
             "Uv" -> {
                 UvIcon(
                     modifier = Modifier.align(Alignment.End),
                     uvIndex = uvIndex
+                )
+            }
+
+            "Feels Like" -> {
+                FeelsLikeIcon(
+                    modifier = Modifier.align(Alignment.End),
+                    rotationAngle = feelsLikeRotation
                 )
             }
         }

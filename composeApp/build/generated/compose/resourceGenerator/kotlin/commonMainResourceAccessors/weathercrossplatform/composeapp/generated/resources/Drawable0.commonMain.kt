@@ -18,6 +18,9 @@ private object CommonMainDrawable0 {
   public val compose_multiplatform: DrawableResource by 
       lazy { init_compose_multiplatform() }
 
+  public val feels_like_arrow: DrawableResource by 
+      lazy { init_feels_like_arrow() }
+
   public val water_drop: DrawableResource by 
       lazy { init_water_drop() }
 
@@ -30,6 +33,7 @@ internal fun _collectCommonMainDrawable0Resources(map: MutableMap<String, Drawab
   map.put("arrow_downward", CommonMainDrawable0.arrow_downward)
   map.put("clouds", CommonMainDrawable0.clouds)
   map.put("compose_multiplatform", CommonMainDrawable0.compose_multiplatform)
+  map.put("feels_like_arrow", CommonMainDrawable0.feels_like_arrow)
   map.put("water_drop", CommonMainDrawable0.water_drop)
   map.put("wind_arrow", CommonMainDrawable0.wind_arrow)
 }
@@ -66,6 +70,18 @@ private fun init_compose_multiplatform(): DrawableResource =
     setOf(
       org.jetbrains.compose.resources.ResourceItem(setOf(),
     "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/compose-multiplatform.xml", -1, -1),
+    )
+)
+
+internal val Res.drawable.feels_like_arrow: DrawableResource
+  get() = CommonMainDrawable0.feels_like_arrow
+
+private fun init_feels_like_arrow(): DrawableResource =
+    org.jetbrains.compose.resources.DrawableResource(
+  "drawable:feels_like_arrow",
+    setOf(
+      org.jetbrains.compose.resources.ResourceItem(setOf(),
+    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/feels_like_arrow.png", -1, -1),
     )
 )
 
