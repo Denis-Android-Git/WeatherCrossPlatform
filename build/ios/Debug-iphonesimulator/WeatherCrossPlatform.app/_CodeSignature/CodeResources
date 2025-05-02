@@ -158,7 +158,7 @@
 		</data>
 		<key>Frameworks/FirebaseAnalytics.framework/FirebaseAnalytics</key>
 		<data>
-		Q8xNn2mWqAnD4Xi8GqTOki+x/Cc=
+		Zbcntsz5sxcUmDgSgte9ClbyFQQ=
 		</data>
 		<key>Frameworks/FirebaseAnalytics.framework/Info.plist</key>
 		<data>
@@ -170,7 +170,7 @@
 		</data>
 		<key>Frameworks/GoogleAppMeasurement.framework/GoogleAppMeasurement</key>
 		<data>
-		VLdu7PRPLXRO9uaWau9AhIUUTO0=
+		X6pEIRO9tqeZ+j96u8EkAmtqcz0=
 		</data>
 		<key>Frameworks/GoogleAppMeasurement.framework/Info.plist</key>
 		<data>
@@ -182,7 +182,7 @@
 		</data>
 		<key>Frameworks/GoogleAppMeasurementIdentitySupport.framework/GoogleAppMeasurementIdentitySupport</key>
 		<data>
-		EFdAwRt5hoDezgzRU4plFchep7o=
+		2cCz1+FoRqasLTbSJ9SA8dnYUvE=
 		</data>
 		<key>Frameworks/GoogleAppMeasurementIdentitySupport.framework/Info.plist</key>
 		<data>
@@ -514,7 +514,7 @@
 		</data>
 		<key>WeatherCrossPlatform.debug.dylib</key>
 		<data>
-		7ijAVVIg+cCCbSXur9cIxDY2K/Y=
+		zy4+tjbSY7xi+VPgxZJTq6FcUwk=
 		</data>
 		<key>__preview.dylib</key>
 		<data>
@@ -535,6 +535,18 @@
 		<key>compose-resources/composeResources/weathercrossplatform.composeapp.generated.resources/drawable/feels_like_arrow.png</key>
 		<data>
 		LNa/yLuZvvenglA5D9Soy7oCE7E=
+		</data>
+		<key>compose-resources/composeResources/weathercrossplatform.composeapp.generated.resources/drawable/gauge.png</key>
+		<data>
+		93peZCqjGAAcIORFzvb0uWrTnGA=
+		</data>
+		<key>compose-resources/composeResources/weathercrossplatform.composeapp.generated.resources/drawable/meter.png</key>
+		<data>
+		bA6VKwTTE9CFuvbmIvBddJSiQZc=
+		</data>
+		<key>compose-resources/composeResources/weathercrossplatform.composeapp.generated.resources/drawable/speedometer.png</key>
+		<data>
+		ONNt+h1GWCBcPcpMEQLiLi8AuZE=
 		</data>
 		<key>compose-resources/composeResources/weathercrossplatform.composeapp.generated.resources/drawable/water_drop.png</key>
 		<data>
@@ -845,7 +857,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			W8m3WN6g+qdnsUIfcjPIo3mgqPXycVbEtZ60+QJn0XM=
+			Fir5FaEixyKMErA5SV5nrpHRl6za2LlbrSisT5etb2w=
 			</data>
 		</dict>
 		<key>Frameworks/FirebaseAnalytics.framework/Info.plist</key>
@@ -866,7 +878,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Dyg1nsnapD+zX/9PP3/dVfUp0oG6uP/Da0P5ETdLCm8=
+			Z4RsM0CRTL1Y88wJ3Fto4ZTNhF39IE47xX+JoTTvR+w=
 			</data>
 		</dict>
 		<key>Frameworks/GoogleAppMeasurement.framework/Info.plist</key>
@@ -887,7 +899,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GxE+Pvom/Ddlbmb6X3hNep1b1WTPvc0ItLFHq84CQhI=
+			NG/czaVW6VmytXAPr+m6b/gAB8iNjD1LXCaj9f1Jgzk=
 			</data>
 		</dict>
 		<key>Frameworks/GoogleAppMeasurementIdentitySupport.framework/Info.plist</key>
@@ -1454,7 +1466,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6hGkuHpru2+j4qjLtOC4D4e+aaNvv8jq3lW0Y+3jl9M=
+			JVwFENrfn0rI6MYkXEMpHePSBiY9fyaTgFXCKSjKe5U=
 			</data>
 		</dict>
 		<key>__preview.dylib</key>
@@ -1490,6 +1502,27 @@
 			<key>hash2</key>
 			<data>
 			DrArOK/ubmQ5xgZhLPgccXRY9+WHBc4lJ2II1YAdVf0=
+			</data>
+		</dict>
+		<key>compose-resources/composeResources/weathercrossplatform.composeapp.generated.resources/drawable/gauge.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			jp1h3b7qGK7NUoZ+w39cWc+vs9q3aRUF6hw1t/ZVE5c=
+			</data>
+		</dict>
+		<key>compose-resources/composeResources/weathercrossplatform.composeapp.generated.resources/drawable/meter.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WsiGQbcWHBgvnJgV/51NOHLQgQvTVYdMLyIJAvP+drQ=
+			</data>
+		</dict>
+		<key>compose-resources/composeResources/weathercrossplatform.composeapp.generated.resources/drawable/speedometer.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ytKCTtNNqCPMEwlcQ0FZBTwYA3TkEcYD1RyauSTNWFY=
 			</data>
 		</dict>
 		<key>compose-resources/composeResources/weathercrossplatform.composeapp.generated.resources/drawable/water_drop.png</key>

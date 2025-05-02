@@ -16,7 +16,7 @@ import dev.icerock.moko.permissions.compose.BindEffect
 import dev.icerock.moko.permissions.compose.rememberPermissionsControllerFactory
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import org.example.weathercrossplatform.presentation.MainScreenState
+import org.example.weathercrossplatform.presentation.NavHostMainScreen
 import org.example.weathercrossplatform.viewmodels.PermissionsViewModel
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.KoinContext
@@ -44,7 +44,7 @@ fun App() {
             ) {
                 when (permissionsViewModel.state) {
                     PermissionState.Granted -> {
-                        MainScreenState()
+                        NavHostMainScreen()
                     }
 
                     PermissionState.DeniedAlways -> {

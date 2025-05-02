@@ -68,6 +68,8 @@ class WeatherViewModel(
                                     "Ясно" -> "clear sky"
                                     "Переменная облачность" -> "cloudy"
                                     "Местами грозы" -> "thunderstorm"
+                                    "Небольшой дождь со снегом" -> "rain and snow"
+                                    "Пасмурно" -> "overcast"
                                     else -> weather.current.condition.text
                                 }
 

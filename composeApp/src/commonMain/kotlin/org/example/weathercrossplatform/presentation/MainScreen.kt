@@ -19,8 +19,10 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.outlined.Place
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -52,7 +54,8 @@ fun MainScreen(
     feelsLikeC: String?,
     error: String,
     forecastList: List<Forecastday>?,
-    weatherItemList: List<WeatherItem>
+    weatherItemList: List<WeatherItem>,
+    onAddButtonClick: () -> Unit
 ) {
 
     val textColor by remember { mutableStateOf(Color.White) }
@@ -246,6 +249,16 @@ fun MainScreen(
             modifier = Modifier.align(Alignment.Center)
         ) {
             Text(text = error, textAlign = TextAlign.Center)
+        }
+        IconButton(
+            onClick = onAddButtonClick,
+            modifier = Modifier.align(Alignment.TopEnd).padding(top = 40.dp, end = 16.dp)
+        ) {
+            Icon(
+                imageVector = Icons.Default.Add, contentDescription = "Add",
+                modifier = Modifier.size(35.dp),
+                tint = Color.White
+            )
         }
     }
 }

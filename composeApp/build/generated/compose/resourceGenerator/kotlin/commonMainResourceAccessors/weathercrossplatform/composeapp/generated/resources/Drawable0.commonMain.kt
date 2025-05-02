@@ -21,6 +21,15 @@ private object CommonMainDrawable0 {
   public val feels_like_arrow: DrawableResource by 
       lazy { init_feels_like_arrow() }
 
+  public val gauge: DrawableResource by 
+      lazy { init_gauge() }
+
+  public val meter: DrawableResource by 
+      lazy { init_meter() }
+
+  public val speedometer: DrawableResource by 
+      lazy { init_speedometer() }
+
   public val water_drop: DrawableResource by 
       lazy { init_water_drop() }
 
@@ -34,6 +43,9 @@ internal fun _collectCommonMainDrawable0Resources(map: MutableMap<String, Drawab
   map.put("clouds", CommonMainDrawable0.clouds)
   map.put("compose_multiplatform", CommonMainDrawable0.compose_multiplatform)
   map.put("feels_like_arrow", CommonMainDrawable0.feels_like_arrow)
+  map.put("gauge", CommonMainDrawable0.gauge)
+  map.put("meter", CommonMainDrawable0.meter)
+  map.put("speedometer", CommonMainDrawable0.speedometer)
   map.put("water_drop", CommonMainDrawable0.water_drop)
   map.put("wind_arrow", CommonMainDrawable0.wind_arrow)
 }
@@ -82,6 +94,39 @@ private fun init_feels_like_arrow(): DrawableResource =
     setOf(
       org.jetbrains.compose.resources.ResourceItem(setOf(),
     "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/feels_like_arrow.png", -1, -1),
+    )
+)
+
+internal val Res.drawable.gauge: DrawableResource
+  get() = CommonMainDrawable0.gauge
+
+private fun init_gauge(): DrawableResource = org.jetbrains.compose.resources.DrawableResource(
+  "drawable:gauge",
+    setOf(
+      org.jetbrains.compose.resources.ResourceItem(setOf(),
+    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/gauge.png", -1, -1),
+    )
+)
+
+internal val Res.drawable.meter: DrawableResource
+  get() = CommonMainDrawable0.meter
+
+private fun init_meter(): DrawableResource = org.jetbrains.compose.resources.DrawableResource(
+  "drawable:meter",
+    setOf(
+      org.jetbrains.compose.resources.ResourceItem(setOf(),
+    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/meter.png", -1, -1),
+    )
+)
+
+internal val Res.drawable.speedometer: DrawableResource
+  get() = CommonMainDrawable0.speedometer
+
+private fun init_speedometer(): DrawableResource = org.jetbrains.compose.resources.DrawableResource(
+  "drawable:speedometer",
+    setOf(
+      org.jetbrains.compose.resources.ResourceItem(setOf(),
+    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/speedometer.png", -1, -1),
     )
 )
 

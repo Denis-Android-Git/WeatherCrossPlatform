@@ -17,6 +17,7 @@ private fun Preview() {
         feelsLikeC = "25",
         error = "",
         forecastList = null,
-        weatherItemList = emptyList()
+        weatherItemList = emptyList(),
+        onAddButtonClick = {}
     )
 }

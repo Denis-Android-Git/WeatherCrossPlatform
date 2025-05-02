@@ -41,6 +41,6 @@ fun Test() {
 private fun Preview() {
 
     FeelsLikeIcon(
-        rotationAngle = 50f
+        rotationAngle = -50f
     )
 }

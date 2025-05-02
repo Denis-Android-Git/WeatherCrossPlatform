@@ -19,7 +19,7 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.resources.painterResource
 import weathercrossplatform.composeapp.generated.resources.Res
-import weathercrossplatform.composeapp.generated.resources.feels_like_arrow
+import weathercrossplatform.composeapp.generated.resources.speedometer
 
 @Composable
 fun FeelsLikeIcon(
@@ -59,10 +59,11 @@ fun FeelsLikeIcon(
             )
         }
         Icon(
-            painter = painterResource(Res.drawable.feels_like_arrow),
+            painter = painterResource(Res.drawable.speedometer),
             tint = Color.White,
             contentDescription = null,
-            modifier = Modifier.size(40.dp).rotate(rotationAngle)
+            modifier = Modifier
+                .size(45.dp).rotate(135f + rotationAngle)
         )
     }
 }
