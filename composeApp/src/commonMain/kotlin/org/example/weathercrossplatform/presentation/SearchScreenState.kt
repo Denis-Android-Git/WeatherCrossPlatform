@@ -17,8 +17,7 @@ fun SearchScreenState(
     onBackButtonClick: () -> Unit
 ) {
 
-    val searchQuery = searchViewModel.searchQuery.collectAsStateWithLifecycle()
-    val expanded = searchViewModel.expanded.collectAsStateWithLifecycle()
+    val searchScreenState = searchViewModel.searchScreenState.collectAsStateWithLifecycle()
 
     Box(
         modifier = Modifier
@@ -34,10 +33,10 @@ fun SearchScreenState(
             )
     ) {
         SearchScreen(
-            query = searchQuery.value,
+            query = searchScreenState.value.searchQuery,
             onBackButtonClick = onBackButtonClick,
             onQueryChange = searchViewModel::setSearchQuery,
-            expanded = expanded.value,
+            expanded = searchScreenState.value.expanded,
             onExpandedChange = searchViewModel::setExpanded,
             onSearch = {}
         )
