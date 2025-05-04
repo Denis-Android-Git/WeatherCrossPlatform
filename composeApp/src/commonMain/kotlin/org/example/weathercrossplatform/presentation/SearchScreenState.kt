@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.example.weathercrossplatform.viewmodels.SearchViewModel
@@ -22,15 +21,7 @@ fun SearchScreenState(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(
-                brush = Brush
-                    .linearGradient(
-                        colors = listOf(
-                            Color.Blue.copy(alpha = 0.9f),
-                            Color.Blue.copy(alpha = 0f)
-                        )
-                    )
-            )
+            .background(color = Color.Black)
     ) {
         SearchScreen(
             query = searchScreenState.value.searchQuery,
