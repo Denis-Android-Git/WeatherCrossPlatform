@@ -18,6 +18,8 @@ fun SearchScreenState(
 
     val searchScreenState = searchViewModel.searchScreenState.collectAsStateWithLifecycle()
 
+    val cityList = searchViewModel.allCities.collectAsStateWithLifecycle()
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -29,7 +31,8 @@ fun SearchScreenState(
             onQueryChange = searchViewModel::setSearchQuery,
             expanded = searchScreenState.value.expanded,
             onExpandedChange = searchViewModel::setExpanded,
-            onSearch = {}
+            onSearch = {},
+            cityList = cityList.value
         )
     }
 }

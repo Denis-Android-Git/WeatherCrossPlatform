@@ -25,6 +25,9 @@ gradlePlugins-crashlytics = "3.0.3"
 gradlePlugins-google-services = "4.4.2"
 #Gitlive
 firebase-gitlive-sdk = "1.12.0"
+roomRuntime = "2.7.1"
+ksp = "2.1.20-2.0.1"
+sqlite = "2.5.0"
 
 #androidx-appcompat = "1.7.0"
 #androidx-constraintlayout = "2.2.1"
@@ -41,6 +44,12 @@ firebase = { module = "com.google.firebase:firebase-bom", version.ref = "firebas
 crashlytics = { module = "com.google.firebase:firebase-crashlytics" }
 #Gitlive
 gitlive-firebase-kotlin-crashlytics = { module = "dev.gitlive:firebase-crashlytics", version.ref = "firebase-gitlive-sdk" }
+
+#Room
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+room-runtime-android = { module = "androidx.room:room-runtime-android", version.ref = "roomRuntime" }
+sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
 
 #
 #kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -89,7 +98,8 @@ composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "k
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 buildkonfig = { id = "com.codingfeline.buildkonfig", version.ref = "buildkonfig" }
-
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+room = { id = "androidx.room", version.ref = "roomRuntime" }
 
 [bundles]
 ktor = [

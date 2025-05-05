@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "org.example.weathercrossplatform.composeApp-mergeDebugResources-67:/values-v17/values-v17.xml",
+            "outputFile": "org.example.weathercrossplatform.composeApp-mergeDebugResources-71:/values-v17/values-v17.xml",
             "map": [
                 {
-                    "source": "/Users/mac/.gradle/caches/8.14/transforms/b9d3f42cf6750ed7209f075758503480/transformed/appcompat-1.7.0/res/values-v17/values-v17.xml",
+                    "source": "/Users/mac/.gradle/caches/8.14/transforms/87d030dc45b61c4dcf51e98b799ed935/transformed/appcompat-1.7.0/res/values-v17/values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,25,29,33,37,40,43,46,50,53,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

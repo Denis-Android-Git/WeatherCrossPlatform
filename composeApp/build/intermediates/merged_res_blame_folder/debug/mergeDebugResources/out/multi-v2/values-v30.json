@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "org.example.weathercrossplatform.composeApp-mergeDebugResources-67:/values-v30/values-v30.xml",
+            "outputFile": "org.example.weathercrossplatform.composeApp-mergeDebugResources-71:/values-v30/values-v30.xml",
             "map": [
                 {
-                    "source": "/Users/mac/.gradle/caches/8.14/transforms/eb10fa3079c0e6f066665fb3d82b41fa/transformed/material3-release/res/values-v30/values-v30.xml",
+                    "source": "/Users/mac/.gradle/caches/8.14/transforms/90aaaf9f98f2738fc81fd693c5a0926f/transformed/material3-release/res/values-v30/values-v30.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

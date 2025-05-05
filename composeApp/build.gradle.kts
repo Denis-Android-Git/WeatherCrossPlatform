@@ -12,6 +12,8 @@ plugins {
     alias(libs.plugins.buildkonfig)
     alias(libs.plugins.google.services)
     alias(libs.plugins.crashlytics)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.room)
 }
 
 kotlin {
@@ -45,7 +47,6 @@ kotlin {
             implementation(libs.koin.android)
             implementation(libs.koin.androidx.compose)
             implementation(libs.ktor.client.android)
-
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -67,6 +68,8 @@ kotlin {
             implementation(libs.coil.compose)
             implementation(libs.coil.network.ktor3)
             api(libs.gitlive.firebase.kotlin.crashlytics)
+            implementation(libs.androidx.room.runtime)
+            implementation(libs.sqlite.bundled)
         }
         nativeMain.dependencies {
             implementation(libs.ktor.client.darwin)
@@ -141,4 +144,17 @@ compose.desktop {
             packageVersion = "1.0.0"
         }
     }
+}
+room {
+    schemaDirectory("$projectDir/schemas")
+}
+
+dependencies {
+    add("kspCommonMainMetadata", libs.androidx.room.compiler)
+
+    add("kspAndroid",libs.androidx.room.compiler)
+    add("kspIosX64", libs.androidx.room.compiler)
+    add("kspIosArm64", libs.androidx.room.compiler)
+    add("kspIosSimulatorArm64",libs.androidx.room.compiler)
+
 }

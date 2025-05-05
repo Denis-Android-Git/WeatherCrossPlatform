@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Search
@@ -25,6 +26,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import org.example.weathercrossplatform.data.database.SavedWeatherItem
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -34,7 +36,8 @@ fun SearchScreen(
     onQueryChange: (String) -> Unit,
     expanded: Boolean,
     onExpandedChange: (Boolean) -> Unit,
-    onSearch: (String) -> Unit
+    onSearch: (String) -> Unit,
+    cityList: List<SavedWeatherItem>
 ) {
 
     Column(
@@ -119,8 +122,8 @@ fun SearchScreen(
 
         }
         LazyColumn {
-            items(10) { index ->
-                Text(text = "Item $index")
+            items(cityList) {
+                Text(text = it.cityName, color = Color.White, fontSize = 18.sp)
 
             }
         }
