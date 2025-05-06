@@ -70,6 +70,7 @@ kotlin {
             api(libs.gitlive.firebase.kotlin.crashlytics)
             implementation(libs.androidx.room.runtime)
             implementation(libs.sqlite.bundled)
+            implementation(libs.material.icons.core)
         }
         nativeMain.dependencies {
             implementation(libs.ktor.client.darwin)

@@ -4,12 +4,13 @@ android-compileSdk = "35"
 android-minSdk = "24"
 android-targetSdk = "35"
 androidx-activityCompose = "1.10.1"
-compose-multiplatform = "1.7.3"
+compose-multiplatform = "1.8.0"
 androidx-lifecycle = "2.8.4"
 kotlin = "2.1.20"
 kotlinx-coroutines = "1.10.1"
 ktor = "3.0.3"
 buildkonfig = "0.17.0"
+materialIconsCore = "1.7.3"
 moko = "0.18.0"
 lifecycleViewModelCompose = "2.8.3"
 playServicesLocation = "21.3.0"
@@ -48,6 +49,7 @@ gitlive-firebase-kotlin-crashlytics = { module = "dev.gitlive:firebase-crashlyti
 #Room
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+material-icons-core = { module = "org.jetbrains.compose.material:material-icons-core", version.ref = "materialIconsCore" }
 room-runtime-android = { module = "androidx.room:room-runtime-android", version.ref = "roomRuntime" }
 sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
 
