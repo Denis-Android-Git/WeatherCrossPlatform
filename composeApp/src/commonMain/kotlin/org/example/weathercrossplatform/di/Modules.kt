@@ -1,6 +1,8 @@
 package org.example.weathercrossplatform.di
 
+import org.example.weathercrossplatform.data.repo_impl.DataBaseRepoImpl
 import org.example.weathercrossplatform.data.repo_impl.WeatherRepoImpl
+import org.example.weathercrossplatform.domain.repo.DataBaseRepo
 import org.example.weathercrossplatform.domain.repo.WeatherRepo
 import org.example.weathercrossplatform.viewmodels.SearchViewModel
 import org.example.weathercrossplatform.viewmodels.WeatherViewModel
@@ -14,6 +16,7 @@ expect val platformModule: Module
 
 val sharedModule = module {
     singleOf(::WeatherRepoImpl).bind<WeatherRepo>()
+    singleOf(::DataBaseRepoImpl).bind<DataBaseRepo>()
     viewModelOf(::WeatherViewModel)
     viewModelOf(::SearchViewModel)
 }

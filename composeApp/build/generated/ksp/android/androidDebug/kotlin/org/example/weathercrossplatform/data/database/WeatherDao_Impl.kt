@@ -9,6 +9,7 @@ import androidx.room.util.getColumnIndexOrThrow
 import androidx.room.util.performSuspending
 import androidx.sqlite.SQLiteStatement
 import javax.`annotation`.processing.Generated
+import kotlin.Double
 import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
@@ -42,20 +43,32 @@ public class WeatherDao_Impl(
     this.__upsertAdapterOfSavedWeatherItem = EntityUpsertAdapter<SavedWeatherItem>(object :
         EntityInsertAdapter<SavedWeatherItem>() {
       protected override fun createQuery(): String =
-          "INSERT INTO `SavedWeatherItem` (`id`,`cityName`) VALUES (nullif(?, 0),?)"
+          "INSERT INTO `SavedWeatherItem` (`id`,`cityName`,`latitude`,`longitude`,`temperature`,`weatherDescription`,`highTemperature`,`lowTemperature`) VALUES (?,?,?,?,?,?,?,?)"
 
       protected override fun bind(statement: SQLiteStatement, entity: SavedWeatherItem) {
         statement.bindLong(1, entity.id.toLong())
         statement.bindText(2, entity.cityName)
+        statement.bindDouble(3, entity.latitude)
+        statement.bindDouble(4, entity.longitude)
+        statement.bindDouble(5, entity.temperature)
+        statement.bindText(6, entity.weatherDescription)
+        statement.bindDouble(7, entity.highTemperature)
+        statement.bindDouble(8, entity.lowTemperature)
       }
     }, object : EntityDeleteOrUpdateAdapter<SavedWeatherItem>() {
       protected override fun createQuery(): String =
-          "UPDATE `SavedWeatherItem` SET `id` = ?,`cityName` = ? WHERE `id` = ?"
+          "UPDATE `SavedWeatherItem` SET `id` = ?,`cityName` = ?,`latitude` = ?,`longitude` = ?,`temperature` = ?,`weatherDescription` = ?,`highTemperature` = ?,`lowTemperature` = ? WHERE `id` = ?"
 
       protected override fun bind(statement: SQLiteStatement, entity: SavedWeatherItem) {
         statement.bindLong(1, entity.id.toLong())
         statement.bindText(2, entity.cityName)
-        statement.bindLong(3, entity.id.toLong())
+        statement.bindDouble(3, entity.latitude)
+        statement.bindDouble(4, entity.longitude)
+        statement.bindDouble(5, entity.temperature)
+        statement.bindText(6, entity.weatherDescription)
+        statement.bindDouble(7, entity.highTemperature)
+        statement.bindDouble(8, entity.lowTemperature)
+        statement.bindLong(9, entity.id.toLong())
       }
     })
   }
@@ -70,13 +83,20 @@ public class WeatherDao_Impl(
     __upsertAdapterOfSavedWeatherItem.upsert(_connection, weather)
   }
 
-  public override fun getWeather(): Flow<List<SavedWeatherItem>> {
+  public override fun getWeatherList(): Flow<List<SavedWeatherItem>> {
     val _sql: String = "SELECT * FROM savedweatheritem"
     return createFlow(__db, false, arrayOf("savedweatheritem")) { _connection ->
       val _stmt: SQLiteStatement = _connection.prepare(_sql)
       try {
         val _columnIndexOfId: Int = getColumnIndexOrThrow(_stmt, "id")
         val _columnIndexOfCityName: Int = getColumnIndexOrThrow(_stmt, "cityName")
+        val _columnIndexOfLatitude: Int = getColumnIndexOrThrow(_stmt, "latitude")
+        val _columnIndexOfLongitude: Int = getColumnIndexOrThrow(_stmt, "longitude")
+        val _columnIndexOfTemperature: Int = getColumnIndexOrThrow(_stmt, "temperature")
+        val _columnIndexOfWeatherDescription: Int = getColumnIndexOrThrow(_stmt,
+            "weatherDescription")
+        val _columnIndexOfHighTemperature: Int = getColumnIndexOrThrow(_stmt, "highTemperature")
+        val _columnIndexOfLowTemperature: Int = getColumnIndexOrThrow(_stmt, "lowTemperature")
         val _result: MutableList<SavedWeatherItem> = mutableListOf()
         while (_stmt.step()) {
           val _item: SavedWeatherItem
@@ -84,7 +104,20 @@ public class WeatherDao_Impl(
           _tmpId = _stmt.getLong(_columnIndexOfId).toInt()
           val _tmpCityName: String
           _tmpCityName = _stmt.getText(_columnIndexOfCityName)
-          _item = SavedWeatherItem(_tmpId,_tmpCityName)
+          val _tmpLatitude: Double
+          _tmpLatitude = _stmt.getDouble(_columnIndexOfLatitude)
+          val _tmpLongitude: Double
+          _tmpLongitude = _stmt.getDouble(_columnIndexOfLongitude)
+          val _tmpTemperature: Double
+          _tmpTemperature = _stmt.getDouble(_columnIndexOfTemperature)
+          val _tmpWeatherDescription: String
+          _tmpWeatherDescription = _stmt.getText(_columnIndexOfWeatherDescription)
+          val _tmpHighTemperature: Double
+          _tmpHighTemperature = _stmt.getDouble(_columnIndexOfHighTemperature)
+          val _tmpLowTemperature: Double
+          _tmpLowTemperature = _stmt.getDouble(_columnIndexOfLowTemperature)
+          _item =
+              SavedWeatherItem(_tmpId,_tmpCityName,_tmpLatitude,_tmpLongitude,_tmpTemperature,_tmpWeatherDescription,_tmpHighTemperature,_tmpLowTemperature)
           _result.add(_item)
         }
         _result

@@ -10,7 +10,7 @@ import kotlinx.coroutines.IO
 
 @Database(
     entities = [SavedWeatherItem::class],
-    version = 1
+    version = 3
 )
 @ConstructedBy(AppDatabaseConstructor::class)
 abstract class WeatherDataBase : RoomDatabase() {
@@ -29,6 +29,9 @@ fun getRoomDatabase(
         //.addMigrations(MIGRATIONS)
         //.fallbackToDestructiveMigrationOnDowngrade()
         .setDriver(BundledSQLiteDriver())
+        .fallbackToDestructiveMigration(
+            dropAllTables = true
+        )
         .setQueryCoroutineContext(Dispatchers.IO)
         .build()
 }

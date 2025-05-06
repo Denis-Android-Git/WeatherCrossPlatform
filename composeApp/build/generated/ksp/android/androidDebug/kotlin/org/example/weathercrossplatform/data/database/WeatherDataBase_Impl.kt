@@ -32,12 +32,12 @@ public class WeatherDataBase_Impl : WeatherDataBase() {
   }
 
   protected override fun createOpenDelegate(): RoomOpenDelegate {
-    val _openDelegate: RoomOpenDelegate = object : RoomOpenDelegate(1,
-        "5e3fa2e26414b90fcb789f499be87108", "e1858598944a06ca50ac7448d0202228") {
+    val _openDelegate: RoomOpenDelegate = object : RoomOpenDelegate(3,
+        "6c579d9b2b178f5e11341fd6626f79e9", "1fcd766aecbda8dd9127a3c35d9e95bc") {
       public override fun createAllTables(connection: SQLiteConnection) {
-        connection.execSQL("CREATE TABLE IF NOT EXISTS `SavedWeatherItem` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `cityName` TEXT NOT NULL)")
+        connection.execSQL("CREATE TABLE IF NOT EXISTS `SavedWeatherItem` (`id` INTEGER NOT NULL, `cityName` TEXT NOT NULL, `latitude` REAL NOT NULL, `longitude` REAL NOT NULL, `temperature` REAL NOT NULL, `weatherDescription` TEXT NOT NULL, `highTemperature` REAL NOT NULL, `lowTemperature` REAL NOT NULL, PRIMARY KEY(`id`))")
         connection.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)")
-        connection.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '5e3fa2e26414b90fcb789f499be87108')")
+        connection.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6c579d9b2b178f5e11341fd6626f79e9')")
       }
 
       public override fun dropAllTables(connection: SQLiteConnection) {
@@ -65,6 +65,18 @@ public class WeatherDataBase_Impl : WeatherDataBase() {
             TableInfo.CREATED_FROM_ENTITY))
         _columnsSavedWeatherItem.put("cityName", TableInfo.Column("cityName", "TEXT", true, 0, null,
             TableInfo.CREATED_FROM_ENTITY))
+        _columnsSavedWeatherItem.put("latitude", TableInfo.Column("latitude", "REAL", true, 0, null,
+            TableInfo.CREATED_FROM_ENTITY))
+        _columnsSavedWeatherItem.put("longitude", TableInfo.Column("longitude", "REAL", true, 0,
+            null, TableInfo.CREATED_FROM_ENTITY))
+        _columnsSavedWeatherItem.put("temperature", TableInfo.Column("temperature", "REAL", true, 0,
+            null, TableInfo.CREATED_FROM_ENTITY))
+        _columnsSavedWeatherItem.put("weatherDescription", TableInfo.Column("weatherDescription",
+            "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY))
+        _columnsSavedWeatherItem.put("highTemperature", TableInfo.Column("highTemperature", "REAL",
+            true, 0, null, TableInfo.CREATED_FROM_ENTITY))
+        _columnsSavedWeatherItem.put("lowTemperature", TableInfo.Column("lowTemperature", "REAL",
+            true, 0, null, TableInfo.CREATED_FROM_ENTITY))
         val _foreignKeysSavedWeatherItem: MutableSet<TableInfo.ForeignKey> = mutableSetOf()
         val _indicesSavedWeatherItem: MutableSet<TableInfo.Index> = mutableSetOf()
         val _infoSavedWeatherItem: TableInfo = TableInfo("SavedWeatherItem",

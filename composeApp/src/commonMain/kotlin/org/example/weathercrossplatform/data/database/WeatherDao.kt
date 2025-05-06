@@ -16,5 +16,5 @@ interface WeatherDao {
     suspend fun deleteWeather(weather: SavedWeatherItem)
 
     @Query("SELECT * FROM savedweatheritem")
-    fun getWeather(): Flow<List<SavedWeatherItem>>
+    fun getWeatherList(): Flow<List<SavedWeatherItem>>
 }

@@ -8,7 +8,7 @@
 
 @class ComposeAppAirQuality, ComposeAppAirQualityCompanion, ComposeAppAppDatabaseConstructor, ComposeAppAstro, ComposeAppAstroCompanion, ComposeAppCondition, ComposeAppConditionCompanion, ComposeAppCoordinates, ComposeAppCurrent, ComposeAppCurrentCompanion, ComposeAppDay, ComposeAppDayCompanion, ComposeAppDestinations, ComposeAppForecast, ComposeAppForecastCompanion, ComposeAppForecastDto, ComposeAppForecastDtoCompanion, ComposeAppForecastday, ComposeAppForecastdayCompanion, ComposeAppGetScreenHeight, ComposeAppHour, ComposeAppHourCompanion, ComposeAppImageListDto, ComposeAppImageListDtoCompanion, ComposeAppKoin_coreBeanDefinition<T>, ComposeAppKoin_coreCallbacks<T>, ComposeAppKoin_coreExtensionManager, ComposeAppKoin_coreInstanceFactory<T>, ComposeAppKoin_coreInstanceFactoryCompanion, ComposeAppKoin_coreInstanceRegistry, ComposeAppKoin_coreKind, ComposeAppKoin_coreKoin, ComposeAppKoin_coreKoinApplication, ComposeAppKoin_coreKoinApplicationCompanion, ComposeAppKoin_coreKoinDefinition<R>, ComposeAppKoin_coreLevel, ComposeAppKoin_coreLockable, ComposeAppKoin_coreLogger, ComposeAppKoin_coreModule, ComposeAppKoin_coreParametersHolder, ComposeAppKoin_corePropertyRegistry, ComposeAppKoin_coreResolutionContext, ComposeAppKoin_coreScope, ComposeAppKoin_coreScopeDSL, ComposeAppKoin_coreScopeRegistry, ComposeAppKoin_coreScopeRegistryCompanion, ComposeAppKoin_coreSingleInstanceFactory<T>, ComposeAppKotlinAbstractCoroutineContextElement, ComposeAppKotlinAbstractCoroutineContextKey<B, E>, ComposeAppKotlinArray<T>, ComposeAppKotlinByteArray, ComposeAppKotlinByteIterator, ComposeAppKotlinCancellationException, ComposeAppKotlinEnum<E>, ComposeAppKotlinEnumCompanion, ComposeAppKotlinException, ComposeAppKotlinIllegalStateException, ComposeAppKotlinIntArray, ComposeAppKotlinIntIterator, ComposeAppKotlinKTypeProjection, ComposeAppKotlinKTypeProjectionCompanion, ComposeAppKotlinKVariance, ComposeAppKotlinLazyThreadSafetyMode, ComposeAppKotlinNothing, ComposeAppKotlinRuntimeException, ComposeAppKotlinThrowable, ComposeAppKotlinUnit, ComposeAppKotlinx_coroutines_coreCoroutineDispatcher, ComposeAppKotlinx_coroutines_coreCoroutineDispatcherKey, ComposeAppKotlinx_io_coreBuffer, ComposeAppKotlinx_serialization_coreSerialKind, ComposeAppKotlinx_serialization_coreSerializersModule, ComposeAppKtor_client_coreHttpClient, ComposeAppKtor_client_coreHttpClientCall, ComposeAppKtor_client_coreHttpClientCallCompanion, ComposeAppKtor_client_coreHttpClientConfig<T>, ComposeAppKtor_client_coreHttpClientEngineConfig, ComposeAppKtor_client_coreHttpReceivePipeline, ComposeAppKtor_client_coreHttpReceivePipelinePhases, ComposeAppKtor_client_coreHttpRequestBuilder, ComposeAppKtor_client_coreHttpRequestBuilderCompanion, ComposeAppKtor_client_coreHttpRequestData, ComposeAppKtor_client_coreHttpRequestPipeline, ComposeAppKtor_client_coreHttpRequestPipelinePhases, ComposeAppKtor_client_coreHttpResponse, ComposeAppKtor_client_coreHttpResponseContainer, ComposeAppKtor_client_coreHttpResponseData, ComposeAppKtor_client_coreHttpResponsePipeline, ComposeAppKtor_client_coreHttpResponsePipelinePhases, ComposeAppKtor_client_coreHttpSendPipeline, ComposeAppKtor_client_coreHttpSendPipelinePhases, ComposeAppKtor_client_coreProxyConfig, ComposeAppKtor_eventsEventDefinition<T>, ComposeAppKtor_eventsEvents, ComposeAppKtor_httpContentType, ComposeAppKtor_httpContentTypeCompanion, ComposeAppKtor_httpHeaderValueParam, ComposeAppKtor_httpHeaderValueWithParameters, ComposeAppKtor_httpHeaderValueWithParametersCompanion, ComposeAppKtor_httpHeadersBuilder, ComposeAppKtor_httpHttpMethod, ComposeAppKtor_httpHttpMethodCompanion, ComposeAppKtor_httpHttpProtocolVersion, ComposeAppKtor_httpHttpProtocolVersionCompanion, ComposeAppKtor_httpHttpStatusCode, ComposeAppKtor_httpHttpStatusCodeCompanion, ComposeAppKtor_httpOutgoingContent, ComposeAppKtor_httpURLBuilder, ComposeAppKtor_httpURLBuilderCompanion, ComposeAppKtor_httpURLProtocol, ComposeAppKtor_httpURLProtocolCompanion, ComposeAppKtor_httpUrl, ComposeAppKtor_httpUrlCompanion, ComposeAppKtor_utilsAttributeKey<T>, ComposeAppKtor_utilsGMTDate, ComposeAppKtor_utilsGMTDateCompanion, ComposeAppKtor_utilsMonth, ComposeAppKtor_utilsMonthCompanion, ComposeAppKtor_utilsPipeline<TSubject, TContext>, ComposeAppKtor_utilsPipelinePhase, ComposeAppKtor_utilsStringValuesBuilderImpl, ComposeAppKtor_utilsTypeInfo, ComposeAppKtor_utilsWeekDay, ComposeAppKtor_utilsWeekDayCompanion, ComposeAppLifecycle_viewmodelViewModel, ComposeAppLocation, ComposeAppLocationCompanion, ComposeAppLocationService, ComposeAppNetworkError, ComposeAppPermissionsPermission, ComposeAppPermissionsPermissionState, ComposeAppPhotoData, ComposeAppPhotoDataCompanion, ComposeAppResultError<__covariant E>, ComposeAppResultSuccess<__covariant D>, ComposeAppRoom_runtimeInvalidationTracker, ComposeAppRoom_runtimeMigration, ComposeAppRoom_runtimeRoomDatabase, ComposeAppRoom_runtimeRoomDatabaseBuilder<T>, ComposeAppRoom_runtimeRoomDatabaseCallback, ComposeAppRoom_runtimeRoomDatabaseJournalMode, ComposeAppRoom_runtimeRoomOpenDelegate, ComposeAppRoom_runtimeRoomOpenDelegateValidationResult, ComposeAppSavedWeatherItem, ComposeAppSearchScreenViewState, ComposeAppSystemLocale, ComposeAppUrls, ComposeAppUrlsCompanion, ComposeAppWeatherDao_ImplCompanion, ComposeAppWeatherDataBase, ComposeAppWeatherItem, ComposeAppWeatherMainScreenState, ComposeAppWeatherRepoImpl, UIViewController;
 
-@protocol ComposeAppError, ComposeAppKoin_coreKoinComponent, ComposeAppKoin_coreKoinExtension, ComposeAppKoin_coreKoinScopeComponent, ComposeAppKoin_coreQualifier, ComposeAppKoin_coreScopeCallback, ComposeAppKotlinAnnotation, ComposeAppKotlinAutoCloseable, ComposeAppKotlinComparable, ComposeAppKotlinContinuation, ComposeAppKotlinContinuationInterceptor, ComposeAppKotlinCoroutineContext, ComposeAppKotlinCoroutineContextElement, ComposeAppKotlinCoroutineContextKey, ComposeAppKotlinFunction, ComposeAppKotlinIterator, ComposeAppKotlinKAnnotatedElement, ComposeAppKotlinKClass, ComposeAppKotlinKClassifier, ComposeAppKotlinKDeclarationContainer, ComposeAppKotlinKType, ComposeAppKotlinLazy, ComposeAppKotlinMapEntry, ComposeAppKotlinSequence, ComposeAppKotlinSuspendFunction2, ComposeAppKotlinx_coroutines_coreChildHandle, ComposeAppKotlinx_coroutines_coreChildJob, ComposeAppKotlinx_coroutines_coreCoroutineScope, ComposeAppKotlinx_coroutines_coreDisposableHandle, ComposeAppKotlinx_coroutines_coreFlow, ComposeAppKotlinx_coroutines_coreFlowCollector, ComposeAppKotlinx_coroutines_coreJob, ComposeAppKotlinx_coroutines_coreParentJob, ComposeAppKotlinx_coroutines_coreRunnable, ComposeAppKotlinx_coroutines_coreSelectClause, ComposeAppKotlinx_coroutines_coreSelectClause0, ComposeAppKotlinx_coroutines_coreSelectInstance, ComposeAppKotlinx_coroutines_coreSharedFlow, ComposeAppKotlinx_coroutines_coreStateFlow, ComposeAppKotlinx_io_coreRawSink, ComposeAppKotlinx_io_coreRawSource, ComposeAppKotlinx_io_coreSink, ComposeAppKotlinx_io_coreSource, ComposeAppKotlinx_serialization_coreCompositeDecoder, ComposeAppKotlinx_serialization_coreCompositeEncoder, ComposeAppKotlinx_serialization_coreDecoder, ComposeAppKotlinx_serialization_coreDeserializationStrategy, ComposeAppKotlinx_serialization_coreEncoder, ComposeAppKotlinx_serialization_coreKSerializer, ComposeAppKotlinx_serialization_coreSerialDescriptor, ComposeAppKotlinx_serialization_coreSerializationStrategy, ComposeAppKotlinx_serialization_coreSerializersModuleCollector, ComposeAppKtor_client_coreHttpClientEngine, ComposeAppKtor_client_coreHttpClientEngineCapability, ComposeAppKtor_client_coreHttpClientPlugin, ComposeAppKtor_client_coreHttpRequest, ComposeAppKtor_httpHeaders, ComposeAppKtor_httpHttpMessage, ComposeAppKtor_httpHttpMessageBuilder, ComposeAppKtor_httpParameters, ComposeAppKtor_httpParametersBuilder, ComposeAppKtor_ioByteReadChannel, ComposeAppKtor_ioCloseable, ComposeAppKtor_utilsAttributes, ComposeAppKtor_utilsStringValues, ComposeAppKtor_utilsStringValuesBuilder, ComposeAppPermissionsPermissionsControllerProtocol, ComposeAppResult, ComposeAppRoom_runtimeAutoMigrationSpec, ComposeAppRoom_runtimeRoomDatabaseConstructor, ComposeAppRoom_runtimeRoomOpenDelegateMarker, ComposeAppSqliteSQLiteConnection, ComposeAppSqliteSQLiteDriver, ComposeAppSqliteSQLiteStatement, ComposeAppWeatherDao, ComposeAppWeatherRepo;
+@protocol ComposeAppDataBaseRepo, ComposeAppError, ComposeAppKoin_coreKoinComponent, ComposeAppKoin_coreKoinExtension, ComposeAppKoin_coreKoinScopeComponent, ComposeAppKoin_coreQualifier, ComposeAppKoin_coreScopeCallback, ComposeAppKotlinAnnotation, ComposeAppKotlinAutoCloseable, ComposeAppKotlinComparable, ComposeAppKotlinContinuation, ComposeAppKotlinContinuationInterceptor, ComposeAppKotlinCoroutineContext, ComposeAppKotlinCoroutineContextElement, ComposeAppKotlinCoroutineContextKey, ComposeAppKotlinFunction, ComposeAppKotlinIterator, ComposeAppKotlinKAnnotatedElement, ComposeAppKotlinKClass, ComposeAppKotlinKClassifier, ComposeAppKotlinKDeclarationContainer, ComposeAppKotlinKType, ComposeAppKotlinLazy, ComposeAppKotlinMapEntry, ComposeAppKotlinSequence, ComposeAppKotlinSuspendFunction2, ComposeAppKotlinx_coroutines_coreChildHandle, ComposeAppKotlinx_coroutines_coreChildJob, ComposeAppKotlinx_coroutines_coreCoroutineScope, ComposeAppKotlinx_coroutines_coreDisposableHandle, ComposeAppKotlinx_coroutines_coreFlow, ComposeAppKotlinx_coroutines_coreFlowCollector, ComposeAppKotlinx_coroutines_coreJob, ComposeAppKotlinx_coroutines_coreParentJob, ComposeAppKotlinx_coroutines_coreRunnable, ComposeAppKotlinx_coroutines_coreSelectClause, ComposeAppKotlinx_coroutines_coreSelectClause0, ComposeAppKotlinx_coroutines_coreSelectInstance, ComposeAppKotlinx_coroutines_coreSharedFlow, ComposeAppKotlinx_coroutines_coreStateFlow, ComposeAppKotlinx_io_coreRawSink, ComposeAppKotlinx_io_coreRawSource, ComposeAppKotlinx_io_coreSink, ComposeAppKotlinx_io_coreSource, ComposeAppKotlinx_serialization_coreCompositeDecoder, ComposeAppKotlinx_serialization_coreCompositeEncoder, ComposeAppKotlinx_serialization_coreDecoder, ComposeAppKotlinx_serialization_coreDeserializationStrategy, ComposeAppKotlinx_serialization_coreEncoder, ComposeAppKotlinx_serialization_coreKSerializer, ComposeAppKotlinx_serialization_coreSerialDescriptor, ComposeAppKotlinx_serialization_coreSerializationStrategy, ComposeAppKotlinx_serialization_coreSerializersModuleCollector, ComposeAppKtor_client_coreHttpClientEngine, ComposeAppKtor_client_coreHttpClientEngineCapability, ComposeAppKtor_client_coreHttpClientPlugin, ComposeAppKtor_client_coreHttpRequest, ComposeAppKtor_httpHeaders, ComposeAppKtor_httpHttpMessage, ComposeAppKtor_httpHttpMessageBuilder, ComposeAppKtor_httpParameters, ComposeAppKtor_httpParametersBuilder, ComposeAppKtor_ioByteReadChannel, ComposeAppKtor_ioCloseable, ComposeAppKtor_utilsAttributes, ComposeAppKtor_utilsStringValues, ComposeAppKtor_utilsStringValuesBuilder, ComposeAppPermissionsPermissionsControllerProtocol, ComposeAppResult, ComposeAppRoom_runtimeAutoMigrationSpec, ComposeAppRoom_runtimeRoomDatabaseConstructor, ComposeAppRoom_runtimeRoomOpenDelegateMarker, ComposeAppSqliteSQLiteConnection, ComposeAppSqliteSQLiteDriver, ComposeAppSqliteSQLiteStatement, ComposeAppWeatherDao, ComposeAppWeatherRepo;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -163,13 +163,19 @@ __attribute__((swift_name("AppDatabaseConstructor")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SavedWeatherItem")))
 @interface ComposeAppSavedWeatherItem : ComposeAppBase
-- (instancetype)initWithId:(int32_t)id cityName:(NSString *)cityName __attribute__((swift_name("init(id:cityName:)"))) __attribute__((objc_designated_initializer));
-- (ComposeAppSavedWeatherItem *)doCopyId:(int32_t)id cityName:(NSString *)cityName __attribute__((swift_name("doCopy(id:cityName:)")));
+- (instancetype)initWithId:(int32_t)id cityName:(NSString *)cityName latitude:(double)latitude longitude:(double)longitude temperature:(double)temperature weatherDescription:(NSString *)weatherDescription highTemperature:(double)highTemperature lowTemperature:(double)lowTemperature __attribute__((swift_name("init(id:cityName:latitude:longitude:temperature:weatherDescription:highTemperature:lowTemperature:)"))) __attribute__((objc_designated_initializer));
+- (ComposeAppSavedWeatherItem *)doCopyId:(int32_t)id cityName:(NSString *)cityName latitude:(double)latitude longitude:(double)longitude temperature:(double)temperature weatherDescription:(NSString *)weatherDescription highTemperature:(double)highTemperature lowTemperature:(double)lowTemperature __attribute__((swift_name("doCopy(id:cityName:latitude:longitude:temperature:weatherDescription:highTemperature:lowTemperature:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) NSString *cityName __attribute__((swift_name("cityName")));
+@property (readonly) double highTemperature __attribute__((swift_name("highTemperature")));
 @property (readonly) int32_t id __attribute__((swift_name("id")));
+@property (readonly) double latitude __attribute__((swift_name("latitude")));
+@property (readonly) double longitude __attribute__((swift_name("longitude")));
+@property (readonly) double lowTemperature __attribute__((swift_name("lowTemperature")));
+@property (readonly) double temperature __attribute__((swift_name("temperature")));
+@property (readonly) NSString *weatherDescription __attribute__((swift_name("weatherDescription")));
 @end
 
 __attribute__((swift_name("WeatherDao")))
@@ -181,7 +187,7 @@ __attribute__((swift_name("WeatherDao")))
  * Other uncaught Kotlin exceptions are fatal.
 */
 - (void)deleteWeatherWeather:(ComposeAppSavedWeatherItem *)weather completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("deleteWeather(weather:completionHandler:)")));
-- (id<ComposeAppKotlinx_coroutines_coreFlow>)getWeather __attribute__((swift_name("getWeather()")));
+- (id<ComposeAppKotlinx_coroutines_coreFlow>)getWeatherList __attribute__((swift_name("getWeatherList()")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
@@ -201,7 +207,7 @@ __attribute__((swift_name("WeatherDao_Impl")))
  * Other uncaught Kotlin exceptions are fatal.
 */
 - (void)deleteWeatherWeather:(ComposeAppSavedWeatherItem *)weather completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("deleteWeather(weather:completionHandler:)")));
-- (id<ComposeAppKotlinx_coroutines_coreFlow>)getWeather __attribute__((swift_name("getWeather()")));
+- (id<ComposeAppKotlinx_coroutines_coreFlow>)getWeatherList __attribute__((swift_name("getWeatherList()")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
@@ -385,6 +391,43 @@ __attribute__((swift_name("ImageListDto.Companion")))
 + (instancetype)companion __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) ComposeAppImageListDtoCompanion *shared __attribute__((swift_name("shared")));
 - (id<ComposeAppKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+__attribute__((swift_name("DataBaseRepo")))
+@protocol ComposeAppDataBaseRepo
+@required
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)deleteWeatherWeather:(ComposeAppSavedWeatherItem *)weather completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("deleteWeather(weather:completionHandler:)")));
+- (id<ComposeAppKotlinx_coroutines_coreFlow>)getWeatherList __attribute__((swift_name("getWeatherList()")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)saveWeatherWeather:(ComposeAppSavedWeatherItem *)weather completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("saveWeather(weather:completionHandler:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("DataBaseRepoImpl")))
+@interface ComposeAppDataBaseRepoImpl : ComposeAppBase <ComposeAppDataBaseRepo>
+- (instancetype)initWithWeatherDao:(id<ComposeAppWeatherDao>)weatherDao __attribute__((swift_name("init(weatherDao:)"))) __attribute__((objc_designated_initializer));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)deleteWeatherWeather:(ComposeAppSavedWeatherItem *)weather completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("deleteWeather(weather:completionHandler:)")));
+- (id<ComposeAppKotlinx_coroutines_coreFlow>)getWeatherList __attribute__((swift_name("getWeatherList()")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)saveWeatherWeather:(ComposeAppSavedWeatherItem *)weather completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("saveWeather(weather:completionHandler:)")));
 @end
 
 __attribute__((swift_name("WeatherRepo")))
@@ -1425,7 +1468,7 @@ __attribute__((swift_name("PermissionsViewModel")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SearchViewModel")))
 @interface ComposeAppSearchViewModel : ComposeAppLifecycle_viewmodelViewModel
-- (instancetype)initWithWeatherDao:(id<ComposeAppWeatherDao>)weatherDao __attribute__((swift_name("init(weatherDao:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithDataBaseRepo:(id<ComposeAppDataBaseRepo>)dataBaseRepo __attribute__((swift_name("init(dataBaseRepo:)"))) __attribute__((objc_designated_initializer));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 + (instancetype)new __attribute__((unavailable));
 - (instancetype)initWithCloseables:(ComposeAppKotlinArray<id<ComposeAppKotlinAutoCloseable>> *)closeables __attribute__((swift_name("init(closeables:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
@@ -1440,7 +1483,7 @@ __attribute__((swift_name("SearchViewModel")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("WeatherViewModel")))
 @interface ComposeAppWeatherViewModel : ComposeAppLifecycle_viewmodelViewModel
-- (instancetype)initWithLocationService:(ComposeAppLocationService *)locationService weatherRepoImpl:(ComposeAppWeatherRepoImpl *)weatherRepoImpl __attribute__((swift_name("init(locationService:weatherRepoImpl:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithLocationService:(ComposeAppLocationService *)locationService weatherRepoImpl:(ComposeAppWeatherRepoImpl *)weatherRepoImpl dataBaseRepo:(id<ComposeAppDataBaseRepo>)dataBaseRepo __attribute__((swift_name("init(locationService:weatherRepoImpl:dataBaseRepo:)"))) __attribute__((objc_designated_initializer));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 + (instancetype)new __attribute__((unavailable));
 - (instancetype)initWithCloseables:(ComposeAppKotlinArray<id<ComposeAppKotlinAutoCloseable>> *)closeables __attribute__((swift_name("init(closeables:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
@@ -1501,7 +1544,6 @@ __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetWeatherDatabaseKt")))
 @interface ComposeAppGetWeatherDatabaseKt : ComposeAppBase
 + (ComposeAppRoom_runtimeRoomDatabaseBuilder<ComposeAppWeatherDataBase *> *)getDatabaseBuilder __attribute__((swift_name("getDatabaseBuilder()")));
-+ (ComposeAppWeatherDataBase *)getWeatherDatabase __attribute__((swift_name("getWeatherDatabase()")));
 @end
 
 __attribute__((swift_name("KotlinThrowable")))

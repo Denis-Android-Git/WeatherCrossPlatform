@@ -122,9 +122,19 @@ fun SearchScreen(
 
         }
         LazyColumn {
+            item {
+                Text(text = " Текущее место",
+                    modifier = Modifier.padding(start = 16.dp, bottom = 8.dp),
+                    color = Color.Gray)
+            }
             items(cityList) {
-                Text(text = it.cityName, color = Color.White, fontSize = 18.sp)
-
+                SavedElement(
+                    cityName = it.cityName,
+                    temperature = it.temperature.toString(),
+                    weatherDescription = it.weatherDescription,
+                    high = it.highTemperature.toString(),
+                    low = it.lowTemperature.toString()
+                )
             }
         }
     }

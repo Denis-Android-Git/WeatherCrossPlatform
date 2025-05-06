@@ -8,32 +8,16 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import org.example.weathercrossplatform.data.database.SavedWeatherItem
-import org.example.weathercrossplatform.data.database.WeatherDao
 import org.example.weathercrossplatform.domain.models.SearchScreenViewState
+import org.example.weathercrossplatform.domain.repo.DataBaseRepo
 
 class SearchViewModel(
-    private val weatherDao: WeatherDao
+    dataBaseRepo: DataBaseRepo
 ) : ViewModel() {
     private val _searchScreenState = MutableStateFlow(SearchScreenViewState())
     val searchScreenState = _searchScreenState.asStateFlow()
 
-    init {
-        viewModelScope.launch {
-            weatherDao.upsertWeather(
-                SavedWeatherItem(
-                    cityName = "One"
-                )
-            )
-            weatherDao.upsertWeather(
-                SavedWeatherItem(
-                    cityName = "Two"
-                )
-            )
-        }
-    }
-
-    val allCities = weatherDao.getWeather()
+    val allCities = dataBaseRepo.getWeatherList()
         .stateIn(
             viewModelScope,
             SharingStarted.WhileSubscribed(5000),

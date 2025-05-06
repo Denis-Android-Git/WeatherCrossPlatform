@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.locationservice.LocationService
 import org.example.weathercrossplatform.data.repo_impl.WeatherRepoImpl
 import org.example.weathercrossplatform.data.utils.onError
@@ -16,11 +17,13 @@ import org.example.weathercrossplatform.data.utils.onSuccess
 import org.example.weathercrossplatform.domain.models.Coordinates
 import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
+import org.example.weathercrossplatform.domain.repo.DataBaseRepo
 import kotlin.math.roundToInt
 
 class WeatherViewModel(
     private val locationService: LocationService,
-    private val weatherRepoImpl: WeatherRepoImpl
+    private val weatherRepoImpl: WeatherRepoImpl,
+    private val dataBaseRepo: DataBaseRepo
 ) : ViewModel() {
 
     private val coordinates = MutableStateFlow<Coordinates?>(null)
@@ -44,6 +47,19 @@ class WeatherViewModel(
 
                         weatherRepoImpl.getCurrentWeather(query)
                             .onSuccess { weather ->
+
+                                dataBaseRepo.saveWeather(
+                                    weather = SavedWeatherItem(
+                                        id = 0,
+                                        cityName = weather.location.name,
+                                        latitude = it.latitude,
+                                        longitude = it.longitude,
+                                        temperature = weather.current.tempC,
+                                        weatherDescription = weather.current.condition.text,
+                                        highTemperature = weather.forecast.forecastday[0].day.maxTempC,
+                                        lowTemperature = weather.forecast.forecastday[0].day.minTempC
+                                    )
+                                )
 
                                 println("windRotation = ${weather.current.windDegree}, ${weather.current.windDir}")
                                 println("pressure = ${weather.current.pressureMb}, ${weather.current.pressureIn}")
@@ -178,6 +194,7 @@ class WeatherViewModel(
             )
         )
     }
+
     private fun calculateRotationAngle(temperature: Double, feelsLike: Double): Float {
         val diff = feelsLike - temperature
         return (diff * 20).toFloat()

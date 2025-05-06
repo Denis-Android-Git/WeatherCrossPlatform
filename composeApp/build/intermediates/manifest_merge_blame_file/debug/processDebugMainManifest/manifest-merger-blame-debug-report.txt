@@ -18,19 +18,19 @@
 13-->/Users/mac/Desktop/WeatherCrossPlatform/composeApp/src/androidMain/AndroidManifest.xml:6:5-79
 13-->/Users/mac/Desktop/WeatherCrossPlatform/composeApp/src/androidMain/AndroidManifest.xml:6:22-76
 14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-14-->[com.google.firebase:firebase-installations:17.2.0] /Users/mac/.gradle/caches/8.14/transforms/126824017e04a4f0f8a05d4c3e88ed4b/transformed/firebase-installations-17.2.0/AndroidManifest.xml:7:5-79
-14-->[com.google.firebase:firebase-installations:17.2.0] /Users/mac/.gradle/caches/8.14/transforms/126824017e04a4f0f8a05d4c3e88ed4b/transformed/firebase-installations-17.2.0/AndroidManifest.xml:7:22-76
+14-->[com.google.firebase:firebase-installations:17.2.0] /Users/mac/.gradle/caches/8.14/transforms/1f20eee667b7eccda5397070cd784df3/transformed/firebase-installations-17.2.0/AndroidManifest.xml:7:5-79
+14-->[com.google.firebase:firebase-installations:17.2.0] /Users/mac/.gradle/caches/8.14/transforms/1f20eee667b7eccda5397070cd784df3/transformed/firebase-installations-17.2.0/AndroidManifest.xml:7:22-76
 15
 16    <permission
-16-->[androidx.core:core:1.15.0] /Users/mac/.gradle/caches/8.14/transforms/1cd42881e68b3546a6c8581c0e99bb5f/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
+16-->[androidx.core:core:1.15.0] /Users/mac/.gradle/caches/8.14/transforms/8bfbcead653303ffb04818ba256b0707/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
 17        android:name="org.example.weathercrossplatform.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-17-->[androidx.core:core:1.15.0] /Users/mac/.gradle/caches/8.14/transforms/1cd42881e68b3546a6c8581c0e99bb5f/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
+17-->[androidx.core:core:1.15.0] /Users/mac/.gradle/caches/8.14/transforms/8bfbcead653303ffb04818ba256b0707/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
 18        android:protectionLevel="signature" />
-18-->[androidx.core:core:1.15.0] /Users/mac/.gradle/caches/8.14/transforms/1cd42881e68b3546a6c8581c0e99bb5f/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
+18-->[androidx.core:core:1.15.0] /Users/mac/.gradle/caches/8.14/transforms/8bfbcead653303ffb04818ba256b0707/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
 19
 20    <uses-permission android:name="org.example.weathercrossplatform.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-20-->[androidx.core:core:1.15.0] /Users/mac/.gradle/caches/8.14/transforms/1cd42881e68b3546a6c8581c0e99bb5f/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
-20-->[androidx.core:core:1.15.0] /Users/mac/.gradle/caches/8.14/transforms/1cd42881e68b3546a6c8581c0e99bb5f/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
+20-->[androidx.core:core:1.15.0] /Users/mac/.gradle/caches/8.14/transforms/8bfbcead653303ffb04818ba256b0707/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
+20-->[androidx.core:core:1.15.0] /Users/mac/.gradle/caches/8.14/transforms/8bfbcead653303ffb04818ba256b0707/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
 21
 22    <application
 22-->/Users/mac/Desktop/WeatherCrossPlatform/composeApp/src/androidMain/AndroidManifest.xml:8:5-26:19
@@ -39,7 +39,7 @@
 24        android:allowBackup="true"
 24-->/Users/mac/Desktop/WeatherCrossPlatform/composeApp/src/androidMain/AndroidManifest.xml:10:9-35
 25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-25-->[androidx.core:core:1.15.0] /Users/mac/.gradle/caches/8.14/transforms/1cd42881e68b3546a6c8581c0e99bb5f/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
+25-->[androidx.core:core:1.15.0] /Users/mac/.gradle/caches/8.14/transforms/8bfbcead653303ffb04818ba256b0707/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
 26        android:debuggable="true"
 27        android:extractNativeLibs="false"
 28        android:icon="@mipmap/ic_launcher"
@@ -73,229 +73,229 @@
 42            </intent-filter>
 43        </activity>
 44        <activity
-44-->[com.google.android.gms:play-services-base:18.5.0] /Users/mac/.gradle/caches/8.14/transforms/5d15c5009841b59c3997daade564eeef/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
+44-->[com.google.android.gms:play-services-base:18.5.0] /Users/mac/.gradle/caches/8.14/transforms/de8ccf6143cc87db0871bd8fbc7185e2/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
 45            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-45-->[com.google.android.gms:play-services-base:18.5.0] /Users/mac/.gradle/caches/8.14/transforms/5d15c5009841b59c3997daade564eeef/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:19-85
+45-->[com.google.android.gms:play-services-base:18.5.0] /Users/mac/.gradle/caches/8.14/transforms/de8ccf6143cc87db0871bd8fbc7185e2/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:19-85
 46            android:exported="false"
-46-->[com.google.android.gms:play-services-base:18.5.0] /Users/mac/.gradle/caches/8.14/transforms/5d15c5009841b59c3997daade564eeef/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:146-170
+46-->[com.google.android.gms:play-services-base:18.5.0] /Users/mac/.gradle/caches/8.14/transforms/de8ccf6143cc87db0871bd8fbc7185e2/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:146-170
 47            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-47-->[com.google.android.gms:play-services-base:18.5.0] /Users/mac/.gradle/caches/8.14/transforms/5d15c5009841b59c3997daade564eeef/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:86-145
+47-->[com.google.android.gms:play-services-base:18.5.0] /Users/mac/.gradle/caches/8.14/transforms/de8ccf6143cc87db0871bd8fbc7185e2/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:86-145
 48
 49        <service
-49-->[com.google.firebase:firebase-crashlytics-ktx:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/1542437a031f2cd92cdfd0e668918838/transformed/firebase-crashlytics-ktx-18.6.0/AndroidManifest.xml:21:9-27:19
+49-->[com.google.firebase:firebase-crashlytics-ktx:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/1064075306eb1e7f383a34097830bcae/transformed/firebase-crashlytics-ktx-18.6.0/AndroidManifest.xml:21:9-27:19
 50            android:name="com.google.firebase.components.ComponentDiscoveryService"
-50-->[com.google.firebase:firebase-crashlytics-ktx:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/1542437a031f2cd92cdfd0e668918838/transformed/firebase-crashlytics-ktx-18.6.0/AndroidManifest.xml:22:13-84
+50-->[com.google.firebase:firebase-crashlytics-ktx:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/1064075306eb1e7f383a34097830bcae/transformed/firebase-crashlytics-ktx-18.6.0/AndroidManifest.xml:22:13-84
 51            android:directBootAware="true"
-51-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/0edea6a1b96f72f333daafe7f0d84ede/transformed/firebase-common-20.4.2/AndroidManifest.xml:32:13-43
+51-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/c1686fe208c173fc4c1b701c7f5c4fb0/transformed/firebase-common-20.4.2/AndroidManifest.xml:32:13-43
 52            android:exported="false" >
-52-->[com.google.firebase:firebase-crashlytics-ktx:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/1542437a031f2cd92cdfd0e668918838/transformed/firebase-crashlytics-ktx-18.6.0/AndroidManifest.xml:23:13-37
+52-->[com.google.firebase:firebase-crashlytics-ktx:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/1064075306eb1e7f383a34097830bcae/transformed/firebase-crashlytics-ktx-18.6.0/AndroidManifest.xml:23:13-37
 53            <meta-data
-53-->[com.google.firebase:firebase-crashlytics-ktx:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/1542437a031f2cd92cdfd0e668918838/transformed/firebase-crashlytics-ktx-18.6.0/AndroidManifest.xml:24:13-26:85
+53-->[com.google.firebase:firebase-crashlytics-ktx:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/1064075306eb1e7f383a34097830bcae/transformed/firebase-crashlytics-ktx-18.6.0/AndroidManifest.xml:24:13-26:85
 54                android:name="com.google.firebase.components:com.google.firebase.crashlytics.ktx.FirebaseCrashlyticsKtxRegistrar"
-54-->[com.google.firebase:firebase-crashlytics-ktx:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/1542437a031f2cd92cdfd0e668918838/transformed/firebase-crashlytics-ktx-18.6.0/AndroidManifest.xml:25:17-130
+54-->[com.google.firebase:firebase-crashlytics-ktx:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/1064075306eb1e7f383a34097830bcae/transformed/firebase-crashlytics-ktx-18.6.0/AndroidManifest.xml:25:17-130
 55                android:value="com.google.firebase.components.ComponentRegistrar" />
-55-->[com.google.firebase:firebase-crashlytics-ktx:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/1542437a031f2cd92cdfd0e668918838/transformed/firebase-crashlytics-ktx-18.6.0/AndroidManifest.xml:26:17-82
+55-->[com.google.firebase:firebase-crashlytics-ktx:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/1064075306eb1e7f383a34097830bcae/transformed/firebase-crashlytics-ktx-18.6.0/AndroidManifest.xml:26:17-82
 56            <meta-data
-56-->[com.google.firebase:firebase-crashlytics:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/1062bc5832cd4408d461eec0c7e55d98/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:15:13-17:85
+56-->[com.google.firebase:firebase-crashlytics:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/0806323bc553aaadac7a221216fe8eee/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:15:13-17:85
 57                android:name="com.google.firebase.components:com.google.firebase.crashlytics.FirebaseCrashlyticsKtxRegistrar"
-57-->[com.google.firebase:firebase-crashlytics:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/1062bc5832cd4408d461eec0c7e55d98/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:16:17-126
+57-->[com.google.firebase:firebase-crashlytics:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/0806323bc553aaadac7a221216fe8eee/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:16:17-126
 58                android:value="com.google.firebase.components.ComponentRegistrar" />
-58-->[com.google.firebase:firebase-crashlytics:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/1062bc5832cd4408d461eec0c7e55d98/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:17:17-82
+58-->[com.google.firebase:firebase-crashlytics:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/0806323bc553aaadac7a221216fe8eee/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:17:17-82
 59            <meta-data
-59-->[com.google.firebase:firebase-crashlytics:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/1062bc5832cd4408d461eec0c7e55d98/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:18:13-20:85
+59-->[com.google.firebase:firebase-crashlytics:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/0806323bc553aaadac7a221216fe8eee/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:18:13-20:85
 60                android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
-60-->[com.google.firebase:firebase-crashlytics:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/1062bc5832cd4408d461eec0c7e55d98/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:19:17-115
+60-->[com.google.firebase:firebase-crashlytics:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/0806323bc553aaadac7a221216fe8eee/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:19:17-115
 61                android:value="com.google.firebase.components.ComponentRegistrar" />
-61-->[com.google.firebase:firebase-crashlytics:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/1062bc5832cd4408d461eec0c7e55d98/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:20:17-82
+61-->[com.google.firebase:firebase-crashlytics:18.6.0] /Users/mac/.gradle/caches/8.14/transforms/0806323bc553aaadac7a221216fe8eee/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:20:17-82
 62            <meta-data
-62-->[com.google.firebase:firebase-sessions:1.2.0] /Users/mac/.gradle/caches/8.14/transforms/5be73a0695bd0ca41d94dd587254039b/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:29:13-31:85
+62-->[com.google.firebase:firebase-sessions:1.2.0] /Users/mac/.gradle/caches/8.14/transforms/697f2886a30a664b86a6c6d97540c724/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:29:13-31:85
 63                android:name="com.google.firebase.components:com.google.firebase.sessions.FirebaseSessionsRegistrar"
-63-->[com.google.firebase:firebase-sessions:1.2.0] /Users/mac/.gradle/caches/8.14/transforms/5be73a0695bd0ca41d94dd587254039b/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:30:17-117
+63-->[com.google.firebase:firebase-sessions:1.2.0] /Users/mac/.gradle/caches/8.14/transforms/697f2886a30a664b86a6c6d97540c724/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:30:17-117
 64                android:value="com.google.firebase.components.ComponentRegistrar" />
-64-->[com.google.firebase:firebase-sessions:1.2.0] /Users/mac/.gradle/caches/8.14/transforms/5be73a0695bd0ca41d94dd587254039b/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:31:17-82
+64-->[com.google.firebase:firebase-sessions:1.2.0] /Users/mac/.gradle/caches/8.14/transforms/697f2886a30a664b86a6c6d97540c724/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:31:17-82
 65            <meta-data
-65-->[com.google.firebase:firebase-installations:17.2.0] /Users/mac/.gradle/caches/8.14/transforms/126824017e04a4f0f8a05d4c3e88ed4b/transformed/firebase-installations-17.2.0/AndroidManifest.xml:15:13-17:85
+65-->[com.google.firebase:firebase-installations:17.2.0] /Users/mac/.gradle/caches/8.14/transforms/1f20eee667b7eccda5397070cd784df3/transformed/firebase-installations-17.2.0/AndroidManifest.xml:15:13-17:85
 66                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
-66-->[com.google.firebase:firebase-installations:17.2.0] /Users/mac/.gradle/caches/8.14/transforms/126824017e04a4f0f8a05d4c3e88ed4b/transformed/firebase-installations-17.2.0/AndroidManifest.xml:16:17-130
+66-->[com.google.firebase:firebase-installations:17.2.0] /Users/mac/.gradle/caches/8.14/transforms/1f20eee667b7eccda5397070cd784df3/transformed/firebase-installations-17.2.0/AndroidManifest.xml:16:17-130
 67                android:value="com.google.firebase.components.ComponentRegistrar" />
-67-->[com.google.firebase:firebase-installations:17.2.0] /Users/mac/.gradle/caches/8.14/transforms/126824017e04a4f0f8a05d4c3e88ed4b/transformed/firebase-installations-17.2.0/AndroidManifest.xml:17:17-82
+67-->[com.google.firebase:firebase-installations:17.2.0] /Users/mac/.gradle/caches/8.14/transforms/1f20eee667b7eccda5397070cd784df3/transformed/firebase-installations-17.2.0/AndroidManifest.xml:17:17-82
 68            <meta-data
-68-->[com.google.firebase:firebase-installations:17.2.0] /Users/mac/.gradle/caches/8.14/transforms/126824017e04a4f0f8a05d4c3e88ed4b/transformed/firebase-installations-17.2.0/AndroidManifest.xml:18:13-20:85
+68-->[com.google.firebase:firebase-installations:17.2.0] /Users/mac/.gradle/caches/8.14/transforms/1f20eee667b7eccda5397070cd784df3/transformed/firebase-installations-17.2.0/AndroidManifest.xml:18:13-20:85
 69                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-69-->[com.google.firebase:firebase-installations:17.2.0] /Users/mac/.gradle/caches/8.14/transforms/126824017e04a4f0f8a05d4c3e88ed4b/transformed/firebase-installations-17.2.0/AndroidManifest.xml:19:17-127
+69-->[com.google.firebase:firebase-installations:17.2.0] /Users/mac/.gradle/caches/8.14/transforms/1f20eee667b7eccda5397070cd784df3/transformed/firebase-installations-17.2.0/AndroidManifest.xml:19:17-127
 70                android:value="com.google.firebase.components.ComponentRegistrar" />
-70-->[com.google.firebase:firebase-installations:17.2.0] /Users/mac/.gradle/caches/8.14/transforms/126824017e04a4f0f8a05d4c3e88ed4b/transformed/firebase-installations-17.2.0/AndroidManifest.xml:20:17-82
+70-->[com.google.firebase:firebase-installations:17.2.0] /Users/mac/.gradle/caches/8.14/transforms/1f20eee667b7eccda5397070cd784df3/transformed/firebase-installations-17.2.0/AndroidManifest.xml:20:17-82
 71            <meta-data
-71-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/a589d16c172a69168747ed569728ffd7/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:12:13-14:85
+71-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/aaf65981230baf962d788a20cae006e1/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:12:13-14:85
 72                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
-72-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/a589d16c172a69168747ed569728ffd7/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:13:17-116
+72-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/aaf65981230baf962d788a20cae006e1/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:13:17-116
 73                android:value="com.google.firebase.components.ComponentRegistrar" />
-73-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/a589d16c172a69168747ed569728ffd7/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:14:17-82
+73-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/aaf65981230baf962d788a20cae006e1/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:14:17-82
 74            <meta-data
-74-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/0edea6a1b96f72f333daafe7f0d84ede/transformed/firebase-common-20.4.2/AndroidManifest.xml:35:13-37:85
+74-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/c1686fe208c173fc4c1b701c7f5c4fb0/transformed/firebase-common-20.4.2/AndroidManifest.xml:35:13-37:85
 75                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
-75-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/0edea6a1b96f72f333daafe7f0d84ede/transformed/firebase-common-20.4.2/AndroidManifest.xml:36:17-109
+75-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/c1686fe208c173fc4c1b701c7f5c4fb0/transformed/firebase-common-20.4.2/AndroidManifest.xml:36:17-109
 76                android:value="com.google.firebase.components.ComponentRegistrar" />
-76-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/0edea6a1b96f72f333daafe7f0d84ede/transformed/firebase-common-20.4.2/AndroidManifest.xml:37:17-82
+76-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/c1686fe208c173fc4c1b701c7f5c4fb0/transformed/firebase-common-20.4.2/AndroidManifest.xml:37:17-82
 77            <meta-data
-77-->[com.google.firebase:firebase-datatransport:18.1.8] /Users/mac/.gradle/caches/8.14/transforms/0462a55bbce93dac2e40d4291c42fcbc/transformed/firebase-datatransport-18.1.8/AndroidManifest.xml:27:13-29:85
+77-->[com.google.firebase:firebase-datatransport:18.1.8] /Users/mac/.gradle/caches/8.14/transforms/fcec24150b79cd7ce871064648a2b7e4/transformed/firebase-datatransport-18.1.8/AndroidManifest.xml:27:13-29:85
 78                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
-78-->[com.google.firebase:firebase-datatransport:18.1.8] /Users/mac/.gradle/caches/8.14/transforms/0462a55bbce93dac2e40d4291c42fcbc/transformed/firebase-datatransport-18.1.8/AndroidManifest.xml:28:17-115
+78-->[com.google.firebase:firebase-datatransport:18.1.8] /Users/mac/.gradle/caches/8.14/transforms/fcec24150b79cd7ce871064648a2b7e4/transformed/firebase-datatransport-18.1.8/AndroidManifest.xml:28:17-115
 79                android:value="com.google.firebase.components.ComponentRegistrar" />
-79-->[com.google.firebase:firebase-datatransport:18.1.8] /Users/mac/.gradle/caches/8.14/transforms/0462a55bbce93dac2e40d4291c42fcbc/transformed/firebase-datatransport-18.1.8/AndroidManifest.xml:29:17-82
+79-->[com.google.firebase:firebase-datatransport:18.1.8] /Users/mac/.gradle/caches/8.14/transforms/fcec24150b79cd7ce871064648a2b7e4/transformed/firebase-datatransport-18.1.8/AndroidManifest.xml:29:17-82
 80        </service>
 81        <service
-81-->[com.google.firebase:firebase-sessions:1.2.0] /Users/mac/.gradle/caches/8.14/transforms/5be73a0695bd0ca41d94dd587254039b/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:22:9-25:40
+81-->[com.google.firebase:firebase-sessions:1.2.0] /Users/mac/.gradle/caches/8.14/transforms/697f2886a30a664b86a6c6d97540c724/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:22:9-25:40
 82            android:name="com.google.firebase.sessions.SessionLifecycleService"
-82-->[com.google.firebase:firebase-sessions:1.2.0] /Users/mac/.gradle/caches/8.14/transforms/5be73a0695bd0ca41d94dd587254039b/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:23:13-80
+82-->[com.google.firebase:firebase-sessions:1.2.0] /Users/mac/.gradle/caches/8.14/transforms/697f2886a30a664b86a6c6d97540c724/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:23:13-80
 83            android:enabled="true"
-83-->[com.google.firebase:firebase-sessions:1.2.0] /Users/mac/.gradle/caches/8.14/transforms/5be73a0695bd0ca41d94dd587254039b/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:24:13-35
+83-->[com.google.firebase:firebase-sessions:1.2.0] /Users/mac/.gradle/caches/8.14/transforms/697f2886a30a664b86a6c6d97540c724/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:24:13-35
 84            android:exported="false" />
-84-->[com.google.firebase:firebase-sessions:1.2.0] /Users/mac/.gradle/caches/8.14/transforms/5be73a0695bd0ca41d94dd587254039b/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:25:13-37
+84-->[com.google.firebase:firebase-sessions:1.2.0] /Users/mac/.gradle/caches/8.14/transforms/697f2886a30a664b86a6c6d97540c724/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:25:13-37
 85
 86        <provider
-86-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/0edea6a1b96f72f333daafe7f0d84ede/transformed/firebase-common-20.4.2/AndroidManifest.xml:23:9-28:39
+86-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/c1686fe208c173fc4c1b701c7f5c4fb0/transformed/firebase-common-20.4.2/AndroidManifest.xml:23:9-28:39
 87            android:name="com.google.firebase.provider.FirebaseInitProvider"
-87-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/0edea6a1b96f72f333daafe7f0d84ede/transformed/firebase-common-20.4.2/AndroidManifest.xml:24:13-77
+87-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/c1686fe208c173fc4c1b701c7f5c4fb0/transformed/firebase-common-20.4.2/AndroidManifest.xml:24:13-77
 88            android:authorities="org.example.weathercrossplatform.firebaseinitprovider"
-88-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/0edea6a1b96f72f333daafe7f0d84ede/transformed/firebase-common-20.4.2/AndroidManifest.xml:25:13-72
+88-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/c1686fe208c173fc4c1b701c7f5c4fb0/transformed/firebase-common-20.4.2/AndroidManifest.xml:25:13-72
 89            android:directBootAware="true"
-89-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/0edea6a1b96f72f333daafe7f0d84ede/transformed/firebase-common-20.4.2/AndroidManifest.xml:26:13-43
+89-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/c1686fe208c173fc4c1b701c7f5c4fb0/transformed/firebase-common-20.4.2/AndroidManifest.xml:26:13-43
 90            android:exported="false"
-90-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/0edea6a1b96f72f333daafe7f0d84ede/transformed/firebase-common-20.4.2/AndroidManifest.xml:27:13-37
+90-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/c1686fe208c173fc4c1b701c7f5c4fb0/transformed/firebase-common-20.4.2/AndroidManifest.xml:27:13-37
 91            android:initOrder="100" />
-91-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/0edea6a1b96f72f333daafe7f0d84ede/transformed/firebase-common-20.4.2/AndroidManifest.xml:28:13-36
+91-->[com.google.firebase:firebase-common:20.4.2] /Users/mac/.gradle/caches/8.14/transforms/c1686fe208c173fc4c1b701c7f5c4fb0/transformed/firebase-common-20.4.2/AndroidManifest.xml:28:13-36
 92        <provider
-92-->[org.jetbrains.compose.components:components-resources-android:1.7.3] /Users/mac/.gradle/caches/8.14/transforms/44f9948d314330eb4aca8274f4893ea7/transformed/library-release/AndroidManifest.xml:8:9-13:20
+92-->[org.jetbrains.compose.components:components-resources-android:1.7.3] /Users/mac/.gradle/caches/8.14/transforms/c3eb02bbee8ef14846fcfad5fed1929b/transformed/library-release/AndroidManifest.xml:8:9-13:20
 93            android:name="org.jetbrains.compose.resources.AndroidContextProvider"
-93-->[org.jetbrains.compose.components:components-resources-android:1.7.3] /Users/mac/.gradle/caches/8.14/transforms/44f9948d314330eb4aca8274f4893ea7/transformed/library-release/AndroidManifest.xml:9:13-82
+93-->[org.jetbrains.compose.components:components-resources-android:1.7.3] /Users/mac/.gradle/caches/8.14/transforms/c3eb02bbee8ef14846fcfad5fed1929b/transformed/library-release/AndroidManifest.xml:9:13-82
 94            android:authorities="org.example.weathercrossplatform.resources.AndroidContextProvider"
-94-->[org.jetbrains.compose.components:components-resources-android:1.7.3] /Users/mac/.gradle/caches/8.14/transforms/44f9948d314330eb4aca8274f4893ea7/transformed/library-release/AndroidManifest.xml:10:13-84
+94-->[org.jetbrains.compose.components:components-resources-android:1.7.3] /Users/mac/.gradle/caches/8.14/transforms/c3eb02bbee8ef14846fcfad5fed1929b/transformed/library-release/AndroidManifest.xml:10:13-84
 95            android:enabled="true"
-95-->[org.jetbrains.compose.components:components-resources-android:1.7.3] /Users/mac/.gradle/caches/8.14/transforms/44f9948d314330eb4aca8274f4893ea7/transformed/library-release/AndroidManifest.xml:11:13-35
+95-->[org.jetbrains.compose.components:components-resources-android:1.7.3] /Users/mac/.gradle/caches/8.14/transforms/c3eb02bbee8ef14846fcfad5fed1929b/transformed/library-release/AndroidManifest.xml:11:13-35
 96            android:exported="false" >
-96-->[org.jetbrains.compose.components:components-resources-android:1.7.3] /Users/mac/.gradle/caches/8.14/transforms/44f9948d314330eb4aca8274f4893ea7/transformed/library-release/AndroidManifest.xml:12:13-37
+96-->[org.jetbrains.compose.components:components-resources-android:1.7.3] /Users/mac/.gradle/caches/8.14/transforms/c3eb02bbee8ef14846fcfad5fed1929b/transformed/library-release/AndroidManifest.xml:12:13-37
 97        </provider>
 98
 99        <activity
-99-->[androidx.compose.ui:ui-tooling-android:1.7.6] /Users/mac/.gradle/caches/8.14/transforms/0f9b8759720873ce30501cc06244056d/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
+99-->[androidx.compose.ui:ui-tooling-android:1.7.6] /Users/mac/.gradle/caches/8.14/transforms/e52407880325cbd5116b86e0e66d5eb7/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
 100            android:name="androidx.compose.ui.tooling.PreviewActivity"
-100-->[androidx.compose.ui:ui-tooling-android:1.7.6] /Users/mac/.gradle/caches/8.14/transforms/0f9b8759720873ce30501cc06244056d/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+100-->[androidx.compose.ui:ui-tooling-android:1.7.6] /Users/mac/.gradle/caches/8.14/transforms/e52407880325cbd5116b86e0e66d5eb7/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
 101            android:exported="true" />
-101-->[androidx.compose.ui:ui-tooling-android:1.7.6] /Users/mac/.gradle/caches/8.14/transforms/0f9b8759720873ce30501cc06244056d/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
+101-->[androidx.compose.ui:ui-tooling-android:1.7.6] /Users/mac/.gradle/caches/8.14/transforms/e52407880325cbd5116b86e0e66d5eb7/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
 102
 103        <provider
-103-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.14/transforms/491526a6e444f6253672a9fee81fb365/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+103-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.14/transforms/2e8faf67ff921ca56e3f7eeb17979464/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
 104            android:name="androidx.startup.InitializationProvider"
-104-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.14/transforms/491526a6e444f6253672a9fee81fb365/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+104-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.14/transforms/2e8faf67ff921ca56e3f7eeb17979464/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
 105            android:authorities="org.example.weathercrossplatform.androidx-startup"
-105-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.14/transforms/491526a6e444f6253672a9fee81fb365/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+105-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.14/transforms/2e8faf67ff921ca56e3f7eeb17979464/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
 106            android:exported="false" >
-106-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.14/transforms/491526a6e444f6253672a9fee81fb365/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+106-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.14/transforms/2e8faf67ff921ca56e3f7eeb17979464/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
 107            <meta-data
-107-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.14/transforms/491526a6e444f6253672a9fee81fb365/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+107-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.14/transforms/2e8faf67ff921ca56e3f7eeb17979464/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
 108                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-108-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.14/transforms/491526a6e444f6253672a9fee81fb365/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+108-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.14/transforms/2e8faf67ff921ca56e3f7eeb17979464/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
 109                android:value="androidx.startup" />
-109-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.14/transforms/491526a6e444f6253672a9fee81fb365/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+109-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.14/transforms/2e8faf67ff921ca56e3f7eeb17979464/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
 110            <meta-data
-110-->[androidx.lifecycle:lifecycle-process:2.8.7] /Users/mac/.gradle/caches/8.14/transforms/5f411da37a61b8479d3cdf7446f7e953/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:29:13-31:52
+110-->[androidx.lifecycle:lifecycle-process:2.8.7] /Users/mac/.gradle/caches/8.14/transforms/3020ccbe7d08cdb890d07428ca832d35/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:29:13-31:52
 111                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-111-->[androidx.lifecycle:lifecycle-process:2.8.7] /Users/mac/.gradle/caches/8.14/transforms/5f411da37a61b8479d3cdf7446f7e953/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:30:17-78
+111-->[androidx.lifecycle:lifecycle-process:2.8.7] /Users/mac/.gradle/caches/8.14/transforms/3020ccbe7d08cdb890d07428ca832d35/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:30:17-78
 112                android:value="androidx.startup" />
-112-->[androidx.lifecycle:lifecycle-process:2.8.7] /Users/mac/.gradle/caches/8.14/transforms/5f411da37a61b8479d3cdf7446f7e953/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:31:17-49
+112-->[androidx.lifecycle:lifecycle-process:2.8.7] /Users/mac/.gradle/caches/8.14/transforms/3020ccbe7d08cdb890d07428ca832d35/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:31:17-49
 113            <meta-data
-113-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:29:13-31:52
+113-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:29:13-31:52
 114                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-114-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:30:17-85
+114-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:30:17-85
 115                android:value="androidx.startup" />
-115-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:31:17-49
+115-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:31:17-49
 116        </provider>
 117
 118        <service
-118-->[androidx.room:room-runtime-android:2.7.1] /Users/mac/.gradle/caches/8.14/transforms/fdb2a92e2b2e9e1104da829c9b545546/transformed/room-runtime-release/AndroidManifest.xml:24:9-28:63
+118-->[androidx.room:room-runtime-android:2.7.1] /Users/mac/.gradle/caches/8.14/transforms/1a09ee09e3ba5cbce6be738a076230f7/transformed/room-runtime-release/AndroidManifest.xml:24:9-28:63
 119            android:name="androidx.room.MultiInstanceInvalidationService"
-119-->[androidx.room:room-runtime-android:2.7.1] /Users/mac/.gradle/caches/8.14/transforms/fdb2a92e2b2e9e1104da829c9b545546/transformed/room-runtime-release/AndroidManifest.xml:25:13-74
+119-->[androidx.room:room-runtime-android:2.7.1] /Users/mac/.gradle/caches/8.14/transforms/1a09ee09e3ba5cbce6be738a076230f7/transformed/room-runtime-release/AndroidManifest.xml:25:13-74
 120            android:directBootAware="true"
-120-->[androidx.room:room-runtime-android:2.7.1] /Users/mac/.gradle/caches/8.14/transforms/fdb2a92e2b2e9e1104da829c9b545546/transformed/room-runtime-release/AndroidManifest.xml:26:13-43
+120-->[androidx.room:room-runtime-android:2.7.1] /Users/mac/.gradle/caches/8.14/transforms/1a09ee09e3ba5cbce6be738a076230f7/transformed/room-runtime-release/AndroidManifest.xml:26:13-43
 121            android:exported="false" />
-121-->[androidx.room:room-runtime-android:2.7.1] /Users/mac/.gradle/caches/8.14/transforms/fdb2a92e2b2e9e1104da829c9b545546/transformed/room-runtime-release/AndroidManifest.xml:27:13-37
+121-->[androidx.room:room-runtime-android:2.7.1] /Users/mac/.gradle/caches/8.14/transforms/1a09ee09e3ba5cbce6be738a076230f7/transformed/room-runtime-release/AndroidManifest.xml:27:13-37
 122
 123        <meta-data
-123-->[com.google.android.gms:play-services-basement:18.4.0] /Users/mac/.gradle/caches/8.14/transforms/4ef2f893c1fb1cb584a09963de7a0639/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
+123-->[com.google.android.gms:play-services-basement:18.4.0] /Users/mac/.gradle/caches/8.14/transforms/bf828d09237c70ded17a252ed70f68c9/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
 124            android:name="com.google.android.gms.version"
-124-->[com.google.android.gms:play-services-basement:18.4.0] /Users/mac/.gradle/caches/8.14/transforms/4ef2f893c1fb1cb584a09963de7a0639/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
+124-->[com.google.android.gms:play-services-basement:18.4.0] /Users/mac/.gradle/caches/8.14/transforms/bf828d09237c70ded17a252ed70f68c9/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
 125            android:value="@integer/google_play_services_version" />
-125-->[com.google.android.gms:play-services-basement:18.4.0] /Users/mac/.gradle/caches/8.14/transforms/4ef2f893c1fb1cb584a09963de7a0639/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
+125-->[com.google.android.gms:play-services-basement:18.4.0] /Users/mac/.gradle/caches/8.14/transforms/bf828d09237c70ded17a252ed70f68c9/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
 126
 127        <service
-127-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/f6306d3e5334ad88da5043ee92432ce4/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:28:9-34:19
+127-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/daad552f87ab2e6920e81336ee93711e/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:28:9-34:19
 128            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
-128-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/f6306d3e5334ad88da5043ee92432ce4/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:29:13-103
+128-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/daad552f87ab2e6920e81336ee93711e/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:29:13-103
 129            android:exported="false" >
-129-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/f6306d3e5334ad88da5043ee92432ce4/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:30:13-37
+129-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/daad552f87ab2e6920e81336ee93711e/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:30:13-37
 130            <meta-data
-130-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/f6306d3e5334ad88da5043ee92432ce4/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:31:13-33:39
+130-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/daad552f87ab2e6920e81336ee93711e/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:31:13-33:39
 131                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
-131-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/f6306d3e5334ad88da5043ee92432ce4/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:32:17-94
+131-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/daad552f87ab2e6920e81336ee93711e/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:32:17-94
 132                android:value="cct" />
-132-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/f6306d3e5334ad88da5043ee92432ce4/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:33:17-36
+132-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/daad552f87ab2e6920e81336ee93711e/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:33:17-36
 133        </service>
 134
 135        <receiver
-135-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:34:9-52:20
+135-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:34:9-52:20
 136            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-136-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:35:13-76
+136-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:35:13-76
 137            android:directBootAware="false"
-137-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:36:13-44
+137-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:36:13-44
 138            android:enabled="true"
-138-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:37:13-35
+138-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:37:13-35
 139            android:exported="true"
-139-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:38:13-36
+139-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:38:13-36
 140            android:permission="android.permission.DUMP" >
-140-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:39:13-57
+140-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:39:13-57
 141            <intent-filter>
-141-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:40:13-42:29
+141-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:40:13-42:29
 142                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-142-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:41:17-91
-142-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:41:25-88
+142-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:41:17-91
+142-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:41:25-88
 143            </intent-filter>
 144            <intent-filter>
-144-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:43:13-45:29
+144-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:43:13-45:29
 145                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-145-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:44:17-85
-145-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:44:25-82
+145-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:44:17-85
+145-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:44:25-82
 146            </intent-filter>
 147            <intent-filter>
-147-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:46:13-48:29
+147-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:46:13-48:29
 148                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-148-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:47:17-88
-148-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:47:25-85
+148-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:47:17-88
+148-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:47:25-85
 149            </intent-filter>
 150            <intent-filter>
-150-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:49:13-51:29
+150-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:49:13-51:29
 151                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-151-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:50:17-95
-151-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/6a54d190a5d7bac39d2c0619d4b8a0a6/transformed/profileinstaller-1.4.1/AndroidManifest.xml:50:25-92
+151-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:50:17-95
+151-->[androidx.profileinstaller:profileinstaller:1.4.1] /Users/mac/.gradle/caches/8.14/transforms/ae6e6ba597fc1776ddf44fa2ae6eecd9/transformed/profileinstaller-1.4.1/AndroidManifest.xml:50:25-92
 152            </intent-filter>
 153        </receiver>
 154
 155        <service
-155-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/91014087577e1a407962ee17b469d257/transformed/transport-runtime-3.1.9/AndroidManifest.xml:26:9-30:19
+155-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/1fabdac1f25bddc116805ccfab01137d/transformed/transport-runtime-3.1.9/AndroidManifest.xml:26:9-30:19
 156            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-156-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/91014087577e1a407962ee17b469d257/transformed/transport-runtime-3.1.9/AndroidManifest.xml:27:13-117
+156-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/1fabdac1f25bddc116805ccfab01137d/transformed/transport-runtime-3.1.9/AndroidManifest.xml:27:13-117
 157            android:exported="false"
-157-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/91014087577e1a407962ee17b469d257/transformed/transport-runtime-3.1.9/AndroidManifest.xml:28:13-37
+157-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/1fabdac1f25bddc116805ccfab01137d/transformed/transport-runtime-3.1.9/AndroidManifest.xml:28:13-37
 158            android:permission="android.permission.BIND_JOB_SERVICE" >
-158-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/91014087577e1a407962ee17b469d257/transformed/transport-runtime-3.1.9/AndroidManifest.xml:29:13-69
+158-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/1fabdac1f25bddc116805ccfab01137d/transformed/transport-runtime-3.1.9/AndroidManifest.xml:29:13-69
 159        </service>
 160
 161        <receiver
-161-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/91014087577e1a407962ee17b469d257/transformed/transport-runtime-3.1.9/AndroidManifest.xml:32:9-34:40
+161-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/1fabdac1f25bddc116805ccfab01137d/transformed/transport-runtime-3.1.9/AndroidManifest.xml:32:9-34:40
 162            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-162-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/91014087577e1a407962ee17b469d257/transformed/transport-runtime-3.1.9/AndroidManifest.xml:33:13-132
+162-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/1fabdac1f25bddc116805ccfab01137d/transformed/transport-runtime-3.1.9/AndroidManifest.xml:33:13-132
 163            android:exported="false" />
-163-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/91014087577e1a407962ee17b469d257/transformed/transport-runtime-3.1.9/AndroidManifest.xml:34:13-37
+163-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/mac/.gradle/caches/8.14/transforms/1fabdac1f25bddc116805ccfab01137d/transformed/transport-runtime-3.1.9/AndroidManifest.xml:34:13-37
 164    </application>
 165
 166</manifest>
