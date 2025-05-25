@@ -4,31 +4,32 @@ android-compileSdk = "35"
 android-minSdk = "24"
 android-targetSdk = "35"
 androidx-activityCompose = "1.10.1"
-compose-multiplatform = "1.8.0"
+compose-multiplatform = "1.7.3"
 androidx-lifecycle = "2.8.4"
-kotlin = "2.1.20"
+kotlin = "2.1.21"
+kotlinSerialization = "1.8.1"
 kotlinx-coroutines = "1.10.1"
 ktor = "3.0.3"
 buildkonfig = "0.17.0"
 materialIconsCore = "1.7.3"
 moko = "0.18.0"
-lifecycleViewModelCompose = "2.8.3"
+lifecycleViewModelCompose = "2.8.4"
 playServicesLocation = "21.3.0"
 koin = "4.0.4"
 koinComposeMultiplatform = "4.0.4"
-navigationCompose = "2.8.0-alpha02"
+navigationCompose = "2.8.0-alpha10"
 coil = "3.1.0"
 
 #Firebase android
-firebase-android-bom = "33.13.0"
+firebase-android-bom = "33.14.0"
 #Gradle
 gradlePlugins-crashlytics = "3.0.3"
 gradlePlugins-google-services = "4.4.2"
 #Gitlive
 firebase-gitlive-sdk = "1.12.0"
 roomRuntime = "2.7.1"
-ksp = "2.1.20-2.0.1"
-sqlite = "2.5.0"
+ksp = "2.1.21-2.0.1"
+sqlite = "2.5.1"
 
 #androidx-appcompat = "1.7.0"
 #androidx-constraintlayout = "2.2.1"
@@ -40,6 +41,9 @@ sqlite = "2.5.0"
 
 
 [libraries]
+
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinSerialization" }
+
 #Firebase
 firebase = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-android-bom" }
 crashlytics = { module = "com.google.firebase:firebase-crashlytics" }

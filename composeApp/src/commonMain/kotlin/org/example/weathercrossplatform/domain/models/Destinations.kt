@@ -1,6 +1,14 @@
 package org.example.weathercrossplatform.domain.models
 
-enum class Destinations(val route: String) {
-    MAIN_SCREEN("main_screen"),
-    SEARCH_SCREEN("search_screen")
+import kotlinx.serialization.Serializable
+
+sealed interface Routes {
+    @Serializable
+    data object SearchScreenRoute : Routes
+
+    @Serializable
+    data class MainScreenRoute(
+        val city: Int? = null
+    ) : Routes
 }
+

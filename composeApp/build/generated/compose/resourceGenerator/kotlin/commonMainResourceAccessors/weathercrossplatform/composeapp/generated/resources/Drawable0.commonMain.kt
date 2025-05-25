@@ -53,10 +53,12 @@ internal fun _collectCommonMainDrawable0Resources(map: MutableMap<String, Drawab
 internal val Res.drawable.arrow_downward: DrawableResource
   get() = CommonMainDrawable0.arrow_downward
 
-private fun init_arrow_downward(): DrawableResource = org.jetbrains.compose.resources.DrawableResource(
+private fun init_arrow_downward(): DrawableResource =
+    org.jetbrains.compose.resources.DrawableResource(
   "drawable:arrow_downward",
     setOf(
-      org.jetbrains.compose.resources.ResourceItem(setOf(), "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/arrow_downward.png", -1, -1),
+      org.jetbrains.compose.resources.ResourceItem(setOf(),
+    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/arrow_downward.png", -1, -1),
     )
 )
 
@@ -66,27 +68,32 @@ internal val Res.drawable.clouds: DrawableResource
 private fun init_clouds(): DrawableResource = org.jetbrains.compose.resources.DrawableResource(
   "drawable:clouds",
     setOf(
-      org.jetbrains.compose.resources.ResourceItem(setOf(), "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/clouds.png", -1, -1),
+      org.jetbrains.compose.resources.ResourceItem(setOf(),
+    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/clouds.png", -1, -1),
     )
 )
 
 internal val Res.drawable.compose_multiplatform: DrawableResource
   get() = CommonMainDrawable0.compose_multiplatform
 
-private fun init_compose_multiplatform(): DrawableResource = org.jetbrains.compose.resources.DrawableResource(
+private fun init_compose_multiplatform(): DrawableResource =
+    org.jetbrains.compose.resources.DrawableResource(
   "drawable:compose_multiplatform",
     setOf(
-      org.jetbrains.compose.resources.ResourceItem(setOf(), "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/compose-multiplatform.xml", -1, -1),
+      org.jetbrains.compose.resources.ResourceItem(setOf(),
+    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/compose-multiplatform.xml", -1, -1),
     )
 )
 
 internal val Res.drawable.feels_like_arrow: DrawableResource
   get() = CommonMainDrawable0.feels_like_arrow
 
-private fun init_feels_like_arrow(): DrawableResource = org.jetbrains.compose.resources.DrawableResource(
+private fun init_feels_like_arrow(): DrawableResource =
+    org.jetbrains.compose.resources.DrawableResource(
   "drawable:feels_like_arrow",
     setOf(
-      org.jetbrains.compose.resources.ResourceItem(setOf(), "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/feels_like_arrow.png", -1, -1),
+      org.jetbrains.compose.resources.ResourceItem(setOf(),
+    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/feels_like_arrow.png", -1, -1),
     )
 )
 
@@ -96,7 +103,8 @@ internal val Res.drawable.gauge: DrawableResource
 private fun init_gauge(): DrawableResource = org.jetbrains.compose.resources.DrawableResource(
   "drawable:gauge",
     setOf(
-      org.jetbrains.compose.resources.ResourceItem(setOf(), "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/gauge.png", -1, -1),
+      org.jetbrains.compose.resources.ResourceItem(setOf(),
+    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/gauge.png", -1, -1),
     )
 )
 
@@ -106,7 +114,8 @@ internal val Res.drawable.meter: DrawableResource
 private fun init_meter(): DrawableResource = org.jetbrains.compose.resources.DrawableResource(
   "drawable:meter",
     setOf(
-      org.jetbrains.compose.resources.ResourceItem(setOf(), "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/meter.png", -1, -1),
+      org.jetbrains.compose.resources.ResourceItem(setOf(),
+    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/meter.png", -1, -1),
     )
 )
 
@@ -116,7 +125,8 @@ internal val Res.drawable.speedometer: DrawableResource
 private fun init_speedometer(): DrawableResource = org.jetbrains.compose.resources.DrawableResource(
   "drawable:speedometer",
     setOf(
-      org.jetbrains.compose.resources.ResourceItem(setOf(), "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/speedometer.png", -1, -1),
+      org.jetbrains.compose.resources.ResourceItem(setOf(),
+    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/speedometer.png", -1, -1),
     )
 )
 
@@ -126,7 +136,8 @@ internal val Res.drawable.water_drop: DrawableResource
 private fun init_water_drop(): DrawableResource = org.jetbrains.compose.resources.DrawableResource(
   "drawable:water_drop",
     setOf(
-      org.jetbrains.compose.resources.ResourceItem(setOf(), "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/water_drop.png", -1, -1),
+      org.jetbrains.compose.resources.ResourceItem(setOf(),
+    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/water_drop.png", -1, -1),
     )
 )
 
@@ -136,6 +147,7 @@ internal val Res.drawable.wind_arrow: DrawableResource
 private fun init_wind_arrow(): DrawableResource = org.jetbrains.compose.resources.DrawableResource(
   "drawable:wind_arrow",
     setOf(
-      org.jetbrains.compose.resources.ResourceItem(setOf(), "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/wind_arrow.png", -1, -1),
+      org.jetbrains.compose.resources.ResourceItem(setOf(),
+    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/wind_arrow.png", -1, -1),
     )
 )

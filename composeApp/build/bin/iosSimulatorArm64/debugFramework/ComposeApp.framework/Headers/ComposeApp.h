@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class ComposeAppAirQuality, ComposeAppAirQualityCompanion, ComposeAppAppDatabaseConstructor, ComposeAppAstro, ComposeAppAstroCompanion, ComposeAppCondition, ComposeAppConditionCompanion, ComposeAppCoordinates, ComposeAppCurrent, ComposeAppCurrentCompanion, ComposeAppDay, ComposeAppDayCompanion, ComposeAppDestinations, ComposeAppForecast, ComposeAppForecastCompanion, ComposeAppForecastDto, ComposeAppForecastDtoCompanion, ComposeAppForecastday, ComposeAppForecastdayCompanion, ComposeAppGetScreenHeight, ComposeAppHour, ComposeAppHourCompanion, ComposeAppImageListDto, ComposeAppImageListDtoCompanion, ComposeAppKoin_coreBeanDefinition<T>, ComposeAppKoin_coreCallbacks<T>, ComposeAppKoin_coreExtensionManager, ComposeAppKoin_coreInstanceFactory<T>, ComposeAppKoin_coreInstanceFactoryCompanion, ComposeAppKoin_coreInstanceRegistry, ComposeAppKoin_coreKind, ComposeAppKoin_coreKoin, ComposeAppKoin_coreKoinApplication, ComposeAppKoin_coreKoinApplicationCompanion, ComposeAppKoin_coreKoinDefinition<R>, ComposeAppKoin_coreLevel, ComposeAppKoin_coreLockable, ComposeAppKoin_coreLogger, ComposeAppKoin_coreModule, ComposeAppKoin_coreParametersHolder, ComposeAppKoin_corePropertyRegistry, ComposeAppKoin_coreResolutionContext, ComposeAppKoin_coreScope, ComposeAppKoin_coreScopeDSL, ComposeAppKoin_coreScopeRegistry, ComposeAppKoin_coreScopeRegistryCompanion, ComposeAppKoin_coreSingleInstanceFactory<T>, ComposeAppKotlinAbstractCoroutineContextElement, ComposeAppKotlinAbstractCoroutineContextKey<B, E>, ComposeAppKotlinArray<T>, ComposeAppKotlinByteArray, ComposeAppKotlinByteIterator, ComposeAppKotlinCancellationException, ComposeAppKotlinEnum<E>, ComposeAppKotlinEnumCompanion, ComposeAppKotlinException, ComposeAppKotlinIllegalStateException, ComposeAppKotlinIntArray, ComposeAppKotlinIntIterator, ComposeAppKotlinKTypeProjection, ComposeAppKotlinKTypeProjectionCompanion, ComposeAppKotlinKVariance, ComposeAppKotlinLazyThreadSafetyMode, ComposeAppKotlinNothing, ComposeAppKotlinRuntimeException, ComposeAppKotlinThrowable, ComposeAppKotlinUnit, ComposeAppKotlinx_coroutines_coreCoroutineDispatcher, ComposeAppKotlinx_coroutines_coreCoroutineDispatcherKey, ComposeAppKotlinx_io_coreBuffer, ComposeAppKotlinx_serialization_coreSerialKind, ComposeAppKotlinx_serialization_coreSerializersModule, ComposeAppKtor_client_coreHttpClient, ComposeAppKtor_client_coreHttpClientCall, ComposeAppKtor_client_coreHttpClientCallCompanion, ComposeAppKtor_client_coreHttpClientConfig<T>, ComposeAppKtor_client_coreHttpClientEngineConfig, ComposeAppKtor_client_coreHttpReceivePipeline, ComposeAppKtor_client_coreHttpReceivePipelinePhases, ComposeAppKtor_client_coreHttpRequestBuilder, ComposeAppKtor_client_coreHttpRequestBuilderCompanion, ComposeAppKtor_client_coreHttpRequestData, ComposeAppKtor_client_coreHttpRequestPipeline, ComposeAppKtor_client_coreHttpRequestPipelinePhases, ComposeAppKtor_client_coreHttpResponse, ComposeAppKtor_client_coreHttpResponseContainer, ComposeAppKtor_client_coreHttpResponseData, ComposeAppKtor_client_coreHttpResponsePipeline, ComposeAppKtor_client_coreHttpResponsePipelinePhases, ComposeAppKtor_client_coreHttpSendPipeline, ComposeAppKtor_client_coreHttpSendPipelinePhases, ComposeAppKtor_client_coreProxyConfig, ComposeAppKtor_eventsEventDefinition<T>, ComposeAppKtor_eventsEvents, ComposeAppKtor_httpContentType, ComposeAppKtor_httpContentTypeCompanion, ComposeAppKtor_httpHeaderValueParam, ComposeAppKtor_httpHeaderValueWithParameters, ComposeAppKtor_httpHeaderValueWithParametersCompanion, ComposeAppKtor_httpHeadersBuilder, ComposeAppKtor_httpHttpMethod, ComposeAppKtor_httpHttpMethodCompanion, ComposeAppKtor_httpHttpProtocolVersion, ComposeAppKtor_httpHttpProtocolVersionCompanion, ComposeAppKtor_httpHttpStatusCode, ComposeAppKtor_httpHttpStatusCodeCompanion, ComposeAppKtor_httpOutgoingContent, ComposeAppKtor_httpURLBuilder, ComposeAppKtor_httpURLBuilderCompanion, ComposeAppKtor_httpURLProtocol, ComposeAppKtor_httpURLProtocolCompanion, ComposeAppKtor_httpUrl, ComposeAppKtor_httpUrlCompanion, ComposeAppKtor_utilsAttributeKey<T>, ComposeAppKtor_utilsGMTDate, ComposeAppKtor_utilsGMTDateCompanion, ComposeAppKtor_utilsMonth, ComposeAppKtor_utilsMonthCompanion, ComposeAppKtor_utilsPipeline<TSubject, TContext>, ComposeAppKtor_utilsPipelinePhase, ComposeAppKtor_utilsStringValuesBuilderImpl, ComposeAppKtor_utilsTypeInfo, ComposeAppKtor_utilsWeekDay, ComposeAppKtor_utilsWeekDayCompanion, ComposeAppLifecycle_viewmodelViewModel, ComposeAppLocation, ComposeAppLocationCompanion, ComposeAppLocationService, ComposeAppNetworkError, ComposeAppPermissionsPermission, ComposeAppPermissionsPermissionState, ComposeAppPhotoData, ComposeAppPhotoDataCompanion, ComposeAppResultError<__covariant E>, ComposeAppResultSuccess<__covariant D>, ComposeAppRoom_runtimeInvalidationTracker, ComposeAppRoom_runtimeMigration, ComposeAppRoom_runtimeRoomDatabase, ComposeAppRoom_runtimeRoomDatabaseBuilder<T>, ComposeAppRoom_runtimeRoomDatabaseCallback, ComposeAppRoom_runtimeRoomDatabaseJournalMode, ComposeAppRoom_runtimeRoomOpenDelegate, ComposeAppRoom_runtimeRoomOpenDelegateValidationResult, ComposeAppSavedWeatherItem, ComposeAppSearchScreenViewState, ComposeAppSystemLocale, ComposeAppUrls, ComposeAppUrlsCompanion, ComposeAppWeatherDao_ImplCompanion, ComposeAppWeatherDataBase, ComposeAppWeatherItem, ComposeAppWeatherMainScreenState, ComposeAppWeatherRepoImpl, UIViewController;
+@class ComposeAppAirQuality, ComposeAppAirQualityCompanion, ComposeAppAppDatabaseConstructor, ComposeAppAstro, ComposeAppAstroCompanion, ComposeAppCondition, ComposeAppConditionCompanion, ComposeAppCoordinates, ComposeAppCurrent, ComposeAppCurrentCompanion, ComposeAppDay, ComposeAppDayCompanion, ComposeAppForecast, ComposeAppForecastCompanion, ComposeAppForecastDto, ComposeAppForecastDtoCompanion, ComposeAppForecastday, ComposeAppForecastdayCompanion, ComposeAppGetScreenHeight, ComposeAppHour, ComposeAppHourCompanion, ComposeAppImageListDto, ComposeAppImageListDtoCompanion, ComposeAppKoin_coreBeanDefinition<T>, ComposeAppKoin_coreCallbacks<T>, ComposeAppKoin_coreExtensionManager, ComposeAppKoin_coreInstanceFactory<T>, ComposeAppKoin_coreInstanceFactoryCompanion, ComposeAppKoin_coreInstanceRegistry, ComposeAppKoin_coreKind, ComposeAppKoin_coreKoin, ComposeAppKoin_coreKoinApplication, ComposeAppKoin_coreKoinApplicationCompanion, ComposeAppKoin_coreKoinDefinition<R>, ComposeAppKoin_coreLevel, ComposeAppKoin_coreLockable, ComposeAppKoin_coreLogger, ComposeAppKoin_coreModule, ComposeAppKoin_coreParametersHolder, ComposeAppKoin_corePropertyRegistry, ComposeAppKoin_coreResolutionContext, ComposeAppKoin_coreScope, ComposeAppKoin_coreScopeDSL, ComposeAppKoin_coreScopeRegistry, ComposeAppKoin_coreScopeRegistryCompanion, ComposeAppKoin_coreSingleInstanceFactory<T>, ComposeAppKotlinAbstractCoroutineContextElement, ComposeAppKotlinAbstractCoroutineContextKey<B, E>, ComposeAppKotlinArray<T>, ComposeAppKotlinByteArray, ComposeAppKotlinByteIterator, ComposeAppKotlinCancellationException, ComposeAppKotlinEnum<E>, ComposeAppKotlinEnumCompanion, ComposeAppKotlinException, ComposeAppKotlinIllegalStateException, ComposeAppKotlinIntArray, ComposeAppKotlinIntIterator, ComposeAppKotlinKTypeProjection, ComposeAppKotlinKTypeProjectionCompanion, ComposeAppKotlinKVariance, ComposeAppKotlinLazyThreadSafetyMode, ComposeAppKotlinNothing, ComposeAppKotlinRuntimeException, ComposeAppKotlinThrowable, ComposeAppKotlinUnit, ComposeAppKotlinx_coroutines_coreCoroutineDispatcher, ComposeAppKotlinx_coroutines_coreCoroutineDispatcherKey, ComposeAppKotlinx_io_coreBuffer, ComposeAppKotlinx_serialization_coreSerialKind, ComposeAppKotlinx_serialization_coreSerializersModule, ComposeAppKtor_client_coreHttpClient, ComposeAppKtor_client_coreHttpClientCall, ComposeAppKtor_client_coreHttpClientCallCompanion, ComposeAppKtor_client_coreHttpClientConfig<T>, ComposeAppKtor_client_coreHttpClientEngineConfig, ComposeAppKtor_client_coreHttpReceivePipeline, ComposeAppKtor_client_coreHttpReceivePipelinePhases, ComposeAppKtor_client_coreHttpRequestBuilder, ComposeAppKtor_client_coreHttpRequestBuilderCompanion, ComposeAppKtor_client_coreHttpRequestData, ComposeAppKtor_client_coreHttpRequestPipeline, ComposeAppKtor_client_coreHttpRequestPipelinePhases, ComposeAppKtor_client_coreHttpResponse, ComposeAppKtor_client_coreHttpResponseContainer, ComposeAppKtor_client_coreHttpResponseData, ComposeAppKtor_client_coreHttpResponsePipeline, ComposeAppKtor_client_coreHttpResponsePipelinePhases, ComposeAppKtor_client_coreHttpSendPipeline, ComposeAppKtor_client_coreHttpSendPipelinePhases, ComposeAppKtor_client_coreProxyConfig, ComposeAppKtor_eventsEventDefinition<T>, ComposeAppKtor_eventsEvents, ComposeAppKtor_httpContentType, ComposeAppKtor_httpContentTypeCompanion, ComposeAppKtor_httpHeaderValueParam, ComposeAppKtor_httpHeaderValueWithParameters, ComposeAppKtor_httpHeaderValueWithParametersCompanion, ComposeAppKtor_httpHeadersBuilder, ComposeAppKtor_httpHttpMethod, ComposeAppKtor_httpHttpMethodCompanion, ComposeAppKtor_httpHttpProtocolVersion, ComposeAppKtor_httpHttpProtocolVersionCompanion, ComposeAppKtor_httpHttpStatusCode, ComposeAppKtor_httpHttpStatusCodeCompanion, ComposeAppKtor_httpOutgoingContent, ComposeAppKtor_httpURLBuilder, ComposeAppKtor_httpURLBuilderCompanion, ComposeAppKtor_httpURLProtocol, ComposeAppKtor_httpURLProtocolCompanion, ComposeAppKtor_httpUrl, ComposeAppKtor_httpUrlCompanion, ComposeAppKtor_utilsAttributeKey<T>, ComposeAppKtor_utilsGMTDate, ComposeAppKtor_utilsGMTDateCompanion, ComposeAppKtor_utilsMonth, ComposeAppKtor_utilsMonthCompanion, ComposeAppKtor_utilsPipeline<TSubject, TContext>, ComposeAppKtor_utilsPipelinePhase, ComposeAppKtor_utilsStringValuesBuilderImpl, ComposeAppKtor_utilsTypeInfo, ComposeAppKtor_utilsWeekDay, ComposeAppKtor_utilsWeekDayCompanion, ComposeAppLifecycle_viewmodelViewModel, ComposeAppLocation, ComposeAppLocationCompanion, ComposeAppLocationService, ComposeAppNetworkError, ComposeAppPermissionsPermission, ComposeAppPermissionsPermissionState, ComposeAppPhotoData, ComposeAppPhotoDataCompanion, ComposeAppResultError<__covariant E>, ComposeAppResultSuccess<__covariant D>, ComposeAppRoom_runtimeInvalidationTracker, ComposeAppRoom_runtimeMigration, ComposeAppRoom_runtimeRoomDatabase, ComposeAppRoom_runtimeRoomDatabaseBuilder<T>, ComposeAppRoom_runtimeRoomDatabaseCallback, ComposeAppRoom_runtimeRoomDatabaseJournalMode, ComposeAppRoom_runtimeRoomOpenDelegate, ComposeAppRoom_runtimeRoomOpenDelegateValidationResult, ComposeAppRoutesMainScreenRoute, ComposeAppRoutesMainScreenRouteCompanion, ComposeAppRoutesSearchScreenRoute, ComposeAppSavedWeatherItem, ComposeAppSearchScreenActionsSearchCities, ComposeAppSearchScreenActionsSetExpanded, ComposeAppSearchScreenActionsSetSearchQuery, ComposeAppSearchScreenViewState, ComposeAppSystemLocale, ComposeAppUrls, ComposeAppUrlsCompanion, ComposeAppWeatherDao_ImplCompanion, ComposeAppWeatherDataBase, ComposeAppWeatherItem, ComposeAppWeatherMainScreenState, ComposeAppWeatherRepoImpl, UIViewController;
 
-@protocol ComposeAppDataBaseRepo, ComposeAppError, ComposeAppKoin_coreKoinComponent, ComposeAppKoin_coreKoinExtension, ComposeAppKoin_coreKoinScopeComponent, ComposeAppKoin_coreQualifier, ComposeAppKoin_coreScopeCallback, ComposeAppKotlinAnnotation, ComposeAppKotlinAutoCloseable, ComposeAppKotlinComparable, ComposeAppKotlinContinuation, ComposeAppKotlinContinuationInterceptor, ComposeAppKotlinCoroutineContext, ComposeAppKotlinCoroutineContextElement, ComposeAppKotlinCoroutineContextKey, ComposeAppKotlinFunction, ComposeAppKotlinIterator, ComposeAppKotlinKAnnotatedElement, ComposeAppKotlinKClass, ComposeAppKotlinKClassifier, ComposeAppKotlinKDeclarationContainer, ComposeAppKotlinKType, ComposeAppKotlinLazy, ComposeAppKotlinMapEntry, ComposeAppKotlinSequence, ComposeAppKotlinSuspendFunction2, ComposeAppKotlinx_coroutines_coreChildHandle, ComposeAppKotlinx_coroutines_coreChildJob, ComposeAppKotlinx_coroutines_coreCoroutineScope, ComposeAppKotlinx_coroutines_coreDisposableHandle, ComposeAppKotlinx_coroutines_coreFlow, ComposeAppKotlinx_coroutines_coreFlowCollector, ComposeAppKotlinx_coroutines_coreJob, ComposeAppKotlinx_coroutines_coreParentJob, ComposeAppKotlinx_coroutines_coreRunnable, ComposeAppKotlinx_coroutines_coreSelectClause, ComposeAppKotlinx_coroutines_coreSelectClause0, ComposeAppKotlinx_coroutines_coreSelectInstance, ComposeAppKotlinx_coroutines_coreSharedFlow, ComposeAppKotlinx_coroutines_coreStateFlow, ComposeAppKotlinx_io_coreRawSink, ComposeAppKotlinx_io_coreRawSource, ComposeAppKotlinx_io_coreSink, ComposeAppKotlinx_io_coreSource, ComposeAppKotlinx_serialization_coreCompositeDecoder, ComposeAppKotlinx_serialization_coreCompositeEncoder, ComposeAppKotlinx_serialization_coreDecoder, ComposeAppKotlinx_serialization_coreDeserializationStrategy, ComposeAppKotlinx_serialization_coreEncoder, ComposeAppKotlinx_serialization_coreKSerializer, ComposeAppKotlinx_serialization_coreSerialDescriptor, ComposeAppKotlinx_serialization_coreSerializationStrategy, ComposeAppKotlinx_serialization_coreSerializersModuleCollector, ComposeAppKtor_client_coreHttpClientEngine, ComposeAppKtor_client_coreHttpClientEngineCapability, ComposeAppKtor_client_coreHttpClientPlugin, ComposeAppKtor_client_coreHttpRequest, ComposeAppKtor_httpHeaders, ComposeAppKtor_httpHttpMessage, ComposeAppKtor_httpHttpMessageBuilder, ComposeAppKtor_httpParameters, ComposeAppKtor_httpParametersBuilder, ComposeAppKtor_ioByteReadChannel, ComposeAppKtor_ioCloseable, ComposeAppKtor_utilsAttributes, ComposeAppKtor_utilsStringValues, ComposeAppKtor_utilsStringValuesBuilder, ComposeAppPermissionsPermissionsControllerProtocol, ComposeAppResult, ComposeAppRoom_runtimeAutoMigrationSpec, ComposeAppRoom_runtimeRoomDatabaseConstructor, ComposeAppRoom_runtimeRoomOpenDelegateMarker, ComposeAppSqliteSQLiteConnection, ComposeAppSqliteSQLiteDriver, ComposeAppSqliteSQLiteStatement, ComposeAppWeatherDao, ComposeAppWeatherRepo;
+@protocol ComposeAppDataBaseRepo, ComposeAppError, ComposeAppKoin_coreKoinComponent, ComposeAppKoin_coreKoinExtension, ComposeAppKoin_coreKoinScopeComponent, ComposeAppKoin_coreQualifier, ComposeAppKoin_coreScopeCallback, ComposeAppKotlinAnnotation, ComposeAppKotlinAutoCloseable, ComposeAppKotlinComparable, ComposeAppKotlinContinuation, ComposeAppKotlinContinuationInterceptor, ComposeAppKotlinCoroutineContext, ComposeAppKotlinCoroutineContextElement, ComposeAppKotlinCoroutineContextKey, ComposeAppKotlinFunction, ComposeAppKotlinIterator, ComposeAppKotlinKAnnotatedElement, ComposeAppKotlinKClass, ComposeAppKotlinKClassifier, ComposeAppKotlinKDeclarationContainer, ComposeAppKotlinKType, ComposeAppKotlinLazy, ComposeAppKotlinMapEntry, ComposeAppKotlinSequence, ComposeAppKotlinSuspendFunction2, ComposeAppKotlinx_coroutines_coreChildHandle, ComposeAppKotlinx_coroutines_coreChildJob, ComposeAppKotlinx_coroutines_coreCoroutineScope, ComposeAppKotlinx_coroutines_coreDisposableHandle, ComposeAppKotlinx_coroutines_coreFlow, ComposeAppKotlinx_coroutines_coreFlowCollector, ComposeAppKotlinx_coroutines_coreJob, ComposeAppKotlinx_coroutines_coreParentJob, ComposeAppKotlinx_coroutines_coreRunnable, ComposeAppKotlinx_coroutines_coreSelectClause, ComposeAppKotlinx_coroutines_coreSelectClause0, ComposeAppKotlinx_coroutines_coreSelectInstance, ComposeAppKotlinx_coroutines_coreSharedFlow, ComposeAppKotlinx_coroutines_coreStateFlow, ComposeAppKotlinx_io_coreRawSink, ComposeAppKotlinx_io_coreRawSource, ComposeAppKotlinx_io_coreSink, ComposeAppKotlinx_io_coreSource, ComposeAppKotlinx_serialization_coreCompositeDecoder, ComposeAppKotlinx_serialization_coreCompositeEncoder, ComposeAppKotlinx_serialization_coreDecoder, ComposeAppKotlinx_serialization_coreDeserializationStrategy, ComposeAppKotlinx_serialization_coreEncoder, ComposeAppKotlinx_serialization_coreKSerializer, ComposeAppKotlinx_serialization_coreSerialDescriptor, ComposeAppKotlinx_serialization_coreSerializationStrategy, ComposeAppKotlinx_serialization_coreSerializersModuleCollector, ComposeAppKtor_client_coreHttpClientEngine, ComposeAppKtor_client_coreHttpClientEngineCapability, ComposeAppKtor_client_coreHttpClientPlugin, ComposeAppKtor_client_coreHttpRequest, ComposeAppKtor_httpHeaders, ComposeAppKtor_httpHttpMessage, ComposeAppKtor_httpHttpMessageBuilder, ComposeAppKtor_httpParameters, ComposeAppKtor_httpParametersBuilder, ComposeAppKtor_ioByteReadChannel, ComposeAppKtor_ioCloseable, ComposeAppKtor_utilsAttributes, ComposeAppKtor_utilsStringValues, ComposeAppKtor_utilsStringValuesBuilder, ComposeAppPermissionsPermissionsControllerProtocol, ComposeAppResult, ComposeAppRoom_runtimeAutoMigrationSpec, ComposeAppRoom_runtimeRoomDatabaseConstructor, ComposeAppRoom_runtimeRoomOpenDelegateMarker, ComposeAppRoutes, ComposeAppSearchScreenActions, ComposeAppSqliteSQLiteConnection, ComposeAppSqliteSQLiteDriver, ComposeAppSqliteSQLiteStatement, ComposeAppWeatherDao, ComposeAppWeatherRepo;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -163,16 +163,16 @@ __attribute__((swift_name("AppDatabaseConstructor")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SavedWeatherItem")))
 @interface ComposeAppSavedWeatherItem : ComposeAppBase
-- (instancetype)initWithId:(int32_t)id cityName:(NSString *)cityName latitude:(double)latitude longitude:(double)longitude temperature:(double)temperature weatherDescription:(NSString *)weatherDescription highTemperature:(double)highTemperature lowTemperature:(double)lowTemperature __attribute__((swift_name("init(id:cityName:latitude:longitude:temperature:weatherDescription:highTemperature:lowTemperature:)"))) __attribute__((objc_designated_initializer));
-- (ComposeAppSavedWeatherItem *)doCopyId:(int32_t)id cityName:(NSString *)cityName latitude:(double)latitude longitude:(double)longitude temperature:(double)temperature weatherDescription:(NSString *)weatherDescription highTemperature:(double)highTemperature lowTemperature:(double)lowTemperature __attribute__((swift_name("doCopy(id:cityName:latitude:longitude:temperature:weatherDescription:highTemperature:lowTemperature:)")));
+- (instancetype)initWithId:(int32_t)id cityName:(NSString *)cityName latitude:(ComposeAppDouble * _Nullable)latitude longitude:(ComposeAppDouble * _Nullable)longitude temperature:(double)temperature weatherDescription:(NSString *)weatherDescription highTemperature:(double)highTemperature lowTemperature:(double)lowTemperature __attribute__((swift_name("init(id:cityName:latitude:longitude:temperature:weatherDescription:highTemperature:lowTemperature:)"))) __attribute__((objc_designated_initializer));
+- (ComposeAppSavedWeatherItem *)doCopyId:(int32_t)id cityName:(NSString *)cityName latitude:(ComposeAppDouble * _Nullable)latitude longitude:(ComposeAppDouble * _Nullable)longitude temperature:(double)temperature weatherDescription:(NSString *)weatherDescription highTemperature:(double)highTemperature lowTemperature:(double)lowTemperature __attribute__((swift_name("doCopy(id:cityName:latitude:longitude:temperature:weatherDescription:highTemperature:lowTemperature:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) NSString *cityName __attribute__((swift_name("cityName")));
 @property (readonly) double highTemperature __attribute__((swift_name("highTemperature")));
 @property (readonly) int32_t id __attribute__((swift_name("id")));
-@property (readonly) double latitude __attribute__((swift_name("latitude")));
-@property (readonly) double longitude __attribute__((swift_name("longitude")));
+@property (readonly) ComposeAppDouble * _Nullable latitude __attribute__((swift_name("latitude")));
+@property (readonly) ComposeAppDouble * _Nullable longitude __attribute__((swift_name("longitude")));
 @property (readonly) double lowTemperature __attribute__((swift_name("lowTemperature")));
 @property (readonly) double temperature __attribute__((swift_name("temperature")));
 @property (readonly) NSString *weatherDescription __attribute__((swift_name("weatherDescription")));
@@ -445,6 +445,12 @@ __attribute__((swift_name("WeatherRepo")))
  * Other uncaught Kotlin exceptions are fatal.
 */
 - (void)getImageListQuery:(NSString *)query completionHandler:(void (^)(id<ComposeAppResult> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getImageList(query:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)searchPlacesQuery:(NSString *)query completionHandler:(void (^)(id<ComposeAppResult> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("searchPlaces(query:completionHandler:)")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -463,6 +469,12 @@ __attribute__((swift_name("WeatherRepoImpl")))
  * Other uncaught Kotlin exceptions are fatal.
 */
 - (void)getImageListQuery:(NSString *)query completionHandler:(void (^)(id<ComposeAppResult> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getImageList(query:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)searchPlacesQuery:(NSString *)query completionHandler:(void (^)(id<ComposeAppResult> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("searchPlaces(query:completionHandler:)")));
 @end
 
 __attribute__((swift_name("Error")))
@@ -543,6 +555,44 @@ __attribute__((swift_name("ResultSuccess")))
 @property (readonly) D _Nullable data __attribute__((swift_name("data")));
 @end
 
+__attribute__((swift_name("SearchScreenActions")))
+@protocol ComposeAppSearchScreenActions
+@required
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("SearchScreenActionsSearchCities")))
+@interface ComposeAppSearchScreenActionsSearchCities : ComposeAppBase <ComposeAppSearchScreenActions>
+- (instancetype)initWithCity:(NSString *)city __attribute__((swift_name("init(city:)"))) __attribute__((objc_designated_initializer));
+- (ComposeAppSearchScreenActionsSearchCities *)doCopyCity:(NSString *)city __attribute__((swift_name("doCopy(city:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *city __attribute__((swift_name("city")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("SearchScreenActionsSetExpanded")))
+@interface ComposeAppSearchScreenActionsSetExpanded : ComposeAppBase <ComposeAppSearchScreenActions>
+- (instancetype)initWithExpanded:(BOOL)expanded __attribute__((swift_name("init(expanded:)"))) __attribute__((objc_designated_initializer));
+- (ComposeAppSearchScreenActionsSetExpanded *)doCopyExpanded:(BOOL)expanded __attribute__((swift_name("doCopy(expanded:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) BOOL expanded __attribute__((swift_name("expanded")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("SearchScreenActionsSetSearchQuery")))
+@interface ComposeAppSearchScreenActionsSetSearchQuery : ComposeAppBase <ComposeAppSearchScreenActions>
+- (instancetype)initWithQuery:(NSString *)query __attribute__((swift_name("init(query:)"))) __attribute__((objc_designated_initializer));
+- (ComposeAppSearchScreenActionsSetSearchQuery *)doCopyQuery:(NSString *)query __attribute__((swift_name("doCopy(query:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *query __attribute__((swift_name("query")));
+@end
+
 
 /**
  * @note annotations
@@ -551,35 +601,35 @@ __attribute__((swift_name("ResultSuccess")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("AirQuality")))
 @interface ComposeAppAirQuality : ComposeAppBase
-- (instancetype)initWithCo:(double)co gbDefraIndex:(int32_t)gbDefraIndex no2:(double)no2 o3:(double)o3 pm10:(double)pm10 pm25:(double)pm25 so2:(double)so2 usEpaIndex:(int32_t)usEpaIndex __attribute__((swift_name("init(co:gbDefraIndex:no2:o3:pm10:pm25:so2:usEpaIndex:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithCo:(ComposeAppDouble * _Nullable)co gbDefraIndex:(ComposeAppInt * _Nullable)gbDefraIndex no2:(ComposeAppDouble * _Nullable)no2 o3:(ComposeAppDouble * _Nullable)o3 pm10:(ComposeAppDouble * _Nullable)pm10 pm25:(ComposeAppDouble * _Nullable)pm25 so2:(ComposeAppDouble * _Nullable)so2 usEpaIndex:(ComposeAppInt * _Nullable)usEpaIndex __attribute__((swift_name("init(co:gbDefraIndex:no2:o3:pm10:pm25:so2:usEpaIndex:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) ComposeAppAirQualityCompanion *companion __attribute__((swift_name("companion")));
-- (ComposeAppAirQuality *)doCopyCo:(double)co gbDefraIndex:(int32_t)gbDefraIndex no2:(double)no2 o3:(double)o3 pm10:(double)pm10 pm25:(double)pm25 so2:(double)so2 usEpaIndex:(int32_t)usEpaIndex __attribute__((swift_name("doCopy(co:gbDefraIndex:no2:o3:pm10:pm25:so2:usEpaIndex:)")));
+- (ComposeAppAirQuality *)doCopyCo:(ComposeAppDouble * _Nullable)co gbDefraIndex:(ComposeAppInt * _Nullable)gbDefraIndex no2:(ComposeAppDouble * _Nullable)no2 o3:(ComposeAppDouble * _Nullable)o3 pm10:(ComposeAppDouble * _Nullable)pm10 pm25:(ComposeAppDouble * _Nullable)pm25 so2:(ComposeAppDouble * _Nullable)so2 usEpaIndex:(ComposeAppInt * _Nullable)usEpaIndex __attribute__((swift_name("doCopy(co:gbDefraIndex:no2:o3:pm10:pm25:so2:usEpaIndex:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) double co __attribute__((swift_name("co")));
+@property (readonly) ComposeAppDouble * _Nullable co __attribute__((swift_name("co")));
 
 /**
  * @note annotations
  *   kotlinx.serialization.SerialName(value="gb-defra-index")
 */
-@property (readonly) int32_t gbDefraIndex __attribute__((swift_name("gbDefraIndex")));
-@property (readonly) double no2 __attribute__((swift_name("no2")));
-@property (readonly) double o3 __attribute__((swift_name("o3")));
-@property (readonly) double pm10 __attribute__((swift_name("pm10")));
+@property (readonly) ComposeAppInt * _Nullable gbDefraIndex __attribute__((swift_name("gbDefraIndex")));
+@property (readonly) ComposeAppDouble * _Nullable no2 __attribute__((swift_name("no2")));
+@property (readonly) ComposeAppDouble * _Nullable o3 __attribute__((swift_name("o3")));
+@property (readonly) ComposeAppDouble * _Nullable pm10 __attribute__((swift_name("pm10")));
 
 /**
  * @note annotations
  *   kotlinx.serialization.SerialName(value="pm2_5")
 */
-@property (readonly) double pm25 __attribute__((swift_name("pm25")));
-@property (readonly) double so2 __attribute__((swift_name("so2")));
+@property (readonly) ComposeAppDouble * _Nullable pm25 __attribute__((swift_name("pm25")));
+@property (readonly) ComposeAppDouble * _Nullable so2 __attribute__((swift_name("so2")));
 
 /**
  * @note annotations
  *   kotlinx.serialization.SerialName(value="us-epa-index")
 */
-@property (readonly) int32_t usEpaIndex __attribute__((swift_name("usEpaIndex")));
+@property (readonly) ComposeAppInt * _Nullable usEpaIndex __attribute__((swift_name("usEpaIndex")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -1004,19 +1054,6 @@ __attribute__((swift_name("Day.Companion")))
 - (id<ComposeAppKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Destinations")))
-@interface ComposeAppDestinations : ComposeAppKotlinEnum<ComposeAppDestinations *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly) ComposeAppDestinations *mainScreen __attribute__((swift_name("mainScreen")));
-@property (class, readonly) ComposeAppDestinations *searchScreen __attribute__((swift_name("searchScreen")));
-+ (ComposeAppKotlinArray<ComposeAppDestinations *> *)values __attribute__((swift_name("values()")));
-@property (class, readonly) NSArray<ComposeAppDestinations *> *entries __attribute__((swift_name("entries")));
-@property (readonly) NSString *route __attribute__((swift_name("route")));
-@end
-
 
 /**
  * @note annotations
@@ -1293,30 +1330,19 @@ __attribute__((swift_name("Hour.Companion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Location")))
 @interface ComposeAppLocation : ComposeAppBase
-- (instancetype)initWithCountry:(NSString *)country lat:(double)lat localtime:(NSString *)localtime localTimeEpoch:(int32_t)localTimeEpoch lon:(double)lon name:(NSString *)name region:(NSString *)region tzId:(NSString *)tzId __attribute__((swift_name("init(country:lat:localtime:localTimeEpoch:lon:name:region:tzId:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithCountry:(NSString *)country id:(ComposeAppInt * _Nullable)id lat:(double)lat lon:(double)lon name:(NSString *)name region:(NSString *)region url:(NSString * _Nullable)url __attribute__((swift_name("init(country:id:lat:lon:name:region:url:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) ComposeAppLocationCompanion *companion __attribute__((swift_name("companion")));
-- (ComposeAppLocation *)doCopyCountry:(NSString *)country lat:(double)lat localtime:(NSString *)localtime localTimeEpoch:(int32_t)localTimeEpoch lon:(double)lon name:(NSString *)name region:(NSString *)region tzId:(NSString *)tzId __attribute__((swift_name("doCopy(country:lat:localtime:localTimeEpoch:lon:name:region:tzId:)")));
+- (ComposeAppLocation *)doCopyCountry:(NSString *)country id:(ComposeAppInt * _Nullable)id lat:(double)lat lon:(double)lon name:(NSString *)name region:(NSString *)region url:(NSString * _Nullable)url __attribute__((swift_name("doCopy(country:id:lat:lon:name:region:url:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) NSString *country __attribute__((swift_name("country")));
+@property (readonly) ComposeAppInt * _Nullable id __attribute__((swift_name("id")));
 @property (readonly) double lat __attribute__((swift_name("lat")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.SerialName(value="localtime_epoch")
-*/
-@property (readonly) int32_t localTimeEpoch __attribute__((swift_name("localTimeEpoch")));
-@property (readonly) NSString *localtime __attribute__((swift_name("localtime")));
 @property (readonly) double lon __attribute__((swift_name("lon")));
 @property (readonly) NSString *name __attribute__((swift_name("name")));
 @property (readonly) NSString *region __attribute__((swift_name("region")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.SerialName(value="tz_id")
-*/
-@property (readonly) NSString *tzId __attribute__((swift_name("tzId")));
+@property (readonly) NSString * _Nullable url __attribute__((swift_name("url")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -1356,15 +1382,69 @@ __attribute__((swift_name("PhotoData.Companion")))
 - (id<ComposeAppKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end
 
+__attribute__((swift_name("Routes")))
+@protocol ComposeAppRoutes
+@required
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("SearchScreenViewState")))
-@interface ComposeAppSearchScreenViewState : ComposeAppBase
-- (instancetype)initWithSearchQuery:(NSString *)searchQuery expanded:(BOOL)expanded __attribute__((swift_name("init(searchQuery:expanded:)"))) __attribute__((objc_designated_initializer));
-- (ComposeAppSearchScreenViewState *)doCopySearchQuery:(NSString *)searchQuery expanded:(BOOL)expanded __attribute__((swift_name("doCopy(searchQuery:expanded:)")));
+__attribute__((swift_name("RoutesMainScreenRoute")))
+@interface ComposeAppRoutesMainScreenRoute : ComposeAppBase <ComposeAppRoutes>
+- (instancetype)initWithCity:(ComposeAppInt * _Nullable)city __attribute__((swift_name("init(city:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) ComposeAppRoutesMainScreenRouteCompanion *companion __attribute__((swift_name("companion")));
+- (ComposeAppRoutesMainScreenRoute *)doCopyCity:(ComposeAppInt * _Nullable)city __attribute__((swift_name("doCopy(city:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) ComposeAppInt * _Nullable city __attribute__((swift_name("city")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("RoutesMainScreenRoute.Companion")))
+@interface ComposeAppRoutesMainScreenRouteCompanion : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppRoutesMainScreenRouteCompanion *shared __attribute__((swift_name("shared")));
+- (id<ComposeAppKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("RoutesSearchScreenRoute")))
+@interface ComposeAppRoutesSearchScreenRoute : ComposeAppBase <ComposeAppRoutes>
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)searchScreenRoute __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppRoutesSearchScreenRoute *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (id<ComposeAppKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+- (id<ComposeAppKotlinx_serialization_coreKSerializer>)serializerTypeParamsSerializers:(ComposeAppKotlinArray<id<ComposeAppKotlinx_serialization_coreKSerializer>> *)typeParamsSerializers __attribute__((swift_name("serializer(typeParamsSerializers:)")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("SearchScreenViewState")))
+@interface ComposeAppSearchScreenViewState : ComposeAppBase
+- (instancetype)initWithSearchQuery:(NSString *)searchQuery expanded:(BOOL)expanded loading:(BOOL)loading cityList:(NSArray<ComposeAppLocation *> *)cityList error:(NSString * _Nullable)error __attribute__((swift_name("init(searchQuery:expanded:loading:cityList:error:)"))) __attribute__((objc_designated_initializer));
+- (ComposeAppSearchScreenViewState *)doCopySearchQuery:(NSString *)searchQuery expanded:(BOOL)expanded loading:(BOOL)loading cityList:(NSArray<ComposeAppLocation *> *)cityList error:(NSString * _Nullable)error __attribute__((swift_name("doCopy(searchQuery:expanded:loading:cityList:error:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSArray<ComposeAppLocation *> *cityList __attribute__((swift_name("cityList")));
+@property (readonly) NSString * _Nullable error __attribute__((swift_name("error")));
 @property (readonly) BOOL expanded __attribute__((swift_name("expanded")));
+@property (readonly) BOOL loading __attribute__((swift_name("loading")));
 @property (readonly) NSString *searchQuery __attribute__((swift_name("searchQuery")));
 @end
 
@@ -1423,11 +1503,12 @@ __attribute__((swift_name("WeatherItem")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("WeatherMainScreenState")))
 @interface ComposeAppWeatherMainScreenState : ComposeAppBase
-- (instancetype)initWithIsLoading:(BOOL)isLoading weatherDto:(ComposeAppForecastDto * _Nullable)weatherDto error:(NSString *)error image:(NSString *)image weatherItemList:(NSArray<ComposeAppWeatherItem *> *)weatherItemList __attribute__((swift_name("init(isLoading:weatherDto:error:image:weatherItemList:)"))) __attribute__((objc_designated_initializer));
-- (ComposeAppWeatherMainScreenState *)doCopyIsLoading:(BOOL)isLoading weatherDto:(ComposeAppForecastDto * _Nullable)weatherDto error:(NSString *)error image:(NSString *)image weatherItemList:(NSArray<ComposeAppWeatherItem *> *)weatherItemList __attribute__((swift_name("doCopy(isLoading:weatherDto:error:image:weatherItemList:)")));
+- (instancetype)initWithIsLoading:(BOOL)isLoading weatherDto:(ComposeAppForecastDto * _Nullable)weatherDto error:(NSString *)error image:(NSString *)image weatherItemList:(NSArray<ComposeAppWeatherItem *> *)weatherItemList cityId:(ComposeAppInt * _Nullable)cityId __attribute__((swift_name("init(isLoading:weatherDto:error:image:weatherItemList:cityId:)"))) __attribute__((objc_designated_initializer));
+- (ComposeAppWeatherMainScreenState *)doCopyIsLoading:(BOOL)isLoading weatherDto:(ComposeAppForecastDto * _Nullable)weatherDto error:(NSString *)error image:(NSString *)image weatherItemList:(NSArray<ComposeAppWeatherItem *> *)weatherItemList cityId:(ComposeAppInt * _Nullable)cityId __attribute__((swift_name("doCopy(isLoading:weatherDto:error:image:weatherItemList:cityId:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) ComposeAppInt * _Nullable cityId __attribute__((swift_name("cityId")));
 @property (readonly) NSString *error __attribute__((swift_name("error")));
 @property (readonly) NSString *image __attribute__((swift_name("image")));
 @property (readonly) BOOL isLoading __attribute__((swift_name("isLoading")));
@@ -1468,14 +1549,13 @@ __attribute__((swift_name("PermissionsViewModel")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SearchViewModel")))
 @interface ComposeAppSearchViewModel : ComposeAppLifecycle_viewmodelViewModel
-- (instancetype)initWithDataBaseRepo:(id<ComposeAppDataBaseRepo>)dataBaseRepo __attribute__((swift_name("init(dataBaseRepo:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithDataBaseRepo:(id<ComposeAppDataBaseRepo>)dataBaseRepo weatherRepo:(id<ComposeAppWeatherRepo>)weatherRepo __attribute__((swift_name("init(dataBaseRepo:weatherRepo:)"))) __attribute__((objc_designated_initializer));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 + (instancetype)new __attribute__((unavailable));
 - (instancetype)initWithCloseables:(ComposeAppKotlinArray<id<ComposeAppKotlinAutoCloseable>> *)closeables __attribute__((swift_name("init(closeables:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 - (instancetype)initWithViewModelScope:(id<ComposeAppKotlinx_coroutines_coreCoroutineScope>)viewModelScope __attribute__((swift_name("init(viewModelScope:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 - (instancetype)initWithViewModelScope:(id<ComposeAppKotlinx_coroutines_coreCoroutineScope>)viewModelScope closeables:(ComposeAppKotlinArray<id<ComposeAppKotlinAutoCloseable>> *)closeables __attribute__((swift_name("init(viewModelScope:closeables:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-- (void)setExpandedExpanded:(BOOL)expanded __attribute__((swift_name("setExpanded(expanded:)")));
-- (void)setSearchQueryQuery:(NSString *)query __attribute__((swift_name("setSearchQuery(query:)")));
+- (void)onActionAction:(id<ComposeAppSearchScreenActions>)action __attribute__((swift_name("onAction(action:)")));
 @property (readonly) id<ComposeAppKotlinx_coroutines_coreStateFlow> allCities __attribute__((swift_name("allCities")));
 @property (readonly) id<ComposeAppKotlinx_coroutines_coreStateFlow> searchScreenState __attribute__((swift_name("searchScreenState")));
 @end
@@ -1489,7 +1569,9 @@ __attribute__((swift_name("WeatherViewModel")))
 - (instancetype)initWithCloseables:(ComposeAppKotlinArray<id<ComposeAppKotlinAutoCloseable>> *)closeables __attribute__((swift_name("init(closeables:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 - (instancetype)initWithViewModelScope:(id<ComposeAppKotlinx_coroutines_coreCoroutineScope>)viewModelScope __attribute__((swift_name("init(viewModelScope:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 - (instancetype)initWithViewModelScope:(id<ComposeAppKotlinx_coroutines_coreCoroutineScope>)viewModelScope closeables:(ComposeAppKotlinArray<id<ComposeAppKotlinAutoCloseable>> *)closeables __attribute__((swift_name("init(viewModelScope:closeables:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+- (void)doInit __attribute__((swift_name("doInit()")));
 - (void)refreshPosition __attribute__((swift_name("refreshPosition()")));
+- (void)setCityIdCityId:(int32_t)cityId __attribute__((swift_name("setCityId(cityId:)")));
 @property (readonly) id<ComposeAppKotlinx_coroutines_coreStateFlow> weatherScreenState __attribute__((swift_name("weatherScreenState")));
 @end
 
@@ -2105,66 +2187,16 @@ __attribute__((swift_name("Kotlinx_serialization_coreEncoder")))
 __attribute__((swift_name("Kotlinx_serialization_coreSerialDescriptor")))
 @protocol ComposeAppKotlinx_serialization_coreSerialDescriptor
 @required
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
 - (NSArray<id<ComposeAppKotlinAnnotation>> *)getElementAnnotationsIndex:(int32_t)index __attribute__((swift_name("getElementAnnotations(index:)")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
 - (id<ComposeAppKotlinx_serialization_coreSerialDescriptor>)getElementDescriptorIndex:(int32_t)index __attribute__((swift_name("getElementDescriptor(index:)")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
 - (int32_t)getElementIndexName:(NSString *)name __attribute__((swift_name("getElementIndex(name:)")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
 - (NSString *)getElementNameIndex:(int32_t)index __attribute__((swift_name("getElementName(index:)")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
 - (BOOL)isElementOptionalIndex:(int32_t)index __attribute__((swift_name("isElementOptional(index:)")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
 @property (readonly) NSArray<id<ComposeAppKotlinAnnotation>> *annotations __attribute__((swift_name("annotations")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
 @property (readonly) int32_t elementsCount __attribute__((swift_name("elementsCount")));
 @property (readonly) BOOL isInline __attribute__((swift_name("isInline")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
 @property (readonly) BOOL isNullable __attribute__((swift_name("isNullable")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
 @property (readonly) ComposeAppKotlinx_serialization_coreSerialKind *kind __attribute__((swift_name("kind")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
 @property (readonly) NSString *serialName __attribute__((swift_name("serialName")));
 @end
 
@@ -2757,11 +2789,6 @@ __attribute__((swift_name("KotlinAnnotation")))
 @required
 @end
 
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
 __attribute__((swift_name("Kotlinx_serialization_coreSerialKind")))
 @interface ComposeAppKotlinx_serialization_coreSerialKind : ComposeAppBase
 - (NSUInteger)hash __attribute__((swift_name("hash()")));

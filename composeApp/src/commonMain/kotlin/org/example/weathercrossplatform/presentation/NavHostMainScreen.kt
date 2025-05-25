@@ -4,24 +4,33 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import org.example.weathercrossplatform.domain.models.Destinations
+import androidx.navigation.toRoute
+import org.example.weathercrossplatform.domain.models.Routes
+import org.example.weathercrossplatform.domain.models.Routes.MainScreenRoute
 
 @Composable
 fun NavHostMainScreen() {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = Destinations.MAIN_SCREEN.route) {
-        composable(route = Destinations.MAIN_SCREEN.route) {
+    NavHost(navController = navController, startDestination = MainScreenRoute()) {
+        composable<MainScreenRoute> {
+            val args = it.toRoute<MainScreenRoute>()
+
             MainScreenState(
                 onAddButtonClick = {
-                    navController.navigate(Destinations.SEARCH_SCREEN.route)
-                }
+                    navController.navigate(Routes.SearchScreenRoute)
+                },
+                cityId = args.city
             )
         }
-        composable(route = Destinations.SEARCH_SCREEN.route) {
+        composable<Routes.SearchScreenRoute> {
             SearchScreenState(
                 onBackButtonClick = {
                     navController.navigateUp()
+                },
+                onFoundItemClick = {
+                    navController.navigate(MainScreenRoute(it.id))
+                    println("location_id: ${it.id}")
                 }
             )
         }

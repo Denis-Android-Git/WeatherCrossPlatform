@@ -19,6 +19,7 @@ import org.example.weathercrossplatform.data.network.dto.ForecastDto
 import org.example.weathercrossplatform.data.network.dto.ImageListDto
 import org.example.weathercrossplatform.data.utils.NetworkError
 import org.example.weathercrossplatform.data.utils.Result
+import org.example.weathercrossplatform.domain.models.Location
 import org.example.weathercrossplatform.domain.repo.WeatherRepo
 
 const val BASE_URL_WEATHER = "https://api.weatherapi.com/v1"
@@ -51,6 +52,34 @@ class WeatherRepoImpl(
         return when (response.status.value) {
             in 200..299 -> {
                 val result = response.body<ForecastDto>()
+                Result.Success(result)
+            }
+
+            401 -> Result.Error(NetworkError.UNAUTHORIZED)
+            409 -> Result.Error(NetworkError.CONFLICT)
+            408 -> Result.Error(NetworkError.REQUEST_TIMEOUT)
+            413 -> Result.Error(NetworkError.PAYLOAD_TOO_LARGE)
+            in 500..599 -> Result.Error(NetworkError.SERVER_ERROR)
+            else -> Result.Error(NetworkError.UNKNOWN)
+        }
+    }
+
+    override suspend fun searchPlaces(query: String): Result<List<Location>, NetworkError> {
+        val response = try {
+            httpClient.get(
+                urlString = "$BASE_URL_WEATHER/search.json"
+            ) {
+                parameter("key", BuildKonfig.API_KEY)
+                parameter("q", query)
+            }
+        } catch (e: UnresolvedAddressException) {
+            return Result.Error(NetworkError.NO_INTERNET)
+        } catch (e: SerializationException) {
+            return Result.Error(NetworkError.SERIALIZATION)
+        }
+        return when (response.status.value) {
+            in 200..299 -> {
+                val result = response.body<List<Location>>()
                 Result.Success(result)
             }
 

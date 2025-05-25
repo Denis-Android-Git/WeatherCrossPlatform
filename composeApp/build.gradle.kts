@@ -71,6 +71,8 @@ kotlin {
             implementation(libs.androidx.room.runtime)
             implementation(libs.sqlite.bundled)
             implementation(libs.material.icons.core)
+            implementation(libs.kotlinx.serialization.json)
+
         }
         nativeMain.dependencies {
             implementation(libs.ktor.client.darwin)

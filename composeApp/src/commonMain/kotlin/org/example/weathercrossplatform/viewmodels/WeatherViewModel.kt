@@ -19,7 +19,9 @@ import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 import org.example.weathercrossplatform.domain.repo.DataBaseRepo
 import kotlin.math.roundToInt
+import kotlin.time.ExperimentalTime
 
+@OptIn(ExperimentalTime::class)
 class WeatherViewModel(
     private val locationService: LocationService,
     private val weatherRepoImpl: WeatherRepoImpl,
@@ -35,95 +37,111 @@ class WeatherViewModel(
         refreshPosition()
     }
 
-    init {
+    fun init() {
         viewModelScope.launch(Dispatchers.IO) {
-            try {
+            println("city_id = ${_weatherScreenState.value.cityId}")
+            if (_weatherScreenState.value.cityId == null) {
                 coordinates.collectLatest { coordinates ->
-
                     coordinates?.let {
                         val query = "${it.latitude},${it.longitude}"
-
-                        println("query=$query")
-
-                        weatherRepoImpl.getCurrentWeather(query)
-                            .onSuccess { weather ->
-
-                                dataBaseRepo.saveWeather(
-                                    weather = SavedWeatherItem(
-                                        id = 0,
-                                        cityName = weather.location.name,
-                                        latitude = it.latitude,
-                                        longitude = it.longitude,
-                                        temperature = weather.current.tempC,
-                                        weatherDescription = weather.current.condition.text,
-                                        highTemperature = weather.forecast.forecastday[0].day.maxTempC,
-                                        lowTemperature = weather.forecast.forecastday[0].day.minTempC
-                                    )
-                                )
-
-                                println("windRotation = ${weather.current.windDegree}, ${weather.current.windDir}")
-                                println("pressure = ${weather.current.pressureMb}, ${weather.current.pressureIn}")
-                                println("uv = ${weather.current.uv}")
-
-                                val weatherItemList = createWeatherItemList(
-                                    humidity = weather.current.humidity,
-                                    windSpeed = weather.current.windKph,
-                                    windRotation = weather.current.windDegree,
-                                    pressure = (weather.current.pressureMb * 0.75).roundToInt(),//перевод в мм ртутного столба
-                                    clouds = weather.current.cloud,
-                                    uvIndex = weather.current.uv.toInt(),
-                                    feelsLike = weather.current.feelsLikeC,
-                                    rotationFeelsLike = calculateRotationAngle(
-                                        weather.current.tempC,
-                                        weather.current.feelsLikeC
-                                    )
-                                )
-
-                                val imageQuery = when (weather.current.condition.text) {
-                                    "Солнечно" -> "sunny"
-                                    "Ясно" -> "clear sky"
-                                    "Переменная облачность" -> "cloudy"
-                                    "Местами грозы" -> "thunderstorm"
-                                    "Небольшой дождь со снегом" -> "rain and snow"
-                                    "Пасмурно" -> "overcast"
-                                    else -> weather.current.condition.text
-                                }
-
-                                println("imageQuery=$imageQuery")
-
-                                weatherRepoImpl.getImageList(imageQuery)
-                                    .onSuccess { imageList ->
-                                        val image = imageList.results.take(30).random().urls.regular
-                                        _weatherScreenState.value = _weatherScreenState.value.copy(
-                                            image = image,
-                                            isLoading = false,
-                                            weatherDto = weather,
-                                            weatherItemList = weatherItemList
-                                        )
-                                    }
-                                    .onError { error ->
-                                        _weatherScreenState.value = _weatherScreenState.value.copy(
-                                            error = error.name,
-                                            isLoading = false,
-                                            weatherDto = weather,
-                                            weatherItemList = weatherItemList
-                                        )
-                                    }
-                            }
-                            .onError { networkError ->
-                                _weatherScreenState.value = _weatherScreenState.value.copy(
-                                    isLoading = false,
-                                    error = networkError.name
-                                )
-                            }
+                        getWeatherByQuery(query, it.latitude, it.longitude)
                     }
                 }
-            } catch (e: Exception) {
-                _weatherScreenState.value = _weatherScreenState.value.copy(
-                    isLoading = false,
-                    error = e.message.toString()
-                )
+            } else {
+                getWeatherByQuery("id:${_weatherScreenState.value.cityId}")
             }
+        }
+    }
+
+    fun setCityId(cityId: Int) {
+        viewModelScope.launch {
+            _weatherScreenState.update { it.copy(cityId = cityId) }
+        }
+    }
+
+    private suspend fun getWeatherByQuery(
+        query: String,
+        latitude: Double? = null,
+        longitude: Double? = null
+    ) {
+        try {
+            weatherRepoImpl.getCurrentWeather(query)
+                .onSuccess { weather ->
+                    if (latitude != null && longitude != null) {
+                        dataBaseRepo.saveWeather(
+                            weather = SavedWeatherItem(
+                                id = 0,
+                                cityName = weather.location.name,
+                                temperature = weather.current.tempC,
+                                latitude = latitude,
+                                longitude = longitude,
+                                weatherDescription = weather.current.condition.text,
+                                highTemperature = weather.forecast.forecastday[0].day.maxTempC,
+                                lowTemperature = weather.forecast.forecastday[0].day.minTempC
+                            )
+                        )
+                    }
+
+                    println("windRotation = ${weather.current.windDegree}, ${weather.current.windDir}")
+                    println("pressure = ${weather.current.pressureMb}, ${weather.current.pressureIn}")
+                    println("uv = ${weather.current.uv}")
+
+                    val weatherItemList = createWeatherItemList(
+                        humidity = weather.current.humidity,
+                        windSpeed = weather.current.windKph,
+                        windRotation = weather.current.windDegree,
+                        pressure = (weather.current.pressureMb * 0.75).roundToInt(),//перевод в мм ртутного столба
+                        clouds = weather.current.cloud,
+                        uvIndex = weather.current.uv.toInt(),
+                        feelsLike = weather.current.feelsLikeC,
+                        rotationFeelsLike = calculateRotationAngle(
+                            weather.current.tempC,
+                            weather.current.feelsLikeC
+                        )
+                    )
+
+                    val imageQuery = when (weather.current.condition.text) {
+                        "Солнечно" -> "sunny"
+                        "Ясно" -> "clear sky"
+                        "Переменная облачность" -> "cloudy"
+                        "Местами грозы" -> "thunderstorm"
+                        "Небольшой дождь со снегом" -> "rain and snow"
+                        "Пасмурно" -> "overcast"
+                        else -> weather.current.condition.text
+                    }
+
+                    println("imageQuery=$imageQuery")
+
+                    weatherRepoImpl.getImageList(imageQuery)
+                        .onSuccess { imageList ->
+                            val image = imageList.results.take(30).random().urls.regular
+                            _weatherScreenState.value = _weatherScreenState.value.copy(
+                                image = image,
+                                isLoading = false,
+                                weatherDto = weather,
+                                weatherItemList = weatherItemList
+                            )
+                        }
+                        .onError { error ->
+                            _weatherScreenState.value = _weatherScreenState.value.copy(
+                                error = error.name,
+                                isLoading = false,
+                                weatherDto = weather,
+                                weatherItemList = weatherItemList
+                            )
+                        }
+                }
+                .onError { networkError ->
+                    _weatherScreenState.value = _weatherScreenState.value.copy(
+                        isLoading = false,
+                        error = networkError.name
+                    )
+                }
+        } catch (e: Exception) {
+            _weatherScreenState.value = _weatherScreenState.value.copy(
+                isLoading = false,
+                error = e.message.toString()
+            )
         }
     }
 

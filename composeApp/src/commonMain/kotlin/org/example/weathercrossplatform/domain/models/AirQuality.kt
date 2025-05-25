@@ -5,15 +5,15 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class AirQuality(
-    val co: Double,
+    val co: Double? = null,
     @SerialName("gb-defra-index")
-    val gbDefraIndex: Int,
-    val no2: Double,
-    val o3: Double,
-    val pm10: Double,
+    val gbDefraIndex: Int? = null,
+    val no2: Double? = null,
+    val o3: Double? = null,
+    val pm10: Double? = null,
     @SerialName("pm2_5")
-    val pm25: Double,
-    val so2: Double,
+    val pm25: Double? = null,
+    val so2: Double? = null,
     @SerialName("us-epa-index")
-    val usEpaIndex: Int
+    val usEpaIndex: Int? = null
 )

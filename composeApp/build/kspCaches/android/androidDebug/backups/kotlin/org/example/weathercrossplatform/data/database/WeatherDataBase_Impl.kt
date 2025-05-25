@@ -32,12 +32,12 @@ public class WeatherDataBase_Impl : WeatherDataBase() {
   }
 
   protected override fun createOpenDelegate(): RoomOpenDelegate {
-    val _openDelegate: RoomOpenDelegate = object : RoomOpenDelegate(3,
-        "6c579d9b2b178f5e11341fd6626f79e9", "1fcd766aecbda8dd9127a3c35d9e95bc") {
+    val _openDelegate: RoomOpenDelegate = object : RoomOpenDelegate(4,
+        "efe523ea65d91f1cc2b52b38485f8a53", "2145c522fc0581e14d2b8d1f9fd9e986") {
       public override fun createAllTables(connection: SQLiteConnection) {
-        connection.execSQL("CREATE TABLE IF NOT EXISTS `SavedWeatherItem` (`id` INTEGER NOT NULL, `cityName` TEXT NOT NULL, `latitude` REAL NOT NULL, `longitude` REAL NOT NULL, `temperature` REAL NOT NULL, `weatherDescription` TEXT NOT NULL, `highTemperature` REAL NOT NULL, `lowTemperature` REAL NOT NULL, PRIMARY KEY(`id`))")
+        connection.execSQL("CREATE TABLE IF NOT EXISTS `SavedWeatherItem` (`id` INTEGER NOT NULL, `cityName` TEXT NOT NULL, `latitude` REAL, `longitude` REAL, `temperature` REAL NOT NULL, `weatherDescription` TEXT NOT NULL, `highTemperature` REAL NOT NULL, `lowTemperature` REAL NOT NULL, PRIMARY KEY(`id`))")
         connection.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)")
-        connection.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6c579d9b2b178f5e11341fd6626f79e9')")
+        connection.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'efe523ea65d91f1cc2b52b38485f8a53')")
       }
 
       public override fun dropAllTables(connection: SQLiteConnection) {
@@ -65,9 +65,9 @@ public class WeatherDataBase_Impl : WeatherDataBase() {
             TableInfo.CREATED_FROM_ENTITY))
         _columnsSavedWeatherItem.put("cityName", TableInfo.Column("cityName", "TEXT", true, 0, null,
             TableInfo.CREATED_FROM_ENTITY))
-        _columnsSavedWeatherItem.put("latitude", TableInfo.Column("latitude", "REAL", true, 0, null,
-            TableInfo.CREATED_FROM_ENTITY))
-        _columnsSavedWeatherItem.put("longitude", TableInfo.Column("longitude", "REAL", true, 0,
+        _columnsSavedWeatherItem.put("latitude", TableInfo.Column("latitude", "REAL", false, 0,
+            null, TableInfo.CREATED_FROM_ENTITY))
+        _columnsSavedWeatherItem.put("longitude", TableInfo.Column("longitude", "REAL", false, 0,
             null, TableInfo.CREATED_FROM_ENTITY))
         _columnsSavedWeatherItem.put("temperature", TableInfo.Column("temperature", "REAL", true, 0,
             null, TableInfo.CREATED_FROM_ENTITY))

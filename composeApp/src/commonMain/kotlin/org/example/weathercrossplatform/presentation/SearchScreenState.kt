@@ -7,13 +7,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import org.example.weathercrossplatform.domain.actions.SearchScreenActions
+import org.example.weathercrossplatform.domain.models.Location
 import org.example.weathercrossplatform.viewmodels.SearchViewModel
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun SearchScreenState(
     searchViewModel: SearchViewModel = koinViewModel(),
-    onBackButtonClick: () -> Unit
+    onBackButtonClick: () -> Unit,
+    onFoundItemClick: (Location) -> Unit
 ) {
 
     val searchScreenState = searchViewModel.searchScreenState.collectAsStateWithLifecycle()
@@ -28,11 +31,19 @@ fun SearchScreenState(
         SearchScreen(
             query = searchScreenState.value.searchQuery,
             onBackButtonClick = onBackButtonClick,
-            onQueryChange = searchViewModel::setSearchQuery,
+            onQueryChange = {
+                searchViewModel.onAction(SearchScreenActions.SetSearchQuery(it))
+            },
             expanded = searchScreenState.value.expanded,
-            onExpandedChange = searchViewModel::setExpanded,
-            onSearch = {},
-            cityList = cityList.value
+            onExpandedChange = {
+                searchViewModel.onAction(SearchScreenActions.SetExpanded(it))
+            },
+            onSearch = {
+                searchViewModel.onAction(SearchScreenActions.SearchCities(it))
+            },
+            cityList = cityList.value,
+            locationList = searchScreenState.value.cityList,
+            onFoundItemClick = onFoundItemClick,
         )
     }
 }

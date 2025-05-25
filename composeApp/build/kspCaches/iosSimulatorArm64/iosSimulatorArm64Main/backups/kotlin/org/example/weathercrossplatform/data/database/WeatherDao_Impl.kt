@@ -46,8 +46,18 @@ public class WeatherDao_Impl(
       protected override fun bind(statement: SQLiteStatement, entity: SavedWeatherItem) {
         statement.bindLong(1, entity.id.toLong())
         statement.bindText(2, entity.cityName)
-        statement.bindDouble(3, entity.latitude)
-        statement.bindDouble(4, entity.longitude)
+        val _tmpLatitude: Double? = entity.latitude
+        if (_tmpLatitude == null) {
+          statement.bindNull(3)
+        } else {
+          statement.bindDouble(3, _tmpLatitude)
+        }
+        val _tmpLongitude: Double? = entity.longitude
+        if (_tmpLongitude == null) {
+          statement.bindNull(4)
+        } else {
+          statement.bindDouble(4, _tmpLongitude)
+        }
         statement.bindDouble(5, entity.temperature)
         statement.bindText(6, entity.weatherDescription)
         statement.bindDouble(7, entity.highTemperature)
@@ -60,8 +70,18 @@ public class WeatherDao_Impl(
       protected override fun bind(statement: SQLiteStatement, entity: SavedWeatherItem) {
         statement.bindLong(1, entity.id.toLong())
         statement.bindText(2, entity.cityName)
-        statement.bindDouble(3, entity.latitude)
-        statement.bindDouble(4, entity.longitude)
+        val _tmpLatitude: Double? = entity.latitude
+        if (_tmpLatitude == null) {
+          statement.bindNull(3)
+        } else {
+          statement.bindDouble(3, _tmpLatitude)
+        }
+        val _tmpLongitude: Double? = entity.longitude
+        if (_tmpLongitude == null) {
+          statement.bindNull(4)
+        } else {
+          statement.bindDouble(4, _tmpLongitude)
+        }
         statement.bindDouble(5, entity.temperature)
         statement.bindText(6, entity.weatherDescription)
         statement.bindDouble(7, entity.highTemperature)
@@ -102,10 +122,18 @@ public class WeatherDao_Impl(
           _tmpId = _stmt.getLong(_columnIndexOfId).toInt()
           val _tmpCityName: String
           _tmpCityName = _stmt.getText(_columnIndexOfCityName)
-          val _tmpLatitude: Double
-          _tmpLatitude = _stmt.getDouble(_columnIndexOfLatitude)
-          val _tmpLongitude: Double
-          _tmpLongitude = _stmt.getDouble(_columnIndexOfLongitude)
+          val _tmpLatitude: Double?
+          if (_stmt.isNull(_columnIndexOfLatitude)) {
+            _tmpLatitude = null
+          } else {
+            _tmpLatitude = _stmt.getDouble(_columnIndexOfLatitude)
+          }
+          val _tmpLongitude: Double?
+          if (_stmt.isNull(_columnIndexOfLongitude)) {
+            _tmpLongitude = null
+          } else {
+            _tmpLongitude = _stmt.getDouble(_columnIndexOfLongitude)
+          }
           val _tmpTemperature: Double
           _tmpTemperature = _stmt.getDouble(_columnIndexOfTemperature)
           val _tmpWeatherDescription: String
