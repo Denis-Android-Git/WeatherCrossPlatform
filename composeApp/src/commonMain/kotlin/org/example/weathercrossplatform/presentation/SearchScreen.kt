@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Search
@@ -141,13 +142,14 @@ fun SearchScreen(
                     color = Color.Gray
                 )
             }
-            items(cityList) {
+            itemsIndexed(cityList) { index, it ->
                 SavedElement(
                     cityName = it.cityName,
                     temperature = it.temperature.toString(),
                     weatherDescription = it.weatherDescription,
                     high = it.highTemperature.toString(),
-                    low = it.lowTemperature.toString()
+                    low = it.lowTemperature.toString(),
+                    index = index
                 )
             }
         }

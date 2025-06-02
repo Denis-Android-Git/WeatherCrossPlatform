@@ -5,8 +5,10 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
@@ -14,14 +16,13 @@ import org.example.weathercrossplatform.data.locationservice.LocationService
 import org.example.weathercrossplatform.data.repo_impl.WeatherRepoImpl
 import org.example.weathercrossplatform.data.utils.onError
 import org.example.weathercrossplatform.data.utils.onSuccess
+import org.example.weathercrossplatform.domain.actions.MainScreenActions
 import org.example.weathercrossplatform.domain.models.Coordinates
 import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 import org.example.weathercrossplatform.domain.repo.DataBaseRepo
 import kotlin.math.roundToInt
-import kotlin.time.ExperimentalTime
 
-@OptIn(ExperimentalTime::class)
 class WeatherViewModel(
     private val locationService: LocationService,
     private val weatherRepoImpl: WeatherRepoImpl,
@@ -33,11 +34,34 @@ class WeatherViewModel(
     private val _weatherScreenState = MutableStateFlow(WeatherMainScreenState())
     val weatherScreenState = _weatherScreenState.asStateFlow()
 
+    val allCities = dataBaseRepo.getWeatherList()
+        .stateIn(
+            viewModelScope,
+            SharingStarted.WhileSubscribed(5000),
+            initialValue = emptyList()
+        )
+
     init {
         refreshPosition()
     }
 
-    fun init() {
+    fun onAction(actions: MainScreenActions) {
+        when (actions) {
+            MainScreenActions.Init -> init()
+            MainScreenActions.RefreshPosition -> refreshPosition()
+            is MainScreenActions.SetCityId -> setCityId(actions.cityId)
+            is MainScreenActions.AddCity -> addCity(actions.city)
+        }
+    }
+
+    private fun addCity(city: SavedWeatherItem) {
+        viewModelScope.launch {
+            dataBaseRepo.saveWeather(city)
+            _weatherScreenState.update { it.copy(isAddCity = false) }
+        }
+    }
+
+    private fun init() {
         viewModelScope.launch(Dispatchers.IO) {
             println("city_id = ${_weatherScreenState.value.cityId}")
             if (_weatherScreenState.value.cityId == null) {
@@ -53,9 +77,9 @@ class WeatherViewModel(
         }
     }
 
-    fun setCityId(cityId: Int) {
-        viewModelScope.launch {
-            _weatherScreenState.update { it.copy(cityId = cityId) }
+    private fun setCityId(cityId: Int) {
+        viewModelScope.launch(Dispatchers.Default) {
+            _weatherScreenState.update { it.copy(cityId = cityId, isAddCity = true) }
         }
     }
 
@@ -73,8 +97,6 @@ class WeatherViewModel(
                                 id = 0,
                                 cityName = weather.location.name,
                                 temperature = weather.current.tempC,
-                                latitude = latitude,
-                                longitude = longitude,
                                 weatherDescription = weather.current.condition.text,
                                 highTemperature = weather.forecast.forecastday[0].day.maxTempC,
                                 lowTemperature = weather.forecast.forecastday[0].day.minTempC
@@ -145,7 +167,7 @@ class WeatherViewModel(
         }
     }
 
-    fun refreshPosition() {
+    private fun refreshPosition() {
         viewModelScope.launch(Dispatchers.IO) {
             _weatherScreenState.value = _weatherScreenState.value.copy(
                 isLoading = true

@@ -29,7 +29,8 @@ fun SavedElement(
     temperature: String,
     weatherDescription: String,
     high: String,
-    low: String
+    low: String,
+    index: Int
 ) {
     Box(
         modifier = Modifier
@@ -54,14 +55,16 @@ fun SavedElement(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(text = cityName, color = Color.White, fontSize = 20.sp)
-                    Icon(
-                        imageVector = Icons.Outlined.Place,
-                        contentDescription = null,
-                        modifier = Modifier
-                            .padding(start = 8.dp)
-                            .size(15.dp),
-                        tint = Color.White
-                    )
+                    if (index == 0) {
+                        Icon(
+                            imageVector = Icons.Outlined.Place,
+                            contentDescription = null,
+                            modifier = Modifier
+                                .padding(start = 8.dp)
+                                .size(15.dp),
+                            tint = Color.White
+                        )
+                    }
                 }
                 Spacer(modifier = Modifier.weight(1f))
                 Text(text = weatherDescription, color = Color.White)

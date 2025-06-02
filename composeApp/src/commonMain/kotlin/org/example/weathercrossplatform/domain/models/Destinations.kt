@@ -8,7 +8,7 @@ sealed interface Routes {
 
     @Serializable
     data class MainScreenRoute(
-        val city: Int? = null
+        val cityId: Int? = null
     ) : Routes
 }
 

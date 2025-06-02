@@ -12,6 +12,7 @@ private fun Preview() {
        temperature = "72",
        weatherDescription = "Sunny",
        high = "75",
-       low = "68"
+       low = "68",
+       index = 0
    )
 }

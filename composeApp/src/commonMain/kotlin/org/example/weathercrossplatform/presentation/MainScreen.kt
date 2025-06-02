@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -21,6 +22,8 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.outlined.Place
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -28,6 +31,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -39,6 +43,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
+import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.utils.GetScreenHeight
 import org.example.weathercrossplatform.domain.models.Forecastday
 import org.example.weathercrossplatform.domain.models.WeatherItem
@@ -46,19 +51,38 @@ import org.example.weathercrossplatform.domain.models.WeatherItem
 @Composable
 fun MainScreen(
     isLoading: Boolean,
+    isAddCity: Boolean,
     image: String,
     usEpaIndex: Int?,
     locationName: String?,
-    temp: String?,
+    temp: Double?,
+    highTemp: Double?,
+    lowTemp: Double?,
     condition: String?,
     feelsLikeC: String?,
     error: String,
     forecastList: List<Forecastday>?,
     weatherItemList: List<WeatherItem>,
-    onAddButtonClick: () -> Unit
+    savedCityList: List<SavedWeatherItem>,
+    onAddButtonClick: () -> Unit,
+    onCancelButtonClick: () -> Unit,
+    onAddCityButtonClick: (SavedWeatherItem) -> Unit
 ) {
 
     val textColor by remember { mutableStateOf(Color.White) }
+    val airQualityText by rememberUpdatedState(
+        newValue = when (usEpaIndex) {
+            1 -> "Хорошо"
+            2 -> "Умеренно"
+            3 -> "Плохое для чувствительных групп"
+            4 -> "Плохое"
+            5 -> "Очень Плохое"
+            6 -> "Опасно"
+            else -> ""
+        }
+    )
+
+    println("airQualityText = $usEpaIndex")
 
     Box(
         modifier = Modifier.fillMaxSize()
@@ -75,19 +99,6 @@ fun MainScreen(
         AnimatedVisibility(
             visible = !isLoading && locationName != null
         ) {
-
-            val airQualityText =
-                when (usEpaIndex) {
-                    1 -> "Хорошо"
-                    2 -> "Умеренно"
-                    3 -> "Плохое для чувствительных групп"
-                    4 -> "Плохое"
-                    5 -> "Очень Плохое"
-                    6 -> "Опасно"
-                    else -> ""
-                }
-
-            println("airQualityText = $usEpaIndex")
 
             Box(modifier = Modifier.fillMaxSize()) {
                 AsyncImage(
@@ -250,15 +261,58 @@ fun MainScreen(
         ) {
             Text(text = error, textAlign = TextAlign.Center)
         }
-        IconButton(
-            onClick = onAddButtonClick,
+        AnimatedVisibility(
+            visible = !isAddCity,
             modifier = Modifier.align(Alignment.TopEnd).padding(top = 40.dp, end = 16.dp)
         ) {
-            Icon(
-                imageVector = Icons.Default.Add, contentDescription = "Add",
-                modifier = Modifier.size(35.dp),
-                tint = Color.White
-            )
+            IconButton(
+                onClick = onAddButtonClick
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Add, contentDescription = "Add",
+                    modifier = Modifier.size(35.dp),
+                    tint = Color.White
+                )
+            }
+        }
+        AnimatedVisibility(
+            visible = isAddCity,
+            modifier = Modifier.align(Alignment.TopStart)
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(top = 40.dp, start = 6.dp, end = 6.dp)
+            ) {
+                Button(
+                    onClick = onCancelButtonClick,
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color.Black.copy(alpha = 0.2f),
+                    )
+                ) {
+                    Text(text = "Отмена", color = Color.White, fontSize = 20.sp)
+                }
+                Spacer(modifier = Modifier.weight(1f))
+                Button(
+                    onClick = {
+                        onAddCityButtonClick(
+                            SavedWeatherItem(
+                                id = savedCityList.last().id + 1,
+                                cityName = locationName ?: "",
+                                //latitude = latitude,
+                                //longitude = longitude,
+                                temperature = temp ?: 0.0,
+                                weatherDescription = condition ?: "",
+                                highTemperature = highTemp ?: 0.0,
+                                lowTemperature = lowTemp ?: 0.0,
+                            )
+                        )
+                    },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color.Black.copy(alpha = 0.2f),
+                    )
+                ) {
+                    Text(text = "Добавить", color = Color.White, fontSize = 20.sp)
+                }
+            }
         }
     }
 }

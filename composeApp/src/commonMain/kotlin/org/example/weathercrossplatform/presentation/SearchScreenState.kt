@@ -37,6 +37,7 @@ fun SearchScreenState(
             expanded = searchScreenState.value.expanded,
             onExpandedChange = {
                 searchViewModel.onAction(SearchScreenActions.SetExpanded(it))
+                searchViewModel.onAction(SearchScreenActions.SetSearchQuery(""))
             },
             onSearch = {
                 searchViewModel.onAction(SearchScreenActions.SearchCities(it))

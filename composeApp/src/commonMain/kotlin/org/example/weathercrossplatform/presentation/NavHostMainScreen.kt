@@ -20,7 +20,10 @@ fun NavHostMainScreen() {
                 onAddButtonClick = {
                     navController.navigate(Routes.SearchScreenRoute)
                 },
-                cityId = args.city
+                cityId = args.cityId,
+                onCancelButtonClick = {
+                    navController.navigateUp()
+                },
             )
         }
         composable<Routes.SearchScreenRoute> {
