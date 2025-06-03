@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.domain.models.Location
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -154,4 +155,20 @@ fun SearchScreen(
             }
         }
     }
+}
+
+@Preview
+@Composable
+fun Preview() {
+    SearchScreen(
+        query = "good",
+        onBackButtonClick = { } ,
+        onQueryChange = {},
+        expanded = false,
+        onExpandedChange = {},
+        onSearch = {},
+        cityList = emptyList(),
+        locationList = emptyList(),
+        onFoundItemClick = {}
+    )
 }

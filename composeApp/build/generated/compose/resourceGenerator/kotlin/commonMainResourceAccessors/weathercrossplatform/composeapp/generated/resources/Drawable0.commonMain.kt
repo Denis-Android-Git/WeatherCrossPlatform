@@ -1,4 +1,4 @@
-@file:OptIn(org.jetbrains.compose.resources.InternalResourceApi::class)
+@file:OptIn(InternalResourceApi::class)
 
 package weathercrossplatform.composeapp.generated.resources
 
@@ -7,147 +7,74 @@ import kotlin.String
 import kotlin.collections.MutableMap
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.InternalResourceApi
+import org.jetbrains.compose.resources.ResourceItem
 
-private object CommonMainDrawable0 {
-  public val arrow_downward: DrawableResource by 
-      lazy { init_arrow_downward() }
+private const val MD: String =
+    "composeResources/weathercrossplatform.composeapp.generated.resources/"
 
-  public val clouds: DrawableResource by 
-      lazy { init_clouds() }
+internal val Res.drawable.arrow_downward: DrawableResource by lazy {
+      DrawableResource("drawable:arrow_downward", setOf(
+        ResourceItem(setOf(), "${MD}drawable/arrow_downward.png", -1, -1),
+      ))
+    }
 
-  public val compose_multiplatform: DrawableResource by 
-      lazy { init_compose_multiplatform() }
+internal val Res.drawable.clouds: DrawableResource by lazy {
+      DrawableResource("drawable:clouds", setOf(
+        ResourceItem(setOf(), "${MD}drawable/clouds.png", -1, -1),
+      ))
+    }
 
-  public val feels_like_arrow: DrawableResource by 
-      lazy { init_feels_like_arrow() }
+internal val Res.drawable.compose_multiplatform: DrawableResource by lazy {
+      DrawableResource("drawable:compose_multiplatform", setOf(
+        ResourceItem(setOf(), "${MD}drawable/compose-multiplatform.xml", -1, -1),
+      ))
+    }
 
-  public val gauge: DrawableResource by 
-      lazy { init_gauge() }
+internal val Res.drawable.feels_like_arrow: DrawableResource by lazy {
+      DrawableResource("drawable:feels_like_arrow", setOf(
+        ResourceItem(setOf(), "${MD}drawable/feels_like_arrow.png", -1, -1),
+      ))
+    }
 
-  public val meter: DrawableResource by 
-      lazy { init_meter() }
+internal val Res.drawable.gauge: DrawableResource by lazy {
+      DrawableResource("drawable:gauge", setOf(
+        ResourceItem(setOf(), "${MD}drawable/gauge.png", -1, -1),
+      ))
+    }
 
-  public val speedometer: DrawableResource by 
-      lazy { init_speedometer() }
+internal val Res.drawable.meter: DrawableResource by lazy {
+      DrawableResource("drawable:meter", setOf(
+        ResourceItem(setOf(), "${MD}drawable/meter.png", -1, -1),
+      ))
+    }
 
-  public val water_drop: DrawableResource by 
-      lazy { init_water_drop() }
+internal val Res.drawable.speedometer: DrawableResource by lazy {
+      DrawableResource("drawable:speedometer", setOf(
+        ResourceItem(setOf(), "${MD}drawable/speedometer.png", -1, -1),
+      ))
+    }
 
-  public val wind_arrow: DrawableResource by 
-      lazy { init_wind_arrow() }
-}
+internal val Res.drawable.water_drop: DrawableResource by lazy {
+      DrawableResource("drawable:water_drop", setOf(
+        ResourceItem(setOf(), "${MD}drawable/water_drop.png", -1, -1),
+      ))
+    }
+
+internal val Res.drawable.wind_arrow: DrawableResource by lazy {
+      DrawableResource("drawable:wind_arrow", setOf(
+        ResourceItem(setOf(), "${MD}drawable/wind_arrow.png", -1, -1),
+      ))
+    }
 
 @InternalResourceApi
 internal fun _collectCommonMainDrawable0Resources(map: MutableMap<String, DrawableResource>) {
-  map.put("arrow_downward", CommonMainDrawable0.arrow_downward)
-  map.put("clouds", CommonMainDrawable0.clouds)
-  map.put("compose_multiplatform", CommonMainDrawable0.compose_multiplatform)
-  map.put("feels_like_arrow", CommonMainDrawable0.feels_like_arrow)
-  map.put("gauge", CommonMainDrawable0.gauge)
-  map.put("meter", CommonMainDrawable0.meter)
-  map.put("speedometer", CommonMainDrawable0.speedometer)
-  map.put("water_drop", CommonMainDrawable0.water_drop)
-  map.put("wind_arrow", CommonMainDrawable0.wind_arrow)
+  map.put("arrow_downward", Res.drawable.arrow_downward)
+  map.put("clouds", Res.drawable.clouds)
+  map.put("compose_multiplatform", Res.drawable.compose_multiplatform)
+  map.put("feels_like_arrow", Res.drawable.feels_like_arrow)
+  map.put("gauge", Res.drawable.gauge)
+  map.put("meter", Res.drawable.meter)
+  map.put("speedometer", Res.drawable.speedometer)
+  map.put("water_drop", Res.drawable.water_drop)
+  map.put("wind_arrow", Res.drawable.wind_arrow)
 }
-
-internal val Res.drawable.arrow_downward: DrawableResource
-  get() = CommonMainDrawable0.arrow_downward
-
-private fun init_arrow_downward(): DrawableResource =
-    org.jetbrains.compose.resources.DrawableResource(
-  "drawable:arrow_downward",
-    setOf(
-      org.jetbrains.compose.resources.ResourceItem(setOf(),
-    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/arrow_downward.png", -1, -1),
-    )
-)
-
-internal val Res.drawable.clouds: DrawableResource
-  get() = CommonMainDrawable0.clouds
-
-private fun init_clouds(): DrawableResource = org.jetbrains.compose.resources.DrawableResource(
-  "drawable:clouds",
-    setOf(
-      org.jetbrains.compose.resources.ResourceItem(setOf(),
-    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/clouds.png", -1, -1),
-    )
-)
-
-internal val Res.drawable.compose_multiplatform: DrawableResource
-  get() = CommonMainDrawable0.compose_multiplatform
-
-private fun init_compose_multiplatform(): DrawableResource =
-    org.jetbrains.compose.resources.DrawableResource(
-  "drawable:compose_multiplatform",
-    setOf(
-      org.jetbrains.compose.resources.ResourceItem(setOf(),
-    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/compose-multiplatform.xml", -1, -1),
-    )
-)
-
-internal val Res.drawable.feels_like_arrow: DrawableResource
-  get() = CommonMainDrawable0.feels_like_arrow
-
-private fun init_feels_like_arrow(): DrawableResource =
-    org.jetbrains.compose.resources.DrawableResource(
-  "drawable:feels_like_arrow",
-    setOf(
-      org.jetbrains.compose.resources.ResourceItem(setOf(),
-    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/feels_like_arrow.png", -1, -1),
-    )
-)
-
-internal val Res.drawable.gauge: DrawableResource
-  get() = CommonMainDrawable0.gauge
-
-private fun init_gauge(): DrawableResource = org.jetbrains.compose.resources.DrawableResource(
-  "drawable:gauge",
-    setOf(
-      org.jetbrains.compose.resources.ResourceItem(setOf(),
-    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/gauge.png", -1, -1),
-    )
-)
-
-internal val Res.drawable.meter: DrawableResource
-  get() = CommonMainDrawable0.meter
-
-private fun init_meter(): DrawableResource = org.jetbrains.compose.resources.DrawableResource(
-  "drawable:meter",
-    setOf(
-      org.jetbrains.compose.resources.ResourceItem(setOf(),
-    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/meter.png", -1, -1),
-    )
-)
-
-internal val Res.drawable.speedometer: DrawableResource
-  get() = CommonMainDrawable0.speedometer
-
-private fun init_speedometer(): DrawableResource = org.jetbrains.compose.resources.DrawableResource(
-  "drawable:speedometer",
-    setOf(
-      org.jetbrains.compose.resources.ResourceItem(setOf(),
-    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/speedometer.png", -1, -1),
-    )
-)
-
-internal val Res.drawable.water_drop: DrawableResource
-  get() = CommonMainDrawable0.water_drop
-
-private fun init_water_drop(): DrawableResource = org.jetbrains.compose.resources.DrawableResource(
-  "drawable:water_drop",
-    setOf(
-      org.jetbrains.compose.resources.ResourceItem(setOf(),
-    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/water_drop.png", -1, -1),
-    )
-)
-
-internal val Res.drawable.wind_arrow: DrawableResource
-  get() = CommonMainDrawable0.wind_arrow
-
-private fun init_wind_arrow(): DrawableResource = org.jetbrains.compose.resources.DrawableResource(
-  "drawable:wind_arrow",
-    setOf(
-      org.jetbrains.compose.resources.ResourceItem(setOf(),
-    "composeResources/weathercrossplatform.composeapp.generated.resources/drawable/wind_arrow.png", -1, -1),
-    )
-)
