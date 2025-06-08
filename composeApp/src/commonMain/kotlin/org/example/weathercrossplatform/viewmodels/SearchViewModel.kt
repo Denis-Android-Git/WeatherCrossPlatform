@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.utils.onError
 import org.example.weathercrossplatform.data.utils.onSuccess
 import org.example.weathercrossplatform.domain.actions.SearchScreenActions
@@ -17,7 +18,7 @@ import org.example.weathercrossplatform.domain.repo.DataBaseRepo
 import org.example.weathercrossplatform.domain.repo.WeatherRepo
 
 class SearchViewModel(
-    dataBaseRepo: DataBaseRepo,
+    private val dataBaseRepo: DataBaseRepo,
     private val weatherRepo: WeatherRepo
 ) : ViewModel() {
     private val _searchScreenState = MutableStateFlow(SearchScreenViewState())
@@ -42,6 +43,32 @@ class SearchViewModel(
             is SearchScreenActions.SearchCities -> searchCities(action.city)
             is SearchScreenActions.SetExpanded -> setExpanded(action.expanded)
             is SearchScreenActions.SetSearchQuery -> setSearchQuery(action.query)
+            is SearchScreenActions.SetTempList -> setTempList(action.item)
+            is SearchScreenActions.DeleteTempCityList -> deleteTempCityList(action.tempList)
+        }
+    }
+
+    private fun deleteTempCityList(tempCityList: List<SavedWeatherItem>) {
+        viewModelScope.launch {
+            tempCityList.forEach {
+                dataBaseRepo.deleteWeather(it)
+                setTempList(it)
+            }
+        }
+    }
+
+    private fun setTempList(savedWeatherItem: SavedWeatherItem) {
+        viewModelScope.launch {
+            val currentList = _searchScreenState.value.tempListToDelete
+            val newList = if (currentList.contains(savedWeatherItem)) {
+                currentList - savedWeatherItem
+            } else {
+                currentList + savedWeatherItem
+            }
+            _searchScreenState.update {
+                it.copy(tempListToDelete = newList)
+            }
+            println("tempList: ${currentList.size}")
         }
     }
 

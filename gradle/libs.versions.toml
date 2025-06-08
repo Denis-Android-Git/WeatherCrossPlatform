@@ -21,9 +21,9 @@ navigationCompose = "2.9.0-beta02"
 coil = "3.1.0"
 
 #Firebase android
-firebase-android-bom = "33.14.0"
+firebase-android-bom = "33.15.0"
 #Gradle
-gradlePlugins-crashlytics = "3.0.3"
+gradlePlugins-crashlytics = "3.0.4"
 gradlePlugins-google-services = "4.4.2"
 #Gitlive
 firebase-gitlive-sdk = "1.12.0"
