@@ -57,18 +57,28 @@ class SearchViewModel(
         }
     }
 
-    private fun setTempList(savedWeatherItem: SavedWeatherItem) {
+    private fun setTempList(
+        savedWeatherItem: SavedWeatherItem?
+    ) {
         viewModelScope.launch {
-            val currentList = _searchScreenState.value.tempListToDelete
-            val newList = if (currentList.contains(savedWeatherItem)) {
-                currentList - savedWeatherItem
+            if (savedWeatherItem != null) {
+                val currentList = _searchScreenState.value.tempListToDelete
+                val newCurrentList = if (currentList.contains(savedWeatherItem)) {
+                    currentList - savedWeatherItem
+                } else {
+                    currentList + savedWeatherItem
+                }
+                _searchScreenState.update {
+                    it.copy(tempListToDelete = newCurrentList)
+                }
+                println("tempList: ${currentList.size}")
+
             } else {
-                currentList + savedWeatherItem
+                _searchScreenState.update {
+                    val emptyList = emptyList<SavedWeatherItem>()
+                    it.copy(tempListToDelete = emptyList)
+                }
             }
-            _searchScreenState.update {
-                it.copy(tempListToDelete = newList)
-            }
-            println("tempList: ${currentList.size}")
         }
     }
 

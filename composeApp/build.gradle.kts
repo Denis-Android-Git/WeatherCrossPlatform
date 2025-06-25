@@ -2,6 +2,11 @@ import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import java.util.Properties
+import com.android.build.api.instrumentation.*
+import org.gradle.api.provider.SetProperty
+import org.gradle.api.tasks.Input
+import org.objectweb.asm.ClassVisitor
+import org.objectweb.asm.FieldVisitor
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -61,6 +66,7 @@ kotlin {
             implementation(libs.lifecycle.viewmodel.compose)
             api(libs.moko.permissions)
             api(libs.moko.permissions.compose)
+            implementation(libs.permissions.location)
             api(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
@@ -160,4 +166,54 @@ dependencies {
     add("kspIosArm64", libs.androidx.room.compiler)
     add("kspIosSimulatorArm64",libs.androidx.room.compiler)
 
+}
+
+// 2. Apply class transformation in `build.gradle.kts` of your app module
+
+androidComponents {
+    onVariants { variant ->
+        variant.instrumentation.transformClassesWith(
+            FieldSkippingClassVisitor.Factory::class.java,
+            scope = InstrumentationScope.ALL,
+        ) { params ->
+            params.classes.add("io.ktor.client.plugins.Messages")
+        }
+    }
+}
+class FieldSkippingClassVisitor(
+    apiVersion: Int,
+    nextClassVisitor: ClassVisitor,
+) : ClassVisitor(apiVersion, nextClassVisitor) {
+
+    override fun visitField(
+        access: Int,
+        name: String?,
+        descriptor: String?,
+        signature: String?,
+        value: Any?
+    ): FieldVisitor? = null
+
+    abstract class Factory : AsmClassVisitorFactory<Parameters> {
+
+        private val excludedClasses: Set<String>
+            get() = parameters.get().classes.get()
+
+        override fun isInstrumentable(classData: ClassData): Boolean =
+            classData.className in excludedClasses
+
+        override fun createClassVisitor(
+            classContext: ClassContext,
+            nextClassVisitor: ClassVisitor
+        ): ClassVisitor {
+            return FieldSkippingClassVisitor(
+                apiVersion = instrumentationContext.apiVersion.get(),
+                nextClassVisitor = nextClassVisitor
+            )
+        }
+    }
+
+    abstract class Parameters : InstrumentationParameters {
+        @get:Input
+        abstract val classes: SetProperty<String>
+    }
 }

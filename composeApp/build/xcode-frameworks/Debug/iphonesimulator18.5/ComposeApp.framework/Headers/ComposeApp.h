@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class ComposeAppAirQuality, ComposeAppAirQualityCompanion, ComposeAppAppDatabaseConstructor, ComposeAppAstro, ComposeAppAstroCompanion, ComposeAppCondition, ComposeAppConditionCompanion, ComposeAppCoordinates, ComposeAppCurrent, ComposeAppCurrentCompanion, ComposeAppDay, ComposeAppDayCompanion, ComposeAppForecast, ComposeAppForecastCompanion, ComposeAppForecastDto, ComposeAppForecastDtoCompanion, ComposeAppForecastday, ComposeAppForecastdayCompanion, ComposeAppGetScreenHeight, ComposeAppHour, ComposeAppHourCompanion, ComposeAppImageListDto, ComposeAppImageListDtoCompanion, ComposeAppKoin_coreBeanDefinition<T>, ComposeAppKoin_coreCallbacks<T>, ComposeAppKoin_coreExtensionManager, ComposeAppKoin_coreInstanceFactory<T>, ComposeAppKoin_coreInstanceFactoryCompanion, ComposeAppKoin_coreInstanceRegistry, ComposeAppKoin_coreKind, ComposeAppKoin_coreKoin, ComposeAppKoin_coreKoinApplication, ComposeAppKoin_coreKoinApplicationCompanion, ComposeAppKoin_coreKoinDefinition<R>, ComposeAppKoin_coreLevel, ComposeAppKoin_coreLockable, ComposeAppKoin_coreLogger, ComposeAppKoin_coreModule, ComposeAppKoin_coreParametersHolder, ComposeAppKoin_corePropertyRegistry, ComposeAppKoin_coreResolutionContext, ComposeAppKoin_coreScope, ComposeAppKoin_coreScopeDSL, ComposeAppKoin_coreScopeRegistry, ComposeAppKoin_coreScopeRegistryCompanion, ComposeAppKoin_coreSingleInstanceFactory<T>, ComposeAppKotlinAbstractCoroutineContextElement, ComposeAppKotlinAbstractCoroutineContextKey<B, E>, ComposeAppKotlinArray<T>, ComposeAppKotlinByteArray, ComposeAppKotlinByteIterator, ComposeAppKotlinCancellationException, ComposeAppKotlinEnum<E>, ComposeAppKotlinEnumCompanion, ComposeAppKotlinException, ComposeAppKotlinIllegalStateException, ComposeAppKotlinIntArray, ComposeAppKotlinIntIterator, ComposeAppKotlinKTypeProjection, ComposeAppKotlinKTypeProjectionCompanion, ComposeAppKotlinKVariance, ComposeAppKotlinLazyThreadSafetyMode, ComposeAppKotlinNothing, ComposeAppKotlinRuntimeException, ComposeAppKotlinThrowable, ComposeAppKotlinUnit, ComposeAppKotlinx_coroutines_coreCoroutineDispatcher, ComposeAppKotlinx_coroutines_coreCoroutineDispatcherKey, ComposeAppKotlinx_io_coreBuffer, ComposeAppKotlinx_serialization_coreSerialKind, ComposeAppKotlinx_serialization_coreSerializersModule, ComposeAppKtor_client_coreHttpClient, ComposeAppKtor_client_coreHttpClientCall, ComposeAppKtor_client_coreHttpClientCallCompanion, ComposeAppKtor_client_coreHttpClientConfig<T>, ComposeAppKtor_client_coreHttpClientEngineConfig, ComposeAppKtor_client_coreHttpReceivePipeline, ComposeAppKtor_client_coreHttpReceivePipelinePhases, ComposeAppKtor_client_coreHttpRequestBuilder, ComposeAppKtor_client_coreHttpRequestBuilderCompanion, ComposeAppKtor_client_coreHttpRequestData, ComposeAppKtor_client_coreHttpRequestPipeline, ComposeAppKtor_client_coreHttpRequestPipelinePhases, ComposeAppKtor_client_coreHttpResponse, ComposeAppKtor_client_coreHttpResponseContainer, ComposeAppKtor_client_coreHttpResponseData, ComposeAppKtor_client_coreHttpResponsePipeline, ComposeAppKtor_client_coreHttpResponsePipelinePhases, ComposeAppKtor_client_coreHttpSendPipeline, ComposeAppKtor_client_coreHttpSendPipelinePhases, ComposeAppKtor_client_coreProxyConfig, ComposeAppKtor_eventsEventDefinition<T>, ComposeAppKtor_eventsEvents, ComposeAppKtor_httpContentType, ComposeAppKtor_httpContentTypeCompanion, ComposeAppKtor_httpHeaderValueParam, ComposeAppKtor_httpHeaderValueWithParameters, ComposeAppKtor_httpHeaderValueWithParametersCompanion, ComposeAppKtor_httpHeadersBuilder, ComposeAppKtor_httpHttpMethod, ComposeAppKtor_httpHttpMethodCompanion, ComposeAppKtor_httpHttpProtocolVersion, ComposeAppKtor_httpHttpProtocolVersionCompanion, ComposeAppKtor_httpHttpStatusCode, ComposeAppKtor_httpHttpStatusCodeCompanion, ComposeAppKtor_httpOutgoingContent, ComposeAppKtor_httpURLBuilder, ComposeAppKtor_httpURLBuilderCompanion, ComposeAppKtor_httpURLProtocol, ComposeAppKtor_httpURLProtocolCompanion, ComposeAppKtor_httpUrl, ComposeAppKtor_httpUrlCompanion, ComposeAppKtor_utilsAttributeKey<T>, ComposeAppKtor_utilsGMTDate, ComposeAppKtor_utilsGMTDateCompanion, ComposeAppKtor_utilsMonth, ComposeAppKtor_utilsMonthCompanion, ComposeAppKtor_utilsPipeline<TSubject, TContext>, ComposeAppKtor_utilsPipelinePhase, ComposeAppKtor_utilsStringValuesBuilderImpl, ComposeAppKtor_utilsTypeInfo, ComposeAppKtor_utilsWeekDay, ComposeAppKtor_utilsWeekDayCompanion, ComposeAppLifecycle_viewmodelViewModel, ComposeAppLocation, ComposeAppLocationCompanion, ComposeAppLocationService, ComposeAppMainScreenActionsAddCity, ComposeAppMainScreenActionsInit, ComposeAppMainScreenActionsRefreshPosition, ComposeAppMainScreenActionsSetCityId, ComposeAppNetworkError, ComposeAppPermissionsPermission, ComposeAppPermissionsPermissionState, ComposeAppPhotoData, ComposeAppPhotoDataCompanion, ComposeAppResultError<__covariant E>, ComposeAppResultSuccess<__covariant D>, ComposeAppRoom_runtimeInvalidationTracker, ComposeAppRoom_runtimeMigration, ComposeAppRoom_runtimeRoomDatabase, ComposeAppRoom_runtimeRoomDatabaseBuilder<T>, ComposeAppRoom_runtimeRoomDatabaseCallback, ComposeAppRoom_runtimeRoomDatabaseJournalMode, ComposeAppRoom_runtimeRoomOpenDelegate, ComposeAppRoom_runtimeRoomOpenDelegateValidationResult, ComposeAppRoutesMainScreenRoute, ComposeAppRoutesMainScreenRouteCompanion, ComposeAppRoutesSearchScreenRoute, ComposeAppSavedWeatherItem, ComposeAppSearchScreenActionsSearchCities, ComposeAppSearchScreenActionsSetExpanded, ComposeAppSearchScreenActionsSetSearchQuery, ComposeAppSearchScreenActionsSetTempList, ComposeAppSearchScreenViewState, ComposeAppSystemLocale, ComposeAppUrls, ComposeAppUrlsCompanion, ComposeAppWeatherDao_ImplCompanion, ComposeAppWeatherDataBase, ComposeAppWeatherItem, ComposeAppWeatherMainScreenState, ComposeAppWeatherRepoImpl, UIViewController;
+@class ComposeAppAirQuality, ComposeAppAirQualityCompanion, ComposeAppAppDatabaseConstructor, ComposeAppAstro, ComposeAppAstroCompanion, ComposeAppCondition, ComposeAppConditionCompanion, ComposeAppCoordinates, ComposeAppCurrent, ComposeAppCurrentCompanion, ComposeAppDay, ComposeAppDayCompanion, ComposeAppForecast, ComposeAppForecastCompanion, ComposeAppForecastDto, ComposeAppForecastDtoCompanion, ComposeAppForecastday, ComposeAppForecastdayCompanion, ComposeAppGetScreenHeight, ComposeAppHour, ComposeAppHourCompanion, ComposeAppImageListDto, ComposeAppImageListDtoCompanion, ComposeAppKoin_coreBeanDefinition<T>, ComposeAppKoin_coreCallbacks<T>, ComposeAppKoin_coreCoreResolver, ComposeAppKoin_coreExtensionManager, ComposeAppKoin_coreInstanceFactory<T>, ComposeAppKoin_coreInstanceFactoryCompanion, ComposeAppKoin_coreInstanceRegistry, ComposeAppKoin_coreKind, ComposeAppKoin_coreKoin, ComposeAppKoin_coreKoinApplication, ComposeAppKoin_coreKoinApplicationCompanion, ComposeAppKoin_coreKoinDefinition<R>, ComposeAppKoin_coreKoinOption, ComposeAppKoin_coreLevel, ComposeAppKoin_coreLockable, ComposeAppKoin_coreLogger, ComposeAppKoin_coreModule, ComposeAppKoin_coreOptionRegistry, ComposeAppKoin_coreParametersHolder, ComposeAppKoin_corePropertyRegistry, ComposeAppKoin_coreResolutionContext, ComposeAppKoin_coreScope, ComposeAppKoin_coreScopeDSL, ComposeAppKoin_coreScopeRegistry, ComposeAppKoin_coreScopeRegistryCompanion, ComposeAppKoin_coreSingleInstanceFactory<T>, ComposeAppKoin_coreTypeQualifier, ComposeAppKotlinAbstractCoroutineContextElement, ComposeAppKotlinAbstractCoroutineContextKey<B, E>, ComposeAppKotlinArray<T>, ComposeAppKotlinByteArray, ComposeAppKotlinByteIterator, ComposeAppKotlinCancellationException, ComposeAppKotlinEnum<E>, ComposeAppKotlinEnumCompanion, ComposeAppKotlinException, ComposeAppKotlinIllegalStateException, ComposeAppKotlinIntArray, ComposeAppKotlinIntIterator, ComposeAppKotlinKTypeProjection, ComposeAppKotlinKTypeProjectionCompanion, ComposeAppKotlinKVariance, ComposeAppKotlinLazyThreadSafetyMode, ComposeAppKotlinNothing, ComposeAppKotlinPair<__covariant A, __covariant B>, ComposeAppKotlinRuntimeException, ComposeAppKotlinThrowable, ComposeAppKotlinUnit, ComposeAppKotlinx_coroutines_coreCoroutineDispatcher, ComposeAppKotlinx_coroutines_coreCoroutineDispatcherKey, ComposeAppKotlinx_io_coreBuffer, ComposeAppKotlinx_serialization_coreSerialKind, ComposeAppKotlinx_serialization_coreSerializersModule, ComposeAppKtor_client_coreHttpClient, ComposeAppKtor_client_coreHttpClientCall, ComposeAppKtor_client_coreHttpClientCallCompanion, ComposeAppKtor_client_coreHttpClientConfig<T>, ComposeAppKtor_client_coreHttpClientEngineConfig, ComposeAppKtor_client_coreHttpReceivePipeline, ComposeAppKtor_client_coreHttpReceivePipelinePhases, ComposeAppKtor_client_coreHttpRequestBuilder, ComposeAppKtor_client_coreHttpRequestBuilderCompanion, ComposeAppKtor_client_coreHttpRequestData, ComposeAppKtor_client_coreHttpRequestPipeline, ComposeAppKtor_client_coreHttpRequestPipelinePhases, ComposeAppKtor_client_coreHttpResponse, ComposeAppKtor_client_coreHttpResponseContainer, ComposeAppKtor_client_coreHttpResponseData, ComposeAppKtor_client_coreHttpResponsePipeline, ComposeAppKtor_client_coreHttpResponsePipelinePhases, ComposeAppKtor_client_coreHttpSendPipeline, ComposeAppKtor_client_coreHttpSendPipelinePhases, ComposeAppKtor_client_coreProxyConfig, ComposeAppKtor_eventsEventDefinition<T>, ComposeAppKtor_eventsEvents, ComposeAppKtor_httpContentType, ComposeAppKtor_httpContentTypeCompanion, ComposeAppKtor_httpHeaderValueParam, ComposeAppKtor_httpHeaderValueWithParameters, ComposeAppKtor_httpHeaderValueWithParametersCompanion, ComposeAppKtor_httpHeadersBuilder, ComposeAppKtor_httpHttpMethod, ComposeAppKtor_httpHttpMethodCompanion, ComposeAppKtor_httpHttpProtocolVersion, ComposeAppKtor_httpHttpProtocolVersionCompanion, ComposeAppKtor_httpHttpStatusCode, ComposeAppKtor_httpHttpStatusCodeCompanion, ComposeAppKtor_httpOutgoingContent, ComposeAppKtor_httpURLBuilder, ComposeAppKtor_httpURLBuilderCompanion, ComposeAppKtor_httpURLProtocol, ComposeAppKtor_httpURLProtocolCompanion, ComposeAppKtor_httpUrl, ComposeAppKtor_httpUrlCompanion, ComposeAppKtor_utilsAttributeKey<T>, ComposeAppKtor_utilsGMTDate, ComposeAppKtor_utilsGMTDateCompanion, ComposeAppKtor_utilsMonth, ComposeAppKtor_utilsMonthCompanion, ComposeAppKtor_utilsPipeline<TSubject, TContext>, ComposeAppKtor_utilsPipelinePhase, ComposeAppKtor_utilsStringValuesBuilderImpl, ComposeAppKtor_utilsTypeInfo, ComposeAppKtor_utilsWeekDay, ComposeAppKtor_utilsWeekDayCompanion, ComposeAppLifecycle_viewmodelViewModel, ComposeAppLocation, ComposeAppLocationCompanion, ComposeAppLocationService, ComposeAppMainScreenActionsAddCity, ComposeAppMainScreenActionsInit, ComposeAppMainScreenActionsRefreshPosition, ComposeAppMainScreenActionsSetCityId, ComposeAppNetworkError, ComposeAppPermissionsPermissionState, ComposeAppPhotoData, ComposeAppPhotoDataCompanion, ComposeAppResultError<__covariant E>, ComposeAppResultSuccess<__covariant D>, ComposeAppRoom_runtimeInvalidationTracker, ComposeAppRoom_runtimeMigration, ComposeAppRoom_runtimeRoomDatabase, ComposeAppRoom_runtimeRoomDatabaseBuilder<T>, ComposeAppRoom_runtimeRoomDatabaseCallback, ComposeAppRoom_runtimeRoomDatabaseJournalMode, ComposeAppRoom_runtimeRoomOpenDelegate, ComposeAppRoom_runtimeRoomOpenDelegateValidationResult, ComposeAppRoutesMainScreenRoute, ComposeAppRoutesMainScreenRouteCompanion, ComposeAppRoutesSearchScreenRoute, ComposeAppSavedWeatherItem, ComposeAppSearchScreenActionsDeleteTempCityList, ComposeAppSearchScreenActionsSearchCities, ComposeAppSearchScreenActionsSetExpanded, ComposeAppSearchScreenActionsSetSearchQuery, ComposeAppSearchScreenActionsSetTempList, ComposeAppSearchScreenViewState, ComposeAppSystemLocale, ComposeAppUrls, ComposeAppUrlsCompanion, ComposeAppWeatherDao_ImplCompanion, ComposeAppWeatherDataBase, ComposeAppWeatherItem, ComposeAppWeatherMainScreenState, ComposeAppWeatherRepoImpl, UIViewController;
 
-@protocol ComposeAppDataBaseRepo, ComposeAppError, ComposeAppKoin_coreKoinComponent, ComposeAppKoin_coreKoinExtension, ComposeAppKoin_coreKoinScopeComponent, ComposeAppKoin_coreQualifier, ComposeAppKoin_coreScopeCallback, ComposeAppKotlinAnnotation, ComposeAppKotlinAutoCloseable, ComposeAppKotlinComparable, ComposeAppKotlinContinuation, ComposeAppKotlinContinuationInterceptor, ComposeAppKotlinCoroutineContext, ComposeAppKotlinCoroutineContextElement, ComposeAppKotlinCoroutineContextKey, ComposeAppKotlinFunction, ComposeAppKotlinIterator, ComposeAppKotlinKAnnotatedElement, ComposeAppKotlinKClass, ComposeAppKotlinKClassifier, ComposeAppKotlinKDeclarationContainer, ComposeAppKotlinKType, ComposeAppKotlinLazy, ComposeAppKotlinMapEntry, ComposeAppKotlinSequence, ComposeAppKotlinSuspendFunction2, ComposeAppKotlinx_coroutines_coreChildHandle, ComposeAppKotlinx_coroutines_coreChildJob, ComposeAppKotlinx_coroutines_coreCoroutineScope, ComposeAppKotlinx_coroutines_coreDisposableHandle, ComposeAppKotlinx_coroutines_coreFlow, ComposeAppKotlinx_coroutines_coreFlowCollector, ComposeAppKotlinx_coroutines_coreJob, ComposeAppKotlinx_coroutines_coreParentJob, ComposeAppKotlinx_coroutines_coreRunnable, ComposeAppKotlinx_coroutines_coreSelectClause, ComposeAppKotlinx_coroutines_coreSelectClause0, ComposeAppKotlinx_coroutines_coreSelectInstance, ComposeAppKotlinx_coroutines_coreSharedFlow, ComposeAppKotlinx_coroutines_coreStateFlow, ComposeAppKotlinx_io_coreRawSink, ComposeAppKotlinx_io_coreRawSource, ComposeAppKotlinx_io_coreSink, ComposeAppKotlinx_io_coreSource, ComposeAppKotlinx_serialization_coreCompositeDecoder, ComposeAppKotlinx_serialization_coreCompositeEncoder, ComposeAppKotlinx_serialization_coreDecoder, ComposeAppKotlinx_serialization_coreDeserializationStrategy, ComposeAppKotlinx_serialization_coreEncoder, ComposeAppKotlinx_serialization_coreKSerializer, ComposeAppKotlinx_serialization_coreSerialDescriptor, ComposeAppKotlinx_serialization_coreSerializationStrategy, ComposeAppKotlinx_serialization_coreSerializersModuleCollector, ComposeAppKtor_client_coreHttpClientEngine, ComposeAppKtor_client_coreHttpClientEngineCapability, ComposeAppKtor_client_coreHttpClientPlugin, ComposeAppKtor_client_coreHttpRequest, ComposeAppKtor_httpHeaders, ComposeAppKtor_httpHttpMessage, ComposeAppKtor_httpHttpMessageBuilder, ComposeAppKtor_httpParameters, ComposeAppKtor_httpParametersBuilder, ComposeAppKtor_ioByteReadChannel, ComposeAppKtor_ioCloseable, ComposeAppKtor_utilsAttributes, ComposeAppKtor_utilsStringValues, ComposeAppKtor_utilsStringValuesBuilder, ComposeAppMainScreenActions, ComposeAppPermissionsPermissionsControllerProtocol, ComposeAppResult, ComposeAppRoom_runtimeAutoMigrationSpec, ComposeAppRoom_runtimeRoomDatabaseConstructor, ComposeAppRoom_runtimeRoomOpenDelegateMarker, ComposeAppRoutes, ComposeAppSearchScreenActions, ComposeAppSqliteSQLiteConnection, ComposeAppSqliteSQLiteDriver, ComposeAppSqliteSQLiteStatement, ComposeAppWeatherDao, ComposeAppWeatherRepo;
+@protocol ComposeAppDataBaseRepo, ComposeAppError, ComposeAppKoin_coreKoinComponent, ComposeAppKoin_coreKoinExtension, ComposeAppKoin_coreKoinScopeComponent, ComposeAppKoin_coreQualifier, ComposeAppKoin_coreResolutionExtension, ComposeAppKoin_coreScopeCallback, ComposeAppKotlinAnnotation, ComposeAppKotlinAutoCloseable, ComposeAppKotlinComparable, ComposeAppKotlinContinuation, ComposeAppKotlinContinuationInterceptor, ComposeAppKotlinCoroutineContext, ComposeAppKotlinCoroutineContextElement, ComposeAppKotlinCoroutineContextKey, ComposeAppKotlinFunction, ComposeAppKotlinIterator, ComposeAppKotlinKAnnotatedElement, ComposeAppKotlinKClass, ComposeAppKotlinKClassifier, ComposeAppKotlinKDeclarationContainer, ComposeAppKotlinKType, ComposeAppKotlinLazy, ComposeAppKotlinMapEntry, ComposeAppKotlinSequence, ComposeAppKotlinSuspendFunction2, ComposeAppKotlinx_coroutines_coreChildHandle, ComposeAppKotlinx_coroutines_coreChildJob, ComposeAppKotlinx_coroutines_coreCoroutineScope, ComposeAppKotlinx_coroutines_coreDisposableHandle, ComposeAppKotlinx_coroutines_coreFlow, ComposeAppKotlinx_coroutines_coreFlowCollector, ComposeAppKotlinx_coroutines_coreJob, ComposeAppKotlinx_coroutines_coreParentJob, ComposeAppKotlinx_coroutines_coreRunnable, ComposeAppKotlinx_coroutines_coreSelectClause, ComposeAppKotlinx_coroutines_coreSelectClause0, ComposeAppKotlinx_coroutines_coreSelectInstance, ComposeAppKotlinx_coroutines_coreSharedFlow, ComposeAppKotlinx_coroutines_coreStateFlow, ComposeAppKotlinx_io_coreRawSink, ComposeAppKotlinx_io_coreRawSource, ComposeAppKotlinx_io_coreSink, ComposeAppKotlinx_io_coreSource, ComposeAppKotlinx_serialization_coreCompositeDecoder, ComposeAppKotlinx_serialization_coreCompositeEncoder, ComposeAppKotlinx_serialization_coreDecoder, ComposeAppKotlinx_serialization_coreDeserializationStrategy, ComposeAppKotlinx_serialization_coreEncoder, ComposeAppKotlinx_serialization_coreKSerializer, ComposeAppKotlinx_serialization_coreSerialDescriptor, ComposeAppKotlinx_serialization_coreSerializationStrategy, ComposeAppKotlinx_serialization_coreSerializersModuleCollector, ComposeAppKtor_client_coreHttpClientEngine, ComposeAppKtor_client_coreHttpClientEngineCapability, ComposeAppKtor_client_coreHttpClientPlugin, ComposeAppKtor_client_coreHttpRequest, ComposeAppKtor_httpHeaders, ComposeAppKtor_httpHttpMessage, ComposeAppKtor_httpHttpMessageBuilder, ComposeAppKtor_httpParameters, ComposeAppKtor_httpParametersBuilder, ComposeAppKtor_ioByteReadChannel, ComposeAppKtor_ioCloseable, ComposeAppKtor_ioJvmSerializable, ComposeAppKtor_utilsAttributes, ComposeAppKtor_utilsStringValues, ComposeAppKtor_utilsStringValuesBuilder, ComposeAppMainScreenActions, ComposeAppPermissionsPermission, ComposeAppPermissionsPermissionDelegate, ComposeAppPermissionsPermissionsControllerProtocol, ComposeAppResult, ComposeAppRoom_runtimeAutoMigrationSpec, ComposeAppRoom_runtimeRoomDatabaseConstructor, ComposeAppRoom_runtimeRoomOpenDelegateMarker, ComposeAppRoutes, ComposeAppSearchScreenActions, ComposeAppSqliteSQLiteConnection, ComposeAppSqliteSQLiteDriver, ComposeAppSqliteSQLiteStatement, ComposeAppWeatherDao, ComposeAppWeatherRepo;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -604,6 +604,17 @@ __attribute__((swift_name("SearchScreenActions")))
 @end
 
 __attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("SearchScreenActionsDeleteTempCityList")))
+@interface ComposeAppSearchScreenActionsDeleteTempCityList : ComposeAppBase <ComposeAppSearchScreenActions>
+- (instancetype)initWithTempList:(NSArray<ComposeAppSavedWeatherItem *> *)tempList __attribute__((swift_name("init(tempList:)"))) __attribute__((objc_designated_initializer));
+- (ComposeAppSearchScreenActionsDeleteTempCityList *)doCopyTempList:(NSArray<ComposeAppSavedWeatherItem *> *)tempList __attribute__((swift_name("doCopy(tempList:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSArray<ComposeAppSavedWeatherItem *> *tempList __attribute__((swift_name("tempList")));
+@end
+
+__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SearchScreenActionsSearchCities")))
 @interface ComposeAppSearchScreenActionsSearchCities : ComposeAppBase <ComposeAppSearchScreenActions>
 - (instancetype)initWithCity:(NSString *)city __attribute__((swift_name("init(city:)"))) __attribute__((objc_designated_initializer));
@@ -639,12 +650,12 @@ __attribute__((swift_name("SearchScreenActionsSetSearchQuery")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SearchScreenActionsSetTempList")))
 @interface ComposeAppSearchScreenActionsSetTempList : ComposeAppBase <ComposeAppSearchScreenActions>
-- (instancetype)initWithItem:(ComposeAppSavedWeatherItem *)item __attribute__((swift_name("init(item:)"))) __attribute__((objc_designated_initializer));
-- (ComposeAppSearchScreenActionsSetTempList *)doCopyItem:(ComposeAppSavedWeatherItem *)item __attribute__((swift_name("doCopy(item:)")));
+- (instancetype)initWithItem:(ComposeAppSavedWeatherItem * _Nullable)item __attribute__((swift_name("init(item:)"))) __attribute__((objc_designated_initializer));
+- (ComposeAppSearchScreenActionsSetTempList *)doCopyItem:(ComposeAppSavedWeatherItem * _Nullable)item __attribute__((swift_name("doCopy(item:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) ComposeAppSavedWeatherItem *item __attribute__((swift_name("item")));
+@property (readonly) ComposeAppSavedWeatherItem * _Nullable item __attribute__((swift_name("item")));
 @end
 
 
@@ -1896,9 +1907,8 @@ __attribute__((swift_name("Kotlinx_serialization_coreKSerializer")))
 @end
 
 __attribute__((swift_name("Ktor_ioCloseable")))
-@protocol ComposeAppKtor_ioCloseable
+@protocol ComposeAppKtor_ioCloseable <ComposeAppKotlinAutoCloseable>
 @required
-- (void)close __attribute__((swift_name("close()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -1949,20 +1959,20 @@ __attribute__((swift_name("PermissionsPermissionsControllerProtocol")))
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)getPermissionStatePermission:(ComposeAppPermissionsPermission *)permission completionHandler:(void (^)(ComposeAppPermissionsPermissionState * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getPermissionState(permission:completionHandler:)")));
+- (void)getPermissionStatePermission:(id<ComposeAppPermissionsPermission>)permission completionHandler:(void (^)(ComposeAppPermissionsPermissionState * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getPermissionState(permission:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)isPermissionGrantedPermission:(ComposeAppPermissionsPermission *)permission completionHandler:(void (^)(ComposeAppBoolean * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("isPermissionGranted(permission:completionHandler:)")));
+- (void)isPermissionGrantedPermission:(id<ComposeAppPermissionsPermission>)permission completionHandler:(void (^)(ComposeAppBoolean * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("isPermissionGranted(permission:completionHandler:)")));
 - (void)openAppSettings __attribute__((swift_name("openAppSettings()")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)providePermissionPermission:(ComposeAppPermissionsPermission *)permission completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("providePermission(permission:completionHandler:)")));
+- (void)providePermissionPermission:(id<ComposeAppPermissionsPermission>)permission completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("providePermission(permission:completionHandler:)")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -2003,6 +2013,7 @@ __attribute__((swift_name("Koin_coreKoinApplication")))
 - (ComposeAppKoin_coreKoinApplication *)modulesModules:(ComposeAppKotlinArray<ComposeAppKoin_coreModule *> *)modules __attribute__((swift_name("modules(modules:)")));
 - (ComposeAppKoin_coreKoinApplication *)modulesModules_:(NSArray<ComposeAppKoin_coreModule *> *)modules __attribute__((swift_name("modules(modules_:)")));
 - (ComposeAppKoin_coreKoinApplication *)modulesModules__:(ComposeAppKoin_coreModule *)modules __attribute__((swift_name("modules(modules__:)")));
+- (ComposeAppKoin_coreKoinApplication *)optionsOptionValue:(ComposeAppKotlinArray<ComposeAppKotlinPair<ComposeAppKoin_coreKoinOption *, id> *> *)optionValue __attribute__((swift_name("options(optionValue:)")));
 - (ComposeAppKoin_coreKoinApplication *)printLoggerLevel:(ComposeAppKoin_coreLevel *)level __attribute__((swift_name("printLogger(level:)")));
 - (ComposeAppKoin_coreKoinApplication *)propertiesValues:(NSDictionary<NSString *, id> *)values __attribute__((swift_name("properties(values:)")));
 @property (readonly) ComposeAppKoin_coreKoin *koin __attribute__((swift_name("koin")));
@@ -2030,6 +2041,7 @@ __attribute__((swift_name("Koin_coreModule")))
 @property (readonly) NSMutableArray<ComposeAppKoin_coreModule *> *includedModules __attribute__((swift_name("includedModules")));
 @property (readonly) BOOL isLoaded __attribute__((swift_name("isLoaded")));
 @property (readonly) ComposeAppMutableDictionary<NSString *, ComposeAppKoin_coreInstanceFactory<id> *> *mappings __attribute__((swift_name("mappings")));
+@property (readonly) ComposeAppMutableSet<id<ComposeAppKoin_coreQualifier>> *scopes __attribute__((swift_name("scopes")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -2333,6 +2345,7 @@ __attribute__((swift_name("Ktor_utilsAttributes")))
 - (id _Nullable)getOrNullKey:(ComposeAppKtor_utilsAttributeKey<id> *)key __attribute__((swift_name("getOrNull(key:)")));
 - (void)putKey:(ComposeAppKtor_utilsAttributeKey<id> *)key value:(id)value __attribute__((swift_name("put(key:value:)")));
 - (void)removeKey:(ComposeAppKtor_utilsAttributeKey<id> *)key __attribute__((swift_name("remove(key:)")));
+- (void)setKey:(ComposeAppKtor_utilsAttributeKey<id> *)key value:(id)value __attribute__((swift_name("set(key:value:)")));
 - (id)takeKey:(ComposeAppKtor_utilsAttributeKey<id> *)key __attribute__((swift_name("take(key:)")));
 - (id _Nullable)takeOrNullKey:(ComposeAppKtor_utilsAttributeKey<id> *)key __attribute__((swift_name("takeOrNull(key:)")));
 @property (readonly) NSArray<ComposeAppKtor_utilsAttributeKey<id> *> *allKeys __attribute__((swift_name("allKeys")));
@@ -2421,29 +2434,10 @@ __attribute__((swift_name("KotlinIterator")))
 - (id _Nullable)next __attribute__((swift_name("next()")));
 @end
 
-__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PermissionsPermission")))
-@interface ComposeAppPermissionsPermission : ComposeAppKotlinEnum<ComposeAppPermissionsPermission *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly) ComposeAppPermissionsPermission *camera __attribute__((swift_name("camera")));
-@property (class, readonly) ComposeAppPermissionsPermission *gallery __attribute__((swift_name("gallery")));
-@property (class, readonly) ComposeAppPermissionsPermission *storage __attribute__((swift_name("storage")));
-@property (class, readonly) ComposeAppPermissionsPermission *writeStorage __attribute__((swift_name("writeStorage")));
-@property (class, readonly) ComposeAppPermissionsPermission *location __attribute__((swift_name("location")));
-@property (class, readonly) ComposeAppPermissionsPermission *coarseLocation __attribute__((swift_name("coarseLocation")));
-@property (class, readonly) ComposeAppPermissionsPermission *backgroundLocation __attribute__((swift_name("backgroundLocation")));
-@property (class, readonly) ComposeAppPermissionsPermission *bluetoothLe __attribute__((swift_name("bluetoothLe")));
-@property (class, readonly) ComposeAppPermissionsPermission *remoteNotification __attribute__((swift_name("remoteNotification")));
-@property (class, readonly) ComposeAppPermissionsPermission *recordAudio __attribute__((swift_name("recordAudio")));
-@property (class, readonly) ComposeAppPermissionsPermission *bluetoothScan __attribute__((swift_name("bluetoothScan")));
-@property (class, readonly) ComposeAppPermissionsPermission *bluetoothAdvertise __attribute__((swift_name("bluetoothAdvertise")));
-@property (class, readonly) ComposeAppPermissionsPermission *bluetoothConnect __attribute__((swift_name("bluetoothConnect")));
-@property (class, readonly) ComposeAppPermissionsPermission *contacts __attribute__((swift_name("contacts")));
-@property (class, readonly) ComposeAppPermissionsPermission *motion __attribute__((swift_name("motion")));
-+ (ComposeAppKotlinArray<ComposeAppPermissionsPermission *> *)values __attribute__((swift_name("values()")));
-@property (class, readonly) NSArray<ComposeAppPermissionsPermission *> *entries __attribute__((swift_name("entries")));
+@protocol ComposeAppPermissionsPermission
+@required
+@property (readonly) id<ComposeAppPermissionsPermissionDelegate> delegate __attribute__((swift_name("delegate")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -2471,6 +2465,29 @@ __attribute__((swift_name("Koin_coreLogger")))
 @end
 
 __attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Koin_coreKoinOption")))
+@interface ComposeAppKoin_coreKoinOption : ComposeAppKotlinEnum<ComposeAppKoin_coreKoinOption *>
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@property (class, readonly) ComposeAppKoin_coreKoinOption *viewmodelScopeFactory __attribute__((swift_name("viewmodelScopeFactory")));
++ (ComposeAppKotlinArray<ComposeAppKoin_coreKoinOption *> *)values __attribute__((swift_name("values()")));
+@property (class, readonly) NSArray<ComposeAppKoin_coreKoinOption *> *entries __attribute__((swift_name("entries")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("KotlinPair")))
+@interface ComposeAppKotlinPair<__covariant A, __covariant B> : ComposeAppBase
+- (instancetype)initWithFirst:(A _Nullable)first second:(B _Nullable)second __attribute__((swift_name("init(first:second:)"))) __attribute__((objc_designated_initializer));
+- (ComposeAppKotlinPair<A, B> *)doCopyFirst:(A _Nullable)first second:(B _Nullable)second __attribute__((swift_name("doCopy(first:second:)")));
+- (BOOL)equalsOther:(id _Nullable)other __attribute__((swift_name("equals(other:)")));
+- (int32_t)hashCode __attribute__((swift_name("hashCode()")));
+- (NSString *)toString __attribute__((swift_name("toString()")));
+@property (readonly) A _Nullable first __attribute__((swift_name("first")));
+@property (readonly) B _Nullable second __attribute__((swift_name("second")));
+@end
+
+__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreLevel")))
 @interface ComposeAppKoin_coreLevel : ComposeAppKotlinEnum<ComposeAppKoin_coreLevel *>
 + (instancetype)alloc __attribute__((unavailable));
@@ -2494,8 +2511,8 @@ __attribute__((swift_name("Koin_coreKoin")))
 - (void)createEagerInstances __attribute__((swift_name("createEagerInstances()")));
 - (ComposeAppKoin_coreScope *)createScopeT:(id<ComposeAppKoin_coreKoinScopeComponent>)t __attribute__((swift_name("createScope(t:)")));
 - (ComposeAppKoin_coreScope *)createScopeScopeId:(NSString *)scopeId __attribute__((swift_name("createScope(scopeId:)")));
-- (ComposeAppKoin_coreScope *)createScopeScopeId:(NSString *)scopeId source:(id _Nullable)source __attribute__((swift_name("createScope(scopeId:source:)")));
-- (ComposeAppKoin_coreScope *)createScopeScopeId:(NSString *)scopeId qualifier:(id<ComposeAppKoin_coreQualifier>)qualifier source:(id _Nullable)source __attribute__((swift_name("createScope(scopeId:qualifier:source:)")));
+- (ComposeAppKoin_coreScope *)createScopeScopeId:(NSString *)scopeId source:(id _Nullable)source scopeArchetype:(ComposeAppKoin_coreTypeQualifier * _Nullable)scopeArchetype __attribute__((swift_name("createScope(scopeId:source:scopeArchetype:)")));
+- (ComposeAppKoin_coreScope *)createScopeScopeId:(NSString *)scopeId qualifier:(id<ComposeAppKoin_coreQualifier>)qualifier source:(id _Nullable)source scopeArchetype:(ComposeAppKoin_coreTypeQualifier * _Nullable)scopeArchetype __attribute__((swift_name("createScope(scopeId:qualifier:source:scopeArchetype:)")));
 - (void)declareInstance:(id _Nullable)instance qualifier:(id<ComposeAppKoin_coreQualifier> _Nullable)qualifier secondaryTypes:(NSArray<id<ComposeAppKotlinKClass>> *)secondaryTypes allowOverride:(BOOL)allowOverride __attribute__((swift_name("declare(instance:qualifier:secondaryTypes:allowOverride:)")));
 - (void)deletePropertyKey:(NSString *)key __attribute__((swift_name("deleteProperty(key:)")));
 - (void)deleteScopeScopeId:(NSString *)scopeId __attribute__((swift_name("deleteScope(scopeId:)")));
@@ -2519,7 +2536,9 @@ __attribute__((swift_name("Koin_coreKoin")))
 @property (readonly) ComposeAppKoin_coreExtensionManager *extensionManager __attribute__((swift_name("extensionManager")));
 @property (readonly) ComposeAppKoin_coreInstanceRegistry *instanceRegistry __attribute__((swift_name("instanceRegistry")));
 @property (readonly) ComposeAppKoin_coreLogger *logger __attribute__((swift_name("logger")));
+@property (readonly) ComposeAppKoin_coreOptionRegistry *optionRegistry __attribute__((swift_name("optionRegistry")));
 @property (readonly) ComposeAppKoin_corePropertyRegistry *propertyRegistry __attribute__((swift_name("propertyRegistry")));
+@property (readonly) ComposeAppKoin_coreCoreResolver *resolver __attribute__((swift_name("resolver")));
 @property (readonly) ComposeAppKoin_coreScopeRegistry *scopeRegistry __attribute__((swift_name("scopeRegistry")));
 @end
 
@@ -2550,7 +2569,7 @@ __attribute__((swift_name("Koin_coreLockable")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreScope")))
 @interface ComposeAppKoin_coreScope : ComposeAppKoin_coreLockable
-- (instancetype)initWithScopeQualifier:(id<ComposeAppKoin_coreQualifier>)scopeQualifier id:(NSString *)id isRoot:(BOOL)isRoot _koin:(ComposeAppKoin_coreKoin *)_koin __attribute__((swift_name("init(scopeQualifier:id:isRoot:_koin:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithScopeQualifier:(id<ComposeAppKoin_coreQualifier>)scopeQualifier id:(NSString *)id isRoot:(BOOL)isRoot scopeArchetype:(ComposeAppKoin_coreTypeQualifier * _Nullable)scopeArchetype _koin:(ComposeAppKoin_coreKoin *)_koin __attribute__((swift_name("init(scopeQualifier:id:isRoot:scopeArchetype:_koin:)"))) __attribute__((objc_designated_initializer));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 + (instancetype)new __attribute__((unavailable));
 - (void)close __attribute__((swift_name("close()")));
@@ -2579,6 +2598,7 @@ __attribute__((swift_name("Koin_coreScope")))
 @property (readonly) NSString *id __attribute__((swift_name("id")));
 @property (readonly) BOOL isRoot __attribute__((swift_name("isRoot")));
 @property (readonly) ComposeAppKoin_coreLogger *logger __attribute__((swift_name("logger")));
+@property (readonly) ComposeAppKoin_coreTypeQualifier * _Nullable scopeArchetype __attribute__((swift_name("scopeArchetype")));
 @property (readonly) id<ComposeAppKoin_coreQualifier> scopeQualifier __attribute__((swift_name("scopeQualifier")));
 @property id _Nullable sourceValue __attribute__((swift_name("sourceValue")));
 @end
@@ -3115,6 +3135,23 @@ __attribute__((swift_name("Ktor_client_coreHttpSendPipeline.Phases")))
 @property (readonly) ComposeAppKtor_utilsPipelinePhase *State __attribute__((swift_name("State")));
 @end
 
+__attribute__((swift_name("PermissionsPermissionDelegate")))
+@protocol ComposeAppPermissionsPermissionDelegate
+@required
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)getPermissionStateWithCompletionHandler:(void (^)(ComposeAppPermissionsPermissionState * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getPermissionState(completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)providePermissionWithCompletionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("providePermission(completionHandler:)")));
+@end
+
 __attribute__((swift_name("Koin_coreKoinComponent")))
 @protocol ComposeAppKoin_coreKoinComponent
 @required
@@ -3125,6 +3162,17 @@ __attribute__((swift_name("Koin_coreKoinScopeComponent")))
 @protocol ComposeAppKoin_coreKoinScopeComponent <ComposeAppKoin_coreKoinComponent>
 @required
 @property (readonly) ComposeAppKoin_coreScope *scope __attribute__((swift_name("scope")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Koin_coreTypeQualifier")))
+@interface ComposeAppKoin_coreTypeQualifier : ComposeAppBase <ComposeAppKoin_coreQualifier>
+- (instancetype)initWithType:(id<ComposeAppKotlinKClass>)type __attribute__((swift_name("init(type:)"))) __attribute__((objc_designated_initializer));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) id<ComposeAppKotlinKClass> type __attribute__((swift_name("type")));
+@property (readonly) NSString *value __attribute__((swift_name("value")));
 @end
 
 __attribute__((swift_name("KotlinLazy")))
@@ -3168,6 +3216,13 @@ __attribute__((swift_name("Koin_coreInstanceRegistry")))
 @end
 
 __attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Koin_coreOptionRegistry")))
+@interface ComposeAppKoin_coreOptionRegistry : ComposeAppBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+@end
+
+__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_corePropertyRegistry")))
 @interface ComposeAppKoin_corePropertyRegistry : ComposeAppBase
 - (instancetype)initWith_koin:(ComposeAppKoin_coreKoin *)_koin __attribute__((swift_name("init(_koin:)"))) __attribute__((objc_designated_initializer));
@@ -3175,6 +3230,14 @@ __attribute__((swift_name("Koin_corePropertyRegistry")))
 - (void)deletePropertyKey:(NSString *)key __attribute__((swift_name("deleteProperty(key:)")));
 - (id _Nullable)getPropertyKey:(NSString *)key __attribute__((swift_name("getProperty(key:)")));
 - (void)savePropertiesProperties:(NSDictionary<NSString *, id> *)properties __attribute__((swift_name("saveProperties(properties:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Koin_coreCoreResolver")))
+@interface ComposeAppKoin_coreCoreResolver : ComposeAppBase
+- (instancetype)initWith_koin:(ComposeAppKoin_coreKoin *)_koin __attribute__((swift_name("init(_koin:)"))) __attribute__((objc_designated_initializer));
+- (void)addResolutionExtensionResolutionExtension:(id<ComposeAppKoin_coreResolutionExtension>)resolutionExtension __attribute__((swift_name("addResolutionExtension(resolutionExtension:)")));
+- (id _Nullable)resolveFromContextScope:(ComposeAppKoin_coreScope *)scope instanceContext:(ComposeAppKoin_coreResolutionContext *)instanceContext __attribute__((swift_name("resolveFromContext(scope:instanceContext:)")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -3225,12 +3288,14 @@ __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreResolutionContext")))
 @interface ComposeAppKoin_coreResolutionContext : ComposeAppBase
 - (instancetype)initWithLogger:(ComposeAppKoin_coreLogger *)logger scope:(ComposeAppKoin_coreScope *)scope clazz:(id<ComposeAppKotlinKClass>)clazz qualifier:(id<ComposeAppKoin_coreQualifier> _Nullable)qualifier parameters:(ComposeAppKoin_coreParametersHolder * _Nullable)parameters __attribute__((swift_name("init(logger:scope:clazz:qualifier:parameters:)"))) __attribute__((objc_designated_initializer));
+- (ComposeAppKoin_coreResolutionContext *)doNewContextForScopeS:(ComposeAppKoin_coreScope *)s __attribute__((swift_name("doNewContextForScope(s:)")));
 @property (readonly) id<ComposeAppKotlinKClass> clazz __attribute__((swift_name("clazz")));
 @property (readonly) NSString *debugTag __attribute__((swift_name("debugTag")));
 @property (readonly) ComposeAppKoin_coreLogger *logger __attribute__((swift_name("logger")));
 @property (readonly) ComposeAppKoin_coreParametersHolder * _Nullable parameters __attribute__((swift_name("parameters")));
 @property (readonly) id<ComposeAppKoin_coreQualifier> _Nullable qualifier __attribute__((swift_name("qualifier")));
 @property (readonly) ComposeAppKoin_coreScope *scope __attribute__((swift_name("scope")));
+@property ComposeAppKoin_coreTypeQualifier * _Nullable scopeArchetype __attribute__((swift_name("scopeArchetype")));
 @end
 
 __attribute__((swift_name("KotlinIntIterator")))
@@ -3241,9 +3306,19 @@ __attribute__((swift_name("KotlinIntIterator")))
 - (int32_t)nextInt __attribute__((swift_name("nextInt()")));
 @end
 
+__attribute__((swift_name("Ktor_ioJvmSerializable")))
+@protocol ComposeAppKtor_ioJvmSerializable
+@required
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable(with=NormalClass(value=io/ktor/http/UrlSerializer))
+*/
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Ktor_httpUrl")))
-@interface ComposeAppKtor_httpUrl : ComposeAppBase
+@interface ComposeAppKtor_httpUrl : ComposeAppBase <ComposeAppKtor_ioJvmSerializable>
 @property (class, readonly, getter=companion) ComposeAppKtor_httpUrlCompanion *companion __attribute__((swift_name("companion")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
@@ -3647,6 +3722,13 @@ __attribute__((swift_name("Koin_coreKoinExtension")))
 - (void)onRegisterKoin:(ComposeAppKoin_coreKoin *)koin __attribute__((swift_name("onRegister(koin:)")));
 @end
 
+__attribute__((swift_name("Koin_coreResolutionExtension")))
+@protocol ComposeAppKoin_coreResolutionExtension
+@required
+- (id _Nullable)resolveScope:(ComposeAppKoin_coreScope *)scope instanceContext:(ComposeAppKoin_coreResolutionContext *)instanceContext __attribute__((swift_name("resolve(scope:instanceContext:)")));
+@property (readonly) NSString *name __attribute__((swift_name("name")));
+@end
+
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreScopeRegistry.Companion")))
 @interface ComposeAppKoin_coreScopeRegistryCompanion : ComposeAppBase
@@ -3687,6 +3769,7 @@ __attribute__((swift_name("Ktor_httpUrl.Companion")))
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) ComposeAppKtor_httpUrlCompanion *shared __attribute__((swift_name("shared")));
+- (id<ComposeAppKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end
 
 __attribute__((swift_name("Ktor_httpParameters")))
@@ -3696,7 +3779,7 @@ __attribute__((swift_name("Ktor_httpParameters")))
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Ktor_httpURLProtocol")))
-@interface ComposeAppKtor_httpURLProtocol : ComposeAppBase
+@interface ComposeAppKtor_httpURLProtocol : ComposeAppBase <ComposeAppKtor_ioJvmSerializable>
 - (instancetype)initWithName:(NSString *)name defaultPort:(int32_t)defaultPort __attribute__((swift_name("init(name:defaultPort:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) ComposeAppKtor_httpURLProtocolCompanion *companion __attribute__((swift_name("companion")));
 - (ComposeAppKtor_httpURLProtocol *)doCopyName:(NSString *)name defaultPort:(int32_t)defaultPort __attribute__((swift_name("doCopy(name:defaultPort:)")));

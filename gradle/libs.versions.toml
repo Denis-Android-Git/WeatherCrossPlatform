@@ -1,24 +1,24 @@
 [versions]
-agp = "8.10.1"
-android-compileSdk = "35"
+agp = "8.11.0"
+android-compileSdk = "36"
 android-minSdk = "24"
-android-targetSdk = "35"
+android-targetSdk = "36"
 androidx-activityCompose = "1.10.1"
-compose-multiplatform = "1.8.1"
-androidx-lifecycle = "2.9.0"
-kotlin = "2.1.21"
+compose-multiplatform = "1.8.2"
+androidx-lifecycle = "2.9.1"
+kotlin = "2.2.0"
 kotlinSerialization = "1.8.1"
-kotlinx-coroutines = "1.10.1"
-ktor = "3.0.3"
-buildkonfig = "0.17.0"
+kotlinx-coroutines = "1.10.2"
+ktor = "3.2.0"
+buildkonfig = "0.17.1"
 materialIconsCore = "1.7.3"
-moko = "0.18.0"
-lifecycleViewModelCompose = "2.9.0"
+moko = "0.19.1"
+lifecycleViewModelCompose = "2.9.1"
 playServicesLocation = "21.3.0"
-koin = "4.0.4"
-koinComposeMultiplatform = "4.0.4"
-navigationCompose = "2.9.0-beta02"
-coil = "3.1.0"
+koin = "4.1.0"
+koinComposeMultiplatform = "4.1.0"
+navigationCompose = "2.9.0-beta03"
+coil = "3.2.0"
 
 #Firebase android
 firebase-android-bom = "33.15.0"
@@ -26,10 +26,10 @@ firebase-android-bom = "33.15.0"
 gradlePlugins-crashlytics = "3.0.4"
 gradlePlugins-google-services = "4.4.2"
 #Gitlive
-firebase-gitlive-sdk = "1.12.0"
-roomRuntime = "2.7.1"
-ksp = "2.1.21-2.0.1"
-sqlite = "2.5.1"
+firebase-gitlive-sdk = "2.1.0"
+roomRuntime = "2.7.2"
+ksp = "2.2.0-2.0.2"
+sqlite = "2.5.2"
 
 #androidx-appcompat = "1.7.0"
 #androidx-constraintlayout = "2.2.1"
@@ -41,7 +41,6 @@ sqlite = "2.5.1"
 
 
 [libraries]
-
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinSerialization" }
 
 #Firebase
@@ -70,20 +69,32 @@ sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sql
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
-coil-network-ktor3 = { module = "io.coil-kt.coil3:coil-network-ktor3", version.ref = "coil" }
 kotlinx-coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
-ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
 lifecycle-viewmodel-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycleViewModelCompose" }
+
+#Coil
+coil-network-ktor3 = { module = "io.coil-kt.coil3:coil-network-ktor3", version.ref = "coil" }
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+
+#Ktor
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
+
+#Permissions
 moko-permissions = { module = "dev.icerock.moko:permissions", version.ref = "moko" }
 moko-permissions-compose = { module = "dev.icerock.moko:permissions-compose", version.ref = "moko" }
-coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+permissions-location = { module = "dev.icerock.moko:permissions-location", version.ref = "moko" }
+
+#Koin
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koinComposeMultiplatform" }
 koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koinComposeMultiplatform" }
+
+#Navigation
 navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 
+#Ktor
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
@@ -91,8 +102,9 @@ ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negoti
 ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktor" }
-play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
 
+#GPS
+play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
 
 [plugins]
 crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "gradlePlugins-crashlytics" }

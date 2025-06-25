@@ -61,6 +61,9 @@ fun SearchScreenState(
             tempListToDelete = searchScreenState.tempListToDelete,
             onDelete = {
                 searchViewModel.onAction(SearchScreenActions.DeleteTempCityList(searchScreenState.tempListToDelete))
+            },
+            clearTempList = {
+                searchViewModel.onAction(SearchScreenActions.SetTempList(null))
             }
         )
     }

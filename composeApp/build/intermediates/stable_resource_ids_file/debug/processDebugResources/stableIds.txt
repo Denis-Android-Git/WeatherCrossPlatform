@@ -873,6 +873,7 @@ org.example.weathercrossplatform:styleable/NavGraphNavigator = 0x7f100027
 org.example.weathercrossplatform:dimen/abc_list_item_height_large_material = 0x7f060030
 org.example.weathercrossplatform:color/call_notification_answer_color = 0x7f050029
 org.example.weathercrossplatform:color/bright_foreground_inverse_material_dark = 0x7f050023
+org.example.weathercrossplatform:raw/firebase_crashlytics_keep = 0x7f0d0001
 org.example.weathercrossplatform:attr/contentInsetLeft = 0x7f030064
 org.example.weathercrossplatform:drawable/abc_btn_radio_to_on_mtrl_015 = 0x7f07000d
 org.example.weathercrossplatform:color/background_material_light = 0x7f050020
