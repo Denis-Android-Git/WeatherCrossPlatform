@@ -2,7 +2,6 @@ package org.example.weathercrossplatform
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -19,43 +18,40 @@ import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.presentation.NavHostMainScreen
 import org.example.weathercrossplatform.viewmodels.PermissionsViewModel
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import org.koin.compose.KoinContext
 
 @Composable
 @Preview
-fun App() {
+fun App(
+    modifier: Modifier = Modifier
+) {
     MaterialTheme {
 
-        KoinContext {
+        val factory = rememberPermissionsControllerFactory()
+        val controller by rememberUpdatedState(newValue = factory.createPermissionsController())
+        val scope = rememberCoroutineScope()
 
-            val factory = rememberPermissionsControllerFactory()
-            val controller by rememberUpdatedState(newValue = factory.createPermissionsController())
-            val scope = rememberCoroutineScope()
+        BindEffect(controller)
 
-            BindEffect(controller)
+        val permissionsViewModel = viewModel {
+            PermissionsViewModel(controller)
+        }
+        Column(
+            modifier = modifier,
+            verticalArrangement = Arrangement.Center
+        ) {
+            when (permissionsViewModel.state) {
+                PermissionState.Granted -> {
+                    NavHostMainScreen()
+                }
 
-            val permissionsViewModel = viewModel {
-                PermissionsViewModel(controller)
-            }
+                PermissionState.DeniedAlways -> {
+                    Text(text = "Denied forever")
+                }
 
-            Column(
-                modifier = Modifier.fillMaxSize(),
-                verticalArrangement = Arrangement.Center
-            ) {
-                when (permissionsViewModel.state) {
-                    PermissionState.Granted -> {
-                        NavHostMainScreen()
-                    }
-
-                    PermissionState.DeniedAlways -> {
-                        Text(text = "Denied forever")
-                    }
-
-                    else -> {
-                        scope.launch {
-                            delay(100)
-                            permissionsViewModel.checkPermissions()
-                        }
+                else -> {
+                    scope.launch {
+                        delay(100)
+                        permissionsViewModel.checkPermissions()
                     }
                 }
             }
