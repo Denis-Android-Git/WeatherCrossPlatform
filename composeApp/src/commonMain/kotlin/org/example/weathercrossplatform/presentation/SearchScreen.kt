@@ -245,7 +245,9 @@ fun Preview() {
                 temperature = 12.5,
                 weatherDescription = "cloudy",
                 highTemperature = 20.0,
-                lowTemperature = 10.0
+                lowTemperature = 10.0,
+                cityId = 1,
+                coordinates = ""
             ),
             SavedWeatherItem(
                 cityName = "London",
@@ -253,7 +255,9 @@ fun Preview() {
                 temperature = 15.0,
                 weatherDescription = "sunny",
                 highTemperature = 22.0,
-                lowTemperature = 12.0
+                lowTemperature = 12.0,
+                cityId = 2,
+                coordinates = ""
             )
         ),
         locationList = emptyList(),

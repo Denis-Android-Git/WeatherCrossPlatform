@@ -19,13 +19,14 @@ private fun Preview() {
         forecastList = null,
         weatherItemList = emptyList(),
         onAddButtonClick = {},
-        isAddCity = true,
         onCancelButtonClick = { },
         onAddCityButtonClick = {},
         //latitude = 0.0,
         //longitude = 0.0,
         highTemp = 20.0,
         lowTemp = 10.0,
-        savedCityList = emptyList()
+        savedCityList = emptyList(),
+        cityId = 2,
+        coordinates = ""
     )
 }

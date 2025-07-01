@@ -50,8 +50,8 @@ import org.example.weathercrossplatform.domain.models.WeatherItem
 
 @Composable
 fun MainScreen(
+    cityId: Int?,
     isLoading: Boolean,
-    isAddCity: Boolean,
     image: String,
     usEpaIndex: Int?,
     locationName: String?,
@@ -66,7 +66,8 @@ fun MainScreen(
     savedCityList: List<SavedWeatherItem>,
     onAddButtonClick: () -> Unit,
     onCancelButtonClick: () -> Unit,
-    onAddCityButtonClick: (SavedWeatherItem) -> Unit
+    onAddCityButtonClick: (SavedWeatherItem) -> Unit,
+    coordinates: String
 ) {
 
     val textColor by remember { mutableStateOf(Color.White) }
@@ -262,7 +263,10 @@ fun MainScreen(
             Text(text = error, textAlign = TextAlign.Center)
         }
         AnimatedVisibility(
-            visible = !isAddCity,
+            visible = savedCityList.any {
+                println("it.cityId: ${it.cityId}, cityId: $cityId")
+                it.cityId == cityId
+            },
             modifier = Modifier.align(Alignment.TopEnd).padding(top = 40.dp, end = 16.dp)
         ) {
             IconButton(
@@ -276,7 +280,10 @@ fun MainScreen(
             }
         }
         AnimatedVisibility(
-            visible = isAddCity,
+            visible = !savedCityList.any {
+                println("it.cityId: ${it.cityId}, cityId: $cityId")
+                it.cityId == cityId
+            },
             modifier = Modifier.align(Alignment.TopStart)
         ) {
             Row(
@@ -303,6 +310,8 @@ fun MainScreen(
                                 weatherDescription = condition ?: "",
                                 highTemperature = highTemp ?: 0.0,
                                 lowTemperature = lowTemp ?: 0.0,
+                                cityId = cityId,
+                                coordinates = coordinates,
                             )
                         )
                     },

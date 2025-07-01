@@ -2,7 +2,10 @@ package org.example.weathercrossplatform
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -21,9 +24,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 @Preview
-fun App(
-    modifier: Modifier = Modifier
-) {
+fun App() {
     MaterialTheme {
 
         val factory = rememberPermissionsControllerFactory()
@@ -35,23 +36,27 @@ fun App(
         val permissionsViewModel = viewModel {
             PermissionsViewModel(controller)
         }
-        Column(
-            modifier = modifier,
-            verticalArrangement = Arrangement.Center
+        Scaffold(
+            modifier = Modifier.fillMaxSize()
         ) {
-            when (permissionsViewModel.state) {
-                PermissionState.Granted -> {
-                    NavHostMainScreen()
-                }
+            Column(
+                modifier = Modifier.padding(it),
+                verticalArrangement = Arrangement.Center
+            ) {
+                when (permissionsViewModel.state) {
+                    PermissionState.Granted -> {
+                        NavHostMainScreen()
+                    }
 
-                PermissionState.DeniedAlways -> {
-                    Text(text = "Denied forever")
-                }
+                    PermissionState.DeniedAlways -> {
+                        Text(text = "Denied forever")
+                    }
 
-                else -> {
-                    scope.launch {
-                        delay(100)
-                        permissionsViewModel.checkPermissions()
+                    else -> {
+                        scope.launch {
+                            delay(100)
+                            permissionsViewModel.checkPermissions()
+                        }
                     }
                 }
             }

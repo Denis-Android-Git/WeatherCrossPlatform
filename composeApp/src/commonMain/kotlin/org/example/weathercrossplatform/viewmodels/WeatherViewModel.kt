@@ -51,6 +51,11 @@ class WeatherViewModel(
             MainScreenActions.RefreshPosition -> refreshPosition()
             is MainScreenActions.SetCityId -> setCityId(actions.cityId)
             is MainScreenActions.AddCity -> addCity(actions.city)
+            is MainScreenActions.GetWeatherByQuery -> {
+                viewModelScope.launch {
+                    getWeatherByQuery(actions.query)
+                }
+            }
         }
     }
 
@@ -88,9 +93,11 @@ class WeatherViewModel(
         latitude: Double? = null,
         longitude: Double? = null
     ) {
+        _weatherScreenState.value = _weatherScreenState.value.copy(isLoading = true)
         try {
             weatherRepoImpl.getCurrentWeather(query)
                 .onSuccess { weather ->
+                    println("location.id = ${weather.location.id}")
                     if (latitude != null && longitude != null) {
                         dataBaseRepo.saveWeather(
                             weather = SavedWeatherItem(
@@ -99,7 +106,9 @@ class WeatherViewModel(
                                 temperature = weather.current.tempC,
                                 weatherDescription = weather.current.condition.text,
                                 highTemperature = weather.forecast.forecastday[0].day.maxTempC,
-                                lowTemperature = weather.forecast.forecastday[0].day.minTempC
+                                lowTemperature = weather.forecast.forecastday[0].day.minTempC,
+                                cityId = 111,
+                                coordinates = "${weather.location.lat},${weather.location.lon}",
                             )
                         )
                     }

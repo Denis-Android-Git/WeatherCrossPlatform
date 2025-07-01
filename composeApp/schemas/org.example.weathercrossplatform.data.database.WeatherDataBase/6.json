@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 6,
-    "identityHash": "4e65d97d1e6795403dfa2be357335f34",
+    "identityHash": "971031003bd77750fd6df1597f3fa625",
     "entities": [
       {
         "tableName": "SavedWeatherItem",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`cityName` TEXT NOT NULL, `id` INTEGER NOT NULL, `temperature` REAL NOT NULL, `weatherDescription` TEXT NOT NULL, `highTemperature` REAL NOT NULL, `lowTemperature` REAL NOT NULL, PRIMARY KEY(`cityName`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`cityName` TEXT NOT NULL, `id` INTEGER NOT NULL, `cityId` INTEGER, `temperature` REAL NOT NULL, `weatherDescription` TEXT NOT NULL, `highTemperature` REAL NOT NULL, `lowTemperature` REAL NOT NULL, PRIMARY KEY(`cityName`))",
         "fields": [
           {
             "fieldPath": "cityName",
@@ -19,6 +19,11 @@
             "columnName": "id",
             "affinity": "INTEGER",
             "notNull": true
+          },
+          {
+            "fieldPath": "cityId",
+            "columnName": "cityId",
+            "affinity": "INTEGER"
           },
           {
             "fieldPath": "temperature",
@@ -55,7 +60,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4e65d97d1e6795403dfa2be357335f34')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '971031003bd77750fd6df1597f3fa625')"
     ]
   }
 }
