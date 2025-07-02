@@ -2,6 +2,8 @@ package org.example.weathercrossplatform.presentation
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -100,7 +102,9 @@ fun MainScreen(
             )
     ) {
         AnimatedVisibility(
-            visible = !isLoading && locationName != null
+            visible = !isLoading && locationName != null,
+            enter = fadeIn(),
+            exit = fadeOut()
         ) {
 
             Box(modifier = Modifier.fillMaxSize()) {
