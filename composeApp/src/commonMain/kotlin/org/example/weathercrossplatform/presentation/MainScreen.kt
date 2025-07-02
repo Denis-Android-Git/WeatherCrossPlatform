@@ -74,7 +74,8 @@ fun MainScreen(
     onAddButtonClick: () -> Unit,
     onCancelButtonClick: () -> Unit,
     onAddCityButtonClick: (SavedWeatherItem) -> Unit,
-    coordinates: String
+    coordinates: String,
+    isCurrentLocation: Boolean
 ) {
 
     val textColor by remember { mutableStateOf(Color.White) }
@@ -130,14 +131,16 @@ fun MainScreen(
                             alpha = animatedAlpha
                         }
                 ) {
-                    Icon(
-                        imageVector = Icons.Outlined.Place,
-                        contentDescription = null,
-                        modifier = Modifier
-                            .padding(start = 52.dp, bottom = 3.dp)
-                            .size(15.dp),
-                        tint = Color.White
-                    )
+                    if (isCurrentLocation) {
+                        Icon(
+                            imageVector = Icons.Outlined.Place,
+                            contentDescription = null,
+                            modifier = Modifier
+                                .padding(start = 52.dp, bottom = 3.dp)
+                                .size(15.dp),
+                            tint = Color.White
+                        )
+                    }
                     Box(
                         modifier = Modifier
                             .padding(start = 36.dp)
@@ -501,7 +504,8 @@ fun MainScreenPreview() {
         onAddButtonClick = { },
         onCancelButtonClick = { },
         onAddCityButtonClick = { },
-        coordinates = "55.7558,37.6176"
+        coordinates = "55.7558,37.6176",
+        isCurrentLocation = false
     )
 }
 

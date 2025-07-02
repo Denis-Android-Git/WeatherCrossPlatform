@@ -61,6 +61,7 @@ fun MainScreenState(
     }
 
     HorizontalPager(state = pagerState) { pageNumber ->
+        val isCurrentLocation = savedCityList[pageNumber].isCurrentLocation
         PullToRefreshBox(
             modifier = Modifier.fillMaxSize(),
             isRefreshing = weatherMainScreenState.isLoading,
@@ -100,7 +101,8 @@ fun MainScreenState(
                 lowTemp = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.minTempC,
                 savedCityList = savedCityList,
                 cityId = cityId ?: savedCityList[pageNumber].cityId,
-                coordinates = "${weatherMainScreenState.weatherDto?.location?.lat},${weatherMainScreenState.weatherDto?.location?.lon}"
+                coordinates = "${weatherMainScreenState.weatherDto?.location?.lat},${weatherMainScreenState.weatherDto?.location?.lon}",
+                isCurrentLocation = isCurrentLocation
             )
         }
     }

@@ -27,6 +27,7 @@ private fun Preview() {
         lowTemp = 10.0,
         savedCityList = emptyList(),
         cityId = 2,
-        coordinates = ""
+        coordinates = "",
+        isCurrentLocation = false
     )
 }
