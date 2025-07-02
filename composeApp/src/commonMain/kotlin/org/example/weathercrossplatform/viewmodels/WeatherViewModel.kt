@@ -42,7 +42,9 @@ class WeatherViewModel(
         )
 
     init {
+        println("init_WeatherViewModel")
         refreshPosition()
+        init()
     }
 
     fun onAction(actions: MainScreenActions) {
@@ -67,6 +69,7 @@ class WeatherViewModel(
     }
 
     private fun init() {
+        println("fun_init")
         viewModelScope.launch(Dispatchers.IO) {
             println("city_id = ${_weatherScreenState.value.cityId}")
             if (_weatherScreenState.value.cityId == null) {

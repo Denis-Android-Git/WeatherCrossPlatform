@@ -36,7 +36,6 @@ fun MainScreenState(
         cityId?.let {
             weatherViewModel.onAction(MainScreenActions.SetCityId(it))
         }
-        weatherViewModel.onAction(MainScreenActions.Init)
     }
 
     LaunchedEffect(pagerState) {
