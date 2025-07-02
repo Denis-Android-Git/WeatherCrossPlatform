@@ -40,12 +40,14 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.text.style.TextAlign
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.utils.GetScreenHeight
 import org.example.weathercrossplatform.domain.models.Forecastday
+import org.example.weathercrossplatform.domain.models.Hour
 import org.example.weathercrossplatform.domain.models.WeatherItem
 
 @Composable
@@ -326,6 +328,175 @@ fun MainScreen(
     }
 }
 
+@Preview
+@Composable
+fun MainScreenPreview() {
+    val mockHours = listOf(
+        Hour(
+            chanceOfRain = 0,
+            chanceOfSnow = 0,
+            cloud = 25,
+            condition = org.example.weathercrossplatform.domain.models.Condition(
+                text = "Sunny",
+                icon = "//cdn.weatherapi.com/weather/64x64/day/116.png",
+                code = 1000
+            ),
+            dewPointC = 12.0,
+            dewPointF = 53.6,
+            feelsLikeC = 27.0,
+            feelsLikeF = 80.6,
+            gustKph = 15.0,
+            gustMph = 9.3,
+            heatIndexC = 27.0,
+            heatIndexF = 80.6,
+            humidity = 45,
+            isDay = 1,
+            precipIn = 0.0,
+            precipMm = 0.0,
+            pressureIn = 29.91,
+            pressureMb = 1013.0,
+            snowCm = 0.0,
+            tempC = 25.0,
+            tempF = 77.0,
+            time = "12:00",
+            timeEpoch = 1705312800,
+            uv = 6.0,
+            visKm = 10.0,
+            visMiles = 6.2,
+            willItRain = 0,
+            willItSnow = 0,
+            windDegree = 315,
+            windDir = "NW",
+            windKph = 10.0,
+            windMph = 6.2,
+            windChillC = 24.0,
+            windChillF = 75.2
+        )
+    )
+
+    val mockForecast = listOf(
+        Forecastday(
+            astro = org.example.weathercrossplatform.domain.models.Astro(
+                isMoonUp = 0,
+                isSunUp = 1,
+                moonIllumination = 25,
+                moonPhase = "Waxing Crescent",
+                moonrise = "02:15 AM",
+                moonset = "01:30 PM",
+                sunrise = "06:30 AM",
+                sunset = "06:45 PM"
+            ),
+            date = "2024-01-15",
+            dateEpoch = 1705276800,
+            day = org.example.weathercrossplatform.domain.models.Day(
+                avghumidity = 65,
+                avgTempC = 23.0,
+                avgTempF = 73.4,
+                avgVisKm = 10.0,
+                avgVisMiles = 6.2,
+                condition = org.example.weathercrossplatform.domain.models.Condition(
+                    text = "Partly cloudy",
+                    icon = "//cdn.weatherapi.com/weather/64x64/day/116.png",
+                    code = 1003
+                ),
+                dailyChanceOfRain = 10,
+                dailyChanceOfSnow = 0,
+                dailyWillItRain = 0,
+                dailyWillItSnow = 0,
+                maxTempC = 28.0,
+                maxTempF = 82.4,
+                maxWindKph = 15.0,
+                maxWindMph = 9.3,
+                minTempC = 18.0,
+                minTempF = 64.4,
+                totalPrecipIn = 0.0,
+                totalPrecipMm = 0.0,
+                totalSnowCm = 0.0,
+                uv = 6.0
+            ),
+            hour = mockHours
+        )
+    )
+
+    val mockWeatherItems = listOf(
+        WeatherItem(
+            title = "Влажность",
+            description = "45%",
+            progress = 0.45f,
+            rotation = 0f,
+            uvIndex = 0
+        ),
+        WeatherItem(
+            title = "Ветер",
+            description = "10 км/ч",
+            progress = 0.3f,
+            rotation = 315f,
+            uvIndex = 0
+        ),
+        WeatherItem(
+            title = "Давление",
+            description = "1013 мб",
+            progress = 0.65f,
+            rotation = 0f,
+            uvIndex = 0
+        ),
+        WeatherItem(
+            title = "Облачность",
+            description = "25%",
+            progress = 0.25f,
+            rotation = 0f,
+            uvIndex = 0
+        ),
+        WeatherItem(
+            title = "УФ индекс",
+            description = "Высокий",
+            progress = 0f,
+            rotation = 0f,
+            uvIndex = 6
+        ),
+        WeatherItem(
+            title = "Ощущается",
+            description = "27°",
+            progress = 0f,
+            rotation = 90f,
+            uvIndex = 0
+        )
+    )
+
+    val mockSavedCities = listOf(
+        SavedWeatherItem(
+            id = 1,
+            cityName = "Москва",
+            temperature = 22.0,
+            weatherDescription = "Солнечно",
+            highTemperature = 25.0,
+            lowTemperature = 18.0,
+            cityId = 1,
+            coordinates = "55.7558,37.6176"
+        )
+    )
+
+    MainScreen(
+        cityId = 1,
+        isLoading = false,
+        image = "https://images.unsplash.com/photo-1519904981063-b0cf448d479e",
+        usEpaIndex = 2,
+        locationName = "Москва",
+        temp = 23.0,
+        highTemp = 28.0,
+        lowTemp = 18.0,
+        condition = "Переменная облачность",
+        feelsLikeC = "25",
+        error = "",
+        forecastList = mockForecast,
+        weatherItemList = mockWeatherItems,
+        savedCityList = mockSavedCities,
+        onAddButtonClick = { },
+        onCancelButtonClick = { },
+        onAddCityButtonClick = { },
+        coordinates = "55.7558,37.6176"
+    )
+}
 
 @Composable
 fun App() {
