@@ -1,5 +1,6 @@
 package org.example.weathercrossplatform.presentation
 
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -12,10 +13,9 @@ import org.example.weathercrossplatform.domain.models.Routes.MainScreenRoute
 fun NavHostMainScreen() {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = MainScreenRoute()) {
+    NavHost(navController = navController, startDestination = Routes.MainScreenRoute()) {
         composable<MainScreenRoute> {
             val args = it.toRoute<MainScreenRoute>()
-
             MainScreenState(
                 onAddButtonClick = {
                     navController.navigate(Routes.SearchScreenRoute)

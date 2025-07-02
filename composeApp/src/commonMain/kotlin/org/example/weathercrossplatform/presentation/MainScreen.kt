@@ -36,13 +36,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.Layout
-import androidx.compose.ui.text.style.TextAlign
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
@@ -54,6 +51,7 @@ import org.example.weathercrossplatform.domain.models.Day
 import org.example.weathercrossplatform.domain.models.Forecastday
 import org.example.weathercrossplatform.domain.models.Hour
 import org.example.weathercrossplatform.domain.models.WeatherItem
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 fun MainScreen(
@@ -67,7 +65,7 @@ fun MainScreen(
     lowTemp: Double?,
     condition: String?,
     feelsLikeC: String?,
-    error: String,
+//    error: String,
     forecastList: List<Forecastday>?,
     weatherItemList: List<WeatherItem>,
     savedCityList: List<SavedWeatherItem>,
@@ -95,15 +93,6 @@ fun MainScreen(
 
     Box(
         modifier = Modifier.fillMaxSize()
-            .background(
-                brush = Brush
-                    .linearGradient(
-                        colors = listOf(
-                            Color.Blue.copy(alpha = 0.9f),
-                            Color.Blue.copy(alpha = 0f)
-                        )
-                    )
-            )
     ) {
         AnimatedVisibility(
             visible = !isLoading && locationName != null,
@@ -267,12 +256,6 @@ fun MainScreen(
                     }
                 }
             }
-        }
-        AnimatedVisibility(
-            visible = error.isNotEmpty(),
-            modifier = Modifier.align(Alignment.Center)
-        ) {
-            Text(text = error, textAlign = TextAlign.Center)
         }
         AnimatedVisibility(
             visible = savedCityList.any {
@@ -497,7 +480,7 @@ fun MainScreenPreview() {
         lowTemp = 18.0,
         condition = "Переменная облачность",
         feelsLikeC = "25",
-        error = "",
+        //error = "",
         forecastList = mockForecast,
         weatherItemList = mockWeatherItems,
         savedCityList = mockSavedCities,

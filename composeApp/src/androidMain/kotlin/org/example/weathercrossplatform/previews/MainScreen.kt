@@ -15,7 +15,7 @@ private fun Preview() {
         temp = 20.0,
         condition = "Good",
         feelsLikeC = "25",
-        error = "",
+        //error = "",
         forecastList = null,
         weatherItemList = emptyList(),
         onAddButtonClick = {},

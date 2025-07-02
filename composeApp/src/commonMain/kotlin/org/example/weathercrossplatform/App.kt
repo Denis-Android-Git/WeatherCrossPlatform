@@ -45,6 +45,7 @@ fun App() {
             ) {
                 when (permissionsViewModel.state) {
                     PermissionState.Granted -> {
+                        //Text(text = "Granted")
                         NavHostMainScreen()
                     }
 
@@ -53,6 +54,7 @@ fun App() {
                     }
 
                     else -> {
+                        //Text(text = "Else")
                         scope.launch {
                             delay(100)
                             permissionsViewModel.checkPermissions()

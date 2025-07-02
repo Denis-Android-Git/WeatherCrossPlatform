@@ -1,16 +1,27 @@
 package org.example.weathercrossplatform.presentation
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Text
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshotFlow
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -51,23 +62,32 @@ fun MainScreenState(
             weatherViewModel.onAction(MainScreenActions.SetCityId(null))
         }
     }
-
+    var currentPageNumber by remember {
+        mutableStateOf(0)
+    }
     LaunchedEffect(pagerState) {
         snapshotFlow { pagerState.currentPage }.collect { pageNumber ->
             if (savedCityList.isNotEmpty()) {
+                currentPageNumber = pageNumber
+                println("pageNumber=$currentPageNumber")
                 weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(savedCityList[pageNumber].coordinates))
             }
         }
     }
-
-    HorizontalPager(state = pagerState) { pageNumber ->
-        val isCurrentLocation = savedCityList[pageNumber].isCurrentLocation
-        PullToRefreshBox(
-            modifier = Modifier.fillMaxSize(),
-            isRefreshing = weatherMainScreenState.isLoading,
-            onRefresh = {
-                weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(savedCityList[pageNumber].coordinates))
-            },
+    PullToRefreshBox(
+        modifier = Modifier.fillMaxSize().background(
+            brush = Brush
+                .linearGradient(
+                    colors = listOf(
+                        Color.Blue.copy(alpha = 0.9f),
+                        Color.Blue.copy(alpha = 0f)
+                    )
+                )
+        ),
+        isRefreshing = weatherMainScreenState.isLoading,
+        onRefresh = {
+            weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(savedCityList[currentPageNumber].coordinates))
+        },
 //        indicator = {
 //
 //            MyCustomIndicator(
@@ -76,34 +96,49 @@ fun MainScreenState(
 //                modifier = Modifier.align(Alignment.TopCenter)
 //            )
 //        }
+    ) {
+        if (
+            weatherMainScreenState.error.isNotEmpty()
+        //modifier = Modifier.align(Alignment.Center)
         ) {
-            MainScreen(
-                isLoading = weatherMainScreenState.isLoading,
-                image = weatherMainScreenState.image,
-                usEpaIndex = weatherMainScreenState.weatherDto?.current?.airQuality?.usEpaIndex,
-                locationName = weatherMainScreenState.weatherDto?.location?.name,
-                temp = weatherMainScreenState.weatherDto?.current?.tempC,
-                condition = weatherMainScreenState.weatherDto?.current?.condition?.text,
-                feelsLikeC = weatherMainScreenState.weatherDto?.current?.feelsLikeC.toString(),
-                error = weatherMainScreenState.error,
-                forecastList = weatherMainScreenState.weatherDto?.forecast?.forecastday,
-                weatherItemList = weatherMainScreenState.weatherItemList,
-                onAddButtonClick = onAddButtonClick,
-                onCancelButtonClick = onCancelButtonClick,
-                onAddCityButtonClick = {
-                    weatherViewModel.onAction(MainScreenActions.AddCity(it))
-                    scope.launch {
-                        delay(50)
-                        pagerState.scrollToPage(savedCityList.lastIndex)
-                    }
-                },
-                highTemp = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.maxTempC,
-                lowTemp = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.minTempC,
-                savedCityList = savedCityList,
-                cityId = cityId ?: savedCityList[pageNumber].cityId,
-                coordinates = "${weatherMainScreenState.weatherDto?.location?.lat},${weatherMainScreenState.weatherDto?.location?.lon}",
-                isCurrentLocation = isCurrentLocation
-            )
+            Box(modifier = Modifier.fillMaxSize()) {
+
+                Text(text = weatherMainScreenState.error, textAlign = TextAlign.Center)
+            }
+        }
+        if (weatherMainScreenState.weatherDto?.location?.name != null) {
+
+            HorizontalPager(state = pagerState) { pageNumber ->
+
+                val isCurrentLocation = savedCityList[pageNumber].isCurrentLocation
+                MainScreen(
+                    isLoading = weatherMainScreenState.isLoading,
+                    image = weatherMainScreenState.image,
+                    usEpaIndex = weatherMainScreenState.weatherDto?.current?.airQuality?.usEpaIndex,
+                    locationName = weatherMainScreenState.weatherDto?.location?.name,
+                    temp = weatherMainScreenState.weatherDto?.current?.tempC,
+                    condition = weatherMainScreenState.weatherDto?.current?.condition?.text,
+                    feelsLikeC = weatherMainScreenState.weatherDto?.current?.feelsLikeC.toString(),
+                    //error = weatherMainScreenState.error,
+                    forecastList = weatherMainScreenState.weatherDto?.forecast?.forecastday,
+                    weatherItemList = weatherMainScreenState.weatherItemList,
+                    onAddButtonClick = onAddButtonClick,
+                    onCancelButtonClick = onCancelButtonClick,
+                    onAddCityButtonClick = {
+                        weatherViewModel.onAction(MainScreenActions.AddCity(it))
+                        scope.launch {
+                            delay(150)
+                            pagerState.scrollToPage(savedCityList.lastIndex)
+                        }
+                    },
+                    highTemp = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.maxTempC,
+                    lowTemp = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.minTempC,
+                    savedCityList = savedCityList,
+                    cityId = cityId ?: savedCityList[pageNumber].cityId,
+                    coordinates = "${weatherMainScreenState.weatherDto?.location?.lat},${weatherMainScreenState.weatherDto?.location?.lon}",
+                    isCurrentLocation = isCurrentLocation
+                )
+            }
         }
     }
 }
