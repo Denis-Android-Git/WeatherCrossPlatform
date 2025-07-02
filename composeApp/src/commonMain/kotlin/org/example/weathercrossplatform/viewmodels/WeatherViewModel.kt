@@ -85,7 +85,7 @@ class WeatherViewModel(
         }
     }
 
-    private fun setCityId(cityId: Int) {
+    private fun setCityId(cityId: Int?) {
         viewModelScope.launch(Dispatchers.Default) {
             _weatherScreenState.update { it.copy(cityId = cityId, isAddCity = true) }
         }
@@ -102,9 +102,9 @@ class WeatherViewModel(
                 .onSuccess { weather ->
                     println("location.id = ${weather.location.id}")
                     if (latitude != null && longitude != null) {
+                        dataBaseRepo.clearCurrentLocation()
                         dataBaseRepo.saveWeather(
                             weather = SavedWeatherItem(
-                                id = 0,
                                 cityName = weather.location.name,
                                 temperature = weather.current.tempC,
                                 weatherDescription = weather.current.condition.text,
@@ -112,6 +112,7 @@ class WeatherViewModel(
                                 lowTemperature = weather.forecast.forecastday[0].day.minTempC,
                                 cityId = 111,
                                 coordinates = "${weather.location.lat},${weather.location.lon}",
+                                isCurrentLocation = true,
                             )
                         )
                     }

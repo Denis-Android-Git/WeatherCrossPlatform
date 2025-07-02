@@ -19,4 +19,8 @@ class DataBaseRepoImpl(
     override suspend fun deleteWeather(weather: SavedWeatherItem) {
         weatherDao.deleteWeather(weather)
     }
+
+    override suspend fun clearCurrentLocation() {
+        weatherDao.clearCurrentLocation()
+    }
 }

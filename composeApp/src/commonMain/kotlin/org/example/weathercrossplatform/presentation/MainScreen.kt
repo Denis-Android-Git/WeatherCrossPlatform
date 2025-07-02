@@ -48,6 +48,9 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.utils.GetScreenHeight
+import org.example.weathercrossplatform.domain.models.Astro
+import org.example.weathercrossplatform.domain.models.Condition
+import org.example.weathercrossplatform.domain.models.Day
 import org.example.weathercrossplatform.domain.models.Forecastday
 import org.example.weathercrossplatform.domain.models.Hour
 import org.example.weathercrossplatform.domain.models.WeatherItem
@@ -308,7 +311,6 @@ fun MainScreen(
                     onClick = {
                         onAddCityButtonClick(
                             SavedWeatherItem(
-                                id = savedCityList.last().id + 1,
                                 cityName = locationName ?: "",
                                 //latitude = latitude,
                                 //longitude = longitude,
@@ -318,6 +320,7 @@ fun MainScreen(
                                 lowTemperature = lowTemp ?: 0.0,
                                 cityId = cityId,
                                 coordinates = coordinates,
+                                isCurrentLocation = false,
                             )
                         )
                     },
@@ -340,7 +343,7 @@ fun MainScreenPreview() {
             chanceOfRain = 0,
             chanceOfSnow = 0,
             cloud = 25,
-            condition = org.example.weathercrossplatform.domain.models.Condition(
+            condition = Condition(
                 text = "Sunny",
                 icon = "//cdn.weatherapi.com/weather/64x64/day/116.png",
                 code = 1000
@@ -380,7 +383,7 @@ fun MainScreenPreview() {
 
     val mockForecast = listOf(
         Forecastday(
-            astro = org.example.weathercrossplatform.domain.models.Astro(
+            astro = Astro(
                 isMoonUp = 0,
                 isSunUp = 1,
                 moonIllumination = 25,
@@ -392,13 +395,13 @@ fun MainScreenPreview() {
             ),
             date = "2024-01-15",
             dateEpoch = 1705276800,
-            day = org.example.weathercrossplatform.domain.models.Day(
+            day = Day(
                 avghumidity = 65,
                 avgTempC = 23.0,
                 avgTempF = 73.4,
                 avgVisKm = 10.0,
                 avgVisMiles = 6.2,
-                condition = org.example.weathercrossplatform.domain.models.Condition(
+                condition = Condition(
                     text = "Partly cloudy",
                     icon = "//cdn.weatherapi.com/weather/64x64/day/116.png",
                     code = 1003
@@ -469,14 +472,14 @@ fun MainScreenPreview() {
 
     val mockSavedCities = listOf(
         SavedWeatherItem(
-            id = 1,
             cityName = "Москва",
             temperature = 22.0,
             weatherDescription = "Солнечно",
             highTemperature = 25.0,
             lowTemperature = 18.0,
             cityId = 1,
-            coordinates = "55.7558,37.6176"
+            coordinates = "55.7558,37.6176",
+            isCurrentLocation = true
         )
     )
 

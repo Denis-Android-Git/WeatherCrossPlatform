@@ -15,6 +15,9 @@ interface WeatherDao {
     @Delete
     suspend fun deleteWeather(weather: SavedWeatherItem)
 
-    @Query("SELECT * FROM savedweatheritem")
+    @Query("SELECT * FROM savedweatheritem ORDER BY isCurrentLocation DESC")
     fun getWeatherList(): Flow<List<SavedWeatherItem>>
+
+    @Query("UPDATE savedweatheritem SET isCurrentLocation = 0 WHERE isCurrentLocation = 1")
+    suspend fun clearCurrentLocation()
 }

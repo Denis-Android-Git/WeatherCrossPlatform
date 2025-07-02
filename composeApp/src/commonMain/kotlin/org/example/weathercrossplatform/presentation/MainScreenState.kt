@@ -28,13 +28,27 @@ fun MainScreenState(
 ) {
     val weatherMainScreenState by weatherViewModel.weatherScreenState.collectAsStateWithLifecycle()
     val savedCityList by weatherViewModel.allCities.collectAsStateWithLifecycle()
+
+    if (savedCityList.isNotEmpty()) {
+        println("Saved cities count: ${savedCityList.size}")
+        savedCityList.forEachIndexed { index, city ->
+            println("Saved cities #$index: $city")
+        }
+
+    }
+
     //val state = rememberPullToRefreshState()
     val pagerState = rememberPagerState(pageCount = { savedCityList.size })
     val scope = rememberCoroutineScope()
 
     LaunchedEffect(cityId) {
+        println("LaunchedEffect: cityId = $cityId")
         cityId?.let {
             weatherViewModel.onAction(MainScreenActions.SetCityId(it))
+            delay(50)
+            weatherViewModel.onAction(MainScreenActions.Init)
+            delay(50)
+            weatherViewModel.onAction(MainScreenActions.SetCityId(null))
         }
     }
 

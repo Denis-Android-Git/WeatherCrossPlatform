@@ -7,4 +7,5 @@ interface DataBaseRepo {
     fun getWeatherList(): Flow<List<SavedWeatherItem>>
     suspend fun saveWeather(weather: SavedWeatherItem)
     suspend fun deleteWeather(weather: SavedWeatherItem)
+    suspend fun clearCurrentLocation()
 }

@@ -241,23 +241,23 @@ fun Preview() {
         cityList = listOf(
             SavedWeatherItem(
                 cityName = "Moscow",
-                id = 0,
                 temperature = 12.5,
                 weatherDescription = "cloudy",
                 highTemperature = 20.0,
                 lowTemperature = 10.0,
                 cityId = 1,
-                coordinates = ""
+                coordinates = "",
+                isCurrentLocation = true
             ),
             SavedWeatherItem(
                 cityName = "London",
-                id = 1,
                 temperature = 15.0,
                 weatherDescription = "sunny",
                 highTemperature = 22.0,
                 lowTemperature = 12.0,
                 cityId = 2,
-                coordinates = ""
+                coordinates = "",
+                isCurrentLocation = false
             )
         ),
         locationList = emptyList(),
