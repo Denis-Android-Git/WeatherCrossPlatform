@@ -154,7 +154,8 @@ class WeatherViewModel(
                                 image = image,
                                 isLoading = false,
                                 weatherDto = weather,
-                                weatherItemList = weatherItemList
+                                weatherItemList = weatherItemList,
+                                error = ""
                             )
                         }
                         .onError { error ->
