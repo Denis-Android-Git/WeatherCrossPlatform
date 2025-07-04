@@ -20,6 +20,7 @@ class PermissionsViewModel(
 
     var state by mutableStateOf(PermissionState.NotDetermined)
         private set
+    var isFirstLaunch by mutableStateOf(true)
 
     init {
         viewModelScope.launch {

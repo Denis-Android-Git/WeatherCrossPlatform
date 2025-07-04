@@ -1,7 +1,6 @@
 package org.example.weathercrossplatform.presentation
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
@@ -28,11 +27,21 @@ import org.koin.compose.viewmodel.koinViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreenState(
+    isFirstLaunch: Boolean,
     cityId: Int?,
     onAddButtonClick: () -> Unit,
     onCancelButtonClick: () -> Unit,
     weatherViewModel: WeatherViewModel = koinViewModel()
 ) {
+
+    LaunchedEffect(isFirstLaunch) {
+        if (isFirstLaunch) {
+            weatherViewModel.onAction(MainScreenActions.RefreshPosition)
+            weatherViewModel.onAction(MainScreenActions.Init)
+        }
+        println("isFirstLaunch: $isFirstLaunch")
+    }
+
     val weatherMainScreenState by weatherViewModel.weatherScreenState.collectAsStateWithLifecycle()
     val savedCityList by weatherViewModel.allCities.collectAsStateWithLifecycle()
 

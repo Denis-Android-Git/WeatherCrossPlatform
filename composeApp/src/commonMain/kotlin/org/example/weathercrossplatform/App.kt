@@ -46,7 +46,10 @@ fun App() {
                 when (permissionsViewModel.state) {
                     PermissionState.Granted -> {
                         //Text(text = "Granted")
-                        NavHostMainScreen()
+                        NavHostMainScreen(
+                            isFirstLaunch = permissionsViewModel.isFirstLaunch
+                        )
+                        permissionsViewModel.isFirstLaunch = false
                     }
 
                     PermissionState.DeniedAlways -> {

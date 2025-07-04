@@ -41,11 +41,11 @@ class WeatherViewModel(
             initialValue = emptyList()
         )
 
-    init {
-        println("init_WeatherViewModel")
-        refreshPosition()
-        init()
-    }
+//    init {
+//        println("init_WeatherViewModel")
+//        refreshPosition()
+//        init()
+//    }
 
     fun onAction(actions: MainScreenActions) {
         when (actions) {

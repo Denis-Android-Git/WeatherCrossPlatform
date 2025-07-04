@@ -9,7 +9,9 @@ import org.example.weathercrossplatform.domain.models.Routes
 import org.example.weathercrossplatform.domain.models.Routes.MainScreenRoute
 
 @Composable
-fun NavHostMainScreen() {
+fun NavHostMainScreen(
+    isFirstLaunch: Boolean
+) {
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = MainScreenRoute()) {
@@ -23,6 +25,7 @@ fun NavHostMainScreen() {
                 onCancelButtonClick = {
                     navController.navigateUp()
                 },
+                isFirstLaunch = isFirstLaunch
             )
         }
         composable<Routes.SearchScreenRoute> {
