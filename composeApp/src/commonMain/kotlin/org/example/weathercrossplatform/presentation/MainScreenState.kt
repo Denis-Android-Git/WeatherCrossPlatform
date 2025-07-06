@@ -27,9 +27,10 @@ import org.koin.compose.viewmodel.koinViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreenState(
+    pageNumberFromSearchScreen: Int?,
     isFirstLaunch: Boolean,
     cityId: Int?,
-    onAddButtonClick: () -> Unit,
+    onAddButtonClick: (Int) -> Unit,
     onCancelButtonClick: () -> Unit,
     weatherViewModel: WeatherViewModel = koinViewModel()
 ) {
@@ -68,11 +69,32 @@ fun MainScreenState(
         }
     }
 
+    LaunchedEffect(pageNumberFromSearchScreen) {
+        println("pageNumber= $pageNumberFromSearchScreen")
+        if (pageNumberFromSearchScreen != null) {
+            println("pageNumber= in let $pageNumberFromSearchScreen")
+            delay(50)
+            if (savedCityList.isNotEmpty()) {
+                if (pageNumberFromSearchScreen in savedCityList.indices) {
+                    weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(savedCityList[pageNumberFromSearchScreen].coordinates))
+                    scope.launch {
+                        pagerState.scrollToPage(pageNumberFromSearchScreen)
+                    }
+                } else {
+                    weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(savedCityList[0].coordinates))
+                    scope.launch {
+                        pagerState.scrollToPage(0)
+                    }
+                }
+            }
+        }
+    }
+
     LaunchedEffect(pagerState) {
         snapshotFlow { pagerState.currentPage }.collect { pageNumber ->
             if (savedCityList.isNotEmpty()) {
                 currentPageNumber = pageNumber
-                println("pageNumber=$currentPageNumber")
+                println("pageNumber= in pagerState $currentPageNumber")
                 weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(savedCityList[pageNumber].coordinates))
             }
         }
@@ -107,7 +129,7 @@ fun MainScreenState(
                     feelsLikeC = weatherMainScreenState.weatherDto?.current?.feelsLikeC.toString(),
                     forecastList = weatherMainScreenState.weatherDto?.forecast?.forecastday,
                     weatherItemList = weatherMainScreenState.weatherItemList,
-                    onAddButtonClick = onAddButtonClick,
+                    onAddButtonClick = { onAddButtonClick(pageNumber) },
                     onCancelButtonClick = onCancelButtonClick,
                     onAddCityButtonClick = {
                         weatherViewModel.onAction(MainScreenActions.AddCity(it))

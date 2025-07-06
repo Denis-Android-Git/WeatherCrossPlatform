@@ -1,5 +1,8 @@
 package org.example.weathercrossplatform.viewmodels
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -23,6 +26,8 @@ class SearchViewModel(
 ) : ViewModel() {
     private val _searchScreenState = MutableStateFlow(SearchScreenViewState())
     val searchScreenState = _searchScreenState.asStateFlow()
+
+    var pageNumber by mutableStateOf<Int?>(null)
 
     val allCities = dataBaseRepo.getWeatherList()
         .map { list ->

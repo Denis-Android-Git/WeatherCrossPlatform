@@ -18,13 +18,15 @@ import org.koin.compose.viewmodel.koinViewModel
 @Composable
 fun SearchScreenState(
     searchViewModel: SearchViewModel = koinViewModel(),
-    onBackButtonClick: () -> Unit,
-    onFoundItemClick: (Location) -> Unit
+    onBackButtonClick: (Int?) -> Unit,
+    onFoundItemClick: (Location) -> Unit,
+    pageNumber: Int?
 ) {
 
     val scope = rememberCoroutineScope()
     val searchScreenState by searchViewModel.searchScreenState.collectAsStateWithLifecycle()
     val cityList by searchViewModel.allCities.collectAsStateWithLifecycle()
+    searchViewModel.pageNumber = pageNumber
 
     Box(
         modifier = Modifier
@@ -33,7 +35,7 @@ fun SearchScreenState(
     ) {
         SearchScreen(
             query = searchScreenState.searchQuery,
-            onBackButtonClick = onBackButtonClick,
+            onBackButtonClick = { onBackButtonClick(searchViewModel.pageNumber) },
             onQueryChange = {
                 searchViewModel.onAction(SearchScreenActions.SetSearchQuery(it))
             },

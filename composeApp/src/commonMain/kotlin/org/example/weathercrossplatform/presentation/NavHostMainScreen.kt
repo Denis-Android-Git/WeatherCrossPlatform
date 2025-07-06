@@ -18,25 +18,28 @@ fun NavHostMainScreen(
         composable<MainScreenRoute> {
             val args = it.toRoute<MainScreenRoute>()
             MainScreenState(
-                onAddButtonClick = {
-                    navController.navigate(Routes.SearchScreenRoute)
+                onAddButtonClick = { pageNumber ->
+                    navController.navigate(Routes.SearchScreenRoute(pageNumber))
                 },
                 cityId = args.cityId,
                 onCancelButtonClick = {
                     navController.navigateUp()
                 },
-                isFirstLaunch = isFirstLaunch
+                isFirstLaunch = isFirstLaunch,
+                pageNumberFromSearchScreen = args.pageNumber
             )
         }
         composable<Routes.SearchScreenRoute> {
+            val args = it.toRoute<Routes.SearchScreenRoute>()
             SearchScreenState(
-                onBackButtonClick = {
-                    navController.navigateUp()
+                onBackButtonClick = { pageNumber ->
+                    navController.navigate(MainScreenRoute(pageNumber = pageNumber))
                 },
-                onFoundItemClick = {
-                    navController.navigate(MainScreenRoute(it.id))
-                    println("location_id: ${it.id}")
-                }
+                onFoundItemClick = { location ->
+                    navController.navigate(MainScreenRoute(location.id))
+                    println("location_id: ${location.id}")
+                },
+                pageNumber = args.pageNumber
             )
         }
     }

@@ -49,7 +49,10 @@ fun App() {
                         NavHostMainScreen(
                             isFirstLaunch = permissionsViewModel.isFirstLaunch
                         )
-                        permissionsViewModel.isFirstLaunch = false
+                        scope.launch {
+                            delay(100)
+                            permissionsViewModel.isFirstLaunch = false
+                        }
                     }
 
                     PermissionState.DeniedAlways -> {

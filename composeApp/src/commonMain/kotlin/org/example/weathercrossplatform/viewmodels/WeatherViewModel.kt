@@ -96,6 +96,7 @@ class WeatherViewModel(
         latitude: Double? = null,
         longitude: Double? = null
     ) {
+        println("fun_getWeatherByQuery")
         _weatherScreenState.value = _weatherScreenState.value.copy(isLoading = true)
         try {
             weatherRepoImpl.getCurrentWeather(query)

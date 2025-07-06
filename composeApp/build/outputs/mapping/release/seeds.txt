@@ -1,0 +1,1528 @@
+org.example.weathercrossplatform.domain.models.Routes$SearchScreenRoute
+com.google.firebase.crashlytics.ktx.FirebaseCrashlyticsKtxRegistrar
+com.google.android.gms.common.api.internal.zzd
+androidx.compose.ui.platform.AndroidCompositionLocals_androidKt
+androidx.compose.animation.EnterExitTransitionElement
+com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
+org.jetbrains.compose.resources.AndroidContextProvider
+androidx.compose.foundation.MagnifierElement
+androidx.fragment.app.DialogFragment
+org.example.weathercrossplatform.MainActivity
+org.example.weathercrossplatform.domain.models.Forecastday
+androidx.navigation.NavGraphNavigator
+androidx.appcompat.widget.ButtonBarLayout
+androidx.appcompat.widget.ActionMenuView
+org.example.weathercrossplatform.domain.models.Routes$MainScreenRoute
+com.google.firebase.installations.ktx.FirebaseInstallationsKtxRegistrar
+androidx.appcompat.widget.Toolbar
+com.google.firebase.installations.FirebaseInstallationsKtxRegistrar
+org.example.weathercrossplatform.data.database.WeatherDataBase
+org.example.weathercrossplatform.domain.models.Current
+androidx.startup.InitializationProvider
+com.google.android.gms.common.api.internal.BasePendingResult
+androidx.compose.material3.pulltorefresh.PullToRefreshElement
+androidx.versionedparcelable.CustomVersionedParcelable
+androidx.appcompat.widget.FitWindowsFrameLayout
+androidx.compose.ui.input.nestedscroll.NestedScrollElement
+androidx.compose.material3.MinimumInteractiveModifier
+androidx.lifecycle.LegacySavedStateHandleController$OnRecreation
+org.example.weathercrossplatform.domain.models.Forecast
+androidx.appcompat.widget.DialogTitle
+com.google.android.gms.common.api.internal.zzb
+androidx.compose.foundation.layout.SizeElement
+com.google.android.gms.common.annotation.KeepName
+androidx.compose.ui.draganddrop.AndroidDragAndDropManager$modifier$1
+androidx.navigation.internal.NavBackStackEntryImpl$SavedStateViewModel
+androidx.graphics.path.PathIteratorPreApi34Impl
+androidx.appcompat.widget.ActionBarContainer
+androidx.versionedparcelable.ParcelImpl
+com.google.firebase.datatransport.TransportRegistrar
+org.example.weathercrossplatform.domain.models.Condition
+androidx.core.graphics.drawable.IconCompat
+androidx.compose.ui.platform.AndroidComposeView$bringIntoViewNode$1
+androidx.compose.foundation.layout.PaddingValuesElement
+com.google.firebase.crashlytics.FirebaseCrashlyticsKtxRegistrar
+androidx.compose.ui.input.pointer.SuspendPointerInputElement
+androidx.navigation.NavControllerViewModel
+androidx.appcompat.view.menu.ActionMenuItemView
+androidx.emoji2.text.EmojiCompatInitializer
+androidx.core.widget.NestedScrollView
+androidx.compose.foundation.ClickableElement
+com.google.android.gms.dynamite.DynamiteModule$DynamiteLoaderClassLoader
+org.example.weathercrossplatform.data.network.dto.ForecastDto
+org.example.weathercrossplatform.domain.models.Hour
+androidx.compose.ui.draw.PainterElement
+androidx.navigation.compose.ComposeNavigator
+androidx.compose.foundation.text.input.internal.LegacyAdaptingPlatformTextInputModifier
+androidx.loader.app.LoaderManagerImpl$LoaderViewModel
+com.google.firebase.components.ComponentDiscoveryService
+org.example.weathercrossplatform.data.database.WeatherDataBase_Impl
+kotlinx.serialization.json.JsonElement
+androidx.graphics.path.ConicConverter
+org.example.weathercrossplatform.domain.models.Astro
+androidx.compose.foundation.ScrollingContainerElement
+org.example.weathercrossplatform.domain.models.Location
+androidx.compose.foundation.BorderModifierNodeElement
+io.ktor.client.engine.android.AndroidEngineContainer
+androidx.appcompat.widget.FitWindowsLinearLayout
+com.google.android.gms.location.LocationAvailability
+androidx.compose.foundation.IndicationModifierElement
+androidx.lifecycle.ReportFragment$LifecycleCallbacks
+androidx.compose.foundation.lazy.layout.LazyLayoutBeyondBoundsModifierElement
+androidx.profileinstaller.ProfileInstallerInitializer
+androidx.compose.ui.draw.DrawBehindElement
+com.google.firebase.FirebaseCommonRegistrar
+androidx.appcompat.widget.ContentFrameLayout
+androidx.compose.foundation.text.modifiers.TextAnnotatedStringElement
+androidx.compose.foundation.layout.WrapContentElement
+androidx.compose.foundation.layout.UnspecifiedConstraintsElement
+android.support.v4.app.RemoteActionCompatParcelizer
+com.google.firebase.crashlytics.CrashlyticsRegistrar
+okhttp3.internal.publicsuffix.PublicSuffixDatabase
+com.google.android.gms.common.util.DynamiteApi
+androidx.core.graphics.drawable.IconCompatParcelizer
+androidx.compose.ui.semantics.EmptySemanticsElement
+com.google.firebase.FirebaseCommonKtxRegistrar
+androidx.appcompat.widget.ViewStubCompat
+kotlinx.serialization.json.JsonPrimitive
+androidx.compose.ui.layout.OnGloballyPositionedElement
+androidx.compose.ui.input.pointer.StylusHoverIconModifierElement
+com.google.android.gms.common.SupportErrorDialogFragment
+androidx.compose.foundation.text.modifiers.SelectableTextAnnotatedStringElement
+com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
+androidx.compose.foundation.layout.PaddingElement
+androidx.compose.foundation.layout.BoxChildDataElement
+androidx.compose.foundation.layout.FillElement
+androidx.room.MultiInstanceInvalidationService
+androidx.compose.foundation.layout.OffsetElement
+com.google.firebase.provider.FirebaseInitProvider
+org.example.weathercrossplatform.domain.models.Day
+com.google.android.datatransport.cct.CctBackendFactory
+com.google.firebase.ktx.FirebaseCommonKtxRegistrar
+androidx.profileinstaller.ProfileInstallReceiver
+androidx.appcompat.app.AlertController$RecycleListView
+com.google.firebase.components.ComponentRegistrar
+androidx.compose.ui.graphics.BlockGraphicsLayerElement
+kotlinx.coroutines.android.AndroidDispatcherFactory
+androidx.lifecycle.ProcessLifecycleOwner$attach$1$onActivityPreCreated$1
+androidx.compose.foundation.CombinedClickableElement
+androidx.core.app.RemoteActionCompat
+kotlin.coroutines.jvm.internal.BaseContinuationImpl
+androidx.compose.ui.graphics.GraphicsLayerElement
+androidx.compose.foundation.layout.LayoutWeightElement
+com.google.android.gms.common.api.GoogleApiActivity
+android.support.v4.graphics.drawable.IconCompatParcelizer
+androidx.compose.foundation.text.handwriting.StylusHandwritingElement
+androidx.lifecycle.SavedStateHandlesVM
+androidx.compose.ui.input.pointer.PointerInputEventHandler
+org.example.weathercrossplatform.data.network.dto.ImageListDto
+io.ktor.util.date.GMTDate
+com.google.firebase.ktx.FirebaseCommonLegacyRegistrar
+androidx.appcompat.widget.AlertDialogLayout
+androidx.compose.ui.semantics.AppendedSemanticsElement
+androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifier
+androidx.compose.ui.focus.FocusRequesterElement
+com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
+androidx.navigation.compose.ComposeNavGraphNavigator
+com.google.android.gms.common.GooglePlayServicesIncorrectManifestValueException
+com.google.android.gms.location.LocationResult
+kotlinx.coroutines.internal.StackTraceRecoveryKt
+androidx.compose.ui.draw.ShadowGraphicsLayerElement
+androidx.lifecycle.LifecycleDispatcher$DispatcherActivityCallback
+com.google.firebase.concurrent.ExecutorsRegistrar
+com.google.android.gms.common.api.Scope
+androidx.compose.foundation.BackgroundElement
+androidx.compose.foundation.FocusableElement
+org.example.weathercrossplatform.domain.models.Urls
+androidx.compose.foundation.lazy.layout.LazyLayoutSemanticsModifier
+androidx.lifecycle.ProcessLifecycleOwner$attach$1
+androidx.appcompat.widget.ActionBarOverlayLayout
+androidx.compose.foundation.text.modifiers.TextStringSimpleElement
+androidx.compose.ui.ZIndexElement
+kotlinx.serialization.json.JsonArray
+androidx.navigation.compose.BackStackEntryIdViewModel
+androidx.navigation.compose.DialogNavigator
+androidx.appcompat.widget.ActivityChooserView$InnerLayout
+androidx.compose.ui.draw.DrawWithContentElement
+com.google.firebase.sessions.SessionLifecycleService
+androidx.sqlite.driver.bundled.BundledSQLiteDriverKt
+androidx.compose.animation.AnimatedContentTransitionScopeImpl$SizeModifierElement
+io.ktor.client.engine.okhttp.OkHttpEngineContainer
+androidx.compose.ui.layout.LayoutIdElement
+com.google.android.gms.common.GooglePlayServicesManifestException
+com.google.firebase.sessions.FirebaseSessionsRegistrar
+androidx.sqlite.driver.bundled.BundledSQLiteStatementKt
+androidx.compose.ui.layout.LayoutElement
+androidx.compose.ui.input.rotary.RotaryInputElement
+androidx.compose.ui.input.pointer.PointerHoverIconModifierElement
+androidx.compose.foundation.lazy.layout.TraversablePrefetchStateModifierElement
+androidx.lifecycle.ReportFragment
+com.google.android.gms.common.GooglePlayServicesMissingManifestValueException
+androidx.compose.ui.focus.FocusChangedElement
+androidx.compose.ui.draw.DrawWithCacheElement
+coil3.compose.internal.ContentPainterElement
+androidx.navigation.ActivityNavigator
+androidx.appcompat.widget.SearchView$SearchAutoComplete
+com.google.android.gms.common.api.internal.LifecycleCallback
+com.google.android.gms.auth.api.signin.GoogleSignInAccount
+androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimator$DisplayingDisappearingItemsElement
+androidx.compose.foundation.layout.IntrinsicWidthElement
+androidx.appcompat.view.menu.ExpandedMenuView
+androidx.annotation.Keep
+com.google.firebase.crashlytics.ktx.FirebaseCrashlyticsLegacyRegistrar
+com.google.android.gms.common.ErrorDialogFragment
+androidx.sqlite.driver.bundled.BundledSQLiteConnectionKt
+io.ktor.http.Url
+androidx.appcompat.widget.ActionBarContextView
+com.google.firebase.installations.FirebaseInstallationsRegistrar
+org.example.weathercrossplatform.domain.models.PhotoData
+androidx.lifecycle.ProcessLifecycleInitializer
+com.google.android.gms.common.api.Status
+androidx.compose.foundation.layout.HorizontalAlignElement
+kotlinx.serialization.json.JsonNull
+androidx.compose.ui.layout.OnSizeChangedModifier
+androidx.compose.foundation.relocation.BringIntoViewRequesterElement
+org.example.weathercrossplatform.MyApp
+androidx.compose.foundation.ScrollingLayoutElement
+org.example.weathercrossplatform.domain.models.AirQuality
+androidx.appcompat.view.menu.ListMenuItemView
+androidx.core.app.CoreComponentFactory
+com.google.android.gms.location.LocationRequest
+androidx.core.app.RemoteActionCompatParcelizer
+kotlinx.serialization.json.JsonObject
+androidx.compose.ui.focus.FocusOwnerImpl$modifier$1
+androidx.compose.foundation.gestures.ScrollableElement
+com.google.android.gms.common.internal.ReflectedParcelable
+androidx.compose.ui.input.key.KeyInputElement
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event ON_ANY
+com.google.android.gms.location.LocationAvailability: android.os.Parcelable$Creator CREATOR
+androidx.datastore.preferences.PreferencesProto$PreferenceMap: int PREFERENCES_FIELD_NUMBER
+kotlinx.coroutines.flow.ChannelAsFlow: int consumed$volatile
+org.example.weathercrossplatform.domain.models.Location$$serializer: kotlinx.serialization.descriptors.SerialDescriptor descriptor
+kotlinx.coroutines.sync.SemaphoreAndMutexImpl: long enqIdx$volatile
+io.ktor.http.Url: io.ktor.http.Url$Companion Companion
+androidx.datastore.preferences.protobuf.GeneratedMessageLite: androidx.datastore.preferences.protobuf.UnknownFieldSetLite unknownFields
+com.google.android.gms.auth.api.signin.GoogleSignInAccount: android.os.Parcelable$Creator CREATOR
+kotlinx.coroutines.internal.DispatchedContinuation: java.lang.Object _reusableCancellableContinuation$volatile
+io.ktor.client.call.HttpClientCall: int received
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event ON_STOP
+kotlinx.coroutines.channels.BufferedChannel: long completedExpandBuffersAndPauseFlag$volatile
+org.example.weathercrossplatform.domain.models.Hour: org.example.weathercrossplatform.domain.models.Hour$Companion Companion
+org.example.weathercrossplatform.domain.models.Location: org.example.weathercrossplatform.domain.models.Location$Companion Companion
+kotlinx.coroutines.DefaultExecutor: java.lang.Thread _thread
+kotlinx.coroutines.internal.LockFreeTaskQueueCore: java.lang.Object _next$volatile
+kotlinx.coroutines.channels.BufferedChannel: long bufferEnd$volatile
+com.google.android.gms.common.internal.MethodInvocation: android.os.Parcelable$Creator CREATOR
+androidx.compose.runtime.ParcelableSnapshotMutableFloatState: android.os.Parcelable$Creator CREATOR
+coil3.compose.internal.DeferredDispatchCoroutineDispatcher: int _unconfined$volatile
+org.example.weathercrossplatform.domain.models.Current: org.example.weathercrossplatform.domain.models.Current$Companion Companion
+com.google.firebase.datatransport.TransportRegistrar: java.lang.String LIBRARY_NAME
+androidx.fragment.app.FragmentManager$LaunchedFragmentInfo: android.os.Parcelable$Creator CREATOR
+kotlinx.coroutines.scheduling.CoroutineScheduler$Worker: int workerCtl$volatile
+org.example.weathercrossplatform.domain.models.Forecastday: org.example.weathercrossplatform.domain.models.Forecastday$Companion Companion
+org.example.weathercrossplatform.domain.models.Day$$serializer: kotlinx.serialization.descriptors.SerialDescriptor descriptor
+kotlinx.coroutines.channels.BufferedChannel: java.lang.Object _closeCause$volatile
+kotlinx.coroutines.EventLoopImplBase: java.lang.Object _queue$volatile
+com.google.firebase.sessions.FirebaseSessionsRegistrar: java.lang.String LIBRARY_NAME
+kotlinx.coroutines.EventLoopImplBase: int _isCompleted$volatile
+kotlinx.serialization.json.JsonObject: kotlinx.serialization.json.JsonObject$Companion Companion
+com.google.android.gms.common.internal.zav: android.os.Parcelable$Creator CREATOR
+com.google.firebase.installations.FirebaseInstallationsRegistrar: java.lang.String LIBRARY_NAME
+kotlinx.coroutines.CancelledContinuation: int _resumed$volatile
+io.ktor.utils.io.SourceByteReadChannel: io.ktor.utils.io.CloseToken closed
+kotlinx.coroutines.channels.BufferedChannel: java.lang.Object bufferEndSegment$volatile
+kotlinx.coroutines.UndispatchedCoroutine: boolean threadLocalIsSet
+kotlinx.coroutines.DefaultExecutor: int debugStatus
+kotlinx.coroutines.InvokeOnCancelling: int _invoked$volatile
+org.example.weathercrossplatform.domain.models.Routes$SearchScreenRoute$$serializer: kotlinx.serialization.descriptors.SerialDescriptor descriptor
+kotlinx.coroutines.DispatchedCoroutine: int _decision$volatile
+io.ktor.util.date.GMTDate: io.ktor.util.date.GMTDate$Companion Companion
+androidx.concurrent.futures.AbstractResolvableFuture$Waiter: java.lang.Thread thread
+com.google.android.gms.internal.location.zzei: android.os.Parcelable$Creator CREATOR
+androidx.datastore.preferences.PreferencesProto$Value: androidx.datastore.preferences.PreferencesProto$Value DEFAULT_INSTANCE
+kotlinx.coroutines.AwaitAll: int notCompletedCount$volatile
+org.example.weathercrossplatform.domain.models.Routes$SearchScreenRoute: org.example.weathercrossplatform.domain.models.Routes$SearchScreenRoute$Companion Companion
+kotlinx.coroutines.android.HandlerDispatcherKt: android.view.Choreographer choreographer
+androidx.datastore.preferences.protobuf.GeneratedMessageLite: java.util.Map defaultInstanceMap
+org.example.weathercrossplatform.domain.models.AirQuality: org.example.weathercrossplatform.domain.models.AirQuality$Companion Companion
+com.google.firebase.sessions.FirebaseSessionsRegistrar: com.google.firebase.components.Qualified backgroundDispatcher
+kotlinx.coroutines.channels.BufferedChannel: java.lang.Object receiveSegment$volatile
+org.example.weathercrossplatform.data.network.dto.ImageListDto$$serializer: kotlinx.serialization.descriptors.SerialDescriptor descriptor
+kotlinx.coroutines.channels.BufferedChannel: java.lang.Object sendSegment$volatile
+kotlinx.coroutines.CancellableContinuationImpl: java.lang.Object _state$volatile
+com.google.android.gms.internal.location.zzeg: android.os.Parcelable$Creator CREATOR
+org.example.weathercrossplatform.domain.models.PhotoData$$serializer: kotlinx.serialization.descriptors.SerialDescriptor descriptor
+androidx.datastore.preferences.PreferencesProto$Value: int valueCase_
+kotlinx.coroutines.internal.LockFreeTaskQueue: java.lang.Object _cur$volatile
+org.example.weathercrossplatform.data.network.dto.ForecastDto$$serializer: kotlinx.serialization.descriptors.SerialDescriptor descriptor
+org.example.weathercrossplatform.domain.models.Forecastday$$serializer: kotlinx.serialization.descriptors.SerialDescriptor descriptor
+io.ktor.utils.io.ByteChannel: int flushBufferSize
+io.ktor.client.engine.HttpClientEngineBase: int closed
+kotlinx.coroutines.internal.LockFreeLinkedListNode: java.lang.Object _next$volatile
+androidx.datastore.preferences.PreferencesProto$StringSet: androidx.datastore.preferences.protobuf.Internal$ProtobufList strings_
+androidx.datastore.preferences.PreferencesProto$Value: int FLOAT_FIELD_NUMBER
+androidx.fragment.app.BackStackRecordState: android.os.Parcelable$Creator CREATOR
+kotlinx.coroutines.CancellableContinuationImpl: java.lang.Object _parentHandle$volatile
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event ON_START
+androidx.appcompat.widget.Toolbar$SavedState: android.os.Parcelable$Creator CREATOR
+io.ktor.client.plugins.logging.HttpClientCallLogger: int requestLogged
+io.ktor.util.date.GMTDate$$serializer: kotlinx.serialization.descriptors.SerialDescriptor descriptor
+kotlinx.coroutines.internal.ThreadSafeHeap: int _size$volatile
+kotlinx.coroutines.sync.SemaphoreAndMutexImpl: java.lang.Object head$volatile
+kotlinx.coroutines.sync.SemaphoreAndMutexImpl: int _availablePermits$volatile
+androidx.compose.runtime.ParcelableSnapshotMutableState: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.signin.internal.zag: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.internal.location.zze: android.os.Parcelable$Creator CREATOR
+kotlinx.serialization.json.JsonElement: kotlinx.serialization.json.JsonElement$Companion Companion
+coil3.RealImageLoader: int shutdown$volatile
+org.example.weathercrossplatform.domain.models.Hour$$serializer: kotlinx.serialization.descriptors.SerialDescriptor descriptor
+kotlinx.serialization.json.JsonPrimitive: kotlinx.serialization.json.JsonPrimitive$Companion Companion
+androidx.core.widget.NestedScrollView$SavedState: android.os.Parcelable$Creator CREATOR
+kotlinx.serialization.json.JsonNull: kotlinx.serialization.json.JsonNull INSTANCE
+kotlinx.coroutines.scheduling.WorkQueue: java.lang.Object lastScheduledTask$volatile
+com.google.firebase.sessions.FirebaseSessionsRegistrar: com.google.firebase.components.Qualified blockingDispatcher
+kotlinx.coroutines.channels.BufferedChannel: long sendersAndCloseStatus$volatile
+kotlinx.coroutines.internal.ConcurrentLinkedListNode: java.lang.Object _next$volatile
+androidx.datastore.preferences.PreferencesProto$PreferenceMap: androidx.datastore.preferences.protobuf.Parser PARSER
+com.google.android.gms.common.internal.zzk: android.os.Parcelable$Creator CREATOR
+io.ktor.client.plugins.logging.HttpClientCallLogger: int responseLogged
+com.google.android.gms.common.internal.ClientIdentity: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.common.Feature: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.location.zzal: android.os.Parcelable$Creator CREATOR
+kotlinx.coroutines.internal.Segment: int cleanedAndPointers$volatile
+kotlinx.coroutines.scheduling.CoroutineScheduler: long controlState$volatile
+com.google.android.gms.common.api.Status: android.os.Parcelable$Creator CREATOR
+androidx.datastore.preferences.protobuf.AbstractMessageLite: int memoizedHashCode
+androidx.datastore.preferences.protobuf.GeneratedMessageLite: int memoizedSerializedSize
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event ON_PAUSE
+com.google.android.gms.common.internal.RootTelemetryConfiguration: android.os.Parcelable$Creator CREATOR
+androidx.datastore.preferences.PreferencesProto$Value: androidx.datastore.preferences.protobuf.Parser PARSER
+androidx.customview.view.AbsSavedState: android.os.Parcelable$Creator CREATOR
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event ON_DESTROY
+kotlinx.coroutines.JobSupport$Finishing: java.lang.Object _exceptionsHolder$volatile
+kotlinx.io.RefCountingCopyTracker: int copyCount
+androidx.concurrent.futures.AbstractResolvableFuture$Waiter: androidx.concurrent.futures.AbstractResolvableFuture$Waiter next
+androidx.datastore.preferences.PreferencesProto$Value: int INTEGER_FIELD_NUMBER
+com.google.android.gms.signin.internal.zaa: android.os.Parcelable$Creator CREATOR
+androidx.fragment.app.FragmentManagerState: android.os.Parcelable$Creator CREATOR
+kotlinx.serialization.json.JsonArray: kotlinx.serialization.json.JsonArray$Companion Companion
+androidx.datastore.preferences.PreferencesProto$StringSet: int STRINGS_FIELD_NUMBER
+org.example.weathercrossplatform.domain.models.Condition: org.example.weathercrossplatform.domain.models.Condition$Companion Companion
+org.example.weathercrossplatform.domain.models.PhotoData: org.example.weathercrossplatform.domain.models.PhotoData$Companion Companion
+com.google.android.gms.internal.location.zzee: android.os.Parcelable$Creator CREATOR
+androidx.compose.runtime.ParcelableSnapshotMutableIntState: android.os.Parcelable$Creator CREATOR
+org.example.weathercrossplatform.domain.models.Forecast: org.example.weathercrossplatform.domain.models.Forecast$Companion Companion
+kotlinx.coroutines.internal.ResizableAtomicArray: java.util.concurrent.atomic.AtomicReferenceArray array
+kotlinx.coroutines.android.AndroidExceptionPreHandler: java.lang.Object _preHandler
+kotlinx.coroutines.scheduling.WorkQueue: int consumerIndex$volatile
+org.example.weathercrossplatform.domain.models.Current$$serializer: kotlinx.serialization.descriptors.SerialDescriptor descriptor
+kotlinx.coroutines.internal.LockFreeLinkedListNode: java.lang.Object _removedRef$volatile
+com.google.firebase.sessions.FirebaseSessionsRegistrar: com.google.firebase.components.Qualified firebaseApp
+kotlinx.coroutines.sync.MutexImpl: java.lang.Object owner$volatile
+com.google.firebase.sessions.FirebaseSessionsRegistrar: com.google.firebase.components.Qualified sessionsSettings
+com.google.android.gms.internal.location.zzl: android.os.Parcelable$Creator CREATOR
+androidx.datastore.preferences.PreferencesProto$Value: int BOOLEAN_FIELD_NUMBER
+kotlinx.coroutines.sync.SemaphoreAndMutexImpl: long deqIdx$volatile
+androidx.datastore.preferences.PreferencesProto$Value: int LONG_FIELD_NUMBER
+org.example.weathercrossplatform.domain.models.Condition$$serializer: kotlinx.serialization.descriptors.SerialDescriptor descriptor
+kotlinx.coroutines.ThreadState: int _state$volatile
+io.ktor.client.HttpClient: int closed
+com.google.android.gms.common.internal.GetServiceRequest: android.os.Parcelable$Creator CREATOR
+kotlinx.coroutines.JobSupport: java.lang.Object _parentHandle$volatile
+kotlinx.coroutines.internal.LimitedDispatcher: int runningWorkers$volatile
+org.example.weathercrossplatform.domain.models.Astro$$serializer: kotlinx.serialization.descriptors.SerialDescriptor descriptor
+kotlinx.coroutines.sync.SemaphoreAndMutexImpl: java.lang.Object tail$volatile
+kotlinx.coroutines.EventLoopImplBase$DelayedTask: java.lang.Object _heap
+org.example.weathercrossplatform.domain.models.Forecast$$serializer: kotlinx.serialization.descriptors.SerialDescriptor descriptor
+androidx.datastore.preferences.PreferencesProto$Value: int DOUBLE_FIELD_NUMBER
+com.google.android.gms.signin.internal.zai: android.os.Parcelable$Creator CREATOR
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event$Companion Companion
+com.google.android.gms.location.LocationRequest: android.os.Parcelable$Creator CREATOR
+org.example.weathercrossplatform.domain.models.Urls$$serializer: kotlinx.serialization.descriptors.SerialDescriptor descriptor
+com.google.firebase.sessions.FirebaseSessionsRegistrar: com.google.firebase.components.Qualified transportFactory
+org.example.weathercrossplatform.data.network.dto.ForecastDto: org.example.weathercrossplatform.data.network.dto.ForecastDto$Companion Companion
+com.google.android.gms.dynamite.DynamiteModule$DynamiteLoaderClassLoader: java.lang.ClassLoader sClassLoader
+kotlinx.coroutines.JobSupport$Finishing: int _isCompleting$volatile
+org.example.weathercrossplatform.domain.models.AirQuality$$serializer: kotlinx.serialization.descriptors.SerialDescriptor descriptor
+com.google.android.gms.common.ConnectionResult: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.signin.internal.zak: android.os.Parcelable$Creator CREATOR
+kotlinx.coroutines.channels.BufferedChannel: java.lang.Object closeHandler$volatile
+io.ktor.utils.io.ByteChannel: java.lang.Object suspensionSlot
+com.google.firebase.crashlytics.ktx.FirebaseCrashlyticsKtxRegistrar: com.google.firebase.crashlytics.ktx.FirebaseCrashlyticsKtxRegistrar$Companion Companion
+kotlinx.coroutines.scheduling.CoroutineScheduler: long parkedWorkersStack$volatile
+kotlinx.coroutines.scheduling.CoroutineScheduler$Worker: int indexInArray
+androidx.datastore.preferences.PreferencesProto$StringSet: androidx.datastore.preferences.PreferencesProto$StringSet DEFAULT_INSTANCE
+kotlin.SafePublicationLazyImpl: java.lang.Object _value
+com.google.firebase.sessions.FirebaseSessionsRegistrar: com.google.firebase.sessions.FirebaseSessionsRegistrar$Companion Companion
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event ON_CREATE
+kotlinx.coroutines.EventLoopImplBase: java.lang.Object _delayed$volatile
+androidx.concurrent.futures.AbstractResolvableFuture: androidx.concurrent.futures.AbstractResolvableFuture$Waiter waiters
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event[] $VALUES
+androidx.datastore.preferences.PreferencesProto$Value: int STRING_FIELD_NUMBER
+org.example.weathercrossplatform.domain.models.Routes$MainScreenRoute: org.example.weathercrossplatform.domain.models.Routes$MainScreenRoute$Companion Companion
+androidx.lifecycle.ProcessLifecycleOwner$attach$1: androidx.lifecycle.ProcessLifecycleOwner this$0
+androidx.compose.foundation.lazy.layout.DefaultLazyKey: android.os.Parcelable$Creator CREATOR
+androidx.lifecycle.ProcessLifecycleOwner$attach$1$onActivityPreCreated$1: androidx.lifecycle.ProcessLifecycleOwner this$0
+kotlinx.coroutines.scheduling.WorkQueue: int blockingTasksInBuffer$volatile
+androidx.lifecycle.Lifecycle$Event: kotlin.enums.EnumEntries $ENTRIES
+com.google.android.gms.common.internal.TelemetryData: android.os.Parcelable$Creator CREATOR
+org.example.weathercrossplatform.domain.models.Routes$MainScreenRoute$$serializer: kotlinx.serialization.descriptors.SerialDescriptor descriptor
+com.google.android.gms.location.LocationResult: android.os.Parcelable$Creator CREATOR
+kotlinx.coroutines.JobSupport$Finishing: java.lang.Object _rootCause$volatile
+org.example.weathercrossplatform.domain.models.Astro: org.example.weathercrossplatform.domain.models.Astro$Companion Companion
+com.google.firebase.sessions.FirebaseSessionsRegistrar: com.google.firebase.components.Qualified firebaseInstallationsApi
+androidx.concurrent.futures.AbstractResolvableFuture: androidx.concurrent.futures.AbstractResolvableFuture$Listener listeners
+androidx.activity.result.IntentSenderRequest: android.os.Parcelable$Creator CREATOR
+androidx.datastore.preferences.PreferencesProto$Value: java.lang.Object value_
+kotlinx.coroutines.internal.ConcurrentLinkedListNode: java.lang.Object _prev$volatile
+io.ktor.utils.io.pool.DefaultPool: long top
+kotlin.coroutines.SafeContinuation: java.lang.Object result
+androidx.lifecycle.ReportFragment$LifecycleCallbacks: androidx.lifecycle.ReportFragment$LifecycleCallbacks$Companion Companion
+androidx.datastore.preferences.PreferencesProto$StringSet: androidx.datastore.preferences.protobuf.Parser PARSER
+androidx.compose.runtime.ParcelableSnapshotMutableLongState: android.os.Parcelable$Creator CREATOR
+org.example.weathercrossplatform.domain.models.Day: org.example.weathercrossplatform.domain.models.Day$Companion Companion
+org.example.weathercrossplatform.data.network.dto.ImageListDto: org.example.weathercrossplatform.data.network.dto.ImageListDto$Companion Companion
+kotlinx.coroutines.internal.LockFreeLinkedListNode: java.lang.Object _prev$volatile
+io.ktor.util.collections.CopyOnWriteHashMap: java.lang.Object current
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event ON_RESUME
+kotlinx.coroutines.internal.LockFreeTaskQueueCore: long _state$volatile
+com.google.android.gms.common.internal.ConnectionTelemetryConfiguration: android.os.Parcelable$Creator CREATOR
+kotlinx.coroutines.flow.StateFlowImpl: java.lang.Object _state$volatile
+androidx.datastore.preferences.PreferencesProto$Value: int bitField0_
+com.google.android.gms.common.api.Scope: android.os.Parcelable$Creator CREATOR
+kotlinx.coroutines.channels.BufferedChannel: long receivers$volatile
+androidx.activity.result.ActivityResult: android.os.Parcelable$Creator CREATOR
+androidx.concurrent.futures.AbstractResolvableFuture: java.lang.Object value
+kotlinx.coroutines.CompletedExceptionally: int _handled$volatile
+io.ktor.utils.io.ByteChannel: java.lang.Object _closedCause
+com.google.firebase.sessions.FirebaseSessionsRegistrar: com.google.firebase.components.Qualified sessionLifecycleServiceBinder
+org.example.weathercrossplatform.domain.models.Urls: org.example.weathercrossplatform.domain.models.Urls$Companion Companion
+androidx.fragment.app.FragmentState: android.os.Parcelable$Creator CREATOR
+kotlinx.coroutines.scheduling.CoroutineScheduler: int _isTerminated$volatile
+kotlinx.coroutines.scheduling.CoroutineScheduler$Worker: java.lang.Object nextParkedWorker
+kotlinx.coroutines.JobSupport: java.lang.Object _state$volatile
+androidx.fragment.app.BackStackState: android.os.Parcelable$Creator CREATOR
+androidx.datastore.preferences.PreferencesProto$Value: int STRING_SET_FIELD_NUMBER
+io.ktor.util.pipeline.Pipeline: java.lang.Object interceptors$delegate
+kotlinx.coroutines.AwaitAll$AwaitAllNode: java.lang.Object _disposer$volatile
+com.google.firebase.crashlytics.FirebaseCrashlyticsKtxRegistrar: com.google.firebase.crashlytics.FirebaseCrashlyticsKtxRegistrar$Companion Companion
+kotlinx.coroutines.scheduling.WorkQueue: int producerIndex$volatile
+androidx.datastore.preferences.PreferencesProto$PreferenceMap: androidx.datastore.preferences.PreferencesProto$PreferenceMap DEFAULT_INSTANCE
+androidx.datastore.preferences.PreferencesProto$PreferenceMap: androidx.datastore.preferences.protobuf.MapFieldLite preferences_
+com.google.android.gms.common.internal.zat: android.os.Parcelable$Creator CREATOR
+androidx.versionedparcelable.ParcelImpl: android.os.Parcelable$Creator CREATOR
+kotlinx.coroutines.CancellableContinuationImpl: int _decisionAndIndex$volatile
+androidx.appcompat.widget.ActionBarContainer: void setStackedBackground(android.graphics.drawable.Drawable)
+androidx.appcompat.widget.Toolbar: void setTitleMarginEnd(int)
+androidx.core.view.WindowInsetsCompat$Impl29: WindowInsetsCompat$Impl29(androidx.core.view.WindowInsetsCompat,androidx.core.view.WindowInsetsCompat$Impl29)
+androidx.appcompat.view.menu.ListMenuItemView: void setTitle(java.lang.CharSequence)
+androidx.appcompat.widget.SearchView$Api29Impl: void setInputMethodMode(androidx.appcompat.widget.SearchView$SearchAutoComplete,int)
+androidx.core.view.WindowInsetsCompat$BuilderImpl20: WindowInsetsCompat$BuilderImpl20()
+androidx.appcompat.widget.Toolbar: android.view.Menu getMenu()
+androidx.compose.ui.platform.AndroidComposeView: androidx.collection.IntObjectMap getLayoutNodes()
+androidx.compose.foundation.text.HandleState: androidx.compose.foundation.text.HandleState valueOf(java.lang.String)
+androidx.appcompat.widget.ViewStubCompat: void setLayoutResource(int)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: void setScaleY(float)
+androidx.lifecycle.EmptyActivityLifecycleCallbacks: void onActivityResumed(android.app.Activity)
+androidx.appcompat.widget.Toolbar: void setPopupTheme(int)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPathRenderer: int getRootAlpha()
+androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper$Api23Impl: android.text.StaticLayout createStaticLayoutForMeasuring(java.lang.CharSequence,android.text.Layout$Alignment,int,int,android.widget.TextView,android.text.TextPaint,androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper$Impl)
+com.google.firebase.ktx.FirebaseCommonLegacyRegistrar: FirebaseCommonLegacyRegistrar()
+androidx.compose.ui.input.pointer.util.VelocityTracker1D$Strategy: androidx.compose.ui.input.pointer.util.VelocityTracker1D$Strategy[] values()
+androidx.core.app.NotificationCompat$BubbleMetadata$Api29Impl: android.app.Notification$BubbleMetadata toPlatform(androidx.core.app.NotificationCompat$BubbleMetadata)
+androidx.compose.ui.platform.CalculateMatrixToWindowApi29: void calculateMatrixToWindow-EL8BTi8(android.view.View,float[])
+androidx.compose.ui.platform.AbstractComposeView: void setTransitionGroup(boolean)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.platform.SoftwareKeyboardController getSoftwareKeyboardController()
+org.example.weathercrossplatform.domain.models.Forecast$Companion: kotlinx.serialization.KSerializer serializer()
+io.ktor.http.Url$Companion: kotlinx.serialization.KSerializer serializer()
+androidx.compose.foundation.text.KeyCommand: androidx.compose.foundation.text.KeyCommand[] values()
+coil3.size.Scale: coil3.size.Scale valueOf(java.lang.String)
+androidx.compose.ui.platform.AbstractComposeView: void setPreviousAttachedWindowToken(android.os.IBinder)
+android.support.v4.graphics.drawable.IconCompatParcelizer: androidx.core.graphics.drawable.IconCompat read(androidx.versionedparcelable.VersionedParcel)
+androidx.core.view.WindowInsetsCompat$Impl29: androidx.core.graphics.Insets getSystemGestureInsets()
+androidx.compose.ui.internal.InlineClassHelperKt: void throwIllegalStateException(java.lang.String)
+androidx.room.Transactor$SQLiteTransactionType: androidx.room.Transactor$SQLiteTransactionType valueOf(java.lang.String)
+androidx.core.view.WindowInsetsCompat$Impl20: androidx.core.graphics.Insets getVisibleInsets(android.view.View)
+com.google.firebase.installations.FirebaseInstallationsKtxRegistrar: FirebaseInstallationsKtxRegistrar()
+androidx.appcompat.view.menu.ActionMenuItemView: void setCheckable(boolean)
+androidx.compose.material3.tokens.ColorSchemeKeyTokens: androidx.compose.material3.tokens.ColorSchemeKeyTokens valueOf(java.lang.String)
+com.google.android.gms.common.api.GoogleApiActivity: GoogleApiActivity()
+androidx.core.view.WindowInsetsCompat$Impl: androidx.core.view.DisplayCutoutCompat getDisplayCutout()
+com.google.android.datatransport.runtime.backends.BackendResponse$Status: com.google.android.datatransport.runtime.backends.BackendResponse$Status[] values()
+androidx.compose.ui.window.PopupLayout: androidx.compose.ui.window.PopupPositionProvider getPositionProvider()
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.node.LayoutNode getRoot()
+androidx.compose.ui.window.PopupLayout: void setLayoutDirection(int)
+androidx.compose.ui.window.SecureFlagPolicy: androidx.compose.ui.window.SecureFlagPolicy[] values()
+androidx.compose.ui.platform.AbstractComposeView: void setShowLayoutBounds(boolean)
+androidx.lifecycle.ReportFragment$LifecycleCallbacks: void onActivityPaused(android.app.Activity)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPath: androidx.core.graphics.PathParser$PathDataNode[] getPathData()
+androidx.appcompat.widget.ButtonBarLayout: ButtonBarLayout(android.content.Context,android.util.AttributeSet)
+androidx.appcompat.view.menu.ActionMenuItemView: androidx.appcompat.view.menu.MenuItemImpl getItemData()
+androidx.appcompat.widget.AppCompatTextHelper$Api26Impl: void setAutoSizeTextTypeUniformWithPresetSizes(android.widget.TextView,int[],int)
+androidx.lifecycle.LegacySavedStateHandleController$OnRecreation: LegacySavedStateHandleController$OnRecreation()
+androidx.sqlite.driver.bundled.BundledSQLiteConnectionKt: long nativePrepare(long,java.lang.String)
+androidx.appcompat.widget.Toolbar: void setTitleTextColor(android.content.res.ColorStateList)
+androidx.appcompat.widget.AppCompatImageButton: void setSupportBackgroundTintMode(android.graphics.PorterDuff$Mode)
+androidx.appcompat.view.menu.ListMenuItemView: void setSubMenuArrowVisible(boolean)
+org.example.weathercrossplatform.domain.models.PhotoData$Companion: kotlinx.serialization.KSerializer serializer()
+androidx.appcompat.widget.LinearLayoutCompat: int getGravity()
+com.google.firebase.FirebaseCommonKtxRegistrar: java.util.List getComponents()
+androidx.core.view.WindowInsetsCompat$Impl30: WindowInsetsCompat$Impl30(androidx.core.view.WindowInsetsCompat,android.view.WindowInsets)
+com.google.android.gms.common.GooglePlayServicesMissingManifestValueException: GooglePlayServicesMissingManifestValueException()
+coil3.size.Precision: coil3.size.Precision[] values()
+androidx.appcompat.widget.Toolbar: void setLogoDescription(java.lang.CharSequence)
+androidx.appcompat.widget.ActionBarContextView: void setTitleOptional(boolean)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.unit.LayoutDirection getLayoutDirection()
+androidx.compose.ui.platform.actionmodecallback.MenuItemOption: androidx.compose.ui.platform.actionmodecallback.MenuItemOption valueOf(java.lang.String)
+androidx.appcompat.widget.AppCompatTextView: android.view.textclassifier.TextClassifier getTextClassifier()
+androidx.compose.ui.platform.DrawChildContainer: int getChildCount()
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event[] values()
+androidx.core.view.WindowInsetsCompat$Impl: void setStableInsets(androidx.core.graphics.Insets)
+androidx.emoji2.text.EmojiExclusions$EmojiExclusions_Api34: java.util.Set getExclusions()
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.draganddrop.DragAndDropManager getDragAndDropManager()
+androidx.core.view.WindowInsetsCompat$Impl28: WindowInsetsCompat$Impl28(androidx.core.view.WindowInsetsCompat,androidx.core.view.WindowInsetsCompat$Impl28)
+androidx.compose.ui.text.font.FontWeightAdjustmentHelperApi31: int fontWeightAdjustment(android.content.Context)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.draganddrop.AndroidDragAndDropManager getDragAndDropManager()
+androidx.appcompat.widget.AppCompatTextHelper$Api24Impl: android.os.LocaleList forLanguageTags(java.lang.String)
+androidx.appcompat.widget.AppCompatImageButton: void setBackgroundResource(int)
+androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper$Impl23: void computeAndSetTextDirection(android.text.StaticLayout$Builder,android.widget.TextView)
+kotlin.LazyThreadSafetyMode: kotlin.LazyThreadSafetyMode[] values()
+androidx.appcompat.widget.ContentFrameLayout: android.util.TypedValue getMinWidthMajor()
+androidx.appcompat.widget.AppCompatAutoCompleteTextView: android.view.ActionMode$Callback getCustomSelectionActionModeCallback()
+androidx.core.view.WindowInsetsCompat$BuilderImpl: WindowInsetsCompat$BuilderImpl()
+androidx.appcompat.widget.AppCompatImageView: android.graphics.PorterDuff$Mode getSupportImageTintMode()
+dev.icerock.moko.permissions.PermissionState: dev.icerock.moko.permissions.PermissionState[] values()
+androidx.compose.material3.ScaffoldLayoutContent: androidx.compose.material3.ScaffoldLayoutContent[] values()
+org.koin.core.logger.Level: org.koin.core.logger.Level[] values()
+androidx.compose.ui.platform.AndroidComposeView: android.view.View getView()
+androidx.appcompat.widget.ContentFrameLayout: ContentFrameLayout(android.content.Context,android.util.AttributeSet)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: void setTrimPathEnd(float)
+androidx.datastore.preferences.protobuf.JavaType: androidx.datastore.preferences.protobuf.JavaType valueOf(java.lang.String)
+androidx.appcompat.view.menu.ActionMenuItemView: void setIcon(android.graphics.drawable.Drawable)
+androidx.appcompat.widget.ActionBarContainer: void setTabContainer(androidx.appcompat.widget.ScrollingTabContainerView)
+androidx.compose.ui.platform.AndroidComposeView: androidx.collection.MutableIntObjectMap getLayoutNodes()
+androidx.core.app.RemoteActionCompatParcelizer: RemoteActionCompatParcelizer()
+androidx.appcompat.widget.ActionBarOverlayLayout: ActionBarOverlayLayout(android.content.Context,android.util.AttributeSet)
+androidx.appcompat.widget.Toolbar: androidx.appcompat.widget.DecorToolbar getWrapper()
+androidx.appcompat.widget.ActionBarOverlayLayout: void setIcon(android.graphics.drawable.Drawable)
+androidx.compose.ui.platform.ViewLayer: float getCameraDistancePx()
+androidx.appcompat.widget.ActionBarOverlayLayout: int getNestedScrollAxes()
+androidx.appcompat.widget.AppCompatImageView: void setSupportBackgroundTintList(android.content.res.ColorStateList)
+androidx.appcompat.widget.Toolbar: java.lang.CharSequence getTitle()
+androidx.core.view.WindowInsetsCompat$Impl20: void setRootViewData(androidx.core.graphics.Insets)
+com.google.firebase.sessions.LogEnvironment: com.google.firebase.sessions.LogEnvironment valueOf(java.lang.String)
+androidx.compose.ui.graphics.layer.ViewLayer: android.view.View getOwnerView()
+androidx.appcompat.widget.TooltipCompat$Api26Impl: void setTooltipText(android.view.View,java.lang.CharSequence)
+androidx.appcompat.widget.AppCompatImageButton: android.content.res.ColorStateList getSupportImageTintList()
+androidx.appcompat.widget.DropDownListView: void setListSelectionHidden(boolean)
+androidx.appcompat.widget.Toolbar: void setCollapseContentDescription(java.lang.CharSequence)
+androidx.core.view.WindowInsetsCompat$Impl21: void setStableInsets(androidx.core.graphics.Insets)
+androidx.core.view.WindowInsetsCompat$Impl20: WindowInsetsCompat$Impl20(androidx.core.view.WindowInsetsCompat,androidx.core.view.WindowInsetsCompat$Impl20)
+androidx.core.view.WindowInsetsCompat$Impl: boolean isVisible(int)
+androidx.compose.ui.contentcapture.AndroidContentCaptureManager$TranslateStatus: androidx.compose.ui.contentcapture.AndroidContentCaptureManager$TranslateStatus[] values()
+kotlin.collections.AbstractMutableSet: AbstractMutableSet()
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.spatial.RectManager getRectManager()
+androidx.compose.ui.platform.ComposeView: boolean getShouldCreateCompositionOnAttachedToWindow()
+androidx.appcompat.widget.AppCompatTextHelper$Api21Impl: java.util.Locale forLanguageTag(java.lang.String)
+androidx.compose.foundation.layout.internal.InlineClassHelperKt: void throwIllegalStateException(java.lang.String)
+androidx.core.view.WindowInsetsCompat$Impl: androidx.core.graphics.Insets getMandatorySystemGestureInsets()
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPath: java.lang.String getPathName()
+androidx.datastore.preferences.protobuf.FieldType: androidx.datastore.preferences.protobuf.FieldType valueOf(java.lang.String)
+androidx.lifecycle.ReportFragment$LifecycleCallbacks: void onActivityPrePaused(android.app.Activity)
+androidx.compose.ui.state.ToggleableState: androidx.compose.ui.state.ToggleableState[] values()
+androidx.appcompat.widget.Toolbar: void setNavigationContentDescription(int)
+org.jetbrains.compose.resources.ThemeQualifier: org.jetbrains.compose.resources.ThemeQualifier valueOf(java.lang.String)
+androidx.appcompat.widget.ActionBarContextView: int getContentHeight()
+androidx.appcompat.widget.AppCompatImageButton: void setImageLevel(int)
+androidx.datastore.preferences.protobuf.ProtoSyntax: androidx.datastore.preferences.protobuf.ProtoSyntax valueOf(java.lang.String)
+androidx.compose.ui.platform.AndroidComposeView: void setOnViewTreeOwnersAvailable(kotlin.jvm.functions.Function1)
+androidx.core.view.WindowInsetsCompat$Impl: androidx.core.view.WindowInsetsCompat inset(int,int,int,int)
+androidx.appcompat.widget.AppCompatTextView: int getAutoSizeMaxTextSize()
+androidx.core.view.WindowInsetsCompat$Impl20: boolean equals(java.lang.Object)
+androidx.compose.foundation.MutatePriority: androidx.compose.foundation.MutatePriority[] values()
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.platform.AndroidViewsHandler getAndroidViewsHandler$ui_release()
+org.koin.core.definition.Kind: org.koin.core.definition.Kind[] values()
+com.google.firebase.datatransport.TransportRegistrar: com.google.android.datatransport.TransportFactory lambda$getComponents$0(com.google.firebase.components.ComponentContainer)
+androidx.core.view.WindowInsetsCompat$Impl: androidx.core.graphics.Insets getSystemWindowInsets()
+androidx.compose.ui.platform.AbstractComposeView: boolean getHasComposition()
+androidx.appcompat.widget.Toolbar: int getCurrentContentInsetEnd()
+kotlinx.coroutines.selects.TrySelectDetailedResult: kotlinx.coroutines.selects.TrySelectDetailedResult valueOf(java.lang.String)
+io.ktor.client.plugins.logging.LogLevel: io.ktor.client.plugins.logging.LogLevel valueOf(java.lang.String)
+androidx.appcompat.widget.AppCompatTextView: void setTextFuture(java.util.concurrent.Future)
+io.ktor.util.date.Month: io.ktor.util.date.Month[] values()
+androidx.compose.ui.platform.AndroidComposeViewStartDragAndDropN: boolean startDragAndDrop(android.view.View,androidx.compose.ui.draganddrop.DragAndDropTransferData,androidx.compose.ui.draganddrop.ComposeDragShadowBuilder)
+androidx.compose.runtime.ComposerKt: void composeImmediateRuntimeError(java.lang.String)
+androidx.appcompat.widget.FitWindowsFrameLayout: void setOnFitSystemWindowsListener(androidx.appcompat.widget.FitWindowsViewGroup$OnFitSystemWindowsListener)
+com.google.firebase.provider.FirebaseInitProvider: FirebaseInitProvider()
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: float getPivotX()
+com.google.firebase.sessions.EventType: com.google.firebase.sessions.EventType[] values()
+com.google.firebase.sessions.FirebaseSessionsRegistrar: com.google.firebase.sessions.SessionFirelogPublisher getComponents$lambda$2(com.google.firebase.components.ComponentContainer)
+androidx.sqlite.driver.bundled.BundledSQLiteDriverKt: long nativeOpen(java.lang.String,int)
+androidx.appcompat.widget.AppCompatImageButton: void setBackgroundDrawable(android.graphics.drawable.Drawable)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.contentcapture.AndroidContentCaptureManager getContentCaptureManager$ui_release()
+androidx.appcompat.widget.Toolbar: int getContentInsetRight()
+androidx.compose.ui.graphics.layer.ViewLayer: void setCanUseCompositingLayer$ui_graphics_release(boolean)
+androidx.appcompat.widget.Toolbar: java.lang.CharSequence getCollapseContentDescription()
+com.google.android.gms.common.api.internal.zzb: zzb()
+androidx.compose.foundation.layout.IntrinsicSize: androidx.compose.foundation.layout.IntrinsicSize valueOf(java.lang.String)
+androidx.graphics.path.PathIteratorPreApi34Impl: long createInternalPathIterator(android.graphics.Path,int,float)
+androidx.appcompat.resources.Compatibility$Api21Impl: android.graphics.drawable.Drawable createFromXmlInner(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)
+com.google.firebase.installations.remote.TokenResult$ResponseCode: com.google.firebase.installations.remote.TokenResult$ResponseCode[] values()
+androidx.compose.ui.input.pointer.PointerEventPass: androidx.compose.ui.input.pointer.PointerEventPass[] values()
+com.google.firebase.crashlytics.ktx.FirebaseCrashlyticsLegacyRegistrar: java.util.List getComponents()
+androidx.core.view.WindowInsetsCompat$Impl29: androidx.core.graphics.Insets getMandatorySystemGestureInsets()
+com.google.firebase.installations.FirebaseInstallationsRegistrar: FirebaseInstallationsRegistrar()
+androidx.compose.ui.platform.TextToolbarStatus: androidx.compose.ui.platform.TextToolbarStatus valueOf(java.lang.String)
+androidx.compose.ui.internal.InlineClassHelperKt: java.lang.Void throwIllegalStateExceptionForNullCheck(java.lang.String)
+kotlin.LazyThreadSafetyMode: kotlin.LazyThreadSafetyMode valueOf(java.lang.String)
+androidx.compose.runtime.InvalidationResult: androidx.compose.runtime.InvalidationResult valueOf(java.lang.String)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.input.pointer.PointerIconService getPointerIconService()
+androidx.core.view.WindowInsetsCompat$Impl: boolean isConsumed()
+androidx.lifecycle.EmptyActivityLifecycleCallbacks: void onActivitySaveInstanceState(android.app.Activity,android.os.Bundle)
+androidx.appcompat.widget.ActionBarOverlayLayout: java.lang.CharSequence getTitle()
+androidx.datastore.preferences.protobuf.FieldType: androidx.datastore.preferences.protobuf.FieldType[] values()
+kotlinx.coroutines.channels.BufferOverflow: kotlinx.coroutines.channels.BufferOverflow valueOf(java.lang.String)
+androidx.appcompat.view.menu.ActionMenuItemView: ActionMenuItemView(android.content.Context,android.util.AttributeSet)
+org.example.weathercrossplatform.MyApp: MyApp()
+androidx.appcompat.widget.Toolbar: java.lang.CharSequence getSubtitle()
+androidx.compose.runtime.SlotTableKt: void throwConcurrentModificationException()
+androidx.lifecycle.SavedStateHandlesVM: SavedStateHandlesVM()
+androidx.appcompat.widget.AppCompatTextView: void setLineHeight(int)
+androidx.core.view.WindowInsetsCompat$BuilderImpl: void setInsets(int,androidx.core.graphics.Insets)
+androidx.compose.ui.input.pointer.PointerEventPass: androidx.compose.ui.input.pointer.PointerEventPass valueOf(java.lang.String)
+androidx.appcompat.widget.LinearLayoutCompat: float getWeightSum()
+kotlinx.coroutines.channels.BufferOverflow: kotlinx.coroutines.channels.BufferOverflow[] values()
+androidx.core.view.WindowInsetsCompat$Impl20: void setOverriddenInsets(androidx.core.graphics.Insets[])
+androidx.appcompat.widget.LinearLayoutCompat: int getDividerWidth()
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: int getStrokeColor()
+androidx.compose.runtime.InvalidationResult: androidx.compose.runtime.InvalidationResult[] values()
+com.google.firebase.crashlytics.FirebaseCrashlyticsKtxRegistrar: java.util.List getComponents()
+androidx.appcompat.widget.ActionBarOverlayLayout: void setUiOptions(int)
+androidx.core.view.WindowInsetsCompat$BuilderImpl29: WindowInsetsCompat$BuilderImpl29(androidx.core.view.WindowInsetsCompat)
+androidx.core.view.WindowInsetsCompat$BuilderImpl: void setStableInsets(androidx.core.graphics.Insets)
+androidx.datastore.preferences.protobuf.JavaType: androidx.datastore.preferences.protobuf.JavaType[] values()
+androidx.compose.ui.platform.AndroidComposeView: void setContentCaptureManager$ui_release(androidx.compose.ui.contentcapture.AndroidContentCaptureManager)
+androidx.compose.runtime.PreconditionsKt: void throwIllegalArgumentException(java.lang.String)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VectorDrawableDelegateState: int getChangingConfigurations()
+androidx.appcompat.widget.Toolbar: android.view.MenuInflater getMenuInflater()
+androidx.core.app.RemoteActionCompatParcelizer: void write(androidx.core.app.RemoteActionCompat,androidx.versionedparcelable.VersionedParcel)
+com.google.firebase.datatransport.TransportRegistrar: java.util.List getComponents()
+androidx.core.view.WindowInsetsCompat$Impl: WindowInsetsCompat$Impl(androidx.core.view.WindowInsetsCompat)
+io.ktor.util.date.GMTDate$Companion: kotlinx.serialization.KSerializer serializer()
+androidx.datastore.preferences.PreferencesProto$Value$ValueCase: androidx.datastore.preferences.PreferencesProto$Value$ValueCase valueOf(java.lang.String)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.autofill.AndroidAutofillManager get_autofillManager$ui_release()
+androidx.appcompat.widget.LinearLayoutCompat: int getShowDividers()
+androidx.appcompat.widget.Toolbar: android.graphics.drawable.Drawable getCollapseIcon()
+androidx.appcompat.widget.LinearLayoutCompat: void setHorizontalGravity(int)
+androidx.core.view.WindowInsetsCompat$Impl: int hashCode()
+androidx.compose.ui.text.AnnotationType: androidx.compose.ui.text.AnnotationType valueOf(java.lang.String)
+androidx.appcompat.widget.ContentFrameLayout: android.util.TypedValue getFixedWidthMinor()
+androidx.appcompat.view.menu.ActionMenuItemView: void setItemInvoker(androidx.appcompat.view.menu.MenuBuilder$ItemInvoker)
+androidx.lifecycle.ProcessLifecycleOwner$attach$1$onActivityPreCreated$1: void onActivityPostStarted(android.app.Activity)
+androidx.core.widget.NestedScrollView: NestedScrollView(android.content.Context,android.util.AttributeSet)
+kotlinx.coroutines.CoroutineStart: kotlinx.coroutines.CoroutineStart[] values()
+androidx.appcompat.widget.AppCompatImageButton: android.content.res.ColorStateList getSupportBackgroundTintList()
+okhttp3.TlsVersion: okhttp3.TlsVersion[] values()
+androidx.core.view.WindowInsetsCompat$BuilderImpl20: void setStableInsets(androidx.core.graphics.Insets)
+androidx.compose.ui.window.PopupLayout: androidx.compose.ui.platform.AbstractComposeView getSubCompositionView()
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.layout.Placeable$PlacementScope getPlacementScope()
+androidx.compose.ui.window.PopupLayout: android.view.View getViewRoot()
+androidx.appcompat.view.menu.ListMenuItemView: ListMenuItemView(android.content.Context,android.util.AttributeSet)
+androidx.compose.ui.window.PopupLayout: kotlin.jvm.functions.Function2 getContent()
+androidx.appcompat.widget.AppCompatAutoCompleteTextView: void setDropDownBackgroundResource(int)
+kotlin.random.Random: Random()
+androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper$Impl: void computeAndSetTextDirection(android.text.StaticLayout$Builder,android.widget.TextView)
+kotlinx.coroutines.android.AndroidDispatcherFactory: AndroidDispatcherFactory()
+androidx.fragment.app.FragmentContainerView: androidx.fragment.app.Fragment getFragment()
+androidx.appcompat.widget.AppCompatTextView: void setFirstBaselineToTopHeight(int)
+androidx.appcompat.widget.ActionMenuView: void setOverflowIcon(android.graphics.drawable.Drawable)
+androidx.appcompat.widget.Toolbar: void setSubtitle(int)
+androidx.compose.runtime.Recomposer$State: androidx.compose.runtime.Recomposer$State valueOf(java.lang.String)
+com.google.firebase.sessions.EventType: com.google.firebase.sessions.EventType valueOf(java.lang.String)
+androidx.appcompat.resources.Compatibility$Api21Impl: int getChangingConfigurations(android.content.res.TypedArray)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: float getStrokeAlpha()
+io.ktor.websocket.CloseReason$Codes: io.ktor.websocket.CloseReason$Codes valueOf(java.lang.String)
+androidx.appcompat.widget.AppCompatTextView: void setTextMetricsParamsCompat(androidx.core.text.PrecomputedTextCompat$Params)
+androidx.appcompat.view.menu.ListMenuItemView: void setChecked(boolean)
+androidx.compose.ui.unit.LayoutDirection: androidx.compose.ui.unit.LayoutDirection valueOf(java.lang.String)
+androidx.compose.ui.node.LookaheadPassDelegate$PlacedState: androidx.compose.ui.node.LookaheadPassDelegate$PlacedState[] values()
+androidx.compose.ui.text.style.ResolvedTextDirection: androidx.compose.ui.text.style.ResolvedTextDirection valueOf(java.lang.String)
+androidx.appcompat.widget.AppCompatImageView: android.content.res.ColorStateList getSupportBackgroundTintList()
+androidx.compose.ui.text.input.TextInputServiceAndroid$TextInputCommand: androidx.compose.ui.text.input.TextInputServiceAndroid$TextInputCommand valueOf(java.lang.String)
+androidx.core.view.WindowInsetsCompat$Impl20: androidx.core.graphics.Insets getSystemWindowInsets()
+androidx.compose.material3.tokens.ShapeKeyTokens: androidx.compose.material3.tokens.ShapeKeyTokens[] values()
+androidx.appcompat.widget.Toolbar: android.content.Context getPopupContext()
+org.jetbrains.compose.resources.DensityQualifier: org.jetbrains.compose.resources.DensityQualifier valueOf(java.lang.String)
+org.example.weathercrossplatform.data.utils.NetworkError: org.example.weathercrossplatform.data.utils.NetworkError[] values()
+androidx.fragment.app.FragmentContainerView: void setOnApplyWindowInsetsListener(android.view.View$OnApplyWindowInsetsListener)
+androidx.core.view.WindowInsetsCompat$Impl: void setRootWindowInsets(androidx.core.view.WindowInsetsCompat)
+androidx.core.view.WindowInsetsCompat$Impl21: WindowInsetsCompat$Impl21(androidx.core.view.WindowInsetsCompat,androidx.core.view.WindowInsetsCompat$Impl21)
+androidx.compose.ui.platform.AndroidComposeView: kotlin.coroutines.CoroutineContext getCoroutineContext()
+androidx.appcompat.widget.AppCompatTextView: void setSupportCompoundDrawablesTintMode(android.graphics.PorterDuff$Mode)
+androidx.appcompat.widget.AppCompatImageButton: void setImageBitmap(android.graphics.Bitmap)
+androidx.compose.ui.graphics.InlineClassHelperKt: void throwIllegalArgumentException(java.lang.String)
+androidx.sqlite.driver.bundled.BundledSQLiteStatementKt: void nativeClose(long)
+androidx.appcompat.widget.ActionBarContextView: void setCustomView(android.view.View)
+androidx.appcompat.widget.ActionBarContextView: void setTitle(java.lang.CharSequence)
+com.google.firebase.crashlytics.ktx.FirebaseCrashlyticsKtxRegistrar: FirebaseCrashlyticsKtxRegistrar()
+androidx.sqlite.driver.bundled.BundledSQLiteStatementKt: void nativeBindText(long,int,java.lang.String)
+androidx.core.view.WindowInsetsCompat$Impl28: boolean equals(java.lang.Object)
+androidx.compose.ui.platform.AndroidComposeView: void setFontFamilyResolver(androidx.compose.ui.text.font.FontFamily$Resolver)
+androidx.lifecycle.EmptyActivityLifecycleCallbacks: void onActivityStopped(android.app.Activity)
+kotlinx.serialization.json.JsonObject$Companion: kotlinx.serialization.KSerializer serializer()
+androidx.compose.ui.platform.AbstractComposeView: void getDisposeViewCompositionStrategy$annotations()
+androidx.appcompat.widget.Toolbar: void setOnMenuItemClickListener(androidx.appcompat.widget.Toolbar$OnMenuItemClickListener)
+androidx.lifecycle.ProcessLifecycleOwner$attach$1: ProcessLifecycleOwner$attach$1(androidx.lifecycle.ProcessLifecycleOwner)
+com.google.firebase.encoders.proto.Protobuf$IntEncoding: com.google.firebase.encoders.proto.Protobuf$IntEncoding valueOf(java.lang.String)
+androidx.appcompat.widget.Toolbar: void setNavigationOnClickListener(android.view.View$OnClickListener)
+androidx.compose.ui.graphics.Path$Direction: androidx.compose.ui.graphics.Path$Direction[] values()
+androidx.compose.ui.layout.IntrinsicWidthHeight: androidx.compose.ui.layout.IntrinsicWidthHeight valueOf(java.lang.String)
+androidx.core.widget.NestedScrollView: int getNestedScrollAxes()
+androidx.compose.ui.input.pointer.PointerInputEventHandler: java.lang.Object invoke(androidx.compose.ui.input.pointer.PointerInputScope,kotlin.coroutines.Continuation)
+androidx.fragment.app.DialogFragment: DialogFragment()
+androidx.appcompat.widget.LinearLayoutCompat: int getVirtualChildCount()
+androidx.appcompat.widget.ActionBarContextView: java.lang.CharSequence getSubtitle()
+androidx.core.view.ViewCompat$Api29Impl: android.view.View$AccessibilityDelegate getAccessibilityDelegate(android.view.View)
+androidx.lifecycle.ProcessLifecycleOwner$attach$1: void onActivityCreated(android.app.Activity,android.os.Bundle)
+androidx.appcompat.widget.AppCompatTextView: void setEmojiCompatEnabled(boolean)
+androidx.core.widget.NestedScrollView: float getTopFadingEdgeStrength()
+androidx.compose.ui.platform.AndroidComposeView: boolean getScrollCaptureInProgress$ui_release()
+androidx.compose.ui.platform.ViewLayer: void setInvalidated(boolean)
+androidx.core.view.WindowInsetsCompat$BuilderImpl20: androidx.core.view.WindowInsetsCompat build()
+org.example.weathercrossplatform.domain.models.Astro$Companion: kotlinx.serialization.KSerializer serializer()
+org.example.weathercrossplatform.domain.models.AirQuality$Companion: kotlinx.serialization.KSerializer serializer()
+androidx.compose.ui.window.PopupLayout: androidx.compose.ui.layout.LayoutCoordinates getParentLayoutCoordinates()
+androidx.core.widget.NestedScrollView: void setNestedScrollingEnabled(boolean)
+androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper$Impl: AppCompatTextViewAutoSizeHelper$Impl()
+androidx.compose.ui.platform.AndroidComposeView: void setShowLayoutBounds(boolean)
+androidx.appcompat.widget.Toolbar: android.widget.TextView getSubtitleTextView()
+org.slf4j.helpers.Reporter$TargetChoice: org.slf4j.helpers.Reporter$TargetChoice valueOf(java.lang.String)
+com.google.firebase.installations.ktx.FirebaseInstallationsKtxRegistrar: FirebaseInstallationsKtxRegistrar()
+androidx.lifecycle.EmptyActivityLifecycleCallbacks: void onActivityDestroyed(android.app.Activity)
+androidx.core.app.CoreComponentFactory: CoreComponentFactory()
+androidx.compose.ui.window.PopupLayout: void setTestTag(java.lang.String)
+androidx.compose.ui.window.PopupLayout: androidx.compose.ui.unit.IntRect getVisibleDisplayBounds()
+androidx.compose.ui.text.input.TextInputServiceAndroid$TextInputCommand: androidx.compose.ui.text.input.TextInputServiceAndroid$TextInputCommand[] values()
+androidx.appcompat.widget.ContentFrameLayout: android.util.TypedValue getFixedWidthMajor()
+io.ktor.websocket.FrameType: io.ktor.websocket.FrameType valueOf(java.lang.String)
+com.google.firebase.crashlytics.internal.common.CommonUtils$Architecture: com.google.firebase.crashlytics.internal.common.CommonUtils$Architecture[] values()
+androidx.appcompat.widget.ActionBarContextView: ActionBarContextView(android.content.Context,android.util.AttributeSet)
+androidx.appcompat.widget.Toolbar: void setTitleMarginBottom(int)
+androidx.core.view.ViewCompat$Api28Impl: void setScreenReaderFocusable(android.view.View,boolean)
+androidx.appcompat.widget.AppCompatAutoCompleteTextView: android.graphics.PorterDuff$Mode getSupportCompoundDrawablesTintMode()
+io.ktor.client.engine.okhttp.OkHttpEngineContainer: OkHttpEngineContainer()
+androidx.appcompat.widget.DialogTitle: DialogTitle(android.content.Context,android.util.AttributeSet)
+androidx.lifecycle.ReportFragment$LifecycleCallbacks: void onActivityStopped(android.app.Activity)
+androidx.compose.material3.internal.TextFieldType: androidx.compose.material3.internal.TextFieldType[] values()
+androidx.compose.ui.internal.InlineClassHelperKt: void throwIllegalArgumentException(java.lang.String)
+androidx.appcompat.widget.ViewStubCompat: ViewStubCompat(android.content.Context,android.util.AttributeSet)
+androidx.navigation.compose.ComposeNavigator: ComposeNavigator()
+androidx.navigation.internal.NavBackStackEntryImpl$SavedStateViewModel: NavBackStackEntryImpl$SavedStateViewModel(androidx.lifecycle.SavedStateHandle)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: void setStrokeWidth(float)
+androidx.compose.foundation.text.Handle: androidx.compose.foundation.text.Handle valueOf(java.lang.String)
+com.google.firebase.FirebaseCommonKtxRegistrar: FirebaseCommonKtxRegistrar()
+androidx.appcompat.widget.ActionBarOverlayLayout: void setWindowTitle(java.lang.CharSequence)
+androidx.compose.foundation.text.Handle: androidx.compose.foundation.text.Handle[] values()
+com.google.firebase.crashlytics.FirebaseCrashlyticsKtxRegistrar: FirebaseCrashlyticsKtxRegistrar()
+androidx.core.view.WindowInsetsCompat$Impl28: androidx.core.view.WindowInsetsCompat consumeDisplayCutout()
+androidx.core.view.WindowInsetsCompat$Impl: androidx.core.view.WindowInsetsCompat consumeStableInsets()
+androidx.appcompat.widget.Toolbar: void setTitle(int)
+androidx.appcompat.widget.ActionMenuView: ActionMenuView(android.content.Context,android.util.AttributeSet)
+androidx.core.view.WindowInsetsCompat$Impl: androidx.core.graphics.Insets getInsetsIgnoringVisibility(int)
+androidx.core.view.ViewCompat$Api21Impl: void callCompatInsetAnimationCallback(android.view.WindowInsets,android.view.View)
+com.google.android.datatransport.runtime.scheduling.jobscheduling.SchedulerConfig$Flag: com.google.android.datatransport.runtime.scheduling.jobscheduling.SchedulerConfig$Flag[] values()
+org.example.weathercrossplatform.domain.models.Routes$SearchScreenRoute$Companion: kotlinx.serialization.KSerializer serializer()
+androidx.core.widget.NestedScrollView: void setFillViewport(boolean)
+androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper$Impl23: AppCompatTextViewAutoSizeHelper$Impl23()
+androidx.compose.foundation.layout.internal.InlineClassHelperKt: void throwIllegalArgumentException(java.lang.String)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPathRenderer: void setAlpha(float)
+androidx.core.view.ViewCompat$Api28Impl: boolean isAccessibilityHeading(android.view.View)
+androidx.appcompat.widget.ContentFrameLayout: void setAttachListener(androidx.appcompat.widget.ContentFrameLayout$OnAttachListener)
+androidx.appcompat.widget.AppCompatAutoCompleteTextView: android.content.res.ColorStateList getSupportCompoundDrawablesTintList()
+androidx.appcompat.widget.Toolbar: void setLogo(android.graphics.drawable.Drawable)
+kotlin.collections.AbstractList: AbstractList()
+androidx.compose.ui.platform.AbstractComposeView: void getShowLayoutBounds$annotations()
+androidx.appcompat.widget.Toolbar: void setTitleTextColor(int)
+okhttp3.Protocol: okhttp3.Protocol valueOf(java.lang.String)
+com.google.android.datatransport.cct.internal.QosTier: com.google.android.datatransport.cct.internal.QosTier valueOf(java.lang.String)
+androidx.graphics.path.PathIteratorPreApi34Impl: int internalPathIteratorPeek(long)
+androidx.appcompat.widget.AppCompatTextView: void setSupportCompoundDrawablesTintList(android.content.res.ColorStateList)
+androidx.appcompat.widget.Toolbar: void setCollapseIcon(android.graphics.drawable.Drawable)
+androidx.core.view.WindowInsetsCompat$Impl: androidx.core.graphics.Insets getInsets(int)
+androidx.appcompat.widget.Toolbar$Api33Impl: android.window.OnBackInvokedCallback newOnBackInvokedCallback(java.lang.Runnable)
+com.google.android.datatransport.runtime.firebase.transport.LogEventDropped$Reason: com.google.android.datatransport.runtime.firebase.transport.LogEventDropped$Reason valueOf(java.lang.String)
+androidx.graphics.path.PathIteratorPreApi34Impl: int internalPathIteratorSize(long)
+androidx.appcompat.widget.ActionBarContextView: int getAnimatedVisibility()
+androidx.core.view.WindowInsetsCompat$Impl20: void loadReflectionField()
+androidx.core.view.ViewCompat$Api28Impl: void setAccessibilityPaneTitle(android.view.View,java.lang.CharSequence)
+androidx.datastore.preferences.protobuf.GeneratedMessageLite$MethodToInvoke: androidx.datastore.preferences.protobuf.GeneratedMessageLite$MethodToInvoke[] values()
+androidx.compose.ui.platform.ViewLayer: androidx.compose.ui.platform.AndroidComposeView getOwnerView()
+androidx.appcompat.view.menu.ListMenuItemView: android.view.LayoutInflater getInflater()
+com.google.firebase.sessions.FirebaseSessionsRegistrar: com.google.firebase.sessions.SessionLifecycleServiceBinder getComponents$lambda$5(com.google.firebase.components.ComponentContainer)
+androidx.compose.runtime.ComposerKt: java.lang.Void composeRuntimeError(java.lang.String)
+androidx.appcompat.widget.Toolbar: void setContentInsetEndWithActions(int)
+androidx.appcompat.widget.ContentFrameLayout: android.util.TypedValue getMinWidthMinor()
+androidx.core.view.WindowInsetsCompat$Impl30: androidx.core.graphics.Insets getInsets(int)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: float getScaleX()
+androidx.core.view.WindowInsetsCompat$Impl29: androidx.core.view.WindowInsetsCompat inset(int,int,int,int)
+androidx.compose.runtime.collection.MutableVectorKt: void throwListIndexOutOfBoundsException(int,int)
+android.support.v4.app.RemoteActionCompatParcelizer: androidx.core.app.RemoteActionCompat read(androidx.versionedparcelable.VersionedParcel)
+androidx.core.view.WindowInsetsCompat$BuilderImpl30: void setInsets(int,androidx.core.graphics.Insets)
+androidx.compose.ui.window.PopupLayout: java.lang.String getTestTag()
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPathRenderer: float getAlpha()
+com.google.android.datatransport.cct.internal.NetworkConnectionInfo$NetworkType: com.google.android.datatransport.cct.internal.NetworkConnectionInfo$NetworkType valueOf(java.lang.String)
+com.google.android.datatransport.cct.internal.QosTier: com.google.android.datatransport.cct.internal.QosTier[] values()
+kotlinx.serialization.json.JsonPrimitive: JsonPrimitive()
+kotlinx.serialization.json.DecodeSequenceMode: kotlinx.serialization.json.DecodeSequenceMode valueOf(java.lang.String)
+androidx.appcompat.widget.ButtonBarLayout: void setStacked(boolean)
+androidx.room.ObservedTableStates$ObserveOp: androidx.room.ObservedTableStates$ObserveOp[] values()
+androidx.appcompat.widget.AppCompatAutoCompleteTextView: void setSupportBackgroundTintMode(android.graphics.PorterDuff$Mode)
+androidx.compose.ui.platform.AndroidComposeView: void setLastMatrixRecalculationAnimationTime$ui_release(long)
+androidx.appcompat.widget.AppCompatTextHelper$Api28Impl: android.graphics.Typeface create(android.graphics.Typeface,int,boolean)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: void setTranslateX(float)
+androidx.compose.ui.platform.ViewLayer: void setCameraDistancePx(float)
+com.google.firebase.installations.remote.InstallationResponse$ResponseCode: com.google.firebase.installations.remote.InstallationResponse$ResponseCode valueOf(java.lang.String)
+io.ktor.client.plugins.logging.LogLevel: io.ktor.client.plugins.logging.LogLevel[] values()
+coil3.decode.DataSource: coil3.decode.DataSource valueOf(java.lang.String)
+androidx.core.view.WindowInsetsCompat$Impl30: WindowInsetsCompat$Impl30(androidx.core.view.WindowInsetsCompat,androidx.core.view.WindowInsetsCompat$Impl30)
+androidx.appcompat.widget.Toolbar$Api33Impl: void tryUnregisterOnBackInvokedCallback(java.lang.Object,java.lang.Object)
+androidx.appcompat.widget.LinearLayoutCompat: int getDividerPadding()
+androidx.appcompat.widget.AppCompatAutoCompleteTextView: void setBackgroundDrawable(android.graphics.drawable.Drawable)
+androidx.appcompat.widget.Toolbar: void setCollapseIcon(int)
+androidx.appcompat.widget.AppCompatImageButton: void setSupportBackgroundTintList(android.content.res.ColorStateList)
+kotlinx.coroutines.scheduling.CoroutineScheduler$WorkerState: kotlinx.coroutines.scheduling.CoroutineScheduler$WorkerState[] values()
+androidx.compose.ui.platform.ViewLayer: long getOwnerViewId()
+androidx.compose.ui.platform.AndroidComposeViewForceDarkModeQ: void disallowForceDark(android.view.View)
+io.ktor.client.plugins.logging.LoggingFormat: io.ktor.client.plugins.logging.LoggingFormat valueOf(java.lang.String)
+kotlinx.serialization.json.DecodeSequenceMode: kotlinx.serialization.json.DecodeSequenceMode[] values()
+androidx.core.view.WindowInsetsCompat$Impl28: androidx.core.view.DisplayCutoutCompat getDisplayCutout()
+androidx.appcompat.widget.ActionBarContextView: void setSubtitle(java.lang.CharSequence)
+androidx.core.view.WindowInsetsCompat$Impl20: boolean isRound()
+android.support.v4.app.RemoteActionCompatParcelizer: void write(androidx.core.app.RemoteActionCompat,androidx.versionedparcelable.VersionedParcel)
+io.ktor.serialization.kotlinx.json.KotlinxSerializationJsonExtensionProvider: KotlinxSerializationJsonExtensionProvider()
+androidx.appcompat.widget.SearchView$SearchAutoComplete: void setThreshold(int)
+okhttp3.Protocol: okhttp3.Protocol[] values()
+androidx.compose.ui.platform.AndroidComposeView: void getShowLayoutBounds$annotations()
+androidx.appcompat.widget.ActionBarContainer: android.view.View getTabContainer()
+io.ktor.websocket.FrameType: io.ktor.websocket.FrameType[] values()
+androidx.compose.animation.core.AnimationEndReason: androidx.compose.animation.core.AnimationEndReason[] values()
+androidx.compose.material3.tokens.ShapeKeyTokens: androidx.compose.material3.tokens.ShapeKeyTokens valueOf(java.lang.String)
+androidx.core.view.ViewCompat$Api23Impl: androidx.core.view.WindowInsetsCompat getRootWindowInsets(android.view.View)
+io.ktor.util.date.WeekDay: io.ktor.util.date.WeekDay[] values()
+com.google.firebase.components.ComponentDiscoveryService: ComponentDiscoveryService()
+com.google.android.datatransport.cct.CctBackendFactory: com.google.android.datatransport.runtime.backends.TransportBackend create(com.google.android.datatransport.runtime.backends.CreationContext)
+androidx.lifecycle.ReportFragment: ReportFragment()
+androidx.compose.ui.platform.AndroidComposeViewTranslationCallbackS: void clearViewTranslationCallback(android.view.View)
+androidx.appcompat.widget.Toolbar: void setContentInsetStartWithNavigation(int)
+androidx.appcompat.widget.FitWindowsLinearLayout: void setOnFitSystemWindowsListener(androidx.appcompat.widget.FitWindowsViewGroup$OnFitSystemWindowsListener)
+androidx.compose.ui.unit.InlineClassHelperKt: void throwIllegalArgumentException(java.lang.String)
+androidx.fragment.app.strictmode.FragmentStrictMode$Flag: androidx.fragment.app.strictmode.FragmentStrictMode$Flag[] values()
+androidx.appcompat.widget.AppCompatAutoCompleteTextView: void setSupportCompoundDrawablesTintMode(android.graphics.PorterDuff$Mode)
+coil3.request.CachePolicy: coil3.request.CachePolicy[] values()
+androidx.appcompat.widget.AppCompatTextHelper$Api26Impl: int getAutoSizeStepGranularity(android.widget.TextView)
+androidx.compose.ui.platform.AbstractComposeView: void setViewCompositionStrategy(androidx.compose.ui.platform.ViewCompositionStrategy)
+com.google.firebase.ktx.FirebaseCommonKtxRegistrar: java.util.List getComponents()
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.focus.FocusOwner getFocusOwner()
+androidx.appcompat.widget.ViewStubCompat: void setVisibility(int)
+androidx.compose.ui.platform.ComposeView: java.lang.CharSequence getAccessibilityClassName()
+androidx.core.view.WindowInsetsCompat$Impl30: void copyRootViewBounds(android.view.View)
+com.google.firebase.concurrent.ExecutorsRegistrar: ExecutorsRegistrar()
+androidx.compose.ui.platform.AndroidComposeView: void set_viewTreeOwners(androidx.compose.ui.platform.AndroidComposeView$ViewTreeOwners)
+androidx.compose.ui.platform.AndroidComposeView: void getLastMatrixRecalculationAnimationTime$ui_release$annotations()
+androidx.compose.ui.window.SecureFlagPolicy: androidx.compose.ui.window.SecureFlagPolicy valueOf(java.lang.String)
+androidx.appcompat.widget.AppCompatTextView: android.view.ActionMode$Callback getCustomSelectionActionModeCallback()
+androidx.core.view.ViewCompat$Api21Impl: void stopNestedScroll(android.view.View)
+androidx.compose.animation.core.PreconditionsKt: void throwIllegalStateException(java.lang.String)
+androidx.compose.runtime.collection.MutableVectorKt: void throwNegativeIndexException(int)
+androidx.compose.ui.window.PopupLayout: androidx.compose.ui.unit.LayoutDirection getParentLayoutDirection()
+androidx.appcompat.widget.ActionBarOverlayLayout: void setHideOnContentScrollEnabled(boolean)
+androidx.appcompat.widget.ActionMenuView: void setPopupTheme(int)
+androidx.lifecycle.ProcessLifecycleOwner$attach$1: void onActivityStopped(android.app.Activity)
+androidx.compose.ui.platform.AndroidViewsHandler: java.util.HashMap getHolderToLayoutNode()
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.platform.AccessibilityManager getAccessibilityManager()
+androidx.core.view.WindowInsetsCompat$Impl20: androidx.core.graphics.Insets getInsetsIgnoringVisibility(int)
+com.google.firebase.sessions.FirebaseSessionsRegistrar: java.util.List getComponents()
+androidx.compose.ui.graphics.layer.ViewLayer: androidx.compose.ui.graphics.CanvasHolder getCanvasHolder()
+androidx.compose.foundation.layout.Direction: androidx.compose.foundation.layout.Direction valueOf(java.lang.String)
+androidx.appcompat.widget.MenuPopupWindow$MenuDropDownListView: void setSelector(android.graphics.drawable.Drawable)
+com.google.firebase.sessions.SessionLifecycleService: SessionLifecycleService()
+androidx.appcompat.widget.MenuPopupWindow$MenuDropDownListView: void setHoverListener(androidx.appcompat.widget.MenuItemHoverListener)
+com.google.firebase.datatransport.TransportRegistrar: TransportRegistrar()
+com.google.android.datatransport.cct.internal.NetworkConnectionInfo$MobileSubtype: com.google.android.datatransport.cct.internal.NetworkConnectionInfo$MobileSubtype[] values()
+com.google.firebase.datatransport.TransportRegistrar: com.google.android.datatransport.TransportFactory lambda$getComponents$2(com.google.firebase.components.ComponentContainer)
+androidx.navigation.NavControllerViewModel: NavControllerViewModel()
+androidx.appcompat.widget.LinearLayoutCompat: void setMeasureWithLargestChildEnabled(boolean)
+androidx.core.view.ViewCompat$Api21Impl: android.graphics.PorterDuff$Mode getBackgroundTintMode(android.view.View)
+androidx.core.app.RemoteActionCompat: RemoteActionCompat()
+androidx.appcompat.widget.AppCompatAutoCompleteTextView: void setSupportCompoundDrawablesTintList(android.content.res.ColorStateList)
+androidx.appcompat.widget.Toolbar: int getTitleMarginTop()
+androidx.core.view.WindowInsetsCompat$Impl20: androidx.core.graphics.Insets getRootStableInsets()
+org.jetbrains.compose.resources.ThemeQualifier: org.jetbrains.compose.resources.ThemeQualifier[] values()
+kotlin.io.encoding.Base64$PaddingOption: kotlin.io.encoding.Base64$PaddingOption[] values()
+androidx.appcompat.widget.AppCompatImageButton: void setSupportImageTintMode(android.graphics.PorterDuff$Mode)
+androidx.core.view.ViewCompat$Api21Impl: androidx.core.view.WindowInsetsCompat computeSystemWindowInsets(android.view.View,androidx.core.view.WindowInsetsCompat,android.graphics.Rect)
+androidx.appcompat.widget.AppCompatTextView: void setLastBaselineToBottomHeight(int)
+androidx.appcompat.widget.Toolbar: void setTitle(java.lang.CharSequence)
+androidx.compose.ui.platform.AndroidComposeView: void setLayoutDirection(androidx.compose.ui.unit.LayoutDirection)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.autofill.AutofillTree getAutofillTree()
+androidx.core.view.WindowInsetsCompat$Impl: androidx.core.graphics.Insets getSystemGestureInsets()
+okhttp3.internal.publicsuffix.PublicSuffixDatabase: PublicSuffixDatabase()
+androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper$Impl29: boolean isHorizontallyScrollable(android.widget.TextView)
+androidx.compose.ui.platform.ViewLayer: float[] getUnderlyingMatrix-sQKQjiQ()
+com.google.firebase.datatransport.TransportRegistrar: com.google.android.datatransport.TransportFactory lambda$getComponents$1(com.google.firebase.components.ComponentContainer)
+androidx.navigation.serialization.InternalType: androidx.navigation.serialization.InternalType[] values()
+androidx.appcompat.widget.ActionMenuView: void setOnMenuItemClickListener(androidx.appcompat.widget.ActionMenuView$OnMenuItemClickListener)
+androidx.appcompat.widget.AppCompatTextView: int getAutoSizeMinTextSize()
+androidx.core.view.WindowInsetsCompat$Impl28: WindowInsetsCompat$Impl28(androidx.core.view.WindowInsetsCompat,android.view.WindowInsets)
+kotlin.time.DurationUnit: kotlin.time.DurationUnit[] values()
+androidx.compose.ui.platform.AndroidComposeView: android.view.View findViewByAccessibilityIdTraversal(int)
+com.google.firebase.concurrent.UiExecutor: com.google.firebase.concurrent.UiExecutor valueOf(java.lang.String)
+androidx.core.graphics.drawable.IconCompat: IconCompat()
+kotlin.coroutines.intrinsics.CoroutineSingletons: kotlin.coroutines.intrinsics.CoroutineSingletons valueOf(java.lang.String)
+kotlinx.coroutines.CoroutineStart: kotlinx.coroutines.CoroutineStart valueOf(java.lang.String)
+com.google.android.datatransport.cct.internal.ComplianceData$ProductIdOrigin: com.google.android.datatransport.cct.internal.ComplianceData$ProductIdOrigin[] values()
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: float getFillAlpha()
+com.google.firebase.sessions.FirebaseSessionsRegistrar: com.google.firebase.sessions.settings.SessionsSettings getComponents$lambda$3(com.google.firebase.components.ComponentContainer)
+androidx.lifecycle.ProcessLifecycleOwner$attach$1$onActivityPreCreated$1: void onActivityPostResumed(android.app.Activity)
+androidx.core.view.WindowInsetsCompat$Impl29: void setStableInsets(androidx.core.graphics.Insets)
+io.ktor.util.date.Month: io.ktor.util.date.Month valueOf(java.lang.String)
+kotlin.text.RegexOption: kotlin.text.RegexOption[] values()
+androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper$Impl29: void computeAndSetTextDirection(android.text.StaticLayout$Builder,android.widget.TextView)
+androidx.appcompat.widget.Toolbar: androidx.appcompat.widget.ActionMenuPresenter getOuterActionMenuPresenter()
+androidx.appcompat.widget.ActionBarOverlayLayout: void setWindowCallback(android.view.Window$Callback)
+androidx.compose.ui.platform.MotionEventVerifierApi29: boolean isValidMotionEvent(android.view.MotionEvent,int)
+androidx.appcompat.widget.ActionBarOverlayLayout: void setOverlayMode(boolean)
+androidx.core.view.WindowInsetsCompat$Impl: void setRootViewData(androidx.core.graphics.Insets)
+androidx.appcompat.widget.Toolbar: android.graphics.drawable.Drawable getOverflowIcon()
+androidx.compose.animation.core.RepeatMode: androidx.compose.animation.core.RepeatMode valueOf(java.lang.String)
+androidx.core.view.WindowInsetsCompat$BuilderImpl20: void setSystemWindowInsets(androidx.core.graphics.Insets)
+org.example.weathercrossplatform.data.network.dto.ImageListDto$Companion: kotlinx.serialization.KSerializer serializer()
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: void setTrimPathOffset(float)
+androidx.compose.ui.platform.actionmodecallback.MenuItemOption: androidx.compose.ui.platform.actionmodecallback.MenuItemOption[] values()
+com.google.firebase.installations.local.PersistedInstallation$RegistrationStatus: com.google.firebase.installations.local.PersistedInstallation$RegistrationStatus[] values()
+androidx.appcompat.widget.Toolbar: java.lang.CharSequence getLogoDescription()
+com.google.firebase.sessions.FirebaseSessionsRegistrar: com.google.firebase.sessions.SessionGenerator getComponents$lambda$1(com.google.firebase.components.ComponentContainer)
+androidx.appcompat.widget.AppCompatTextView: androidx.core.text.PrecomputedTextCompat$Params getTextMetricsParamsCompat()
+androidx.core.widget.NestedScrollView: void setOnScrollChangeListener(androidx.core.widget.NestedScrollView$OnScrollChangeListener)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.node.OwnerSnapshotObserver getSnapshotObserver()
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.platform.AndroidAccessibilityManager getAccessibilityManager()
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: float getTrimPathEnd()
+androidx.compose.ui.node.LookaheadPassDelegate$PlacedState: androidx.compose.ui.node.LookaheadPassDelegate$PlacedState valueOf(java.lang.String)
+androidx.compose.material3.ScaffoldLayoutContent: androidx.compose.material3.ScaffoldLayoutContent valueOf(java.lang.String)
+androidx.sqlite.driver.bundled.BundledSQLiteStatementKt: void nativeReset(long)
+androidx.appcompat.view.menu.ActionMenuItemView: void setTitle(java.lang.CharSequence)
+androidx.compose.ui.platform.AbstractComposeView: void setParentContext(androidx.compose.runtime.CompositionContext)
+androidx.compose.ui.window.PopupLayout: android.view.WindowManager$LayoutParams getParams$ui_release()
+androidx.appcompat.view.menu.ListMenuItemView: void setForceShowIcon(boolean)
+androidx.compose.ui.platform.AbstractComposeView: void setParentCompositionContext(androidx.compose.runtime.CompositionContext)
+androidx.lifecycle.EmptyActivityLifecycleCallbacks: void onActivityStarted(android.app.Activity)
+androidx.compose.ui.layout.IntrinsicWidthHeight: androidx.compose.ui.layout.IntrinsicWidthHeight[] values()
+androidx.appcompat.widget.AppCompatAutoCompleteTextView: void setSupportBackgroundTintList(android.content.res.ColorStateList)
+androidx.appcompat.widget.Toolbar: int getCurrentContentInsetStart()
+androidx.appcompat.widget.ContentFrameLayout: android.util.TypedValue getFixedHeightMinor()
+androidx.compose.ui.unit.LayoutDirection: androidx.compose.ui.unit.LayoutDirection[] values()
+com.google.firebase.installations.remote.TokenResult$ResponseCode: com.google.firebase.installations.remote.TokenResult$ResponseCode valueOf(java.lang.String)
+com.google.android.datatransport.cct.internal.NetworkConnectionInfo$NetworkType: com.google.android.datatransport.cct.internal.NetworkConnectionInfo$NetworkType[] values()
+androidx.compose.ui.focus.CustomDestinationResult: androidx.compose.ui.focus.CustomDestinationResult[] values()
+androidx.fragment.app.DefaultSpecialEffectsController$Api26Impl: void setCurrentPlayTime(android.animation.AnimatorSet,long)
+com.google.firebase.sessions.FirebaseSessionsRegistrar: com.google.firebase.sessions.SessionDatastore getComponents$lambda$4(com.google.firebase.components.ComponentContainer)
+androidx.compose.ui.platform.AndroidComposeView: void setDensity(androidx.compose.ui.unit.Density)
+androidx.appcompat.widget.LinearLayoutCompat: void setDividerPadding(int)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: float getTranslateX()
+org.example.weathercrossplatform.data.utils.NetworkError: org.example.weathercrossplatform.data.utils.NetworkError valueOf(java.lang.String)
+androidx.core.widget.NestedScrollView: float getBottomFadingEdgeStrength()
+androidx.appcompat.view.menu.ExpandedMenuView: int getWindowAnimations()
+androidx.compose.ui.platform.AndroidComposeView: boolean getHasPendingMeasureOrLayout()
+androidx.datastore.preferences.protobuf.FieldType$Collection: androidx.datastore.preferences.protobuf.FieldType$Collection valueOf(java.lang.String)
+androidx.compose.ui.platform.ComposeView: void getShouldCreateCompositionOnAttachedToWindow$annotations()
+androidx.core.widget.NestedScrollView: int getMaxScrollAmount()
+kotlinx.coroutines.scheduling.CoroutineScheduler$WorkerState: kotlinx.coroutines.scheduling.CoroutineScheduler$WorkerState valueOf(java.lang.String)
+okhttp3.internal.http2.ErrorCode: okhttp3.internal.http2.ErrorCode valueOf(java.lang.String)
+androidx.compose.material.ripple.RippleHostView: void setRippleState$lambda$2(androidx.compose.material.ripple.RippleHostView)
+coil3.size.Scale: coil3.size.Scale[] values()
+androidx.appcompat.widget.AppCompatImageView: void setBackgroundResource(int)
+androidx.core.view.WindowInsetsCompat$Impl28: int hashCode()
+androidx.lifecycle.EmptyActivityLifecycleCallbacks: void onActivityPaused(android.app.Activity)
+com.google.android.gms.common.ErrorDialogFragment: ErrorDialogFragment()
+androidx.core.view.WindowInsetsCompat$Impl20: androidx.core.graphics.Insets getInsetsForType(int,boolean)
+androidx.lifecycle.ProcessLifecycleOwner$attach$1: void onActivityPreCreated(android.app.Activity,android.os.Bundle)
+com.google.firebase.sessions.LogEnvironment: com.google.firebase.sessions.LogEnvironment[] values()
+com.google.firebase.sessions.FirebaseSessionsRegistrar: FirebaseSessionsRegistrar()
+androidx.appcompat.widget.AppCompatAutoCompleteTextView: android.graphics.PorterDuff$Mode getSupportBackgroundTintMode()
+androidx.graphics.path.PathIteratorPreApi34Impl: void destroyInternalPathIterator(long)
+androidx.lifecycle.ReportFragment$LifecycleCallbacks: void onActivityPostCreated(android.app.Activity,android.os.Bundle)
+org.slf4j.event.Level: org.slf4j.event.Level[] values()
+androidx.core.widget.EdgeEffectCompat$Api31Impl: float onPullDistance(android.widget.EdgeEffect,float,float)
+androidx.room.Transactor$SQLiteTransactionType: androidx.room.Transactor$SQLiteTransactionType[] values()
+androidx.compose.material3.internal.InputPhase: androidx.compose.material3.internal.InputPhase[] values()
+coil3.util.Logger$Level: coil3.util.Logger$Level[] values()
+androidx.appcompat.view.menu.ListMenuItemView: void setIcon(android.graphics.drawable.Drawable)
+androidx.compose.ui.text.AnnotationType: androidx.compose.ui.text.AnnotationType[] values()
+androidx.appcompat.widget.AppCompatTextView: void setAllCaps(boolean)
+androidx.appcompat.widget.LinearLayoutCompat: void setVerticalGravity(int)
+androidx.appcompat.widget.AppCompatImageView: void setImageDrawable(android.graphics.drawable.Drawable)
+androidx.compose.foundation.internal.InlineClassHelperKt: void throwIndexOutOfBoundsException(java.lang.String)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: float getTrimPathStart()
+androidx.compose.material3.internal.TextFieldType: androidx.compose.material3.internal.TextFieldType valueOf(java.lang.String)
+org.example.weathercrossplatform.domain.models.Routes$MainScreenRoute$Companion: kotlinx.serialization.KSerializer serializer()
+androidx.compose.material3.MinimumInteractiveModifier: MinimumInteractiveModifier()
+com.google.firebase.ktx.FirebaseCommonLegacyRegistrar: java.util.List getComponents()
+androidx.appcompat.widget.ActionBarOverlayLayout: void setIcon(int)
+com.google.firebase.installations.FirebaseInstallationsRegistrar: java.util.List getComponents()
+androidx.appcompat.widget.AppCompatImageButton: android.graphics.PorterDuff$Mode getSupportBackgroundTintMode()
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: void setRotation(float)
+androidx.appcompat.widget.ViewStubCompat: int getLayoutResource()
+androidx.compose.ui.input.pointer.util.VelocityTracker1D$Strategy: androidx.compose.ui.input.pointer.util.VelocityTracker1D$Strategy valueOf(java.lang.String)
+androidx.compose.foundation.text.selection.CrossStatus: androidx.compose.foundation.text.selection.CrossStatus[] values()
+androidx.appcompat.widget.Toolbar: android.view.View getNavButtonView()
+androidx.appcompat.widget.ActionMenuView: int getPopupTheme()
+androidx.compose.material3.tokens.TypographyKeyTokens: androidx.compose.material3.tokens.TypographyKeyTokens valueOf(java.lang.String)
+androidx.core.view.ViewCompat$Api21Impl: java.lang.String getTransitionName(android.view.View)
+androidx.compose.ui.platform.ViewLayer: androidx.compose.ui.graphics.Path getManualClipPath()
+org.slf4j.event.Level: org.slf4j.event.Level valueOf(java.lang.String)
+androidx.appcompat.widget.Toolbar: void setLogo(int)
+androidx.core.view.ViewCompat$Api20Impl: android.view.WindowInsets dispatchApplyWindowInsets(android.view.View,android.view.WindowInsets)
+androidx.room.MultiInstanceInvalidationService: MultiInstanceInvalidationService()
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: float getStrokeWidth()
+org.example.weathercrossplatform.domain.models.Current$Companion: kotlinx.serialization.KSerializer serializer()
+io.ktor.websocket.CloseReason$Codes: io.ktor.websocket.CloseReason$Codes[] values()
+org.jetbrains.compose.resources.vector.BuildContext$Group: org.jetbrains.compose.resources.vector.BuildContext$Group valueOf(java.lang.String)
+androidx.appcompat.widget.ActionBarOverlayLayout: void setActionBarVisibilityCallback(androidx.appcompat.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: void setFillColor(int)
+androidx.appcompat.widget.AppCompatTextView: void setCustomSelectionActionModeCallback(android.view.ActionMode$Callback)
+androidx.appcompat.widget.FitWindowsFrameLayout: FitWindowsFrameLayout(android.content.Context,android.util.AttributeSet)
+androidx.core.view.WindowInsetsCompat$Impl: androidx.core.graphics.Insets getStableInsets()
+androidx.room.RoomDatabase$JournalMode: androidx.room.RoomDatabase$JournalMode valueOf(java.lang.String)
+com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService: JobInfoSchedulerService()
+androidx.core.view.WindowInsetsCompat$BuilderImpl30: WindowInsetsCompat$BuilderImpl30()
+androidx.compose.foundation.internal.InlineClassHelperKt: java.lang.Void throwIllegalArgumentExceptionForNullCheck(java.lang.String)
+androidx.core.view.WindowInsetsCompat$Impl30: boolean isVisible(int)
+androidx.appcompat.widget.ActionBarContextView: java.lang.CharSequence getTitle()
+androidx.compose.ui.platform.AbstractComposeView: boolean getShowLayoutBounds()
+kotlinx.serialization.json.JsonElement: JsonElement()
+androidx.core.view.ViewCompat$Api21Impl: void setOnApplyWindowInsetsListener(android.view.View,androidx.core.view.OnApplyWindowInsetsListener)
+androidx.appcompat.widget.AppCompatTextClassifierHelper$Api26Impl: android.view.textclassifier.TextClassifier getTextClassifier(android.widget.TextView)
+org.jetbrains.compose.resources.AndroidContextProvider: AndroidContextProvider()
+androidx.core.view.ViewCompat$Api21Impl: void setBackgroundTintList(android.view.View,android.content.res.ColorStateList)
+androidx.core.view.WindowInsetsCompat$BuilderImpl: WindowInsetsCompat$BuilderImpl(androidx.core.view.WindowInsetsCompat)
+androidx.fragment.app.DefaultSpecialEffectsController$Api26Impl: void reverse(android.animation.AnimatorSet)
+androidx.core.view.WindowInsetsCompat$BuilderImpl20: android.view.WindowInsets createWindowInsetsInstance()
+androidx.appcompat.widget.LinearLayoutCompat: int getOrientation()
+androidx.appcompat.widget.ActionBarContainer: void setPrimaryBackground(android.graphics.drawable.Drawable)
+androidx.compose.material3.tokens.ColorSchemeKeyTokens: androidx.compose.material3.tokens.ColorSchemeKeyTokens[] values()
+com.google.android.datatransport.cct.internal.ComplianceData$ProductIdOrigin: com.google.android.datatransport.cct.internal.ComplianceData$ProductIdOrigin valueOf(java.lang.String)
+androidx.compose.ui.window.PopupLayout: void setParentLayoutDirection(androidx.compose.ui.unit.LayoutDirection)
+androidx.appcompat.widget.AppCompatTextHelper$Api24Impl: void setTextLocales(android.widget.TextView,android.os.LocaleList)
+androidx.room.ObservedTableStates$ObserveOp: androidx.room.ObservedTableStates$ObserveOp valueOf(java.lang.String)
+androidx.core.graphics.drawable.IconCompatParcelizer: void write(androidx.core.graphics.drawable.IconCompat,androidx.versionedparcelable.VersionedParcel)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.platform.TextToolbar getTextToolbar()
+androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper$OpenHelper$CallbackName: androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper$OpenHelper$CallbackName valueOf(java.lang.String)
+androidx.appcompat.widget.AppCompatTextView: android.graphics.PorterDuff$Mode getSupportBackgroundTintMode()
+androidx.core.view.WindowInsetsCompat$Impl: androidx.core.view.WindowInsetsCompat consumeSystemWindowInsets()
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: void setPivotX(float)
+androidx.datastore.preferences.PreferencesProto$Value$ValueCase: androidx.datastore.preferences.PreferencesProto$Value$ValueCase[] values()
+androidx.core.view.WindowInsetsCompat$Impl20: void copyWindowDataInto(androidx.core.view.WindowInsetsCompat)
+androidx.loader.app.LoaderManagerImpl$LoaderViewModel: LoaderManagerImpl$LoaderViewModel()
+androidx.appcompat.widget.ActionMenuView: int getWindowAnimations()
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.platform.ClipboardManager getClipboardManager()
+androidx.appcompat.widget.AppCompatImageView: void setImageURI(android.net.Uri)
+kotlinx.coroutines.flow.SharingCommand: kotlinx.coroutines.flow.SharingCommand[] values()
+androidx.datastore.preferences.protobuf.GeneratedMessageLite$MethodToInvoke: androidx.datastore.preferences.protobuf.GeneratedMessageLite$MethodToInvoke valueOf(java.lang.String)
+androidx.lifecycle.ReportFragment$LifecycleCallbacks: void onActivityPostResumed(android.app.Activity)
+androidx.compose.material.ripple.RippleHostView: void setRippleState(boolean)
+androidx.appcompat.widget.AppCompatTextView: int getAutoSizeStepGranularity()
+org.example.weathercrossplatform.data.database.WeatherDataBase_Impl: WeatherDataBase_Impl()
+androidx.activity.ComponentActivity: void setContentView(android.view.View)
+androidx.compose.ui.util.ListUtilsKt: void throwUnsupportedOperationException(java.lang.String)
+androidx.appcompat.widget.AppCompatTextView: android.content.res.ColorStateList getSupportCompoundDrawablesTintList()
+com.google.firebase.installations.FirebaseInstallationsException$Status: com.google.firebase.installations.FirebaseInstallationsException$Status valueOf(java.lang.String)
+androidx.compose.ui.platform.AndroidComposeView: void setConfigurationChangeObserver(kotlin.jvm.functions.Function1)
+androidx.appcompat.resources.Compatibility$Api21Impl: void inflate(android.graphics.drawable.Drawable,android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)
+androidx.fragment.app.SpecialEffectsController$Operation$State: androidx.fragment.app.SpecialEffectsController$Operation$State[] values()
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: float getRotation()
+androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper$Impl: boolean isHorizontallyScrollable(android.widget.TextView)
+androidx.appcompat.widget.Toolbar: android.graphics.drawable.Drawable getNavigationIcon()
+androidx.sqlite.driver.bundled.BundledSQLiteStatementKt: boolean nativeStep(long)
+androidx.compose.ui.graphics.layer.ViewLayer: boolean getCanUseCompositingLayer$ui_graphics_release()
+org.slf4j.helpers.Reporter$TargetChoice: org.slf4j.helpers.Reporter$TargetChoice[] values()
+androidx.compose.ui.layout.MeasuringIntrinsics$IntrinsicMinMax: androidx.compose.ui.layout.MeasuringIntrinsics$IntrinsicMinMax valueOf(java.lang.String)
+androidx.lifecycle.ReportFragment$LifecycleCallbacks: void onActivitySaveInstanceState(android.app.Activity,android.os.Bundle)
+kotlin.io.encoding.Base64$PaddingOption: kotlin.io.encoding.Base64$PaddingOption valueOf(java.lang.String)
+androidx.navigation.serialization.RouteBuilder$ParamType: androidx.navigation.serialization.RouteBuilder$ParamType valueOf(java.lang.String)
+kotlin.reflect.KVariance: kotlin.reflect.KVariance valueOf(java.lang.String)
+androidx.appcompat.widget.DropDownListView$Api33Impl: boolean isSelectedChildViewEnabled(android.widget.AbsListView)
+androidx.core.view.WindowInsetsCompat$BuilderImpl: void applyInsetTypes()
+androidx.fragment.app.strictmode.FragmentStrictMode$Flag: androidx.fragment.app.strictmode.FragmentStrictMode$Flag valueOf(java.lang.String)
+androidx.appcompat.widget.ViewStubCompat: int getInflatedId()
+com.google.firebase.crashlytics.ktx.FirebaseCrashlyticsKtxRegistrar: java.util.List getComponents()
+androidx.appcompat.widget.Toolbar: void setLogoDescription(int)
+androidx.lifecycle.Lifecycle$State: androidx.lifecycle.Lifecycle$State[] values()
+androidx.appcompat.widget.ContentFrameLayout: android.util.TypedValue getFixedHeightMajor()
+androidx.fragment.app.SpecialEffectsController$Operation$LifecycleImpact: androidx.fragment.app.SpecialEffectsController$Operation$LifecycleImpact valueOf(java.lang.String)
+androidx.profileinstaller.FileSectionType: androidx.profileinstaller.FileSectionType valueOf(java.lang.String)
+com.google.firebase.installations.FirebaseInstallationsException$Status: com.google.firebase.installations.FirebaseInstallationsException$Status[] values()
+io.ktor.util.date.WeekDay: io.ktor.util.date.WeekDay valueOf(java.lang.String)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VectorDrawableCompatState: int getChangingConfigurations()
+androidx.appcompat.widget.ActionBarContextView: void setVisibility(int)
+androidx.navigation.serialization.RouteBuilder$ParamType: androidx.navigation.serialization.RouteBuilder$ParamType[] values()
+androidx.lifecycle.ReportFragment$LifecycleCallbacks: void onActivityPostStarted(android.app.Activity)
+androidx.core.view.ViewCompat$Api21Impl: android.content.res.ColorStateList getBackgroundTintList(android.view.View)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.hapticfeedback.HapticFeedback getHapticFeedBack()
+androidx.compose.ui.platform.AndroidComposeView: void setAccessibilityEventBatchIntervalMillis(long)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.platform.AndroidClipboardManager getClipboardManager()
+androidx.lifecycle.LifecycleDispatcher$DispatcherActivityCallback: LifecycleDispatcher$DispatcherActivityCallback()
+kotlin.DeprecationLevel: kotlin.DeprecationLevel valueOf(java.lang.String)
+androidx.datastore.preferences.protobuf.Writer$FieldOrder: androidx.datastore.preferences.protobuf.Writer$FieldOrder valueOf(java.lang.String)
+com.google.firebase.encoders.proto.Protobuf$IntEncoding: com.google.firebase.encoders.proto.Protobuf$IntEncoding[] values()
+androidx.core.view.WindowInsetsCompat$Impl: androidx.core.graphics.Insets getTappableElementInsets()
+androidx.compose.ui.autofill.AutofillType: androidx.compose.ui.autofill.AutofillType[] values()
+androidx.compose.animation.EnterExitState: androidx.compose.animation.EnterExitState[] values()
+androidx.appcompat.widget.ActionBarContainer: void setVisibility(int)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.platform.AndroidClipboard getClipboard()
+androidx.core.view.WindowInsetsCompat$Impl21: boolean isConsumed()
+org.example.weathercrossplatform.data.network.dto.ForecastDto$Companion: kotlinx.serialization.KSerializer serializer()
+androidx.appcompat.widget.ActivityChooserView$InnerLayout: ActivityChooserView$InnerLayout(android.content.Context,android.util.AttributeSet)
+androidx.core.view.WindowInsetsCompat$BuilderImpl29: void setMandatorySystemGestureInsets(androidx.core.graphics.Insets)
+com.google.android.datatransport.runtime.scheduling.jobscheduling.SchedulerConfig$Flag: com.google.android.datatransport.runtime.scheduling.jobscheduling.SchedulerConfig$Flag valueOf(java.lang.String)
+com.google.android.gms.dynamite.DynamiteModule$DynamiteLoaderClassLoader: DynamiteModule$DynamiteLoaderClassLoader()
+androidx.graphics.path.ConicConverter: int internalConicToQuadratics(float[],int,float[],float,float)
+androidx.core.view.ViewCompat$Api30Impl: java.lang.CharSequence getStateDescription(android.view.View)
+androidx.core.view.WindowInsetsCompat$BuilderImpl: void setSystemGestureInsets(androidx.core.graphics.Insets)
+androidx.appcompat.widget.AppCompatTextView: int getFirstBaselineToTopHeight()
+androidx.appcompat.widget.ViewUtils$Api29Impl: void computeFitSystemWindows(android.view.View,android.graphics.Rect,android.graphics.Rect)
+androidx.appcompat.widget.ViewStubCompat: void setInflatedId(int)
+androidx.appcompat.widget.LinearLayoutCompat: void setBaselineAlignedChildIndex(int)
+androidx.appcompat.widget.Toolbar: java.lang.CharSequence getNavigationContentDescription()
+androidx.compose.ui.platform.AndroidComposeView: int getImportantForAutofill()
+com.google.android.datatransport.cct.internal.ClientInfo$ClientType: com.google.android.datatransport.cct.internal.ClientInfo$ClientType[] values()
+androidx.compose.ui.window.PopupLayout: androidx.compose.ui.unit.IntSize getPopupContentSize-bOM6tXw()
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.autofill.AutofillManager getAutofillManager()
+androidx.appcompat.widget.AlertDialogLayout: AlertDialogLayout(android.content.Context,android.util.AttributeSet)
+androidx.appcompat.widget.Toolbar: int getPopupTheme()
+androidx.compose.ui.platform.AndroidComposeView: void setCoroutineContext(kotlin.coroutines.CoroutineContext)
+androidx.compose.foundation.text.TextContextMenuItems: androidx.compose.foundation.text.TextContextMenuItems valueOf(java.lang.String)
+androidx.core.view.WindowInsetsCompat$BuilderImpl29: void setStableInsets(androidx.core.graphics.Insets)
+okhttp3.internal.http2.ErrorCode: okhttp3.internal.http2.ErrorCode[] values()
+androidx.appcompat.widget.AppCompatTextView: androidx.appcompat.widget.AppCompatEmojiTextHelper getEmojiTextViewHelper()
+androidx.appcompat.view.menu.ListMenuItemView: void setGroupDividerEnabled(boolean)
+androidx.appcompat.widget.Toolbar: void setCollapseContentDescription(int)
+androidx.compose.ui.platform.AndroidComposeViewTranslationCallbackS: void setViewTranslationCallback(android.view.View)
+org.example.weathercrossplatform.domain.models.Condition$Companion: kotlinx.serialization.KSerializer serializer()
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.autofill.Autofill getAutofill()
+androidx.core.app.NotificationCompat$BubbleMetadata$Api30Impl: android.app.Notification$BubbleMetadata toPlatform(androidx.core.app.NotificationCompat$BubbleMetadata)
+kotlinx.serialization.json.JsonElement$Companion: kotlinx.serialization.KSerializer serializer()
+com.google.firebase.installations.FirebaseInstallationsRegistrar: com.google.firebase.installations.FirebaseInstallationsApi lambda$getComponents$0(com.google.firebase.components.ComponentContainer)
+androidx.appcompat.widget.Toolbar: int getContentInsetEnd()
+androidx.appcompat.widget.SearchView$SearchAutoComplete: void setSearchView(androidx.appcompat.widget.SearchView)
+androidx.appcompat.widget.Toolbar: void setNavigationContentDescription(java.lang.CharSequence)
+com.google.firebase.sessions.DataCollectionState: com.google.firebase.sessions.DataCollectionState[] values()
+androidx.compose.ui.unit.InlineClassHelperKt: void throwIllegalStateException(java.lang.String)
+androidx.graphics.path.PathIteratorPreApi34Impl: int internalPathIteratorNext(long,float[],int)
+androidx.core.view.ViewCompat$Api28Impl: boolean isScreenReaderFocusable(android.view.View)
+androidx.compose.ui.platform.AndroidComposeViewVerificationHelperMethodsO: void focusable(android.view.View,int,boolean)
+androidx.compose.ui.platform.ViewLayer: long getLayerId()
+kotlinx.serialization.json.JsonPrimitive$Companion: kotlinx.serialization.KSerializer serializer()
+androidx.core.view.WindowInsetsCompat$Impl20: androidx.core.graphics.Insets getInsets(int,boolean)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.platform.Clipboard getClipboard()
+androidx.compose.ui.unit.ConstraintsKt: void throwInvalidConstraintException(int,int)
+org.jetbrains.compose.resources.DensityQualifier: org.jetbrains.compose.resources.DensityQualifier[] values()
+androidx.compose.ui.platform.AndroidComposeView: void getTextInputService$annotations()
+kotlinx.serialization.json.internal.WriteMode: kotlinx.serialization.json.internal.WriteMode valueOf(java.lang.String)
+com.google.firebase.concurrent.SequentialExecutor$WorkerRunningState: com.google.firebase.concurrent.SequentialExecutor$WorkerRunningState valueOf(java.lang.String)
+com.google.firebase.sessions.DataCollectionState: com.google.firebase.sessions.DataCollectionState valueOf(java.lang.String)
+androidx.compose.ui.window.PopupLayout: boolean getShouldCreateCompositionOnAttachedToWindow()
+androidx.versionedparcelable.CustomVersionedParcelable: CustomVersionedParcelable()
+dev.icerock.moko.permissions.PermissionState: dev.icerock.moko.permissions.PermissionState valueOf(java.lang.String)
+androidx.appcompat.widget.ActionBarOverlayLayout: void setLogo(int)
+androidx.lifecycle.Lifecycle$State: androidx.lifecycle.Lifecycle$State valueOf(java.lang.String)
+androidx.appcompat.widget.ActionBarContextView: void setContentHeight(int)
+com.google.android.datatransport.runtime.firebase.transport.LogEventDropped$Reason: com.google.android.datatransport.runtime.firebase.transport.LogEventDropped$Reason[] values()
+androidx.compose.ui.layout.MeasuringIntrinsics$IntrinsicMinMax: androidx.compose.ui.layout.MeasuringIntrinsics$IntrinsicMinMax[] values()
+org.slf4j.helpers.Reporter$Level: org.slf4j.helpers.Reporter$Level valueOf(java.lang.String)
+androidx.compose.ui.text.internal.InlineClassHelperKt: void throwIllegalStateException(java.lang.String)
+androidx.core.view.WindowInsetsCompat$Impl21: androidx.core.view.WindowInsetsCompat consumeSystemWindowInsets()
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.modifier.ModifierLocalManager getModifierLocalManager()
+androidx.appcompat.view.menu.ActionMenuItemView: void setChecked(boolean)
+androidx.compose.material3.internal.InputPhase: androidx.compose.material3.internal.InputPhase valueOf(java.lang.String)
+androidx.compose.ui.contentcapture.AndroidContentCaptureManager$TranslateStatus: androidx.compose.ui.contentcapture.AndroidContentCaptureManager$TranslateStatus valueOf(java.lang.String)
+androidx.core.view.WindowInsetsCompat$Impl20: androidx.core.view.WindowInsetsCompat inset(int,int,int,int)
+kotlin.time.DurationUnit: kotlin.time.DurationUnit valueOf(java.lang.String)
+androidx.appcompat.widget.AppCompatTextView: int getLastBaselineToBottomHeight()
+androidx.core.view.ViewCompat$Api21Impl: androidx.core.view.WindowInsetsCompat getRootWindowInsets(android.view.View)
+androidx.core.view.WindowInsetsCompat$Impl20: void setRootWindowInsets(androidx.core.view.WindowInsetsCompat)
+androidx.compose.ui.node.TraversableNode$Companion$TraverseDescendantsAction: androidx.compose.ui.node.TraversableNode$Companion$TraverseDescendantsAction valueOf(java.lang.String)
+androidx.lifecycle.ReportFragment$LifecycleCallbacks: void onActivityPreStopped(android.app.Activity)
+androidx.appcompat.widget.Toolbar: void setCollapsible(boolean)
+androidx.appcompat.view.menu.ListMenuItemView: void setCheckable(boolean)
+kotlinx.serialization.json.JsonArray$Companion: kotlinx.serialization.KSerializer serializer()
+androidx.compose.animation.core.PreconditionsKt: void throwIllegalArgumentException(java.lang.String)
+androidx.compose.material3.tokens.TypographyKeyTokens: androidx.compose.material3.tokens.TypographyKeyTokens[] values()
+androidx.appcompat.widget.AppCompatTextView: void setTextClassifier(android.view.textclassifier.TextClassifier)
+androidx.appcompat.widget.AppCompatTextView: void setBackgroundResource(int)
+androidx.core.view.ViewCompat$Api20Impl: void requestApplyInsets(android.view.View)
+androidx.sqlite.driver.bundled.BundledSQLiteStatementKt: int nativeGetColumnCount(long)
+com.google.android.datatransport.runtime.backends.BackendResponse$Status: com.google.android.datatransport.runtime.backends.BackendResponse$Status valueOf(java.lang.String)
+androidx.compose.ui.node.NodeMeasuringIntrinsics$IntrinsicWidthHeight: androidx.compose.ui.node.NodeMeasuringIntrinsics$IntrinsicWidthHeight[] values()
+androidx.appcompat.widget.Toolbar: android.widget.TextView getTitleTextView()
+androidx.core.view.WindowInsetsCompat$BuilderImpl29: void setTappableElementInsets(androidx.core.graphics.Insets)
+androidx.appcompat.widget.AppCompatImageView: void setSupportImageTintList(android.content.res.ColorStateList)
+org.koin.core.logger.Level: org.koin.core.logger.Level valueOf(java.lang.String)
+androidx.core.view.WindowInsetsCompat$TypeImpl30: int toPlatformType(int)
+androidx.graphics.path.PathIteratorPreApi34Impl: int internalPathIteratorRawSize(long)
+android.support.v4.graphics.drawable.IconCompatParcelizer: void write(androidx.core.graphics.drawable.IconCompat,androidx.versionedparcelable.VersionedParcel)
+androidx.core.view.WindowInsetsCompat$BuilderImpl29: void setSystemGestureInsets(androidx.core.graphics.Insets)
+androidx.compose.animation.EnterExitState: androidx.compose.animation.EnterExitState valueOf(java.lang.String)
+androidx.sqlite.driver.bundled.BundledSQLiteStatementKt: java.lang.String nativeGetText(long,int)
+androidx.appcompat.widget.ActionMenuView: void setPresenter(androidx.appcompat.widget.ActionMenuPresenter)
+androidx.compose.ui.text.style.ResolvedTextDirection: androidx.compose.ui.text.style.ResolvedTextDirection[] values()
+androidx.core.view.WindowInsetsCompat$BuilderImpl: void setSystemWindowInsets(androidx.core.graphics.Insets)
+androidx.compose.foundation.MutatePriority: androidx.compose.foundation.MutatePriority valueOf(java.lang.String)
+androidx.core.view.WindowInsetsCompat$Impl20: boolean isTypeVisible(int)
+com.google.android.datatransport.runtime.backends.TransportBackendDiscovery: TransportBackendDiscovery()
+androidx.core.view.WindowInsetsCompat$BuilderImpl: void setMandatorySystemGestureInsets(androidx.core.graphics.Insets)
+androidx.appcompat.widget.AppCompatAutoCompleteTextView: void setBackgroundResource(int)
+androidx.appcompat.widget.AppCompatImageView: android.graphics.PorterDuff$Mode getSupportBackgroundTintMode()
+androidx.emoji2.text.EmojiCompatInitializer: EmojiCompatInitializer()
+androidx.appcompat.widget.MenuPopupWindow$Api23Impl: void setExitTransition(android.widget.PopupWindow,android.transition.Transition)
+androidx.core.view.WindowInsetsCompat$Impl21: androidx.core.view.WindowInsetsCompat consumeStableInsets()
+androidx.appcompat.widget.Toolbar: int getTitleMarginEnd()
+androidx.appcompat.widget.AppCompatTextView: android.graphics.PorterDuff$Mode getSupportCompoundDrawablesTintMode()
+androidx.core.view.WindowInsetsCompat$Impl21: WindowInsetsCompat$Impl21(androidx.core.view.WindowInsetsCompat,android.view.WindowInsets)
+kotlin.reflect.KVariance: kotlin.reflect.KVariance[] values()
+com.google.firebase.crashlytics.internal.common.DeliveryMechanism: com.google.firebase.crashlytics.internal.common.DeliveryMechanism valueOf(java.lang.String)
+androidx.appcompat.widget.Toolbar: void setNavigationIcon(int)
+coil3.size.Precision: coil3.size.Precision valueOf(java.lang.String)
+androidx.core.view.WindowInsetsCompat$Impl: void setOverriddenInsets(androidx.core.graphics.Insets[])
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: void setStrokeAlpha(float)
+androidx.core.view.WindowInsetsCompat$BuilderImpl29: androidx.core.view.WindowInsetsCompat build()
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: void setTranslateY(float)
+androidx.appcompat.widget.AppCompatImageButton: void setImageURI(android.net.Uri)
+com.google.android.gms.common.api.internal.LifecycleCallback: com.google.android.gms.common.api.internal.LifecycleFragment getChimeraLifecycleFragmentImpl(com.google.android.gms.common.api.internal.LifecycleActivity)
+androidx.room.RoomDatabase$JournalMode: androidx.room.RoomDatabase$JournalMode[] values()
+androidx.sqlite.driver.bundled.BundledSQLiteStatementKt: double nativeGetDouble(long,int)
+androidx.appcompat.widget.LinearLayoutCompat: void setBaselineAligned(boolean)
+com.google.firebase.installations.remote.InstallationResponse$ResponseCode: com.google.firebase.installations.remote.InstallationResponse$ResponseCode[] values()
+org.example.weathercrossplatform.domain.models.Location$Companion: kotlinx.serialization.KSerializer serializer()
+androidx.appcompat.widget.Toolbar: java.util.ArrayList getCurrentMenuItems()
+androidx.navigation.compose.DialogNavigator: DialogNavigator()
+androidx.compose.foundation.text.TextContextMenuItems: androidx.compose.foundation.text.TextContextMenuItems[] values()
+androidx.profileinstaller.FileSectionType: androidx.profileinstaller.FileSectionType[] values()
+org.koin.core.option.KoinOption: org.koin.core.option.KoinOption[] values()
+kotlinx.serialization.json.ClassDiscriminatorMode: kotlinx.serialization.json.ClassDiscriminatorMode[] values()
+androidx.compose.ui.graphics.Path$Direction: androidx.compose.ui.graphics.Path$Direction valueOf(java.lang.String)
+com.google.android.datatransport.cct.internal.ClientInfo$ClientType: com.google.android.datatransport.cct.internal.ClientInfo$ClientType valueOf(java.lang.String)
+androidx.core.view.WindowInsetsCompat$BuilderImpl: void setTappableElementInsets(androidx.core.graphics.Insets)
+org.jetbrains.compose.resources.vector.BuildContext$Group: org.jetbrains.compose.resources.vector.BuildContext$Group[] values()
+androidx.core.view.WindowInsetsCompat$BuilderImpl29: WindowInsetsCompat$BuilderImpl29()
+androidx.lifecycle.ProcessLifecycleInitializer: ProcessLifecycleInitializer()
+androidx.appcompat.widget.FitWindowsLinearLayout: FitWindowsLinearLayout(android.content.Context,android.util.AttributeSet)
+androidx.appcompat.widget.ViewStubCompat: void setOnInflateListener(androidx.appcompat.widget.ViewStubCompat$OnInflateListener)
+androidx.appcompat.widget.LinearLayoutCompat: void setDividerDrawable(android.graphics.drawable.Drawable)
+androidx.appcompat.widget.AppCompatAutoCompleteTextView: void setKeyListener(android.text.method.KeyListener)
+kotlinx.coroutines.android.AndroidExceptionPreHandler: AndroidExceptionPreHandler()
+androidx.core.view.ViewCompat$Api21Impl$1: android.view.WindowInsets onApplyWindowInsets(android.view.View,android.view.WindowInsets)
+androidx.appcompat.widget.Toolbar: void setSubtitleTextColor(android.content.res.ColorStateList)
+androidx.compose.foundation.gestures.Orientation: androidx.compose.foundation.gestures.Orientation valueOf(java.lang.String)
+androidx.appcompat.widget.Toolbar: void setSubtitle(java.lang.CharSequence)
+androidx.compose.runtime.PreconditionsKt: void throwIllegalStateException(java.lang.String)
+androidx.appcompat.widget.ButtonBarLayout: void setAllowStacking(boolean)
+androidx.compose.ui.contentcapture.ContentCaptureEventType: androidx.compose.ui.contentcapture.ContentCaptureEventType[] values()
+androidx.compose.ui.node.TraversableNode$Companion$TraverseDescendantsAction: androidx.compose.ui.node.TraversableNode$Companion$TraverseDescendantsAction[] values()
+androidx.appcompat.widget.ActionMenuView: void setOverflowReserved(boolean)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.text.font.Font$ResourceLoader getFontLoader()
+androidx.appcompat.widget.MenuPopupWindow$Api23Impl: void setEnterTransition(android.widget.PopupWindow,android.transition.Transition)
+androidx.appcompat.widget.AppCompatAutoCompleteTextView: void setEmojiCompatEnabled(boolean)
+com.google.android.datatransport.cct.CctBackendFactory: CctBackendFactory()
+androidx.lifecycle.ProcessLifecycleOwner$attach$1: void onActivityPaused(android.app.Activity)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: int getFillColor()
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: float getTranslateY()
+androidx.compose.ui.platform.AndroidComposeViewVerificationHelperMethodsN: void setPointerIcon(android.view.View,androidx.compose.ui.input.pointer.PointerIcon)
+androidx.datastore.preferences.protobuf.FieldType$Collection: androidx.datastore.preferences.protobuf.FieldType$Collection[] values()
+androidx.appcompat.widget.AppCompatTextView: int getAutoSizeTextType()
+androidx.appcompat.widget.Toolbar: void setSubtitleTextColor(int)
+androidx.compose.ui.focus.CustomDestinationResult: androidx.compose.ui.focus.CustomDestinationResult valueOf(java.lang.String)
+androidx.compose.ui.window.PopupLayout: void setContent(kotlin.jvm.functions.Function2)
+coil3.decode.DataSource: coil3.decode.DataSource[] values()
+androidx.appcompat.widget.Toolbar: int getCurrentContentInsetLeft()
+androidx.appcompat.widget.Toolbar: int getContentInsetLeft()
+androidx.appcompat.widget.AppCompatImageView: void setImageResource(int)
+androidx.appcompat.widget.AppCompatAutoCompleteTextView: android.content.res.ColorStateList getSupportBackgroundTintList()
+androidx.compose.animation.core.MutatePriority: androidx.compose.animation.core.MutatePriority valueOf(java.lang.String)
+androidx.appcompat.widget.Toolbar: void setTitleMarginStart(int)
+androidx.appcompat.widget.Toolbar: int getContentInsetStartWithNavigation()
+io.ktor.util.Platform$JsPlatform: io.ktor.util.Platform$JsPlatform valueOf(java.lang.String)
+com.google.firebase.crashlytics.ktx.FirebaseCrashlyticsLegacyRegistrar: FirebaseCrashlyticsLegacyRegistrar()
+androidx.appcompat.view.menu.ActionMenuItemView: java.lang.CharSequence getAccessibilityClassName()
+androidx.compose.foundation.text.selection.SelectionHandleAnchor: androidx.compose.foundation.text.selection.SelectionHandleAnchor valueOf(java.lang.String)
+androidx.lifecycle.ReportFragment$LifecycleCallbacks: void onActivityCreated(android.app.Activity,android.os.Bundle)
+kotlinx.coroutines.flow.SharingCommand: kotlinx.coroutines.flow.SharingCommand valueOf(java.lang.String)
+androidx.appcompat.view.menu.ListMenuItemView: androidx.appcompat.view.menu.MenuItemImpl getItemData()
+androidx.datastore.preferences.protobuf.WireFormat$FieldType: androidx.datastore.preferences.protobuf.WireFormat$FieldType[] values()
+androidx.appcompat.view.menu.ExpandedMenuView: ExpandedMenuView(android.content.Context,android.util.AttributeSet)
+androidx.appcompat.widget.ActionBarContainer: void setSplitBackground(android.graphics.drawable.Drawable)
+androidx.appcompat.widget.AppCompatTextView: void setSupportBackgroundTintMode(android.graphics.PorterDuff$Mode)
+androidx.appcompat.widget.AppCompatTextView: android.content.res.ColorStateList getSupportBackgroundTintList()
+androidx.appcompat.widget.ListPopupWindow$Api24Impl: int getMaxAvailableHeight(android.widget.PopupWindow,android.view.View,int,boolean)
+com.google.firebase.concurrent.UiExecutor: com.google.firebase.concurrent.UiExecutor[] values()
+androidx.appcompat.widget.Toolbar: Toolbar(android.content.Context,android.util.AttributeSet)
+androidx.compose.ui.graphics.layer.view.DrawChildContainer: int getChildCount()
+androidx.appcompat.widget.ActionBarContainer: ActionBarContainer(android.content.Context,android.util.AttributeSet)
+androidx.core.view.ViewCompat$Api21Impl: void setBackgroundTintMode(android.view.View,android.graphics.PorterDuff$Mode)
+com.google.firebase.sessions.FirebaseSessionsRegistrar: com.google.firebase.sessions.FirebaseSessions getComponents$lambda$0(com.google.firebase.components.ComponentContainer)
+kotlin.collections.AbstractMutableList: AbstractMutableList()
+androidx.compose.ui.platform.AndroidComposeViewAssistHelperMethodsO: void setClassName(android.view.ViewStructure,android.view.View)
+androidx.compose.animation.core.MutatePriority: androidx.compose.animation.core.MutatePriority[] values()
+androidx.core.graphics.drawable.IconCompatParcelizer: androidx.core.graphics.drawable.IconCompat read(androidx.versionedparcelable.VersionedParcel)
+kotlin.text.RegexOption: kotlin.text.RegexOption valueOf(java.lang.String)
+androidx.core.view.WindowInsetsCompat$Impl: boolean isRound()
+androidx.compose.ui.autofill.AutofillType: androidx.compose.ui.autofill.AutofillType valueOf(java.lang.String)
+androidx.appcompat.widget.ActionBarOverlayLayout: void setHasNonEmbeddedTabs(boolean)
+androidx.core.widget.NestedScrollView: float getVerticalScrollFactorCompat()
+androidx.compose.ui.platform.AndroidComposeView: long getMeasureIteration()
+androidx.compose.foundation.text.selection.SelectionHandleAnchor: androidx.compose.foundation.text.selection.SelectionHandleAnchor[] values()
+androidx.appcompat.widget.ViewStubCompat: android.view.LayoutInflater getLayoutInflater()
+androidx.navigation.compose.BackStackEntryIdViewModel: BackStackEntryIdViewModel(androidx.lifecycle.SavedStateHandle)
+androidx.appcompat.widget.Toolbar: int getTitleMarginBottom()
+com.google.firebase.sessions.api.SessionSubscriber$Name: com.google.firebase.sessions.api.SessionSubscriber$Name[] values()
+org.example.weathercrossplatform.domain.models.Day$Companion: kotlinx.serialization.KSerializer serializer()
+org.example.weathercrossplatform.domain.models.Forecastday$Companion: kotlinx.serialization.KSerializer serializer()
+androidx.core.view.WindowInsetsCompat$Impl30: androidx.core.graphics.Insets getInsetsIgnoringVisibility(int)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: void setFillAlpha(float)
+androidx.compose.ui.layout.IntrinsicMinMax: androidx.compose.ui.layout.IntrinsicMinMax[] values()
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPathRenderer: void setRootAlpha(int)
+androidx.appcompat.widget.ActionMenuView: android.view.Menu getMenu()
+androidx.core.view.WindowInsetsCompat$Impl29: androidx.core.graphics.Insets getTappableElementInsets()
+androidx.appcompat.widget.ActionBarContainer: void setTransitioning(boolean)
+androidx.compose.ui.platform.AndroidComposeView: kotlin.jvm.functions.Function1 getConfigurationChangeObserver()
+com.google.firebase.installations.local.PersistedInstallation$RegistrationStatus: com.google.firebase.installations.local.PersistedInstallation$RegistrationStatus valueOf(java.lang.String)
+androidx.sqlite.driver.bundled.BundledSQLiteConnectionKt: void nativeClose(long)
+com.google.android.gms.common.api.internal.zzd: zzd()
+androidx.appcompat.widget.SearchView$SearchAutoComplete: int getSearchViewTextMinWidthDp()
+androidx.core.widget.EdgeEffectCompat$Api31Impl: android.widget.EdgeEffect create(android.content.Context,android.util.AttributeSet)
+androidx.lifecycle.ReportFragment$LifecycleCallbacks: void onActivityPreDestroyed(android.app.Activity)
+androidx.appcompat.widget.AppCompatImageView: void setImageLevel(int)
+androidx.compose.ui.state.ToggleableState: androidx.compose.ui.state.ToggleableState valueOf(java.lang.String)
+androidx.compose.ui.graphics.layer.ViewLayer: void setInvalidated(boolean)
+androidx.compose.foundation.gestures.Orientation: androidx.compose.foundation.gestures.Orientation[] values()
+androidx.compose.ui.node.LayoutNode$LayoutState: androidx.compose.ui.node.LayoutNode$LayoutState[] values()
+androidx.core.view.WindowInsetsCompat$Impl20: void copyRootViewBounds(android.view.View)
+androidx.appcompat.widget.LinearLayoutCompat: android.graphics.drawable.Drawable getDividerDrawable()
+androidx.core.view.WindowInsetsCompat$BuilderImpl29: void setSystemWindowInsets(androidx.core.graphics.Insets)
+androidx.sqlite.driver.bundled.BundledSQLiteStatementKt: void nativeBindDouble(long,int,double)
+androidx.core.view.WindowInsetsCompat$Impl: boolean equals(java.lang.Object)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: void setPivotY(float)
+androidx.core.view.WindowInsetsCompat$Impl21: androidx.core.graphics.Insets getStableInsets()
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: void setScaleX(float)
+androidx.compose.ui.graphics.AndroidPath_androidKt: void throwIllegalStateException(java.lang.String)
+io.ktor.client.engine.android.AndroidEngineContainer: AndroidEngineContainer()
+androidx.compose.ui.window.PopupLayout: void setPopupContentSize-fhxjrPA(androidx.compose.ui.unit.IntSize)
+androidx.appcompat.widget.AppCompatAutoCompleteTextView: void setCustomSelectionActionModeCallback(android.view.ActionMode$Callback)
+androidx.compose.runtime.collection.MutableVectorKt: void throwOutOfRangeException(int,int)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.unit.Density getDensity()
+androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper$Impl29: AppCompatTextViewAutoSizeHelper$Impl29()
+androidx.core.widget.EdgeEffectCompat$Api31Impl: float getDistance(android.widget.EdgeEffect)
+androidx.appcompat.widget.AppCompatImageButton: android.graphics.PorterDuff$Mode getSupportImageTintMode()
+androidx.compose.ui.internal.InlineClassHelperKt: void throwIndexOutOfBoundsException(java.lang.String)
+androidx.fragment.app.DefaultSpecialEffectsController$Api24Impl: long totalDuration(android.animation.AnimatorSet)
+androidx.compose.ui.platform.AndroidComposeView: boolean getShowLayoutBounds()
+androidx.compose.foundation.text.KeyCommand: androidx.compose.foundation.text.KeyCommand valueOf(java.lang.String)
+org.example.weathercrossplatform.data.database.WeatherDataBase: WeatherDataBase()
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: java.lang.String getGroupName()
+androidx.compose.runtime.Recomposer$State: androidx.compose.runtime.Recomposer$State[] values()
+androidx.core.view.WindowInsetsCompat$Impl29: WindowInsetsCompat$Impl29(androidx.core.view.WindowInsetsCompat,android.view.WindowInsets)
+org.koin.core.definition.Kind: org.koin.core.definition.Kind valueOf(java.lang.String)
+androidx.compose.ui.platform.ComposeView: void setContent(kotlin.jvm.functions.Function2)
+androidx.compose.foundation.layout.IntrinsicSize: androidx.compose.foundation.layout.IntrinsicSize[] values()
+androidx.lifecycle.ReportFragment$LifecycleCallbacks: void onActivityDestroyed(android.app.Activity)
+androidx.compose.runtime.collection.MutableVectorKt: void throwReversedIndicesException(int,int)
+io.ktor.client.plugins.logging.LoggingFormat: io.ktor.client.plugins.logging.LoggingFormat[] values()
+androidx.sqlite.driver.bundled.BundledSQLiteStatementKt: long nativeGetLong(long,int)
+androidx.core.view.WindowInsetsCompat$Impl20: boolean isVisible(int)
+androidx.appcompat.widget.DropDownListView$Api33Impl: void setSelectedChildViewEnabled(android.widget.AbsListView,boolean)
+android.support.v4.graphics.drawable.IconCompatParcelizer: IconCompatParcelizer()
+androidx.appcompat.widget.AppCompatTextView: int[] getAutoSizeTextAvailableSizes()
+androidx.appcompat.widget.AppCompatImageView: void setImageBitmap(android.graphics.Bitmap)
+androidx.appcompat.widget.AppCompatImageButton: void setImageResource(int)
+androidx.datastore.preferences.protobuf.ProtoSyntax: androidx.datastore.preferences.protobuf.ProtoSyntax[] values()
+androidx.compose.animation.core.AnimationEndReason: androidx.compose.animation.core.AnimationEndReason valueOf(java.lang.String)
+androidx.appcompat.view.menu.ActionMenuItemView: void setExpandedFormat(boolean)
+androidx.compose.ui.platform.OutlineVerificationHelper: void setPath(android.graphics.Outline,androidx.compose.ui.graphics.Path)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.node.RootForTest getRootForTest()
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.platform.AndroidComposeView$ViewTreeOwners get_viewTreeOwners()
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: void setStrokeColor(int)
+android.support.v4.app.RemoteActionCompatParcelizer: RemoteActionCompatParcelizer()
+androidx.fragment.app.FragmentContainerView: void setDrawDisappearingViewsLast(boolean)
+androidx.appcompat.widget.AppCompatImageView: android.content.res.ColorStateList getSupportImageTintList()
+androidx.compose.ui.platform.AbstractComposeView: boolean getShouldCreateCompositionOnAttachedToWindow()
+androidx.compose.ui.window.PopupLayout: void setPositionProvider(androidx.compose.ui.window.PopupPositionProvider)
+kotlinx.serialization.json.ClassDiscriminatorMode: kotlinx.serialization.json.ClassDiscriminatorMode valueOf(java.lang.String)
+androidx.compose.ui.focus.FocusStateImpl: androidx.compose.ui.focus.FocusStateImpl valueOf(java.lang.String)
+androidx.appcompat.widget.Toolbar: void setNavigationIcon(android.graphics.drawable.Drawable)
+androidx.appcompat.widget.Toolbar: void setBackInvokedCallbackEnabled(boolean)
+androidx.appcompat.widget.ActionBarOverlayLayout: void setShowingForActionMode(boolean)
+androidx.appcompat.widget.AppCompatImageView: void setBackgroundDrawable(android.graphics.drawable.Drawable)
+com.google.firebase.concurrent.SequentialExecutor$WorkerRunningState: com.google.firebase.concurrent.SequentialExecutor$WorkerRunningState[] values()
+kotlinx.coroutines.selects.TrySelectDetailedResult: kotlinx.coroutines.selects.TrySelectDetailedResult[] values()
+androidx.core.widget.NestedScrollView: int getScrollRange()
+androidx.compose.ui.node.LayoutNode$UsageByParent: androidx.compose.ui.node.LayoutNode$UsageByParent valueOf(java.lang.String)
+androidx.navigation.serialization.InternalType: androidx.navigation.serialization.InternalType valueOf(java.lang.String)
+androidx.compose.ui.window.PopupLayout: void getParams$ui_release$annotations()
+androidx.appcompat.widget.AppCompatImageButton: void setSupportImageTintList(android.content.res.ColorStateList)
+androidx.tracing.TraceApi29Impl: boolean isEnabled()
+com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver: AlarmManagerSchedulerBroadcastReceiver()
+androidx.appcompat.widget.AppCompatImageView: void setSupportBackgroundTintMode(android.graphics.PorterDuff$Mode)
+androidx.graphics.path.PathIteratorPreApi34Impl: boolean internalPathIteratorHasNext(long)
+androidx.compose.ui.unit.ConstraintsKt: java.lang.Void throwInvalidConstraintsSizeException(int)
+androidx.core.view.ViewCompat$Api21Impl: void setTransitionName(android.view.View,java.lang.String)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPath: void setPathData(androidx.core.graphics.PathParser$PathDataNode[])
+com.google.android.datatransport.Priority: com.google.android.datatransport.Priority valueOf(java.lang.String)
+androidx.appcompat.widget.AppCompatImageView: void setSupportImageTintMode(android.graphics.PorterDuff$Mode)
+androidx.compose.ui.platform.TextToolbarStatus: androidx.compose.ui.platform.TextToolbarStatus[] values()
+com.google.firebase.crashlytics.internal.common.DeliveryMechanism: com.google.firebase.crashlytics.internal.common.DeliveryMechanism[] values()
+androidx.datastore.preferences.protobuf.WireFormat$JavaType: androidx.datastore.preferences.protobuf.WireFormat$JavaType[] values()
+androidx.appcompat.widget.ActionMenuView: void setExpandedActionViewsExclusive(boolean)
+androidx.appcompat.widget.MenuPopupWindow$Api29Impl: void setTouchModal(android.widget.PopupWindow,boolean)
+androidx.lifecycle.ReportFragment$LifecycleCallbacks: void onActivityStarted(android.app.Activity)
+kotlinx.serialization.json.JsonNull: JsonNull()
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.text.input.TextInputService getTextInputService()
+androidx.core.view.WindowInsetsCompat$Impl: void copyRootViewBounds(android.view.View)
+androidx.appcompat.widget.AppCompatTextView: void setPrecomputedText(androidx.core.text.PrecomputedTextCompat)
+androidx.profileinstaller.ProfileInstallerInitializer: ProfileInstallerInitializer()
+androidx.appcompat.widget.SearchView$Api29Impl: void refreshAutoCompleteResults(android.widget.AutoCompleteTextView)
+androidx.appcompat.widget.AppCompatImageButton: void setImageDrawable(android.graphics.drawable.Drawable)
+androidx.core.graphics.drawable.IconCompatParcelizer: IconCompatParcelizer()
+androidx.startup.InitializationProvider: InitializationProvider()
+androidx.core.view.WindowInsetsCompat$BuilderImpl20: WindowInsetsCompat$BuilderImpl20(androidx.core.view.WindowInsetsCompat)
+androidx.core.view.WindowInsetsCompat$BuilderImpl: androidx.core.view.WindowInsetsCompat build()
+com.google.firebase.crashlytics.internal.settings.SettingsCacheBehavior: com.google.firebase.crashlytics.internal.settings.SettingsCacheBehavior valueOf(java.lang.String)
+androidx.compose.ui.node.NodeMeasuringIntrinsics$IntrinsicWidthHeight: androidx.compose.ui.node.NodeMeasuringIntrinsics$IntrinsicWidthHeight valueOf(java.lang.String)
+androidx.lifecycle.ReportFragment$LifecycleCallbacks: void onActivityResumed(android.app.Activity)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.platform.WindowInfo getWindowInfo()
+androidx.sqlite.driver.bundled.BundledSQLiteStatementKt: void nativeBindNull(long,int)
+androidx.lifecycle.ReportFragment$LifecycleCallbacks: ReportFragment$LifecycleCallbacks()
+kotlinx.serialization.json.JsonNull: kotlinx.serialization.KSerializer serializer()
+kotlinx.serialization.json.internal.WriteMode: kotlinx.serialization.json.internal.WriteMode[] values()
+androidx.sqlite.driver.bundled.BundledSQLiteStatementKt: void nativeBindLong(long,int,long)
+com.google.firebase.crashlytics.internal.settings.SettingsCacheBehavior: com.google.firebase.crashlytics.internal.settings.SettingsCacheBehavior[] values()
+androidx.appcompat.widget.SearchView$SearchAutoComplete: SearchView$SearchAutoComplete(android.content.Context,android.util.AttributeSet)
+androidx.appcompat.widget.LinearLayoutCompat: void setGravity(int)
+androidx.appcompat.widget.LinearLayoutCompat: int getBaselineAlignedChildIndex()
+androidx.core.view.ViewCompat$Api20Impl: android.view.WindowInsets onApplyWindowInsets(android.view.View,android.view.WindowInsets)
+androidx.appcompat.widget.Toolbar: int getTitleMarginStart()
+androidx.compose.ui.text.internal.InlineClassHelperKt: java.lang.Void throwIllegalArgumentExceptionForNullCheck(java.lang.String)
+com.google.firebase.crashlytics.CrashlyticsRegistrar: CrashlyticsRegistrar()
+androidx.appcompat.widget.AppCompatTextView: void setFilters(android.text.InputFilter[])
+androidx.appcompat.widget.LinearLayoutCompat: int getBaseline()
+androidx.core.app.RemoteActionCompatParcelizer: androidx.core.app.RemoteActionCompat read(androidx.versionedparcelable.VersionedParcel)
+androidx.appcompat.widget.SearchView$SearchAutoComplete: void setImeVisibility(boolean)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.semantics.SemanticsOwner getSemanticsOwner()
+androidx.appcompat.widget.Toolbar: int getContentInsetStart()
+coil3.request.CachePolicy: coil3.request.CachePolicy valueOf(java.lang.String)
+coil3.util.Logger$Level: coil3.util.Logger$Level valueOf(java.lang.String)
+org.example.weathercrossplatform.domain.models.Hour$Companion: kotlinx.serialization.KSerializer serializer()
+androidx.appcompat.widget.ActionBarOverlayLayout: int getActionBarHideOffset()
+androidx.lifecycle.ProcessLifecycleOwner$attach$1$onActivityPreCreated$1: ProcessLifecycleOwner$attach$1$onActivityPreCreated$1(androidx.lifecycle.ProcessLifecycleOwner)
+androidx.emoji2.text.ConcurrencyHelpers$Handler28Impl: android.os.Handler createAsync(android.os.Looper)
+androidx.compose.ui.text.internal.InlineClassHelperKt: void throwIllegalArgumentException(java.lang.String)
+org.example.weathercrossplatform.domain.models.Urls$Companion: kotlinx.serialization.KSerializer serializer()
+androidx.appcompat.widget.AppCompatTextView: java.lang.CharSequence getText()
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.platform.AndroidComposeView$ViewTreeOwners getViewTreeOwners()
+androidx.core.view.ViewCompat$Api21Impl$1: ViewCompat$Api21Impl$1(android.view.View,androidx.core.view.OnApplyWindowInsetsListener)
+com.google.android.datatransport.Priority: com.google.android.datatransport.Priority[] values()
+com.google.firebase.FirebaseCommonRegistrar: FirebaseCommonRegistrar()
+androidx.core.view.WindowInsetsCompat$Impl: void copyWindowDataInto(androidx.core.view.WindowInsetsCompat)
+androidx.appcompat.widget.Toolbar: android.graphics.drawable.Drawable getLogo()
+androidx.appcompat.app.AlertController$RecycleListView: AlertController$RecycleListView(android.content.Context,android.util.AttributeSet)
+androidx.compose.animation.core.RepeatMode: androidx.compose.animation.core.RepeatMode[] values()
+androidx.compose.foundation.internal.InlineClassHelperKt: void throwIllegalArgumentException(java.lang.String)
+androidx.appcompat.widget.LinearLayoutCompat: void setShowDividers(int)
+androidx.appcompat.widget.Toolbar$Api33Impl: android.window.OnBackInvokedDispatcher findOnBackInvokedDispatcher(android.view.View)
+androidx.appcompat.widget.ViewStubCompat: void setLayoutInflater(android.view.LayoutInflater)
+com.google.firebase.sessions.api.SessionSubscriber$Name: com.google.firebase.sessions.api.SessionSubscriber$Name valueOf(java.lang.String)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.graphics.GraphicsContext getGraphicsContext()
+androidx.compose.ui.focus.FocusStateImpl: androidx.compose.ui.focus.FocusStateImpl[] values()
+androidx.compose.foundation.internal.InlineClassHelperKt: void throwIllegalStateException(java.lang.String)
+androidx.compose.ui.layout.MeasuringIntrinsics$IntrinsicWidthHeight: androidx.compose.ui.layout.MeasuringIntrinsics$IntrinsicWidthHeight valueOf(java.lang.String)
+androidx.fragment.app.SpecialEffectsController$Operation$LifecycleImpact: androidx.fragment.app.SpecialEffectsController$Operation$LifecycleImpact[] values()
+androidx.sqlite.driver.bundled.BundledSQLiteStatementKt: int nativeGetColumnType(long,int)
+androidx.compose.foundation.layout.Direction: androidx.compose.foundation.layout.Direction[] values()
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.input.InputModeManager getInputModeManager()
+androidx.core.view.WindowInsetsCompat$Impl20: WindowInsetsCompat$Impl20(androidx.core.view.WindowInsetsCompat,android.view.WindowInsets)
+com.google.android.gms.common.SupportErrorDialogFragment: SupportErrorDialogFragment()
+androidx.appcompat.widget.Toolbar: void setOverflowIcon(android.graphics.drawable.Drawable)
+com.google.firebase.crashlytics.internal.common.CommonUtils$Architecture: com.google.firebase.crashlytics.internal.common.CommonUtils$Architecture valueOf(java.lang.String)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: float getPivotY()
+androidx.core.view.WindowInsetsCompat$Impl20: androidx.core.graphics.Insets getInsets(int)
+androidx.datastore.preferences.protobuf.Writer$FieldOrder: androidx.datastore.preferences.protobuf.Writer$FieldOrder[] values()
+androidx.compose.ui.node.LayoutNode$LayoutState: androidx.compose.ui.node.LayoutNode$LayoutState valueOf(java.lang.String)
+com.google.android.datatransport.cct.internal.NetworkConnectionInfo$MobileSubtype: com.google.android.datatransport.cct.internal.NetworkConnectionInfo$MobileSubtype valueOf(java.lang.String)
+androidx.appcompat.widget.Toolbar$Api33Impl: void tryRegisterOnBackInvokedCallback(java.lang.Object,java.lang.Object)
+androidx.appcompat.widget.AppCompatTextHelper$Api26Impl: boolean setFontVariationSettings(android.widget.TextView,java.lang.String)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.node.LayoutNodeDrawScope getSharedDrawScope()
+androidx.appcompat.widget.AppCompatTextView: void setSupportBackgroundTintList(android.content.res.ColorStateList)
+androidx.core.view.ViewCompat$Api28Impl: java.lang.CharSequence getAccessibilityPaneTitle(android.view.View)
+androidx.lifecycle.LifecycleDispatcher$DispatcherActivityCallback: void onActivityCreated(android.app.Activity,android.os.Bundle)
+androidx.compose.ui.layout.IntrinsicMinMax: androidx.compose.ui.layout.IntrinsicMinMax valueOf(java.lang.String)
+androidx.compose.ui.contentcapture.ContentCaptureEventType: androidx.compose.ui.contentcapture.ContentCaptureEventType valueOf(java.lang.String)
+androidx.compose.ui.layout.MeasuringIntrinsics$IntrinsicWidthHeight: androidx.compose.ui.layout.MeasuringIntrinsics$IntrinsicWidthHeight[] values()
+androidx.compose.ui.platform.AndroidCompositionLocals_androidKt: androidx.compose.runtime.ProvidableCompositionLocal getLocalLifecycleOwner()
+androidx.appcompat.widget.AppCompatTextView: void setBackgroundDrawable(android.graphics.drawable.Drawable)
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event valueOf(java.lang.String)
+kotlin.DeprecationLevel: kotlin.DeprecationLevel[] values()
+androidx.compose.ui.node.NodeMeasuringIntrinsics$IntrinsicMinMax: androidx.compose.ui.node.NodeMeasuringIntrinsics$IntrinsicMinMax valueOf(java.lang.String)
+androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper$OpenHelper$CallbackName: androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper$OpenHelper$CallbackName[] values()
+androidx.core.view.WindowInsetsCompat$Impl: androidx.core.view.WindowInsetsCompat consumeDisplayCutout()
+androidx.compose.ui.node.LayoutNode$UsageByParent: androidx.compose.ui.node.LayoutNode$UsageByParent[] values()
+androidx.compose.ui.node.LayoutNode: java.lang.String exceptionMessageForParentingOrOwnership(androidx.compose.ui.node.LayoutNode)
+androidx.compose.foundation.text.selection.CrossStatus: androidx.compose.foundation.text.selection.CrossStatus valueOf(java.lang.String)
+androidx.compose.ui.platform.AndroidComposeView: long getLastMatrixRecalculationAnimationTime$ui_release()
+androidx.core.view.ViewCompat$Api28Impl: void setAccessibilityHeading(android.view.View,boolean)
+androidx.compose.ui.window.PopupLayout: boolean getCanCalculatePosition()
+com.google.firebase.ktx.FirebaseCommonKtxRegistrar: FirebaseCommonKtxRegistrar()
+org.slf4j.helpers.Reporter$Level: org.slf4j.helpers.Reporter$Level[] values()
+okhttp3.TlsVersion: okhttp3.TlsVersion valueOf(java.lang.String)
+io.ktor.util.Platform$JsPlatform: io.ktor.util.Platform$JsPlatform[] values()
+androidx.appcompat.view.menu.ActionMenuItemView: void setPopupCallback(androidx.appcompat.view.menu.ActionMenuItemView$PopupCallback)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: android.graphics.Matrix getLocalMatrix()
+androidx.appcompat.widget.Toolbar: void setTitleMarginTop(int)
+androidx.core.view.ViewCompat$Api29Impl: void saveAttributeDataForStyleable(android.view.View,android.content.Context,int[],android.util.AttributeSet,android.content.res.TypedArray,int,int)
+androidx.compose.ui.platform.ViewLayerContainer: void dispatchGetDisplayList()
+androidx.core.view.WindowInsetsCompat$BuilderImpl30: WindowInsetsCompat$BuilderImpl30(androidx.core.view.WindowInsetsCompat)
+kotlin.coroutines.intrinsics.CoroutineSingletons: kotlin.coroutines.intrinsics.CoroutineSingletons[] values()
+androidx.lifecycle.EmptyActivityLifecycleCallbacks: void onActivityCreated(android.app.Activity,android.os.Bundle)
+coil3.network.ktor3.internal.KtorNetworkFetcherServiceLoaderTarget: KtorNetworkFetcherServiceLoaderTarget()
+androidx.appcompat.widget.AppCompatTextView: androidx.appcompat.widget.AppCompatTextView$SuperCaller getSuperCaller()
+androidx.compose.ui.window.PopupLayout: void setParentLayoutCoordinates(androidx.compose.ui.layout.LayoutCoordinates)
+androidx.compose.ui.platform.AndroidComposeView: void getFontLoader$annotations()
+androidx.compose.ui.platform.ViewLayer: androidx.compose.ui.platform.DrawChildContainer getContainer()
+org.example.weathercrossplatform.MainActivity: MainActivity()
+androidx.appcompat.widget.Toolbar: int getContentInsetEndWithActions()
+androidx.core.widget.NestedScrollView: void setSmoothScrollingEnabled(boolean)
+androidx.appcompat.widget.ListPopupWindow$Api29Impl: void setIsClippedToScreen(android.widget.PopupWindow,boolean)
+androidx.datastore.preferences.protobuf.WireFormat$FieldType: androidx.datastore.preferences.protobuf.WireFormat$FieldType valueOf(java.lang.String)
+androidx.datastore.preferences.protobuf.WireFormat$JavaType: androidx.datastore.preferences.protobuf.WireFormat$JavaType valueOf(java.lang.String)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.text.font.FontFamily$Resolver getFontFamilyResolver()
+androidx.fragment.app.SpecialEffectsController$Operation$State: androidx.fragment.app.SpecialEffectsController$Operation$State valueOf(java.lang.String)
+androidx.appcompat.widget.Toolbar: int getCurrentContentInsetRight()
+androidx.core.view.ViewCompat$Api30Impl: void setStateDescription(android.view.View,java.lang.CharSequence)
+androidx.compose.foundation.text.HandleState: androidx.compose.foundation.text.HandleState[] values()
+org.koin.core.option.KoinOption: org.koin.core.option.KoinOption valueOf(java.lang.String)
+androidx.appcompat.widget.DropDownListView$Api21Impl: void drawableHotspotChanged(android.view.View,float,float)
+androidx.compose.ui.node.NodeMeasuringIntrinsics$IntrinsicMinMax: androidx.compose.ui.node.NodeMeasuringIntrinsics$IntrinsicMinMax[] values()
+androidx.appcompat.widget.LinearLayoutCompat: void setWeightSum(float)
+androidx.appcompat.widget.ActionBarOverlayLayout: void setActionBarHideOffset(int)
+androidx.appcompat.widget.AppCompatTextHelper$Api26Impl: void setAutoSizeTextTypeUniformWithConfiguration(android.widget.TextView,int,int,int,int)
+androidx.core.widget.EdgeEffectCompat$Api21Impl: void onPull(android.widget.EdgeEffect,float,float)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: float getTrimPathOffset()
+androidx.appcompat.widget.LinearLayoutCompat: void setOrientation(int)
+androidx.appcompat.widget.ActionMenuView: android.graphics.drawable.Drawable getOverflowIcon()
+androidx.appcompat.widget.ListPopupWindow$Api29Impl: void setEpicenterBounds(android.widget.PopupWindow,android.graphics.Rect)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: void setTrimPathStart(float)
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: float getScaleY()
+androidx.appcompat.widget.AppCompatTextView: void setAutoSizeTextTypeWithDefaults(int)
+androidx.profileinstaller.ProfileInstallReceiver: ProfileInstallReceiver()
+androidx.fragment.app.FragmentContainerView: void setLayoutTransition(android.animation.LayoutTransition)
+androidx.sqlite.driver.bundled.BundledSQLiteStatementKt: java.lang.String nativeGetColumnName(long,int)
+androidx.compose.ui.platform.AndroidComposeView: androidx.compose.ui.platform.ViewConfiguration getViewConfiguration()
+androidx.compose.ui.platform.AndroidViewsHandler: java.util.HashMap getLayoutNodeToHolder()
+androidx.lifecycle.ReportFragment$LifecycleCallbacks: void registerIn(android.app.Activity)
