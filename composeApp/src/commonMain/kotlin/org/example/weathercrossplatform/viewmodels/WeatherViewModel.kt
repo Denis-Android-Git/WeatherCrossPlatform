@@ -73,13 +73,15 @@ class WeatherViewModel(
         viewModelScope.launch(Dispatchers.IO) {
             println("city_id = ${_weatherScreenState.value.cityId}")
             if (_weatherScreenState.value.cityId == null) {
-                coordinates.collectLatest { coordinates ->
+                println("cityId == null")
+                coordinates.collect { coordinates ->
                     coordinates?.let {
                         val query = "${it.latitude},${it.longitude}"
                         getWeatherByQuery(query, it.latitude, it.longitude)
                     }
                 }
             } else {
+                println("cityId not null")
                 getWeatherByQuery("id:${_weatherScreenState.value.cityId}")
             }
         }
@@ -183,11 +185,13 @@ class WeatherViewModel(
     }
 
     private fun refreshPosition() {
+        println("refreshPosition")
         viewModelScope.launch(Dispatchers.IO) {
             _weatherScreenState.value = _weatherScreenState.value.copy(
                 isLoading = true
             )
             locationService.getLocation().collectLatest { position ->
+                println("refreshPosition collectLatest position")
                 coordinates.update {
                     position
                 }

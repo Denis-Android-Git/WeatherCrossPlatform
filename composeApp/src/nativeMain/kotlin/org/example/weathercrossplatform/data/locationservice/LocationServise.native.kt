@@ -27,7 +27,9 @@ actual class LocationService {
         val delegate = object : NSObject(), CLLocationManagerDelegateProtocol {
             override fun locationManager(manager: CLLocationManager, didUpdateLocations: List<*>) {
                 val location = didUpdateLocations.lastOrNull() as? CLLocation
+                println("Location updated: $location")
                 location?.coordinate?.useContents {
+                    println("Latitude: ${this.latitude}, Longitude: ${this.longitude}")
                     trySend(Coordinates(this.latitude, this.longitude))
                 }
             }
