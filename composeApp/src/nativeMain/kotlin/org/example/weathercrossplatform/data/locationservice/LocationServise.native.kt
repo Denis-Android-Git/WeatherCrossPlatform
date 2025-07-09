@@ -14,7 +14,9 @@ import platform.Foundation.NSError
 import platform.darwin.NSObject
 
 actual class LocationService {
+
     private val locationManager = CLLocationManager()
+    private var delegateWrapper: LocationDelegateWrapper? = null
 
     init {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -22,24 +24,48 @@ actual class LocationService {
 
     @OptIn(ExperimentalForeignApi::class)
     actual suspend fun getLocation(): Flow<Coordinates> = callbackFlow {
-        locationManager.requestWhenInUseAuthorization()
-
-        val delegate = object : NSObject(), CLLocationManagerDelegateProtocol {
-            override fun locationManager(manager: CLLocationManager, didUpdateLocations: List<*>) {
-                val location = didUpdateLocations.lastOrNull() as? CLLocation
-                println("Location updated: $location")
-                location?.coordinate?.useContents {
-                    println("Latitude: ${this.latitude}, Longitude: ${this.longitude}")
-                    trySend(Coordinates(this.latitude, this.longitude))
-                }
+        println("Requesting location...")
+        val delegate = LocationDelegateWrapper { coordinates, error ->
+            if (coordinates != null) {
+                trySend(coordinates)
             }
-
-            override fun locationManager(manager: CLLocationManager, didFailWithError: NSError) {
-                close(Exception("Failed to get location: ${didFailWithError.localizedDescription}"))
+            if (error != null) {
+                close(error)
             }
         }
-        locationManager.delegate = delegate
+
+        delegateWrapper = delegate
+        locationManager.delegate = delegateWrapper
         locationManager.requestLocation()
-        awaitClose { locationManager.delegate = null }
+
+        awaitClose {
+            println("Closing location flow")
+            locationManager.delegate = null
+            delegateWrapper = null
+        }
+    }
+
+    private class LocationDelegateWrapper(
+        private val onLocationReceived: (Coordinates?, Throwable?) -> Unit
+    ) : NSObject(), CLLocationManagerDelegateProtocol {
+
+        @OptIn(ExperimentalForeignApi::class)
+        override fun locationManager(manager: CLLocationManager, didUpdateLocations: List<*>) {
+            val location = didUpdateLocations.lastOrNull() as? CLLocation
+            println("Location updated: $location")
+            location?.coordinate?.useContents {
+                val coords = Coordinates(this.latitude, this.longitude)
+                println("Latitude: ${coords.latitude}, Longitude: ${coords.longitude}")
+                onLocationReceived(coords, null)
+            }
+        }
+
+        override fun locationManager(manager: CLLocationManager, didFailWithError: NSError) {
+            println("Location failed with error: ${didFailWithError.localizedDescription}")
+            onLocationReceived(
+                null,
+                Exception("Location error: ${didFailWithError.localizedDescription}")
+            )
+        }
     }
 }
