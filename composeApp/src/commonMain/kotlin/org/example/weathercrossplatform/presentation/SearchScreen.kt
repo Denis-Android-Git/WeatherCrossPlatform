@@ -46,13 +46,15 @@ fun SearchScreen(
     onExpandedChange: (Boolean) -> Unit,
     onSearch: (String) -> Unit,
     cityList: List<SavedWeatherItem>,
+    allCitiesInOriginalOrder: List<SavedWeatherItem>,
     locationList: List<Location>,
     onFoundItemClick: (Location) -> Unit,
     onLongClick: (SavedWeatherItem) -> Unit,
     onClick: (SavedWeatherItem) -> Unit,
     tempListToDelete: List<SavedWeatherItem>,
     onDelete: () -> Unit,
-    clearTempList: () -> Unit
+    clearTempList: () -> Unit,
+    onSavedItemClick: (Int) -> Unit
 ) {
 
     val isLongPressed = remember { mutableStateOf(false) }
@@ -180,6 +182,7 @@ fun SearchScreen(
                     )
                 }
                 itemsIndexed(cityList) { index, it ->
+                    val originalIndex = allCitiesInOriginalOrder.indexOf(it)
                     SavedElement(
                         cityName = it.cityName,
                         temperature = it.temperature.toString(),
@@ -192,7 +195,13 @@ fun SearchScreen(
                             onLongClick(it)
                         },
                         onClick = {
-                            onClick(it)
+                            if (isLongPressed.value) {
+                                println("onClick_isLongPressed.value")
+                                onClick(it)
+                            } else {
+                                println("onClick_onSavedItemClick $originalIndex")
+                                onSavedItemClick(originalIndex)
+                            }
                         },
                         isLongPressed = isLongPressed.value,
                         isListContainsElement = tempListToDelete.contains(it)
@@ -266,6 +275,8 @@ fun Preview() {
         onClick = {},
         tempListToDelete = emptyList(),
         onDelete = { },
-        clearTempList = {}
+        clearTempList = {},
+        onSavedItemClick = {},
+        allCitiesInOriginalOrder = emptyList()
     )
 }

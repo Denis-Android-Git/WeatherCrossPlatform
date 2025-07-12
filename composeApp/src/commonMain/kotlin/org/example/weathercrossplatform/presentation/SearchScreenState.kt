@@ -20,12 +20,14 @@ fun SearchScreenState(
     searchViewModel: SearchViewModel = koinViewModel(),
     onBackButtonClick: (Int?) -> Unit,
     onFoundItemClick: (Location) -> Unit,
-    pageNumber: Int?
+    pageNumber: Int?,
+    onSavedItemClick: (Int) -> Unit
 ) {
 
     val scope = rememberCoroutineScope()
     val searchScreenState by searchViewModel.searchScreenState.collectAsStateWithLifecycle()
     val cityList by searchViewModel.allCities.collectAsStateWithLifecycle()
+    val allCitiesInOriginalOrder by searchViewModel.allCitiesInOriginalOrder.collectAsStateWithLifecycle()
     searchViewModel.pageNumber = pageNumber
 
     Box(
@@ -66,7 +68,11 @@ fun SearchScreenState(
             },
             clearTempList = {
                 searchViewModel.onAction(SearchScreenActions.SetTempList(null))
-            }
+            },
+            onSavedItemClick = {
+                onSavedItemClick(it)
+            },
+            allCitiesInOriginalOrder = allCitiesInOriginalOrder
         )
     }
 }

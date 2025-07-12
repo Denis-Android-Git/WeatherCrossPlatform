@@ -1,4 +1,4 @@
-#Sun Jul 06 09:47:55 MSK 2025
+#Sat Jul 12 18:55:54 MSK 2025
 base.0=/Users/mac/Desktop/WeatherCrossPlatform/composeApp/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

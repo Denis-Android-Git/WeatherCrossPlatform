@@ -4,7 +4,7 @@
             "outputFile": "org.example.weathercrossplatform.composeApp-mergeReleaseResources-68:/values-pl/values-pl.xml",
             "map": [
                 {
-                    "source": "/Users/mac/.gradle/caches/8.14.2/transforms/7dc7e22bcb3e16f175c0a699690c31a6/transformed/play-services-base-18.5.0/res/values-pl/values.xml",
+                    "source": "/Users/mac/.gradle/caches/8.14.3/transforms/6b50cba4f76db5b82037d9fd9694ad14/transformed/play-services-base-18.5.0/res/values-pl/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/mac/.gradle/caches/8.14.2/transforms/046c688b504752854a083efbc6852f61/transformed/play-services-basement-18.4.0/res/values-pl/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "135",
-                        "endOffsets": "330"
-                    },
-                    "to": {
-                        "startLines": "47",
-                        "startColumns": "4",
-                        "startOffsets": "4807",
-                        "endColumns": "139",
-                        "endOffsets": "4942"
-                    }
-                },
-                {
-                    "source": "/Users/mac/.gradle/caches/8.14.2/transforms/745201e984c9380679f6d70c7769c430/transformed/appcompat-1.7.1/res/values-pl/values-pl.xml",
+                    "source": "/Users/mac/.gradle/caches/8.14.3/transforms/a8ea5f836e298b203b4767aa1c0f1d17/transformed/appcompat-1.7.1/res/values-pl/values-pl.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,24 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/mac/.gradle/caches/8.14.2/transforms/e507f51c43ac3dce67067cd3a791b556/transformed/foundation-release/res/values-pl/values-pl.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,138,226",
-                        "endColumns": "82,87,87",
-                        "endOffsets": "133,221,309"
-                    },
-                    "to": {
-                        "startLines": "29,133,134",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "2817,13964,14052",
-                        "endColumns": "82,87,87",
-                        "endOffsets": "2895,14047,14135"
-                    }
-                },
-                {
-                    "source": "/Users/mac/.gradle/caches/8.14.2/transforms/0060f694bd06afc630ddfbd14edd1290/transformed/core-1.15.0/res/values-pl/values-pl.xml",
+                    "source": "/Users/mac/.gradle/caches/8.14.3/transforms/658a17a087598b893b71cc3e764af220/transformed/core-1.15.0/res/values-pl/values-pl.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -89,7 +55,24 @@
                     }
                 },
                 {
-                    "source": "/Users/mac/.gradle/caches/8.14.2/transforms/06369db647d0ceada84321780500d858/transformed/ui-release/res/values-pl/values-pl.xml",
+                    "source": "/Users/mac/.gradle/caches/8.14.3/transforms/e05c2692ba30329bef04992f7b15cd6b/transformed/foundation-release/res/values-pl/values-pl.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,138,226",
+                        "endColumns": "82,87,87",
+                        "endOffsets": "133,221,309"
+                    },
+                    "to": {
+                        "startLines": "29,133,134",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "2817,13964,14052",
+                        "endColumns": "82,87,87",
+                        "endOffsets": "2895,14047,14135"
+                    }
+                },
+                {
+                    "source": "/Users/mac/.gradle/caches/8.14.3/transforms/1d26f26e0016499f109bf86de1ba75ad/transformed/ui-release/res/values-pl/values-pl.xml",
                     "from": {
                         "startLines": "3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -106,7 +89,24 @@
                     }
                 },
                 {
-                    "source": "/Users/mac/.gradle/caches/8.14.2/transforms/b76df3fbf8f9c93ca55a05f4e9253e89/transformed/material3-release/res/values-pl/values-pl.xml",
+                    "source": "/Users/mac/.gradle/caches/8.14.3/transforms/6e2e5bf5b21aa7a380659127f502c91b/transformed/play-services-basement-18.4.0/res/values-pl/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "135",
+                        "endOffsets": "330"
+                    },
+                    "to": {
+                        "startLines": "47",
+                        "startColumns": "4",
+                        "startOffsets": "4807",
+                        "endColumns": "139",
+                        "endOffsets": "4942"
+                    }
+                },
+                {
+                    "source": "/Users/mac/.gradle/caches/8.14.3/transforms/483d94a8f031aa441fa283a5c6247cc3/transformed/material3-release/res/values-pl/values-pl.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

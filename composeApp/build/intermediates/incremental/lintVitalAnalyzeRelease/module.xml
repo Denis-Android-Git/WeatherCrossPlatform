@@ -4,7 +4,7 @@
     name=":composeApp"
     type="APP"
     maven="WeatherCrossPlatform:composeApp:unspecified"
-    agpVersion="8.11.0"
+    agpVersion="8.11.1"
     buildFolder="build"
     bootClassPath="/Users/mac/Library/Android/sdk/platforms/android-36/android.jar:/Users/mac/Library/Android/sdk/build-tools/35.0.0/core-lambda-stubs.jar"
     javaSourceLevel="11"

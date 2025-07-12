@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools">
     <string name="app_name">WeatherCrossPlatform</string>
-    <string name="com.google.firebase.crashlytics.mapping_file_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">8238cc4dae674ebfb49ebb9e88df2673</string>
+    <string name="com.google.firebase.crashlytics.mapping_file_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">7bdcf7e45cdb446fbd098372c8c7f262</string>
     <string name="default_web_client_id" translatable="false">489991034740-te6j9hlhhdk1lr7nkn7seijj6b5ilf4k.apps.googleusercontent.com</string>
     <string name="gcm_defaultSenderId" translatable="false">489991034740</string>
     <string name="google_api_key" translatable="false">AIzaSyAW1_XPMmSYpyNMxVVt2PgM6rpdVvASBZE</string>

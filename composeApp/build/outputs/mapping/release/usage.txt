@@ -44816,7 +44816,8 @@ org.example.weathercrossplatform.presentation.SearchScreenKt:
     private static final kotlin.Unit Preview$lambda$49$lambda$48(org.example.weathercrossplatform.data.database.SavedWeatherItem)
     private static final kotlin.Unit Preview$lambda$51$lambda$50()
     private static final kotlin.Unit Preview$lambda$53$lambda$52()
-    private static final kotlin.Unit Preview$lambda$54(int,androidx.compose.runtime.Composer,int)
+    private static final kotlin.Unit Preview$lambda$55$lambda$54(int)
+    private static final kotlin.Unit Preview$lambda$56(int,androidx.compose.runtime.Composer,int)
 org.example.weathercrossplatform.presentation._24HourForecastElementKt$HourForecastElement$lambda$9$lambda$8$lambda$7$$inlined$itemsIndexed$default$1
 org.example.weathercrossplatform.previews.ComposableSingletons$IconsKt
 org.example.weathercrossplatform.previews.ForecastElementKt

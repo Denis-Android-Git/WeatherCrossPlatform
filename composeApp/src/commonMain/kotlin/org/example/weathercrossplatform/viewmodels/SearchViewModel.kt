@@ -29,6 +29,12 @@ class SearchViewModel(
 
     var pageNumber by mutableStateOf<Int?>(null)
 
+    val allCitiesInOriginalOrder = dataBaseRepo.getWeatherList()
+        .stateIn(
+            viewModelScope,
+            SharingStarted.WhileSubscribed(5000),
+            initialValue = emptyList()
+        )
     val allCities = dataBaseRepo.getWeatherList()
         .map { list ->
             if (list.size <= 1) {
