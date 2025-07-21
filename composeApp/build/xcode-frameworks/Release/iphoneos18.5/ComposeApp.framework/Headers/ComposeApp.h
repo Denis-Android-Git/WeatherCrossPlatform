@@ -1671,6 +1671,7 @@ __attribute__((swift_name("SearchViewModel")))
 - (instancetype)initWithViewModelScope:(id<ComposeAppKotlinx_coroutines_coreCoroutineScope>)viewModelScope closeables:(ComposeAppKotlinArray<id<ComposeAppKotlinAutoCloseable>> *)closeables __attribute__((swift_name("init(viewModelScope:closeables:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 - (void)onActionAction:(id<ComposeAppSearchScreenActions>)action __attribute__((swift_name("onAction(action:)")));
 @property (readonly) id<ComposeAppKotlinx_coroutines_coreStateFlow> allCities __attribute__((swift_name("allCities")));
+@property (readonly) id<ComposeAppKotlinx_coroutines_coreStateFlow> allCitiesInOriginalOrder __attribute__((swift_name("allCitiesInOriginalOrder")));
 @property ComposeAppInt * _Nullable pageNumber __attribute__((swift_name("pageNumber")));
 @property (readonly) id<ComposeAppKotlinx_coroutines_coreStateFlow> searchScreenState __attribute__((swift_name("searchScreenState")));
 @end

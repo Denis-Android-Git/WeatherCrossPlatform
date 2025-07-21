@@ -27,11 +27,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.domain.models.Location
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -58,6 +60,7 @@ fun SearchScreen(
 ) {
 
     val isLongPressed = remember { mutableStateOf(false) }
+    val scope = rememberCoroutineScope()
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -181,30 +184,32 @@ fun SearchScreen(
                         color = Color.Gray
                     )
                 }
-                itemsIndexed(cityList) { index, it ->
-                    val originalIndex = allCitiesInOriginalOrder.indexOf(it)
+                itemsIndexed(cityList) { index, savedCity ->
+                    val originalIndex = allCitiesInOriginalOrder.indexOf(savedCity)
                     SavedElement(
-                        cityName = it.cityName,
-                        temperature = it.temperature.toString(),
-                        weatherDescription = it.weatherDescription,
-                        high = it.highTemperature.toString(),
-                        low = it.lowTemperature.toString(),
+                        cityName = savedCity.cityName,
+                        temperature = savedCity.temperature.toString(),
+                        weatherDescription = savedCity.weatherDescription,
+                        high = savedCity.highTemperature.toString(),
+                        low = savedCity.lowTemperature.toString(),
                         index = index,
                         onLongClick = {
                             isLongPressed.value = true
-                            onLongClick(it)
+                            onLongClick(savedCity)
                         },
                         onClick = {
-                            if (isLongPressed.value) {
-                                println("onClick_isLongPressed.value")
-                                onClick(it)
-                            } else {
-                                println("onClick_onSavedItemClick $originalIndex")
-                                onSavedItemClick(originalIndex)
+                            scope.launch {
+                                if (isLongPressed.value) {
+                                    println("onClick_isLongPressed.value")
+                                    onClick(savedCity)
+                                } else {
+                                    println("onClick_onSavedItemClick $originalIndex")
+                                    onSavedItemClick(originalIndex)
+                                }
                             }
                         },
                         isLongPressed = isLongPressed.value,
-                        isListContainsElement = tempListToDelete.contains(it)
+                        isListContainsElement = tempListToDelete.contains(savedCity)
                     )
                 }
             }
