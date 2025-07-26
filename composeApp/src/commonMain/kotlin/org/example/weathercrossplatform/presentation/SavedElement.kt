@@ -26,6 +26,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 fun SavedElement(
@@ -38,7 +39,8 @@ fun SavedElement(
     onLongClick: () -> Unit,
     onClick: () -> Unit,
     isLongPressed: Boolean,
-    isListContainsElement: Boolean
+    isListContainsElement: Boolean,
+    isCurrentLocation: Boolean
 ) {
     Box(
         modifier = Modifier
@@ -79,36 +81,66 @@ fun SavedElement(
                     }
                 }
                 Spacer(modifier = Modifier.weight(1f))
-                Text(text = weatherDescription, color = Color.White)
+                Text(
+                    text = if (weatherDescription.length > 30) "${weatherDescription.take(27)}..." else weatherDescription,
+                    color = Color.White, 
+                    maxLines = 1
+                )
             }
             Spacer(modifier = Modifier.weight(1f))
-            Column {
+            Column(
+                horizontalAlignment = Alignment.End
+            ) {
                 Text(text = "$temperature°C", color = Color.White, fontSize = 20.sp)
                 Spacer(modifier = Modifier.weight(1f))
                 Text(text = "$high / $low", color = Color.White)
             }
-            if (isLongPressed) {
-                if (isListContainsElement) {
-                    Box(
-                        modifier = Modifier
-                            .size(20.dp)
-                            .background(Color.Blue, shape = CircleShape),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Icon(
-                            imageVector = Icons.Outlined.Done,
-                            contentDescription = null,
-                            tint = Color.White
-                        )
-                    }
-                } else {
-                    Box(
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, Color.White, CircleShape)
+        }
+        if (isLongPressed && !isCurrentLocation) {
+            if (isListContainsElement) {
+                Box(
+                    modifier = Modifier
+                        .padding(14.dp)
+                        .size(20.dp)
+                        .align(Alignment.TopEnd)
+                        .background(Color.Blue, shape = CircleShape),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        imageVector = Icons.Outlined.Done,
+                        contentDescription = null,
+                        tint = Color.White
                     )
                 }
+            } else {
+                Box(
+                    modifier = Modifier
+                        .padding(14.dp)
+                        .size(20.dp)
+                        .align(Alignment.TopEnd)
+                        .border(1.dp, Color.White, CircleShape)
+                        .background(Color.DarkGray, shape = CircleShape)
+                    )
             }
         }
     }
+}
+
+
+@Preview
+@Composable
+fun PreviewSavedElement() {
+    SavedElement(
+        cityName = "San Francisco",
+        temperature = "18",
+        weatherDescription = "Cloudy",
+        high = "20",
+        low = "14",
+        index = 0,
+        onLongClick = {},
+        onClick = {},
+        isLongPressed = true,
+        isListContainsElement = true,
+        isCurrentLocation = false
+    )
 }

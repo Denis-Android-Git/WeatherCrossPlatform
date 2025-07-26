@@ -194,14 +194,18 @@ fun SearchScreen(
                         low = savedCity.lowTemperature.toString(),
                         index = index,
                         onLongClick = {
-                            isLongPressed.value = true
-                            onLongClick(savedCity)
+                            if (!savedCity.isCurrentLocation) {
+                                isLongPressed.value = true
+                                onLongClick(savedCity)
+                            }
                         },
                         onClick = {
                             scope.launch {
                                 if (isLongPressed.value) {
-                                    println("onClick_isLongPressed.value")
-                                    onClick(savedCity)
+                                    if (!savedCity.isCurrentLocation) {
+                                        println("onClick_isLongPressed.value")
+                                        onClick(savedCity)
+                                    }
                                 } else {
                                     println("onClick_onSavedItemClick $originalIndex")
                                     onSavedItemClick(originalIndex)
@@ -209,7 +213,8 @@ fun SearchScreen(
                             }
                         },
                         isLongPressed = isLongPressed.value,
-                        isListContainsElement = tempListToDelete.contains(savedCity)
+                        isListContainsElement = tempListToDelete.contains(savedCity),
+                        isCurrentLocation = savedCity.isCurrentLocation
                     )
                 }
             }

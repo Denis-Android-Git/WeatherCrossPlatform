@@ -17,6 +17,7 @@ private fun Preview() {
         onLongClick = { },
         onClick = {},
         isLongPressed = true,
-        isListContainsElement = true
+        isListContainsElement = true,
+        isCurrentLocation = true
     )
 }
