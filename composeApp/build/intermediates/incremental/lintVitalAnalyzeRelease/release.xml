@@ -7,7 +7,7 @@
     mergedManifest="build/intermediates/merged_manifest/release/processReleaseMainManifest/AndroidManifest.xml"
     proguardFiles="build/intermediates/default_proguard_files/global/proguard-android.txt-8.11.1"
     partialResultsDir="build/intermediates/lint_vital_partial_results/release/lintVitalAnalyzeRelease/out"
-    desugaredMethodsFiles="/Users/mac/.gradle/caches/8.14.3/transforms/975bfffd7a3e1b134e24d5ac12340407/transformed/D8BackportedDesugaredMethods.txt">
+    desugaredMethodsFiles="/Users/mac/.gradle/caches/8.14.3/transforms/531822e2417f04fe6e75ce958ef4129a/transformed/D8BackportedDesugaredMethods.txt">
   <buildFeatures
       namespacing="REQUIRED"/>
   <sourceProviders>
@@ -26,7 +26,7 @@
       type="MAIN"
       applicationId="org.example.weathercrossplatform"
       generatedSourceFolders="build/generated/ksp/android/androidRelease/java:build/generated/ksp/android/androidRelease/kotlin:build/generated/ap_generated_sources/release/out"
-      generatedResourceFolders="build/generated/res/processReleaseGoogleServices:build/generated/res/injectCrashlyticsMappingFileIdRelease:build/generated/res/resValues/release"
-      desugaredMethodsFiles="/Users/mac/.gradle/caches/8.14.3/transforms/975bfffd7a3e1b134e24d5ac12340407/transformed/D8BackportedDesugaredMethods.txt">
+      generatedResourceFolders="build/generated/res/processReleaseGoogleServices:build/generated/res/injectCrashlyticsVersionControlInfoRelease:build/generated/res/injectCrashlyticsMappingFileIdRelease:build/generated/res/resValues/release"
+      desugaredMethodsFiles="/Users/mac/.gradle/caches/8.14.3/transforms/531822e2417f04fe6e75ce958ef4129a/transformed/D8BackportedDesugaredMethods.txt">
   </artifact>
 </variant>

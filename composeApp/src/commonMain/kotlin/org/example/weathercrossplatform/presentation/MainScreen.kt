@@ -104,7 +104,7 @@ fun MainScreen(
                 AsyncImage(
                     model = image,
                     modifier = Modifier.fillMaxSize(),
-                    contentScale = ContentScale.FillHeight,
+                    contentScale = ContentScale.FillBounds,
                     contentDescription = null
                 )
                 val scrollState = rememberScrollState()

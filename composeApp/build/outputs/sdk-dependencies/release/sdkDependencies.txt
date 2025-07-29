@@ -1260,7 +1260,7 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-client-okhttp"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   repo_index {
     value: 1
@@ -1270,10 +1270,10 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-client-okhttp-jvm"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   digests {
-    sha256: "\361j-\220\036\020\366P\025\377\275\003\205\243\005\227>\f/\274\240\t=\223\315\307\335\350`\311\374\033"
+    sha256: "\305(Mf\211+\356~\366\340\344\346Z\336\024\377\276\242\\\200\342\370W|!qa\211U\272\'\376"
   }
   repo_index {
     value: 1
@@ -1283,7 +1283,7 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-client-core"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   repo_index {
     value: 1
@@ -1293,10 +1293,10 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-client-core-jvm"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   digests {
-    sha256: "G\022\277\nNAlV1\353\351\224;\030\b\311I\255\320/\\\371\315\242$XD\311\b\260\314<"
+    sha256: "\217\204/5\001K\344\001~R]\221\246\241\237`\264kK\005\036\254\212X\ba\263~F\325+\'"
   }
   repo_index {
     value: 1
@@ -1306,7 +1306,7 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-http"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   repo_index {
     value: 1
@@ -1316,10 +1316,10 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-http-jvm"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   digests {
-    sha256: "\261[4xi\3011\342A\026\321gS\360\302\353\313w,\374>)#\357I\263\375\360\317\\\320\334"
+    sha256: "&[\004\370\210\343\244\324~\321{;\235\374L^\214\352\261\005\233f\305\024\277\036X\250>^\000\376"
   }
   repo_index {
     value: 1
@@ -1329,7 +1329,7 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-utils"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   repo_index {
     value: 1
@@ -1339,10 +1339,10 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-utils-jvm"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   digests {
-    sha256: "\030\260\'\323\346[=\201\005+\215{\0321*\215S7@\262#\260\022\035\306\200\314\246\235`\317\030"
+    sha256: "(\nz\275t\363\016\240]\306m\005\212\213\2704.\251\235\305\221\b\360\306\266R\255-;*\234\314"
   }
   repo_index {
     value: 1
@@ -1352,7 +1352,7 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-io"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   repo_index {
     value: 1
@@ -1362,10 +1362,10 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-io-jvm"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   digests {
-    sha256: "\237j\034*C\365q\"\340\354\347\311\303\rS\340\323\226xR\245\323\373\310\0370k\326_\306\035T"
+    sha256: "\272\177\356\326\004\230{Ea\337\246\000\223\347&8\003H\277\026}0\327K\300\006d\352\017\277d\336"
   }
   repo_index {
     value: 1
@@ -1375,7 +1375,7 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-http-cio"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   repo_index {
     value: 1
@@ -1385,10 +1385,10 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-http-cio-jvm"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   digests {
-    sha256: "\315j-bV\370\000\223\267\006yp\3131\246\212\177n\211$\357-\264\354Av\254\302\317*\203\f"
+    sha256: "AZ\266\317\330b&\277O\276\213\207~wO\275xO\267\305H\263\353\372WN\270\325t*g!"
   }
   repo_index {
     value: 1
@@ -1398,7 +1398,7 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-network"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   repo_index {
     value: 1
@@ -1408,10 +1408,10 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-network-jvm"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   digests {
-    sha256: "\003\3146\324\023*\321\302\226\244\274\347\255h\202\245]\001\200]S\362y>N\327\322y\263\221\'\201"
+    sha256: "\264\016\001\301\032\242([\035\351\005\373\"\204\350\255\216\ne\v\215\360\021\313\004U\254\352\330\r\306\305"
   }
   repo_index {
     value: 1
@@ -1421,7 +1421,7 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-events"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   repo_index {
     value: 1
@@ -1431,10 +1431,10 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-events-jvm"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   digests {
-    sha256: "\002\216\367+\023C\367\255\326\337u\345!N\001\211\303 \374+\221e[&}G\r).G\363\327"
+    sha256: "\354\177\317\302\220L\370`sC\303\261\362\340\0039\200\032\226\324\0163l4\312\321&\216\220V\210\354"
   }
   repo_index {
     value: 1
@@ -1444,7 +1444,7 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-websocket-serialization"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   repo_index {
     value: 1
@@ -1454,10 +1454,10 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-websocket-serialization-jvm"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   digests {
-    sha256: "\237?rn~rh\253\312\376\357t\036+\3635]\"\237\006\306\t\3121\313(Q\017\032\3044e"
+    sha256: "z\020{H\344\336\344T}\377\255\343\263\345\342\2476\024s\310\a\031\371\021-\275\027Pp\241O\357"
   }
   repo_index {
     value: 1
@@ -1467,7 +1467,7 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-serialization"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   repo_index {
     value: 1
@@ -1477,10 +1477,10 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-serialization-jvm"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   digests {
-    sha256: "\303\240\370\346g\210u\346\301\256\371\222\037\253(\257x\270\332\310\272\230\1772\250j\371\355z\275\b\203"
+    sha256: "Wfq\320\221w\3217\036\225\204\036\2064[\243\336,\323\313s7L\v\340\r\351\2734C\332d"
   }
   repo_index {
     value: 1
@@ -1490,7 +1490,7 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-websockets"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   repo_index {
     value: 1
@@ -1500,10 +1500,10 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-websockets-jvm"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   digests {
-    sha256: "\376\200\364RG\223\263\226\017\361{\021\262q\301k\023\325J\334\344\245A\004n\235gQ,k\177E"
+    sha256: "\370\227\b\276k\002W\337\021\227R\367VB\003\2516C\321_\034a\315\202\b\362%\206\306\'l\256"
   }
   repo_index {
     value: 1
@@ -1513,7 +1513,7 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-sse"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   repo_index {
     value: 1
@@ -1523,10 +1523,10 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-sse-jvm"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   digests {
-    sha256: "&\000\031\3236\n\020u\003\035|\300V\f\375\221\243\312\207Yh0\356<\310\021\000p\177\331\276\233"
+    sha256: "X\341\000\034\3107\344\360\200\337,\305\336\314\235\025Kk\357\204\314\210d(M]LQ\227\240#l"
   }
   repo_index {
     value: 1
@@ -2060,7 +2060,7 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-client-android"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   repo_index {
     value: 1
@@ -2070,10 +2070,10 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-client-android-jvm"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   digests {
-    sha256: "\313\340G\207\347k\235\245\001\034\325C\367\023q\r\327\301\037\365\300\216\324/\267\226zo3\320\237\351"
+    sha256: "\303\027\367!+&\336;\353\201\330s\b\326TQi\026Z\361*\201dM\254\217\316&.\035\223\275"
   }
   repo_index {
     value: 1
@@ -2649,7 +2649,7 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-client-content-negotiation"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   repo_index {
     value: 1
@@ -2659,10 +2659,10 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-client-content-negotiation-jvm"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   digests {
-    sha256: "I\333\370\v\307\246w\247N\315\3037\205)/r\236\212\346f\362\034AK\342\371\206\366\0377\211\227"
+    sha256: "\241\301\016\236]d\017kp\263\321\226M\2541(\306\243\324.\325\206\207w\333m~{\243\027\021\006"
   }
   repo_index {
     value: 1
@@ -2672,7 +2672,7 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-client-auth"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   repo_index {
     value: 1
@@ -2682,10 +2682,10 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-client-auth-jvm"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   digests {
-    sha256: "h\004!\374\256\314\343y\341b\b\024\035t1\001\214\221\"\210\vLW\343\214\177de8-A\217"
+    sha256: "\204\016\223\312Gl\376\002\3205\263\022^A\233+\v\342\321\326@\3407<\002^$\260\245,\301\227"
   }
   repo_index {
     value: 1
@@ -2695,7 +2695,7 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-client-logging"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   repo_index {
     value: 1
@@ -2705,10 +2705,10 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-client-logging-jvm"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   digests {
-    sha256: "\357.\205\b\236\275\246\345\246\326*\002\250D\275k\346\355{\221>!\372\263\233=\215\033\245\267\261Y"
+    sha256: "\223A\304(\022\350nS/{\375\374{\232 c\236p\341\233+\023@\265F\332(\022\273\372\275;"
   }
   repo_index {
     value: 1
@@ -2718,7 +2718,7 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-serialization-kotlinx-json"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   repo_index {
     value: 1
@@ -2728,10 +2728,10 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-serialization-kotlinx-json-jvm"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   digests {
-    sha256: "\2123\350\\\'\320JGP\360\325\033\213\026\2703`\220\220\3305\032\237\272C\024\252@\272n\261\264"
+    sha256: "\036\213/\230\202\t\t\024i\3512<\367J$?\356\031\346U\254\301\262\364\361\332r\353\312.H\334"
   }
   repo_index {
     value: 1
@@ -2741,7 +2741,7 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-serialization-kotlinx"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   repo_index {
     value: 1
@@ -2751,10 +2751,10 @@ library {
   maven_library {
     groupId: "io.ktor"
     artifactId: "ktor-serialization-kotlinx-jvm"
-    version: "3.2.1"
+    version: "3.2.2"
   }
   digests {
-    sha256: "\337nC\t~\374\257i;\025\273\206E:\327\304x\023c\243\305\344\036\254\\\267\241\321h\263\035\311"
+    sha256: "\021\361\026&\364\235#\263\004\361\347\252\310\305\201I\256d*\026\263\204\307[\325\274\274cj\246\244\232"
   }
   repo_index {
     value: 1
