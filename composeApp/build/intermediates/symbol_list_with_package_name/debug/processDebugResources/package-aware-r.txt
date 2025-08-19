@@ -780,6 +780,7 @@ id checked
 id chronometer
 id coil3_request_manager
 id collapseActionView
+id compose_prefetch_scheduler
 id compose_view_saveable_id_tag
 id consume_window_insets_tag
 id content
@@ -1271,7 +1272,6 @@ style Base_Widget_AppCompat_Toolbar_Button_Navigation
 style DialogWindowTheme
 style EdgeToEdgeFloatingDialogTheme
 style EdgeToEdgeFloatingDialogWindowTheme
-style FloatingDialogTheme
 style FloatingDialogWindowTheme
 style Platform_AppCompat
 style Platform_AppCompat_Light

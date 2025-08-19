@@ -243,6 +243,7 @@
     <item name="action_menu_presenter" type="id"/>
     <item name="androidx_compose_ui_view_composition_context" type="id"/>
     <item name="coil3_request_manager" type="id"/>
+    <item name="compose_prefetch_scheduler" type="id"/>
     <item name="compose_view_saveable_id_tag" type="id"/>
     <item name="consume_window_insets_tag" type="id"/>
     <item name="fragment_container_view_tag" type="id"/>
@@ -1543,12 +1544,8 @@
     <style name="EdgeToEdgeFloatingDialogWindowTheme">
         <item name="android:dialogTheme">@style/EdgeToEdgeFloatingDialogTheme</item>
     </style>
-    <style name="FloatingDialogTheme">
-        <item name="android:windowIsFloating">false</item>
-    </style>
     <style name="FloatingDialogWindowTheme">
         <item name="android:windowClipToOutline">false</item>
-        <item name="android:dialogTheme">@style/FloatingDialogTheme</item>
         <item name="android:backgroundDimEnabled">true</item>
     </style>
     <style name="Platform.AppCompat" parent="android:Theme.Holo">
