@@ -33,19 +33,15 @@ public class WeatherDao_Impl(
   private val __upsertAdapterOfSavedWeatherItem: EntityUpsertAdapter<SavedWeatherItem>
   init {
     this.__db = __db
-    this.__deleteAdapterOfSavedWeatherItem = object :
-        EntityDeleteOrUpdateAdapter<SavedWeatherItem>() {
-      protected override fun createQuery(): String =
-          "DELETE FROM `SavedWeatherItem` WHERE `cityName` = ?"
+    this.__deleteAdapterOfSavedWeatherItem = object : EntityDeleteOrUpdateAdapter<SavedWeatherItem>() {
+      protected override fun createQuery(): String = "DELETE FROM `SavedWeatherItem` WHERE `cityName` = ?"
 
       protected override fun bind(statement: SQLiteStatement, entity: SavedWeatherItem) {
         statement.bindText(1, entity.cityName)
       }
     }
-    this.__upsertAdapterOfSavedWeatherItem = EntityUpsertAdapter<SavedWeatherItem>(object :
-        EntityInsertAdapter<SavedWeatherItem>() {
-      protected override fun createQuery(): String =
-          "INSERT INTO `SavedWeatherItem` (`cityName`,`cityId`,`temperature`,`weatherDescription`,`highTemperature`,`lowTemperature`,`coordinates`,`isCurrentLocation`) VALUES (?,?,?,?,?,?,?,?)"
+    this.__upsertAdapterOfSavedWeatherItem = EntityUpsertAdapter<SavedWeatherItem>(object : EntityInsertAdapter<SavedWeatherItem>() {
+      protected override fun createQuery(): String = "INSERT INTO `SavedWeatherItem` (`cityName`,`cityId`,`temperature`,`weatherDescription`,`highTemperature`,`lowTemperature`,`coordinates`,`isCurrentLocation`) VALUES (?,?,?,?,?,?,?,?)"
 
       protected override fun bind(statement: SQLiteStatement, entity: SavedWeatherItem) {
         statement.bindText(1, entity.cityName)
@@ -64,8 +60,7 @@ public class WeatherDao_Impl(
         statement.bindLong(8, _tmp.toLong())
       }
     }, object : EntityDeleteOrUpdateAdapter<SavedWeatherItem>() {
-      protected override fun createQuery(): String =
-          "UPDATE `SavedWeatherItem` SET `cityName` = ?,`cityId` = ?,`temperature` = ?,`weatherDescription` = ?,`highTemperature` = ?,`lowTemperature` = ?,`coordinates` = ?,`isCurrentLocation` = ? WHERE `cityName` = ?"
+      protected override fun createQuery(): String = "UPDATE `SavedWeatherItem` SET `cityName` = ?,`cityId` = ?,`temperature` = ?,`weatherDescription` = ?,`highTemperature` = ?,`lowTemperature` = ?,`coordinates` = ?,`isCurrentLocation` = ? WHERE `cityName` = ?"
 
       protected override fun bind(statement: SQLiteStatement, entity: SavedWeatherItem) {
         statement.bindText(1, entity.cityName)
@@ -87,13 +82,11 @@ public class WeatherDao_Impl(
     })
   }
 
-  public override suspend fun deleteWeather(weather: SavedWeatherItem): Unit =
-      performSuspending(__db, false, true) { _connection ->
+  public override suspend fun deleteWeather(weather: SavedWeatherItem): Unit = performSuspending(__db, false, true) { _connection ->
     __deleteAdapterOfSavedWeatherItem.handle(_connection, weather)
   }
 
-  public override suspend fun upsertWeather(weather: SavedWeatherItem): Unit =
-      performSuspending(__db, false, true) { _connection ->
+  public override suspend fun upsertWeather(weather: SavedWeatherItem): Unit = performSuspending(__db, false, true) { _connection ->
     __upsertAdapterOfSavedWeatherItem.upsert(_connection, weather)
   }
 
@@ -105,8 +98,7 @@ public class WeatherDao_Impl(
         val _columnIndexOfCityName: Int = getColumnIndexOrThrow(_stmt, "cityName")
         val _columnIndexOfCityId: Int = getColumnIndexOrThrow(_stmt, "cityId")
         val _columnIndexOfTemperature: Int = getColumnIndexOrThrow(_stmt, "temperature")
-        val _columnIndexOfWeatherDescription: Int = getColumnIndexOrThrow(_stmt,
-            "weatherDescription")
+        val _columnIndexOfWeatherDescription: Int = getColumnIndexOrThrow(_stmt, "weatherDescription")
         val _columnIndexOfHighTemperature: Int = getColumnIndexOrThrow(_stmt, "highTemperature")
         val _columnIndexOfLowTemperature: Int = getColumnIndexOrThrow(_stmt, "lowTemperature")
         val _columnIndexOfCoordinates: Int = getColumnIndexOrThrow(_stmt, "coordinates")
@@ -136,8 +128,7 @@ public class WeatherDao_Impl(
           val _tmp: Int
           _tmp = _stmt.getLong(_columnIndexOfIsCurrentLocation).toInt()
           _tmpIsCurrentLocation = _tmp != 0
-          _item =
-              SavedWeatherItem(_tmpCityName,_tmpCityId,_tmpTemperature,_tmpWeatherDescription,_tmpHighTemperature,_tmpLowTemperature,_tmpCoordinates,_tmpIsCurrentLocation)
+          _item = SavedWeatherItem(_tmpCityName,_tmpCityId,_tmpTemperature,_tmpWeatherDescription,_tmpHighTemperature,_tmpLowTemperature,_tmpCoordinates,_tmpIsCurrentLocation)
           _result.add(_item)
         }
         _result
@@ -148,8 +139,7 @@ public class WeatherDao_Impl(
   }
 
   public override suspend fun clearCurrentLocation() {
-    val _sql: String =
-        "UPDATE savedweatheritem SET isCurrentLocation = 0 WHERE isCurrentLocation = 1"
+    val _sql: String = "UPDATE savedweatheritem SET isCurrentLocation = 0 WHERE isCurrentLocation = 1"
     return performSuspending(__db, false, true) { _connection ->
       val _stmt: SQLiteStatement = _connection.prepare(_sql)
       try {
