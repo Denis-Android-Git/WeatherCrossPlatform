@@ -47,10 +47,6 @@ kotlin {
             implementation(libs.koin.android)
             implementation(libs.koin.androidx.compose)
             implementation(libs.ktor.client.android)
-            implementation(libs.gitlive.firebase.kotlin.crashlytics)
-            implementation(libs.moko.permissions)
-            implementation(libs.moko.permissions.compose)
-            implementation(libs.permissions.location)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -63,16 +59,16 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(libs.bundles.ktor)
             implementation(libs.lifecycle.viewmodel.compose)
-//            api(libs.moko.permissions)
-//            api(libs.moko.permissions.compose)
-//            implementation(libs.permissions.location)
+            api(libs.moko.permissions)
+            api(libs.moko.permissions.compose)
+            implementation(libs.permissions.location)
             api(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
             implementation(libs.navigation.compose)
             implementation(libs.coil.compose)
             implementation(libs.coil.network.ktor3)
-            //api(libs.gitlive.firebase.kotlin.crashlytics)
+            api(libs.gitlive.firebase.kotlin.crashlytics)
             implementation(libs.androidx.room.runtime)
             implementation(libs.sqlite.bundled)
             implementation(libs.material.icons.core)
@@ -81,10 +77,6 @@ kotlin {
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
-            implementation(libs.gitlive.firebase.kotlin.crashlytics)
-            implementation(libs.moko.permissions)
-            implementation(libs.moko.permissions.compose)
-            implementation(libs.permissions.location)
         }
 //        desktopMain.dependencies {
 //            implementation(compose.desktop.currentOs)
@@ -164,59 +156,9 @@ room {
 dependencies {
     add("kspCommonMainMetadata", libs.androidx.room.compiler)
 
-    add("kspAndroid",libs.androidx.room.compiler)
+    add("kspAndroid", libs.androidx.room.compiler)
     //add("kspIosX64", libs.androidx.room.compiler)
     add("kspIosArm64", libs.androidx.room.compiler)
-    add("kspIosSimulatorArm64",libs.androidx.room.compiler)
+    add("kspIosSimulatorArm64", libs.androidx.room.compiler)
 
 }
-
-// 2. Apply class transformation in `build.gradle.kts` of your app module
-//
-//androidComponents {
-//    onVariants { variant ->
-//        variant.instrumentation.transformClassesWith(
-//            FieldSkippingClassVisitor.Factory::class.java,
-//            scope = InstrumentationScope.ALL,
-//        ) { params ->
-//            params.classes.add("io.ktor.client.plugins.Messages")
-//        }
-//    }
-//}
-//class FieldSkippingClassVisitor(
-//    apiVersion: Int,
-//    nextClassVisitor: ClassVisitor,
-//) : ClassVisitor(apiVersion, nextClassVisitor) {
-//
-//    override fun visitField(
-//        access: Int,
-//        name: String?,
-//        descriptor: String?,
-//        signature: String?,
-//        value: Any?
-//    ): FieldVisitor? = null
-//
-//    abstract class Factory : AsmClassVisitorFactory<Parameters> {
-//
-//        private val excludedClasses: Set<String>
-//            get() = parameters.get().classes.get()
-//
-//        override fun isInstrumentable(classData: ClassData): Boolean =
-//            classData.className in excludedClasses
-//
-//        override fun createClassVisitor(
-//            classContext: ClassContext,
-//            nextClassVisitor: ClassVisitor
-//        ): ClassVisitor {
-//            return FieldSkippingClassVisitor(
-//                apiVersion = instrumentationContext.apiVersion.get(),
-//                nextClassVisitor = nextClassVisitor
-//            )
-//        }
-//    }
-//
-//    abstract class Parameters : InstrumentationParameters {
-//        @get:Input
-//        abstract val classes: SetProperty<String>
-//    }
-//}
