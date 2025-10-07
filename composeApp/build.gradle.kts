@@ -24,7 +24,7 @@ kotlin {
     }
 
     listOf(
-        iosX64(),
+        //iosX64(),
         iosArm64(),
         iosSimulatorArm64()
     ).forEach { iosTarget ->
@@ -37,7 +37,7 @@ kotlin {
     jvm("desktop")
 
     sourceSets {
-        val desktopMain by getting
+        //val desktopMain by getting
 
         androidMain.dependencies {
             implementation(compose.preview)
@@ -47,6 +47,10 @@ kotlin {
             implementation(libs.koin.android)
             implementation(libs.koin.androidx.compose)
             implementation(libs.ktor.client.android)
+            implementation(libs.gitlive.firebase.kotlin.crashlytics)
+            implementation(libs.moko.permissions)
+            implementation(libs.moko.permissions.compose)
+            implementation(libs.permissions.location)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -59,30 +63,34 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(libs.bundles.ktor)
             implementation(libs.lifecycle.viewmodel.compose)
-            api(libs.moko.permissions)
-            api(libs.moko.permissions.compose)
-            implementation(libs.permissions.location)
+//            api(libs.moko.permissions)
+//            api(libs.moko.permissions.compose)
+//            implementation(libs.permissions.location)
             api(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
             implementation(libs.navigation.compose)
             implementation(libs.coil.compose)
             implementation(libs.coil.network.ktor3)
-            api(libs.gitlive.firebase.kotlin.crashlytics)
+            //api(libs.gitlive.firebase.kotlin.crashlytics)
             implementation(libs.androidx.room.runtime)
             implementation(libs.sqlite.bundled)
             implementation(libs.material.icons.core)
             implementation(libs.kotlinx.serialization.json)
 
         }
-        nativeMain.dependencies {
+        iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
+            implementation(libs.gitlive.firebase.kotlin.crashlytics)
+            implementation(libs.moko.permissions)
+            implementation(libs.moko.permissions.compose)
+            implementation(libs.permissions.location)
         }
-        desktopMain.dependencies {
-            implementation(compose.desktop.currentOs)
-            implementation(libs.kotlinx.coroutines.swing)
-            implementation(libs.ktor.client.okhttp)
-        }
+//        desktopMain.dependencies {
+//            implementation(compose.desktop.currentOs)
+//            implementation(libs.kotlinx.coroutines.swing)
+//            implementation(libs.ktor.client.okhttp)
+//        }
     }
 }
 
@@ -157,7 +165,7 @@ dependencies {
     add("kspCommonMainMetadata", libs.androidx.room.compiler)
 
     add("kspAndroid",libs.androidx.room.compiler)
-    add("kspIosX64", libs.androidx.room.compiler)
+    //add("kspIosX64", libs.androidx.room.compiler)
     add("kspIosArm64", libs.androidx.room.compiler)
     add("kspIosSimulatorArm64",libs.androidx.room.compiler)
 

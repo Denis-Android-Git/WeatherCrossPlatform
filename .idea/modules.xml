@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/WeatherCrossPlatform.iml" filepath="$PROJECT_DIR$/.idea/modules/WeatherCrossPlatform.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/composeApp/WeatherCrossPlatform.composeApp.iosArm64Main.iml" filepath="$PROJECT_DIR$/.idea/modules/composeApp/WeatherCrossPlatform.composeApp.iosArm64Main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/composeApp/WeatherCrossPlatform.composeApp.iosSimulatorArm64Main.iml" filepath="$PROJECT_DIR$/.idea/modules/composeApp/WeatherCrossPlatform.composeApp.iosSimulatorArm64Main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/composeApp/WeatherCrossPlatform.composeApp.iosX64Main.iml" filepath="$PROJECT_DIR$/.idea/modules/composeApp/WeatherCrossPlatform.composeApp.iosX64Main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/WeatherCrossPlatformXcode.iml" filepath="$PROJECT_DIR$/.idea/WeatherCrossPlatformXcode.iml" />
     </modules>
   </component>
