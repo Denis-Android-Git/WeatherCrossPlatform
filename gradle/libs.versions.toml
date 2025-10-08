@@ -31,6 +31,7 @@ roomRuntime = "2.8.1"
 #иначе не собирается
 ksp = "2.2.10-2.0.2"
 sqlite = "2.6.1"
+kermit = "2.0.8"
 
 #androidx-appcompat = "1.7.0"
 #androidx-constraintlayout = "2.2.1"
@@ -42,6 +43,10 @@ sqlite = "2.6.1"
 
 
 [libraries]
+
+# Logging
+touchlab-kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
+
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinSerialization" }
 
 #Firebase

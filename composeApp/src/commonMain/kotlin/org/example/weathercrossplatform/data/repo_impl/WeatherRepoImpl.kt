@@ -3,17 +3,10 @@ package org.example.weathercrossplatform.data.repo_impl
 import com.example.weathercrossplatform.BuildKonfig
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
-import io.ktor.client.engine.HttpClientEngine
-import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
-import io.ktor.client.plugins.logging.LogLevel
-import io.ktor.client.plugins.logging.Logger
-import io.ktor.client.plugins.logging.Logging
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
-import io.ktor.serialization.kotlinx.json.json
 import io.ktor.util.network.UnresolvedAddressException
 import kotlinx.serialization.SerializationException
-import kotlinx.serialization.json.Json
 import org.example.weathercrossplatform.data.locale.SystemLocale
 import org.example.weathercrossplatform.data.network.dto.ForecastDto
 import org.example.weathercrossplatform.data.network.dto.ImageListDto
@@ -118,26 +111,6 @@ class WeatherRepoImpl(
             413 -> Result.Error(NetworkError.PAYLOAD_TOO_LARGE)
             in 500..599 -> Result.Error(NetworkError.SERVER_ERROR)
             else -> Result.Error(NetworkError.UNKNOWN)
-        }
-    }
-}
-
-fun createHttpClient(engine: HttpClientEngine): HttpClient {
-    return HttpClient(engine) {
-        install(Logging) {
-            logger = object : Logger {
-                override fun log(message: String) {
-                    println("HTTP call $message")
-                }
-            }
-            level = LogLevel.ALL
-        }
-        install(ContentNegotiation) {
-            json(
-                json = Json {
-                    ignoreUnknownKeys = true
-                }
-            )
         }
     }
 }

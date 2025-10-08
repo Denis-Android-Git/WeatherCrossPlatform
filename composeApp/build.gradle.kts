@@ -37,7 +37,7 @@ kotlin {
     jvm("desktop")
 
     sourceSets {
-        //val desktopMain by getting
+        val desktopMain by getting
 
         androidMain.dependencies {
             implementation(compose.preview)
@@ -73,16 +73,16 @@ kotlin {
             implementation(libs.sqlite.bundled)
             implementation(libs.material.icons.core)
             implementation(libs.kotlinx.serialization.json)
-
+            implementation(libs.touchlab.kermit)
         }
-        iosMain.dependencies {
+        nativeMain.dependencies {
             implementation(libs.ktor.client.darwin)
         }
-//        desktopMain.dependencies {
-//            implementation(compose.desktop.currentOs)
-//            implementation(libs.kotlinx.coroutines.swing)
-//            implementation(libs.ktor.client.okhttp)
-//        }
+        desktopMain.dependencies {
+            implementation(compose.desktop.currentOs)
+            implementation(libs.kotlinx.coroutines.swing)
+            implementation(libs.ktor.client.okhttp)
+        }
     }
 }
 
