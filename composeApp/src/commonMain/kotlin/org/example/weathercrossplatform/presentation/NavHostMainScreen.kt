@@ -5,19 +5,22 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
+import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
+import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Routes
 import org.example.weathercrossplatform.domain.models.Routes.MainScreenRoute
 
 @Composable
 fun NavHostMainScreen(
-    isFirstLaunch: Boolean
+    isFirstLaunch: Boolean,
+    myLogger: MyLogger = MyLoggerImpl
 ) {
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = MainScreenRoute()) {
         composable<MainScreenRoute> {
             val args = it.toRoute<MainScreenRoute>()
-            println("pageNumber_args: ${args.pageNumber}")
+            myLogger.debug("pageNumber_args: ${args.pageNumber}")
             MainScreenState(
                 onAddButtonClick = { pageNumber ->
                     navController.navigate(Routes.SearchScreenRoute(pageNumber))
@@ -38,11 +41,11 @@ fun NavHostMainScreen(
                 },
                 onFoundItemClick = { location ->
                     navController.navigate(MainScreenRoute(location.id))
-                    println("location_id: ${location.id}")
+                    myLogger.debug("location_id: ${location.id}")
                 },
                 pageNumber = args.pageNumber,
                 onSavedItemClick = { pageNumber ->
-                    println("page_number: $pageNumber")
+                    myLogger.debug("page_number: $pageNumber")
                     navController.navigate(MainScreenRoute(pageNumber = pageNumber))
                 }
             )

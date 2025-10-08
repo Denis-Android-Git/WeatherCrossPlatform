@@ -44,7 +44,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
+import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.data.utils.GetScreenHeight
+import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Astro
 import org.example.weathercrossplatform.domain.models.Condition
 import org.example.weathercrossplatform.domain.models.Day
@@ -73,7 +75,8 @@ fun MainScreen(
     onCancelButtonClick: () -> Unit,
     onAddCityButtonClick: (SavedWeatherItem) -> Unit,
     coordinates: String,
-    isCurrentLocation: Boolean
+    isCurrentLocation: Boolean,
+    myLogger: MyLogger = MyLoggerImpl
 ) {
 
     val textColor by remember { mutableStateOf(Color.White) }
@@ -89,7 +92,7 @@ fun MainScreen(
         }
     )
 
-    println("airQualityText = $usEpaIndex")
+    myLogger.debug("airQualityText = $usEpaIndex")
 
     Box(
         modifier = Modifier.fillMaxSize()
@@ -259,7 +262,7 @@ fun MainScreen(
         }
         AnimatedVisibility(
             visible = savedCityList.any {
-                println("it.cityId: ${it.cityId}, cityId: $cityId")
+                myLogger.debug("it.cityId: ${it.cityId}, cityId: $cityId")
                 it.cityId == cityId
             },
             modifier = Modifier.align(Alignment.TopEnd).padding(top = 40.dp, end = 16.dp)
@@ -276,7 +279,7 @@ fun MainScreen(
         }
         AnimatedVisibility(
             visible = !savedCityList.any {
-                println("it.cityId: ${it.cityId}, cityId: $cityId")
+                myLogger.debug("it.cityId: ${it.cityId}, cityId: $cityId")
                 it.cityId == cityId
             },
             modifier = Modifier.align(Alignment.TopStart)
@@ -510,7 +513,7 @@ fun App() {
             val height = constraints.maxHeight
 
             screenSize.value = Pair(width, height)
-            println("Width: $width, height: $height")
+            //myLogger("Width: $width, height: $height")
 
             // Measure and place children composables
             val placeables = measurables.map { measurable ->

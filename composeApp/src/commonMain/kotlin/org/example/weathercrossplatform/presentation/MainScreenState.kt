@@ -20,7 +20,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.domain.actions.MainScreenActions
+import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.viewmodels.WeatherViewModel
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -32,6 +34,7 @@ fun MainScreenState(
     cityId: Int?,
     onAddButtonClick: (Int) -> Unit,
     onCancelButtonClick: () -> Unit,
+    myLogger: MyLogger = MyLoggerImpl,
     weatherViewModel: WeatherViewModel = koinViewModel()
 ) {
 
@@ -40,16 +43,16 @@ fun MainScreenState(
             weatherViewModel.onAction(MainScreenActions.RefreshPosition)
             weatherViewModel.onAction(MainScreenActions.Init)
         }
-        println("isFirstLaunch: $isFirstLaunch")
+        myLogger.debug("isFirstLaunch: $isFirstLaunch")
     }
 
     val weatherMainScreenState by weatherViewModel.weatherScreenState.collectAsStateWithLifecycle()
     val savedCityList by weatherViewModel.allCities.collectAsStateWithLifecycle()
 
     if (savedCityList.isNotEmpty()) {
-        println("Saved cities count: ${savedCityList.size}")
+        myLogger.debug("Saved cities count: ${savedCityList.size}")
         savedCityList.forEachIndexed { index, city ->
-            println("Saved cities #$index: $city")
+            myLogger.debug("Saved cities #$index: $city")
         }
 
     }
@@ -59,7 +62,7 @@ fun MainScreenState(
         mutableStateOf(0)
     }
     LaunchedEffect(cityId) {
-        println("LaunchedEffect: cityId = $cityId")
+        myLogger.debug("LaunchedEffect: cityId = $cityId")
         cityId?.let {
             weatherViewModel.onAction(MainScreenActions.SetCityId(it))
             delay(50)
@@ -70,9 +73,9 @@ fun MainScreenState(
     }
 
     LaunchedEffect(pageNumberFromSearchScreen) {
-        println("pageNumber= $pageNumberFromSearchScreen")
+        myLogger.debug("pageNumber= $pageNumberFromSearchScreen")
         if (pageNumberFromSearchScreen != null) {
-            println("pageNumber= in let $pageNumberFromSearchScreen")
+            myLogger.debug("pageNumber= in let $pageNumberFromSearchScreen")
             delay(50)
             if (savedCityList.isNotEmpty()) {
                 if (pageNumberFromSearchScreen in savedCityList.indices) {
@@ -94,7 +97,7 @@ fun MainScreenState(
         snapshotFlow { pagerState.currentPage }.collect { pageNumber ->
             if (savedCityList.isNotEmpty()) {
                 currentPageNumber = pageNumber
-                println("pageNumber= in pagerState $currentPageNumber")
+                myLogger.debug("pageNumber= in pagerState $currentPageNumber")
                 weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(savedCityList[pageNumber].coordinates))
             }
         }

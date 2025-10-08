@@ -35,6 +35,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
+import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
+import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Location
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -56,7 +58,8 @@ fun SearchScreen(
     tempListToDelete: List<SavedWeatherItem>,
     onDelete: () -> Unit,
     clearTempList: () -> Unit,
-    onSavedItemClick: (Int) -> Unit
+    onSavedItemClick: (Int) -> Unit,
+    myLogger: MyLogger = MyLoggerImpl
 ) {
 
     val isLongPressed = remember { mutableStateOf(false) }
@@ -116,7 +119,7 @@ fun SearchScreen(
                     SearchBarDefaults.InputField(
                         query = query,
                         onQueryChange = {
-                            println("onQueryChange: $it")
+                            myLogger.debug("onQueryChange: $it")
                             onQueryChange(it)
                         },
                         onSearch = {
@@ -203,11 +206,11 @@ fun SearchScreen(
                             scope.launch {
                                 if (isLongPressed.value) {
                                     if (!savedCity.isCurrentLocation) {
-                                        println("onClick_isLongPressed.value")
+                                        myLogger.debug("onClick_isLongPressed.value")
                                         onClick(savedCity)
                                     }
                                 } else {
-                                    println("onClick_onSavedItemClick $originalIndex")
+                                    myLogger.debug("onClick_onSavedItemClick $originalIndex")
                                     onSavedItemClick(originalIndex)
                                 }
                             }

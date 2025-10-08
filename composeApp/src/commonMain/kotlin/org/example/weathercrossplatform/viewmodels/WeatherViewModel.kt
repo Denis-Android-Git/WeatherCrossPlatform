@@ -17,6 +17,7 @@ import org.example.weathercrossplatform.data.repo_impl.WeatherRepoImpl
 import org.example.weathercrossplatform.data.utils.onError
 import org.example.weathercrossplatform.data.utils.onSuccess
 import org.example.weathercrossplatform.domain.actions.MainScreenActions
+import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Coordinates
 import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
@@ -26,7 +27,8 @@ import kotlin.math.roundToInt
 class WeatherViewModel(
     private val locationService: LocationService,
     private val weatherRepoImpl: WeatherRepoImpl,
-    private val dataBaseRepo: DataBaseRepo
+    private val dataBaseRepo: DataBaseRepo,
+    private val myLogger: MyLogger
 ) : ViewModel() {
 
     private val coordinates = MutableStateFlow<Coordinates?>(null)
@@ -42,7 +44,7 @@ class WeatherViewModel(
         )
 
 //    init {
-//        println("init_WeatherViewModel")
+//        myLogger("init_WeatherViewModel")
 //        refreshPosition()
 //        init()
 //    }
@@ -69,11 +71,11 @@ class WeatherViewModel(
     }
 
     private fun init() {
-        println("fun_init")
+        myLogger.debug("fun_init")
         viewModelScope.launch(Dispatchers.IO) {
-            println("city_id = ${_weatherScreenState.value.cityId}")
+            myLogger.debug("city_id = ${_weatherScreenState.value.cityId}")
             if (_weatherScreenState.value.cityId == null) {
-                println("cityId == null")
+                myLogger.debug("cityId == null")
                 coordinates.collect { coordinates ->
                     coordinates?.let {
                         val query = "${it.latitude},${it.longitude}"
@@ -81,7 +83,7 @@ class WeatherViewModel(
                     }
                 }
             } else {
-                println("cityId not null")
+                myLogger.debug("cityId not null")
                 getWeatherByQuery("id:${_weatherScreenState.value.cityId}")
             }
         }
@@ -98,12 +100,12 @@ class WeatherViewModel(
         latitude: Double? = null,
         longitude: Double? = null
     ) {
-        println("fun_getWeatherByQuery")
+        myLogger.debug("fun_getWeatherByQuery")
         _weatherScreenState.value = _weatherScreenState.value.copy(isLoading = true)
         try {
             weatherRepoImpl.getCurrentWeather(query)
                 .onSuccess { weather ->
-                    println("location.id = ${weather.location.id}")
+                    myLogger.debug("location.id = ${weather.location.id}")
                     if (latitude != null && longitude != null) {
                         dataBaseRepo.clearCurrentLocation()
                         dataBaseRepo.saveWeather(
@@ -120,9 +122,9 @@ class WeatherViewModel(
                         )
                     }
 
-                    println("windRotation = ${weather.current.windDegree}, ${weather.current.windDir}")
-                    println("pressure = ${weather.current.pressureMb}, ${weather.current.pressureIn}")
-                    println("uv = ${weather.current.uv}")
+                    myLogger.debug("windRotation = ${weather.current.windDegree}, ${weather.current.windDir}")
+                    myLogger.debug("pressure = ${weather.current.pressureMb}, ${weather.current.pressureIn}")
+                    myLogger.debug("uv = ${weather.current.uv}")
 
                     val weatherItemList = createWeatherItemList(
                         humidity = weather.current.humidity,
@@ -148,7 +150,7 @@ class WeatherViewModel(
                         else -> weather.current.condition.text
                     }
 
-                    println("imageQuery=$imageQuery")
+                    myLogger.debug("imageQuery=$imageQuery")
 
                     weatherRepoImpl.getImageList(imageQuery)
                         .onSuccess { imageList ->
@@ -185,13 +187,13 @@ class WeatherViewModel(
     }
 
     private fun refreshPosition() {
-        println("refreshPosition")
+        myLogger.debug("refreshPosition")
         viewModelScope.launch(Dispatchers.IO) {
             _weatherScreenState.value = _weatherScreenState.value.copy(
                 isLoading = true
             )
             locationService.getLocation().collectLatest { position ->
-                println("refreshPosition collectLatest position")
+                myLogger.debug("refreshPosition collectLatest position")
                 coordinates.update {
                     position
                 }

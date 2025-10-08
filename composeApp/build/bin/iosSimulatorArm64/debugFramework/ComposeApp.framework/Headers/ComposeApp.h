@@ -1700,7 +1700,7 @@ __attribute__((swift_name("PermissionsViewModel")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SearchViewModel")))
 @interface ComposeAppSearchViewModel : ComposeAppLifecycle_viewmodelViewModel
-- (instancetype)initWithDataBaseRepo:(id<ComposeAppDataBaseRepo>)dataBaseRepo weatherRepo:(id<ComposeAppWeatherRepo>)weatherRepo __attribute__((swift_name("init(dataBaseRepo:weatherRepo:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithDataBaseRepo:(id<ComposeAppDataBaseRepo>)dataBaseRepo weatherRepo:(id<ComposeAppWeatherRepo>)weatherRepo myLogger:(id<ComposeAppMyLogger>)myLogger __attribute__((swift_name("init(dataBaseRepo:weatherRepo:myLogger:)"))) __attribute__((objc_designated_initializer));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 + (instancetype)new __attribute__((unavailable));
 - (instancetype)initWithCloseables:(ComposeAppKotlinArray<id<ComposeAppKotlinAutoCloseable>> *)closeables __attribute__((swift_name("init(closeables:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
@@ -1716,7 +1716,7 @@ __attribute__((swift_name("SearchViewModel")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("WeatherViewModel")))
 @interface ComposeAppWeatherViewModel : ComposeAppLifecycle_viewmodelViewModel
-- (instancetype)initWithLocationService:(ComposeAppLocationService *)locationService weatherRepoImpl:(ComposeAppWeatherRepoImpl *)weatherRepoImpl dataBaseRepo:(id<ComposeAppDataBaseRepo>)dataBaseRepo __attribute__((swift_name("init(locationService:weatherRepoImpl:dataBaseRepo:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithLocationService:(ComposeAppLocationService *)locationService weatherRepoImpl:(ComposeAppWeatherRepoImpl *)weatherRepoImpl dataBaseRepo:(id<ComposeAppDataBaseRepo>)dataBaseRepo myLogger:(id<ComposeAppMyLogger>)myLogger __attribute__((swift_name("init(locationService:weatherRepoImpl:dataBaseRepo:myLogger:)"))) __attribute__((objc_designated_initializer));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 + (instancetype)new __attribute__((unavailable));
 - (instancetype)initWithCloseables:(ComposeAppKotlinArray<id<ComposeAppKotlinAutoCloseable>> *)closeables __attribute__((swift_name("init(closeables:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));

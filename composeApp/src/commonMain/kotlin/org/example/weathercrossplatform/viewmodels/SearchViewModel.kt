@@ -16,13 +16,15 @@ import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.utils.onError
 import org.example.weathercrossplatform.data.utils.onSuccess
 import org.example.weathercrossplatform.domain.actions.SearchScreenActions
+import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.SearchScreenViewState
 import org.example.weathercrossplatform.domain.repo.DataBaseRepo
 import org.example.weathercrossplatform.domain.repo.WeatherRepo
 
 class SearchViewModel(
     private val dataBaseRepo: DataBaseRepo,
-    private val weatherRepo: WeatherRepo
+    private val weatherRepo: WeatherRepo,
+    private val myLogger: MyLogger
 ) : ViewModel() {
     private val _searchScreenState = MutableStateFlow(SearchScreenViewState())
     val searchScreenState = _searchScreenState.asStateFlow()
@@ -82,7 +84,7 @@ class SearchViewModel(
                 _searchScreenState.update {
                     it.copy(tempListToDelete = newCurrentList)
                 }
-                println("tempList: ${currentList.size}")
+                myLogger.debug("tempList: ${currentList.size}")
 
             } else {
                 _searchScreenState.update {
@@ -105,7 +107,7 @@ class SearchViewModel(
     }
 
     private fun searchCities(query: String) {
-        println("searchCities: $query")
+        myLogger.debug("searchCities: $query")
         viewModelScope.launch {
             _searchScreenState.update {
                 it.copy(loading = true)
