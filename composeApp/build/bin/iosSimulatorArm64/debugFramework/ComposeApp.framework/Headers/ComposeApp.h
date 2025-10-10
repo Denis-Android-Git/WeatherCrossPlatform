@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class ComposeAppAirQuality, ComposeAppAirQualityCompanion, ComposeAppAppDatabaseConstructor, ComposeAppAstro, ComposeAppAstroCompanion, ComposeAppCondition, ComposeAppConditionCompanion, ComposeAppCoordinates, ComposeAppCurrent, ComposeAppCurrentCompanion, ComposeAppDay, ComposeAppDayCompanion, ComposeAppForecast, ComposeAppForecastCompanion, ComposeAppForecastDto, ComposeAppForecastDtoCompanion, ComposeAppForecastday, ComposeAppForecastdayCompanion, ComposeAppGetScreenHeight, ComposeAppHour, ComposeAppHourCompanion, ComposeAppImageListDto, ComposeAppImageListDtoCompanion, ComposeAppKoin_coreBeanDefinition<T>, ComposeAppKoin_coreCallbacks<T>, ComposeAppKoin_coreCoreResolver, ComposeAppKoin_coreExtensionManager, ComposeAppKoin_coreInstanceFactory<T>, ComposeAppKoin_coreInstanceFactoryCompanion, ComposeAppKoin_coreInstanceRegistry, ComposeAppKoin_coreKind, ComposeAppKoin_coreKoin, ComposeAppKoin_coreKoinApplication, ComposeAppKoin_coreKoinApplicationCompanion, ComposeAppKoin_coreKoinDefinition<R>, ComposeAppKoin_coreKoinOption, ComposeAppKoin_coreLevel, ComposeAppKoin_coreLockable, ComposeAppKoin_coreLogger, ComposeAppKoin_coreModule, ComposeAppKoin_coreOptionRegistry, ComposeAppKoin_coreParametersHolder, ComposeAppKoin_corePropertyRegistry, ComposeAppKoin_coreResolutionContext, ComposeAppKoin_coreScope, ComposeAppKoin_coreScopeDSL, ComposeAppKoin_coreScopeRegistry, ComposeAppKoin_coreScopeRegistryCompanion, ComposeAppKoin_coreSingleInstanceFactory<T>, ComposeAppKoin_coreTypeQualifier, ComposeAppKotlinAbstractCoroutineContextElement, ComposeAppKotlinAbstractCoroutineContextKey<B, E>, ComposeAppKotlinArray<T>, ComposeAppKotlinByteArray, ComposeAppKotlinByteIterator, ComposeAppKotlinCancellationException, ComposeAppKotlinEnum<E>, ComposeAppKotlinEnumCompanion, ComposeAppKotlinException, ComposeAppKotlinIllegalStateException, ComposeAppKotlinIntArray, ComposeAppKotlinIntIterator, ComposeAppKotlinKTypeProjection, ComposeAppKotlinKTypeProjectionCompanion, ComposeAppKotlinKVariance, ComposeAppKotlinLazyThreadSafetyMode, ComposeAppKotlinNothing, ComposeAppKotlinPair<__covariant A, __covariant B>, ComposeAppKotlinRuntimeException, ComposeAppKotlinThrowable, ComposeAppKotlinUnit, ComposeAppKotlinx_coroutines_coreCoroutineDispatcher, ComposeAppKotlinx_coroutines_coreCoroutineDispatcherKey, ComposeAppKotlinx_io_coreBuffer, ComposeAppKotlinx_serialization_coreSerialKind, ComposeAppKotlinx_serialization_coreSerializersModule, ComposeAppKtor_client_coreHttpClient, ComposeAppKtor_client_coreHttpClientCall, ComposeAppKtor_client_coreHttpClientCallCompanion, ComposeAppKtor_client_coreHttpClientConfig<T>, ComposeAppKtor_client_coreHttpClientEngineConfig, ComposeAppKtor_client_coreHttpReceivePipeline, ComposeAppKtor_client_coreHttpReceivePipelinePhases, ComposeAppKtor_client_coreHttpRequestBuilder, ComposeAppKtor_client_coreHttpRequestBuilderCompanion, ComposeAppKtor_client_coreHttpRequestData, ComposeAppKtor_client_coreHttpRequestPipeline, ComposeAppKtor_client_coreHttpRequestPipelinePhases, ComposeAppKtor_client_coreHttpResponse, ComposeAppKtor_client_coreHttpResponseContainer, ComposeAppKtor_client_coreHttpResponseData, ComposeAppKtor_client_coreHttpResponsePipeline, ComposeAppKtor_client_coreHttpResponsePipelinePhases, ComposeAppKtor_client_coreHttpSendPipeline, ComposeAppKtor_client_coreHttpSendPipelinePhases, ComposeAppKtor_client_coreProxyConfig, ComposeAppKtor_eventsEventDefinition<T>, ComposeAppKtor_eventsEvents, ComposeAppKtor_httpContentType, ComposeAppKtor_httpContentTypeCompanion, ComposeAppKtor_httpHeaderValueParam, ComposeAppKtor_httpHeaderValueWithParameters, ComposeAppKtor_httpHeaderValueWithParametersCompanion, ComposeAppKtor_httpHeadersBuilder, ComposeAppKtor_httpHttpMethod, ComposeAppKtor_httpHttpMethodCompanion, ComposeAppKtor_httpHttpProtocolVersion, ComposeAppKtor_httpHttpProtocolVersionCompanion, ComposeAppKtor_httpHttpStatusCode, ComposeAppKtor_httpHttpStatusCodeCompanion, ComposeAppKtor_httpOutgoingContent, ComposeAppKtor_httpURLBuilder, ComposeAppKtor_httpURLBuilderCompanion, ComposeAppKtor_httpURLProtocol, ComposeAppKtor_httpURLProtocolCompanion, ComposeAppKtor_httpUrl, ComposeAppKtor_httpUrlCompanion, ComposeAppKtor_utilsAttributeKey<T>, ComposeAppKtor_utilsGMTDate, ComposeAppKtor_utilsGMTDateCompanion, ComposeAppKtor_utilsMonth, ComposeAppKtor_utilsMonthCompanion, ComposeAppKtor_utilsPipeline<TSubject, TContext>, ComposeAppKtor_utilsPipelinePhase, ComposeAppKtor_utilsStringValuesBuilderImpl, ComposeAppKtor_utilsTypeInfo, ComposeAppKtor_utilsWeekDay, ComposeAppKtor_utilsWeekDayCompanion, ComposeAppLifecycle_viewmodelViewModel, ComposeAppLocation, ComposeAppLocationCompanion, ComposeAppLocationService, ComposeAppMainScreenActionsAddCity, ComposeAppMainScreenActionsGetWeatherByQuery, ComposeAppMainScreenActionsInit, ComposeAppMainScreenActionsRefreshPosition, ComposeAppMainScreenActionsSetCityId, ComposeAppMyLoggerImpl, ComposeAppNetworkError, ComposeAppPermissionsPermissionState, ComposeAppPhotoData, ComposeAppPhotoDataCompanion, ComposeAppResultError<__covariant E>, ComposeAppResultSuccess<__covariant D>, ComposeAppRoom_runtimeInvalidationTracker, ComposeAppRoom_runtimeMigration, ComposeAppRoom_runtimeRoomDatabase, ComposeAppRoom_runtimeRoomDatabaseBuilder<T>, ComposeAppRoom_runtimeRoomDatabaseCallback, ComposeAppRoom_runtimeRoomDatabaseJournalMode, ComposeAppRoom_runtimeRoomOpenDelegate, ComposeAppRoom_runtimeRoomOpenDelegateValidationResult, ComposeAppRoutesMainScreenRoute, ComposeAppRoutesMainScreenRouteCompanion, ComposeAppRoutesSearchScreenRoute, ComposeAppRoutesSearchScreenRouteCompanion, ComposeAppSavedWeatherItem, ComposeAppSearchScreenActionsDeleteTempCityList, ComposeAppSearchScreenActionsSearchCities, ComposeAppSearchScreenActionsSetExpanded, ComposeAppSearchScreenActionsSetSearchQuery, ComposeAppSearchScreenActionsSetTempList, ComposeAppSearchScreenViewState, ComposeAppSystemLocale, ComposeAppUrls, ComposeAppUrlsCompanion, ComposeAppWeatherDao_ImplCompanion, ComposeAppWeatherDataBase, ComposeAppWeatherItem, ComposeAppWeatherMainScreenState, ComposeAppWeatherRepoImpl, UIViewController;
+@class ComposeAppAirQuality, ComposeAppAirQualityCompanion, ComposeAppAppDatabaseConstructor, ComposeAppAstro, ComposeAppAstroCompanion, ComposeAppCondition, ComposeAppConditionCompanion, ComposeAppCoordinates, ComposeAppCurrent, ComposeAppCurrentCompanion, ComposeAppDay, ComposeAppDayCompanion, ComposeAppForecast, ComposeAppForecastCompanion, ComposeAppForecastDto, ComposeAppForecastDtoCompanion, ComposeAppForecastday, ComposeAppForecastdayCompanion, ComposeAppGetScreenHeight, ComposeAppHour, ComposeAppHourCompanion, ComposeAppImageListDto, ComposeAppImageListDtoCompanion, ComposeAppKoin_coreBeanDefinition<T>, ComposeAppKoin_coreCallbacks<T>, ComposeAppKoin_coreCoreResolver, ComposeAppKoin_coreExtensionManager, ComposeAppKoin_coreInstanceFactory<T>, ComposeAppKoin_coreInstanceFactoryCompanion, ComposeAppKoin_coreInstanceRegistry, ComposeAppKoin_coreKind, ComposeAppKoin_coreKoin, ComposeAppKoin_coreKoinApplication, ComposeAppKoin_coreKoinApplicationCompanion, ComposeAppKoin_coreKoinDefinition<R>, ComposeAppKoin_coreKoinOption, ComposeAppKoin_coreLevel, ComposeAppKoin_coreLockable, ComposeAppKoin_coreLogger, ComposeAppKoin_coreModule, ComposeAppKoin_coreOptionRegistry, ComposeAppKoin_coreParametersHolder, ComposeAppKoin_corePropertyRegistry, ComposeAppKoin_coreResolutionContext, ComposeAppKoin_coreScope, ComposeAppKoin_coreScopeDSL, ComposeAppKoin_coreScopeRegistry, ComposeAppKoin_coreScopeRegistryCompanion, ComposeAppKoin_coreSingleInstanceFactory<T>, ComposeAppKoin_coreTypeQualifier, ComposeAppKotlinAbstractCoroutineContextElement, ComposeAppKotlinAbstractCoroutineContextKey<B, E>, ComposeAppKotlinArray<T>, ComposeAppKotlinByteArray, ComposeAppKotlinByteIterator, ComposeAppKotlinCancellationException, ComposeAppKotlinEnum<E>, ComposeAppKotlinEnumCompanion, ComposeAppKotlinException, ComposeAppKotlinIllegalStateException, ComposeAppKotlinIntArray, ComposeAppKotlinIntIterator, ComposeAppKotlinKTypeProjection, ComposeAppKotlinKTypeProjectionCompanion, ComposeAppKotlinKVariance, ComposeAppKotlinLazyThreadSafetyMode, ComposeAppKotlinNothing, ComposeAppKotlinPair<__covariant A, __covariant B>, ComposeAppKotlinRuntimeException, ComposeAppKotlinThrowable, ComposeAppKotlinUnit, ComposeAppKotlinx_coroutines_coreCoroutineDispatcher, ComposeAppKotlinx_coroutines_coreCoroutineDispatcherKey, ComposeAppKotlinx_io_coreBuffer, ComposeAppKotlinx_serialization_coreSerialKind, ComposeAppKotlinx_serialization_coreSerializersModule, ComposeAppKtor_client_coreHttpClient, ComposeAppKtor_client_coreHttpClientCall, ComposeAppKtor_client_coreHttpClientCallCompanion, ComposeAppKtor_client_coreHttpClientConfig<T>, ComposeAppKtor_client_coreHttpClientEngineConfig, ComposeAppKtor_client_coreHttpReceivePipeline, ComposeAppKtor_client_coreHttpReceivePipelinePhases, ComposeAppKtor_client_coreHttpRequestBuilder, ComposeAppKtor_client_coreHttpRequestBuilderCompanion, ComposeAppKtor_client_coreHttpRequestData, ComposeAppKtor_client_coreHttpRequestPipeline, ComposeAppKtor_client_coreHttpRequestPipelinePhases, ComposeAppKtor_client_coreHttpResponse, ComposeAppKtor_client_coreHttpResponseContainer, ComposeAppKtor_client_coreHttpResponseData, ComposeAppKtor_client_coreHttpResponsePipeline, ComposeAppKtor_client_coreHttpResponsePipelinePhases, ComposeAppKtor_client_coreHttpSendPipeline, ComposeAppKtor_client_coreHttpSendPipelinePhases, ComposeAppKtor_client_coreProxyConfig, ComposeAppKtor_eventsEventDefinition<T>, ComposeAppKtor_eventsEvents, ComposeAppKtor_httpContentType, ComposeAppKtor_httpContentTypeCompanion, ComposeAppKtor_httpHeaderValueParam, ComposeAppKtor_httpHeaderValueWithParameters, ComposeAppKtor_httpHeaderValueWithParametersCompanion, ComposeAppKtor_httpHeadersBuilder, ComposeAppKtor_httpHttpMethod, ComposeAppKtor_httpHttpMethodCompanion, ComposeAppKtor_httpHttpProtocolVersion, ComposeAppKtor_httpHttpProtocolVersionCompanion, ComposeAppKtor_httpHttpStatusCode, ComposeAppKtor_httpHttpStatusCodeCompanion, ComposeAppKtor_httpOutgoingContent, ComposeAppKtor_httpURLBuilder, ComposeAppKtor_httpURLBuilderCompanion, ComposeAppKtor_httpURLProtocol, ComposeAppKtor_httpURLProtocolCompanion, ComposeAppKtor_httpUrl, ComposeAppKtor_httpUrlCompanion, ComposeAppKtor_utilsAttributeKey<T>, ComposeAppKtor_utilsGMTDate, ComposeAppKtor_utilsGMTDateCompanion, ComposeAppKtor_utilsMonth, ComposeAppKtor_utilsMonthCompanion, ComposeAppKtor_utilsPipeline<TSubject, TContext>, ComposeAppKtor_utilsPipelinePhase, ComposeAppKtor_utilsStringValuesBuilderImpl, ComposeAppKtor_utilsTypeInfo, ComposeAppKtor_utilsWeekDay, ComposeAppKtor_utilsWeekDayCompanion, ComposeAppLifecycle_viewmodelViewModel, ComposeAppLocation, ComposeAppLocationCompanion, ComposeAppLocationService, ComposeAppMainScreenActionsAddCity, ComposeAppMainScreenActionsGetWeatherByQuery, ComposeAppMainScreenActionsInit, ComposeAppMainScreenActionsRefreshPosition, ComposeAppMainScreenActionsSetCityId, ComposeAppMyLoggerImpl, ComposeAppNetworkError, ComposeAppPermissionsPermissionState, ComposeAppPhotoData, ComposeAppPhotoDataCompanion, ComposeAppResultError<__covariant E>, ComposeAppResultSuccess<__covariant D>, ComposeAppRoom_runtimeInvalidationTracker, ComposeAppRoom_runtimeMigration, ComposeAppRoom_runtimeRoomDatabase, ComposeAppRoom_runtimeRoomDatabaseBuilder<T>, ComposeAppRoom_runtimeRoomDatabaseCallback, ComposeAppRoom_runtimeRoomDatabaseJournalMode, ComposeAppRoom_runtimeRoomOpenDelegate, ComposeAppRoom_runtimeRoomOpenDelegateValidationResult, ComposeAppRoutesMainScreenRoute, ComposeAppRoutesMainScreenRouteCompanion, ComposeAppRoutesSearchScreenRoute, ComposeAppRoutesSearchScreenRouteCompanion, ComposeAppSavedWeatherItem, ComposeAppSearchScreenActionsDeleteTempCityList, ComposeAppSearchScreenActionsSearchCities, ComposeAppSearchScreenActionsSetExpanded, ComposeAppSearchScreenActionsSetSearchQuery, ComposeAppSearchScreenActionsSetTempList, ComposeAppSearchScreenViewState, ComposeAppSystemLocale, ComposeAppUrlConstant, ComposeAppUrls, ComposeAppUrlsCompanion, ComposeAppWeatherDao_ImplCompanion, ComposeAppWeatherDataBase, ComposeAppWeatherItem, ComposeAppWeatherMainScreenState, ComposeAppWeatherRepoImpl, UIViewController;
 
-@protocol ComposeAppDataBaseRepo, ComposeAppError, ComposeAppKoin_coreKoinComponent, ComposeAppKoin_coreKoinExtension, ComposeAppKoin_coreKoinScopeComponent, ComposeAppKoin_coreQualifier, ComposeAppKoin_coreResolutionExtension, ComposeAppKoin_coreScopeCallback, ComposeAppKotlinAnnotation, ComposeAppKotlinAutoCloseable, ComposeAppKotlinComparable, ComposeAppKotlinContinuation, ComposeAppKotlinContinuationInterceptor, ComposeAppKotlinCoroutineContext, ComposeAppKotlinCoroutineContextElement, ComposeAppKotlinCoroutineContextKey, ComposeAppKotlinFunction, ComposeAppKotlinIterator, ComposeAppKotlinKAnnotatedElement, ComposeAppKotlinKClass, ComposeAppKotlinKClassifier, ComposeAppKotlinKDeclarationContainer, ComposeAppKotlinKType, ComposeAppKotlinLazy, ComposeAppKotlinMapEntry, ComposeAppKotlinSequence, ComposeAppKotlinSuspendFunction1, ComposeAppKotlinSuspendFunction2, ComposeAppKotlinx_coroutines_coreChildHandle, ComposeAppKotlinx_coroutines_coreChildJob, ComposeAppKotlinx_coroutines_coreCoroutineScope, ComposeAppKotlinx_coroutines_coreDisposableHandle, ComposeAppKotlinx_coroutines_coreFlow, ComposeAppKotlinx_coroutines_coreFlowCollector, ComposeAppKotlinx_coroutines_coreJob, ComposeAppKotlinx_coroutines_coreParentJob, ComposeAppKotlinx_coroutines_coreRunnable, ComposeAppKotlinx_coroutines_coreSelectClause, ComposeAppKotlinx_coroutines_coreSelectClause0, ComposeAppKotlinx_coroutines_coreSelectInstance, ComposeAppKotlinx_coroutines_coreSharedFlow, ComposeAppKotlinx_coroutines_coreStateFlow, ComposeAppKotlinx_io_coreRawSink, ComposeAppKotlinx_io_coreRawSource, ComposeAppKotlinx_io_coreSink, ComposeAppKotlinx_io_coreSource, ComposeAppKotlinx_serialization_coreCompositeDecoder, ComposeAppKotlinx_serialization_coreCompositeEncoder, ComposeAppKotlinx_serialization_coreDecoder, ComposeAppKotlinx_serialization_coreDeserializationStrategy, ComposeAppKotlinx_serialization_coreEncoder, ComposeAppKotlinx_serialization_coreKSerializer, ComposeAppKotlinx_serialization_coreSerialDescriptor, ComposeAppKotlinx_serialization_coreSerializationStrategy, ComposeAppKotlinx_serialization_coreSerializersModuleCollector, ComposeAppKtor_client_coreHttpClientEngine, ComposeAppKtor_client_coreHttpClientEngineCapability, ComposeAppKtor_client_coreHttpClientPlugin, ComposeAppKtor_client_coreHttpRequest, ComposeAppKtor_httpHeaders, ComposeAppKtor_httpHttpMessage, ComposeAppKtor_httpHttpMessageBuilder, ComposeAppKtor_httpParameters, ComposeAppKtor_httpParametersBuilder, ComposeAppKtor_ioByteReadChannel, ComposeAppKtor_ioCloseable, ComposeAppKtor_ioJvmSerializable, ComposeAppKtor_utilsAttributes, ComposeAppKtor_utilsStringValues, ComposeAppKtor_utilsStringValuesBuilder, ComposeAppMainScreenActions, ComposeAppMyLogger, ComposeAppPermissionsPermission, ComposeAppPermissionsPermissionDelegate, ComposeAppPermissionsPermissionsControllerProtocol, ComposeAppResult, ComposeAppRoom_runtimeAutoMigrationSpec, ComposeAppRoom_runtimeRoomDatabaseConstructor, ComposeAppRoom_runtimeRoomOpenDelegateMarker, ComposeAppRoutes, ComposeAppSearchScreenActions, ComposeAppSqliteSQLiteConnection, ComposeAppSqliteSQLiteDriver, ComposeAppSqliteSQLiteStatement, ComposeAppWeatherDao, ComposeAppWeatherRepo;
+@protocol ComposeAppDataBaseRepo, ComposeAppError, ComposeAppKoin_coreKoinComponent, ComposeAppKoin_coreKoinExtension, ComposeAppKoin_coreKoinScopeComponent, ComposeAppKoin_coreQualifier, ComposeAppKoin_coreResolutionExtension, ComposeAppKoin_coreScopeCallback, ComposeAppKotlinAnnotation, ComposeAppKotlinAutoCloseable, ComposeAppKotlinComparable, ComposeAppKotlinContinuation, ComposeAppKotlinContinuationInterceptor, ComposeAppKotlinCoroutineContext, ComposeAppKotlinCoroutineContextElement, ComposeAppKotlinCoroutineContextKey, ComposeAppKotlinFunction, ComposeAppKotlinIterator, ComposeAppKotlinKAnnotatedElement, ComposeAppKotlinKClass, ComposeAppKotlinKClassifier, ComposeAppKotlinKDeclarationContainer, ComposeAppKotlinKType, ComposeAppKotlinLazy, ComposeAppKotlinMapEntry, ComposeAppKotlinSequence, ComposeAppKotlinSuspendFunction0, ComposeAppKotlinSuspendFunction1, ComposeAppKotlinSuspendFunction2, ComposeAppKotlinx_coroutines_coreChildHandle, ComposeAppKotlinx_coroutines_coreChildJob, ComposeAppKotlinx_coroutines_coreCoroutineScope, ComposeAppKotlinx_coroutines_coreDisposableHandle, ComposeAppKotlinx_coroutines_coreFlow, ComposeAppKotlinx_coroutines_coreFlowCollector, ComposeAppKotlinx_coroutines_coreJob, ComposeAppKotlinx_coroutines_coreParentJob, ComposeAppKotlinx_coroutines_coreRunnable, ComposeAppKotlinx_coroutines_coreSelectClause, ComposeAppKotlinx_coroutines_coreSelectClause0, ComposeAppKotlinx_coroutines_coreSelectInstance, ComposeAppKotlinx_coroutines_coreSharedFlow, ComposeAppKotlinx_coroutines_coreStateFlow, ComposeAppKotlinx_io_coreRawSink, ComposeAppKotlinx_io_coreRawSource, ComposeAppKotlinx_io_coreSink, ComposeAppKotlinx_io_coreSource, ComposeAppKotlinx_serialization_coreCompositeDecoder, ComposeAppKotlinx_serialization_coreCompositeEncoder, ComposeAppKotlinx_serialization_coreDecoder, ComposeAppKotlinx_serialization_coreDeserializationStrategy, ComposeAppKotlinx_serialization_coreEncoder, ComposeAppKotlinx_serialization_coreKSerializer, ComposeAppKotlinx_serialization_coreSerialDescriptor, ComposeAppKotlinx_serialization_coreSerializationStrategy, ComposeAppKotlinx_serialization_coreSerializersModuleCollector, ComposeAppKtor_client_coreHttpClientEngine, ComposeAppKtor_client_coreHttpClientEngineCapability, ComposeAppKtor_client_coreHttpClientPlugin, ComposeAppKtor_client_coreHttpRequest, ComposeAppKtor_httpHeaders, ComposeAppKtor_httpHttpMessage, ComposeAppKtor_httpHttpMessageBuilder, ComposeAppKtor_httpParameters, ComposeAppKtor_httpParametersBuilder, ComposeAppKtor_ioByteReadChannel, ComposeAppKtor_ioCloseable, ComposeAppKtor_ioJvmSerializable, ComposeAppKtor_utilsAttributes, ComposeAppKtor_utilsStringValues, ComposeAppKtor_utilsStringValuesBuilder, ComposeAppMainScreenActions, ComposeAppMyLogger, ComposeAppPermissionsPermission, ComposeAppPermissionsPermissionDelegate, ComposeAppPermissionsPermissionsControllerProtocol, ComposeAppResult, ComposeAppRoom_runtimeAutoMigrationSpec, ComposeAppRoom_runtimeRoomDatabaseConstructor, ComposeAppRoom_runtimeRoomOpenDelegateMarker, ComposeAppRoutes, ComposeAppSearchScreenActions, ComposeAppSqliteSQLiteConnection, ComposeAppSqliteSQLiteDriver, ComposeAppSqliteSQLiteStatement, ComposeAppWeatherDao, ComposeAppWeatherRepo;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -386,6 +386,17 @@ __attribute__((swift_name("HttpClientFactory")))
 - (ComposeAppKtor_client_coreHttpClient *)createHttpClientEngine:(id<ComposeAppKtor_client_coreHttpClientEngine>)engine __attribute__((swift_name("createHttpClient(engine:)")));
 @end
 
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("UrlConstant")))
+@interface ComposeAppUrlConstant : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)urlConstant __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppUrlConstant *shared __attribute__((swift_name("shared")));
+@property (readonly) NSString *BASE_URL_IMAGES __attribute__((swift_name("BASE_URL_IMAGES")));
+@property (readonly) NSString *BASE_URL_WEATHER __attribute__((swift_name("BASE_URL_WEATHER")));
+@end
+
 
 /**
  * @note annotations
@@ -585,6 +596,12 @@ __attribute__((swift_name("NetworkError")))
 @property (class, readonly) ComposeAppNetworkError *serverError __attribute__((swift_name("serverError")));
 @property (class, readonly) ComposeAppNetworkError *serialization __attribute__((swift_name("serialization")));
 @property (class, readonly) ComposeAppNetworkError *unknown __attribute__((swift_name("unknown")));
+@property (class, readonly) ComposeAppNetworkError *badRequest __attribute__((swift_name("badRequest")));
+@property (class, readonly) ComposeAppNetworkError *forbidden __attribute__((swift_name("forbidden")));
+@property (class, readonly) ComposeAppNetworkError *notFound __attribute__((swift_name("notFound")));
+@property (class, readonly) ComposeAppNetworkError *internalServerError __attribute__((swift_name("internalServerError")));
+@property (class, readonly) ComposeAppNetworkError *serviceUnavailable __attribute__((swift_name("serviceUnavailable")));
+@property (class, readonly) ComposeAppNetworkError *noInternetConnection __attribute__((swift_name("noInternetConnection")));
 + (ComposeAppKotlinArray<ComposeAppNetworkError *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<ComposeAppNetworkError *> *entries __attribute__((swift_name("entries")));
 @end
@@ -1727,6 +1744,92 @@ __attribute__((swift_name("WeatherViewModel")))
 @property (readonly) id<ComposeAppKotlinx_coroutines_coreStateFlow> weatherScreenState __attribute__((swift_name("weatherScreenState")));
 @end
 
+__attribute__((swift_name("Kotlinx_coroutines_coreCoroutineScope")))
+@protocol ComposeAppKotlinx_coroutines_coreCoroutineScope
+@required
+@property (readonly) id<ComposeAppKotlinCoroutineContext> coroutineContext __attribute__((swift_name("coroutineContext")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlin.SinceKotlin(version="2.0")
+*/
+__attribute__((swift_name("KotlinAutoCloseable")))
+@protocol ComposeAppKotlinAutoCloseable
+@required
+- (void)close __attribute__((swift_name("close()")));
+@end
+
+__attribute__((swift_name("Ktor_ioCloseable")))
+@protocol ComposeAppKtor_ioCloseable <ComposeAppKotlinAutoCloseable>
+@required
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_client_coreHttpClient")))
+@interface ComposeAppKtor_client_coreHttpClient : ComposeAppBase <ComposeAppKotlinx_coroutines_coreCoroutineScope, ComposeAppKtor_ioCloseable>
+- (instancetype)initWithEngine:(id<ComposeAppKtor_client_coreHttpClientEngine>)engine userConfig:(ComposeAppKtor_client_coreHttpClientConfig<ComposeAppKtor_client_coreHttpClientEngineConfig *> *)userConfig __attribute__((swift_name("init(engine:userConfig:)"))) __attribute__((objc_designated_initializer));
+- (void)close __attribute__((swift_name("close()")));
+- (ComposeAppKtor_client_coreHttpClient *)configBlock:(void (^)(ComposeAppKtor_client_coreHttpClientConfig<id> *))block __attribute__((swift_name("config(block:)")));
+- (BOOL)isSupportedCapability:(id<ComposeAppKtor_client_coreHttpClientEngineCapability>)capability __attribute__((swift_name("isSupported(capability:)")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) id<ComposeAppKtor_utilsAttributes> attributes __attribute__((swift_name("attributes")));
+@property (readonly) id<ComposeAppKotlinCoroutineContext> coroutineContext __attribute__((swift_name("coroutineContext")));
+@property (readonly) id<ComposeAppKtor_client_coreHttpClientEngine> engine __attribute__((swift_name("engine")));
+@property (readonly) ComposeAppKtor_client_coreHttpClientEngineConfig *engineConfig __attribute__((swift_name("engineConfig")));
+@property (readonly) ComposeAppKtor_eventsEvents *monitor __attribute__((swift_name("monitor")));
+@property (readonly) ComposeAppKtor_client_coreHttpReceivePipeline *receivePipeline __attribute__((swift_name("receivePipeline")));
+@property (readonly) ComposeAppKtor_client_coreHttpRequestPipeline *requestPipeline __attribute__((swift_name("requestPipeline")));
+@property (readonly) ComposeAppKtor_client_coreHttpResponsePipeline *responsePipeline __attribute__((swift_name("responsePipeline")));
+@property (readonly) ComposeAppKtor_client_coreHttpSendPipeline *sendPipeline __attribute__((swift_name("sendPipeline")));
+@end
+
+@interface ComposeAppKtor_client_coreHttpClient (Extensions)
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)getImageRoute:(NSString *)route queryParams:(NSDictionary<NSString *, id> *)queryParams builder:(void (^)(ComposeAppKtor_client_coreHttpRequestBuilder *))builder completionHandler:(void (^)(id<ComposeAppResult> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getImage(route:queryParams:builder:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)getWeatherRoute:(NSString *)route queryParams:(NSDictionary<NSString *, id> *)queryParams builder:(void (^)(ComposeAppKtor_client_coreHttpRequestBuilder *))builder completionHandler:(void (^)(id<ComposeAppResult> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getWeather(route:queryParams:builder:completionHandler:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("HttpClientExtKt")))
+@interface ComposeAppHttpClientExtKt : ComposeAppBase
++ (NSString *)constructRouteImageRoute:(NSString *)route __attribute__((swift_name("constructRouteImage(route:)")));
++ (NSString *)constructRouteWeatherRoute:(NSString *)route __attribute__((swift_name("constructRouteWeather(route:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
++ (void)responseToResultResponse:(ComposeAppKtor_client_coreHttpResponse *)response completionHandler:(void (^)(id<ComposeAppResult> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("responseToResult(response:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
++ (void)safeCallExecute:(id<ComposeAppKotlinSuspendFunction0>)execute completionHandler:(void (^)(id<ComposeAppResult> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("safeCall(execute:completionHandler:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("HttpClientExt_nativeKt")))
+@interface ComposeAppHttpClientExt_nativeKt : ComposeAppBase
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
++ (void)platformSafeCallExecute:(id<ComposeAppKotlinSuspendFunction0>)execute handleResponse:(id<ComposeAppKotlinSuspendFunction1>)handleResponse completionHandler:(void (^)(id<ComposeAppResult> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("platformSafeCall(execute:handleResponse:completionHandler:)")));
+@end
+
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("InitKoinKt")))
 @interface ComposeAppInitKoinKt : ComposeAppBase
@@ -1764,13 +1867,6 @@ __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("WeatherDataBaseKt")))
 @interface ComposeAppWeatherDataBaseKt : ComposeAppBase
 + (ComposeAppWeatherDataBase *)getRoomDatabaseBuilder:(ComposeAppRoom_runtimeRoomDatabaseBuilder<ComposeAppWeatherDataBase *> *)builder __attribute__((swift_name("getRoomDatabase(builder:)")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("WeatherRepoImplKt")))
-@interface ComposeAppWeatherRepoImplKt : ComposeAppBase
-@property (class, readonly) NSString *BASE_URL_IMAGES __attribute__((swift_name("BASE_URL_IMAGES")));
-@property (class, readonly) NSString *BASE_URL_WEATHER __attribute__((swift_name("BASE_URL_WEATHER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -1929,23 +2025,6 @@ __attribute__((swift_name("Room_runtimeRoomOpenDelegateMarker")))
 @required
 @end
 
-__attribute__((swift_name("Kotlinx_coroutines_coreCoroutineScope")))
-@protocol ComposeAppKotlinx_coroutines_coreCoroutineScope
-@required
-@property (readonly) id<ComposeAppKotlinCoroutineContext> coroutineContext __attribute__((swift_name("coroutineContext")));
-@end
-
-
-/**
- * @note annotations
- *   kotlin.SinceKotlin(version="2.0")
-*/
-__attribute__((swift_name("KotlinAutoCloseable")))
-@protocol ComposeAppKotlinAutoCloseable
-@required
-- (void)close __attribute__((swift_name("close()")));
-@end
-
 __attribute__((swift_name("SqliteSQLiteConnection")))
 @protocol ComposeAppSqliteSQLiteConnection <ComposeAppKotlinAutoCloseable>
 @required
@@ -1987,30 +2066,6 @@ __attribute__((swift_name("Room_runtimeRoomOpenDelegate")))
 @property (readonly) NSString *identityHash __attribute__((swift_name("identityHash")));
 @property (readonly) NSString *legacyIdentityHash __attribute__((swift_name("legacyIdentityHash")));
 @property (readonly) int32_t version __attribute__((swift_name("version")));
-@end
-
-__attribute__((swift_name("Ktor_ioCloseable")))
-@protocol ComposeAppKtor_ioCloseable <ComposeAppKotlinAutoCloseable>
-@required
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_client_coreHttpClient")))
-@interface ComposeAppKtor_client_coreHttpClient : ComposeAppBase <ComposeAppKotlinx_coroutines_coreCoroutineScope, ComposeAppKtor_ioCloseable>
-- (instancetype)initWithEngine:(id<ComposeAppKtor_client_coreHttpClientEngine>)engine userConfig:(ComposeAppKtor_client_coreHttpClientConfig<ComposeAppKtor_client_coreHttpClientEngineConfig *> *)userConfig __attribute__((swift_name("init(engine:userConfig:)"))) __attribute__((objc_designated_initializer));
-- (void)close __attribute__((swift_name("close()")));
-- (ComposeAppKtor_client_coreHttpClient *)configBlock:(void (^)(ComposeAppKtor_client_coreHttpClientConfig<id> *))block __attribute__((swift_name("config(block:)")));
-- (BOOL)isSupportedCapability:(id<ComposeAppKtor_client_coreHttpClientEngineCapability>)capability __attribute__((swift_name("isSupported(capability:)")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) id<ComposeAppKtor_utilsAttributes> attributes __attribute__((swift_name("attributes")));
-@property (readonly) id<ComposeAppKotlinCoroutineContext> coroutineContext __attribute__((swift_name("coroutineContext")));
-@property (readonly) id<ComposeAppKtor_client_coreHttpClientEngine> engine __attribute__((swift_name("engine")));
-@property (readonly) ComposeAppKtor_client_coreHttpClientEngineConfig *engineConfig __attribute__((swift_name("engineConfig")));
-@property (readonly) ComposeAppKtor_eventsEvents *monitor __attribute__((swift_name("monitor")));
-@property (readonly) ComposeAppKtor_client_coreHttpReceivePipeline *receivePipeline __attribute__((swift_name("receivePipeline")));
-@property (readonly) ComposeAppKtor_client_coreHttpRequestPipeline *requestPipeline __attribute__((swift_name("requestPipeline")));
-@property (readonly) ComposeAppKtor_client_coreHttpResponsePipeline *responsePipeline __attribute__((swift_name("responsePipeline")));
-@property (readonly) ComposeAppKtor_client_coreHttpSendPipeline *sendPipeline __attribute__((swift_name("sendPipeline")));
 @end
 
 __attribute__((swift_name("Ktor_client_coreHttpClientEngine")))
@@ -2119,75 +2174,6 @@ __attribute__((swift_name("Kotlinx_coroutines_coreStateFlow")))
 @property (readonly) id _Nullable value __attribute__((swift_name("value")));
 @end
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Koin_coreKoinApplication")))
-@interface ComposeAppKoin_coreKoinApplication : ComposeAppBase
-@property (class, readonly, getter=companion) ComposeAppKoin_coreKoinApplicationCompanion *companion __attribute__((swift_name("companion")));
-- (void)allowOverrideOverride:(BOOL)override __attribute__((swift_name("allowOverride(override:)")));
-- (void)close __attribute__((swift_name("close()")));
-- (void)createEagerInstances __attribute__((swift_name("createEagerInstances()")));
-- (ComposeAppKoin_coreKoinApplication *)loggerLogger:(ComposeAppKoin_coreLogger *)logger __attribute__((swift_name("logger(logger:)")));
-- (ComposeAppKoin_coreKoinApplication *)modulesModules:(ComposeAppKotlinArray<ComposeAppKoin_coreModule *> *)modules __attribute__((swift_name("modules(modules:)")));
-- (ComposeAppKoin_coreKoinApplication *)modulesModules_:(NSArray<ComposeAppKoin_coreModule *> *)modules __attribute__((swift_name("modules(modules_:)")));
-- (ComposeAppKoin_coreKoinApplication *)modulesModules__:(ComposeAppKoin_coreModule *)modules __attribute__((swift_name("modules(modules__:)")));
-- (ComposeAppKoin_coreKoinApplication *)optionsOptionValue:(ComposeAppKotlinArray<ComposeAppKotlinPair<ComposeAppKoin_coreKoinOption *, id> *> *)optionValue __attribute__((swift_name("options(optionValue:)")));
-- (ComposeAppKoin_coreKoinApplication *)printLoggerLevel:(ComposeAppKoin_coreLevel *)level __attribute__((swift_name("printLogger(level:)")));
-- (ComposeAppKoin_coreKoinApplication *)propertiesValues:(NSDictionary<NSString *, id> *)values __attribute__((swift_name("properties(values:)")));
-@property (readonly) ComposeAppKoin_coreKoin *koin __attribute__((swift_name("koin")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Koin_coreModule")))
-@interface ComposeAppKoin_coreModule : ComposeAppBase
-- (instancetype)initWith_createdAtStart:(BOOL)_createdAtStart __attribute__((swift_name("init(_createdAtStart:)"))) __attribute__((objc_designated_initializer));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (ComposeAppKoin_coreKoinDefinition<id> *)factoryQualifier:(id<ComposeAppKoin_coreQualifier> _Nullable)qualifier definition:(id _Nullable (^)(ComposeAppKoin_coreScope *, ComposeAppKoin_coreParametersHolder *))definition __attribute__((swift_name("factory(qualifier:definition:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (void)includesModule:(ComposeAppKotlinArray<ComposeAppKoin_coreModule *> *)module __attribute__((swift_name("includes(module:)")));
-- (void)includesModule_:(id)module __attribute__((swift_name("includes(module_:)")));
-- (void)indexPrimaryTypeInstanceFactory:(ComposeAppKoin_coreInstanceFactory<id> *)instanceFactory __attribute__((swift_name("indexPrimaryType(instanceFactory:)")));
-- (void)indexSecondaryTypesInstanceFactory:(ComposeAppKoin_coreInstanceFactory<id> *)instanceFactory __attribute__((swift_name("indexSecondaryTypes(instanceFactory:)")));
-- (NSArray<ComposeAppKoin_coreModule *> *)plusModules:(NSArray<ComposeAppKoin_coreModule *> *)modules __attribute__((swift_name("plus(modules:)")));
-- (NSArray<ComposeAppKoin_coreModule *> *)plusModule:(ComposeAppKoin_coreModule *)module __attribute__((swift_name("plus(module:)")));
-- (void)prepareForCreationAtStartInstanceFactory:(ComposeAppKoin_coreSingleInstanceFactory<id> *)instanceFactory __attribute__((swift_name("prepareForCreationAtStart(instanceFactory:)")));
-- (void)scopeScopeSet:(void (^)(ComposeAppKoin_coreScopeDSL *))scopeSet __attribute__((swift_name("scope(scopeSet:)")));
-- (void)scopeQualifier:(id<ComposeAppKoin_coreQualifier>)qualifier scopeSet:(void (^)(ComposeAppKoin_coreScopeDSL *))scopeSet __attribute__((swift_name("scope(qualifier:scopeSet:)")));
-- (ComposeAppKoin_coreKoinDefinition<id> *)singleQualifier:(id<ComposeAppKoin_coreQualifier> _Nullable)qualifier createdAtStart:(BOOL)createdAtStart definition:(id _Nullable (^)(ComposeAppKoin_coreScope *, ComposeAppKoin_coreParametersHolder *))definition __attribute__((swift_name("single(qualifier:createdAtStart:definition:)")));
-@property (readonly) ComposeAppMutableSet<ComposeAppKoin_coreSingleInstanceFactory<id> *> *eagerInstances __attribute__((swift_name("eagerInstances")));
-@property (readonly) NSString *id __attribute__((swift_name("id")));
-@property (readonly) NSMutableArray<ComposeAppKoin_coreModule *> *includedModules __attribute__((swift_name("includedModules")));
-@property (readonly) BOOL isLoaded __attribute__((swift_name("isLoaded")));
-@property (readonly) ComposeAppMutableDictionary<NSString *, ComposeAppKoin_coreInstanceFactory<id> *> *mappings __attribute__((swift_name("mappings")));
-@property (readonly) ComposeAppMutableSet<id<ComposeAppKoin_coreQualifier>> *scopes __attribute__((swift_name("scopes")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Room_runtimeRoomDatabaseBuilder")))
-@interface ComposeAppRoom_runtimeRoomDatabaseBuilder<T> : ComposeAppBase
-- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)addAutoMigrationSpecAutoMigrationSpec:(id<ComposeAppRoom_runtimeAutoMigrationSpec>)autoMigrationSpec __attribute__((swift_name("addAutoMigrationSpec(autoMigrationSpec:)")));
-- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)addCallbackCallback:(ComposeAppRoom_runtimeRoomDatabaseCallback *)callback __attribute__((swift_name("addCallback(callback:)")));
-- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)addMigrationsMigrations:(ComposeAppKotlinArray<ComposeAppRoom_runtimeMigration *> *)migrations __attribute__((swift_name("addMigrations(migrations:)")));
-- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)addTypeConverterTypeConverter:(id)typeConverter __attribute__((swift_name("addTypeConverter(typeConverter:)")));
-- (T)build __attribute__((swift_name("build()")));
-- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)fallbackToDestructiveMigrationDropAllTables:(BOOL)dropAllTables __attribute__((swift_name("fallbackToDestructiveMigration(dropAllTables:)")));
-- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)fallbackToDestructiveMigrationFromDropAllTables:(BOOL)dropAllTables startVersions:(ComposeAppKotlinIntArray *)startVersions __attribute__((swift_name("fallbackToDestructiveMigrationFrom(dropAllTables:startVersions:)")));
-- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)fallbackToDestructiveMigrationOnDowngradeDropAllTables:(BOOL)dropAllTables __attribute__((swift_name("fallbackToDestructiveMigrationOnDowngrade(dropAllTables:)")));
-- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)setDriverDriver:(id<ComposeAppSqliteSQLiteDriver>)driver __attribute__((swift_name("setDriver(driver:)")));
-- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)setJournalModeJournalMode:(ComposeAppRoom_runtimeRoomDatabaseJournalMode *)journalMode __attribute__((swift_name("setJournalMode(journalMode:)")));
-- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)setQueryCoroutineContextContext:(id<ComposeAppKotlinCoroutineContext>)context __attribute__((swift_name("setQueryCoroutineContext(context:)")));
-@end
-
-__attribute__((swift_name("Kotlinx_coroutines_coreFlowCollector")))
-@protocol ComposeAppKotlinx_coroutines_coreFlowCollector
-@required
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)emitValue:(id _Nullable)value completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("emit(value:completionHandler:)")));
-@end
-
 
 /**
  * @note annotations
@@ -2200,119 +2186,6 @@ __attribute__((swift_name("KotlinCoroutineContext")))
 - (id<ComposeAppKotlinCoroutineContextElement> _Nullable)getKey:(id<ComposeAppKotlinCoroutineContextKey>)key __attribute__((swift_name("get(key:)")));
 - (id<ComposeAppKotlinCoroutineContext>)minusKeyKey:(id<ComposeAppKotlinCoroutineContextKey>)key __attribute__((swift_name("minusKey(key:)")));
 - (id<ComposeAppKotlinCoroutineContext>)plusContext:(id<ComposeAppKotlinCoroutineContext>)context __attribute__((swift_name("plus(context:)")));
-@end
-
-__attribute__((swift_name("SqliteSQLiteStatement")))
-@protocol ComposeAppSqliteSQLiteStatement <ComposeAppKotlinAutoCloseable>
-@required
-
-/**
- * @param index annotations androidx.annotation.IntRange(from=1.toLong())
-*/
-- (void)bindBlobIndex:(int32_t)index value:(ComposeAppKotlinByteArray *)value __attribute__((swift_name("bindBlob(index:value:)")));
-
-/**
- * @param index annotations androidx.annotation.IntRange(from=1.toLong())
-*/
-- (void)bindBooleanIndex:(int32_t)index value:(BOOL)value __attribute__((swift_name("bindBoolean(index:value:)")));
-
-/**
- * @param index annotations androidx.annotation.IntRange(from=1.toLong())
-*/
-- (void)bindDoubleIndex:(int32_t)index value:(double)value __attribute__((swift_name("bindDouble(index:value:)")));
-
-/**
- * @param index annotations androidx.annotation.IntRange(from=1.toLong())
-*/
-- (void)bindFloatIndex:(int32_t)index value:(float)value __attribute__((swift_name("bindFloat(index:value:)")));
-
-/**
- * @param index annotations androidx.annotation.IntRange(from=1.toLong())
-*/
-- (void)bindIntIndex:(int32_t)index value:(int32_t)value __attribute__((swift_name("bindInt(index:value:)")));
-
-/**
- * @param index annotations androidx.annotation.IntRange(from=1.toLong())
-*/
-- (void)bindLongIndex:(int32_t)index value:(int64_t)value __attribute__((swift_name("bindLong(index:value:)")));
-
-/**
- * @param index annotations androidx.annotation.IntRange(from=1.toLong())
-*/
-- (void)bindNullIndex:(int32_t)index __attribute__((swift_name("bindNull(index:)")));
-
-/**
- * @param index annotations androidx.annotation.IntRange(from=1.toLong())
-*/
-- (void)bindTextIndex:(int32_t)index value:(NSString *)value __attribute__((swift_name("bindText(index:value:)")));
-- (void)clearBindings __attribute__((swift_name("clearBindings()")));
-
-/**
- * @param index annotations androidx.annotation.IntRange(from=0.toLong())
-*/
-- (ComposeAppKotlinByteArray *)getBlobIndex:(int32_t)index __attribute__((swift_name("getBlob(index:)")));
-
-/**
- * @param index annotations androidx.annotation.IntRange(from=0.toLong())
-*/
-- (BOOL)getBooleanIndex:(int32_t)index __attribute__((swift_name("getBoolean(index:)")));
-- (int32_t)getColumnCount __attribute__((swift_name("getColumnCount()")));
-
-/**
- * @param index annotations androidx.annotation.IntRange(from=0.toLong())
-*/
-- (NSString *)getColumnNameIndex:(int32_t)index __attribute__((swift_name("getColumnName(index:)")));
-- (NSArray<NSString *> *)getColumnNames __attribute__((swift_name("getColumnNames()")));
-
-/**
- * @param index annotations androidx.annotation.IntRange(from=0.toLong())
-*/
-- (int32_t)getColumnTypeIndex:(int32_t)index __attribute__((swift_name("getColumnType(index:)")));
-
-/**
- * @param index annotations androidx.annotation.IntRange(from=0.toLong())
-*/
-- (double)getDoubleIndex:(int32_t)index __attribute__((swift_name("getDouble(index:)")));
-
-/**
- * @param index annotations androidx.annotation.IntRange(from=0.toLong())
-*/
-- (float)getFloatIndex:(int32_t)index __attribute__((swift_name("getFloat(index:)")));
-
-/**
- * @param index annotations androidx.annotation.IntRange(from=0.toLong())
-*/
-- (int32_t)getIntIndex:(int32_t)index __attribute__((swift_name("getInt(index:)")));
-
-/**
- * @param index annotations androidx.annotation.IntRange(from=0.toLong())
-*/
-- (int64_t)getLongIndex:(int32_t)index __attribute__((swift_name("getLong(index:)")));
-
-/**
- * @param index annotations androidx.annotation.IntRange(from=0.toLong())
-*/
-- (NSString *)getTextIndex:(int32_t)index __attribute__((swift_name("getText(index:)")));
-
-/**
- * @param index annotations androidx.annotation.IntRange(from=0.toLong())
-*/
-- (BOOL)isNullIndex:(int32_t)index __attribute__((swift_name("isNull(index:)")));
-- (void)reset __attribute__((swift_name("reset()")));
-- (BOOL)step __attribute__((swift_name("step()")));
-@end
-
-
-/**
- * @note annotations
- *   androidx.annotation.RestrictTo(value=[Scope.LIBRARY_GROUP_PREFIX])
-*/
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Room_runtimeRoomOpenDelegate.ValidationResult")))
-@interface ComposeAppRoom_runtimeRoomOpenDelegateValidationResult : ComposeAppBase
-- (instancetype)initWithIsValid:(BOOL)isValid expectedFoundMsg:(NSString * _Nullable)expectedFoundMsg __attribute__((swift_name("init(isValid:expectedFoundMsg:)"))) __attribute__((objc_designated_initializer));
-@property (readonly) NSString * _Nullable expectedFoundMsg __attribute__((swift_name("expectedFoundMsg")));
-@property (readonly) BOOL isValid __attribute__((swift_name("isValid")));
 @end
 
 __attribute__((swift_name("Ktor_client_coreHttpClientEngineConfig")))
@@ -2436,6 +2309,246 @@ __attribute__((swift_name("Ktor_client_coreHttpSendPipeline")))
 - (instancetype)initWithPhase:(ComposeAppKtor_utilsPipelinePhase *)phase interceptors:(NSArray<id<ComposeAppKotlinSuspendFunction2>> *)interceptors __attribute__((swift_name("init(phase:interceptors:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) ComposeAppKtor_client_coreHttpSendPipelinePhases *companion __attribute__((swift_name("companion")));
 @property (readonly) BOOL developmentMode __attribute__((swift_name("developmentMode")));
+@end
+
+__attribute__((swift_name("Ktor_httpHttpMessageBuilder")))
+@protocol ComposeAppKtor_httpHttpMessageBuilder
+@required
+@property (readonly) ComposeAppKtor_httpHeadersBuilder *headers __attribute__((swift_name("headers")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_client_coreHttpRequestBuilder")))
+@interface ComposeAppKtor_client_coreHttpRequestBuilder : ComposeAppBase <ComposeAppKtor_httpHttpMessageBuilder>
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+@property (class, readonly, getter=companion) ComposeAppKtor_client_coreHttpRequestBuilderCompanion *companion __attribute__((swift_name("companion")));
+- (ComposeAppKtor_client_coreHttpRequestData *)build __attribute__((swift_name("build()")));
+- (id _Nullable)getCapabilityOrNullKey:(id<ComposeAppKtor_client_coreHttpClientEngineCapability>)key __attribute__((swift_name("getCapabilityOrNull(key:)")));
+- (void)setAttributesBlock:(void (^)(id<ComposeAppKtor_utilsAttributes>))block __attribute__((swift_name("setAttributes(block:)")));
+- (void)setCapabilityKey:(id<ComposeAppKtor_client_coreHttpClientEngineCapability>)key capability:(id)capability __attribute__((swift_name("setCapability(key:capability:)")));
+- (ComposeAppKtor_client_coreHttpRequestBuilder *)takeFromBuilder:(ComposeAppKtor_client_coreHttpRequestBuilder *)builder __attribute__((swift_name("takeFrom(builder:)")));
+- (ComposeAppKtor_client_coreHttpRequestBuilder *)takeFromWithExecutionContextBuilder:(ComposeAppKtor_client_coreHttpRequestBuilder *)builder __attribute__((swift_name("takeFromWithExecutionContext(builder:)")));
+- (void)urlBlock:(void (^)(ComposeAppKtor_httpURLBuilder *, ComposeAppKtor_httpURLBuilder *))block __attribute__((swift_name("url(block:)")));
+@property (readonly) id<ComposeAppKtor_utilsAttributes> attributes __attribute__((swift_name("attributes")));
+@property id body __attribute__((swift_name("body")));
+@property ComposeAppKtor_utilsTypeInfo * _Nullable bodyType __attribute__((swift_name("bodyType")));
+@property (readonly) id<ComposeAppKotlinx_coroutines_coreJob> executionContext __attribute__((swift_name("executionContext")));
+@property (readonly) ComposeAppKtor_httpHeadersBuilder *headers __attribute__((swift_name("headers")));
+@property ComposeAppKtor_httpHttpMethod *method __attribute__((swift_name("method")));
+@property (readonly) ComposeAppKtor_httpURLBuilder *url __attribute__((swift_name("url")));
+@end
+
+__attribute__((swift_name("Ktor_httpHttpMessage")))
+@protocol ComposeAppKtor_httpHttpMessage
+@required
+@property (readonly) id<ComposeAppKtor_httpHeaders> headers __attribute__((swift_name("headers")));
+@end
+
+__attribute__((swift_name("Ktor_client_coreHttpResponse")))
+@interface ComposeAppKtor_client_coreHttpResponse : ComposeAppBase <ComposeAppKtor_httpHttpMessage, ComposeAppKotlinx_coroutines_coreCoroutineScope>
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) ComposeAppKtor_client_coreHttpClientCall *call __attribute__((swift_name("call")));
+@property (readonly) id<ComposeAppKtor_ioByteReadChannel> rawContent __attribute__((swift_name("rawContent")));
+@property (readonly) ComposeAppKtor_utilsGMTDate *requestTime __attribute__((swift_name("requestTime")));
+@property (readonly) ComposeAppKtor_utilsGMTDate *responseTime __attribute__((swift_name("responseTime")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *status __attribute__((swift_name("status")));
+@property (readonly) ComposeAppKtor_httpHttpProtocolVersion *version __attribute__((swift_name("version")));
+@end
+
+__attribute__((swift_name("KotlinSuspendFunction0")))
+@protocol ComposeAppKotlinSuspendFunction0 <ComposeAppKotlinFunction>
+@required
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)invokeWithCompletionHandler:(void (^)(id _Nullable_result, NSError * _Nullable))completionHandler __attribute__((swift_name("invoke(completionHandler:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Koin_coreKoinApplication")))
+@interface ComposeAppKoin_coreKoinApplication : ComposeAppBase
+@property (class, readonly, getter=companion) ComposeAppKoin_coreKoinApplicationCompanion *companion __attribute__((swift_name("companion")));
+- (void)allowOverrideOverride:(BOOL)override __attribute__((swift_name("allowOverride(override:)")));
+- (void)close __attribute__((swift_name("close()")));
+- (void)createEagerInstances __attribute__((swift_name("createEagerInstances()")));
+- (ComposeAppKoin_coreKoinApplication *)loggerLogger:(ComposeAppKoin_coreLogger *)logger __attribute__((swift_name("logger(logger:)")));
+- (ComposeAppKoin_coreKoinApplication *)modulesModules:(ComposeAppKotlinArray<ComposeAppKoin_coreModule *> *)modules __attribute__((swift_name("modules(modules:)")));
+- (ComposeAppKoin_coreKoinApplication *)modulesModules_:(NSArray<ComposeAppKoin_coreModule *> *)modules __attribute__((swift_name("modules(modules_:)")));
+- (ComposeAppKoin_coreKoinApplication *)modulesModules__:(ComposeAppKoin_coreModule *)modules __attribute__((swift_name("modules(modules__:)")));
+- (ComposeAppKoin_coreKoinApplication *)optionsOptionValue:(ComposeAppKotlinArray<ComposeAppKotlinPair<ComposeAppKoin_coreKoinOption *, id> *> *)optionValue __attribute__((swift_name("options(optionValue:)")));
+- (ComposeAppKoin_coreKoinApplication *)printLoggerLevel:(ComposeAppKoin_coreLevel *)level __attribute__((swift_name("printLogger(level:)")));
+- (ComposeAppKoin_coreKoinApplication *)propertiesValues:(NSDictionary<NSString *, id> *)values __attribute__((swift_name("properties(values:)")));
+@property (readonly) ComposeAppKoin_coreKoin *koin __attribute__((swift_name("koin")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Koin_coreModule")))
+@interface ComposeAppKoin_coreModule : ComposeAppBase
+- (instancetype)initWith_createdAtStart:(BOOL)_createdAtStart __attribute__((swift_name("init(_createdAtStart:)"))) __attribute__((objc_designated_initializer));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (ComposeAppKoin_coreKoinDefinition<id> *)factoryQualifier:(id<ComposeAppKoin_coreQualifier> _Nullable)qualifier definition:(id _Nullable (^)(ComposeAppKoin_coreScope *, ComposeAppKoin_coreParametersHolder *))definition __attribute__((swift_name("factory(qualifier:definition:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (void)includesModule:(ComposeAppKotlinArray<ComposeAppKoin_coreModule *> *)module __attribute__((swift_name("includes(module:)")));
+- (void)includesModule_:(id)module __attribute__((swift_name("includes(module_:)")));
+- (void)indexPrimaryTypeInstanceFactory:(ComposeAppKoin_coreInstanceFactory<id> *)instanceFactory __attribute__((swift_name("indexPrimaryType(instanceFactory:)")));
+- (void)indexSecondaryTypesInstanceFactory:(ComposeAppKoin_coreInstanceFactory<id> *)instanceFactory __attribute__((swift_name("indexSecondaryTypes(instanceFactory:)")));
+- (NSArray<ComposeAppKoin_coreModule *> *)plusModules:(NSArray<ComposeAppKoin_coreModule *> *)modules __attribute__((swift_name("plus(modules:)")));
+- (NSArray<ComposeAppKoin_coreModule *> *)plusModule:(ComposeAppKoin_coreModule *)module __attribute__((swift_name("plus(module:)")));
+- (void)prepareForCreationAtStartInstanceFactory:(ComposeAppKoin_coreSingleInstanceFactory<id> *)instanceFactory __attribute__((swift_name("prepareForCreationAtStart(instanceFactory:)")));
+- (void)scopeScopeSet:(void (^)(ComposeAppKoin_coreScopeDSL *))scopeSet __attribute__((swift_name("scope(scopeSet:)")));
+- (void)scopeQualifier:(id<ComposeAppKoin_coreQualifier>)qualifier scopeSet:(void (^)(ComposeAppKoin_coreScopeDSL *))scopeSet __attribute__((swift_name("scope(qualifier:scopeSet:)")));
+- (ComposeAppKoin_coreKoinDefinition<id> *)singleQualifier:(id<ComposeAppKoin_coreQualifier> _Nullable)qualifier createdAtStart:(BOOL)createdAtStart definition:(id _Nullable (^)(ComposeAppKoin_coreScope *, ComposeAppKoin_coreParametersHolder *))definition __attribute__((swift_name("single(qualifier:createdAtStart:definition:)")));
+@property (readonly) ComposeAppMutableSet<ComposeAppKoin_coreSingleInstanceFactory<id> *> *eagerInstances __attribute__((swift_name("eagerInstances")));
+@property (readonly) NSString *id __attribute__((swift_name("id")));
+@property (readonly) NSMutableArray<ComposeAppKoin_coreModule *> *includedModules __attribute__((swift_name("includedModules")));
+@property (readonly) BOOL isLoaded __attribute__((swift_name("isLoaded")));
+@property (readonly) ComposeAppMutableDictionary<NSString *, ComposeAppKoin_coreInstanceFactory<id> *> *mappings __attribute__((swift_name("mappings")));
+@property (readonly) ComposeAppMutableSet<id<ComposeAppKoin_coreQualifier>> *scopes __attribute__((swift_name("scopes")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Room_runtimeRoomDatabaseBuilder")))
+@interface ComposeAppRoom_runtimeRoomDatabaseBuilder<T> : ComposeAppBase
+- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)addAutoMigrationSpecAutoMigrationSpec:(id<ComposeAppRoom_runtimeAutoMigrationSpec>)autoMigrationSpec __attribute__((swift_name("addAutoMigrationSpec(autoMigrationSpec:)")));
+- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)addCallbackCallback:(ComposeAppRoom_runtimeRoomDatabaseCallback *)callback __attribute__((swift_name("addCallback(callback:)")));
+- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)addMigrationsMigrations:(ComposeAppKotlinArray<ComposeAppRoom_runtimeMigration *> *)migrations __attribute__((swift_name("addMigrations(migrations:)")));
+- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)addTypeConverterTypeConverter:(id)typeConverter __attribute__((swift_name("addTypeConverter(typeConverter:)")));
+- (T)build __attribute__((swift_name("build()")));
+- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)fallbackToDestructiveMigrationDropAllTables:(BOOL)dropAllTables __attribute__((swift_name("fallbackToDestructiveMigration(dropAllTables:)")));
+- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)fallbackToDestructiveMigrationFromDropAllTables:(BOOL)dropAllTables startVersions:(ComposeAppKotlinIntArray *)startVersions __attribute__((swift_name("fallbackToDestructiveMigrationFrom(dropAllTables:startVersions:)")));
+- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)fallbackToDestructiveMigrationOnDowngradeDropAllTables:(BOOL)dropAllTables __attribute__((swift_name("fallbackToDestructiveMigrationOnDowngrade(dropAllTables:)")));
+- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)setDriverDriver:(id<ComposeAppSqliteSQLiteDriver>)driver __attribute__((swift_name("setDriver(driver:)")));
+- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)setJournalModeJournalMode:(ComposeAppRoom_runtimeRoomDatabaseJournalMode *)journalMode __attribute__((swift_name("setJournalMode(journalMode:)")));
+- (ComposeAppRoom_runtimeRoomDatabaseBuilder<T> *)setQueryCoroutineContextContext:(id<ComposeAppKotlinCoroutineContext>)context __attribute__((swift_name("setQueryCoroutineContext(context:)")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreFlowCollector")))
+@protocol ComposeAppKotlinx_coroutines_coreFlowCollector
+@required
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)emitValue:(id _Nullable)value completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("emit(value:completionHandler:)")));
+@end
+
+__attribute__((swift_name("SqliteSQLiteStatement")))
+@protocol ComposeAppSqliteSQLiteStatement <ComposeAppKotlinAutoCloseable>
+@required
+
+/**
+ * @param index annotations androidx.annotation.IntRange(from=1.toLong())
+*/
+- (void)bindBlobIndex:(int32_t)index value:(ComposeAppKotlinByteArray *)value __attribute__((swift_name("bindBlob(index:value:)")));
+
+/**
+ * @param index annotations androidx.annotation.IntRange(from=1.toLong())
+*/
+- (void)bindBooleanIndex:(int32_t)index value:(BOOL)value __attribute__((swift_name("bindBoolean(index:value:)")));
+
+/**
+ * @param index annotations androidx.annotation.IntRange(from=1.toLong())
+*/
+- (void)bindDoubleIndex:(int32_t)index value:(double)value __attribute__((swift_name("bindDouble(index:value:)")));
+
+/**
+ * @param index annotations androidx.annotation.IntRange(from=1.toLong())
+*/
+- (void)bindFloatIndex:(int32_t)index value:(float)value __attribute__((swift_name("bindFloat(index:value:)")));
+
+/**
+ * @param index annotations androidx.annotation.IntRange(from=1.toLong())
+*/
+- (void)bindIntIndex:(int32_t)index value:(int32_t)value __attribute__((swift_name("bindInt(index:value:)")));
+
+/**
+ * @param index annotations androidx.annotation.IntRange(from=1.toLong())
+*/
+- (void)bindLongIndex:(int32_t)index value:(int64_t)value __attribute__((swift_name("bindLong(index:value:)")));
+
+/**
+ * @param index annotations androidx.annotation.IntRange(from=1.toLong())
+*/
+- (void)bindNullIndex:(int32_t)index __attribute__((swift_name("bindNull(index:)")));
+
+/**
+ * @param index annotations androidx.annotation.IntRange(from=1.toLong())
+*/
+- (void)bindTextIndex:(int32_t)index value:(NSString *)value __attribute__((swift_name("bindText(index:value:)")));
+- (void)clearBindings __attribute__((swift_name("clearBindings()")));
+
+/**
+ * @param index annotations androidx.annotation.IntRange(from=0.toLong())
+*/
+- (ComposeAppKotlinByteArray *)getBlobIndex:(int32_t)index __attribute__((swift_name("getBlob(index:)")));
+
+/**
+ * @param index annotations androidx.annotation.IntRange(from=0.toLong())
+*/
+- (BOOL)getBooleanIndex:(int32_t)index __attribute__((swift_name("getBoolean(index:)")));
+- (int32_t)getColumnCount __attribute__((swift_name("getColumnCount()")));
+
+/**
+ * @param index annotations androidx.annotation.IntRange(from=0.toLong())
+*/
+- (NSString *)getColumnNameIndex:(int32_t)index __attribute__((swift_name("getColumnName(index:)")));
+- (NSArray<NSString *> *)getColumnNames __attribute__((swift_name("getColumnNames()")));
+
+/**
+ * @param index annotations androidx.annotation.IntRange(from=0.toLong())
+*/
+- (int32_t)getColumnTypeIndex:(int32_t)index __attribute__((swift_name("getColumnType(index:)")));
+
+/**
+ * @param index annotations androidx.annotation.IntRange(from=0.toLong())
+*/
+- (double)getDoubleIndex:(int32_t)index __attribute__((swift_name("getDouble(index:)")));
+
+/**
+ * @param index annotations androidx.annotation.IntRange(from=0.toLong())
+*/
+- (float)getFloatIndex:(int32_t)index __attribute__((swift_name("getFloat(index:)")));
+
+/**
+ * @param index annotations androidx.annotation.IntRange(from=0.toLong())
+*/
+- (int32_t)getIntIndex:(int32_t)index __attribute__((swift_name("getInt(index:)")));
+
+/**
+ * @param index annotations androidx.annotation.IntRange(from=0.toLong())
+*/
+- (int64_t)getLongIndex:(int32_t)index __attribute__((swift_name("getLong(index:)")));
+
+/**
+ * @param index annotations androidx.annotation.IntRange(from=0.toLong())
+*/
+- (NSString *)getTextIndex:(int32_t)index __attribute__((swift_name("getText(index:)")));
+
+/**
+ * @param index annotations androidx.annotation.IntRange(from=0.toLong())
+*/
+- (BOOL)isNullIndex:(int32_t)index __attribute__((swift_name("isNull(index:)")));
+- (void)reset __attribute__((swift_name("reset()")));
+- (BOOL)step __attribute__((swift_name("step()")));
+@end
+
+
+/**
+ * @note annotations
+ *   androidx.annotation.RestrictTo(value=[Scope.LIBRARY_GROUP_PREFIX])
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Room_runtimeRoomOpenDelegate.ValidationResult")))
+@interface ComposeAppRoom_runtimeRoomOpenDelegateValidationResult : ComposeAppBase
+- (instancetype)initWithIsValid:(BOOL)isValid expectedFoundMsg:(NSString * _Nullable)expectedFoundMsg __attribute__((swift_name("init(isValid:expectedFoundMsg:)"))) __attribute__((objc_designated_initializer));
+@property (readonly) NSString * _Nullable expectedFoundMsg __attribute__((swift_name("expectedFoundMsg")));
+@property (readonly) BOOL isValid __attribute__((swift_name("isValid")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -2618,6 +2731,460 @@ __attribute__((swift_name("PermissionsPermission")))
 @protocol ComposeAppPermissionsPermission
 @required
 @property (readonly) id<ComposeAppPermissionsPermissionDelegate> delegate __attribute__((swift_name("delegate")));
+@end
+
+__attribute__((swift_name("KotlinCoroutineContextKey")))
+@protocol ComposeAppKotlinCoroutineContextKey
+@required
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_client_coreProxyConfig")))
+@interface ComposeAppKtor_client_coreProxyConfig : ComposeAppBase
+- (instancetype)initWithUrl:(ComposeAppKtor_httpUrl *)url __attribute__((swift_name("init(url:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) ComposeAppKtor_httpUrl *url __attribute__((swift_name("url")));
+@end
+
+__attribute__((swift_name("Ktor_client_coreHttpClientPlugin")))
+@protocol ComposeAppKtor_client_coreHttpClientPlugin
+@required
+- (void)installPlugin:(id)plugin scope:(ComposeAppKtor_client_coreHttpClient *)scope __attribute__((swift_name("install(plugin:scope:)")));
+- (id)prepareBlock:(void (^)(id))block __attribute__((swift_name("prepare(block:)")));
+@property (readonly) ComposeAppKtor_utilsAttributeKey<id> *key __attribute__((swift_name("key")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_utilsAttributeKey")))
+@interface ComposeAppKtor_utilsAttributeKey<T> : ComposeAppBase
+
+/**
+ * @note annotations
+ *   kotlin.jvm.JvmOverloads
+*/
+- (instancetype)initWithName:(NSString *)name type:(ComposeAppKtor_utilsTypeInfo *)type __attribute__((swift_name("init(name:type:)"))) __attribute__((objc_designated_initializer));
+- (ComposeAppKtor_utilsAttributeKey<T> *)doCopyName:(NSString *)name type:(ComposeAppKtor_utilsTypeInfo *)type __attribute__((swift_name("doCopy(name:type:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *name __attribute__((swift_name("name")));
+@end
+
+__attribute__((swift_name("Ktor_eventsEventDefinition")))
+@interface ComposeAppKtor_eventsEventDefinition<T> : ComposeAppBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreDisposableHandle")))
+@protocol ComposeAppKotlinx_coroutines_coreDisposableHandle
+@required
+- (void)dispose __attribute__((swift_name("dispose()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_utilsPipelinePhase")))
+@interface ComposeAppKtor_utilsPipelinePhase : ComposeAppBase
+- (instancetype)initWithName:(NSString *)name __attribute__((swift_name("init(name:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *name __attribute__((swift_name("name")));
+@end
+
+__attribute__((swift_name("KotlinSuspendFunction2")))
+@protocol ComposeAppKotlinSuspendFunction2 <ComposeAppKotlinFunction>
+@required
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)invokeP1:(id _Nullable)p1 p2:(id _Nullable)p2 completionHandler:(void (^)(id _Nullable_result, NSError * _Nullable))completionHandler __attribute__((swift_name("invoke(p1:p2:completionHandler:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_client_coreHttpReceivePipeline.Phases")))
+@interface ComposeAppKtor_client_coreHttpReceivePipelinePhases : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)phases __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppKtor_client_coreHttpReceivePipelinePhases *shared __attribute__((swift_name("shared")));
+@property (readonly) ComposeAppKtor_utilsPipelinePhase *After __attribute__((swift_name("After")));
+@property (readonly) ComposeAppKtor_utilsPipelinePhase *Before __attribute__((swift_name("Before")));
+@property (readonly) ComposeAppKtor_utilsPipelinePhase *State __attribute__((swift_name("State")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("KotlinUnit")))
+@interface ComposeAppKotlinUnit : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)unit __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppKotlinUnit *shared __attribute__((swift_name("shared")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_client_coreHttpRequestPipeline.Phases")))
+@interface ComposeAppKtor_client_coreHttpRequestPipelinePhases : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)phases __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppKtor_client_coreHttpRequestPipelinePhases *shared __attribute__((swift_name("shared")));
+@property (readonly) ComposeAppKtor_utilsPipelinePhase *Before __attribute__((swift_name("Before")));
+@property (readonly) ComposeAppKtor_utilsPipelinePhase *Render __attribute__((swift_name("Render")));
+@property (readonly) ComposeAppKtor_utilsPipelinePhase *Send __attribute__((swift_name("Send")));
+@property (readonly) ComposeAppKtor_utilsPipelinePhase *State __attribute__((swift_name("State")));
+@property (readonly) ComposeAppKtor_utilsPipelinePhase *Transform __attribute__((swift_name("Transform")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_client_coreHttpResponsePipeline.Phases")))
+@interface ComposeAppKtor_client_coreHttpResponsePipelinePhases : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)phases __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppKtor_client_coreHttpResponsePipelinePhases *shared __attribute__((swift_name("shared")));
+@property (readonly) ComposeAppKtor_utilsPipelinePhase *After __attribute__((swift_name("After")));
+@property (readonly) ComposeAppKtor_utilsPipelinePhase *Parse __attribute__((swift_name("Parse")));
+@property (readonly) ComposeAppKtor_utilsPipelinePhase *Receive __attribute__((swift_name("Receive")));
+@property (readonly) ComposeAppKtor_utilsPipelinePhase *State __attribute__((swift_name("State")));
+@property (readonly) ComposeAppKtor_utilsPipelinePhase *Transform __attribute__((swift_name("Transform")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_client_coreHttpResponseContainer")))
+@interface ComposeAppKtor_client_coreHttpResponseContainer : ComposeAppBase
+- (instancetype)initWithExpectedType:(ComposeAppKtor_utilsTypeInfo *)expectedType response:(id)response __attribute__((swift_name("init(expectedType:response:)"))) __attribute__((objc_designated_initializer));
+- (ComposeAppKtor_client_coreHttpResponseContainer *)doCopyExpectedType:(ComposeAppKtor_utilsTypeInfo *)expectedType response:(id)response __attribute__((swift_name("doCopy(expectedType:response:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) ComposeAppKtor_utilsTypeInfo *expectedType __attribute__((swift_name("expectedType")));
+@property (readonly) id response __attribute__((swift_name("response")));
+@end
+
+__attribute__((swift_name("Ktor_client_coreHttpClientCall")))
+@interface ComposeAppKtor_client_coreHttpClientCall : ComposeAppBase <ComposeAppKotlinx_coroutines_coreCoroutineScope>
+- (instancetype)initWithClient:(ComposeAppKtor_client_coreHttpClient *)client __attribute__((swift_name("init(client:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithClient:(ComposeAppKtor_client_coreHttpClient *)client requestData:(ComposeAppKtor_client_coreHttpRequestData *)requestData responseData:(ComposeAppKtor_client_coreHttpResponseData *)responseData __attribute__((swift_name("init(client:requestData:responseData:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) ComposeAppKtor_client_coreHttpClientCallCompanion *companion __attribute__((swift_name("companion")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)bodyInfo:(ComposeAppKtor_utilsTypeInfo *)info completionHandler:(void (^)(id _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("body(info:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)bodyNullableInfo:(ComposeAppKtor_utilsTypeInfo *)info completionHandler:(void (^)(id _Nullable_result, NSError * _Nullable))completionHandler __attribute__((swift_name("bodyNullable(info:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+ * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
+*/
+- (void)getResponseContentWithCompletionHandler:(void (^)(id<ComposeAppKtor_ioByteReadChannel> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getResponseContent(completionHandler:)")));
+- (NSString *)description __attribute__((swift_name("description()")));
+
+/**
+ * @note This property has protected visibility in Kotlin source and is intended only for use by subclasses.
+*/
+@property (readonly) BOOL allowDoubleReceive __attribute__((swift_name("allowDoubleReceive")));
+@property (readonly) id<ComposeAppKtor_utilsAttributes> attributes __attribute__((swift_name("attributes")));
+@property (readonly) ComposeAppKtor_client_coreHttpClient *client __attribute__((swift_name("client")));
+@property (readonly) id<ComposeAppKotlinCoroutineContext> coroutineContext __attribute__((swift_name("coroutineContext")));
+@property id<ComposeAppKtor_client_coreHttpRequest> request __attribute__((swift_name("request")));
+@property ComposeAppKtor_client_coreHttpResponse *response __attribute__((swift_name("response")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_client_coreHttpSendPipeline.Phases")))
+@interface ComposeAppKtor_client_coreHttpSendPipelinePhases : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)phases __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppKtor_client_coreHttpSendPipelinePhases *shared __attribute__((swift_name("shared")));
+@property (readonly) ComposeAppKtor_utilsPipelinePhase *Before __attribute__((swift_name("Before")));
+@property (readonly) ComposeAppKtor_utilsPipelinePhase *Engine __attribute__((swift_name("Engine")));
+@property (readonly) ComposeAppKtor_utilsPipelinePhase *Monitoring __attribute__((swift_name("Monitoring")));
+@property (readonly) ComposeAppKtor_utilsPipelinePhase *Receive __attribute__((swift_name("Receive")));
+@property (readonly) ComposeAppKtor_utilsPipelinePhase *State __attribute__((swift_name("State")));
+@end
+
+__attribute__((swift_name("Ktor_utilsStringValuesBuilder")))
+@protocol ComposeAppKtor_utilsStringValuesBuilder
+@required
+- (void)appendName:(NSString *)name value:(NSString *)value __attribute__((swift_name("append(name:value:)")));
+- (void)appendAllStringValues:(id<ComposeAppKtor_utilsStringValues>)stringValues __attribute__((swift_name("appendAll(stringValues:)")));
+- (void)appendAllName:(NSString *)name values:(id)values __attribute__((swift_name("appendAll(name:values:)")));
+- (void)appendMissingStringValues:(id<ComposeAppKtor_utilsStringValues>)stringValues __attribute__((swift_name("appendMissing(stringValues:)")));
+- (void)appendMissingName:(NSString *)name values:(id)values __attribute__((swift_name("appendMissing(name:values:)")));
+- (id<ComposeAppKtor_utilsStringValues>)build __attribute__((swift_name("build()")));
+- (void)clear __attribute__((swift_name("clear()")));
+- (BOOL)containsName:(NSString *)name __attribute__((swift_name("contains(name:)")));
+- (BOOL)containsName:(NSString *)name value:(NSString *)value __attribute__((swift_name("contains(name:value:)")));
+- (NSSet<id<ComposeAppKotlinMapEntry>> *)entries __attribute__((swift_name("entries()")));
+- (NSString * _Nullable)getName:(NSString *)name __attribute__((swift_name("get(name:)")));
+- (NSArray<NSString *> * _Nullable)getAllName:(NSString *)name __attribute__((swift_name("getAll(name:)")));
+- (BOOL)isEmpty_ __attribute__((swift_name("isEmpty()")));
+- (NSSet<NSString *> *)names __attribute__((swift_name("names()")));
+- (void)removeName:(NSString *)name __attribute__((swift_name("remove(name:)")));
+- (BOOL)removeName:(NSString *)name value:(NSString *)value __attribute__((swift_name("remove(name:value:)")));
+- (void)removeKeysWithNoEntries __attribute__((swift_name("removeKeysWithNoEntries()")));
+- (void)setName:(NSString *)name value:(NSString *)value __attribute__((swift_name("set(name:value:)")));
+@property (readonly) BOOL caseInsensitiveName __attribute__((swift_name("caseInsensitiveName")));
+@end
+
+__attribute__((swift_name("Ktor_utilsStringValuesBuilderImpl")))
+@interface ComposeAppKtor_utilsStringValuesBuilderImpl : ComposeAppBase <ComposeAppKtor_utilsStringValuesBuilder>
+- (instancetype)initWithCaseInsensitiveName:(BOOL)caseInsensitiveName size:(int32_t)size __attribute__((swift_name("init(caseInsensitiveName:size:)"))) __attribute__((objc_designated_initializer));
+- (void)appendName:(NSString *)name value:(NSString *)value __attribute__((swift_name("append(name:value:)")));
+- (void)appendAllStringValues:(id<ComposeAppKtor_utilsStringValues>)stringValues __attribute__((swift_name("appendAll(stringValues:)")));
+- (void)appendAllName:(NSString *)name values:(id)values __attribute__((swift_name("appendAll(name:values:)")));
+- (void)appendMissingStringValues:(id<ComposeAppKtor_utilsStringValues>)stringValues __attribute__((swift_name("appendMissing(stringValues:)")));
+- (void)appendMissingName:(NSString *)name values:(id)values __attribute__((swift_name("appendMissing(name:values:)")));
+- (id<ComposeAppKtor_utilsStringValues>)build __attribute__((swift_name("build()")));
+- (void)clear __attribute__((swift_name("clear()")));
+- (BOOL)containsName:(NSString *)name __attribute__((swift_name("contains(name:)")));
+- (BOOL)containsName:(NSString *)name value:(NSString *)value __attribute__((swift_name("contains(name:value:)")));
+- (NSSet<id<ComposeAppKotlinMapEntry>> *)entries __attribute__((swift_name("entries()")));
+- (NSString * _Nullable)getName:(NSString *)name __attribute__((swift_name("get(name:)")));
+- (NSArray<NSString *> * _Nullable)getAllName:(NSString *)name __attribute__((swift_name("getAll(name:)")));
+- (BOOL)isEmpty_ __attribute__((swift_name("isEmpty()")));
+- (NSSet<NSString *> *)names __attribute__((swift_name("names()")));
+- (void)removeName:(NSString *)name __attribute__((swift_name("remove(name:)")));
+- (BOOL)removeName:(NSString *)name value:(NSString *)value __attribute__((swift_name("remove(name:value:)")));
+- (void)removeKeysWithNoEntries __attribute__((swift_name("removeKeysWithNoEntries()")));
+- (void)setName:(NSString *)name value:(NSString *)value __attribute__((swift_name("set(name:value:)")));
+
+/**
+ * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
+*/
+- (void)validateNameName:(NSString *)name __attribute__((swift_name("validateName(name:)")));
+
+/**
+ * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
+*/
+- (void)validateValueValue:(NSString *)value __attribute__((swift_name("validateValue(value:)")));
+@property (readonly) BOOL caseInsensitiveName __attribute__((swift_name("caseInsensitiveName")));
+
+/**
+ * @note This property has protected visibility in Kotlin source and is intended only for use by subclasses.
+*/
+@property (readonly) ComposeAppMutableDictionary<NSString *, NSMutableArray<NSString *> *> *values __attribute__((swift_name("values")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_httpHeadersBuilder")))
+@interface ComposeAppKtor_httpHeadersBuilder : ComposeAppKtor_utilsStringValuesBuilderImpl
+- (instancetype)initWithSize:(int32_t)size __attribute__((swift_name("init(size:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithCaseInsensitiveName:(BOOL)caseInsensitiveName size:(int32_t)size __attribute__((swift_name("init(caseInsensitiveName:size:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+- (id<ComposeAppKtor_httpHeaders>)build __attribute__((swift_name("build()")));
+
+/**
+ * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
+*/
+- (void)validateNameName:(NSString *)name __attribute__((swift_name("validateName(name:)")));
+
+/**
+ * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
+*/
+- (void)validateValueValue:(NSString *)value __attribute__((swift_name("validateValue(value:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_client_coreHttpRequestBuilder.Companion")))
+@interface ComposeAppKtor_client_coreHttpRequestBuilderCompanion : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppKtor_client_coreHttpRequestBuilderCompanion *shared __attribute__((swift_name("shared")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_httpURLBuilder")))
+@interface ComposeAppKtor_httpURLBuilder : ComposeAppBase
+- (instancetype)initWithProtocol:(ComposeAppKtor_httpURLProtocol * _Nullable)protocol host:(NSString *)host port:(int32_t)port user:(NSString * _Nullable)user password:(NSString * _Nullable)password pathSegments:(NSArray<NSString *> *)pathSegments parameters:(id<ComposeAppKtor_httpParameters>)parameters fragment:(NSString *)fragment trailingQuery:(BOOL)trailingQuery __attribute__((swift_name("init(protocol:host:port:user:password:pathSegments:parameters:fragment:trailingQuery:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) ComposeAppKtor_httpURLBuilderCompanion *companion __attribute__((swift_name("companion")));
+- (ComposeAppKtor_httpUrl *)build __attribute__((swift_name("build()")));
+- (NSString *)buildString __attribute__((swift_name("buildString()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property NSString *encodedFragment __attribute__((swift_name("encodedFragment")));
+@property id<ComposeAppKtor_httpParametersBuilder> encodedParameters __attribute__((swift_name("encodedParameters")));
+@property NSString * _Nullable encodedPassword __attribute__((swift_name("encodedPassword")));
+@property NSArray<NSString *> *encodedPathSegments __attribute__((swift_name("encodedPathSegments")));
+@property NSString * _Nullable encodedUser __attribute__((swift_name("encodedUser")));
+@property NSString *fragment __attribute__((swift_name("fragment")));
+@property NSString *host __attribute__((swift_name("host")));
+@property (readonly) id<ComposeAppKtor_httpParametersBuilder> parameters __attribute__((swift_name("parameters")));
+@property NSString * _Nullable password __attribute__((swift_name("password")));
+@property NSArray<NSString *> *pathSegments __attribute__((swift_name("pathSegments")));
+@property int32_t port __attribute__((swift_name("port")));
+@property ComposeAppKtor_httpURLProtocol *protocol __attribute__((swift_name("protocol")));
+@property ComposeAppKtor_httpURLProtocol * _Nullable protocolOrNull __attribute__((swift_name("protocolOrNull")));
+@property BOOL trailingQuery __attribute__((swift_name("trailingQuery")));
+@property NSString * _Nullable user __attribute__((swift_name("user")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_utilsTypeInfo")))
+@interface ComposeAppKtor_utilsTypeInfo : ComposeAppBase
+- (instancetype)initWithType:(id<ComposeAppKotlinKClass>)type kotlinType:(id<ComposeAppKotlinKType> _Nullable)kotlinType __attribute__((swift_name("init(type:kotlinType:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithType:(id<ComposeAppKotlinKClass>)type reifiedType:(id<ComposeAppKotlinKType>)reifiedType kotlinType:(id<ComposeAppKotlinKType> _Nullable)kotlinType __attribute__((swift_name("init(type:reifiedType:kotlinType:)"))) __attribute__((objc_designated_initializer)) __attribute__((deprecated("Use constructor without reifiedType parameter.")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) id<ComposeAppKotlinKType> _Nullable kotlinType __attribute__((swift_name("kotlinType")));
+@property (readonly) id<ComposeAppKotlinKClass> type __attribute__((swift_name("type")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreJob")))
+@protocol ComposeAppKotlinx_coroutines_coreJob <ComposeAppKotlinCoroutineContextElement>
+@required
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.InternalCoroutinesApi
+*/
+- (id<ComposeAppKotlinx_coroutines_coreChildHandle>)attachChildChild:(id<ComposeAppKotlinx_coroutines_coreChildJob>)child __attribute__((swift_name("attachChild(child:)")));
+- (void)cancelCause:(ComposeAppKotlinCancellationException * _Nullable)cause __attribute__((swift_name("cancel(cause:)")));
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.InternalCoroutinesApi
+*/
+- (ComposeAppKotlinCancellationException *)getCancellationException __attribute__((swift_name("getCancellationException()")));
+- (id<ComposeAppKotlinx_coroutines_coreDisposableHandle>)invokeOnCompletionHandler:(void (^)(ComposeAppKotlinThrowable * _Nullable))handler __attribute__((swift_name("invokeOnCompletion(handler:)")));
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.InternalCoroutinesApi
+*/
+- (id<ComposeAppKotlinx_coroutines_coreDisposableHandle>)invokeOnCompletionOnCancelling:(BOOL)onCancelling invokeImmediately:(BOOL)invokeImmediately handler:(void (^)(ComposeAppKotlinThrowable * _Nullable))handler __attribute__((swift_name("invokeOnCompletion(onCancelling:invokeImmediately:handler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)joinWithCompletionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("join(completionHandler:)")));
+- (id<ComposeAppKotlinx_coroutines_coreJob>)plusOther_:(id<ComposeAppKotlinx_coroutines_coreJob>)other __attribute__((swift_name("plus(other_:)"))) __attribute__((unavailable("Operator '+' on two Job objects is meaningless. Job is a coroutine context element and `+` is a set-sum operator for coroutine contexts. The job to the right of `+` just replaces the job the left of `+`.")));
+- (BOOL)start __attribute__((swift_name("start()")));
+@property (readonly) id<ComposeAppKotlinSequence> children __attribute__((swift_name("children")));
+@property (readonly) BOOL isActive __attribute__((swift_name("isActive")));
+@property (readonly) BOOL isCancelled __attribute__((swift_name("isCancelled")));
+@property (readonly) BOOL isCompleted __attribute__((swift_name("isCompleted")));
+@property (readonly) id<ComposeAppKotlinx_coroutines_coreSelectClause0> onJoin __attribute__((swift_name("onJoin")));
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.ExperimentalCoroutinesApi
+*/
+@property (readonly) id<ComposeAppKotlinx_coroutines_coreJob> _Nullable parent __attribute__((swift_name("parent")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_httpHttpMethod")))
+@interface ComposeAppKtor_httpHttpMethod : ComposeAppBase
+- (instancetype)initWithValue:(NSString *)value __attribute__((swift_name("init(value:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) ComposeAppKtor_httpHttpMethodCompanion *companion __attribute__((swift_name("companion")));
+- (ComposeAppKtor_httpHttpMethod *)doCopyValue:(NSString *)value __attribute__((swift_name("doCopy(value:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *value __attribute__((swift_name("value")));
+@end
+
+__attribute__((swift_name("Ktor_utilsStringValues")))
+@protocol ComposeAppKtor_utilsStringValues
+@required
+- (BOOL)containsName:(NSString *)name __attribute__((swift_name("contains(name:)")));
+- (BOOL)containsName:(NSString *)name value:(NSString *)value __attribute__((swift_name("contains(name:value:)")));
+- (NSSet<id<ComposeAppKotlinMapEntry>> *)entries __attribute__((swift_name("entries()")));
+- (void)forEachBody:(void (^)(NSString *, NSArray<NSString *> *))body __attribute__((swift_name("forEach(body:)")));
+- (NSString * _Nullable)getName:(NSString *)name __attribute__((swift_name("get(name:)")));
+- (NSArray<NSString *> * _Nullable)getAllName:(NSString *)name __attribute__((swift_name("getAll(name:)")));
+- (BOOL)isEmpty_ __attribute__((swift_name("isEmpty()")));
+- (NSSet<NSString *> *)names __attribute__((swift_name("names()")));
+@property (readonly) BOOL caseInsensitiveName __attribute__((swift_name("caseInsensitiveName")));
+@end
+
+__attribute__((swift_name("Ktor_httpHeaders")))
+@protocol ComposeAppKtor_httpHeaders <ComposeAppKtor_utilsStringValues>
+@required
+@end
+
+__attribute__((swift_name("Ktor_ioByteReadChannel")))
+@protocol ComposeAppKtor_ioByteReadChannel
+@required
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)awaitContentMin:(int32_t)min completionHandler:(void (^)(ComposeAppBoolean * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("awaitContent(min:completionHandler:)")));
+- (void)cancelCause_:(ComposeAppKotlinThrowable * _Nullable)cause __attribute__((swift_name("cancel(cause_:)")));
+@property (readonly) ComposeAppKotlinThrowable * _Nullable closedCause __attribute__((swift_name("closedCause")));
+@property (readonly) BOOL isClosedForRead __attribute__((swift_name("isClosedForRead")));
+@property (readonly) id<ComposeAppKotlinx_io_coreSource> readBuffer __attribute__((swift_name("readBuffer")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_utilsGMTDate")))
+@interface ComposeAppKtor_utilsGMTDate : ComposeAppBase <ComposeAppKotlinComparable>
+- (instancetype)initWithSeconds:(int32_t)seconds minutes:(int32_t)minutes hours:(int32_t)hours dayOfWeek:(ComposeAppKtor_utilsWeekDay *)dayOfWeek dayOfMonth:(int32_t)dayOfMonth dayOfYear:(int32_t)dayOfYear month:(ComposeAppKtor_utilsMonth *)month year:(int32_t)year timestamp:(int64_t)timestamp __attribute__((swift_name("init(seconds:minutes:hours:dayOfWeek:dayOfMonth:dayOfYear:month:year:timestamp:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) ComposeAppKtor_utilsGMTDateCompanion *companion __attribute__((swift_name("companion")));
+- (int32_t)compareToOther:(ComposeAppKtor_utilsGMTDate *)other __attribute__((swift_name("compareTo(other:)")));
+- (ComposeAppKtor_utilsGMTDate *)doCopy __attribute__((swift_name("doCopy()")));
+- (ComposeAppKtor_utilsGMTDate *)doCopySeconds:(int32_t)seconds minutes:(int32_t)minutes hours:(int32_t)hours dayOfWeek:(ComposeAppKtor_utilsWeekDay *)dayOfWeek dayOfMonth:(int32_t)dayOfMonth dayOfYear:(int32_t)dayOfYear month:(ComposeAppKtor_utilsMonth *)month year:(int32_t)year timestamp:(int64_t)timestamp __attribute__((swift_name("doCopy(seconds:minutes:hours:dayOfWeek:dayOfMonth:dayOfYear:month:year:timestamp:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) int32_t dayOfMonth __attribute__((swift_name("dayOfMonth")));
+@property (readonly) ComposeAppKtor_utilsWeekDay *dayOfWeek __attribute__((swift_name("dayOfWeek")));
+@property (readonly) int32_t dayOfYear __attribute__((swift_name("dayOfYear")));
+@property (readonly) int32_t hours __attribute__((swift_name("hours")));
+@property (readonly) int32_t minutes __attribute__((swift_name("minutes")));
+@property (readonly) ComposeAppKtor_utilsMonth *month __attribute__((swift_name("month")));
+@property (readonly) int32_t seconds __attribute__((swift_name("seconds")));
+@property (readonly) int64_t timestamp __attribute__((swift_name("timestamp")));
+@property (readonly) int32_t year __attribute__((swift_name("year")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_httpHttpStatusCode")))
+@interface ComposeAppKtor_httpHttpStatusCode : ComposeAppBase <ComposeAppKotlinComparable>
+- (instancetype)initWithValue:(int32_t)value description:(NSString *)description __attribute__((swift_name("init(value:description:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) ComposeAppKtor_httpHttpStatusCodeCompanion *companion __attribute__((swift_name("companion")));
+- (int32_t)compareToOther:(ComposeAppKtor_httpHttpStatusCode *)other __attribute__((swift_name("compareTo(other:)")));
+- (ComposeAppKtor_httpHttpStatusCode *)doCopyValue:(int32_t)value description:(NSString *)description __attribute__((swift_name("doCopy(value:description:)")));
+- (ComposeAppKtor_httpHttpStatusCode *)descriptionValue:(NSString *)value __attribute__((swift_name("description(value:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *description_ __attribute__((swift_name("description_")));
+@property (readonly) int32_t value __attribute__((swift_name("value")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_httpHttpProtocolVersion")))
+@interface ComposeAppKtor_httpHttpProtocolVersion : ComposeAppBase
+- (instancetype)initWithName:(NSString *)name major:(int32_t)major minor:(int32_t)minor __attribute__((swift_name("init(name:major:minor:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) ComposeAppKtor_httpHttpProtocolVersionCompanion *companion __attribute__((swift_name("companion")));
+- (ComposeAppKtor_httpHttpProtocolVersion *)doCopyName:(NSString *)name major:(int32_t)major minor:(int32_t)minor __attribute__((swift_name("doCopy(name:major:minor:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) int32_t major __attribute__((swift_name("major")));
+@property (readonly) int32_t minor __attribute__((swift_name("minor")));
+@property (readonly) NSString *name __attribute__((swift_name("name")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -2887,11 +3454,6 @@ __attribute__((swift_name("Room_runtimeRoomDatabase.JournalMode")))
 @property (class, readonly) NSArray<ComposeAppRoom_runtimeRoomDatabaseJournalMode *> *entries __attribute__((swift_name("entries")));
 @end
 
-__attribute__((swift_name("KotlinCoroutineContextKey")))
-@protocol ComposeAppKotlinCoroutineContextKey
-@required
-@end
-
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("KotlinByteArray")))
 @interface ComposeAppKotlinByteArray : ComposeAppBase
@@ -2903,229 +3465,6 @@ __attribute__((swift_name("KotlinByteArray")))
 - (ComposeAppKotlinByteIterator *)iterator __attribute__((swift_name("iterator()")));
 - (void)setIndex:(int32_t)index value:(int8_t)value __attribute__((swift_name("set(index:value:)")));
 @property (readonly) int32_t size __attribute__((swift_name("size")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_client_coreProxyConfig")))
-@interface ComposeAppKtor_client_coreProxyConfig : ComposeAppBase
-- (instancetype)initWithUrl:(ComposeAppKtor_httpUrl *)url __attribute__((swift_name("init(url:)"))) __attribute__((objc_designated_initializer));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) ComposeAppKtor_httpUrl *url __attribute__((swift_name("url")));
-@end
-
-__attribute__((swift_name("Ktor_client_coreHttpClientPlugin")))
-@protocol ComposeAppKtor_client_coreHttpClientPlugin
-@required
-- (void)installPlugin:(id)plugin scope:(ComposeAppKtor_client_coreHttpClient *)scope __attribute__((swift_name("install(plugin:scope:)")));
-- (id)prepareBlock:(void (^)(id))block __attribute__((swift_name("prepare(block:)")));
-@property (readonly) ComposeAppKtor_utilsAttributeKey<id> *key __attribute__((swift_name("key")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_utilsAttributeKey")))
-@interface ComposeAppKtor_utilsAttributeKey<T> : ComposeAppBase
-
-/**
- * @note annotations
- *   kotlin.jvm.JvmOverloads
-*/
-- (instancetype)initWithName:(NSString *)name type:(ComposeAppKtor_utilsTypeInfo *)type __attribute__((swift_name("init(name:type:)"))) __attribute__((objc_designated_initializer));
-- (ComposeAppKtor_utilsAttributeKey<T> *)doCopyName:(NSString *)name type:(ComposeAppKtor_utilsTypeInfo *)type __attribute__((swift_name("doCopy(name:type:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *name __attribute__((swift_name("name")));
-@end
-
-__attribute__((swift_name("Ktor_eventsEventDefinition")))
-@interface ComposeAppKtor_eventsEventDefinition<T> : ComposeAppBase
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-@end
-
-__attribute__((swift_name("Kotlinx_coroutines_coreDisposableHandle")))
-@protocol ComposeAppKotlinx_coroutines_coreDisposableHandle
-@required
-- (void)dispose __attribute__((swift_name("dispose()")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_utilsPipelinePhase")))
-@interface ComposeAppKtor_utilsPipelinePhase : ComposeAppBase
-- (instancetype)initWithName:(NSString *)name __attribute__((swift_name("init(name:)"))) __attribute__((objc_designated_initializer));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *name __attribute__((swift_name("name")));
-@end
-
-__attribute__((swift_name("KotlinSuspendFunction2")))
-@protocol ComposeAppKotlinSuspendFunction2 <ComposeAppKotlinFunction>
-@required
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)invokeP1:(id _Nullable)p1 p2:(id _Nullable)p2 completionHandler:(void (^)(id _Nullable_result, NSError * _Nullable))completionHandler __attribute__((swift_name("invoke(p1:p2:completionHandler:)")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_client_coreHttpReceivePipeline.Phases")))
-@interface ComposeAppKtor_client_coreHttpReceivePipelinePhases : ComposeAppBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)phases __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppKtor_client_coreHttpReceivePipelinePhases *shared __attribute__((swift_name("shared")));
-@property (readonly) ComposeAppKtor_utilsPipelinePhase *After __attribute__((swift_name("After")));
-@property (readonly) ComposeAppKtor_utilsPipelinePhase *Before __attribute__((swift_name("Before")));
-@property (readonly) ComposeAppKtor_utilsPipelinePhase *State __attribute__((swift_name("State")));
-@end
-
-__attribute__((swift_name("Ktor_httpHttpMessage")))
-@protocol ComposeAppKtor_httpHttpMessage
-@required
-@property (readonly) id<ComposeAppKtor_httpHeaders> headers __attribute__((swift_name("headers")));
-@end
-
-__attribute__((swift_name("Ktor_client_coreHttpResponse")))
-@interface ComposeAppKtor_client_coreHttpResponse : ComposeAppBase <ComposeAppKtor_httpHttpMessage, ComposeAppKotlinx_coroutines_coreCoroutineScope>
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) ComposeAppKtor_client_coreHttpClientCall *call __attribute__((swift_name("call")));
-@property (readonly) id<ComposeAppKtor_ioByteReadChannel> rawContent __attribute__((swift_name("rawContent")));
-@property (readonly) ComposeAppKtor_utilsGMTDate *requestTime __attribute__((swift_name("requestTime")));
-@property (readonly) ComposeAppKtor_utilsGMTDate *responseTime __attribute__((swift_name("responseTime")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *status __attribute__((swift_name("status")));
-@property (readonly) ComposeAppKtor_httpHttpProtocolVersion *version __attribute__((swift_name("version")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KotlinUnit")))
-@interface ComposeAppKotlinUnit : ComposeAppBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)unit __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppKotlinUnit *shared __attribute__((swift_name("shared")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_client_coreHttpRequestPipeline.Phases")))
-@interface ComposeAppKtor_client_coreHttpRequestPipelinePhases : ComposeAppBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)phases __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppKtor_client_coreHttpRequestPipelinePhases *shared __attribute__((swift_name("shared")));
-@property (readonly) ComposeAppKtor_utilsPipelinePhase *Before __attribute__((swift_name("Before")));
-@property (readonly) ComposeAppKtor_utilsPipelinePhase *Render __attribute__((swift_name("Render")));
-@property (readonly) ComposeAppKtor_utilsPipelinePhase *Send __attribute__((swift_name("Send")));
-@property (readonly) ComposeAppKtor_utilsPipelinePhase *State __attribute__((swift_name("State")));
-@property (readonly) ComposeAppKtor_utilsPipelinePhase *Transform __attribute__((swift_name("Transform")));
-@end
-
-__attribute__((swift_name("Ktor_httpHttpMessageBuilder")))
-@protocol ComposeAppKtor_httpHttpMessageBuilder
-@required
-@property (readonly) ComposeAppKtor_httpHeadersBuilder *headers __attribute__((swift_name("headers")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_client_coreHttpRequestBuilder")))
-@interface ComposeAppKtor_client_coreHttpRequestBuilder : ComposeAppBase <ComposeAppKtor_httpHttpMessageBuilder>
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-@property (class, readonly, getter=companion) ComposeAppKtor_client_coreHttpRequestBuilderCompanion *companion __attribute__((swift_name("companion")));
-- (ComposeAppKtor_client_coreHttpRequestData *)build __attribute__((swift_name("build()")));
-- (id _Nullable)getCapabilityOrNullKey:(id<ComposeAppKtor_client_coreHttpClientEngineCapability>)key __attribute__((swift_name("getCapabilityOrNull(key:)")));
-- (void)setAttributesBlock:(void (^)(id<ComposeAppKtor_utilsAttributes>))block __attribute__((swift_name("setAttributes(block:)")));
-- (void)setCapabilityKey:(id<ComposeAppKtor_client_coreHttpClientEngineCapability>)key capability:(id)capability __attribute__((swift_name("setCapability(key:capability:)")));
-- (ComposeAppKtor_client_coreHttpRequestBuilder *)takeFromBuilder:(ComposeAppKtor_client_coreHttpRequestBuilder *)builder __attribute__((swift_name("takeFrom(builder:)")));
-- (ComposeAppKtor_client_coreHttpRequestBuilder *)takeFromWithExecutionContextBuilder:(ComposeAppKtor_client_coreHttpRequestBuilder *)builder __attribute__((swift_name("takeFromWithExecutionContext(builder:)")));
-- (void)urlBlock:(void (^)(ComposeAppKtor_httpURLBuilder *, ComposeAppKtor_httpURLBuilder *))block __attribute__((swift_name("url(block:)")));
-@property (readonly) id<ComposeAppKtor_utilsAttributes> attributes __attribute__((swift_name("attributes")));
-@property id body __attribute__((swift_name("body")));
-@property ComposeAppKtor_utilsTypeInfo * _Nullable bodyType __attribute__((swift_name("bodyType")));
-@property (readonly) id<ComposeAppKotlinx_coroutines_coreJob> executionContext __attribute__((swift_name("executionContext")));
-@property (readonly) ComposeAppKtor_httpHeadersBuilder *headers __attribute__((swift_name("headers")));
-@property ComposeAppKtor_httpHttpMethod *method __attribute__((swift_name("method")));
-@property (readonly) ComposeAppKtor_httpURLBuilder *url __attribute__((swift_name("url")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_client_coreHttpResponsePipeline.Phases")))
-@interface ComposeAppKtor_client_coreHttpResponsePipelinePhases : ComposeAppBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)phases __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppKtor_client_coreHttpResponsePipelinePhases *shared __attribute__((swift_name("shared")));
-@property (readonly) ComposeAppKtor_utilsPipelinePhase *After __attribute__((swift_name("After")));
-@property (readonly) ComposeAppKtor_utilsPipelinePhase *Parse __attribute__((swift_name("Parse")));
-@property (readonly) ComposeAppKtor_utilsPipelinePhase *Receive __attribute__((swift_name("Receive")));
-@property (readonly) ComposeAppKtor_utilsPipelinePhase *State __attribute__((swift_name("State")));
-@property (readonly) ComposeAppKtor_utilsPipelinePhase *Transform __attribute__((swift_name("Transform")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_client_coreHttpResponseContainer")))
-@interface ComposeAppKtor_client_coreHttpResponseContainer : ComposeAppBase
-- (instancetype)initWithExpectedType:(ComposeAppKtor_utilsTypeInfo *)expectedType response:(id)response __attribute__((swift_name("init(expectedType:response:)"))) __attribute__((objc_designated_initializer));
-- (ComposeAppKtor_client_coreHttpResponseContainer *)doCopyExpectedType:(ComposeAppKtor_utilsTypeInfo *)expectedType response:(id)response __attribute__((swift_name("doCopy(expectedType:response:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) ComposeAppKtor_utilsTypeInfo *expectedType __attribute__((swift_name("expectedType")));
-@property (readonly) id response __attribute__((swift_name("response")));
-@end
-
-__attribute__((swift_name("Ktor_client_coreHttpClientCall")))
-@interface ComposeAppKtor_client_coreHttpClientCall : ComposeAppBase <ComposeAppKotlinx_coroutines_coreCoroutineScope>
-- (instancetype)initWithClient:(ComposeAppKtor_client_coreHttpClient *)client __attribute__((swift_name("init(client:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithClient:(ComposeAppKtor_client_coreHttpClient *)client requestData:(ComposeAppKtor_client_coreHttpRequestData *)requestData responseData:(ComposeAppKtor_client_coreHttpResponseData *)responseData __attribute__((swift_name("init(client:requestData:responseData:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) ComposeAppKtor_client_coreHttpClientCallCompanion *companion __attribute__((swift_name("companion")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)bodyInfo:(ComposeAppKtor_utilsTypeInfo *)info completionHandler:(void (^)(id _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("body(info:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)bodyNullableInfo:(ComposeAppKtor_utilsTypeInfo *)info completionHandler:(void (^)(id _Nullable_result, NSError * _Nullable))completionHandler __attribute__((swift_name("bodyNullable(info:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
- * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
-*/
-- (void)getResponseContentWithCompletionHandler:(void (^)(id<ComposeAppKtor_ioByteReadChannel> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getResponseContent(completionHandler:)")));
-- (NSString *)description __attribute__((swift_name("description()")));
-
-/**
- * @note This property has protected visibility in Kotlin source and is intended only for use by subclasses.
-*/
-@property (readonly) BOOL allowDoubleReceive __attribute__((swift_name("allowDoubleReceive")));
-@property (readonly) id<ComposeAppKtor_utilsAttributes> attributes __attribute__((swift_name("attributes")));
-@property (readonly) ComposeAppKtor_client_coreHttpClient *client __attribute__((swift_name("client")));
-@property (readonly) id<ComposeAppKotlinCoroutineContext> coroutineContext __attribute__((swift_name("coroutineContext")));
-@property id<ComposeAppKtor_client_coreHttpRequest> request __attribute__((swift_name("request")));
-@property ComposeAppKtor_client_coreHttpResponse *response __attribute__((swift_name("response")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_client_coreHttpSendPipeline.Phases")))
-@interface ComposeAppKtor_client_coreHttpSendPipelinePhases : ComposeAppBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)phases __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppKtor_client_coreHttpSendPipelinePhases *shared __attribute__((swift_name("shared")));
-@property (readonly) ComposeAppKtor_utilsPipelinePhase *Before __attribute__((swift_name("Before")));
-@property (readonly) ComposeAppKtor_utilsPipelinePhase *Engine __attribute__((swift_name("Engine")));
-@property (readonly) ComposeAppKtor_utilsPipelinePhase *Monitoring __attribute__((swift_name("Monitoring")));
-@property (readonly) ComposeAppKtor_utilsPipelinePhase *Receive __attribute__((swift_name("Receive")));
-@property (readonly) ComposeAppKtor_utilsPipelinePhase *State __attribute__((swift_name("State")));
 @end
 
 __attribute__((swift_name("Ktor_ioJvmSerializable")))
@@ -3166,37 +3505,6 @@ __attribute__((swift_name("Ktor_httpUrl")))
 @property (readonly) NSString * _Nullable user __attribute__((swift_name("user")));
 @end
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_httpHttpMethod")))
-@interface ComposeAppKtor_httpHttpMethod : ComposeAppBase
-- (instancetype)initWithValue:(NSString *)value __attribute__((swift_name("init(value:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) ComposeAppKtor_httpHttpMethodCompanion *companion __attribute__((swift_name("companion")));
-- (ComposeAppKtor_httpHttpMethod *)doCopyValue:(NSString *)value __attribute__((swift_name("doCopy(value:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *value __attribute__((swift_name("value")));
-@end
-
-__attribute__((swift_name("Ktor_utilsStringValues")))
-@protocol ComposeAppKtor_utilsStringValues
-@required
-- (BOOL)containsName:(NSString *)name __attribute__((swift_name("contains(name:)")));
-- (BOOL)containsName:(NSString *)name value:(NSString *)value __attribute__((swift_name("contains(name:value:)")));
-- (NSSet<id<ComposeAppKotlinMapEntry>> *)entries __attribute__((swift_name("entries()")));
-- (void)forEachBody:(void (^)(NSString *, NSArray<NSString *> *))body __attribute__((swift_name("forEach(body:)")));
-- (NSString * _Nullable)getName:(NSString *)name __attribute__((swift_name("get(name:)")));
-- (NSArray<NSString *> * _Nullable)getAllName:(NSString *)name __attribute__((swift_name("getAll(name:)")));
-- (BOOL)isEmpty_ __attribute__((swift_name("isEmpty()")));
-- (NSSet<NSString *> *)names __attribute__((swift_name("names()")));
-@property (readonly) BOOL caseInsensitiveName __attribute__((swift_name("caseInsensitiveName")));
-@end
-
-__attribute__((swift_name("Ktor_httpHeaders")))
-@protocol ComposeAppKtor_httpHeaders <ComposeAppKtor_utilsStringValues>
-@required
-@end
-
 __attribute__((swift_name("Ktor_httpOutgoingContent")))
 @interface ComposeAppKtor_httpOutgoingContent : ComposeAppBase
 - (id _Nullable)getPropertyKey:(ComposeAppKtor_utilsAttributeKey<id> *)key __attribute__((swift_name("getProperty(key:)")));
@@ -3206,106 +3514,6 @@ __attribute__((swift_name("Ktor_httpOutgoingContent")))
 @property (readonly) ComposeAppKtor_httpContentType * _Nullable contentType __attribute__((swift_name("contentType")));
 @property (readonly) id<ComposeAppKtor_httpHeaders> headers __attribute__((swift_name("headers")));
 @property (readonly) ComposeAppKtor_httpHttpStatusCode * _Nullable status __attribute__((swift_name("status")));
-@end
-
-__attribute__((swift_name("Kotlinx_coroutines_coreJob")))
-@protocol ComposeAppKotlinx_coroutines_coreJob <ComposeAppKotlinCoroutineContextElement>
-@required
-
-/**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-- (id<ComposeAppKotlinx_coroutines_coreChildHandle>)attachChildChild:(id<ComposeAppKotlinx_coroutines_coreChildJob>)child __attribute__((swift_name("attachChild(child:)")));
-- (void)cancelCause:(ComposeAppKotlinCancellationException * _Nullable)cause __attribute__((swift_name("cancel(cause:)")));
-
-/**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-- (ComposeAppKotlinCancellationException *)getCancellationException __attribute__((swift_name("getCancellationException()")));
-- (id<ComposeAppKotlinx_coroutines_coreDisposableHandle>)invokeOnCompletionHandler:(void (^)(ComposeAppKotlinThrowable * _Nullable))handler __attribute__((swift_name("invokeOnCompletion(handler:)")));
-
-/**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-- (id<ComposeAppKotlinx_coroutines_coreDisposableHandle>)invokeOnCompletionOnCancelling:(BOOL)onCancelling invokeImmediately:(BOOL)invokeImmediately handler:(void (^)(ComposeAppKotlinThrowable * _Nullable))handler __attribute__((swift_name("invokeOnCompletion(onCancelling:invokeImmediately:handler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)joinWithCompletionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("join(completionHandler:)")));
-- (id<ComposeAppKotlinx_coroutines_coreJob>)plusOther_:(id<ComposeAppKotlinx_coroutines_coreJob>)other __attribute__((swift_name("plus(other_:)"))) __attribute__((unavailable("Operator '+' on two Job objects is meaningless. Job is a coroutine context element and `+` is a set-sum operator for coroutine contexts. The job to the right of `+` just replaces the job the left of `+`.")));
-- (BOOL)start __attribute__((swift_name("start()")));
-@property (readonly) id<ComposeAppKotlinSequence> children __attribute__((swift_name("children")));
-@property (readonly) BOOL isActive __attribute__((swift_name("isActive")));
-@property (readonly) BOOL isCancelled __attribute__((swift_name("isCancelled")));
-@property (readonly) BOOL isCompleted __attribute__((swift_name("isCompleted")));
-@property (readonly) id<ComposeAppKotlinx_coroutines_coreSelectClause0> onJoin __attribute__((swift_name("onJoin")));
-
-/**
- * @note annotations
- *   kotlinx.coroutines.ExperimentalCoroutinesApi
-*/
-@property (readonly) id<ComposeAppKotlinx_coroutines_coreJob> _Nullable parent __attribute__((swift_name("parent")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_httpHttpStatusCode")))
-@interface ComposeAppKtor_httpHttpStatusCode : ComposeAppBase <ComposeAppKotlinComparable>
-- (instancetype)initWithValue:(int32_t)value description:(NSString *)description __attribute__((swift_name("init(value:description:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) ComposeAppKtor_httpHttpStatusCodeCompanion *companion __attribute__((swift_name("companion")));
-- (int32_t)compareToOther:(ComposeAppKtor_httpHttpStatusCode *)other __attribute__((swift_name("compareTo(other:)")));
-- (ComposeAppKtor_httpHttpStatusCode *)doCopyValue:(int32_t)value description:(NSString *)description __attribute__((swift_name("doCopy(value:description:)")));
-- (ComposeAppKtor_httpHttpStatusCode *)descriptionValue:(NSString *)value __attribute__((swift_name("description(value:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *description_ __attribute__((swift_name("description_")));
-@property (readonly) int32_t value __attribute__((swift_name("value")));
-@end
-
-
-/**
- * @note annotations
- *   kotlinx.serialization.Serializable
-*/
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_utilsGMTDate")))
-@interface ComposeAppKtor_utilsGMTDate : ComposeAppBase <ComposeAppKotlinComparable>
-- (instancetype)initWithSeconds:(int32_t)seconds minutes:(int32_t)minutes hours:(int32_t)hours dayOfWeek:(ComposeAppKtor_utilsWeekDay *)dayOfWeek dayOfMonth:(int32_t)dayOfMonth dayOfYear:(int32_t)dayOfYear month:(ComposeAppKtor_utilsMonth *)month year:(int32_t)year timestamp:(int64_t)timestamp __attribute__((swift_name("init(seconds:minutes:hours:dayOfWeek:dayOfMonth:dayOfYear:month:year:timestamp:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) ComposeAppKtor_utilsGMTDateCompanion *companion __attribute__((swift_name("companion")));
-- (int32_t)compareToOther:(ComposeAppKtor_utilsGMTDate *)other __attribute__((swift_name("compareTo(other:)")));
-- (ComposeAppKtor_utilsGMTDate *)doCopy __attribute__((swift_name("doCopy()")));
-- (ComposeAppKtor_utilsGMTDate *)doCopySeconds:(int32_t)seconds minutes:(int32_t)minutes hours:(int32_t)hours dayOfWeek:(ComposeAppKtor_utilsWeekDay *)dayOfWeek dayOfMonth:(int32_t)dayOfMonth dayOfYear:(int32_t)dayOfYear month:(ComposeAppKtor_utilsMonth *)month year:(int32_t)year timestamp:(int64_t)timestamp __attribute__((swift_name("doCopy(seconds:minutes:hours:dayOfWeek:dayOfMonth:dayOfYear:month:year:timestamp:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) int32_t dayOfMonth __attribute__((swift_name("dayOfMonth")));
-@property (readonly) ComposeAppKtor_utilsWeekDay *dayOfWeek __attribute__((swift_name("dayOfWeek")));
-@property (readonly) int32_t dayOfYear __attribute__((swift_name("dayOfYear")));
-@property (readonly) int32_t hours __attribute__((swift_name("hours")));
-@property (readonly) int32_t minutes __attribute__((swift_name("minutes")));
-@property (readonly) ComposeAppKtor_utilsMonth *month __attribute__((swift_name("month")));
-@property (readonly) int32_t seconds __attribute__((swift_name("seconds")));
-@property (readonly) int64_t timestamp __attribute__((swift_name("timestamp")));
-@property (readonly) int32_t year __attribute__((swift_name("year")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_httpHttpProtocolVersion")))
-@interface ComposeAppKtor_httpHttpProtocolVersion : ComposeAppBase
-- (instancetype)initWithName:(NSString *)name major:(int32_t)major minor:(int32_t)minor __attribute__((swift_name("init(name:major:minor:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) ComposeAppKtor_httpHttpProtocolVersionCompanion *companion __attribute__((swift_name("companion")));
-- (ComposeAppKtor_httpHttpProtocolVersion *)doCopyName:(NSString *)name major:(int32_t)major minor:(int32_t)minor __attribute__((swift_name("doCopy(name:major:minor:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) int32_t major __attribute__((swift_name("major")));
-@property (readonly) int32_t minor __attribute__((swift_name("minor")));
-@property (readonly) NSString *name __attribute__((swift_name("name")));
 @end
 
 
@@ -3475,6 +3683,327 @@ __attribute__((swift_name("PermissionsPermissionDelegate")))
 - (void)providePermissionWithCompletionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("providePermission(completionHandler:)")));
 @end
 
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_client_coreHttpClientCall.Companion")))
+@interface ComposeAppKtor_client_coreHttpClientCallCompanion : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppKtor_client_coreHttpClientCallCompanion *shared __attribute__((swift_name("shared")));
+@end
+
+__attribute__((swift_name("Ktor_client_coreHttpRequest")))
+@protocol ComposeAppKtor_client_coreHttpRequest <ComposeAppKtor_httpHttpMessage, ComposeAppKotlinx_coroutines_coreCoroutineScope>
+@required
+@property (readonly) id<ComposeAppKtor_utilsAttributes> attributes __attribute__((swift_name("attributes")));
+@property (readonly) ComposeAppKtor_client_coreHttpClientCall *call __attribute__((swift_name("call")));
+@property (readonly) ComposeAppKtor_httpOutgoingContent *content __attribute__((swift_name("content")));
+@property (readonly) ComposeAppKtor_httpHttpMethod *method __attribute__((swift_name("method")));
+@property (readonly) ComposeAppKtor_httpUrl *url __attribute__((swift_name("url")));
+@end
+
+__attribute__((swift_name("KotlinMapEntry")))
+@protocol ComposeAppKotlinMapEntry
+@required
+@property (readonly) id _Nullable key __attribute__((swift_name("key")));
+@property (readonly) id _Nullable value __attribute__((swift_name("value")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_httpURLProtocol")))
+@interface ComposeAppKtor_httpURLProtocol : ComposeAppBase <ComposeAppKtor_ioJvmSerializable>
+- (instancetype)initWithName:(NSString *)name defaultPort:(int32_t)defaultPort __attribute__((swift_name("init(name:defaultPort:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) ComposeAppKtor_httpURLProtocolCompanion *companion __attribute__((swift_name("companion")));
+- (ComposeAppKtor_httpURLProtocol *)doCopyName:(NSString *)name defaultPort:(int32_t)defaultPort __attribute__((swift_name("doCopy(name:defaultPort:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) int32_t defaultPort __attribute__((swift_name("defaultPort")));
+@property (readonly) NSString *name __attribute__((swift_name("name")));
+@end
+
+__attribute__((swift_name("Ktor_httpParameters")))
+@protocol ComposeAppKtor_httpParameters <ComposeAppKtor_utilsStringValues>
+@required
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_httpURLBuilder.Companion")))
+@interface ComposeAppKtor_httpURLBuilderCompanion : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppKtor_httpURLBuilderCompanion *shared __attribute__((swift_name("shared")));
+@end
+
+__attribute__((swift_name("Ktor_httpParametersBuilder")))
+@protocol ComposeAppKtor_httpParametersBuilder <ComposeAppKtor_utilsStringValuesBuilder>
+@required
+@end
+
+__attribute__((swift_name("KotlinKType")))
+@protocol ComposeAppKotlinKType
+@required
+
+/**
+ * @note annotations
+ *   kotlin.SinceKotlin(version="1.1")
+*/
+@property (readonly) NSArray<ComposeAppKotlinKTypeProjection *> *arguments __attribute__((swift_name("arguments")));
+
+/**
+ * @note annotations
+ *   kotlin.SinceKotlin(version="1.1")
+*/
+@property (readonly) id<ComposeAppKotlinKClassifier> _Nullable classifier __attribute__((swift_name("classifier")));
+@property (readonly) BOOL isMarkedNullable __attribute__((swift_name("isMarkedNullable")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.InternalCoroutinesApi
+*/
+__attribute__((swift_name("Kotlinx_coroutines_coreChildHandle")))
+@protocol ComposeAppKotlinx_coroutines_coreChildHandle <ComposeAppKotlinx_coroutines_coreDisposableHandle>
+@required
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.InternalCoroutinesApi
+*/
+- (BOOL)childCancelledCause:(ComposeAppKotlinThrowable *)cause __attribute__((swift_name("childCancelled(cause:)")));
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.InternalCoroutinesApi
+*/
+@property (readonly) id<ComposeAppKotlinx_coroutines_coreJob> _Nullable parent __attribute__((swift_name("parent")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.InternalCoroutinesApi
+*/
+__attribute__((swift_name("Kotlinx_coroutines_coreChildJob")))
+@protocol ComposeAppKotlinx_coroutines_coreChildJob <ComposeAppKotlinx_coroutines_coreJob>
+@required
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.InternalCoroutinesApi
+*/
+- (void)parentCancelledParentJob:(id<ComposeAppKotlinx_coroutines_coreParentJob>)parentJob __attribute__((swift_name("parentCancelled(parentJob:)")));
+@end
+
+__attribute__((swift_name("KotlinSequence")))
+@protocol ComposeAppKotlinSequence
+@required
+- (id<ComposeAppKotlinIterator>)iterator __attribute__((swift_name("iterator()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.InternalCoroutinesApi
+*/
+__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause")))
+@protocol ComposeAppKotlinx_coroutines_coreSelectClause
+@required
+@property (readonly) id clauseObject __attribute__((swift_name("clauseObject")));
+@property (readonly) ComposeAppKotlinUnit *(^(^ _Nullable onCancellationConstructor)(id<ComposeAppKotlinx_coroutines_coreSelectInstance>, id _Nullable, id _Nullable))(ComposeAppKotlinThrowable *, id _Nullable, id<ComposeAppKotlinCoroutineContext>) __attribute__((swift_name("onCancellationConstructor")));
+@property (readonly) id _Nullable (^processResFunc)(id, id _Nullable, id _Nullable) __attribute__((swift_name("processResFunc")));
+@property (readonly) void (^regFunc)(id, id<ComposeAppKotlinx_coroutines_coreSelectInstance>, id _Nullable) __attribute__((swift_name("regFunc")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause0")))
+@protocol ComposeAppKotlinx_coroutines_coreSelectClause0 <ComposeAppKotlinx_coroutines_coreSelectClause>
+@required
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_httpHttpMethod.Companion")))
+@interface ComposeAppKtor_httpHttpMethodCompanion : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppKtor_httpHttpMethodCompanion *shared __attribute__((swift_name("shared")));
+- (ComposeAppKtor_httpHttpMethod *)parseMethod:(NSString *)method __attribute__((swift_name("parse(method:)")));
+@property (readonly) NSArray<ComposeAppKtor_httpHttpMethod *> *DefaultMethods __attribute__((swift_name("DefaultMethods")));
+@property (readonly) ComposeAppKtor_httpHttpMethod *Delete __attribute__((swift_name("Delete")));
+@property (readonly) ComposeAppKtor_httpHttpMethod *Get __attribute__((swift_name("Get")));
+@property (readonly) ComposeAppKtor_httpHttpMethod *Head __attribute__((swift_name("Head")));
+@property (readonly) ComposeAppKtor_httpHttpMethod *Options __attribute__((swift_name("Options")));
+@property (readonly) ComposeAppKtor_httpHttpMethod *Patch __attribute__((swift_name("Patch")));
+@property (readonly) ComposeAppKtor_httpHttpMethod *Post __attribute__((swift_name("Post")));
+@property (readonly) ComposeAppKtor_httpHttpMethod *Put __attribute__((swift_name("Put")));
+@end
+
+__attribute__((swift_name("Kotlinx_io_coreRawSource")))
+@protocol ComposeAppKotlinx_io_coreRawSource <ComposeAppKotlinAutoCloseable>
+@required
+- (int64_t)readAtMostToSink:(ComposeAppKotlinx_io_coreBuffer *)sink byteCount:(int64_t)byteCount __attribute__((swift_name("readAtMostTo(sink:byteCount:)")));
+@end
+
+__attribute__((swift_name("Kotlinx_io_coreSource")))
+@protocol ComposeAppKotlinx_io_coreSource <ComposeAppKotlinx_io_coreRawSource>
+@required
+- (BOOL)exhausted __attribute__((swift_name("exhausted()")));
+- (id<ComposeAppKotlinx_io_coreSource>)peek __attribute__((swift_name("peek()")));
+- (int32_t)readAtMostToSink:(ComposeAppKotlinByteArray *)sink startIndex:(int32_t)startIndex endIndex:(int32_t)endIndex __attribute__((swift_name("readAtMostTo(sink:startIndex:endIndex:)")));
+- (int8_t)readByte __attribute__((swift_name("readByte()")));
+- (int32_t)readInt __attribute__((swift_name("readInt()")));
+- (int64_t)readLong __attribute__((swift_name("readLong()")));
+- (int16_t)readShort __attribute__((swift_name("readShort()")));
+- (void)readToSink:(id<ComposeAppKotlinx_io_coreRawSink>)sink byteCount:(int64_t)byteCount __attribute__((swift_name("readTo(sink:byteCount:)")));
+- (BOOL)requestByteCount:(int64_t)byteCount __attribute__((swift_name("request(byteCount:)")));
+- (void)requireByteCount:(int64_t)byteCount __attribute__((swift_name("require(byteCount:)")));
+- (void)skipByteCount:(int64_t)byteCount __attribute__((swift_name("skip(byteCount:)")));
+- (int64_t)transferToSink:(id<ComposeAppKotlinx_io_coreRawSink>)sink __attribute__((swift_name("transferTo(sink:)")));
+
+/**
+ * @note annotations
+ *   kotlinx.io.InternalIoApi
+*/
+@property (readonly) ComposeAppKotlinx_io_coreBuffer *buffer __attribute__((swift_name("buffer")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_utilsWeekDay")))
+@interface ComposeAppKtor_utilsWeekDay : ComposeAppKotlinEnum<ComposeAppKtor_utilsWeekDay *>
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@property (class, readonly, getter=companion) ComposeAppKtor_utilsWeekDayCompanion *companion __attribute__((swift_name("companion")));
+@property (class, readonly) ComposeAppKtor_utilsWeekDay *monday __attribute__((swift_name("monday")));
+@property (class, readonly) ComposeAppKtor_utilsWeekDay *tuesday __attribute__((swift_name("tuesday")));
+@property (class, readonly) ComposeAppKtor_utilsWeekDay *wednesday __attribute__((swift_name("wednesday")));
+@property (class, readonly) ComposeAppKtor_utilsWeekDay *thursday __attribute__((swift_name("thursday")));
+@property (class, readonly) ComposeAppKtor_utilsWeekDay *friday __attribute__((swift_name("friday")));
+@property (class, readonly) ComposeAppKtor_utilsWeekDay *saturday __attribute__((swift_name("saturday")));
+@property (class, readonly) ComposeAppKtor_utilsWeekDay *sunday __attribute__((swift_name("sunday")));
++ (ComposeAppKotlinArray<ComposeAppKtor_utilsWeekDay *> *)values __attribute__((swift_name("values()")));
+@property (class, readonly) NSArray<ComposeAppKtor_utilsWeekDay *> *entries __attribute__((swift_name("entries")));
+@property (readonly) NSString *value __attribute__((swift_name("value")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_utilsMonth")))
+@interface ComposeAppKtor_utilsMonth : ComposeAppKotlinEnum<ComposeAppKtor_utilsMonth *>
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@property (class, readonly, getter=companion) ComposeAppKtor_utilsMonthCompanion *companion __attribute__((swift_name("companion")));
+@property (class, readonly) ComposeAppKtor_utilsMonth *january __attribute__((swift_name("january")));
+@property (class, readonly) ComposeAppKtor_utilsMonth *february __attribute__((swift_name("february")));
+@property (class, readonly) ComposeAppKtor_utilsMonth *march __attribute__((swift_name("march")));
+@property (class, readonly) ComposeAppKtor_utilsMonth *april __attribute__((swift_name("april")));
+@property (class, readonly) ComposeAppKtor_utilsMonth *may __attribute__((swift_name("may")));
+@property (class, readonly) ComposeAppKtor_utilsMonth *june __attribute__((swift_name("june")));
+@property (class, readonly) ComposeAppKtor_utilsMonth *july __attribute__((swift_name("july")));
+@property (class, readonly) ComposeAppKtor_utilsMonth *august __attribute__((swift_name("august")));
+@property (class, readonly) ComposeAppKtor_utilsMonth *september __attribute__((swift_name("september")));
+@property (class, readonly) ComposeAppKtor_utilsMonth *october __attribute__((swift_name("october")));
+@property (class, readonly) ComposeAppKtor_utilsMonth *november __attribute__((swift_name("november")));
+@property (class, readonly) ComposeAppKtor_utilsMonth *december __attribute__((swift_name("december")));
++ (ComposeAppKotlinArray<ComposeAppKtor_utilsMonth *> *)values __attribute__((swift_name("values()")));
+@property (class, readonly) NSArray<ComposeAppKtor_utilsMonth *> *entries __attribute__((swift_name("entries")));
+@property (readonly) NSString *value __attribute__((swift_name("value")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_utilsGMTDate.Companion")))
+@interface ComposeAppKtor_utilsGMTDateCompanion : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppKtor_utilsGMTDateCompanion *shared __attribute__((swift_name("shared")));
+- (id<ComposeAppKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@property (readonly) ComposeAppKtor_utilsGMTDate *START __attribute__((swift_name("START")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_httpHttpStatusCode.Companion")))
+@interface ComposeAppKtor_httpHttpStatusCodeCompanion : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppKtor_httpHttpStatusCodeCompanion *shared __attribute__((swift_name("shared")));
+- (ComposeAppKtor_httpHttpStatusCode *)fromValueValue:(int32_t)value __attribute__((swift_name("fromValue(value:)")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *Accepted __attribute__((swift_name("Accepted")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *BadGateway __attribute__((swift_name("BadGateway")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *BadRequest __attribute__((swift_name("BadRequest")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *Conflict __attribute__((swift_name("Conflict")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *Continue __attribute__((swift_name("Continue")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *Created __attribute__((swift_name("Created")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *ExpectationFailed __attribute__((swift_name("ExpectationFailed")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *FailedDependency __attribute__((swift_name("FailedDependency")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *Forbidden __attribute__((swift_name("Forbidden")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *Found __attribute__((swift_name("Found")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *GatewayTimeout __attribute__((swift_name("GatewayTimeout")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *Gone __attribute__((swift_name("Gone")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *InsufficientStorage __attribute__((swift_name("InsufficientStorage")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *InternalServerError __attribute__((swift_name("InternalServerError")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *LengthRequired __attribute__((swift_name("LengthRequired")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *Locked __attribute__((swift_name("Locked")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *MethodNotAllowed __attribute__((swift_name("MethodNotAllowed")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *MovedPermanently __attribute__((swift_name("MovedPermanently")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *MultiStatus __attribute__((swift_name("MultiStatus")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *MultipleChoices __attribute__((swift_name("MultipleChoices")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *NoContent __attribute__((swift_name("NoContent")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *NonAuthoritativeInformation __attribute__((swift_name("NonAuthoritativeInformation")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *NotAcceptable __attribute__((swift_name("NotAcceptable")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *NotFound __attribute__((swift_name("NotFound")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *NotImplemented __attribute__((swift_name("NotImplemented")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *NotModified __attribute__((swift_name("NotModified")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *OK __attribute__((swift_name("OK")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *PartialContent __attribute__((swift_name("PartialContent")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *PayloadTooLarge __attribute__((swift_name("PayloadTooLarge")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *PaymentRequired __attribute__((swift_name("PaymentRequired")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *PermanentRedirect __attribute__((swift_name("PermanentRedirect")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *PreconditionFailed __attribute__((swift_name("PreconditionFailed")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *Processing __attribute__((swift_name("Processing")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *ProxyAuthenticationRequired __attribute__((swift_name("ProxyAuthenticationRequired")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *RequestHeaderFieldTooLarge __attribute__((swift_name("RequestHeaderFieldTooLarge")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *RequestTimeout __attribute__((swift_name("RequestTimeout")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *RequestURITooLong __attribute__((swift_name("RequestURITooLong")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *RequestedRangeNotSatisfiable __attribute__((swift_name("RequestedRangeNotSatisfiable")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *ResetContent __attribute__((swift_name("ResetContent")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *SeeOther __attribute__((swift_name("SeeOther")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *ServiceUnavailable __attribute__((swift_name("ServiceUnavailable")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *SwitchProxy __attribute__((swift_name("SwitchProxy")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *SwitchingProtocols __attribute__((swift_name("SwitchingProtocols")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *TemporaryRedirect __attribute__((swift_name("TemporaryRedirect")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *TooEarly __attribute__((swift_name("TooEarly")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *TooManyRequests __attribute__((swift_name("TooManyRequests")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *Unauthorized __attribute__((swift_name("Unauthorized")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *UnprocessableEntity __attribute__((swift_name("UnprocessableEntity")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *UnsupportedMediaType __attribute__((swift_name("UnsupportedMediaType")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *UpgradeRequired __attribute__((swift_name("UpgradeRequired")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *UseProxy __attribute__((swift_name("UseProxy")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *VariantAlsoNegotiates __attribute__((swift_name("VariantAlsoNegotiates")));
+@property (readonly) ComposeAppKtor_httpHttpStatusCode *VersionNotSupported __attribute__((swift_name("VersionNotSupported")));
+@property (readonly) NSArray<ComposeAppKtor_httpHttpStatusCode *> *allStatusCodes __attribute__((swift_name("allStatusCodes")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_httpHttpProtocolVersion.Companion")))
+@interface ComposeAppKtor_httpHttpProtocolVersionCompanion : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppKtor_httpHttpProtocolVersionCompanion *shared __attribute__((swift_name("shared")));
+- (ComposeAppKtor_httpHttpProtocolVersion *)fromValueName:(NSString *)name major:(int32_t)major minor:(int32_t)minor __attribute__((swift_name("fromValue(name:major:minor:)")));
+- (ComposeAppKtor_httpHttpProtocolVersion *)parseValue:(id)value __attribute__((swift_name("parse(value:)")));
+@property (readonly) ComposeAppKtor_httpHttpProtocolVersion *HTTP_1_0 __attribute__((swift_name("HTTP_1_0")));
+@property (readonly) ComposeAppKtor_httpHttpProtocolVersion *HTTP_1_1 __attribute__((swift_name("HTTP_1_1")));
+@property (readonly) ComposeAppKtor_httpHttpProtocolVersion *HTTP_2_0 __attribute__((swift_name("HTTP_2_0")));
+@property (readonly) ComposeAppKtor_httpHttpProtocolVersion *HTTP_3_0 __attribute__((swift_name("HTTP_3_0")));
+@property (readonly) ComposeAppKtor_httpHttpProtocolVersion *QUIC __attribute__((swift_name("QUIC")));
+@property (readonly) ComposeAppKtor_httpHttpProtocolVersion *SPDY_3 __attribute__((swift_name("SPDY_3")));
+@end
+
 __attribute__((swift_name("Koin_coreKoinComponent")))
 @protocol ComposeAppKoin_coreKoinComponent
 @required
@@ -3638,167 +4167,6 @@ __attribute__((swift_name("KotlinByteIterator")))
 @end
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_utilsTypeInfo")))
-@interface ComposeAppKtor_utilsTypeInfo : ComposeAppBase
-- (instancetype)initWithType:(id<ComposeAppKotlinKClass>)type kotlinType:(id<ComposeAppKotlinKType> _Nullable)kotlinType __attribute__((swift_name("init(type:kotlinType:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithType:(id<ComposeAppKotlinKClass>)type reifiedType:(id<ComposeAppKotlinKType>)reifiedType kotlinType:(id<ComposeAppKotlinKType> _Nullable)kotlinType __attribute__((swift_name("init(type:reifiedType:kotlinType:)"))) __attribute__((objc_designated_initializer)) __attribute__((deprecated("Use constructor without reifiedType parameter.")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) id<ComposeAppKotlinKType> _Nullable kotlinType __attribute__((swift_name("kotlinType")));
-@property (readonly) id<ComposeAppKotlinKClass> type __attribute__((swift_name("type")));
-@end
-
-__attribute__((swift_name("Ktor_ioByteReadChannel")))
-@protocol ComposeAppKtor_ioByteReadChannel
-@required
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)awaitContentMin:(int32_t)min completionHandler:(void (^)(ComposeAppBoolean * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("awaitContent(min:completionHandler:)")));
-- (void)cancelCause_:(ComposeAppKotlinThrowable * _Nullable)cause __attribute__((swift_name("cancel(cause_:)")));
-@property (readonly) ComposeAppKotlinThrowable * _Nullable closedCause __attribute__((swift_name("closedCause")));
-@property (readonly) BOOL isClosedForRead __attribute__((swift_name("isClosedForRead")));
-@property (readonly) id<ComposeAppKotlinx_io_coreSource> readBuffer __attribute__((swift_name("readBuffer")));
-@end
-
-__attribute__((swift_name("Ktor_utilsStringValuesBuilder")))
-@protocol ComposeAppKtor_utilsStringValuesBuilder
-@required
-- (void)appendName:(NSString *)name value:(NSString *)value __attribute__((swift_name("append(name:value:)")));
-- (void)appendAllStringValues:(id<ComposeAppKtor_utilsStringValues>)stringValues __attribute__((swift_name("appendAll(stringValues:)")));
-- (void)appendAllName:(NSString *)name values:(id)values __attribute__((swift_name("appendAll(name:values:)")));
-- (void)appendMissingStringValues:(id<ComposeAppKtor_utilsStringValues>)stringValues __attribute__((swift_name("appendMissing(stringValues:)")));
-- (void)appendMissingName:(NSString *)name values:(id)values __attribute__((swift_name("appendMissing(name:values:)")));
-- (id<ComposeAppKtor_utilsStringValues>)build __attribute__((swift_name("build()")));
-- (void)clear __attribute__((swift_name("clear()")));
-- (BOOL)containsName:(NSString *)name __attribute__((swift_name("contains(name:)")));
-- (BOOL)containsName:(NSString *)name value:(NSString *)value __attribute__((swift_name("contains(name:value:)")));
-- (NSSet<id<ComposeAppKotlinMapEntry>> *)entries __attribute__((swift_name("entries()")));
-- (NSString * _Nullable)getName:(NSString *)name __attribute__((swift_name("get(name:)")));
-- (NSArray<NSString *> * _Nullable)getAllName:(NSString *)name __attribute__((swift_name("getAll(name:)")));
-- (BOOL)isEmpty_ __attribute__((swift_name("isEmpty()")));
-- (NSSet<NSString *> *)names __attribute__((swift_name("names()")));
-- (void)removeName:(NSString *)name __attribute__((swift_name("remove(name:)")));
-- (BOOL)removeName:(NSString *)name value:(NSString *)value __attribute__((swift_name("remove(name:value:)")));
-- (void)removeKeysWithNoEntries __attribute__((swift_name("removeKeysWithNoEntries()")));
-- (void)setName:(NSString *)name value:(NSString *)value __attribute__((swift_name("set(name:value:)")));
-@property (readonly) BOOL caseInsensitiveName __attribute__((swift_name("caseInsensitiveName")));
-@end
-
-__attribute__((swift_name("Ktor_utilsStringValuesBuilderImpl")))
-@interface ComposeAppKtor_utilsStringValuesBuilderImpl : ComposeAppBase <ComposeAppKtor_utilsStringValuesBuilder>
-- (instancetype)initWithCaseInsensitiveName:(BOOL)caseInsensitiveName size:(int32_t)size __attribute__((swift_name("init(caseInsensitiveName:size:)"))) __attribute__((objc_designated_initializer));
-- (void)appendName:(NSString *)name value:(NSString *)value __attribute__((swift_name("append(name:value:)")));
-- (void)appendAllStringValues:(id<ComposeAppKtor_utilsStringValues>)stringValues __attribute__((swift_name("appendAll(stringValues:)")));
-- (void)appendAllName:(NSString *)name values:(id)values __attribute__((swift_name("appendAll(name:values:)")));
-- (void)appendMissingStringValues:(id<ComposeAppKtor_utilsStringValues>)stringValues __attribute__((swift_name("appendMissing(stringValues:)")));
-- (void)appendMissingName:(NSString *)name values:(id)values __attribute__((swift_name("appendMissing(name:values:)")));
-- (id<ComposeAppKtor_utilsStringValues>)build __attribute__((swift_name("build()")));
-- (void)clear __attribute__((swift_name("clear()")));
-- (BOOL)containsName:(NSString *)name __attribute__((swift_name("contains(name:)")));
-- (BOOL)containsName:(NSString *)name value:(NSString *)value __attribute__((swift_name("contains(name:value:)")));
-- (NSSet<id<ComposeAppKotlinMapEntry>> *)entries __attribute__((swift_name("entries()")));
-- (NSString * _Nullable)getName:(NSString *)name __attribute__((swift_name("get(name:)")));
-- (NSArray<NSString *> * _Nullable)getAllName:(NSString *)name __attribute__((swift_name("getAll(name:)")));
-- (BOOL)isEmpty_ __attribute__((swift_name("isEmpty()")));
-- (NSSet<NSString *> *)names __attribute__((swift_name("names()")));
-- (void)removeName:(NSString *)name __attribute__((swift_name("remove(name:)")));
-- (BOOL)removeName:(NSString *)name value:(NSString *)value __attribute__((swift_name("remove(name:value:)")));
-- (void)removeKeysWithNoEntries __attribute__((swift_name("removeKeysWithNoEntries()")));
-- (void)setName:(NSString *)name value:(NSString *)value __attribute__((swift_name("set(name:value:)")));
-
-/**
- * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
-*/
-- (void)validateNameName:(NSString *)name __attribute__((swift_name("validateName(name:)")));
-
-/**
- * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
-*/
-- (void)validateValueValue:(NSString *)value __attribute__((swift_name("validateValue(value:)")));
-@property (readonly) BOOL caseInsensitiveName __attribute__((swift_name("caseInsensitiveName")));
-
-/**
- * @note This property has protected visibility in Kotlin source and is intended only for use by subclasses.
-*/
-@property (readonly) ComposeAppMutableDictionary<NSString *, NSMutableArray<NSString *> *> *values __attribute__((swift_name("values")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_httpHeadersBuilder")))
-@interface ComposeAppKtor_httpHeadersBuilder : ComposeAppKtor_utilsStringValuesBuilderImpl
-- (instancetype)initWithSize:(int32_t)size __attribute__((swift_name("init(size:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithCaseInsensitiveName:(BOOL)caseInsensitiveName size:(int32_t)size __attribute__((swift_name("init(caseInsensitiveName:size:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-- (id<ComposeAppKtor_httpHeaders>)build __attribute__((swift_name("build()")));
-
-/**
- * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
-*/
-- (void)validateNameName:(NSString *)name __attribute__((swift_name("validateName(name:)")));
-
-/**
- * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
-*/
-- (void)validateValueValue:(NSString *)value __attribute__((swift_name("validateValue(value:)")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_client_coreHttpRequestBuilder.Companion")))
-@interface ComposeAppKtor_client_coreHttpRequestBuilderCompanion : ComposeAppBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppKtor_client_coreHttpRequestBuilderCompanion *shared __attribute__((swift_name("shared")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_httpURLBuilder")))
-@interface ComposeAppKtor_httpURLBuilder : ComposeAppBase
-- (instancetype)initWithProtocol:(ComposeAppKtor_httpURLProtocol * _Nullable)protocol host:(NSString *)host port:(int32_t)port user:(NSString * _Nullable)user password:(NSString * _Nullable)password pathSegments:(NSArray<NSString *> *)pathSegments parameters:(id<ComposeAppKtor_httpParameters>)parameters fragment:(NSString *)fragment trailingQuery:(BOOL)trailingQuery __attribute__((swift_name("init(protocol:host:port:user:password:pathSegments:parameters:fragment:trailingQuery:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) ComposeAppKtor_httpURLBuilderCompanion *companion __attribute__((swift_name("companion")));
-- (ComposeAppKtor_httpUrl *)build __attribute__((swift_name("build()")));
-- (NSString *)buildString __attribute__((swift_name("buildString()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property NSString *encodedFragment __attribute__((swift_name("encodedFragment")));
-@property id<ComposeAppKtor_httpParametersBuilder> encodedParameters __attribute__((swift_name("encodedParameters")));
-@property NSString * _Nullable encodedPassword __attribute__((swift_name("encodedPassword")));
-@property NSArray<NSString *> *encodedPathSegments __attribute__((swift_name("encodedPathSegments")));
-@property NSString * _Nullable encodedUser __attribute__((swift_name("encodedUser")));
-@property NSString *fragment __attribute__((swift_name("fragment")));
-@property NSString *host __attribute__((swift_name("host")));
-@property (readonly) id<ComposeAppKtor_httpParametersBuilder> parameters __attribute__((swift_name("parameters")));
-@property NSString * _Nullable password __attribute__((swift_name("password")));
-@property NSArray<NSString *> *pathSegments __attribute__((swift_name("pathSegments")));
-@property int32_t port __attribute__((swift_name("port")));
-@property ComposeAppKtor_httpURLProtocol *protocol __attribute__((swift_name("protocol")));
-@property ComposeAppKtor_httpURLProtocol * _Nullable protocolOrNull __attribute__((swift_name("protocolOrNull")));
-@property BOOL trailingQuery __attribute__((swift_name("trailingQuery")));
-@property NSString * _Nullable user __attribute__((swift_name("user")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_client_coreHttpClientCall.Companion")))
-@interface ComposeAppKtor_client_coreHttpClientCallCompanion : ComposeAppBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppKtor_client_coreHttpClientCallCompanion *shared __attribute__((swift_name("shared")));
-@end
-
-__attribute__((swift_name("Ktor_client_coreHttpRequest")))
-@protocol ComposeAppKtor_client_coreHttpRequest <ComposeAppKtor_httpHttpMessage, ComposeAppKotlinx_coroutines_coreCoroutineScope>
-@required
-@property (readonly) id<ComposeAppKtor_utilsAttributes> attributes __attribute__((swift_name("attributes")));
-@property (readonly) ComposeAppKtor_client_coreHttpClientCall *call __attribute__((swift_name("call")));
-@property (readonly) ComposeAppKtor_httpOutgoingContent *content __attribute__((swift_name("content")));
-@property (readonly) ComposeAppKtor_httpHttpMethod *method __attribute__((swift_name("method")));
-@property (readonly) ComposeAppKtor_httpUrl *url __attribute__((swift_name("url")));
-@end
-
-__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Ktor_httpUrl.Companion")))
 @interface ComposeAppKtor_httpUrlCompanion : ComposeAppBase
 + (instancetype)alloc __attribute__((unavailable));
@@ -3806,49 +4174,6 @@ __attribute__((swift_name("Ktor_httpUrl.Companion")))
 + (instancetype)companion __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) ComposeAppKtor_httpUrlCompanion *shared __attribute__((swift_name("shared")));
 - (id<ComposeAppKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
-@end
-
-__attribute__((swift_name("Ktor_httpParameters")))
-@protocol ComposeAppKtor_httpParameters <ComposeAppKtor_utilsStringValues>
-@required
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_httpURLProtocol")))
-@interface ComposeAppKtor_httpURLProtocol : ComposeAppBase <ComposeAppKtor_ioJvmSerializable>
-- (instancetype)initWithName:(NSString *)name defaultPort:(int32_t)defaultPort __attribute__((swift_name("init(name:defaultPort:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) ComposeAppKtor_httpURLProtocolCompanion *companion __attribute__((swift_name("companion")));
-- (ComposeAppKtor_httpURLProtocol *)doCopyName:(NSString *)name defaultPort:(int32_t)defaultPort __attribute__((swift_name("doCopy(name:defaultPort:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) int32_t defaultPort __attribute__((swift_name("defaultPort")));
-@property (readonly) NSString *name __attribute__((swift_name("name")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_httpHttpMethod.Companion")))
-@interface ComposeAppKtor_httpHttpMethodCompanion : ComposeAppBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppKtor_httpHttpMethodCompanion *shared __attribute__((swift_name("shared")));
-- (ComposeAppKtor_httpHttpMethod *)parseMethod:(NSString *)method __attribute__((swift_name("parse(method:)")));
-@property (readonly) NSArray<ComposeAppKtor_httpHttpMethod *> *DefaultMethods __attribute__((swift_name("DefaultMethods")));
-@property (readonly) ComposeAppKtor_httpHttpMethod *Delete __attribute__((swift_name("Delete")));
-@property (readonly) ComposeAppKtor_httpHttpMethod *Get __attribute__((swift_name("Get")));
-@property (readonly) ComposeAppKtor_httpHttpMethod *Head __attribute__((swift_name("Head")));
-@property (readonly) ComposeAppKtor_httpHttpMethod *Options __attribute__((swift_name("Options")));
-@property (readonly) ComposeAppKtor_httpHttpMethod *Patch __attribute__((swift_name("Patch")));
-@property (readonly) ComposeAppKtor_httpHttpMethod *Post __attribute__((swift_name("Post")));
-@property (readonly) ComposeAppKtor_httpHttpMethod *Put __attribute__((swift_name("Put")));
-@end
-
-__attribute__((swift_name("KotlinMapEntry")))
-@protocol ComposeAppKotlinMapEntry
-@required
-@property (readonly) id _Nullable key __attribute__((swift_name("key")));
-@property (readonly) id _Nullable value __attribute__((swift_name("value")));
 @end
 
 __attribute__((swift_name("Ktor_httpHeaderValueWithParameters")))
@@ -3884,204 +4209,6 @@ __attribute__((swift_name("Ktor_httpContentType")))
 
 /**
  * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-__attribute__((swift_name("Kotlinx_coroutines_coreChildHandle")))
-@protocol ComposeAppKotlinx_coroutines_coreChildHandle <ComposeAppKotlinx_coroutines_coreDisposableHandle>
-@required
-
-/**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-- (BOOL)childCancelledCause:(ComposeAppKotlinThrowable *)cause __attribute__((swift_name("childCancelled(cause:)")));
-
-/**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-@property (readonly) id<ComposeAppKotlinx_coroutines_coreJob> _Nullable parent __attribute__((swift_name("parent")));
-@end
-
-
-/**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-__attribute__((swift_name("Kotlinx_coroutines_coreChildJob")))
-@protocol ComposeAppKotlinx_coroutines_coreChildJob <ComposeAppKotlinx_coroutines_coreJob>
-@required
-
-/**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-- (void)parentCancelledParentJob:(id<ComposeAppKotlinx_coroutines_coreParentJob>)parentJob __attribute__((swift_name("parentCancelled(parentJob:)")));
-@end
-
-__attribute__((swift_name("KotlinSequence")))
-@protocol ComposeAppKotlinSequence
-@required
-- (id<ComposeAppKotlinIterator>)iterator __attribute__((swift_name("iterator()")));
-@end
-
-
-/**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause")))
-@protocol ComposeAppKotlinx_coroutines_coreSelectClause
-@required
-@property (readonly) id clauseObject __attribute__((swift_name("clauseObject")));
-@property (readonly) ComposeAppKotlinUnit *(^(^ _Nullable onCancellationConstructor)(id<ComposeAppKotlinx_coroutines_coreSelectInstance>, id _Nullable, id _Nullable))(ComposeAppKotlinThrowable *, id _Nullable, id<ComposeAppKotlinCoroutineContext>) __attribute__((swift_name("onCancellationConstructor")));
-@property (readonly) id _Nullable (^processResFunc)(id, id _Nullable, id _Nullable) __attribute__((swift_name("processResFunc")));
-@property (readonly) void (^regFunc)(id, id<ComposeAppKotlinx_coroutines_coreSelectInstance>, id _Nullable) __attribute__((swift_name("regFunc")));
-@end
-
-__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause0")))
-@protocol ComposeAppKotlinx_coroutines_coreSelectClause0 <ComposeAppKotlinx_coroutines_coreSelectClause>
-@required
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_httpHttpStatusCode.Companion")))
-@interface ComposeAppKtor_httpHttpStatusCodeCompanion : ComposeAppBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppKtor_httpHttpStatusCodeCompanion *shared __attribute__((swift_name("shared")));
-- (ComposeAppKtor_httpHttpStatusCode *)fromValueValue:(int32_t)value __attribute__((swift_name("fromValue(value:)")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *Accepted __attribute__((swift_name("Accepted")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *BadGateway __attribute__((swift_name("BadGateway")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *BadRequest __attribute__((swift_name("BadRequest")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *Conflict __attribute__((swift_name("Conflict")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *Continue __attribute__((swift_name("Continue")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *Created __attribute__((swift_name("Created")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *ExpectationFailed __attribute__((swift_name("ExpectationFailed")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *FailedDependency __attribute__((swift_name("FailedDependency")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *Forbidden __attribute__((swift_name("Forbidden")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *Found __attribute__((swift_name("Found")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *GatewayTimeout __attribute__((swift_name("GatewayTimeout")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *Gone __attribute__((swift_name("Gone")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *InsufficientStorage __attribute__((swift_name("InsufficientStorage")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *InternalServerError __attribute__((swift_name("InternalServerError")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *LengthRequired __attribute__((swift_name("LengthRequired")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *Locked __attribute__((swift_name("Locked")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *MethodNotAllowed __attribute__((swift_name("MethodNotAllowed")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *MovedPermanently __attribute__((swift_name("MovedPermanently")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *MultiStatus __attribute__((swift_name("MultiStatus")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *MultipleChoices __attribute__((swift_name("MultipleChoices")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *NoContent __attribute__((swift_name("NoContent")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *NonAuthoritativeInformation __attribute__((swift_name("NonAuthoritativeInformation")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *NotAcceptable __attribute__((swift_name("NotAcceptable")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *NotFound __attribute__((swift_name("NotFound")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *NotImplemented __attribute__((swift_name("NotImplemented")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *NotModified __attribute__((swift_name("NotModified")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *OK __attribute__((swift_name("OK")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *PartialContent __attribute__((swift_name("PartialContent")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *PayloadTooLarge __attribute__((swift_name("PayloadTooLarge")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *PaymentRequired __attribute__((swift_name("PaymentRequired")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *PermanentRedirect __attribute__((swift_name("PermanentRedirect")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *PreconditionFailed __attribute__((swift_name("PreconditionFailed")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *Processing __attribute__((swift_name("Processing")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *ProxyAuthenticationRequired __attribute__((swift_name("ProxyAuthenticationRequired")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *RequestHeaderFieldTooLarge __attribute__((swift_name("RequestHeaderFieldTooLarge")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *RequestTimeout __attribute__((swift_name("RequestTimeout")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *RequestURITooLong __attribute__((swift_name("RequestURITooLong")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *RequestedRangeNotSatisfiable __attribute__((swift_name("RequestedRangeNotSatisfiable")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *ResetContent __attribute__((swift_name("ResetContent")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *SeeOther __attribute__((swift_name("SeeOther")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *ServiceUnavailable __attribute__((swift_name("ServiceUnavailable")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *SwitchProxy __attribute__((swift_name("SwitchProxy")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *SwitchingProtocols __attribute__((swift_name("SwitchingProtocols")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *TemporaryRedirect __attribute__((swift_name("TemporaryRedirect")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *TooEarly __attribute__((swift_name("TooEarly")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *TooManyRequests __attribute__((swift_name("TooManyRequests")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *Unauthorized __attribute__((swift_name("Unauthorized")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *UnprocessableEntity __attribute__((swift_name("UnprocessableEntity")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *UnsupportedMediaType __attribute__((swift_name("UnsupportedMediaType")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *UpgradeRequired __attribute__((swift_name("UpgradeRequired")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *UseProxy __attribute__((swift_name("UseProxy")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *VariantAlsoNegotiates __attribute__((swift_name("VariantAlsoNegotiates")));
-@property (readonly) ComposeAppKtor_httpHttpStatusCode *VersionNotSupported __attribute__((swift_name("VersionNotSupported")));
-@property (readonly) NSArray<ComposeAppKtor_httpHttpStatusCode *> *allStatusCodes __attribute__((swift_name("allStatusCodes")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_utilsWeekDay")))
-@interface ComposeAppKtor_utilsWeekDay : ComposeAppKotlinEnum<ComposeAppKtor_utilsWeekDay *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) ComposeAppKtor_utilsWeekDayCompanion *companion __attribute__((swift_name("companion")));
-@property (class, readonly) ComposeAppKtor_utilsWeekDay *monday __attribute__((swift_name("monday")));
-@property (class, readonly) ComposeAppKtor_utilsWeekDay *tuesday __attribute__((swift_name("tuesday")));
-@property (class, readonly) ComposeAppKtor_utilsWeekDay *wednesday __attribute__((swift_name("wednesday")));
-@property (class, readonly) ComposeAppKtor_utilsWeekDay *thursday __attribute__((swift_name("thursday")));
-@property (class, readonly) ComposeAppKtor_utilsWeekDay *friday __attribute__((swift_name("friday")));
-@property (class, readonly) ComposeAppKtor_utilsWeekDay *saturday __attribute__((swift_name("saturday")));
-@property (class, readonly) ComposeAppKtor_utilsWeekDay *sunday __attribute__((swift_name("sunday")));
-+ (ComposeAppKotlinArray<ComposeAppKtor_utilsWeekDay *> *)values __attribute__((swift_name("values()")));
-@property (class, readonly) NSArray<ComposeAppKtor_utilsWeekDay *> *entries __attribute__((swift_name("entries")));
-@property (readonly) NSString *value __attribute__((swift_name("value")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_utilsMonth")))
-@interface ComposeAppKtor_utilsMonth : ComposeAppKotlinEnum<ComposeAppKtor_utilsMonth *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) ComposeAppKtor_utilsMonthCompanion *companion __attribute__((swift_name("companion")));
-@property (class, readonly) ComposeAppKtor_utilsMonth *january __attribute__((swift_name("january")));
-@property (class, readonly) ComposeAppKtor_utilsMonth *february __attribute__((swift_name("february")));
-@property (class, readonly) ComposeAppKtor_utilsMonth *march __attribute__((swift_name("march")));
-@property (class, readonly) ComposeAppKtor_utilsMonth *april __attribute__((swift_name("april")));
-@property (class, readonly) ComposeAppKtor_utilsMonth *may __attribute__((swift_name("may")));
-@property (class, readonly) ComposeAppKtor_utilsMonth *june __attribute__((swift_name("june")));
-@property (class, readonly) ComposeAppKtor_utilsMonth *july __attribute__((swift_name("july")));
-@property (class, readonly) ComposeAppKtor_utilsMonth *august __attribute__((swift_name("august")));
-@property (class, readonly) ComposeAppKtor_utilsMonth *september __attribute__((swift_name("september")));
-@property (class, readonly) ComposeAppKtor_utilsMonth *october __attribute__((swift_name("october")));
-@property (class, readonly) ComposeAppKtor_utilsMonth *november __attribute__((swift_name("november")));
-@property (class, readonly) ComposeAppKtor_utilsMonth *december __attribute__((swift_name("december")));
-+ (ComposeAppKotlinArray<ComposeAppKtor_utilsMonth *> *)values __attribute__((swift_name("values()")));
-@property (class, readonly) NSArray<ComposeAppKtor_utilsMonth *> *entries __attribute__((swift_name("entries")));
-@property (readonly) NSString *value __attribute__((swift_name("value")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_utilsGMTDate.Companion")))
-@interface ComposeAppKtor_utilsGMTDateCompanion : ComposeAppBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppKtor_utilsGMTDateCompanion *shared __attribute__((swift_name("shared")));
-- (id<ComposeAppKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
-@property (readonly) ComposeAppKtor_utilsGMTDate *START __attribute__((swift_name("START")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_httpHttpProtocolVersion.Companion")))
-@interface ComposeAppKtor_httpHttpProtocolVersionCompanion : ComposeAppBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppKtor_httpHttpProtocolVersionCompanion *shared __attribute__((swift_name("shared")));
-- (ComposeAppKtor_httpHttpProtocolVersion *)fromValueName:(NSString *)name major:(int32_t)major minor:(int32_t)minor __attribute__((swift_name("fromValue(name:major:minor:)")));
-- (ComposeAppKtor_httpHttpProtocolVersion *)parseValue:(id)value __attribute__((swift_name("parse(value:)")));
-@property (readonly) ComposeAppKtor_httpHttpProtocolVersion *HTTP_1_0 __attribute__((swift_name("HTTP_1_0")));
-@property (readonly) ComposeAppKtor_httpHttpProtocolVersion *HTTP_1_1 __attribute__((swift_name("HTTP_1_1")));
-@property (readonly) ComposeAppKtor_httpHttpProtocolVersion *HTTP_2_0 __attribute__((swift_name("HTTP_2_0")));
-@property (readonly) ComposeAppKtor_httpHttpProtocolVersion *HTTP_3_0 __attribute__((swift_name("HTTP_3_0")));
-@property (readonly) ComposeAppKtor_httpHttpProtocolVersion *QUIC __attribute__((swift_name("QUIC")));
-@property (readonly) ComposeAppKtor_httpHttpProtocolVersion *SPDY_3 __attribute__((swift_name("SPDY_3")));
-@end
-
-
-/**
- * @note annotations
  *   kotlinx.serialization.ExperimentalSerializationApi
 */
 __attribute__((swift_name("Kotlinx_serialization_coreSerializersModuleCollector")))
@@ -4093,114 +4220,6 @@ __attribute__((swift_name("Kotlinx_serialization_coreSerializersModuleCollector"
 - (void)polymorphicDefaultBaseClass:(id<ComposeAppKotlinKClass>)baseClass defaultDeserializerProvider:(id<ComposeAppKotlinx_serialization_coreDeserializationStrategy> _Nullable (^)(NSString * _Nullable))defaultDeserializerProvider __attribute__((swift_name("polymorphicDefault(baseClass:defaultDeserializerProvider:)"))) __attribute__((deprecated("Deprecated in favor of function with more precise name: polymorphicDefaultDeserializer")));
 - (void)polymorphicDefaultDeserializerBaseClass:(id<ComposeAppKotlinKClass>)baseClass defaultDeserializerProvider:(id<ComposeAppKotlinx_serialization_coreDeserializationStrategy> _Nullable (^)(NSString * _Nullable))defaultDeserializerProvider __attribute__((swift_name("polymorphicDefaultDeserializer(baseClass:defaultDeserializerProvider:)")));
 - (void)polymorphicDefaultSerializerBaseClass:(id<ComposeAppKotlinKClass>)baseClass defaultSerializerProvider:(id<ComposeAppKotlinx_serialization_coreSerializationStrategy> _Nullable (^)(id))defaultSerializerProvider __attribute__((swift_name("polymorphicDefaultSerializer(baseClass:defaultSerializerProvider:)")));
-@end
-
-__attribute__((swift_name("Koin_coreKoinExtension")))
-@protocol ComposeAppKoin_coreKoinExtension
-@required
-- (void)onClose __attribute__((swift_name("onClose()")));
-- (void)onRegisterKoin:(ComposeAppKoin_coreKoin *)koin __attribute__((swift_name("onRegister(koin:)")));
-@end
-
-__attribute__((swift_name("Koin_coreResolutionExtension")))
-@protocol ComposeAppKoin_coreResolutionExtension
-@required
-- (id _Nullable)resolveScope:(ComposeAppKoin_coreScope *)scope instanceContext:(ComposeAppKoin_coreResolutionContext *)instanceContext __attribute__((swift_name("resolve(scope:instanceContext:)")));
-@property (readonly) NSString *name __attribute__((swift_name("name")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Koin_coreScopeRegistry.Companion")))
-@interface ComposeAppKoin_coreScopeRegistryCompanion : ComposeAppBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppKoin_coreScopeRegistryCompanion *shared __attribute__((swift_name("shared")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Koin_coreKind")))
-@interface ComposeAppKoin_coreKind : ComposeAppKotlinEnum<ComposeAppKoin_coreKind *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly) ComposeAppKoin_coreKind *singleton __attribute__((swift_name("singleton")));
-@property (class, readonly) ComposeAppKoin_coreKind *factory __attribute__((swift_name("factory")));
-@property (class, readonly) ComposeAppKoin_coreKind *scoped __attribute__((swift_name("scoped")));
-+ (ComposeAppKotlinArray<ComposeAppKoin_coreKind *> *)values __attribute__((swift_name("values()")));
-@property (class, readonly) NSArray<ComposeAppKoin_coreKind *> *entries __attribute__((swift_name("entries")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Koin_coreCallbacks")))
-@interface ComposeAppKoin_coreCallbacks<T> : ComposeAppBase
-- (instancetype)initWithOnClose:(void (^ _Nullable)(T _Nullable))onClose __attribute__((swift_name("init(onClose:)"))) __attribute__((objc_designated_initializer));
-- (ComposeAppKoin_coreCallbacks<T> *)doCopyOnClose:(void (^ _Nullable)(T _Nullable))onClose __attribute__((swift_name("doCopy(onClose:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) void (^ _Nullable onClose)(T _Nullable) __attribute__((swift_name("onClose")));
-@end
-
-__attribute__((swift_name("KotlinKType")))
-@protocol ComposeAppKotlinKType
-@required
-
-/**
- * @note annotations
- *   kotlin.SinceKotlin(version="1.1")
-*/
-@property (readonly) NSArray<ComposeAppKotlinKTypeProjection *> *arguments __attribute__((swift_name("arguments")));
-
-/**
- * @note annotations
- *   kotlin.SinceKotlin(version="1.1")
-*/
-@property (readonly) id<ComposeAppKotlinKClassifier> _Nullable classifier __attribute__((swift_name("classifier")));
-@property (readonly) BOOL isMarkedNullable __attribute__((swift_name("isMarkedNullable")));
-@end
-
-__attribute__((swift_name("Kotlinx_io_coreRawSource")))
-@protocol ComposeAppKotlinx_io_coreRawSource <ComposeAppKotlinAutoCloseable>
-@required
-- (int64_t)readAtMostToSink:(ComposeAppKotlinx_io_coreBuffer *)sink byteCount:(int64_t)byteCount __attribute__((swift_name("readAtMostTo(sink:byteCount:)")));
-@end
-
-__attribute__((swift_name("Kotlinx_io_coreSource")))
-@protocol ComposeAppKotlinx_io_coreSource <ComposeAppKotlinx_io_coreRawSource>
-@required
-- (BOOL)exhausted __attribute__((swift_name("exhausted()")));
-- (id<ComposeAppKotlinx_io_coreSource>)peek __attribute__((swift_name("peek()")));
-- (int32_t)readAtMostToSink:(ComposeAppKotlinByteArray *)sink startIndex:(int32_t)startIndex endIndex:(int32_t)endIndex __attribute__((swift_name("readAtMostTo(sink:startIndex:endIndex:)")));
-- (int8_t)readByte __attribute__((swift_name("readByte()")));
-- (int32_t)readInt __attribute__((swift_name("readInt()")));
-- (int64_t)readLong __attribute__((swift_name("readLong()")));
-- (int16_t)readShort __attribute__((swift_name("readShort()")));
-- (void)readToSink:(id<ComposeAppKotlinx_io_coreRawSink>)sink byteCount:(int64_t)byteCount __attribute__((swift_name("readTo(sink:byteCount:)")));
-- (BOOL)requestByteCount:(int64_t)byteCount __attribute__((swift_name("request(byteCount:)")));
-- (void)requireByteCount:(int64_t)byteCount __attribute__((swift_name("require(byteCount:)")));
-- (void)skipByteCount:(int64_t)byteCount __attribute__((swift_name("skip(byteCount:)")));
-- (int64_t)transferToSink:(id<ComposeAppKotlinx_io_coreRawSink>)sink __attribute__((swift_name("transferTo(sink:)")));
-
-/**
- * @note annotations
- *   kotlinx.io.InternalIoApi
-*/
-@property (readonly) ComposeAppKotlinx_io_coreBuffer *buffer __attribute__((swift_name("buffer")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_httpURLBuilder.Companion")))
-@interface ComposeAppKtor_httpURLBuilderCompanion : ComposeAppBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppKtor_httpURLBuilderCompanion *shared __attribute__((swift_name("shared")));
-@end
-
-__attribute__((swift_name("Ktor_httpParametersBuilder")))
-@protocol ComposeAppKtor_httpParametersBuilder <ComposeAppKtor_utilsStringValuesBuilder>
-@required
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -4219,39 +4238,22 @@ __attribute__((swift_name("Ktor_httpURLProtocol.Companion")))
 @property (readonly) NSDictionary<NSString *, ComposeAppKtor_httpURLProtocol *> *byName __attribute__((swift_name("byName")));
 @end
 
+
+/**
+ * @note annotations
+ *   kotlin.SinceKotlin(version="1.1")
+*/
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_httpHeaderValueParam")))
-@interface ComposeAppKtor_httpHeaderValueParam : ComposeAppBase
-- (instancetype)initWithName:(NSString *)name value:(NSString *)value __attribute__((swift_name("init(name:value:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithName:(NSString *)name value:(NSString *)value escapeValue:(BOOL)escapeValue __attribute__((swift_name("init(name:value:escapeValue:)"))) __attribute__((objc_designated_initializer));
-- (ComposeAppKtor_httpHeaderValueParam *)doCopyName:(NSString *)name value:(NSString *)value escapeValue:(BOOL)escapeValue __attribute__((swift_name("doCopy(name:value:escapeValue:)")));
+__attribute__((swift_name("KotlinKTypeProjection")))
+@interface ComposeAppKotlinKTypeProjection : ComposeAppBase
+- (instancetype)initWithVariance:(ComposeAppKotlinKVariance * _Nullable)variance type:(id<ComposeAppKotlinKType> _Nullable)type __attribute__((swift_name("init(variance:type:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) ComposeAppKotlinKTypeProjectionCompanion *companion __attribute__((swift_name("companion")));
+- (ComposeAppKotlinKTypeProjection *)doCopyVariance:(ComposeAppKotlinKVariance * _Nullable)variance type:(id<ComposeAppKotlinKType> _Nullable)type __attribute__((swift_name("doCopy(variance:type:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) BOOL escapeValue __attribute__((swift_name("escapeValue")));
-@property (readonly) NSString *name __attribute__((swift_name("name")));
-@property (readonly) NSString *value __attribute__((swift_name("value")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_httpHeaderValueWithParameters.Companion")))
-@interface ComposeAppKtor_httpHeaderValueWithParametersCompanion : ComposeAppBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppKtor_httpHeaderValueWithParametersCompanion *shared __attribute__((swift_name("shared")));
-- (id _Nullable)parseValue:(NSString *)value init:(id _Nullable (^)(NSString *, NSArray<ComposeAppKtor_httpHeaderValueParam *> *))init __attribute__((swift_name("parse(value:init:)")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_httpContentType.Companion")))
-@interface ComposeAppKtor_httpContentTypeCompanion : ComposeAppBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppKtor_httpContentTypeCompanion *shared __attribute__((swift_name("shared")));
-- (ComposeAppKtor_httpContentType *)parseValue:(NSString *)value __attribute__((swift_name("parse(value:)")));
-@property (readonly) ComposeAppKtor_httpContentType *Any __attribute__((swift_name("Any")));
+@property (readonly) id<ComposeAppKotlinKType> _Nullable type __attribute__((swift_name("type")));
+@property (readonly) ComposeAppKotlinKVariance * _Nullable variance __attribute__((swift_name("variance")));
 @end
 
 
@@ -4282,46 +4284,6 @@ __attribute__((swift_name("Kotlinx_coroutines_coreSelectInstance")))
 - (void)selectInRegistrationPhaseInternalResult:(id _Nullable)internalResult __attribute__((swift_name("selectInRegistrationPhase(internalResult:)")));
 - (BOOL)trySelectClauseObject:(id)clauseObject result:(id _Nullable)result __attribute__((swift_name("trySelect(clauseObject:result:)")));
 @property (readonly) id<ComposeAppKotlinCoroutineContext> context __attribute__((swift_name("context")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_utilsWeekDay.Companion")))
-@interface ComposeAppKtor_utilsWeekDayCompanion : ComposeAppBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppKtor_utilsWeekDayCompanion *shared __attribute__((swift_name("shared")));
-- (ComposeAppKtor_utilsWeekDay *)fromOrdinal:(int32_t)ordinal __attribute__((swift_name("from(ordinal:)")));
-- (ComposeAppKtor_utilsWeekDay *)fromValue:(NSString *)value __attribute__((swift_name("from(value:)")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_utilsMonth.Companion")))
-@interface ComposeAppKtor_utilsMonthCompanion : ComposeAppBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) ComposeAppKtor_utilsMonthCompanion *shared __attribute__((swift_name("shared")));
-- (ComposeAppKtor_utilsMonth *)fromOrdinal:(int32_t)ordinal __attribute__((swift_name("from(ordinal:)")));
-- (ComposeAppKtor_utilsMonth *)fromValue:(NSString *)value __attribute__((swift_name("from(value:)")));
-@end
-
-
-/**
- * @note annotations
- *   kotlin.SinceKotlin(version="1.1")
-*/
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KotlinKTypeProjection")))
-@interface ComposeAppKotlinKTypeProjection : ComposeAppBase
-- (instancetype)initWithVariance:(ComposeAppKotlinKVariance * _Nullable)variance type:(id<ComposeAppKotlinKType> _Nullable)type __attribute__((swift_name("init(variance:type:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) ComposeAppKotlinKTypeProjectionCompanion *companion __attribute__((swift_name("companion")));
-- (ComposeAppKotlinKTypeProjection *)doCopyVariance:(ComposeAppKotlinKVariance * _Nullable)variance type:(id<ComposeAppKotlinKType> _Nullable)type __attribute__((swift_name("doCopy(variance:type:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) id<ComposeAppKotlinKType> _Nullable type __attribute__((swift_name("type")));
-@property (readonly) ComposeAppKotlinKVariance * _Nullable variance __attribute__((swift_name("variance")));
 @end
 
 __attribute__((swift_name("Kotlinx_io_coreRawSink")))
@@ -4403,6 +4365,110 @@ __attribute__((swift_name("Kotlinx_io_coreBuffer")))
 */
 @property (readonly) ComposeAppKotlinx_io_coreBuffer *buffer __attribute__((swift_name("buffer")));
 @property (readonly) int64_t size __attribute__((swift_name("size")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_utilsWeekDay.Companion")))
+@interface ComposeAppKtor_utilsWeekDayCompanion : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppKtor_utilsWeekDayCompanion *shared __attribute__((swift_name("shared")));
+- (ComposeAppKtor_utilsWeekDay *)fromOrdinal:(int32_t)ordinal __attribute__((swift_name("from(ordinal:)")));
+- (ComposeAppKtor_utilsWeekDay *)fromValue:(NSString *)value __attribute__((swift_name("from(value:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_utilsMonth.Companion")))
+@interface ComposeAppKtor_utilsMonthCompanion : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppKtor_utilsMonthCompanion *shared __attribute__((swift_name("shared")));
+- (ComposeAppKtor_utilsMonth *)fromOrdinal:(int32_t)ordinal __attribute__((swift_name("from(ordinal:)")));
+- (ComposeAppKtor_utilsMonth *)fromValue:(NSString *)value __attribute__((swift_name("from(value:)")));
+@end
+
+__attribute__((swift_name("Koin_coreKoinExtension")))
+@protocol ComposeAppKoin_coreKoinExtension
+@required
+- (void)onClose __attribute__((swift_name("onClose()")));
+- (void)onRegisterKoin:(ComposeAppKoin_coreKoin *)koin __attribute__((swift_name("onRegister(koin:)")));
+@end
+
+__attribute__((swift_name("Koin_coreResolutionExtension")))
+@protocol ComposeAppKoin_coreResolutionExtension
+@required
+- (id _Nullable)resolveScope:(ComposeAppKoin_coreScope *)scope instanceContext:(ComposeAppKoin_coreResolutionContext *)instanceContext __attribute__((swift_name("resolve(scope:instanceContext:)")));
+@property (readonly) NSString *name __attribute__((swift_name("name")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Koin_coreScopeRegistry.Companion")))
+@interface ComposeAppKoin_coreScopeRegistryCompanion : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppKoin_coreScopeRegistryCompanion *shared __attribute__((swift_name("shared")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Koin_coreKind")))
+@interface ComposeAppKoin_coreKind : ComposeAppKotlinEnum<ComposeAppKoin_coreKind *>
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@property (class, readonly) ComposeAppKoin_coreKind *singleton __attribute__((swift_name("singleton")));
+@property (class, readonly) ComposeAppKoin_coreKind *factory __attribute__((swift_name("factory")));
+@property (class, readonly) ComposeAppKoin_coreKind *scoped __attribute__((swift_name("scoped")));
++ (ComposeAppKotlinArray<ComposeAppKoin_coreKind *> *)values __attribute__((swift_name("values()")));
+@property (class, readonly) NSArray<ComposeAppKoin_coreKind *> *entries __attribute__((swift_name("entries")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Koin_coreCallbacks")))
+@interface ComposeAppKoin_coreCallbacks<T> : ComposeAppBase
+- (instancetype)initWithOnClose:(void (^ _Nullable)(T _Nullable))onClose __attribute__((swift_name("init(onClose:)"))) __attribute__((objc_designated_initializer));
+- (ComposeAppKoin_coreCallbacks<T> *)doCopyOnClose:(void (^ _Nullable)(T _Nullable))onClose __attribute__((swift_name("doCopy(onClose:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) void (^ _Nullable onClose)(T _Nullable) __attribute__((swift_name("onClose")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_httpHeaderValueParam")))
+@interface ComposeAppKtor_httpHeaderValueParam : ComposeAppBase
+- (instancetype)initWithName:(NSString *)name value:(NSString *)value __attribute__((swift_name("init(name:value:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithName:(NSString *)name value:(NSString *)value escapeValue:(BOOL)escapeValue __attribute__((swift_name("init(name:value:escapeValue:)"))) __attribute__((objc_designated_initializer));
+- (ComposeAppKtor_httpHeaderValueParam *)doCopyName:(NSString *)name value:(NSString *)value escapeValue:(BOOL)escapeValue __attribute__((swift_name("doCopy(name:value:escapeValue:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) BOOL escapeValue __attribute__((swift_name("escapeValue")));
+@property (readonly) NSString *name __attribute__((swift_name("name")));
+@property (readonly) NSString *value __attribute__((swift_name("value")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_httpHeaderValueWithParameters.Companion")))
+@interface ComposeAppKtor_httpHeaderValueWithParametersCompanion : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppKtor_httpHeaderValueWithParametersCompanion *shared __attribute__((swift_name("shared")));
+- (id _Nullable)parseValue:(NSString *)value init:(id _Nullable (^)(NSString *, NSArray<ComposeAppKtor_httpHeaderValueParam *> *))init __attribute__((swift_name("parse(value:init:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_httpContentType.Companion")))
+@interface ComposeAppKtor_httpContentTypeCompanion : ComposeAppBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) ComposeAppKtor_httpContentTypeCompanion *shared __attribute__((swift_name("shared")));
+- (ComposeAppKtor_httpContentType *)parseValue:(NSString *)value __attribute__((swift_name("parse(value:)")));
+@property (readonly) ComposeAppKtor_httpContentType *Any __attribute__((swift_name("Any")));
 @end
 
 
