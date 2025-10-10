@@ -9,7 +9,7 @@ androidx-lifecycle = "2.9.4"
 kotlin = "2.2.10"
 kotlinSerialization = "1.9.0"
 kotlinx-coroutines = "1.10.2"
-ktor = "3.3.0"
+ktor = "3.3.1"
 buildkonfig = "0.17.1"
 materialIconsCore = "1.7.3"
 moko = "0.20.1"
@@ -20,13 +20,13 @@ koinComposeMultiplatform = "4.1.1"
 navigationCompose = "2.9.0"
 coil = "3.3.0"
 #Firebase android
-firebase-android-bom = "34.3.0"
+firebase-android-bom = "34.4.0"
 #Gradle
 gradlePlugins-crashlytics = "3.0.6"
-gradlePlugins-google-services = "4.4.3"
+gradlePlugins-google-services = "4.4.4"
 #Gitlive
 firebase-gitlive-sdk = "2.3.0"
-roomRuntime = "2.8.1"
+roomRuntime = "2.8.2"
 
 #иначе не собирается
 ksp = "2.2.10-2.0.2"

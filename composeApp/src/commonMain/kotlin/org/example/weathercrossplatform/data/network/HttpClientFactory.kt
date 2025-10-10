@@ -30,8 +30,8 @@ class HttpClientFactory(
                 )
             }
             install(HttpTimeout) {
-                connectTimeoutMillis = 20000
-                requestTimeoutMillis = 20000
+                connectTimeoutMillis = 50000
+                requestTimeoutMillis = 50000
             }
             install(Logging) {
                 logger = object : Logger {
@@ -40,9 +40,6 @@ class HttpClientFactory(
                     }
                 }
                 level = LogLevel.ALL
-            }
-            install(WebSockets) {
-                pingIntervalMillis = 20000
             }
             defaultRequest {
                 header("x-api-key", BuildKonfig.API_KEY)

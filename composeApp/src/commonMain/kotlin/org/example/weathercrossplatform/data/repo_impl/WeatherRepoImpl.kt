@@ -8,15 +8,14 @@ import io.ktor.client.request.parameter
 import io.ktor.util.network.UnresolvedAddressException
 import kotlinx.serialization.SerializationException
 import org.example.weathercrossplatform.data.locale.SystemLocale
+import org.example.weathercrossplatform.data.network.UrlConstant.BASE_URL_IMAGES
+import org.example.weathercrossplatform.data.network.UrlConstant.BASE_URL_WEATHER
 import org.example.weathercrossplatform.data.network.dto.ForecastDto
 import org.example.weathercrossplatform.data.network.dto.ImageListDto
 import org.example.weathercrossplatform.data.utils.NetworkError
 import org.example.weathercrossplatform.data.utils.Result
 import org.example.weathercrossplatform.domain.models.Location
 import org.example.weathercrossplatform.domain.repo.WeatherRepo
-
-const val BASE_URL_WEATHER = "https://api.weatherapi.com/v1"
-const val BASE_URL_IMAGES = "https://api.unsplash.com/search/photos?page=1"
 
 class WeatherRepoImpl(
     private val httpClient: HttpClient,
