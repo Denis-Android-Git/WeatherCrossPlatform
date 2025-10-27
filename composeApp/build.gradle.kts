@@ -1,5 +1,4 @@
 import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import java.util.Properties
 
@@ -34,10 +33,10 @@ kotlin {
         }
     }
 
-    jvm("desktop")
+    //jvm("desktop")
 
     sourceSets {
-        val desktopMain by getting
+        //val desktopMain by getting
 
         androidMain.dependencies {
             implementation(compose.preview)
@@ -78,11 +77,11 @@ kotlin {
         nativeMain.dependencies {
             implementation(libs.ktor.client.darwin)
         }
-        desktopMain.dependencies {
-            implementation(compose.desktop.currentOs)
-            implementation(libs.kotlinx.coroutines.swing)
-            implementation(libs.ktor.client.okhttp)
-        }
+//        desktopMain.dependencies {
+//            implementation(compose.desktop.currentOs)
+//            implementation(libs.kotlinx.coroutines.swing)
+//            implementation(libs.ktor.client.okhttp)
+//        }
     }
 }
 
@@ -138,17 +137,17 @@ dependencies {
     debugImplementation(compose.uiTooling)
 }
 
-compose.desktop {
-    application {
-        mainClass = "org.example.weathercrossplatform.MainKt"
-
-        nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "org.example.weathercrossplatform"
-            packageVersion = "1.0.0"
-        }
-    }
-}
+//compose.desktop {
+//    application {
+//        mainClass = "org.example.weathercrossplatform.MainKt"
+//
+//        nativeDistributions {
+//            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
+//            packageName = "org.example.weathercrossplatform"
+//            packageVersion = "1.0.0"
+//        }
+//    }
+//}
 room {
     schemaDirectory("$projectDir/schemas")
 }

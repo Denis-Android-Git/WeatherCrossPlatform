@@ -3,13 +3,13 @@ package org.example.weathercrossplatform
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.exclude
+import androidx.compose.foundation.layout.consumeWindowInsets
+import androidx.compose.foundation.layout.displayCutout
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.statusBars
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.ScaffoldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -41,10 +41,12 @@ fun App() {
             PermissionsViewModel(controller)
         }
         Scaffold(
-            modifier = Modifier.fillMaxSize(),
-            contentWindowInsets = ScaffoldDefaults.contentWindowInsets.exclude(
-                WindowInsets.statusBars
-            )
+            modifier = Modifier.fillMaxSize()
+                .consumeWindowInsets(WindowInsets.navigationBars)
+                .consumeWindowInsets(WindowInsets.displayCutout),
+//            contentWindowInsets = ScaffoldDefaults.contentWindowInsets.exclude(
+//                WindowInsets.statusBars
+//            )
         ) {
             Column(
                 modifier = Modifier.padding(it),
