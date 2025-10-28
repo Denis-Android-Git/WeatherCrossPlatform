@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.displayCutout
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.ime
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
@@ -44,6 +45,7 @@ fun App() {
             modifier = Modifier.fillMaxSize()
                 .consumeWindowInsets(WindowInsets.navigationBars)
                 .consumeWindowInsets(WindowInsets.displayCutout),
+            contentWindowInsets = WindowInsets.ime
 //            contentWindowInsets = ScaffoldDefaults.contentWindowInsets.exclude(
 //                WindowInsets.statusBars
 //            )
