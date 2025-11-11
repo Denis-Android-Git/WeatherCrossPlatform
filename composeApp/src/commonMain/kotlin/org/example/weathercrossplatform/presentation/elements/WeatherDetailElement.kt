@@ -1,4 +1,4 @@
-package org.example.weathercrossplatform.presentation
+package org.example.weathercrossplatform.presentation.elements
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column

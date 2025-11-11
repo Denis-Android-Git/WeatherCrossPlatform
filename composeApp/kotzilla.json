@@ -1,0 +1,11 @@
+{
+  "sdkVersion": "1.3.0",
+  "keys": [
+    {
+      "appId": "5916d70f-35a0-4480-b203-e5b3965aa006",
+      "applicationPackageName": "org.example.weathercrossplatform",
+      "keyId": "019a3030-aef2-7788-97f7-536d715474bc",
+      "apiKey": "ktz-sdk-rBitHZL1Q5fDa2JD9YU8a0J0w9e1j30wJCCPS6ifmSA"
+    }
+  ]
+}

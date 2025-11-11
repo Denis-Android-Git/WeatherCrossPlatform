@@ -1,4 +1,4 @@
-package org.example.weathercrossplatform.presentation
+package org.example.weathercrossplatform.presentation.elements
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable

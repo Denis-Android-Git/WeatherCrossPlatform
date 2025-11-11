@@ -7,5 +7,7 @@ fun initKoin(config: KoinAppDeclaration? = null) {
     startKoin {
         config?.invoke(this)
         modules(platformModule, sharedModule)
+        // Add kotzilla analytics
+        //analytics()
     }
 }

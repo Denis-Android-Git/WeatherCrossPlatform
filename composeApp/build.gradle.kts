@@ -13,6 +13,8 @@ plugins {
     alias(libs.plugins.crashlytics)
     alias(libs.plugins.ksp)
     alias(libs.plugins.room)
+    //alias(libs.plugins.kotzilla)
+
 }
 
 kotlin {
@@ -73,7 +75,14 @@ kotlin {
             implementation(libs.material.icons.core)
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.touchlab.kermit)
+            //implementation(libs.kotzilla.sdk.compose)
+
         }
+//        kotzilla {
+//            versionName = "1.1" // add your app version name
+//            keyGeneration = KotzillaKeyGeneration.COMPOSE
+//            composeInstrumentation = true
+//        }
         nativeMain.dependencies {
             implementation(libs.ktor.client.darwin)
         }

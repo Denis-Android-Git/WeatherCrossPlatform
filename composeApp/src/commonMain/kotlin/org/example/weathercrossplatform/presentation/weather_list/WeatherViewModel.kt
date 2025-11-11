@@ -1,4 +1,4 @@
-package org.example.weathercrossplatform.viewmodels
+package org.example.weathercrossplatform.presentation.weather_list
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

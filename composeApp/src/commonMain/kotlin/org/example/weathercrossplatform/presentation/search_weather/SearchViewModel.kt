@@ -1,4 +1,4 @@
-package org.example.weathercrossplatform.viewmodels
+package org.example.weathercrossplatform.presentation.search_weather
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

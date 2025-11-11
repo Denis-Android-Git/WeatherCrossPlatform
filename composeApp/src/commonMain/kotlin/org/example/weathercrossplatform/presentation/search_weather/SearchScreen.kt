@@ -1,4 +1,4 @@
-package org.example.weathercrossplatform.presentation
+package org.example.weathercrossplatform.presentation.search_weather
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.clickable
@@ -38,6 +38,8 @@ import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Location
+import org.example.weathercrossplatform.presentation.elements.FoundItem
+import org.example.weathercrossplatform.presentation.elements.SavedElement
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @OptIn(ExperimentalMaterial3Api::class)

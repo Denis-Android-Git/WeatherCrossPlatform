@@ -4,8 +4,8 @@ import org.example.weathercrossplatform.data.repo_impl.DataBaseRepoImpl
 import org.example.weathercrossplatform.data.repo_impl.WeatherRepoImpl
 import org.example.weathercrossplatform.domain.repo.DataBaseRepo
 import org.example.weathercrossplatform.domain.repo.WeatherRepo
-import org.example.weathercrossplatform.viewmodels.SearchViewModel
-import org.example.weathercrossplatform.viewmodels.WeatherViewModel
+import org.example.weathercrossplatform.presentation.search_weather.SearchViewModel
+import org.example.weathercrossplatform.presentation.weather_list.WeatherViewModel
 import org.koin.core.module.Module
 import org.koin.core.module.dsl.singleOf
 import org.koin.core.module.dsl.viewModelOf

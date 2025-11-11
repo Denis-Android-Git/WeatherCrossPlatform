@@ -1,4 +1,4 @@
-package org.example.weathercrossplatform.presentation
+package org.example.weathercrossplatform.presentation.search_weather
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -12,7 +12,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.domain.actions.SearchScreenActions
 import org.example.weathercrossplatform.domain.models.Location
-import org.example.weathercrossplatform.viewmodels.SearchViewModel
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable

@@ -1,4 +1,4 @@
-package org.example.weathercrossplatform.presentation
+package org.example.weathercrossplatform.presentation.weather_list
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState
@@ -39,7 +39,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
@@ -47,41 +46,28 @@ import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.data.utils.GetScreenHeight
 import org.example.weathercrossplatform.domain.logger.MyLogger
-import org.example.weathercrossplatform.domain.models.Astro
-import org.example.weathercrossplatform.domain.models.Condition
-import org.example.weathercrossplatform.domain.models.Day
-import org.example.weathercrossplatform.domain.models.Forecastday
-import org.example.weathercrossplatform.domain.models.Hour
 import org.example.weathercrossplatform.domain.models.WeatherItem
+import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
+import org.example.weathercrossplatform.presentation.elements.ForecastElement
+import org.example.weathercrossplatform.presentation.elements.HourForecastElement
+import org.example.weathercrossplatform.presentation.elements.WeatherDetailElement
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 fun MainScreen(
+    weatherMainScreenState: WeatherMainScreenState,
     cityId: Int?,
-    isLoading: Boolean,
-    image: String,
-    usEpaIndex: Int?,
-    locationName: String?,
-    temp: Double?,
-    highTemp: Double?,
-    lowTemp: Double?,
-    condition: String?,
-    feelsLikeC: String?,
-//    error: String,
-    forecastList: List<Forecastday>?,
-    weatherItemList: List<WeatherItem>,
     savedCityList: List<SavedWeatherItem>,
     onAddButtonClick: () -> Unit,
     onCancelButtonClick: () -> Unit,
     onAddCityButtonClick: (SavedWeatherItem) -> Unit,
-    coordinates: String,
     isCurrentLocation: Boolean,
     myLogger: MyLogger = MyLoggerImpl
 ) {
 
     val textColor by remember { mutableStateOf(Color.White) }
     val airQualityText by rememberUpdatedState(
-        newValue = when (usEpaIndex) {
+        newValue = when (weatherMainScreenState.weatherDto?.current?.airQuality?.usEpaIndex) {
             1 -> "Хорошо"
             2 -> "Умеренно"
             3 -> "Плохое для чувствительных групп"
@@ -92,20 +78,18 @@ fun MainScreen(
         }
     )
 
-    myLogger.debug("airQualityText = $usEpaIndex")
-
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
         AnimatedVisibility(
-            visible = !isLoading && locationName != null,
+            visible = !weatherMainScreenState.isLoading && weatherMainScreenState.weatherDto?.location?.name != null,
             enter = fadeIn(),
             exit = fadeOut()
         ) {
 
             Box(modifier = Modifier.fillMaxSize()) {
                 AsyncImage(
-                    model = image,
+                    model = weatherMainScreenState.image,
                     modifier = Modifier.fillMaxSize(),
                     contentScale = ContentScale.FillBounds,
                     contentDescription = null
@@ -146,7 +130,7 @@ fun MainScreen(
                                 vertical = 2.dp,
                                 horizontal = 16.dp
                             ),
-                            text = locationName.toString(), color = textColor, fontSize = 20.sp
+                            text = weatherMainScreenState.weatherDto?.location?.name.toString(), color = textColor, fontSize = 20.sp
                         )
                     }
                     Box(
@@ -162,7 +146,7 @@ fun MainScreen(
                                 vertical = 2.dp,
                                 horizontal = 16.dp
                             ),
-                            text = "$temp ℃",
+                            text = "${weatherMainScreenState.weatherDto?.current?.tempC} ℃",
                             color = textColor,
                             fontSize = 85.sp
                         )
@@ -177,11 +161,11 @@ fun MainScreen(
                     ) {
                         Text(
                             modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 2.dp),
-                            text = "Ощущается $feelsLikeC ℃", color = textColor
+                            text = "Ощущается ${weatherMainScreenState.weatherDto?.current?.feelsLikeC} ℃", color = textColor
                         )
                         Text(
                             modifier = Modifier.padding(start = 16.dp, bottom = 2.dp, end = 16.dp),
-                            text = condition.toString(), color = textColor
+                            text = weatherMainScreenState.weatherDto?.current?.condition?.text.toString(), color = textColor
                         )
                     }
                     Box(
@@ -226,7 +210,7 @@ fun MainScreen(
                         .padding(top = height, bottom = 20.dp),
                     verticalArrangement = Arrangement.spacedBy(6.dp)
                 ) {
-                    forecastList?.let { forecastListDayList ->
+                    weatherMainScreenState.weatherDto?.forecast?.forecastday?.let { forecastListDayList ->
                         ForecastElement(
                             forecastList = forecastListDayList
                         )
@@ -242,17 +226,17 @@ fun MainScreen(
                             verticalArrangement = Arrangement.spacedBy(6.dp),
                             userScrollEnabled = false
                         ) {
-                            items(weatherItemList) { item ->
+                            items(weatherMainScreenState.weatherItemList) { item ->
                                 WeatherDetailElement(
                                     title = item.title,
                                     description = item.description,
-                                    humidity = weatherItemList[0].progress,
-                                    windProgress = weatherItemList[1].progress,
-                                    pressureProgress = weatherItemList[2].progress,
-                                    cloudsProgress = weatherItemList[3].progress,
-                                    windRotation = weatherItemList[1].rotation,
-                                    uvIndex = weatherItemList[4].uvIndex.toString(),
-                                    feelsLikeRotation = weatherItemList[5].rotation
+                                    humidity = weatherMainScreenState.weatherItemList[0].progress,
+                                    windProgress = weatherMainScreenState.weatherItemList[1].progress,
+                                    pressureProgress = weatherMainScreenState.weatherItemList[2].progress,
+                                    cloudsProgress = weatherMainScreenState.weatherItemList[3].progress,
+                                    windRotation = weatherMainScreenState.weatherItemList[1].rotation,
+                                    uvIndex = weatherMainScreenState.weatherItemList[4].uvIndex.toString(),
+                                    feelsLikeRotation = weatherMainScreenState.weatherItemList[5].rotation
                                 )
                             }
                         }
@@ -300,15 +284,15 @@ fun MainScreen(
                     onClick = {
                         onAddCityButtonClick(
                             SavedWeatherItem(
-                                cityName = locationName ?: "",
+                                cityName = weatherMainScreenState.weatherDto?.location?.name ?: "",
                                 //latitude = latitude,
                                 //longitude = longitude,
-                                temperature = temp ?: 0.0,
-                                weatherDescription = condition ?: "",
-                                highTemperature = highTemp ?: 0.0,
-                                lowTemperature = lowTemp ?: 0.0,
+                                temperature = weatherMainScreenState.weatherDto?.current?.tempC ?: 0.0,
+                                weatherDescription = weatherMainScreenState.weatherDto?.current?.condition?.text ?: "",
+                                highTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.maxTempC ?: 0.0,
+                                lowTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.minTempC ?: 0.0,
                                 cityId = cityId,
-                                coordinates = coordinates,
+                                coordinates = "${weatherMainScreenState.weatherDto?.location?.lat},${weatherMainScreenState.weatherDto?.location?.lon}",
                                 isCurrentLocation = false,
                             )
                         )
@@ -327,93 +311,6 @@ fun MainScreen(
 @Preview
 @Composable
 fun MainScreenPreview() {
-    val mockHours = listOf(
-        Hour(
-            chanceOfRain = 0,
-            chanceOfSnow = 0,
-            cloud = 25,
-            condition = Condition(
-                text = "Sunny",
-                icon = "//cdn.weatherapi.com/weather/64x64/day/116.png",
-                code = 1000
-            ),
-            dewPointC = 12.0,
-            dewPointF = 53.6,
-            feelsLikeC = 27.0,
-            feelsLikeF = 80.6,
-            gustKph = 15.0,
-            gustMph = 9.3,
-            heatIndexC = 27.0,
-            heatIndexF = 80.6,
-            humidity = 45,
-            isDay = 1,
-            precipIn = 0.0,
-            precipMm = 0.0,
-            pressureIn = 29.91,
-            pressureMb = 1013.0,
-            snowCm = 0.0,
-            tempC = 25.0,
-            tempF = 77.0,
-            time = "12:00",
-            timeEpoch = 1705312800,
-            uv = 6.0,
-            visKm = 10.0,
-            visMiles = 6.2,
-            willItRain = 0,
-            willItSnow = 0,
-            windDegree = 315,
-            windDir = "NW",
-            windKph = 10.0,
-            windMph = 6.2,
-            windChillC = 24.0,
-            windChillF = 75.2
-        )
-    )
-
-    val mockForecast = listOf(
-        Forecastday(
-            astro = Astro(
-                isMoonUp = 0,
-                isSunUp = 1,
-                moonIllumination = 25,
-                moonPhase = "Waxing Crescent",
-                moonrise = "02:15 AM",
-                moonset = "01:30 PM",
-                sunrise = "06:30 AM",
-                sunset = "06:45 PM"
-            ),
-            date = "2024-01-15",
-            dateEpoch = 1705276800,
-            day = Day(
-                avghumidity = 65,
-                avgTempC = 23.0,
-                avgTempF = 73.4,
-                avgVisKm = 10.0,
-                avgVisMiles = 6.2,
-                condition = Condition(
-                    text = "Partly cloudy",
-                    icon = "//cdn.weatherapi.com/weather/64x64/day/116.png",
-                    code = 1003
-                ),
-                dailyChanceOfRain = 10,
-                dailyChanceOfSnow = 0,
-                dailyWillItRain = 0,
-                dailyWillItSnow = 0,
-                maxTempC = 28.0,
-                maxTempF = 82.4,
-                maxWindKph = 15.0,
-                maxWindMph = 9.3,
-                minTempC = 18.0,
-                minTempF = 64.4,
-                totalPrecipIn = 0.0,
-                totalPrecipMm = 0.0,
-                totalSnowCm = 0.0,
-                uv = 6.0
-            ),
-            hour = mockHours
-        )
-    )
-
     val mockWeatherItems = listOf(
         WeatherItem(
             title = "Влажность",
@@ -474,59 +371,138 @@ fun MainScreenPreview() {
 
     MainScreen(
         cityId = 1,
-        isLoading = false,
-        image = "https://images.unsplash.com/photo-1519904981063-b0cf448d479e",
-        usEpaIndex = 2,
-        locationName = "Москва",
-        temp = 23.0,
-        highTemp = 28.0,
-        lowTemp = 18.0,
-        condition = "Переменная облачность",
-        feelsLikeC = "25",
-        //error = "",
-        forecastList = mockForecast,
-        weatherItemList = mockWeatherItems,
         savedCityList = mockSavedCities,
         onAddButtonClick = { },
         onCancelButtonClick = { },
         onAddCityButtonClick = { },
-        coordinates = "55.7558,37.6176",
-        isCurrentLocation = false
+        isCurrentLocation = true,
+        weatherMainScreenState = WeatherMainScreenState(
+            weatherItemList = mockWeatherItems
+        )
     )
 }
+//
+//val mockHours = listOf(
+//    Hour(
+//        chanceOfRain = 0,
+//        chanceOfSnow = 0,
+//        cloud = 25,
+//        condition = Condition(
+//            text = "Sunny",
+//            icon = "//cdn.weatherapi.com/weather/64x64/day/116.png",
+//            code = 1000
+//        ),
+//        dewPointC = 12.0,
+//        dewPointF = 53.6,
+//        feelsLikeC = 27.0,
+//        feelsLikeF = 80.6,
+//        gustKph = 15.0,
+//        gustMph = 9.3,
+//        heatIndexC = 27.0,
+//        heatIndexF = 80.6,
+//        humidity = 45,
+//        isDay = 1,
+//        precipIn = 0.0,
+//        precipMm = 0.0,
+//        pressureIn = 29.91,
+//        pressureMb = 1013.0,
+//        snowCm = 0.0,
+//        tempC = 25.0,
+//        tempF = 77.0,
+//        time = "12:00",
+//        timeEpoch = 1705312800,
+//        uv = 6.0,
+//        visKm = 10.0,
+//        visMiles = 6.2,
+//        willItRain = 0,
+//        willItSnow = 0,
+//        windDegree = 315,
+//        windDir = "NW",
+//        windKph = 10.0,
+//        windMph = 6.2,
+//        windChillC = 24.0,
+//        windChillF = 75.2
+//    )
+//)
 
-@Composable
-fun App() {
-    val screenSize = remember { mutableStateOf(Pair(-1, -1)) }
-    Layout(
-        content = {
-            Box(modifier = Modifier.fillMaxSize()) {
-                Text(
-                    "Screen size: ${screenSize.value.first}x${screenSize.value.second}px",
-                    modifier = Modifier.align(Alignment.Center)
-                )
-            }
-        },
-        measurePolicy = { measurables, constraints ->
-            // Use the max width and height from the constraints
-            val width = constraints.maxWidth
-            val height = constraints.maxHeight
+//
+//val mockForecast = listOf(
+//    Forecastday(
+//        astro = Astro(
+//            isMoonUp = 0,
+//            isSunUp = 1,
+//            moonIllumination = 25,
+//            moonPhase = "Waxing Crescent",
+//            moonrise = "02:15 AM",
+//            moonset = "01:30 PM",
+//            sunrise = "06:30 AM",
+//            sunset = "06:45 PM"
+//        ),
+//        date = "2024-01-15",
+//        dateEpoch = 1705276800,
+//        day = Day(
+//            avghumidity = 65,
+//            avgTempC = 23.0,
+//            avgTempF = 73.4,
+//            avgVisKm = 10.0,
+//            avgVisMiles = 6.2,
+//            condition = Condition(
+//                text = "Partly cloudy",
+//                icon = "//cdn.weatherapi.com/weather/64x64/day/116.png",
+//                code = 1003
+//            ),
+//            dailyChanceOfRain = 10,
+//            dailyChanceOfSnow = 0,
+//            dailyWillItRain = 0,
+//            dailyWillItSnow = 0,
+//            maxTempC = 28.0,
+//            maxTempF = 82.4,
+//            maxWindKph = 15.0,
+//            maxWindMph = 9.3,
+//            minTempC = 18.0,
+//            minTempF = 64.4,
+//            totalPrecipIn = 0.0,
+//            totalPrecipMm = 0.0,
+//            totalSnowCm = 0.0,
+//            uv = 6.0
+//        ),
+//        hour = mockHours
+//    )
+//)
 
-            screenSize.value = Pair(width, height)
-            //myLogger("Width: $width, height: $height")
-
-            // Measure and place children composables
-            val placeables = measurables.map { measurable ->
-                measurable.measure(constraints)
-            }
-
-            layout(width, height) {
-                var yPosition = 0
-                placeables.forEach { placeable ->
-                    placeable.placeRelative(x = 0, y = yPosition)
-                    yPosition += placeable.height
-                }
-            }
-        }
-    )
-}
+//
+//@Composable
+//fun App() {
+//    val screenSize = remember { mutableStateOf(Pair(-1, -1)) }
+//    Layout(
+//        content = {
+//            Box(modifier = Modifier.fillMaxSize()) {
+//                Text(
+//                    "Screen size: ${screenSize.value.first}x${screenSize.value.second}px",
+//                    modifier = Modifier.align(Alignment.Center)
+//                )
+//            }
+//        },
+//        measurePolicy = { measurables, constraints ->
+//            // Use the max width and height from the constraints
+//            val width = constraints.maxWidth
+//            val height = constraints.maxHeight
+//
+//            screenSize.value = Pair(width, height)
+//            //myLogger("Width: $width, height: $height")
+//
+//            // Measure and place children composables
+//            val placeables = measurables.map { measurable ->
+//                measurable.measure(constraints)
+//            }
+//
+//            layout(width, height) {
+//                var yPosition = 0
+//                placeables.forEach { placeable ->
+//                    placeable.placeRelative(x = 0, y = yPosition)
+//                    yPosition += placeable.height
+//                }
+//            }
+//        }
+//    )
+//}

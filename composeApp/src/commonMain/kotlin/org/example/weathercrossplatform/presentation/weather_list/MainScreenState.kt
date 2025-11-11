@@ -1,4 +1,4 @@
-package org.example.weathercrossplatform.presentation
+package org.example.weathercrossplatform.presentation.weather_list
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
@@ -23,7 +23,7 @@ import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.domain.actions.MainScreenActions
 import org.example.weathercrossplatform.domain.logger.MyLogger
-import org.example.weathercrossplatform.viewmodels.WeatherViewModel
+import org.example.weathercrossplatform.presentation.elements.ErrorScreen
 import org.koin.compose.viewmodel.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -123,15 +123,6 @@ fun MainScreenState(
 
                 val isCurrentLocation = savedCityList[pageNumber].isCurrentLocation
                 MainScreen(
-                    isLoading = weatherMainScreenState.isLoading,
-                    image = weatherMainScreenState.image,
-                    usEpaIndex = weatherMainScreenState.weatherDto?.current?.airQuality?.usEpaIndex,
-                    locationName = weatherMainScreenState.weatherDto?.location?.name,
-                    temp = weatherMainScreenState.weatherDto?.current?.tempC,
-                    condition = weatherMainScreenState.weatherDto?.current?.condition?.text,
-                    feelsLikeC = weatherMainScreenState.weatherDto?.current?.feelsLikeC.toString(),
-                    forecastList = weatherMainScreenState.weatherDto?.forecast?.forecastday,
-                    weatherItemList = weatherMainScreenState.weatherItemList,
                     onAddButtonClick = { onAddButtonClick(pageNumber) },
                     onCancelButtonClick = onCancelButtonClick,
                     onAddCityButtonClick = {
@@ -141,12 +132,10 @@ fun MainScreenState(
                             pagerState.scrollToPage(savedCityList.lastIndex)
                         }
                     },
-                    highTemp = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.maxTempC,
-                    lowTemp = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.minTempC,
                     savedCityList = savedCityList,
                     cityId = cityId ?: savedCityList[pageNumber].cityId,
-                    coordinates = "${weatherMainScreenState.weatherDto?.location?.lat},${weatherMainScreenState.weatherDto?.location?.lon}",
-                    isCurrentLocation = isCurrentLocation
+                    isCurrentLocation = isCurrentLocation,
+                    weatherMainScreenState = weatherMainScreenState,
                 )
             }
         }

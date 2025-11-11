@@ -3,7 +3,7 @@ package org.example.weathercrossplatform.previews
 import android.R
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import org.example.weathercrossplatform.presentation.ForecastRowItem
+import org.example.weathercrossplatform.presentation.elements.ForecastRowItem
 
 @Preview
 @Composable

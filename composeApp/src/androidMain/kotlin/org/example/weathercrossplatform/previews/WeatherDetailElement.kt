@@ -2,7 +2,7 @@ package org.example.weathercrossplatform.previews
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import org.example.weathercrossplatform.presentation.WeatherDetailElement
+import org.example.weathercrossplatform.presentation.elements.WeatherDetailElement
 
 @Preview
 @Composable

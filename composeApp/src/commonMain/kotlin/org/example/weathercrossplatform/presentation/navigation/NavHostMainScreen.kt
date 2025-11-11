@@ -1,4 +1,4 @@
-package org.example.weathercrossplatform.presentation
+package org.example.weathercrossplatform.presentation.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
@@ -9,6 +9,8 @@ import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Routes
 import org.example.weathercrossplatform.domain.models.Routes.MainScreenRoute
+import org.example.weathercrossplatform.presentation.search_weather.SearchScreenState
+import org.example.weathercrossplatform.presentation.weather_list.MainScreenState
 
 @Composable
 fun NavHostMainScreen(
@@ -33,7 +35,7 @@ fun NavHostMainScreen(
                 pageNumberFromSearchScreen = args.pageNumber
             )
         }
-        composable<Routes.SearchScreenRoute> { it ->
+        composable<Routes.SearchScreenRoute> {
             val args = it.toRoute<Routes.SearchScreenRoute>()
             SearchScreenState(
                 onBackButtonClick = { pageNumber ->

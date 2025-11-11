@@ -3,10 +3,7 @@ package org.example.weathercrossplatform
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.ui.unit.dp
-import androidx.core.view.WindowCompat
-import org.example.weathercrossplatform.presentation.InfiniteNumberPicker
+import org.example.weathercrossplatform.presentation.app.App
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

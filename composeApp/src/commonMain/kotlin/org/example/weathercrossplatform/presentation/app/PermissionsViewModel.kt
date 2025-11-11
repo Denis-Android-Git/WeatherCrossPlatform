@@ -1,4 +1,4 @@
-package org.example.weathercrossplatform.viewmodels
+package org.example.weathercrossplatform.presentation.app
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -33,9 +33,9 @@ class PermissionsViewModel(
             try {
                 permissionsController.providePermission(Permission.LOCATION)
                 state = PermissionState.Granted
-            } catch (e: DeniedAlwaysException) {
+            } catch (_: DeniedAlwaysException) {
                 state = PermissionState.DeniedAlways
-            } catch (e: DeniedException) {
+            } catch (_: DeniedException) {
                 state = PermissionState.Denied
             } catch (e: RequestCanceledException) {
                 e.printStackTrace()
