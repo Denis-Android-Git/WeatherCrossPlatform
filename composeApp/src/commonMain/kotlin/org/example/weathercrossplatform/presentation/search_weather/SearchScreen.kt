@@ -154,7 +154,13 @@ fun SearchScreen(
                         colors = SearchBarDefaults.inputFieldColors(
                             focusedTextColor = Color.White,
                             unfocusedTextColor = Color.White,
-                            cursorColor = Color.White
+                            cursorColor = Color.White,
+                            focusedContainerColor = Color.DarkGray,
+                            unfocusedContainerColor = Color.DarkGray,
+                            focusedPlaceholderColor = Color.White,
+                            unfocusedPlaceholderColor = Color.White,
+                            focusedTrailingIconColor = Color.White,
+                            unfocusedTrailingIconColor = Color.White
                         )
                     )
                 },
