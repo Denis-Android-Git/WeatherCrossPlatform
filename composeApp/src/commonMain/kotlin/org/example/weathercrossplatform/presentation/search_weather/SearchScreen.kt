@@ -1,15 +1,18 @@
 package org.example.weathercrossplatform.presentation.search_weather
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -38,6 +41,7 @@ import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Location
+import org.example.weathercrossplatform.domain.models.SearchScreenViewState
 import org.example.weathercrossplatform.presentation.elements.FoundItem
 import org.example.weathercrossplatform.presentation.elements.SavedElement
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -45,19 +49,16 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SearchScreen(
-    query: String,
+    searchScreenState: SearchScreenViewState,
     onBackButtonClick: () -> Unit,
     onQueryChange: (String) -> Unit,
-    expanded: Boolean,
     onExpandedChange: (Boolean) -> Unit,
     onSearch: (String) -> Unit,
     cityList: List<SavedWeatherItem>,
     allCitiesInOriginalOrder: List<SavedWeatherItem>,
-    locationList: List<Location>,
     onFoundItemClick: (Location) -> Unit,
     onLongClick: (SavedWeatherItem) -> Unit,
     onClick: (SavedWeatherItem) -> Unit,
-    tempListToDelete: List<SavedWeatherItem>,
     onDelete: () -> Unit,
     clearTempList: () -> Unit,
     onSavedItemClick: (Int) -> Unit,
@@ -68,13 +69,13 @@ fun SearchScreen(
     val scope = rememberCoroutineScope()
     Box(
         modifier = Modifier.fillMaxSize()
+            .background(color = Color.Black).padding(WindowInsets.systemBars.asPaddingValues())//padding between Box and systemBars
     ) {
         Column(
             modifier = Modifier.fillMaxSize()
-                .systemBarsPadding()
                 .padding(horizontal = 16.dp)
         ) {
-            AnimatedVisibility(!expanded && !isLongPressed.value) {
+            AnimatedVisibility(!searchScreenState.expanded && !isLongPressed.value) {
                 Column {
                     IconButton(
                         onClick = onBackButtonClick
@@ -103,7 +104,7 @@ fun SearchScreen(
                         )
                     }
                     Text(
-                        text = "Выбрано ${tempListToDelete.size}",
+                        text = "Выбрано ${searchScreenState.tempListToDelete.size}",
                         color = Color.White,
                         fontSize = 24.sp
                     )
@@ -119,7 +120,7 @@ fun SearchScreen(
                 ),
                 inputField = {
                     SearchBarDefaults.InputField(
-                        query = query,
+                        query = searchScreenState.searchQuery,
                         onQueryChange = {
                             myLogger.debug("onQueryChange: $it")
                             onQueryChange(it)
@@ -127,7 +128,7 @@ fun SearchScreen(
                         onSearch = {
                             onSearch(it)
                         },
-                        expanded = expanded,
+                        expanded = searchScreenState.expanded,
                         onExpandedChange = {
                             onExpandedChange(it)
                         },
@@ -135,7 +136,7 @@ fun SearchScreen(
                             Text(text = "Введите название города")
                         },
                         leadingIcon = {
-                            AnimatedVisibility(!expanded) {
+                            AnimatedVisibility(!searchScreenState.expanded) {
                                 Icon(
                                     imageVector = Icons.Default.Search,
                                     contentDescription = "Search"
@@ -143,10 +144,12 @@ fun SearchScreen(
                             }
                         },
                         trailingIcon = {
-                            AnimatedVisibility(expanded) {
+                            AnimatedVisibility(searchScreenState.expanded) {
                                 Text(
                                     text = "Отмена",
-                                    modifier = Modifier.clickable {
+                                    modifier = Modifier
+                                        .padding(end = 16.dp)
+                                        .clickable {
                                         onExpandedChange(false)
                                     })
                             }
@@ -164,7 +167,7 @@ fun SearchScreen(
                         )
                     )
                 },
-                expanded = expanded,
+                expanded = searchScreenState.expanded,
                 onExpandedChange = {
                     onExpandedChange(it)
                 }
@@ -173,7 +176,7 @@ fun SearchScreen(
                     verticalArrangement = Arrangement.spacedBy(8.dp),
                     contentPadding = PaddingValues(0.dp, 8.dp, 0.dp, 0.dp)
                 ) {
-                    items(locationList) {
+                    items(searchScreenState.cityList) {
                         FoundItem(
                             city = it.name,
                             country = it.country,
@@ -224,7 +227,7 @@ fun SearchScreen(
                             }
                         },
                         isLongPressed = isLongPressed.value,
-                        isListContainsElement = tempListToDelete.contains(savedCity),
+                        isListContainsElement = searchScreenState.tempListToDelete.contains(savedCity),
                         isCurrentLocation = savedCity.isCurrentLocation
                     )
                 }
@@ -262,10 +265,8 @@ fun SearchScreen(
 @Composable
 fun Preview() {
     SearchScreen(
-        query = "good",
         onBackButtonClick = { },
         onQueryChange = {},
-        expanded = false,
         onExpandedChange = {},
         onSearch = {},
         cityList = listOf(
@@ -290,14 +291,13 @@ fun Preview() {
                 isCurrentLocation = false
             )
         ),
-        locationList = emptyList(),
         onFoundItemClick = {},
         onLongClick = {},
         onClick = {},
-        tempListToDelete = emptyList(),
         onDelete = { },
         clearTempList = {},
         onSavedItemClick = {},
-        allCitiesInOriginalOrder = emptyList()
+        allCitiesInOriginalOrder = emptyList(),
+        searchScreenState = SearchScreenViewState(),
     )
 }
