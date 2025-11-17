@@ -54,7 +54,9 @@ fun MainScreenState(
         }
 
     }
-    val pagerState = rememberPagerState(pageCount = { savedCityList.size })
+    val pagerState = rememberPagerState(
+        initialPage = pageNumberFromSearchScreen ?: 0,
+        pageCount = { savedCityList.size })
     val scope = rememberCoroutineScope()
     var currentPageNumber by remember {
         mutableStateOf(0)
@@ -73,19 +75,12 @@ fun MainScreenState(
     LaunchedEffect(pageNumberFromSearchScreen) {
         myLogger.debug("pageNumber= $pageNumberFromSearchScreen")
         if (pageNumberFromSearchScreen != null) {
-            myLogger.debug("pageNumber= in let $pageNumberFromSearchScreen")
             delay(50)
             if (savedCityList.isNotEmpty()) {
                 if (pageNumberFromSearchScreen in savedCityList.indices) {
                     weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(savedCityList[pageNumberFromSearchScreen].coordinates))
-                    scope.launch {
-                        pagerState.scrollToPage(pageNumberFromSearchScreen)
-                    }
                 } else {
                     weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(savedCityList[0].coordinates))
-                    scope.launch {
-                        pagerState.scrollToPage(0)
-                    }
                 }
             }
         }
@@ -96,6 +91,7 @@ fun MainScreenState(
             if (savedCityList.isNotEmpty()) {
                 currentPageNumber = pageNumber
                 myLogger.debug("pageNumber= in pagerState $currentPageNumber")
+                myLogger.debug("fun_GetWeatherByQuery, LaunchedEffect pagerState")
                 weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(savedCityList[pageNumber].coordinates))
             }
         }

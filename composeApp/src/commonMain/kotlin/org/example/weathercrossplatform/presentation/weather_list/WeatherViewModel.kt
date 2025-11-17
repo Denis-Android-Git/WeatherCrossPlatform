@@ -56,6 +56,7 @@ class WeatherViewModel(
             is MainScreenActions.SetCityId -> setCityId(actions.cityId)
             is MainScreenActions.AddCity -> addCity(actions.city)
             is MainScreenActions.GetWeatherByQuery -> {
+                myLogger.debug("fun_GetWeatherByQuery, MainScreenActions.GetWeatherByQuery")
                 viewModelScope.launch {
                     getWeatherByQuery(actions.query)
                 }
@@ -79,11 +80,12 @@ class WeatherViewModel(
                 coordinates.collect { coordinates ->
                     coordinates?.let {
                         val query = "${it.latitude},${it.longitude}"
+                        myLogger.debug("fun_GetWeatherByQuery, init cityId == null")
                         getWeatherByQuery(query, it.latitude, it.longitude)
                     }
                 }
             } else {
-                myLogger.debug("cityId not null")
+                myLogger.debug("fun_GetWeatherByQuery, init cityId not null")
                 getWeatherByQuery("id:${_weatherScreenState.value.cityId}")
             }
         }
