@@ -4,10 +4,8 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
@@ -29,6 +27,15 @@ class SearchViewModel(
     private val pageNum = savedStateHandle.get<Int>("pageNumber") ?: 0
     private val _searchScreenState = MutableStateFlow(SearchScreenViewState())
     val searchScreenState = _searchScreenState.asStateFlow()
+    private val allCitiesInOriginalOrder = dataBaseRepo.getWeatherList()
+    private val allCities = dataBaseRepo.getWeatherList()
+        .map { list ->
+            if (list.size <= 1) {
+                list
+            } else {
+                listOf(list.first()) + list.drop(1).reversed()
+            }
+        }
 
     init {
         viewModelScope.launch {
@@ -39,27 +46,25 @@ class SearchViewModel(
                 )
             }
         }
-    }
-
-    val allCitiesInOriginalOrder = dataBaseRepo.getWeatherList()
-        .stateIn(
-            viewModelScope,
-            SharingStarted.WhileSubscribed(5000),
-            initialValue = emptyList()
-        )
-    val allCities = dataBaseRepo.getWeatherList()
-        .map { list ->
-            if (list.size <= 1) {
-                list
-            } else {
-                listOf(list.first()) + list.drop(1).reversed()
+        viewModelScope.launch {
+            allCitiesInOriginalOrder.collect { allCitiesInOriginalOrderList ->
+                _searchScreenState.update {
+                    it.copy(
+                        allCitiesInOriginalOrder = allCitiesInOriginalOrderList
+                    )
+                }
             }
         }
-        .stateIn(
-            viewModelScope,
-            SharingStarted.WhileSubscribed(5000),
-            initialValue = emptyList()
-        )
+        viewModelScope.launch {
+            allCities.collect { allCitiesList ->
+                _searchScreenState.update {
+                    it.copy(
+                        allCities = allCitiesList
+                    )
+                }
+            }
+        }
+    }
 
     fun onAction(action: SearchScreenActions) {
         when (action) {

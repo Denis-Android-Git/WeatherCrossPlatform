@@ -9,5 +9,7 @@ data class SearchScreenViewState(
     val cityList: List<Location> = emptyList(),
     val error: String? = null,
     val tempListToDelete: List<SavedWeatherItem> = emptyList(),
-    val pageNumber: Int? = null
+    val pageNumber: Int? = null,
+    val allCitiesInOriginalOrder: List<SavedWeatherItem> = emptyList(),
+    val allCities: List<SavedWeatherItem> = emptyList()
 )

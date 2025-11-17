@@ -19,8 +19,6 @@ fun SearchScreenState(
 
     val scope = rememberCoroutineScope()
     val searchScreenState by searchViewModel.searchScreenState.collectAsStateWithLifecycle()
-    val cityList by searchViewModel.allCities.collectAsStateWithLifecycle()
-    val allCitiesInOriginalOrder by searchViewModel.allCitiesInOriginalOrder.collectAsStateWithLifecycle()
 
     SearchScreen(
         onBackButtonClick = { onBackButtonClick(searchScreenState.pageNumber) },
@@ -34,7 +32,7 @@ fun SearchScreenState(
         onSearch = {
             searchViewModel.onAction(SearchScreenActions.SearchCities(it))
         },
-        cityList = cityList,
+        cityList = searchScreenState.allCities,
         onFoundItemClick = onFoundItemClick,
         onLongClick = {
             scope.launch {
@@ -55,7 +53,7 @@ fun SearchScreenState(
         onSavedItemClick = {
             onSavedItemClick(it)
         },
-        allCitiesInOriginalOrder = allCitiesInOriginalOrder,
+        allCitiesInOriginalOrder = searchScreenState.allCitiesInOriginalOrder,
         searchScreenState = searchScreenState,
     )
 }
