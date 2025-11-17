@@ -156,7 +156,7 @@ class WeatherViewModel(
 
                     weatherRepoImpl.getImageList(imageQuery)
                         .onSuccess { imageList ->
-                            val image = imageList.results.take(30).random().urls.regular
+                            val image = imageList.results.take(30).random().urls.small
                             _weatherScreenState.value = _weatherScreenState.value.copy(
                                 image = image,
                                 isLoading = false,
