@@ -14,7 +14,6 @@ fun SearchScreenState(
     searchViewModel: SearchViewModel = koinViewModel(),
     onBackButtonClick: (Int?) -> Unit,
     onFoundItemClick: (Location) -> Unit,
-    pageNumber: Int?,
     onSavedItemClick: (Int) -> Unit
 ) {
 
@@ -22,10 +21,9 @@ fun SearchScreenState(
     val searchScreenState by searchViewModel.searchScreenState.collectAsStateWithLifecycle()
     val cityList by searchViewModel.allCities.collectAsStateWithLifecycle()
     val allCitiesInOriginalOrder by searchViewModel.allCitiesInOriginalOrder.collectAsStateWithLifecycle()
-    searchViewModel.pageNumber = pageNumber
 
     SearchScreen(
-        onBackButtonClick = { onBackButtonClick(searchViewModel.pageNumber) },
+        onBackButtonClick = { onBackButtonClick(searchScreenState.pageNumber) },
         onQueryChange = {
             searchViewModel.onAction(SearchScreenActions.SetSearchQuery(it))
         },

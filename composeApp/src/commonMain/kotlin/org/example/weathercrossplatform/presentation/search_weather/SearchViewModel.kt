@@ -1,8 +1,5 @@
 package org.example.weathercrossplatform.presentation.search_weather
 
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -30,14 +27,19 @@ class SearchViewModel(
 ) : ViewModel() {
 
     private val pageNum = savedStateHandle.get<Int>("pageNumber") ?: 0
-
-    init {
-        myLogger.debug("SearchViewModel_pageNum = $pageNum")
-    }
     private val _searchScreenState = MutableStateFlow(SearchScreenViewState())
     val searchScreenState = _searchScreenState.asStateFlow()
 
-    var pageNumber by mutableStateOf<Int?>(null)
+    init {
+        viewModelScope.launch {
+            myLogger.debug("SearchViewModel_pageNum = $pageNum")
+            _searchScreenState.update {
+                it.copy(
+                    pageNumber = pageNum
+                )
+            }
+        }
+    }
 
     val allCitiesInOriginalOrder = dataBaseRepo.getWeatherList()
         .stateIn(

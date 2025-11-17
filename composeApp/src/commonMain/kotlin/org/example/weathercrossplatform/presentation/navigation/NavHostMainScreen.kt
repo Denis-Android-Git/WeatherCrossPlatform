@@ -36,7 +36,6 @@ fun NavHostMainScreen(
             )
         }
         composable<Routes.SearchScreenRoute> {
-            val args = it.toRoute<Routes.SearchScreenRoute>()
             SearchScreenState(
                 onBackButtonClick = { pageNumber ->
                     navController.navigate(MainScreenRoute(pageNumber = pageNumber))
@@ -45,7 +44,6 @@ fun NavHostMainScreen(
                     navController.navigate(MainScreenRoute(location.id))
                     myLogger.debug("location_id: ${location.id}")
                 },
-                pageNumber = args.pageNumber,
                 onSavedItemClick = { pageNumber ->
                     myLogger.debug("page_number: $pageNumber")
                     navController.navigate(MainScreenRoute(pageNumber = pageNumber))
