@@ -25,7 +25,10 @@ fun NavHostMainScreen(
             myLogger.debug("pageNumber_args: ${args.pageNumber}")
             MainScreenState(
                 onAddButtonClick = { pageNumber ->
-                    navController.navigate(Routes.SearchScreenRoute(pageNumber))
+                    navController.navigate(Routes.SearchScreenRoute(pageNumber)) {
+                        restoreState = true
+                        launchSingleTop = true
+                    }
                 },
                 cityId = args.cityId,
                 onCancelButtonClick = {
@@ -46,7 +49,14 @@ fun NavHostMainScreen(
                 },
                 onSavedItemClick = { pageNumber ->
                     myLogger.debug("page_number: $pageNumber")
-                    navController.navigate(MainScreenRoute(pageNumber = pageNumber))
+                    navController.navigate(MainScreenRoute(pageNumber = pageNumber)) {
+                        popUpTo<Routes.SearchScreenRoute> {
+                            inclusive = true
+                            saveState = true
+                        }
+                        launchSingleTop = true
+                        restoreState = true
+                    }
                 }
             )
         }
