@@ -25,17 +25,13 @@ fun NavHostMainScreen(
             myLogger.debug("pageNumber_args: ${args.pageNumber}")
             MainScreenState(
                 onAddButtonClick = { pageNumber ->
-                    navController.navigate(Routes.SearchScreenRoute(pageNumber)) {
-                        restoreState = true
-                        launchSingleTop = true
-                    }
+                    navController.navigate(Routes.SearchScreenRoute(pageNumber))
                 },
                 cityId = args.cityId,
                 onCancelButtonClick = {
                     navController.navigateUp()
                 },
                 isFirstLaunch = isFirstLaunch,
-                pageNumberFromSearchScreen = args.pageNumber
             )
         }
         composable<Routes.SearchScreenRoute> {
@@ -52,10 +48,7 @@ fun NavHostMainScreen(
                     navController.navigate(MainScreenRoute(pageNumber = pageNumber)) {
                         popUpTo<Routes.SearchScreenRoute> {
                             inclusive = true
-                            saveState = true
                         }
-                        launchSingleTop = true
-                        restoreState = true
                     }
                 }
             )

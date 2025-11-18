@@ -1,5 +1,6 @@
 package org.example.weathercrossplatform.domain.models
 
+import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.network.dto.ForecastDto
 
 data class WeatherMainScreenState(
@@ -9,5 +10,7 @@ data class WeatherMainScreenState(
     val image: String = "",
     val weatherItemList: List<WeatherItem> = emptyList(),
     val cityId: Int? = null,
-    val isAddCity: Boolean = false
+    val isAddCity: Boolean = false,
+    val savedCities: List<SavedWeatherItem> = emptyList(),
+    val pageNumberFromSearchScreen: Int? = null
 )

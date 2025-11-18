@@ -1,14 +1,13 @@
 package org.example.weathercrossplatform.presentation.weather_list
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
@@ -28,26 +27,40 @@ class WeatherViewModel(
     private val locationService: LocationService,
     private val weatherRepoImpl: WeatherRepoImpl,
     private val dataBaseRepo: DataBaseRepo,
-    private val myLogger: MyLogger
+    private val myLogger: MyLogger,
+    savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
+    private val pageNumberFromSearchScreen = savedStateHandle.get<Int>("pageNumber")
     private val coordinates = MutableStateFlow<Coordinates?>(null)
-
     private val _weatherScreenState = MutableStateFlow(WeatherMainScreenState())
     val weatherScreenState = _weatherScreenState.asStateFlow()
+    private val allCities = dataBaseRepo.getWeatherList()
 
-    val allCities = dataBaseRepo.getWeatherList()
-        .stateIn(
-            viewModelScope,
-            SharingStarted.WhileSubscribed(5000),
-            initialValue = emptyList()
-        )
-
-//    init {
-//        myLogger("init_WeatherViewModel")
-//        refreshPosition()
-//        init()
-//    }
+    init {
+        viewModelScope.launch {
+            myLogger.debug("pageNumberFromSearchScreen = $pageNumberFromSearchScreen")
+            _weatherScreenState.update {
+                it.copy(
+                    pageNumberFromSearchScreen = pageNumberFromSearchScreen
+                )
+            }
+        }
+        viewModelScope.launch {
+            allCities.collect { savedCities ->
+                _weatherScreenState.update {
+                    it.copy(
+                        savedCities = savedCities
+                    )
+                }
+                pageNumberFromSearchScreen?.let {
+                    if (it in savedCities.indices) {
+                        getWeatherByQuery(savedCities[it].coordinates)
+                    }
+                }
+            }
+        }
+    }
 
     fun onAction(actions: MainScreenActions) {
         when (actions) {

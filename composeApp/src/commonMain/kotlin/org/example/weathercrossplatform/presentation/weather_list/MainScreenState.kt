@@ -27,7 +27,6 @@ import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun MainScreenState(
-    pageNumberFromSearchScreen: Int?,
     isFirstLaunch: Boolean,
     cityId: Int?,
     onAddButtonClick: (Int) -> Unit,
@@ -45,18 +44,10 @@ fun MainScreenState(
     }
 
     val weatherMainScreenState by weatherViewModel.weatherScreenState.collectAsStateWithLifecycle()
-    val savedCityList by weatherViewModel.allCities.collectAsStateWithLifecycle()
 
-    if (savedCityList.isNotEmpty()) {
-        myLogger.debug("Saved cities count: ${savedCityList.size}")
-        savedCityList.forEachIndexed { index, city ->
-            myLogger.debug("Saved cities #$index: $city")
-        }
-
-    }
     val pagerState = rememberPagerState(
-        initialPage = pageNumberFromSearchScreen ?: 0,
-        pageCount = { savedCityList.size })
+        initialPage = weatherMainScreenState.pageNumberFromSearchScreen ?: 0,
+        pageCount = { weatherMainScreenState.savedCities.size })
     val scope = rememberCoroutineScope()
     var currentPageNumber by remember {
         mutableStateOf(0)
@@ -72,27 +63,13 @@ fun MainScreenState(
         }
     }
 
-    LaunchedEffect(pageNumberFromSearchScreen) {
-        myLogger.debug("pageNumber= $pageNumberFromSearchScreen")
-        if (pageNumberFromSearchScreen != null) {
-            delay(50)
-            if (savedCityList.isNotEmpty()) {
-                if (pageNumberFromSearchScreen in savedCityList.indices) {
-                    weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(savedCityList[pageNumberFromSearchScreen].coordinates))
-                } else {
-                    weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(savedCityList[0].coordinates))
-                }
-            }
-        }
-    }
-
     LaunchedEffect(pagerState) {
         snapshotFlow { pagerState.currentPage }.collect { pageNumber ->
-            if (savedCityList.isNotEmpty()) {
+            if (weatherMainScreenState.savedCities.isNotEmpty()) {
                 currentPageNumber = pageNumber
-                myLogger.debug("pageNumber= in pagerState $currentPageNumber")
+                myLogger.debug("fun_GetWeatherByQuery, pageNumber= in pagerState $currentPageNumber")
                 myLogger.debug("fun_GetWeatherByQuery, LaunchedEffect pagerState")
-                weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(savedCityList[pageNumber].coordinates))
+                weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(weatherMainScreenState.savedCities[pageNumber].coordinates))
             }
         }
     }
@@ -108,14 +85,14 @@ fun MainScreenState(
         ),
         isRefreshing = weatherMainScreenState.isLoading,
         onRefresh = {
-            weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(savedCityList[currentPageNumber].coordinates))
+            weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(weatherMainScreenState.savedCities[currentPageNumber].coordinates))
         },
     ) {
         if (weatherMainScreenState.weatherDto?.location?.name != null) {
 
             HorizontalPager(state = pagerState) { pageNumber ->
 
-                val isCurrentLocation = savedCityList[pageNumber].isCurrentLocation
+                val isCurrentLocation = weatherMainScreenState.savedCities[pageNumber].isCurrentLocation
                 MainScreen(
                     onAddButtonClick = { onAddButtonClick(pageNumber) },
                     onCancelButtonClick = onCancelButtonClick,
@@ -123,11 +100,11 @@ fun MainScreenState(
                         weatherViewModel.onAction(MainScreenActions.AddCity(it))
                         scope.launch {
                             delay(150)
-                            pagerState.scrollToPage(savedCityList.lastIndex)
+                            pagerState.scrollToPage(weatherMainScreenState.savedCities.lastIndex)
                         }
                     },
-                    savedCityList = savedCityList,
-                    cityId = cityId ?: savedCityList[pageNumber].cityId,
+                    savedCityList = weatherMainScreenState.savedCities,
+                    cityId = cityId ?: weatherMainScreenState.savedCities[pageNumber].cityId,
                     isCurrentLocation = isCurrentLocation,
                     weatherMainScreenState = weatherMainScreenState,
                 )
