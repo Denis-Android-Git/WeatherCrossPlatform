@@ -4,7 +4,6 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.toRoute
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Routes
@@ -21,13 +20,12 @@ fun NavHostMainScreen(
 
     NavHost(navController = navController, startDestination = MainScreenRoute()) {
         composable<MainScreenRoute> {
-            val args = it.toRoute<MainScreenRoute>()
-            myLogger.debug("pageNumber_args: ${args.pageNumber}")
             MainScreenState(
                 onAddButtonClick = { pageNumber ->
-                    navController.navigate(Routes.SearchScreenRoute(pageNumber))
+                    navController.navigate(Routes.SearchScreenRoute(pageNumber)) {
+                        launchSingleTop = true
+                    }
                 },
-                cityId = args.cityId,
                 onCancelButtonClick = {
                     navController.navigateUp()
                 },

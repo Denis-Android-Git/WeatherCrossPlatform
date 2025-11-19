@@ -28,7 +28,6 @@ import org.koin.compose.viewmodel.koinViewModel
 @Composable
 fun MainScreenState(
     isFirstLaunch: Boolean,
-    cityId: Int?,
     onAddButtonClick: (Int) -> Unit,
     onCancelButtonClick: () -> Unit,
     myLogger: MyLogger = MyLoggerImpl,
@@ -51,16 +50,6 @@ fun MainScreenState(
     val scope = rememberCoroutineScope()
     var currentPageNumber by remember {
         mutableStateOf(0)
-    }
-    LaunchedEffect(cityId) {
-        myLogger.debug("LaunchedEffect: cityId = $cityId")
-        cityId?.let {
-            weatherViewModel.onAction(MainScreenActions.SetCityId(it))
-            delay(50)
-            weatherViewModel.onAction(MainScreenActions.Init)
-            delay(50)
-            weatherViewModel.onAction(MainScreenActions.SetCityId(null))
-        }
     }
 
     LaunchedEffect(pagerState) {
@@ -97,14 +86,14 @@ fun MainScreenState(
                     onAddButtonClick = { onAddButtonClick(pageNumber) },
                     onCancelButtonClick = onCancelButtonClick,
                     onAddCityButtonClick = {
-                        weatherViewModel.onAction(MainScreenActions.AddCity(it))
                         scope.launch {
+                            weatherViewModel.onAction(MainScreenActions.AddCity(it))
                             delay(150)
                             pagerState.scrollToPage(weatherMainScreenState.savedCities.lastIndex)
                         }
                     },
                     savedCityList = weatherMainScreenState.savedCities,
-                    cityId = cityId ?: weatherMainScreenState.savedCities[pageNumber].cityId,
+                    cityId = weatherMainScreenState.cityId ?: weatherMainScreenState.savedCities[pageNumber].cityId,
                     isCurrentLocation = isCurrentLocation,
                     weatherMainScreenState = weatherMainScreenState,
                 )

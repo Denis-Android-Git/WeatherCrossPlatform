@@ -8,6 +8,7 @@ import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
@@ -32,6 +33,14 @@ class WeatherViewModel(
 ) : ViewModel() {
 
     private val pageNumberFromSearchScreen = savedStateHandle.get<Int>("pageNumber")
+    private val cityIdFromSearchScreen = savedStateHandle.get<Int>("cityId")
+
+    init {
+        cityIdFromSearchScreen?.let {
+            setCityId(it)
+        }
+    }
+
     private val coordinates = MutableStateFlow<Coordinates?>(null)
     private val _weatherScreenState = MutableStateFlow(WeatherMainScreenState())
     val weatherScreenState = _weatherScreenState.asStateFlow()
@@ -40,6 +49,8 @@ class WeatherViewModel(
     init {
         viewModelScope.launch {
             myLogger.debug("pageNumberFromSearchScreen = $pageNumberFromSearchScreen")
+            myLogger.debug("cityIdFromSearchScreen = $cityIdFromSearchScreen")
+
             _weatherScreenState.update {
                 it.copy(
                     pageNumberFromSearchScreen = pageNumberFromSearchScreen
@@ -47,17 +58,40 @@ class WeatherViewModel(
             }
         }
         viewModelScope.launch {
-            allCities.collect { savedCities ->
+            allCities.collectLatest { savedCities ->
                 _weatherScreenState.update {
                     it.copy(
                         savedCities = savedCities
                     )
                 }
-                pageNumberFromSearchScreen?.let {
-                    if (it in savedCities.indices) {
-                        getWeatherByQuery(savedCities[it].coordinates)
-                    }
+            }
+        }
+    }
+
+    init {
+        viewModelScope.launch {
+            myLogger.debug("getWeatherByQuery in pageNumberFromSearchScreen let block = $pageNumberFromSearchScreen")
+            pageNumberFromSearchScreen?.let {
+                val savedCities = allCities.firstOrNull() ?: emptyList()
+                myLogger.debug(
+                    "getWeatherByQuery savedCities = ${
+                        savedCities.joinToString("\n") { item ->
+                            item.cityName
+                        }
+                    }"
+                )
+                if (it in savedCities.indices) {
+                    getWeatherByQuery(savedCities[it].coordinates)
                 }
+            }
+        }
+    }
+
+    init {
+        viewModelScope.launch {
+            weatherScreenState.value.cityId?.let { cityId ->
+                myLogger.debug("getWeatherByQuery in let block")
+                getWeatherByQuery("id:$cityId")
             }
         }
     }
