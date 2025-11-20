@@ -49,10 +49,12 @@ class WeatherRepoImpl(
 
     override suspend fun getImageList(query: String): Result<ImageListDto, NetworkError> {
 
+        val randomPage = (1..100).random().toString()
         val queryParams = mapOf(
             "client_id" to BuildKonfig.API_KEY2,
             "query" to query,
-            "orientation" to "portrait"
+            "orientation" to "portrait",
+            "page" to randomPage
         )
 
         return httpClient.getImage<ImageListDto>(

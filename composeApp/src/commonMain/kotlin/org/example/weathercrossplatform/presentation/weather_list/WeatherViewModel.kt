@@ -73,13 +73,7 @@ class WeatherViewModel(
             myLogger.debug("getWeatherByQuery in pageNumberFromSearchScreen let block = $pageNumberFromSearchScreen")
             pageNumberFromSearchScreen?.let {
                 val savedCities = allCities.firstOrNull() ?: emptyList()
-                myLogger.debug(
-                    "getWeatherByQuery savedCities = ${
-                        savedCities.joinToString("\n") { item ->
-                            item.cityName
-                        }
-                    }"
-                )
+                myLogger.debug("getWeatherByQuery savedCities = ${savedCities.joinToString("\n") { item -> item.cityName }}")
                 if (it in savedCities.indices) {
                     getWeatherByQuery(savedCities[it].coordinates)
                 }
@@ -196,6 +190,7 @@ class WeatherViewModel(
                         "Местами грозы" -> "thunderstorm"
                         "Небольшой дождь со снегом" -> "rain and snow"
                         "Пасмурно" -> "overcast"
+                        "Дымка" -> "mist"
                         else -> weather.current.condition.text
                     }
 
@@ -203,7 +198,8 @@ class WeatherViewModel(
 
                     weatherRepoImpl.getImageList(imageQuery)
                         .onSuccess { imageList ->
-                            val image = imageList.results.take(30).random().urls.small
+                            myLogger.debug("imageList=${imageList.results.size}")
+                            val image = imageList.results.random().urls.small
                             _weatherScreenState.value = _weatherScreenState.value.copy(
                                 image = image,
                                 isLoading = false,
