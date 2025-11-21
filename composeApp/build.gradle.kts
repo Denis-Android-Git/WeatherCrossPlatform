@@ -1,4 +1,5 @@
 import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
+import io.kotzilla.gradle.ext.KotzillaKeyGeneration
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import java.util.Properties
 
@@ -13,7 +14,7 @@ plugins {
     alias(libs.plugins.crashlytics)
     alias(libs.plugins.ksp)
     alias(libs.plugins.room)
-    //alias(libs.plugins.kotzilla)
+    alias(libs.plugins.kotzilla)
 
 }
 
@@ -78,11 +79,11 @@ kotlin {
             //implementation(libs.kotzilla.sdk.compose)
 
         }
-//        kotzilla {
-//            versionName = "1.1" // add your app version name
-//            keyGeneration = KotzillaKeyGeneration.COMPOSE
-//            composeInstrumentation = true
-//        }
+        kotzilla {
+            versionName = "0.9.31" // add your app version name
+            keyGeneration = KotzillaKeyGeneration.COMPOSE
+            composeInstrumentation = true
+        }
         nativeMain.dependencies {
             implementation(libs.ktor.client.darwin)
         }
