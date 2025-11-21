@@ -10,6 +10,6 @@ plugins {
     alias(libs.plugins.buildkonfig) apply false
     alias(libs.plugins.google.services) apply false
     alias(libs.plugins.crashlytics) apply false
-    //alias(libs.plugins.kotzilla) apply false
+    alias(libs.plugins.kotzilla) apply false
 
 }

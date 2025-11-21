@@ -76,7 +76,7 @@ kotlin {
             implementation(libs.material.icons.core)
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.touchlab.kermit)
-            //implementation(libs.kotzilla.sdk.compose)
+            implementation(libs.kotzilla.sdk.compose)
 
         }
         kotzilla {
