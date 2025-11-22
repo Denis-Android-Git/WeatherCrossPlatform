@@ -22,6 +22,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import org.example.weathercrossplatform.domain.models.Forecastday
+import org.jetbrains.compose.resources.stringResource
+import weathercrossplatform.composeapp.generated.resources.Res
+import weathercrossplatform.composeapp.generated.resources._3_day_forecast
+import weathercrossplatform.composeapp.generated.resources.today
+import weathercrossplatform.composeapp.generated.resources.tomorrow
 
 @Composable
 fun ForecastElement(
@@ -45,7 +50,7 @@ fun ForecastElement(
                 tint = Color.LightGray,
                 modifier = Modifier.size(15.dp)
             )
-            Text(text = "Прогноз на 3 дня", color = Color.LightGray)
+            Text(text = stringResource(Res.string._3_day_forecast), color = Color.LightGray)
         }
         LazyColumn(
             modifier = Modifier.padding(horizontal = 16.dp),
@@ -54,8 +59,8 @@ fun ForecastElement(
             itemsIndexed(forecastList) { index, it ->
                 ForecastItem(
                     date = when (index) {
-                        0 -> "Сегодня"
-                        1 -> "Завтра"
+                        0 -> stringResource(Res.string.today)
+                        1 -> stringResource(Res.string.tomorrow)
                         else -> it.date
                     },
                     low = it.day.minTempC.toString(),

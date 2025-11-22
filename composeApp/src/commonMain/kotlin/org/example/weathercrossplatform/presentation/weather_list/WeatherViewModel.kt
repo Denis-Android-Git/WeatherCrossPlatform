@@ -14,8 +14,10 @@ import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.locationservice.LocationService
 import org.example.weathercrossplatform.data.repo_impl.WeatherRepoImpl
+import org.example.weathercrossplatform.data.utils.UiText
 import org.example.weathercrossplatform.data.utils.onError
 import org.example.weathercrossplatform.data.utils.onSuccess
+import org.example.weathercrossplatform.data.utils.toUiText
 import org.example.weathercrossplatform.domain.actions.MainScreenActions
 import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Coordinates
@@ -223,12 +225,14 @@ class WeatherViewModel(
                                 isLoading = false,
                                 weatherDto = weather,
                                 weatherItemList = weatherItemList,
-                                error = ""
+                                error = null
                             )
                         }
-                        .onError { error ->
+                        .onError { networkError ->
+                            val error = networkError.toUiText()
+
                             _weatherScreenState.value = _weatherScreenState.value.copy(
-                                error = error.name,
+                                error = error,
                                 isLoading = false,
                                 weatherDto = weather,
                                 weatherItemList = weatherItemList
@@ -236,15 +240,16 @@ class WeatherViewModel(
                         }
                 }
                 .onError { networkError ->
+                    val error = networkError.toUiText()
                     _weatherScreenState.value = _weatherScreenState.value.copy(
                         isLoading = false,
-                        error = networkError.name
+                        error = error
                     )
                 }
         } catch (e: Exception) {
             _weatherScreenState.value = _weatherScreenState.value.copy(
                 isLoading = false,
-                error = e.message.toString()
+                error = UiText.DynamicString(e.message ?: "Unknown error")
             )
         }
     }

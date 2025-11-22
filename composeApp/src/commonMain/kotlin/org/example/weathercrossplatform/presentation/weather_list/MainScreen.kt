@@ -45,13 +45,26 @@ import coil3.compose.AsyncImage
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.data.utils.GetScreenHeight
+import org.example.weathercrossplatform.data.utils.toUiText
 import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 import org.example.weathercrossplatform.presentation.elements.ForecastElement
 import org.example.weathercrossplatform.presentation.elements.HourForecastElement
 import org.example.weathercrossplatform.presentation.elements.WeatherDetailElement
+import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
+import weathercrossplatform.composeapp.generated.resources.Res
+import weathercrossplatform.composeapp.generated.resources.add
+import weathercrossplatform.composeapp.generated.resources.air_quality
+import weathercrossplatform.composeapp.generated.resources.air_quality_level_1
+import weathercrossplatform.composeapp.generated.resources.air_quality_level_2
+import weathercrossplatform.composeapp.generated.resources.air_quality_level_3
+import weathercrossplatform.composeapp.generated.resources.air_quality_level_4
+import weathercrossplatform.composeapp.generated.resources.air_quality_level_5
+import weathercrossplatform.composeapp.generated.resources.air_quality_level_6
+import weathercrossplatform.composeapp.generated.resources.cancel
+import weathercrossplatform.composeapp.generated.resources.feels_like
 
 @Composable
 fun MainScreen(
@@ -67,15 +80,7 @@ fun MainScreen(
 
     val textColor by remember { mutableStateOf(Color.White) }
     val airQualityText by rememberUpdatedState(
-        newValue = when (weatherMainScreenState.weatherDto?.current?.airQuality?.usEpaIndex) {
-            1 -> "Хорошо"
-            2 -> "Умеренно"
-            3 -> "Плохое для чувствительных групп"
-            4 -> "Плохое"
-            5 -> "Очень Плохое"
-            6 -> "Опасно"
-            else -> ""
-        }
+        newValue = weatherMainScreenState.weatherDto?.current?.airQuality?.usEpaIndex?.toUiText()
     )
 
     Box(
@@ -161,7 +166,7 @@ fun MainScreen(
                     ) {
                         Text(
                             modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 2.dp),
-                            text = "Ощущается ${weatherMainScreenState.weatherDto?.current?.feelsLikeC} ℃", color = textColor
+                            text = "${stringResource(Res.string.feels_like)} ${weatherMainScreenState.weatherDto?.current?.feelsLikeC} ℃", color = textColor
                         )
                         Text(
                             modifier = Modifier.padding(start = 16.dp, bottom = 2.dp, end = 16.dp),
@@ -184,19 +189,21 @@ fun MainScreen(
                             )
                         ) {
                             Text(
-                                text = "Качество воздуха: ", color = textColor
+                                text = stringResource(Res.string.air_quality), color = textColor
                             )
-                            Text(
-                                text = airQualityText, color = when (airQualityText) {
-                                    "Хорошо" -> Color.Green
-                                    "Умеренно" -> Color(0xff47e6d0)
-                                    "Плохое для чувствительных групп" -> Color.Yellow
-                                    "Плохое" -> Color(0xFF996600)
-                                    "Очень Плохое" -> Color(0xFFCC3300)
-                                    "Опасно" -> Color(0xFFFF0000)
-                                    else -> Color.Green
-                                }
-                            )
+                            airQualityText?.asString()?.let {
+                                Text(
+                                    text = it, color = when (it) {
+                                        stringResource(Res.string.air_quality_level_1) -> Color.Green
+                                        stringResource(Res.string.air_quality_level_2) -> Color(0xff47e6d0)
+                                        stringResource(Res.string.air_quality_level_3) -> Color.Yellow
+                                        stringResource(Res.string.air_quality_level_4) -> Color(0xFF996600)
+                                        stringResource(Res.string.air_quality_level_5) -> Color(0xFFCC3300)
+                                        stringResource(Res.string.air_quality_level_6) -> Color(0xFFFF0000)
+                                        else -> Color.Green
+                                    }
+                                )
+                            }
                         }
                     }
                 }
@@ -277,7 +284,7 @@ fun MainScreen(
                         containerColor = Color.Black.copy(alpha = 0.2f),
                     )
                 ) {
-                    Text(text = "Отмена", color = Color.White, fontSize = 20.sp)
+                    Text(text = stringResource(Res.string.cancel), color = Color.White, fontSize = 20.sp)
                 }
                 Spacer(modifier = Modifier.weight(1f))
                 Button(
@@ -301,7 +308,7 @@ fun MainScreen(
                         containerColor = Color.Black.copy(alpha = 0.2f),
                     )
                 ) {
-                    Text(text = "Добавить", color = Color.White, fontSize = 20.sp)
+                    Text(text = stringResource(Res.string.add), color = Color.White, fontSize = 20.sp)
                 }
             }
         }

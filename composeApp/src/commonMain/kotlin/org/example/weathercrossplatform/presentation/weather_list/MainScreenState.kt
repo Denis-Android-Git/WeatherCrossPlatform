@@ -92,8 +92,8 @@ fun MainScreenState(
                 )
             }
         }
-        if (weatherMainScreenState.error.isNotEmpty()) {
-            ErrorScreen(errorMessage = weatherMainScreenState.error)
+        weatherMainScreenState.error?.let {
+            ErrorScreen(errorMessage = it.asString())
         }
     }
 }

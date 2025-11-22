@@ -29,6 +29,9 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import org.example.weathercrossplatform.domain.models.Hour
+import org.jetbrains.compose.resources.stringResource
+import weathercrossplatform.composeapp.generated.resources.Res
+import weathercrossplatform.composeapp.generated.resources._24h_forecast
 
 @Composable
 fun HourForecastElement(
@@ -44,7 +47,7 @@ fun HourForecastElement(
     ) {
         Text(
             modifier = Modifier.padding(start = 16.dp, top = 16.dp, bottom = 26.dp),
-            text = "Прогноз на 24ч", color = Color.LightGray
+            text = stringResource(Res.string._24h_forecast), color = Color.LightGray
         )
 
         LazyRow(
