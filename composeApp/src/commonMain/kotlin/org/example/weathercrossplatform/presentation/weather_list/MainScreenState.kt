@@ -8,10 +8,7 @@ import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -48,16 +45,12 @@ fun MainScreenState(
         initialPage = weatherMainScreenState.pageNumberFromSearchScreen ?: 0,
         pageCount = { weatherMainScreenState.savedCities.size })
     val scope = rememberCoroutineScope()
-    var currentPageNumber by remember {
-        mutableStateOf(0)
-    }
 
     LaunchedEffect(pagerState) {
         snapshotFlow { pagerState.currentPage }.collect { pageNumber ->
             if (weatherMainScreenState.savedCities.isNotEmpty()) {
-                currentPageNumber = pageNumber
-                myLogger.debug("fun_GetWeatherByQuery, pageNumber= in pagerState $currentPageNumber")
-                myLogger.debug("fun_GetWeatherByQuery, LaunchedEffect pagerState")
+                weatherViewModel.onAction(MainScreenActions.UpdatePage(pageNumber))
+                myLogger.debug("fun_GetWeatherByQuery, pageNumber= in pagerState $pageNumber")
                 weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(weatherMainScreenState.savedCities[pageNumber].coordinates))
             }
         }
@@ -74,7 +67,7 @@ fun MainScreenState(
         ),
         isRefreshing = weatherMainScreenState.isLoading,
         onRefresh = {
-            weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(weatherMainScreenState.savedCities[currentPageNumber].coordinates))
+            weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(weatherMainScreenState.savedCities[weatherMainScreenState.pageNumber].coordinates))
         },
     ) {
         if (weatherMainScreenState.weatherDto?.location?.name != null) {

@@ -12,5 +12,6 @@ data class WeatherMainScreenState(
     val cityId: Int? = null,
     val isAddCity: Boolean = false,
     val savedCities: List<SavedWeatherItem> = emptyList(),
-    val pageNumberFromSearchScreen: Int? = null
+    val pageNumberFromSearchScreen: Int? = null,
+    val pageNumber: Int = 0
 )

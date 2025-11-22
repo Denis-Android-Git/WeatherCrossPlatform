@@ -121,8 +121,8 @@ android {
         applicationId = "org.example.weathercrossplatform"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 7
-        versionName = "0.9.31"
+        versionCode = 9
+        versionName = "0.9.33"
 
     }
     packaging {

@@ -71,11 +71,16 @@ class WeatherViewModel(
     init {
         viewModelScope.launch {
             myLogger.debug("getWeatherByQuery in pageNumberFromSearchScreen let block = $pageNumberFromSearchScreen")
-            pageNumberFromSearchScreen?.let {
+            pageNumberFromSearchScreen?.let { page ->
                 val savedCities = allCities.firstOrNull() ?: emptyList()
-                myLogger.debug("getWeatherByQuery savedCities = ${savedCities.joinToString("\n") { item -> item.cityName }}")
-                if (it in savedCities.indices) {
-                    getWeatherByQuery(savedCities[it].coordinates)
+                //myLogger.debug("getWeatherByQuery savedCities = ${savedCities.joinToString("\n") { item -> item.cityName }}")
+                if (page in savedCities.indices) {
+                    getWeatherByQuery(savedCities[page].coordinates)
+                }
+                _weatherScreenState.update {
+                    it.copy(
+                        pageNumber = page
+                    )
                 }
             }
         }
@@ -101,6 +106,19 @@ class WeatherViewModel(
                 viewModelScope.launch {
                     getWeatherByQuery(actions.query)
                 }
+            }
+
+            is MainScreenActions.UpdatePage -> updatePage(actions.page)
+        }
+    }
+
+    fun updatePage(page: Int) {
+        viewModelScope.launch {
+            myLogger.debug("fun_GetWeatherByQuery, pageNumber in updatePage $page")
+            _weatherScreenState.update {
+                it.copy(
+                    pageNumber = page
+                )
             }
         }
     }
