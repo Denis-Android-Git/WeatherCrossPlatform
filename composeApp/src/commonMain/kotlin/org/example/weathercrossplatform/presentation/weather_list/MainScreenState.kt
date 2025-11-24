@@ -60,8 +60,8 @@ fun MainScreenState(
             brush = Brush
                 .linearGradient(
                     colors = listOf(
-                        Color.Blue.copy(alpha = 0.9f),
-                        Color.Blue.copy(alpha = 0f)
+                        Color(0xFF357BD9).copy(alpha = 0.9f),
+                        Color(0xFF357BD9).copy(alpha = 0f)
                     )
                 )
         ),
