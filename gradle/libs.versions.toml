@@ -31,6 +31,7 @@ ksp = "2.3.0"
 sqlite = "2.6.2"
 kermit = "2.0.8"
 kotzilla = "1.4.0"
+core-splashscreen = "1.2.0"
 
 #androidx-appcompat = "1.7.0"
 #androidx-constraintlayout = "2.2.1"
@@ -42,6 +43,8 @@ kotzilla = "1.4.0"
 
 
 [libraries]
+core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "core-splashscreen" }
+
 kotzilla-sdk-compose = { group = "io.kotzilla", name = "kotzilla-sdk-compose", version.ref = "kotzilla" }
 # Logging
 touchlab-kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
