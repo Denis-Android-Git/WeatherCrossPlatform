@@ -8,7 +8,7 @@ import org.example.weathercrossplatform.data.locationservice.LocationService
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.data.network.HttpClientFactory
 import org.example.weathercrossplatform.domain.logger.MyLogger
-import org.koin.core.module.dsl.singleOf
+import org.koin.core.module.dsl.factoryOf
 import org.koin.dsl.module
 
 actual val platformModule = module {
@@ -22,6 +22,6 @@ actual val platformModule = module {
         getRoomDatabase(getDatabaseBuilder()).weatherDao()
     }
 
-    singleOf(::LocationService)
-    singleOf(::SystemLocale)
+    factoryOf(::LocationService)
+    factoryOf(::SystemLocale)
 }

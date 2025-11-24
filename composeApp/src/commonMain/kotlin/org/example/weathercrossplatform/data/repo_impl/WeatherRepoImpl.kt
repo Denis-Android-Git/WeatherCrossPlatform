@@ -49,7 +49,7 @@ class WeatherRepoImpl(
 
     override suspend fun getImageList(query: String): Result<ImageListDto, NetworkError> {
 
-        val randomPage = (1..10).random().toString()
+        val randomPage = (1..5).random().toString()
         val queryParams = mapOf(
             "client_id" to BuildKonfig.API_KEY2,
             "query" to query,

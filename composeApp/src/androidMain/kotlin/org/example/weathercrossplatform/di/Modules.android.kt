@@ -9,7 +9,7 @@ import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.data.network.HttpClientFactory
 import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.koin.android.ext.koin.androidContext
-import org.koin.core.module.dsl.singleOf
+import org.koin.core.module.dsl.factoryOf
 import org.koin.dsl.module
 
 actual val platformModule = module {
@@ -18,10 +18,10 @@ actual val platformModule = module {
 
     single {
         HttpClientFactory(get()).createHttpClient(OkHttp.create())
-    }
+    } 
     single {
         getRoomDatabase(getDatabaseBuilder(androidContext())).weatherDao()
     }
-    singleOf(::LocationService)
-    singleOf(::SystemLocale)
+    factoryOf(::LocationService)
+    factoryOf(::SystemLocale)
 }
