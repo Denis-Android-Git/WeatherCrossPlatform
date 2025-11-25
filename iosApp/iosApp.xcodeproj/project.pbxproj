@@ -10,6 +10,7 @@
 		047CC6152D8AC26F00AB9725 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047CC6142D8AC26F00AB9725 /* GoogleService-Info.plist */; };
 		047CC6182D8AC40600AB9725 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 047CC6172D8AC40600AB9725 /* FirebaseAnalytics */; };
 		047CC61A2D8AC40600AB9725 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 047CC6192D8AC40600AB9725 /* FirebaseCrashlytics */; };
+		04EBA2F02ED4BA9C00D0CE31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EBA2EF2ED4BA9C00D0CE31 /* LaunchScreen.storyboard */; };
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		047CC6142D8AC26F00AB9725 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		04EBA2EF2ED4BA9C00D0CE31 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
+				04EBA2EF2ED4BA9C00D0CE31 /* LaunchScreen.storyboard */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */,
+				04EBA2F02ED4BA9C00D0CE31 /* LaunchScreen.storyboard in Resources */,
 				058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */,
 				047CC6152D8AC26F00AB9725 /* GoogleService-Info.plist in Resources */,
 			);
