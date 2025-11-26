@@ -28,5 +28,9 @@
     <string name="24h_forecast">24h forecast</string>
     <string name="today">Today</string>
     <string name="tomorrow">Tomorrow</string>
+    <string name="city_search">City search</string>
+    <string name="chosen">Chosen</string>
+    <string name="enter_city">Enter city</string>
+    <string name="current_place">Current place</string>
 
 </resources>

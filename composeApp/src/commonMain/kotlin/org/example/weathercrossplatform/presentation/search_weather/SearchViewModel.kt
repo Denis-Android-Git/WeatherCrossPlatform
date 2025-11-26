@@ -3,8 +3,10 @@ package org.example.weathercrossplatform.presentation.search_weather
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -38,6 +40,34 @@ class SearchViewModel(
         }
 
     init {
+        viewModelScope.launch {
+            val savedCities = dataBaseRepo.getWeatherList().firstOrNull()
+            savedCities?.let { list ->
+                list.map { savedWeatherItem ->
+                    async {
+                        weatherRepo.getCurrentWeather(savedWeatherItem.coordinates)
+                            .onSuccess { newInfo ->
+                                myLogger.debug("SearchViewModel_newInfo = $${savedWeatherItem.cityName}, ${savedWeatherItem.cityId}, ${savedWeatherItem.temperature}, ${savedWeatherItem.highTemperature}")
+                                myLogger.debug("SearchViewModel_newInfo = $${newInfo.location.name}, ${newInfo.current.tempC}, ${newInfo.forecast.forecastday[0].day.maxTempC}")
+                                val item = SavedWeatherItem(
+                                    cityId = savedWeatherItem.cityId,
+                                    cityName = savedWeatherItem.cityName,
+                                    temperature = newInfo.current.tempC,
+                                    weatherDescription = newInfo.current.condition.text,
+                                    highTemperature = newInfo.forecast.forecastday[0].day.maxTempC,
+                                    lowTemperature = newInfo.forecast.forecastday[0].day.minTempC,
+                                    coordinates = savedWeatherItem.coordinates,
+                                    isCurrentLocation = savedWeatherItem.isCurrentLocation,
+                                )
+                                dataBaseRepo.saveWeather(item)
+                            }
+                            .onError {
+
+                            }
+                    }
+                }
+            }
+        }
         viewModelScope.launch {
             myLogger.debug("SearchViewModel_pageNum = $pageNum")
             _searchScreenState.update {

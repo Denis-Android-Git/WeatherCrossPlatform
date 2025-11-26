@@ -44,7 +44,14 @@ import org.example.weathercrossplatform.domain.models.Location
 import org.example.weathercrossplatform.domain.models.SearchScreenViewState
 import org.example.weathercrossplatform.presentation.elements.FoundItem
 import org.example.weathercrossplatform.presentation.elements.SavedElement
+import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
+import weathercrossplatform.composeapp.generated.resources.Res
+import weathercrossplatform.composeapp.generated.resources.cancel
+import weathercrossplatform.composeapp.generated.resources.chosen
+import weathercrossplatform.composeapp.generated.resources.city_search
+import weathercrossplatform.composeapp.generated.resources.current_place
+import weathercrossplatform.composeapp.generated.resources.enter_city
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -76,7 +83,9 @@ fun SearchScreen(
                 .padding(horizontal = 16.dp)
         ) {
             AnimatedVisibility(!searchScreenState.expanded && !isLongPressed.value) {
-                Column {
+                Column(
+                    modifier = Modifier.fillMaxWidth()
+                ) {
                     IconButton(
                         onClick = onBackButtonClick
                     ) {
@@ -86,7 +95,11 @@ fun SearchScreen(
                             tint = Color.White
                         )
                     }
-                    Text(text = "Поиск городов", color = Color.White, fontSize = 24.sp)
+                    Text(
+                        text = stringResource(Res.string.city_search),
+                        modifier = Modifier.align(Alignment.CenterHorizontally),
+                        color = Color.White, fontSize = 24.sp
+                    )
                 }
             }
             AnimatedVisibility(isLongPressed.value) {
@@ -104,7 +117,7 @@ fun SearchScreen(
                         )
                     }
                     Text(
-                        text = "Выбрано ${searchScreenState.tempListToDelete.size}",
+                        text = "${stringResource(Res.string.chosen)} ${searchScreenState.tempListToDelete.size}",
                         color = Color.White,
                         fontSize = 24.sp
                     )
@@ -112,8 +125,8 @@ fun SearchScreen(
             }
             SearchBar(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 16.dp),
+                    .fillMaxWidth(),
+                //.padding(top = 16.dp),
                 shadowElevation = 10.dp,
                 colors = SearchBarDefaults.colors(
                     containerColor = Color.Black
@@ -133,7 +146,7 @@ fun SearchScreen(
                             onExpandedChange(it)
                         },
                         placeholder = {
-                            Text(text = "Введите название города")
+                            Text(text = stringResource(Res.string.enter_city))
                         },
                         leadingIcon = {
                             AnimatedVisibility(!searchScreenState.expanded) {
@@ -146,12 +159,12 @@ fun SearchScreen(
                         trailingIcon = {
                             AnimatedVisibility(searchScreenState.expanded) {
                                 Text(
-                                    text = "Отмена",
+                                    text = stringResource(Res.string.cancel),
                                     modifier = Modifier
                                         .padding(end = 16.dp)
                                         .clickable {
-                                        onExpandedChange(false)
-                                    })
+                                            onExpandedChange(false)
+                                        })
                             }
                         },
                         colors = SearchBarDefaults.inputFieldColors(
@@ -193,7 +206,7 @@ fun SearchScreen(
             ) {
                 item {
                     Text(
-                        text = " Текущее место",
+                        text = stringResource(Res.string.current_place),
                         modifier = Modifier.padding(start = 16.dp, bottom = 8.dp),
                         color = Color.Gray
                     )
