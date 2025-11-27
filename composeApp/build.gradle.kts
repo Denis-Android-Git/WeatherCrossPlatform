@@ -82,7 +82,7 @@ kotlin {
 
         }
         kotzilla {
-            versionName = "0.9.37" // add your app version name
+            versionName = "0.9.38" // add your app version name
             keyGeneration = KotzillaKeyGeneration.COMPOSE
             composeInstrumentation = true
         }
@@ -123,8 +123,8 @@ android {
         applicationId = "org.example.weathercrossplatform"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 13
-        versionName = "0.9.37"
+        versionCode = 14
+        versionName = "0.9.38"
 
     }
     packaging {

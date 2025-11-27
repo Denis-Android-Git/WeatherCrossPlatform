@@ -14,7 +14,6 @@ import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.locationservice.LocationService
 import org.example.weathercrossplatform.data.repo_impl.WeatherRepoImpl
-import org.example.weathercrossplatform.data.utils.UiText
 import org.example.weathercrossplatform.data.utils.onError
 import org.example.weathercrossplatform.data.utils.onSuccess
 import org.example.weathercrossplatform.data.utils.toUiText
@@ -167,94 +166,85 @@ class WeatherViewModel(
     ) {
         myLogger.debug("fun_getWeatherByQuery")
         _weatherScreenState.value = _weatherScreenState.value.copy(isLoading = true)
-        try {
-            weatherRepoImpl.getCurrentWeather(query)
-                .onSuccess { weather ->
-                    myLogger.debug("location.id = ${weather.location.id}")
-                    if (latitude != null && longitude != null) {
-                        dataBaseRepo.clearCurrentLocation()
-                        dataBaseRepo.saveWeather(
-                            weather = SavedWeatherItem(
-                                cityName = weather.location.name,
-                                temperature = weather.current.tempC,
-                                weatherDescription = weather.current.condition.text,
-                                highTemperature = weather.forecast.forecastday[0].day.maxTempC,
-                                lowTemperature = weather.forecast.forecastday[0].day.minTempC,
-                                cityId = 111,
-                                coordinates = "${weather.location.lat},${weather.location.lon}",
-                                isCurrentLocation = true,
-                            )
-                        )
-                    }
-
-                    myLogger.debug("windRotation = ${weather.current.windDegree}, ${weather.current.windDir}")
-                    myLogger.debug("pressure = ${weather.current.pressureMb}, ${weather.current.pressureIn}")
-                    myLogger.debug("uv = ${weather.current.uv}")
-
-                    val weatherItemList = createWeatherItemList(
-                        humidity = weather.current.humidity,
-                        windSpeed = weather.current.windKph,
-                        windRotation = weather.current.windDegree,
-                        pressure = (weather.current.pressureMb * 0.75).roundToInt(),//перевод в мм ртутного столба
-                        clouds = weather.current.cloud,
-                        uvIndex = weather.current.uv.toInt(),
-                        feelsLike = weather.current.feelsLikeC,
-                        rotationFeelsLike = calculateRotationAngle(
-                            weather.current.tempC,
-                            weather.current.feelsLikeC
+        weatherRepoImpl.getCurrentWeather(query)
+            .onSuccess { weather ->
+                myLogger.debug("location.id = ${weather.location.id}")
+                if (latitude != null && longitude != null) {
+                    dataBaseRepo.clearCurrentLocation()
+                    dataBaseRepo.saveWeather(
+                        weather = SavedWeatherItem(
+                            cityName = weather.location.name,
+                            temperature = weather.current.tempC,
+                            weatherDescription = weather.current.condition.text,
+                            highTemperature = weather.forecast.forecastday[0].day.maxTempC,
+                            lowTemperature = weather.forecast.forecastday[0].day.minTempC,
+                            cityId = 111,
+                            coordinates = "${weather.location.lat},${weather.location.lon}",
+                            isCurrentLocation = true,
                         )
                     )
-
-                    val imageQuery = when (weather.current.condition.text) {
-                        "Солнечно" -> "sunny"
-                        "Ясно" -> "clear sky"
-                        "Переменная облачность" -> "cloudy"
-                        "Местами грозы" -> "thunderstorm"
-                        "Небольшой дождь со снегом" -> "rain and snow"
-                        "Пасмурно" -> "overcast"
-                        "Дымка" -> "mist"
-                        else -> weather.current.condition.text
-                    }
-
-                    myLogger.debug("imageQuery=$imageQuery")
-
-                    weatherRepoImpl.getImageList(imageQuery)
-                        .onSuccess { imageList ->
-                            myLogger.debug("imageList=${imageList.results.size}")
-                            val image = imageList.results.random().urls.small
-                            _weatherScreenState.value = _weatherScreenState.value.copy(
-                                image = image,
-                                isLoading = false,
-                                weatherDto = weather,
-                                weatherItemList = weatherItemList,
-                                error = null
-                            )
-                        }
-                        .onError { networkError ->
-                            //val error = networkError.toUiText()
-
-                            _weatherScreenState.value = _weatherScreenState.value.copy(
-                                error = null,
-                                image = Res.drawable.mock_image,
-                                isLoading = false,
-                                weatherDto = weather,
-                                weatherItemList = weatherItemList
-                            )
-                        }
                 }
-                .onError { networkError ->
-                    val error = networkError.toUiText()
-                    _weatherScreenState.value = _weatherScreenState.value.copy(
-                        isLoading = false,
-                        error = error
+
+                myLogger.debug("windRotation = ${weather.current.windDegree}, ${weather.current.windDir}")
+                myLogger.debug("pressure = ${weather.current.pressureMb}, ${weather.current.pressureIn}")
+                myLogger.debug("uv = ${weather.current.uv}")
+
+                val weatherItemList = createWeatherItemList(
+                    humidity = weather.current.humidity,
+                    windSpeed = weather.current.windKph,
+                    windRotation = weather.current.windDegree,
+                    pressure = (weather.current.pressureMb * 0.75).roundToInt(),//перевод в мм ртутного столба
+                    clouds = weather.current.cloud,
+                    uvIndex = weather.current.uv.toInt(),
+                    feelsLike = weather.current.feelsLikeC,
+                    rotationFeelsLike = calculateRotationAngle(
+                        weather.current.tempC,
+                        weather.current.feelsLikeC
                     )
+                )
+
+                val imageQuery = when (weather.current.condition.text) {
+                    "Солнечно" -> "sunny"
+                    "Ясно" -> "clear sky"
+                    "Переменная облачность" -> "cloudy"
+                    "Местами грозы" -> "thunderstorm"
+                    "Небольшой дождь со снегом" -> "rain and snow"
+                    "Пасмурно" -> "overcast"
+                    "Дымка" -> "mist"
+                    else -> weather.current.condition.text
                 }
-        } catch (e: Exception) {
-            _weatherScreenState.value = _weatherScreenState.value.copy(
-                isLoading = false,
-                error = UiText.DynamicString(e.message ?: "Unknown error")
-            )
-        }
+
+                myLogger.debug("imageQuery=$imageQuery")
+
+                weatherRepoImpl.getImageList(imageQuery)
+                    .onSuccess { imageList ->
+                        myLogger.debug("imageList=${imageList.results.size}")
+                        val image = imageList.results.random().urls.small
+                        _weatherScreenState.value = _weatherScreenState.value.copy(
+                            image = image,
+                            isLoading = false,
+                            weatherDto = weather,
+                            weatherItemList = weatherItemList,
+                            error = null
+                        )
+                    }
+                    .onError { _ ->
+                        _weatherScreenState.value = _weatherScreenState.value.copy(
+                            error = null,
+                            image = Res.drawable.mock_image,
+                            isLoading = false,
+                            weatherDto = weather,
+                            weatherItemList = weatherItemList
+                        )
+                    }
+            }
+            .onError { networkError ->
+                val error = networkError.toUiText()
+                _weatherScreenState.value = _weatherScreenState.value.copy(
+                    isLoading = false,
+                    error = error
+                )
+            }
     }
 
     private fun refreshPosition() {
