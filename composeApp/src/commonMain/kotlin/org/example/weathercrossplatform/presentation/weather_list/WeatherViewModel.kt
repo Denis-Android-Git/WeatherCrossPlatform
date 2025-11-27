@@ -219,14 +219,26 @@ class WeatherViewModel(
                 weatherRepoImpl.getImageList(imageQuery)
                     .onSuccess { imageList ->
                         myLogger.debug("imageList=${imageList.results.size}")
-                        val image = imageList.results.random().urls.small
-                        _weatherScreenState.value = _weatherScreenState.value.copy(
-                            image = image,
-                            isLoading = false,
-                            weatherDto = weather,
-                            weatherItemList = weatherItemList,
-                            error = null
-                        )
+
+                        val photoList = imageList.results
+                        if (photoList.isEmpty()) {
+                            _weatherScreenState.value = _weatherScreenState.value.copy(
+                                error = null,
+                                image = Res.drawable.mock_image,
+                                isLoading = false,
+                                weatherDto = weather,
+                                weatherItemList = weatherItemList
+                            )
+                        } else {
+                            val image = photoList.random().urls.small
+                            _weatherScreenState.value = _weatherScreenState.value.copy(
+                                image = image,
+                                isLoading = false,
+                                weatherDto = weather,
+                                weatherItemList = weatherItemList,
+                                error = null
+                            )
+                        }
                     }
                     .onError { _ ->
                         _weatherScreenState.value = _weatherScreenState.value.copy(
