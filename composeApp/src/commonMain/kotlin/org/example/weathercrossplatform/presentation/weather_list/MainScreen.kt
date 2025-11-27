@@ -52,6 +52,7 @@ import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 import org.example.weathercrossplatform.presentation.elements.ForecastElement
 import org.example.weathercrossplatform.presentation.elements.HourForecastElement
 import org.example.weathercrossplatform.presentation.elements.WeatherDetailElement
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
@@ -65,6 +66,7 @@ import weathercrossplatform.composeapp.generated.resources.air_quality_level_5
 import weathercrossplatform.composeapp.generated.resources.air_quality_level_6
 import weathercrossplatform.composeapp.generated.resources.cancel
 import weathercrossplatform.composeapp.generated.resources.feels_like
+import weathercrossplatform.composeapp.generated.resources.mock_image
 
 @Composable
 fun MainScreen(
@@ -95,6 +97,7 @@ fun MainScreen(
             Box(modifier = Modifier.fillMaxSize()) {
                 AsyncImage(
                     model = weatherMainScreenState.image,
+                    error = painterResource(Res.drawable.mock_image),
                     modifier = Modifier.fillMaxSize(),
                     contentScale = ContentScale.FillBounds,
                     contentDescription = null

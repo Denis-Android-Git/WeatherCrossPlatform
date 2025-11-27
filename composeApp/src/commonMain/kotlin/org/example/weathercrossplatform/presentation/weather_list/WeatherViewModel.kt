@@ -24,6 +24,8 @@ import org.example.weathercrossplatform.domain.models.Coordinates
 import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 import org.example.weathercrossplatform.domain.repo.DataBaseRepo
+import weathercrossplatform.composeapp.generated.resources.Res
+import weathercrossplatform.composeapp.generated.resources.mock_image
 import kotlin.math.roundToInt
 
 class WeatherViewModel(
@@ -229,10 +231,11 @@ class WeatherViewModel(
                             )
                         }
                         .onError { networkError ->
-                            val error = networkError.toUiText()
+                            //val error = networkError.toUiText()
 
                             _weatherScreenState.value = _weatherScreenState.value.copy(
-                                error = error,
+                                error = null,
+                                image = Res.drawable.mock_image,
                                 isLoading = false,
                                 weatherDto = weather,
                                 weatherItemList = weatherItemList
