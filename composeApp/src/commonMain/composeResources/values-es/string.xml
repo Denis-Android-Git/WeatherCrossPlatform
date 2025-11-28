@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="error_disk_full">¡Vaya, parece que tu almacenamiento está lleno!</string>
+    <string name="error_not_found">No se pudo encontrar el elemento solicitado</string>
+    <string name="error_unknown">Ocurrió un error desconocido</string>
+    <string name="error_bad_request">Solicitud incorrecta</string>
+    <string name="error_request_timeout">Tu solicitud ha excedido el tiempo de espera</string>
+    <string name="error_unauthorized">Credenciales no válidas</string>
+    <string name="error_forbidden">No tienes permiso para hacer eso</string>
+    <string name="error_conflict">Se produjo un conflicto</string>
+    <string name="error_too_many_requests">Has superado el límite de solicitudes</string>
+    <string name="error_no_internet">No se puede conectar. Por favor, comprueba tu conexión a internet.</string>
+    <string name="error_payload_too_large">El archivo que has adjuntado es demasiado grande</string>
+    <string name="error_server">Vaya, ocurrió un error en el servidor</string>
+    <string name="error_service_unavailable">Servicio no disponible, inténtalo de nuevo más tarde</string>
+    <string name="error_serialization">Error de serialización</string>
+    <string name="air_quality_level_1">Buena</string>
+    <string name="air_quality_level_2">Moderada</string>
+    <string name="air_quality_level_3">Dañina para grupos sensibles</string>
+    <string name="air_quality_level_4">Dañina</string>
+    <string name="air_quality_level_5">Muy dañina</string>
+    <string name="air_quality_level_6">Peligrosa</string>
+    <string name="air_quality">Calidad del aire: </string>
+    <string name="cancel">Cancelar</string>
+    <string name="add">Añadir</string>
+    <string name="feels_like">Sensación térmica</string>
+    <string name="3_day_forecast">Pronóstico para 3 días</string>
+    <string name="24h_forecast">Pronóstico para 24 horas</string>
+    <string name="today">Hoy</string>
+    <string name="tomorrow">Mañana</string>
+    <string name="city_search">Búsqueda de ciudad</string>
+    <string name="chosen">Seleccionado</string>
+    <string name="enter_city">Introduce una ciudad</string>
+    <string name="current_place">Ubicación actual</string>
+
+</resources>
