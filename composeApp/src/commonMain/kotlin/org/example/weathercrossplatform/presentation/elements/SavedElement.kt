@@ -82,7 +82,7 @@ fun SavedElement(
                 }
                 Spacer(modifier = Modifier.weight(1f))
                 Text(
-                    text = if (weatherDescription.length > 30) "${weatherDescription.take(27)}..." else weatherDescription,
+                    text = if (weatherDescription.length > 20) "${weatherDescription.take(20)}..." else weatherDescription,
                     color = Color.White, 
                     maxLines = 1
                 )
@@ -133,7 +133,7 @@ fun PreviewSavedElement() {
     SavedElement(
         cityName = "San Francisco",
         temperature = "18",
-        weatherDescription = "Cloudy",
+        weatherDescription = "Слабый переохлажденнный дождь",
         high = "20",
         low = "14",
         index = 0,

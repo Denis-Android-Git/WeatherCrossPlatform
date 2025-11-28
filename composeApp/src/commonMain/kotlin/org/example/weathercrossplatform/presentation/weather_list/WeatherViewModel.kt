@@ -202,7 +202,12 @@ class WeatherViewModel(
                         weather.current.feelsLikeC
                     )
                 )
-
+                _weatherScreenState.value = _weatherScreenState.value.copy(
+                    error = null,
+                    isLoading = false,
+                    weatherDto = weather,
+                    weatherItemList = weatherItemList
+                )
                 val imageQuery = when (weather.current.condition.text) {
                     "Солнечно" -> "sunny"
                     "Ясно" -> "clear sky"
@@ -223,30 +228,19 @@ class WeatherViewModel(
                         val photoList = imageList.results
                         if (photoList.isEmpty()) {
                             _weatherScreenState.value = _weatherScreenState.value.copy(
-                                error = null,
-                                image = Res.drawable.mock_image,
-                                isLoading = false,
-                                weatherDto = weather,
-                                weatherItemList = weatherItemList
+                                image = Res.drawable.mock_image
                             )
                         } else {
                             val image = photoList.random().urls.small
                             _weatherScreenState.value = _weatherScreenState.value.copy(
-                                image = image,
-                                isLoading = false,
-                                weatherDto = weather,
-                                weatherItemList = weatherItemList,
-                                error = null
+                                image = image
                             )
                         }
                     }
                     .onError { _ ->
                         _weatherScreenState.value = _weatherScreenState.value.copy(
                             error = null,
-                            image = Res.drawable.mock_image,
-                            isLoading = false,
-                            weatherDto = weather,
-                            weatherItemList = weatherItemList
+                            image = Res.drawable.mock_image
                         )
                     }
             }
