@@ -43,7 +43,7 @@ class SearchViewModel(
         viewModelScope.launch {
             val savedCities = dataBaseRepo.getWeatherList().firstOrNull()
             savedCities?.let { list ->
-                list.map { savedWeatherItem ->
+                list.forEach { savedWeatherItem ->
                     async {
                         weatherRepo.getCurrentWeather(savedWeatherItem.coordinates)
                             .onSuccess { newInfo ->

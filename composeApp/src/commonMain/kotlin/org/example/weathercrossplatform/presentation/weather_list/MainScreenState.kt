@@ -43,7 +43,7 @@ fun MainScreenState(
 
     val pagerState = rememberPagerState(
         initialPage = weatherMainScreenState.pageNumberFromSearchScreen ?: 0,
-        pageCount = { weatherMainScreenState.savedCities.size })
+        pageCount = { if (weatherMainScreenState.isAddCity) 1 else weatherMainScreenState.savedCities.size })
     val scope = rememberCoroutineScope()
 
     LaunchedEffect(pagerState) {
