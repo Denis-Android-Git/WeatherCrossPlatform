@@ -38,12 +38,6 @@ class WeatherViewModel(
     private val pageNumberFromSearchScreen = savedStateHandle.get<Int>("pageNumber")
     private val cityIdFromSearchScreen = savedStateHandle.get<Int>("cityId")
 
-    init {
-        cityIdFromSearchScreen?.let {
-            setCityId(it)
-        }
-    }
-
     private val coordinates = MutableStateFlow<Coordinates?>(null)
     private val _weatherScreenState = MutableStateFlow(WeatherMainScreenState())
     val weatherScreenState = _weatherScreenState.asStateFlow()
@@ -69,9 +63,9 @@ class WeatherViewModel(
                 }
             }
         }
-    }
-
-    init {
+        cityIdFromSearchScreen?.let {
+            setCityId(it)
+        }
         viewModelScope.launch {
             myLogger.debug("getWeatherByQuery in pageNumberFromSearchScreen let block = $pageNumberFromSearchScreen")
             pageNumberFromSearchScreen?.let { page ->
@@ -87,9 +81,6 @@ class WeatherViewModel(
                 }
             }
         }
-    }
-
-    init {
         viewModelScope.launch {
             weatherScreenState.value.cityId?.let { cityId ->
                 myLogger.debug("getWeatherByQuery in let block")
@@ -154,7 +145,7 @@ class WeatherViewModel(
     }
 
     private fun setCityId(cityId: Int?) {
-        viewModelScope.launch(Dispatchers.Default) {
+        viewModelScope.launch {
             _weatherScreenState.update { it.copy(cityId = cityId, isAddCity = true) }
         }
     }
