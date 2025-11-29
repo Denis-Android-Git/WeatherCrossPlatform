@@ -24,7 +24,7 @@ import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 import org.example.weathercrossplatform.domain.repo.DataBaseRepo
 import weathercrossplatform.composeapp.generated.resources.Res
-import weathercrossplatform.composeapp.generated.resources.mock_image
+import weathercrossplatform.composeapp.generated.resources.im_10
 import kotlin.math.roundToInt
 
 class WeatherViewModel(
@@ -146,6 +146,7 @@ class WeatherViewModel(
 
     private fun setCityId(cityId: Int?) {
         viewModelScope.launch {
+            myLogger.debug("fun_setCityId: cityId = $cityId")
             _weatherScreenState.update { it.copy(cityId = cityId, isAddCity = true) }
         }
     }
@@ -219,7 +220,7 @@ class WeatherViewModel(
                         val photoList = imageList.results
                         if (photoList.isEmpty()) {
                             _weatherScreenState.value = _weatherScreenState.value.copy(
-                                image = Res.drawable.mock_image
+                                image = Res.drawable.im_10
                             )
                         } else {
                             val image = photoList.random().urls.small
@@ -231,7 +232,7 @@ class WeatherViewModel(
                     .onError { _ ->
                         _weatherScreenState.value = _weatherScreenState.value.copy(
                             error = null,
-                            image = Res.drawable.mock_image
+                            image = Res.drawable.im_10
                         )
                     }
             }

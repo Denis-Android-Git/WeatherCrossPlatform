@@ -66,7 +66,16 @@ import weathercrossplatform.composeapp.generated.resources.air_quality_level_5
 import weathercrossplatform.composeapp.generated.resources.air_quality_level_6
 import weathercrossplatform.composeapp.generated.resources.cancel
 import weathercrossplatform.composeapp.generated.resources.feels_like
-import weathercrossplatform.composeapp.generated.resources.mock_image
+import weathercrossplatform.composeapp.generated.resources.im_1
+import weathercrossplatform.composeapp.generated.resources.im_10
+import weathercrossplatform.composeapp.generated.resources.im_2
+import weathercrossplatform.composeapp.generated.resources.im_3
+import weathercrossplatform.composeapp.generated.resources.im_4
+import weathercrossplatform.composeapp.generated.resources.im_5
+import weathercrossplatform.composeapp.generated.resources.im_6
+import weathercrossplatform.composeapp.generated.resources.im_7
+import weathercrossplatform.composeapp.generated.resources.im_8
+import weathercrossplatform.composeapp.generated.resources.im_9
 
 @Composable
 fun MainScreen(
@@ -84,6 +93,18 @@ fun MainScreen(
     val airQualityText by rememberUpdatedState(
         newValue = weatherMainScreenState.weatherDto?.current?.airQuality?.usEpaIndex?.toUiText()
     )
+    val imageList = listOf(
+        Res.drawable.im_1,
+        Res.drawable.im_2,
+        Res.drawable.im_3,
+        Res.drawable.im_4,
+        Res.drawable.im_5,
+        Res.drawable.im_6,
+        Res.drawable.im_7,
+        Res.drawable.im_8,
+        Res.drawable.im_9,
+        Res.drawable.im_10
+    )
 
     Box(
         modifier = Modifier.fillMaxSize()
@@ -97,7 +118,7 @@ fun MainScreen(
             Box(modifier = Modifier.fillMaxSize()) {
                 AsyncImage(
                     model = weatherMainScreenState.image,
-                    error = painterResource(Res.drawable.mock_image),
+                    error = painterResource(imageList.random()),
                     modifier = Modifier.fillMaxSize(),
                     contentScale = ContentScale.FillBounds,
                     contentDescription = null
