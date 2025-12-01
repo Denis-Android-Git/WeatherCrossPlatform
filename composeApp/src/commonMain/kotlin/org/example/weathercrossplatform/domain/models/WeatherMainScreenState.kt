@@ -20,7 +20,7 @@ data class WeatherMainScreenState(
     val isLoading: Boolean = false,
     val weatherDto: ForecastDto? = null,
     val error: UiText? = null,
-    val image: Any = "",
+    val image: String = "",
     val weatherItemList: List<WeatherItem> = emptyList(),
     val cityId: Int? = null,
     val isAddCity: Boolean = false,

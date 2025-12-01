@@ -95,7 +95,9 @@ fun MainScreen(
 
             Box(modifier = Modifier.fillMaxSize()) {
                 AsyncImage(
-                    model = weatherMainScreenState.image,
+                    model = weatherMainScreenState.image.ifEmpty {
+                        weatherMainScreenState.appPhotoList
+                    },
                     error = painterResource(weatherMainScreenState.appPhotoList.random()),
                     modifier = Modifier.fillMaxSize(),
                     contentScale = ContentScale.FillBounds,

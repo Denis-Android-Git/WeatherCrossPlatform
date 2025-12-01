@@ -220,7 +220,7 @@ class WeatherViewModel(
                         val photoList = imageList.results
                         if (photoList.isEmpty()) {
                             _weatherScreenState.value = _weatherScreenState.value.copy(
-                                image = Res.drawable.im_10
+                                image = ""
                             )
                         } else {
                             val image = photoList.random().urls.small
@@ -232,7 +232,7 @@ class WeatherViewModel(
                     .onError { _ ->
                         _weatherScreenState.value = _weatherScreenState.value.copy(
                             error = null,
-                            image = Res.drawable.im_10
+                            image = ""
                         )
                     }
             }
