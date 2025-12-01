@@ -160,12 +160,15 @@ class WeatherViewModel(
             .onSuccess { weather ->
                 myLogger.debug("location.id = ${weather.location.id}")
                 if (latitude != null && longitude != null) {
+                    val desc = weather.current.condition.text.let {
+                        if (it.length > 100) it.take(100) else it //fix OutOfMemoryError
+                    }
                     dataBaseRepo.clearCurrentLocation()
                     dataBaseRepo.saveWeather(
                         weather = SavedWeatherItem(
                             cityName = weather.location.name,
                             temperature = weather.current.tempC,
-                            weatherDescription = weather.current.condition.text,
+                            weatherDescription = desc,
                             highTemperature = weather.forecast.forecastday[0].day.maxTempC,
                             lowTemperature = weather.forecast.forecastday[0].day.minTempC,
                             cityId = 111,

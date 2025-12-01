@@ -1,5 +1,7 @@
 import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
 import io.kotzilla.gradle.ext.KotzillaKeyGeneration
+import org.gradle.kotlin.dsl.debugImplementation
+import org.gradle.kotlin.dsl.invoke
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import java.util.Properties
 
@@ -82,7 +84,7 @@ kotlin {
 
         }
         kotzilla {
-            versionName = "0.9.46" // add your app version name
+            versionName = "0.9.47" // add your app version name
             keyGeneration = KotzillaKeyGeneration.COMPOSE
             composeInstrumentation = true
         }
@@ -123,8 +125,8 @@ android {
         applicationId = "org.example.weathercrossplatform"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 22
-        versionName = "0.9.46"
+        versionCode = 23
+        versionName = "0.9.47"
 
     }
     packaging {
@@ -147,6 +149,8 @@ android {
 
 dependencies {
     debugImplementation(compose.uiTooling)
+    debugImplementation (libs.leakcanary.android)
+
 }
 
 //compose.desktop {
