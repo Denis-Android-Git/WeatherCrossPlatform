@@ -32,5 +32,5 @@
     <string name="chosen">Выбрано</string>
     <string name="enter_city">Введите город</string>
     <string name="current_place">Текущее местоположение</string>
-
+    <string name="pull">Потяните, чтобы обновить</string>
 </resources>

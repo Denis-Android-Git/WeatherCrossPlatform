@@ -23,8 +23,6 @@ import org.example.weathercrossplatform.domain.models.Coordinates
 import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 import org.example.weathercrossplatform.domain.repo.DataBaseRepo
-import weathercrossplatform.composeapp.generated.resources.Res
-import weathercrossplatform.composeapp.generated.resources.im_10
 import kotlin.math.roundToInt
 
 class WeatherViewModel(

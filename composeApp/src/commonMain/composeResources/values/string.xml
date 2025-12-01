@@ -32,5 +32,6 @@
     <string name="chosen">Chosen</string>
     <string name="enter_city">Enter a city</string>
     <string name="current_place">Current place</string>
+    <string name="pull">Pull to refresh</string>
 
 </resources>
