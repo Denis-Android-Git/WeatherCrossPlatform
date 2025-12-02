@@ -1,7 +1,5 @@
 import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
 import io.kotzilla.gradle.ext.KotzillaKeyGeneration
-import org.gradle.kotlin.dsl.debugImplementation
-import org.gradle.kotlin.dsl.invoke
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import java.util.Properties
 
@@ -57,7 +55,7 @@ kotlin {
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
-            implementation(compose.material3)
+            //implementation(compose.material3)
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
@@ -81,6 +79,7 @@ kotlin {
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.touchlab.kermit)
             implementation(libs.kotzilla.sdk.compose)
+            implementation(libs.material3.expressive)
 
         }
         kotzilla {
@@ -149,7 +148,7 @@ android {
 
 dependencies {
     debugImplementation(compose.uiTooling)
-    debugImplementation (libs.leakcanary.android)
+    debugImplementation(libs.leakcanary.android)
 
 }
 

@@ -33,7 +33,7 @@ sqlite = "2.6.2"
 kermit = "2.0.8"
 kotzilla = "1.4.0"
 core-splashscreen = "1.2.0"
-
+material3-expressive = "1.9.0-alpha04"
 #androidx-appcompat = "1.7.0"
 #androidx-constraintlayout = "2.2.1"
 #androidx-core-ktx = "1.15.0"
@@ -45,7 +45,7 @@ core-splashscreen = "1.2.0"
 
 [libraries]
 core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "core-splashscreen" }
-
+material3-expressive = { module = "org.jetbrains.compose.material3:material3", version.ref = "material3-expressive" }
 kotzilla-sdk-compose = { group = "io.kotzilla", name = "kotzilla-sdk-compose", version.ref = "kotzilla" }
 # Logging
 leakcanary-android = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakcanaryAndroid" }

@@ -2,26 +2,34 @@ package org.example.weathercrossplatform.presentation.weather_list
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
+import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.snapshotFlow
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.domain.actions.MainScreenActions
 import org.example.weathercrossplatform.domain.logger.MyLogger
+import org.example.weathercrossplatform.presentation.elements.CustomIndicator
 import org.example.weathercrossplatform.presentation.elements.ErrorScreen
 import org.koin.compose.viewmodel.koinViewModel
 
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun MainScreenState(
     isFirstLaunch: Boolean,
@@ -55,7 +63,9 @@ fun MainScreenState(
             }
         }
     }
+    val state = rememberPullToRefreshState()
     PullToRefreshBox(
+        state = state,
         modifier = Modifier.fillMaxSize().background(
             brush = Brush
                 .linearGradient(
@@ -66,6 +76,16 @@ fun MainScreenState(
                 )
         ),
         isRefreshing = weatherMainScreenState.isLoading,
+        indicator = {
+            CustomIndicator(
+                modifier = Modifier.align(Alignment.TopCenter).padding(top = 16.dp),
+                state = state,
+                isRefreshing = weatherMainScreenState.isLoading,
+                containerColor = Color.Transparent,
+                color = Color.White,
+                size = 40.dp
+            )
+        },
         onRefresh = {
             weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(weatherMainScreenState.savedCities[weatherMainScreenState.pageNumber].coordinates))
         },
@@ -97,14 +117,3 @@ fun MainScreenState(
         }
     }
 }
-
-//val state = rememberPullToRefreshState()
-
-//        indicator = {
-//
-//            MyCustomIndicator(
-//                state = state,
-//                isRefreshing = weatherMainScreenState.isLoading,
-//                modifier = Modifier.align(Alignment.TopCenter)
-//            )
-//        }

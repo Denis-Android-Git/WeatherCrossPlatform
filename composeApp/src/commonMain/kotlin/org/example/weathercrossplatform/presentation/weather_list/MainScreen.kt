@@ -22,12 +22,10 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.outlined.Place
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -49,6 +47,7 @@ import org.example.weathercrossplatform.data.utils.toUiText
 import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
+import org.example.weathercrossplatform.presentation.elements.FloatingToolBar
 import org.example.weathercrossplatform.presentation.elements.ForecastElement
 import org.example.weathercrossplatform.presentation.elements.HourForecastElement
 import org.example.weathercrossplatform.presentation.elements.WeatherDetailElement
@@ -255,6 +254,7 @@ fun MainScreen(
                 }
             }
         }
+
         AnimatedVisibility(
             visible = savedCityList.any {
                 myLogger.debug("it.cityId: ${it.cityId}, cityId: $cityId")
@@ -262,15 +262,10 @@ fun MainScreen(
             },
             modifier = Modifier.align(Alignment.TopEnd).padding(top = 40.dp, end = 16.dp)
         ) {
-            IconButton(
-                onClick = onAddButtonClick
-            ) {
-                Icon(
-                    imageVector = Icons.Default.Add, contentDescription = "Add",
-                    modifier = Modifier.size(35.dp),
-                    tint = Color.White
-                )
-            }
+            FloatingToolBar(
+                onSearchClick = onAddButtonClick,
+                onSettingsClick = {}
+            )
         }
         AnimatedVisibility(
             visible = !savedCityList.any {
