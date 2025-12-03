@@ -1,5 +1,6 @@
 package org.example.weathercrossplatform.presentation.elements
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -21,6 +22,10 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.celc
 import weathercrossplatform.composeapp.generated.resources.far
+import weathercrossplatform.composeapp.generated.resources.inrt
+import weathercrossplatform.composeapp.generated.resources.kmh
+import weathercrossplatform.composeapp.generated.resources.mmrt
+import weathercrossplatform.composeapp.generated.resources.mph
 
 @Composable
 fun MyDropDownMenu(
@@ -43,6 +48,37 @@ fun MyDropDownMenu(
     ) {
         list.forEach { res ->
             DropdownMenuItem(
+                modifier = Modifier.background(color =
+                    when (settingsType) {
+                        SettingsType.TEMPERATURE -> {
+                            if (state.isTempC && res == Res.string.celc || !state.isTempC && res == Res.string.far) {
+                                Color.Blue.copy(alpha = 0.3f)
+                            } else {
+                                Color.Transparent
+                            }
+                        }
+
+                        SettingsType.WIND -> {
+                            if (state.isWindKph && res == Res.string.kmh || !state.isWindKph && res == Res.string.mph) {
+                                Color.Blue.copy(alpha = 0.3f)
+
+                            } else {
+                                Color.Transparent
+
+                            }
+                        }
+
+                        SettingsType.PRESSURE -> {
+                            if (state.isPressureMb && res == Res.string.mmrt || !state.isPressureMb && res == Res.string.inrt) {
+                                Color.Blue.copy(alpha = 0.3f)
+
+                            } else {
+                                Color.Transparent
+
+                            }
+                        }
+                    }
+                ),
                 text = {
                     Row(
                         modifier = Modifier.fillMaxWidth(),
@@ -53,12 +89,36 @@ fun MyDropDownMenu(
                             color = Color.White
                         )
                         Spacer(modifier = Modifier.weight(1f))
-                        if (state.isTempC && res == Res.string.celc || !state.isTempC && res == Res.string.far) {
-                            Icon(
-                                imageVector = Icons.Default.Check,
-                                contentDescription = null,
-                                tint = Color.White
-                            )
+                        when (settingsType) {
+                            SettingsType.TEMPERATURE -> {
+                                if (state.isTempC && res == Res.string.celc || !state.isTempC && res == Res.string.far) {
+                                    Icon(
+                                        imageVector = Icons.Default.Check,
+                                        contentDescription = null,
+                                        tint = Color.White
+                                    )
+                                }
+                            }
+
+                            SettingsType.WIND -> {
+                                if (state.isWindKph && res == Res.string.kmh || !state.isWindKph && res == Res.string.mph) {
+                                    Icon(
+                                        imageVector = Icons.Default.Check,
+                                        contentDescription = null,
+                                        tint = Color.White
+                                    )
+                                }
+                            }
+
+                            SettingsType.PRESSURE -> {
+                                if (state.isPressureMb && res == Res.string.mmrt || !state.isPressureMb && res == Res.string.inrt) {
+                                    Icon(
+                                        imageVector = Icons.Default.Check,
+                                        contentDescription = null,
+                                        tint = Color.White
+                                    )
+                                }
+                            }
                         }
                     }
                 },

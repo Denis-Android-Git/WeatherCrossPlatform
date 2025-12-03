@@ -98,20 +98,20 @@ fun SettingsScreenScreen(
             Column(
                 modifier = Modifier.fillMaxWidth().wrapContentHeight()
                     .background(color = Color.DarkGray, shape = RoundedCornerShape(16.dp))
-                    .padding(10.dp)
+                    .padding(horizontal = 10.dp, vertical = 24.dp)
             ) {
                 MyDropDownElement(
                     onAction = onAction,
                     state = state,
                     settingsType = SettingsType.TEMPERATURE
                 )
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(24.dp))
                 MyDropDownElement(
                     onAction = onAction,
                     state = state,
                     settingsType = SettingsType.WIND
                 )
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(24.dp))
                 MyDropDownElement(
                     onAction = onAction,
                     state = state,

@@ -261,7 +261,7 @@ fun MainScreen(
                 myLogger.debug("it.cityId: ${it.cityId}, cityId: $cityId")
                 it.cityId == cityId
             },
-            modifier = Modifier.align(Alignment.TopEnd).padding(top = 40.dp, end = 16.dp)
+            modifier = Modifier.align(Alignment.TopEnd).padding(top = 50.dp)
         ) {
             FloatingToolBar(
                 onSearchClick = onAddButtonClick,

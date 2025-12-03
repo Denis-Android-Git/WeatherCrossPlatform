@@ -23,6 +23,8 @@ import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.FabPosition
 import androidx.compose.material3.FilledIconButton
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.FloatingToolbarColors
 import androidx.compose.material3.FloatingToolbarDefaults
 import androidx.compose.material3.FloatingToolbarDefaults.ScreenOffset
@@ -65,12 +67,15 @@ fun FloatingToolBar(
             fabContentColor = Color.Transparent
         ),
         floatingActionButton = {
-            FloatingToolbarDefaults.VibrantFloatingActionButton(
+            FloatingActionButton(
                 containerColor = Color.Black.copy(alpha = 0.2f),
                 contentColor = Color.White,
                 onClick = {
                     expanded = !expanded
-                }
+                },
+                elevation = FloatingActionButtonDefaults.elevation(
+                    defaultElevation = 0.dp
+                )
             ) {
                 Icon(
                     imageVector = Icons.Default.Menu, contentDescription = null
