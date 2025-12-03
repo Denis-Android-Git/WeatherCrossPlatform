@@ -72,6 +72,7 @@ fun MainScreen(
     cityId: Int?,
     savedCityList: List<SavedWeatherItem>,
     onAddButtonClick: () -> Unit,
+    onSettingsClick: () -> Unit,
     onCancelButtonClick: () -> Unit,
     onAddCityButtonClick: (SavedWeatherItem) -> Unit,
     isCurrentLocation: Boolean,
@@ -264,7 +265,7 @@ fun MainScreen(
         ) {
             FloatingToolBar(
                 onSearchClick = onAddButtonClick,
-                onSettingsClick = {}
+                onSettingsClick = onSettingsClick
             )
         }
         AnimatedVisibility(
@@ -384,7 +385,8 @@ fun MainScreenPreview() {
         isCurrentLocation = true,
         weatherMainScreenState = WeatherMainScreenState(
             weatherItemList = mockWeatherItems
-        )
+        ),
+        onSettingsClick = {},
     )
 }
 //

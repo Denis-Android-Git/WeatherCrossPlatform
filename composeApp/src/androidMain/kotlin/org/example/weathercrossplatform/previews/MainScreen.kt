@@ -16,5 +16,6 @@ private fun Preview() {
         cityId = 2,
         weatherMainScreenState = WeatherMainScreenState(),
         isCurrentLocation = true,
+        onSettingsClick = {},
     )
 }

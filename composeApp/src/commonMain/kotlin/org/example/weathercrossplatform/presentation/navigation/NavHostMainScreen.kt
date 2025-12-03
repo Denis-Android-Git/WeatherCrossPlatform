@@ -9,6 +9,7 @@ import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Routes
 import org.example.weathercrossplatform.domain.models.Routes.MainScreenRoute
 import org.example.weathercrossplatform.presentation.search_weather.SearchScreenState
+import org.example.weathercrossplatform.presentation.settings_screen.SettingsScreenRoot
 import org.example.weathercrossplatform.presentation.weather_list.MainScreenState
 
 @Composable
@@ -30,6 +31,9 @@ fun NavHostMainScreen(
                     navController.navigateUp()
                 },
                 isFirstLaunch = isFirstLaunch,
+                onSettingsClick = {
+                    navController.navigate(Routes.SettingsScreenRoute)
+                },
             )
         }
         composable<Routes.SearchScreenRoute> {
@@ -48,6 +52,13 @@ fun NavHostMainScreen(
                             inclusive = true
                         }
                     }
+                }
+            )
+        }
+        composable<Routes.SettingsScreenRoute> {
+            SettingsScreenRoot(
+                onBackButtonClick = {
+                    navController.navigateUp()
                 }
             )
         }

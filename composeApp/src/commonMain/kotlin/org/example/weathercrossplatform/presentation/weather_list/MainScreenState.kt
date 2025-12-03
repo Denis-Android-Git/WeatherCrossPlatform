@@ -34,6 +34,7 @@ import org.koin.compose.viewmodel.koinViewModel
 fun MainScreenState(
     isFirstLaunch: Boolean,
     onAddButtonClick: (Int) -> Unit,
+    onSettingsClick: () -> Unit,
     onCancelButtonClick: () -> Unit,
     myLogger: MyLogger = MyLoggerImpl,
     weatherViewModel: WeatherViewModel = koinViewModel()
@@ -109,6 +110,7 @@ fun MainScreenState(
                     cityId = weatherMainScreenState.cityId ?: weatherMainScreenState.savedCities[pageNumber].cityId,
                     isCurrentLocation = isCurrentLocation,
                     weatherMainScreenState = weatherMainScreenState,
+                    onSettingsClick = onSettingsClick,
                 )
             }
         }

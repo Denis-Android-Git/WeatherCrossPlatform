@@ -33,5 +33,15 @@
     <string name="enter_city">Introduce una ciudad</string>
     <string name="current_place">Ubicación actual</string>
     <string name="pull">Desliza para actualizar</string>
-
+    <string name="settings">Ajustes</string>
+    <string name="units">Unidades de medida</string>
+    <string name="temp">Temperatura</string>
+    <string name="wind_speed">Velocidad del viento</string>
+    <string name="pressure">Presión atmosférica</string>
+    <string name="celc">°C</string>
+    <string name="far">°F</string>
+    <string name="kmh">Kilómetros por hora</string>
+    <string name="mph">Millas por hora</string>
+    <string name="mmrt">Milímetro de mercurio</string>
+    <string name="inrt">Pulgada de mercurio</string>
 </resources>

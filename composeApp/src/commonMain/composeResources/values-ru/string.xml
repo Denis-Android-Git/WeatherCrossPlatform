@@ -33,4 +33,15 @@
     <string name="enter_city">Введите город</string>
     <string name="current_place">Текущее местоположение</string>
     <string name="pull">Потяните, чтобы обновить</string>
+    <string name="settings">Настройки</string>
+    <string name="units">Единицы измерения</string>
+    <string name="temp">Температура</string>
+    <string name="wind_speed">Скорость ветра</string>
+    <string name="pressure">Атмосферное давление</string>
+    <string name="celc">°C</string>
+    <string name="far">°F</string>
+    <string name="kmh">Километров в час</string>
+    <string name="mph">Милль в час</string>
+    <string name="mmrt">Миллиметр ртутного столба</string>
+    <string name="inrt">Дюйм ртутного столба</string>
 </resources>

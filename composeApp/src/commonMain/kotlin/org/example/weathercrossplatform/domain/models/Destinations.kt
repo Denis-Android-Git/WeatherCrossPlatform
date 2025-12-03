@@ -13,5 +13,8 @@ sealed interface Routes {
     data class SearchScreenRoute(
         val pageNumber: Int? = null
     ) : Routes
+
+    @Serializable
+    data object SettingsScreenRoute : Routes
 }
 

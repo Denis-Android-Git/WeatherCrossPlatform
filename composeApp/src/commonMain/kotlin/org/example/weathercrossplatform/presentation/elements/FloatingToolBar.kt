@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -60,22 +59,21 @@ fun FloatingToolBar(
     HorizontalFloatingToolbar(
         expanded = expanded,
         colors = FloatingToolbarColors(
-            toolbarContainerColor = Color.Black.copy(alpha = 0.5f),
+            toolbarContainerColor = Color.Black.copy(alpha = 0.2f),
             toolbarContentColor = Color.White,
             fabContainerColor = Color.Transparent,
             fabContentColor = Color.Transparent
         ),
         floatingActionButton = {
             FloatingToolbarDefaults.VibrantFloatingActionButton(
-                containerColor = Color.Black.copy(alpha = 0.5f),
+                containerColor = Color.Black.copy(alpha = 0.2f),
                 contentColor = Color.White,
                 onClick = {
                     expanded = !expanded
                 }
             ) {
                 Icon(
-                    imageVector = Icons.Default.Menu, contentDescription = null,
-                    modifier = Modifier.size(25.dp)
+                    imageVector = Icons.Default.Menu, contentDescription = null
                 )
             }
         },

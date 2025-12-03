@@ -5,6 +5,7 @@ import org.example.weathercrossplatform.data.repo_impl.WeatherRepoImpl
 import org.example.weathercrossplatform.domain.repo.DataBaseRepo
 import org.example.weathercrossplatform.domain.repo.WeatherRepo
 import org.example.weathercrossplatform.presentation.search_weather.SearchViewModel
+import org.example.weathercrossplatform.presentation.settings_screen.SettingsScreenViewModel
 import org.example.weathercrossplatform.presentation.weather_list.WeatherViewModel
 import org.koin.core.module.Module
 import org.koin.core.module.dsl.singleOf
@@ -19,4 +20,5 @@ val sharedModule = module {
     singleOf(::DataBaseRepoImpl).bind<DataBaseRepo>()
     viewModelOf(::WeatherViewModel)
     viewModelOf(::SearchViewModel)
+    viewModelOf(::SettingsScreenViewModel)
 }
