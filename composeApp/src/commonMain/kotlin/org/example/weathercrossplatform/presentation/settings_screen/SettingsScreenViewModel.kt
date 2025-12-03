@@ -8,8 +8,12 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import org.example.weathercrossplatform.domain.models.SettingsInfo
+import org.example.weathercrossplatform.domain.repo.SettingsStorage
 
-class SettingsScreenViewModel : ViewModel() {
+class SettingsScreenViewModel(
+    private val settingsStorage: SettingsStorage
+) : ViewModel() {
 
     private var hasLoadedInitialData = false
 
@@ -17,7 +21,7 @@ class SettingsScreenViewModel : ViewModel() {
     val state = _state
         .onStart {
             if (!hasLoadedInitialData) {
-                /** Load initial data here **/
+                observeSettings()
                 hasLoadedInitialData = true
             }
         }
@@ -32,9 +36,75 @@ class SettingsScreenViewModel : ViewModel() {
             is SettingsScreenAction.SetDropDownTempExpanded -> setDropDownTempExpanded(action.value)
             is SettingsScreenAction.SetDropDownPressureExpanded -> setDropDownPressureExpanded(action.value)
             is SettingsScreenAction.SetDropDownWindExpanded -> setDropDownWindExpanded(action.value)
-            SettingsScreenAction.SetPressureUnit -> {}
-            SettingsScreenAction.SetTempUnit -> {}
-            SettingsScreenAction.SetWindSpeedUnit -> {}
+            is SettingsScreenAction.SetPressureUnit -> setPressureUnit(action.value)
+            is SettingsScreenAction.SetTempUnit -> setTempUnit(action.value)
+            is SettingsScreenAction.SetWindSpeedUnit -> setWindSpeedUnit(action.value)
+        }
+    }
+
+    private fun observeSettings() {
+        viewModelScope.launch {
+            settingsStorage.observeSettingsInfo().collect { info ->
+                info?.let { settings ->
+                    _state.update {
+                        it.copy(
+                            isTempC = settings.isTempC,
+                            isPressureMb = settings.isPressureMb,
+                            isWindKph = settings.isWindKph
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    private fun setTempUnit(value: Boolean) {
+        viewModelScope.launch {
+            val settings = SettingsInfo(
+                isTempC = value,
+                isWindKph = state.value.isWindKph,
+                isPressureMb = state.value.isPressureMb
+            )
+            settingsStorage.set(settings)
+            _state.update {
+                it.copy(
+                    isTempC = value,
+                    isDropTempExpanded = false
+                )
+            }
+        }
+    }
+    private fun setWindSpeedUnit(value: Boolean) {
+        viewModelScope.launch {
+            val settings = SettingsInfo(
+                isTempC = state.value.isTempC,
+                isWindKph = value,
+                isPressureMb = state.value.isPressureMb
+            )
+            settingsStorage.set(settings)
+            _state.update {
+                it.copy(
+                    isWindKph = value,
+                    isDropWindExpanded = false
+                )
+            }
+        }
+    }
+
+    private fun setPressureUnit(value: Boolean) {
+        viewModelScope.launch {
+            val settings = SettingsInfo(
+                isTempC = state.value.isTempC,
+                isWindKph = state.value.isWindKph,
+                isPressureMb = value
+            )
+            settingsStorage.set(settings)
+            _state.update {
+                it.copy(
+                    isPressureMb = value,
+                    isDropPressureExpanded = false
+                )
+            }
         }
     }
 
@@ -67,5 +137,4 @@ class SettingsScreenViewModel : ViewModel() {
             }
         }
     }
-
 }

@@ -34,6 +34,7 @@ kermit = "2.0.8"
 kotzilla = "1.4.0"
 core-splashscreen = "1.2.0"
 material3-expressive = "1.9.0-alpha04"
+datastore = "1.2.0"
 #androidx-appcompat = "1.7.0"
 #androidx-constraintlayout = "2.2.1"
 #androidx-core-ktx = "1.15.0"
@@ -52,6 +53,10 @@ leakcanary-android = { module = "com.squareup.leakcanary:leakcanary-android", ve
 touchlab-kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
 
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinSerialization" }
+
+# DataStore
+datastore = { module = "androidx.datastore:datastore", version.ref = "datastore" }
+datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore" }
 
 #Firebase
 firebase = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-android-bom" }

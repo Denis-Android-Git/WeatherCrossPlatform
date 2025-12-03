@@ -86,12 +86,13 @@ fun SettingsScreenScreen(
         Column(
             modifier = Modifier.fillMaxWidth().padding(padding).padding(horizontal = 8.dp)
         ) {
+            Spacer(modifier = Modifier.height(32.dp))
             Text(
                 text = stringResource(Res.string.settings),
                 modifier = Modifier.padding(start = 10.dp),
                 color = Color.White, fontSize = 24.sp
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(32.dp))
             Text(
                 text = stringResource(Res.string.units),
                 modifier = Modifier.padding(start = 10.dp),

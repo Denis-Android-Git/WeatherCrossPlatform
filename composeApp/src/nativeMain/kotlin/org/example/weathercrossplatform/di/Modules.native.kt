@@ -1,6 +1,9 @@
 package org.example.weathercrossplatform.di
 
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
 import io.ktor.client.engine.darwin.Darwin
+import org.example.weathercrossplatform.data.createDataStore
 import org.example.weathercrossplatform.data.database.getDatabaseBuilder
 import org.example.weathercrossplatform.data.database.getRoomDatabase
 import org.example.weathercrossplatform.data.locale.SystemLocale
@@ -21,6 +24,7 @@ actual val platformModule = module {
     single {
         getRoomDatabase(getDatabaseBuilder()).weatherDao()
     }
+    single<DataStore<Preferences>> { createDataStore()  }
 
     factoryOf(::LocationService)
     factoryOf(::SystemLocale)

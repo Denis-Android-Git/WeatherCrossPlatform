@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.DropdownMenu
@@ -14,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.example.weathercrossplatform.presentation.settings_screen.SettingsScreenAction
 import org.example.weathercrossplatform.presentation.settings_screen.SettingsScreenState
@@ -49,36 +51,37 @@ fun MyDropDownMenu(
     ) {
         list.forEach { res ->
             DropdownMenuItem(
-                modifier = Modifier.background(color =
-                    when (settingsType) {
-                        SettingsType.TEMPERATURE -> {
-                            if (state.isTempC && res == Res.string.celc || !state.isTempC && res == Res.string.far) {
-                                Color(0xFF357BD9).copy(alpha = 0.3f)
-                            } else {
-                                Color.Transparent
+                modifier = Modifier.background(
+                    color =
+                        when (settingsType) {
+                            SettingsType.TEMPERATURE -> {
+                                if (state.isTempC && res == Res.string.celc || !state.isTempC && res == Res.string.far) {
+                                    Color(0xFF357BD9).copy(alpha = 0.3f)
+                                } else {
+                                    Color.Transparent
+                                }
+                            }
+
+                            SettingsType.WIND -> {
+                                if (state.isWindKph && res == Res.string.kmh || !state.isWindKph && res == Res.string.mph) {
+                                    Color(0xFF357BD9).copy(alpha = 0.3f)
+
+                                } else {
+                                    Color.Transparent
+
+                                }
+                            }
+
+                            SettingsType.PRESSURE -> {
+                                if (state.isPressureMb && res == Res.string.mmrt || !state.isPressureMb && res == Res.string.inrt) {
+                                    Color(0xFF357BD9).copy(alpha = 0.3f)
+
+                                } else {
+                                    Color.Transparent
+
+                                }
                             }
                         }
-
-                        SettingsType.WIND -> {
-                            if (state.isWindKph && res == Res.string.kmh || !state.isWindKph && res == Res.string.mph) {
-                                Color(0xFF357BD9).copy(alpha = 0.3f)
-
-                            } else {
-                                Color.Transparent
-
-                            }
-                        }
-
-                        SettingsType.PRESSURE -> {
-                            if (state.isPressureMb && res == Res.string.mmrt || !state.isPressureMb && res == Res.string.inrt) {
-                                Color(0xFF357BD9).copy(alpha = 0.3f)
-
-                            } else {
-                                Color.Transparent
-
-                            }
-                        }
-                    }
                 ),
                 text = {
                     Row(
@@ -97,7 +100,8 @@ fun MyDropDownMenu(
                                     Icon(
                                         imageVector = Icons.Default.Check,
                                         contentDescription = null,
-                                        tint = Color.White
+                                        tint = Color.White,
+                                        modifier = Modifier.size(16.dp)
                                     )
                                 }
                             }
@@ -107,7 +111,8 @@ fun MyDropDownMenu(
                                     Icon(
                                         imageVector = Icons.Default.Check,
                                         contentDescription = null,
-                                        tint = Color.White
+                                        tint = Color.White,
+                                        modifier = Modifier.size(16.dp)
                                     )
                                 }
                             }
@@ -117,7 +122,8 @@ fun MyDropDownMenu(
                                     Icon(
                                         imageVector = Icons.Default.Check,
                                         contentDescription = null,
-                                        tint = Color.White
+                                        tint = Color.White,
+                                        modifier = Modifier.size(16.dp)
                                     )
                                 }
                             }
@@ -125,7 +131,31 @@ fun MyDropDownMenu(
                     }
                 },
                 onClick = {
+                    when (settingsType) {
+                        SettingsType.TEMPERATURE -> {
+                            if (res == Res.string.celc) {
+                                onAction(SettingsScreenAction.SetTempUnit(true))
+                            } else {
+                                onAction(SettingsScreenAction.SetTempUnit(false))
+                            }
+                        }
 
+                        SettingsType.WIND -> {
+                            if (res == Res.string.kmh) {
+                                onAction(SettingsScreenAction.SetWindSpeedUnit(true))
+                            } else {
+                                onAction(SettingsScreenAction.SetWindSpeedUnit(false))
+                            }
+                        }
+
+                        SettingsType.PRESSURE -> {
+                            if (res == Res.string.mmrt) {
+                                onAction(SettingsScreenAction.SetPressureUnit(true))
+                            } else {
+                                onAction(SettingsScreenAction.SetPressureUnit(false))
+                            }
+                        }
+                    }
                 }
             )
         }
@@ -137,7 +167,7 @@ fun MyDropDownMenu(
 fun MyDropDownMenuPreview() {
     MyDropDownMenu(
         {}, SettingsScreenState(),
-        list = emptyList(),
+        list = listOf(Res.string.celc, Res.string.far),
         expanded = true,
         settingsType = SettingsType.TEMPERATURE
     )

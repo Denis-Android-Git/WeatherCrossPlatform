@@ -80,7 +80,8 @@ kotlin {
             implementation(libs.touchlab.kermit)
             implementation(libs.kotzilla.sdk.compose)
             implementation(libs.material3.expressive)
-
+            implementation(libs.datastore)
+            implementation(libs.datastore.preferences)
         }
         kotzilla {
             versionName = "0.9.49" // add your app version name
