@@ -3,11 +3,13 @@ package org.example.weathercrossplatform.presentation.settings_screen
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -65,6 +67,7 @@ fun SettingsScreenScreen(
                 },
                 navigationIcon = {
                     IconButton(
+                        modifier = Modifier.padding(WindowInsets.systemBars.asPaddingValues()),
                         onClick = onBackButtonClick
                     ) {
                         Icon(

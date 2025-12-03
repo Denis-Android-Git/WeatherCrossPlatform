@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.sp
 import org.example.weathercrossplatform.presentation.settings_screen.SettingsScreenAction
 import org.example.weathercrossplatform.presentation.settings_screen.SettingsScreenState
 import org.jetbrains.compose.resources.StringResource
@@ -52,7 +53,7 @@ fun MyDropDownMenu(
                     when (settingsType) {
                         SettingsType.TEMPERATURE -> {
                             if (state.isTempC && res == Res.string.celc || !state.isTempC && res == Res.string.far) {
-                                Color.Blue.copy(alpha = 0.3f)
+                                Color(0xFF357BD9).copy(alpha = 0.3f)
                             } else {
                                 Color.Transparent
                             }
@@ -60,7 +61,7 @@ fun MyDropDownMenu(
 
                         SettingsType.WIND -> {
                             if (state.isWindKph && res == Res.string.kmh || !state.isWindKph && res == Res.string.mph) {
-                                Color.Blue.copy(alpha = 0.3f)
+                                Color(0xFF357BD9).copy(alpha = 0.3f)
 
                             } else {
                                 Color.Transparent
@@ -70,7 +71,7 @@ fun MyDropDownMenu(
 
                         SettingsType.PRESSURE -> {
                             if (state.isPressureMb && res == Res.string.mmrt || !state.isPressureMb && res == Res.string.inrt) {
-                                Color.Blue.copy(alpha = 0.3f)
+                                Color(0xFF357BD9).copy(alpha = 0.3f)
 
                             } else {
                                 Color.Transparent
@@ -86,7 +87,8 @@ fun MyDropDownMenu(
                     ) {
                         Text(
                             text = stringResource(res),
-                            color = Color.White
+                            color = Color.White,
+                            fontSize = 11.sp
                         )
                         Spacer(modifier = Modifier.weight(1f))
                         when (settingsType) {
