@@ -68,6 +68,7 @@ import weathercrossplatform.composeapp.generated.resources.feels_like
 
 @Composable
 fun MainScreen(
+    modifier: Modifier,
     weatherMainScreenState: WeatherMainScreenState,
     cityId: Int?,
     savedCityList: List<SavedWeatherItem>,
@@ -85,7 +86,7 @@ fun MainScreen(
     )
 
     Box(
-        modifier = Modifier.fillMaxSize()
+        modifier = modifier.fillMaxSize()
     ) {
         AnimatedVisibility(
             visible = !weatherMainScreenState.isLoading && weatherMainScreenState.weatherDto?.location?.name != null,
@@ -387,6 +388,7 @@ fun MainScreenPreview() {
             weatherItemList = mockWeatherItems
         ),
         onSettingsClick = {},
+        modifier = Modifier,
     )
 }
 //

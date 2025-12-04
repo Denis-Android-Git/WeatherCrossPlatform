@@ -1,7 +1,6 @@
 package org.example.weathercrossplatform.presentation.app
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.displayCutout
@@ -16,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dev.icerock.moko.permissions.PermissionState
@@ -45,36 +45,34 @@ fun App() {
                 .consumeWindowInsets(WindowInsets.navigationBars)
                 .consumeWindowInsets(WindowInsets.displayCutout),
             contentWindowInsets = WindowInsets.ime
-//            contentWindowInsets = ScaffoldDefaults.contentWindowInsets.exclude(
-//                WindowInsets.statusBars
-//            )
         ) {
-            Column(
-                modifier = Modifier.padding(it),
-                verticalArrangement = Arrangement.Center
-            ) {
-                when (permissionsViewModel.state) {
-                    PermissionState.Granted -> {
-                        //Text(text = "Granted")
-                        NavHostMainScreen(
-                            isFirstLaunch = permissionsViewModel.isFirstLaunch
-                        )
-                        scope.launch {
-                            delay(100)
-                            permissionsViewModel.isFirstLaunch = false
-                        }
+            when (permissionsViewModel.state) {
+                PermissionState.Granted -> {
+                    //Text(text = "Granted")
+                    NavHostMainScreen(
+                        isFirstLaunch = permissionsViewModel.isFirstLaunch,
+                        modifier = Modifier.padding(it),
+                    )
+                    scope.launch {
+                        delay(100)
+                        permissionsViewModel.isFirstLaunch = false
                     }
+                }
 
-                    PermissionState.DeniedAlways -> {
+                PermissionState.DeniedAlways -> {
+                    Box(
+                        modifier = Modifier.fillMaxSize().padding(it),
+                        contentAlignment = Alignment.Center
+                    ) {
                         Text(text = "Denied forever")
                     }
+                }
 
-                    else -> {
-                        //Text(text = "Else")
-                        scope.launch {
-                            delay(100)
-                            permissionsViewModel.checkPermissions()
-                        }
+                else -> {
+                    //Text(text = "Else")
+                    scope.launch {
+                        delay(100)
+                        permissionsViewModel.checkPermissions()
                     }
                 }
             }

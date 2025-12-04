@@ -3,6 +3,7 @@ package org.example.weathercrossplatform.presentation.search_weather
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.domain.actions.SearchScreenActions
@@ -11,6 +12,7 @@ import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun SearchScreenState(
+    modifier: Modifier,
     searchViewModel: SearchViewModel = koinViewModel(),
     onBackButtonClick: (Int?) -> Unit,
     onFoundItemClick: (Location) -> Unit,
@@ -55,5 +57,6 @@ fun SearchScreenState(
         },
         allCitiesInOriginalOrder = searchScreenState.allCitiesInOriginalOrder,
         searchScreenState = searchScreenState,
+        modifier = modifier,
     )
 }

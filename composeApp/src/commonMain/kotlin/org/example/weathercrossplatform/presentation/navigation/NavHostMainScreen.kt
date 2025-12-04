@@ -1,6 +1,7 @@
 package org.example.weathercrossplatform.presentation.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -15,6 +16,7 @@ import org.example.weathercrossplatform.presentation.weather_list.MainScreenStat
 @Composable
 fun NavHostMainScreen(
     isFirstLaunch: Boolean,
+    modifier: Modifier,
     myLogger: MyLogger = MyLoggerImpl
 ) {
     val navController = rememberNavController()
@@ -34,6 +36,7 @@ fun NavHostMainScreen(
                 onSettingsClick = {
                     navController.navigate(Routes.SettingsScreenRoute)
                 },
+                modifier = modifier,
             )
         }
         composable<Routes.SearchScreenRoute> {
@@ -52,14 +55,16 @@ fun NavHostMainScreen(
                             inclusive = true
                         }
                     }
-                }
+                },
+                modifier = modifier,
             )
         }
         composable<Routes.SettingsScreenRoute> {
             SettingsScreenRoot(
                 onBackButtonClick = {
                     navController.navigateUp()
-                }
+                },
+                modifier = modifier,
             )
         }
     }

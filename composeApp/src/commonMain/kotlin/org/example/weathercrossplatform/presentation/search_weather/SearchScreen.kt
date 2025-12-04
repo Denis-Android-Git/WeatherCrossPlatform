@@ -56,6 +56,7 @@ import weathercrossplatform.composeapp.generated.resources.enter_city
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SearchScreen(
+    modifier: Modifier,
     searchScreenState: SearchScreenViewState,
     onBackButtonClick: () -> Unit,
     onQueryChange: (String) -> Unit,
@@ -75,12 +76,12 @@ fun SearchScreen(
     val isLongPressed = remember { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
     Box(
-        modifier = Modifier.fillMaxSize()
+        modifier = modifier.fillMaxSize()
             .background(color = Color.Black).padding(WindowInsets.systemBars.asPaddingValues())//padding between Box and systemBars
     ) {
         Column(
             modifier = Modifier.fillMaxSize()
-                .padding(horizontal = 16.dp)
+                .padding(horizontal = 8.dp)
         ) {
             AnimatedVisibility(!searchScreenState.expanded && !isLongPressed.value) {
                 Column(
@@ -312,5 +313,6 @@ fun Preview() {
         onSavedItemClick = {},
         allCitiesInOriginalOrder = emptyList(),
         searchScreenState = SearchScreenViewState(),
+        modifier = Modifier,
     )
 }

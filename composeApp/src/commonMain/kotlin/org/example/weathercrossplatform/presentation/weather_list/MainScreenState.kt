@@ -32,6 +32,7 @@ import org.koin.compose.viewmodel.koinViewModel
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun MainScreenState(
+    modifier: Modifier,
     isFirstLaunch: Boolean,
     onAddButtonClick: (Int) -> Unit,
     onSettingsClick: () -> Unit,
@@ -67,7 +68,7 @@ fun MainScreenState(
     val state = rememberPullToRefreshState()
     PullToRefreshBox(
         state = state,
-        modifier = Modifier.fillMaxSize().background(
+        modifier = modifier.fillMaxSize().background(
             brush = Brush
                 .linearGradient(
                     colors = listOf(
@@ -111,6 +112,7 @@ fun MainScreenState(
                     isCurrentLocation = isCurrentLocation,
                     weatherMainScreenState = weatherMainScreenState,
                     onSettingsClick = onSettingsClick,
+                    modifier = modifier,
                 )
             }
         }

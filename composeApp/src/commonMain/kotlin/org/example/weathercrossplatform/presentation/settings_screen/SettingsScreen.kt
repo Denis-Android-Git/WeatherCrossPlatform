@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -17,10 +18,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -39,6 +37,7 @@ import weathercrossplatform.composeapp.generated.resources.units
 
 @Composable
 fun SettingsScreenRoot(
+    modifier: Modifier,
     viewModel: SettingsScreenViewModel = koinViewModel(),
     onBackButtonClick: () -> Unit
 
@@ -48,80 +47,67 @@ fun SettingsScreenRoot(
     SettingsScreenScreen(
         state = state,
         onAction = viewModel::onAction,
-        onBackButtonClick = onBackButtonClick
+        onBackButtonClick = onBackButtonClick,
+        modifier = modifier
     )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreenScreen(
+    modifier: Modifier,
     state: SettingsScreenState,
     onAction: (SettingsScreenAction) -> Unit,
     onBackButtonClick: () -> Unit
 ) {
-    Scaffold(
-        containerColor = Color.Black,
-        topBar = {
-            TopAppBar(
-                title = {
-                },
-                navigationIcon = {
-                    IconButton(
-                        modifier = Modifier.padding(WindowInsets.systemBars.asPaddingValues()),
-                        onClick = onBackButtonClick
-                    ) {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = "back",
-                            tint = Color.White
-                        )
-                    }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color.Black
-                )
+    Column(
+        modifier = modifier.fillMaxSize().background(color = Color.Black)
+            .padding(WindowInsets.systemBars.asPaddingValues()).padding(horizontal = 8.dp)
+    ) {
+        IconButton(
+            onClick = onBackButtonClick
+        ) {
+            Icon(
+                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                contentDescription = "back",
+                tint = Color.White
             )
         }
-    ) { padding ->
+        Spacer(modifier = Modifier.height(32.dp))
+        Text(
+            text = stringResource(Res.string.settings),
+            modifier = Modifier.padding(start = 10.dp),
+            color = Color.White, fontSize = 24.sp
+        )
+        Spacer(modifier = Modifier.height(32.dp))
+        Text(
+            text = stringResource(Res.string.units),
+            modifier = Modifier.padding(start = 10.dp),
+            color = Color.Gray
+        )
+        Spacer(modifier = Modifier.height(6.dp))
         Column(
-            modifier = Modifier.fillMaxWidth().padding(padding).padding(horizontal = 8.dp)
+            modifier = Modifier.fillMaxWidth().wrapContentHeight()
+                .background(color = Color.DarkGray, shape = RoundedCornerShape(16.dp))
+                .padding(horizontal = 10.dp, vertical = 24.dp)
         ) {
-            Spacer(modifier = Modifier.height(32.dp))
-            Text(
-                text = stringResource(Res.string.settings),
-                modifier = Modifier.padding(start = 10.dp),
-                color = Color.White, fontSize = 24.sp
+            MyDropDownElement(
+                onAction = onAction,
+                state = state,
+                settingsType = SettingsType.TEMPERATURE
             )
-            Spacer(modifier = Modifier.height(32.dp))
-            Text(
-                text = stringResource(Res.string.units),
-                modifier = Modifier.padding(start = 10.dp),
-                color = Color.Gray
+            Spacer(modifier = Modifier.height(24.dp))
+            MyDropDownElement(
+                onAction = onAction,
+                state = state,
+                settingsType = SettingsType.WIND
             )
-            Spacer(modifier = Modifier.height(6.dp))
-            Column(
-                modifier = Modifier.fillMaxWidth().wrapContentHeight()
-                    .background(color = Color.DarkGray, shape = RoundedCornerShape(16.dp))
-                    .padding(horizontal = 10.dp, vertical = 24.dp)
-            ) {
-                MyDropDownElement(
-                    onAction = onAction,
-                    state = state,
-                    settingsType = SettingsType.TEMPERATURE
-                )
-                Spacer(modifier = Modifier.height(24.dp))
-                MyDropDownElement(
-                    onAction = onAction,
-                    state = state,
-                    settingsType = SettingsType.WIND
-                )
-                Spacer(modifier = Modifier.height(24.dp))
-                MyDropDownElement(
-                    onAction = onAction,
-                    state = state,
-                    settingsType = SettingsType.PRESSURE
-                )
-            }
+            Spacer(modifier = Modifier.height(24.dp))
+            MyDropDownElement(
+                onAction = onAction,
+                state = state,
+                settingsType = SettingsType.PRESSURE
+            )
         }
     }
 }
@@ -133,7 +119,8 @@ private fun Preview() {
         SettingsScreenScreen(
             state = SettingsScreenState(),
             onAction = {},
-            onBackButtonClick = {}
+            onBackButtonClick = {},
+            modifier = Modifier
         )
     }
 }
