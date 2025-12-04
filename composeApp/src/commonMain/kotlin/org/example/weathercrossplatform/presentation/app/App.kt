@@ -50,8 +50,8 @@ fun App() {
                 PermissionState.Granted -> {
                     //Text(text = "Granted")
                     NavHostMainScreen(
-                        isFirstLaunch = permissionsViewModel.isFirstLaunch,
                         modifier = Modifier.padding(it),
+                        isFirstLaunch = permissionsViewModel.isFirstLaunch
                     )
                     scope.launch {
                         delay(100)

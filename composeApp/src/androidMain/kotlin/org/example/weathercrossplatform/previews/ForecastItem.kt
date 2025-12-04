@@ -12,6 +12,7 @@ private fun Preview() {
         date = "Today",
         low = "-1",
         high = "+2",
-        image = ""
+        image = "",
+        isTempC = true
     )
 }

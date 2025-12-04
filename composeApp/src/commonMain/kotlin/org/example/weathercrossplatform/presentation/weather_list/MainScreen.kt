@@ -156,7 +156,7 @@ fun MainScreen(
                                 vertical = 2.dp,
                                 horizontal = 16.dp
                             ),
-                            text = "${weatherMainScreenState.weatherDto?.current?.tempC} ℃",
+                            text = if (weatherMainScreenState.isTempC) "${weatherMainScreenState.weatherDto?.current?.tempC} ℃" else "${weatherMainScreenState.weatherDto?.current?.tempF} ℉",
                             color = textColor,
                             fontSize = 85.sp
                         )
@@ -171,7 +171,10 @@ fun MainScreen(
                     ) {
                         Text(
                             modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 2.dp),
-                            text = "${stringResource(Res.string.feels_like)} ${weatherMainScreenState.weatherDto?.current?.feelsLikeC} ℃", color = textColor
+                            text = when {
+                                weatherMainScreenState.isTempC -> "${stringResource(Res.string.feels_like)} ${weatherMainScreenState.weatherDto?.current?.feelsLikeC} ℃"
+                                else -> "${stringResource(Res.string.feels_like)} ${weatherMainScreenState.weatherDto?.current?.feelsLikeF} ℉"
+                            }, color = textColor
                         )
                         Text(
                             modifier = Modifier.padding(start = 16.dp, bottom = 2.dp, end = 16.dp),
@@ -224,10 +227,12 @@ fun MainScreen(
                 ) {
                     weatherMainScreenState.weatherDto?.forecast?.forecastday?.let { forecastListDayList ->
                         ForecastElement(
-                            forecastList = forecastListDayList
+                            forecastList = forecastListDayList,
+                            isTempC = weatherMainScreenState.isTempC
                         )
                         HourForecastElement(
-                            hours = forecastListDayList[0].hour
+                            hours = forecastListDayList[0].hour,
+                            isTempC = weatherMainScreenState.isTempC
                         )
                         LazyVerticalGrid(
                             columns = GridCells.Fixed(2),

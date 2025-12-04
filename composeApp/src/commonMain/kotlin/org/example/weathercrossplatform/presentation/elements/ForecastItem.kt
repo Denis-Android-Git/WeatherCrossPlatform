@@ -18,7 +18,8 @@ fun ForecastItem(
     date: String,
     low: String,
     high: String,
-    image: String
+    image: String,
+    isTempC: Boolean
 ) {
     val icon = image.replace("//", "https://")
 
@@ -34,11 +35,19 @@ fun ForecastItem(
                 modifier = Modifier.padding(start = 130.dp)
             )
             Text(
-                text = "$low ℃", color = Color.White,
+                text = when {
+                    isTempC -> "$low ℃"
+                    else -> "$low ℉"
+                },
+                color = Color.White,
                 modifier = Modifier.padding(start = 200.dp)
             )
             Text(
-                text = "$high ℃", color = Color.White,
+                text = when {
+                    isTempC -> "$high ℃"
+                    else -> "$high ℉"
+                },
+                color = Color.White,
                 modifier = Modifier.align(Alignment.CenterEnd)
             )
 

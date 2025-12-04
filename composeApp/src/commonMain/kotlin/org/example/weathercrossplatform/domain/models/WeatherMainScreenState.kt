@@ -38,5 +38,8 @@ data class WeatherMainScreenState(
         Res.drawable.im_8,
         Res.drawable.im_9,
         Res.drawable.im_10
-    )
+    ),
+    val isTempC: Boolean = true,
+    val isWindKph: Boolean = true,
+    val isPressureMb: Boolean = true,
 )

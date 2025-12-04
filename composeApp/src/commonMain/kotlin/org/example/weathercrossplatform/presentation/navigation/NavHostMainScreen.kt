@@ -21,7 +21,10 @@ fun NavHostMainScreen(
 ) {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = MainScreenRoute()) {
+    NavHost(
+        modifier = modifier,
+        navController = navController, startDestination = MainScreenRoute()
+    ) {
         composable<MainScreenRoute> {
             MainScreenState(
                 onAddButtonClick = { pageNumber ->

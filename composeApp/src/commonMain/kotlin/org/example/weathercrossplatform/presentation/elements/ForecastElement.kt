@@ -30,7 +30,8 @@ import weathercrossplatform.composeapp.generated.resources.tomorrow
 
 @Composable
 fun ForecastElement(
-    forecastList: List<Forecastday>
+    forecastList: List<Forecastday>,
+    isTempC: Boolean
 ) {
     Column(
         modifier = Modifier
@@ -63,9 +64,10 @@ fun ForecastElement(
                         1 -> stringResource(Res.string.tomorrow)
                         else -> it.date
                     },
-                    low = it.day.minTempC.toString(),
-                    high = it.day.maxTempC.toString(),
-                    image = it.day.condition.icon
+                    low = if (isTempC) it.day.minTempC.toString() else it.day.minTempF.toString(),
+                    high = if (isTempC) it.day.maxTempC.toString() else it.day.maxTempF.toString(),
+                    image = it.day.condition.icon,
+                    isTempC = isTempC
                 )
             }
         }

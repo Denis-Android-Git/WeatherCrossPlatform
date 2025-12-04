@@ -35,10 +35,11 @@ import weathercrossplatform.composeapp.generated.resources._24h_forecast
 
 @Composable
 fun HourForecastElement(
-    hours: List<Hour>
+    hours: List<Hour>,
+    isTempC: Boolean
 ) {
-    val maxTemp by remember { mutableFloatStateOf(hours.maxOf { it.tempC.toFloat() }) }
-    val minTemp by remember { mutableFloatStateOf(hours.minOf { it.tempC.toFloat() }) }
+    val maxTemp = hours.maxOf { if (isTempC) it.tempC.toFloat() else it.tempF.toFloat() }
+    val minTemp = hours.minOf { if (isTempC) it.tempC.toFloat() else it.tempF.toFloat() }
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -56,10 +57,12 @@ fun HourForecastElement(
             itemsIndexed(hours) { index, item ->
                 val icon = item.condition.icon.replace("//", "https://")
                 val time = item.time.substringAfter(" ")
-                val prevTemp =
-                    if (index > 0) hours[index - 1].tempC.toFloat() else item.tempC.toFloat()
+                val prevTemp = when {
+                    isTempC -> if (index > 0) hours[index - 1].tempC.toFloat() else item.tempC.toFloat()
+                    else -> if (index > 0) hours[index - 1].tempF.toFloat() else item.tempF.toFloat()
+                }
                 ForecastRowItem(
-                    temp = item.tempC.toString(),
+                    temp = if (isTempC) item.tempC.toString() else item.tempF.toString(),
                     icon = icon,
                     wind = item.windKph.toString(),
                     time = time,

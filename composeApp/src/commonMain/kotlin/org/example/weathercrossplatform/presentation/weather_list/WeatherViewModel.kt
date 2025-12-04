@@ -23,6 +23,7 @@ import org.example.weathercrossplatform.domain.models.Coordinates
 import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 import org.example.weathercrossplatform.domain.repo.DataBaseRepo
+import org.example.weathercrossplatform.domain.repo.SettingsStorage
 import kotlin.math.roundToInt
 
 class WeatherViewModel(
@@ -30,6 +31,7 @@ class WeatherViewModel(
     private val weatherRepoImpl: WeatherRepoImpl,
     private val dataBaseRepo: DataBaseRepo,
     private val myLogger: MyLogger,
+    private val settingsStorage: SettingsStorage,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
@@ -42,6 +44,19 @@ class WeatherViewModel(
     private val allCities = dataBaseRepo.getWeatherList()
 
     init {
+        viewModelScope.launch {
+            settingsStorage.observeSettingsInfo().collect { info ->
+                info?.let { settingsInfo ->
+                    _weatherScreenState.update {
+                        it.copy(
+                            isTempC = settingsInfo.isTempC,
+                            isWindKph = settingsInfo.isWindKph,
+                            isPressureMb = settingsInfo.isPressureMb
+                        )
+                    }
+                }
+            }
+        }
         viewModelScope.launch {
             myLogger.debug("pageNumberFromSearchScreen = $pageNumberFromSearchScreen")
             myLogger.debug("cityIdFromSearchScreen = $cityIdFromSearchScreen")
@@ -159,18 +174,25 @@ class WeatherViewModel(
         weatherRepoImpl.getCurrentWeather(query)
             .onSuccess { weather ->
                 myLogger.debug("location.id = ${weather.location.id}")
+                val isTempC = weatherScreenState.value.isTempC
+                val isWindKph = weatherScreenState.value.isWindKph
+                val isPressureMb = weatherScreenState.value.isPressureMb
+                myLogger.debug("check_settings isTempC = $isTempC, isWindKph = $isWindKph, isPressureMb = $isPressureMb")
                 if (latitude != null && longitude != null) {
                     val desc = weather.current.condition.text.let {
                         if (it.length > 100) it.take(100) else it //fix OutOfMemoryError
                     }
                     dataBaseRepo.clearCurrentLocation()
+                    val highTemp = if (isTempC) weather.forecast.forecastday[0].day.maxTempC else weather.forecast.forecastday[0].day.maxTempF
+                    val lowTemp = if (isTempC) weather.forecast.forecastday[0].day.minTempC else weather.forecast.forecastday[0].day.minTempF
+                    myLogger.debug("check_settings highTemp = $highTemp, lowTemp = $lowTemp")
                     dataBaseRepo.saveWeather(
                         weather = SavedWeatherItem(
                             cityName = weather.location.name,
-                            temperature = weather.current.tempC,
+                            temperature = if (isTempC) weather.current.tempC else weather.current.tempF,
                             weatherDescription = desc,
-                            highTemperature = weather.forecast.forecastday[0].day.maxTempC,
-                            lowTemperature = weather.forecast.forecastday[0].day.minTempC,
+                            highTemperature = highTemp,
+                            lowTemperature = lowTemp,
                             cityId = 111,
                             coordinates = "${weather.location.lat},${weather.location.lon}",
                             isCurrentLocation = true,
@@ -189,10 +211,10 @@ class WeatherViewModel(
                     pressure = (weather.current.pressureMb * 0.75).roundToInt(),//перевод в мм ртутного столба
                     clouds = weather.current.cloud,
                     uvIndex = weather.current.uv.toInt(),
-                    feelsLike = weather.current.feelsLikeC,
+                    feelsLike = if (isTempC) weather.current.feelsLikeC else weather.current.feelsLikeF,
                     rotationFeelsLike = calculateRotationAngle(
-                        weather.current.tempC,
-                        weather.current.feelsLikeC
+                        if (isTempC) weather.current.tempC else weather.current.tempF,
+                        if (isTempC) weather.current.feelsLikeC else weather.current.feelsLikeF
                     )
                 )
                 _weatherScreenState.value = _weatherScreenState.value.copy(
