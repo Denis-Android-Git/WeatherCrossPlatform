@@ -5,7 +5,7 @@ android-minSdk = "24"
 android-targetSdk = "36"
 androidx-activityCompose = "1.12.1"
 compose-multiplatform = "1.9.3"
-androidx-lifecycle = "2.9.6"
+androidx-lifecycle = "2.10.0-alpha06"
 kotlin = "2.2.21"
 kotlinSerialization = "1.9.0"
 kotlinx-coroutines = "1.10.2"
@@ -18,7 +18,9 @@ lifecycleViewModelCompose = "2.9.6"
 playServicesLocation = "21.3.0"
 koin = "4.1.1"
 koinComposeMultiplatform = "4.1.1"
-navigationCompose = "2.9.1"
+#navigationCompose = "2.9.1"
+cmpNavigation3 = "1.0.0-alpha06"
+
 coil = "3.3.0"
 #Firebase android
 firebase-android-bom = "34.6.0"
@@ -107,7 +109,11 @@ koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koinComp
 koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koinComposeMultiplatform" }
 
 #Navigation
-navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+#navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+
+# For Compose Multiplatform
+jetbrains-navigation3-ui = { module = "org.jetbrains.androidx.navigation3:navigation3-ui", version.ref = "cmpNavigation3" }
+jetbrains-lifecycle-viewmodel-nav3 = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-navigation3", version.ref = "androidx-lifecycle" }
 
 #Ktor
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }

@@ -2,9 +2,15 @@ package org.example.weathercrossplatform.presentation.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
+import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
+import androidx.navigation3.runtime.NavEntry
+import androidx.navigation3.runtime.NavKey
+import androidx.navigation3.runtime.rememberNavBackStack
+import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
+import androidx.navigation3.ui.NavDisplay
+import androidx.savedstate.serialization.SavedStateConfiguration
+import kotlinx.serialization.modules.SerializersModule
+import kotlinx.serialization.modules.polymorphic
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Routes
@@ -19,55 +25,77 @@ fun NavHostMainScreen(
     modifier: Modifier,
     myLogger: MyLogger = MyLoggerImpl
 ) {
-    val navController = rememberNavController()
+    val backStack = rememberNavBackStack(
+        configuration = SavedStateConfiguration {
+            serializersModule = SerializersModule {
+                polymorphic(NavKey::class) {
+                    subclass(MainScreenRoute::class, MainScreenRoute.serializer())
+                    subclass(Routes.SearchScreenRoute::class, Routes.SearchScreenRoute.serializer())
+                    subclass(Routes.SettingsScreenRoute::class, Routes.SettingsScreenRoute.serializer())
+                }
+            }
+        },
+        MainScreenRoute()
+    )
+    NavDisplay(
+        modifier = modifier,
+        backStack = backStack,
+        entryDecorators = listOf(
+            rememberSaveableStateHolderNavEntryDecorator(),
+            rememberViewModelStoreNavEntryDecorator()
+        ),
+        entryProvider = { key ->
+            when (key) {
+                is MainScreenRoute -> {
+                    NavEntry(key) {
+                        MainScreenState(
+                            onAddButtonClick = { pageNumber ->
+                                backStack.add(Routes.SearchScreenRoute(pageNumber))
+                            },
+                            onCancelButtonClick = {
+                                backStack.remove(MainScreenRoute())
+                            },
+                            isFirstLaunch = isFirstLaunch,
+                            onSettingsClick = {
+                                backStack.add(Routes.SettingsScreenRoute)
+                            },
+                            modifier = modifier,
+                        )
+                    }
+                }
 
-    NavHost(
-        navController = navController, startDestination = MainScreenRoute()
-    ) {
-        composable<MainScreenRoute> {
-            MainScreenState(
-                onAddButtonClick = { pageNumber ->
-                    navController.navigate(Routes.SearchScreenRoute(pageNumber)) {
-                        launchSingleTop = true
+                is Routes.SearchScreenRoute -> {
+                    NavEntry(key) {
+                        SearchScreenState(
+                            onBackButtonClick = { pageNumber ->
+                                backStack.add(MainScreenRoute(pageNumber = pageNumber))
+                            },
+                            onFoundItemClick = { location ->
+                                backStack.add(MainScreenRoute(location.id))
+                                myLogger.debug("location_id: ${location.id}")
+                            },
+                            onSavedItemClick = { pageNumber ->
+                                myLogger.debug("page_number: $pageNumber")
+                                backStack.add(MainScreenRoute(pageNumber = pageNumber))
+                            },
+                            modifier = modifier,
+                        )
                     }
-                },
-                onCancelButtonClick = {
-                    navController.navigateUp()
-                },
-                isFirstLaunch = isFirstLaunch,
-                onSettingsClick = {
-                    navController.navigate(Routes.SettingsScreenRoute)
-                },
-                modifier = modifier,
-            )
-        }
-        composable<Routes.SearchScreenRoute> {
-            SearchScreenState(
-                onBackButtonClick = { pageNumber ->
-                    navController.navigate(MainScreenRoute(pageNumber = pageNumber))
-                },
-                onFoundItemClick = { location ->
-                    navController.navigate(MainScreenRoute(location.id))
-                    myLogger.debug("location_id: ${location.id}")
-                },
-                onSavedItemClick = { pageNumber ->
-                    myLogger.debug("page_number: $pageNumber")
-                    navController.navigate(MainScreenRoute(pageNumber = pageNumber)) {
-                        popUpTo<Routes.SearchScreenRoute> {
-                            inclusive = true
-                        }
+                }
+
+                is Routes.SettingsScreenRoute -> {
+                    NavEntry(key) {
+                        SettingsScreenRoot(
+                            onBackButtonClick = {
+                                backStack.add(MainScreenRoute())
+                            },
+                            modifier = modifier,
+                        )
                     }
-                },
-                modifier = modifier,
-            )
+                }
+
+                else -> error("Unknown NavKey: $key")
+            }
         }
-        composable<Routes.SettingsScreenRoute> {
-            SettingsScreenRoot(
-                onBackButtonClick = {
-                    navController.navigateUp()
-                },
-                modifier = modifier,
-            )
-        }
-    }
+    )
 }

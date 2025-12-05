@@ -69,7 +69,10 @@ kotlin {
             api(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
-            implementation(libs.navigation.compose)
+            //implementation(libs.navigation.compose)
+            implementation(libs.jetbrains.navigation3.ui)
+            implementation(libs.jetbrains.lifecycle.viewmodel.nav3)
+
             implementation(libs.coil.compose)
             implementation(libs.coil.network.ktor3)
             api(libs.gitlive.firebase.kotlin.crashlytics)
