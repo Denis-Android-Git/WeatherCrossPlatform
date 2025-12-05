@@ -24,7 +24,12 @@ import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 import org.example.weathercrossplatform.domain.repo.DataBaseRepo
 import org.example.weathercrossplatform.domain.repo.SettingsStorage
-import kotlin.math.roundToInt
+
+
+private const val MAX_AIR_PRESSURE_MM = 825
+private const val MIN_AIR_PRESSURE_MM = 637
+private const val MAX_AIR_PRESSURE_INCH = 32
+private const val MIN_AIR_PRESSURE_INCH = 25
 
 class WeatherViewModel(
     private val locationService: LocationService,
@@ -204,18 +209,23 @@ class WeatherViewModel(
                 myLogger.debug("pressure = ${weather.current.pressureMb}, ${weather.current.pressureIn}")
                 myLogger.debug("uv = ${weather.current.uv}")
 
+
                 val weatherItemList = createWeatherItemList(
                     humidity = weather.current.humidity,
-                    windSpeed = weather.current.windKph,
+                    windSpeed = if (isWindKph) weather.current.windKph else weather.current.windMph,
                     windRotation = weather.current.windDegree,
-                    pressure = (weather.current.pressureMb * 0.75).roundToInt(),//перевод в мм ртутного столба
+                    pressure = if (isPressureMb) weather.current.pressureMb * 0.75 else weather.current.pressureIn,
                     clouds = weather.current.cloud,
                     uvIndex = weather.current.uv.toInt(),
                     feelsLike = if (isTempC) weather.current.feelsLikeC else weather.current.feelsLikeF,
                     rotationFeelsLike = calculateRotationAngle(
                         if (isTempC) weather.current.tempC else weather.current.tempF,
-                        if (isTempC) weather.current.feelsLikeC else weather.current.feelsLikeF
-                    )
+                        if (isTempC) weather.current.feelsLikeC else weather.current.feelsLikeF,
+                        isTempC
+                    ),
+                    isWindKmh = isWindKph,
+                    isPressureMb = isPressureMb,
+                    isTempC = isTempC
                 )
                 _weatherScreenState.value = _weatherScreenState.value.copy(
                     error = null,
@@ -287,11 +297,14 @@ class WeatherViewModel(
         humidity: Int,
         windSpeed: Double,
         windRotation: Int,
-        pressure: Int,
+        pressure: Double,
         clouds: Int,
         uvIndex: Int,
         feelsLike: Double,
-        rotationFeelsLike: Float
+        rotationFeelsLike: Float,
+        isTempC: Boolean,
+        isWindKmh: Boolean,
+        isPressureMb: Boolean
     ): List<WeatherItem> {
         return listOf(
             WeatherItem(
@@ -302,14 +315,14 @@ class WeatherViewModel(
             ),
             WeatherItem(
                 title = "Wind",
-                description = "$windSpeed km/h",
-                progress = (windSpeed * 0.01).toFloat(),
+                description = if (isWindKmh) "$windSpeed km/h" else "$windSpeed mp/h",
+                progress = (windSpeed * if (isWindKmh) 0.01 else 0.016).toFloat(),
                 rotation = windRotation.toFloat()
             ),
             WeatherItem(
                 title = "Pressure",
-                description = "$pressure mmHg",
-                progress = (pressure * 0.001).toFloat(),
+                description = if (isPressureMb) "$pressure mmHg" else "$pressure inHg",
+                progress = calcPressureProgress(pressure, isPressureMb),
                 rotation = 0f
             ),
             WeatherItem(
@@ -332,14 +345,20 @@ class WeatherViewModel(
             ),
             WeatherItem(
                 title = "Feels Like",
-                description = "$feelsLike°C",
+                description = if (isTempC) "$feelsLike°C" else "$feelsLike°F",
                 rotation = rotationFeelsLike,
             )
         )
     }
 
-    private fun calculateRotationAngle(temperature: Double, feelsLike: Double): Float {
+    private fun calcPressureProgress(pressure: Double, isPressureMb: Boolean): Float {
+        val minPressure = if (isPressureMb) MIN_AIR_PRESSURE_MM else MIN_AIR_PRESSURE_INCH
+        val maxPressure = if (isPressureMb) MAX_AIR_PRESSURE_MM else MAX_AIR_PRESSURE_INCH
+        return ((pressure - minPressure).toFloat() / (maxPressure - minPressure))
+    }
+
+    private fun calculateRotationAngle(temperature: Double, feelsLike: Double, isTempC: Boolean): Float {
         val diff = feelsLike - temperature
-        return (diff * 20).toFloat()
+        return (diff * if (isTempC) 20 else 11).toFloat()
     }
 }

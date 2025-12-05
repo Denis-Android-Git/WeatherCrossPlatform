@@ -232,7 +232,8 @@ fun MainScreen(
                         )
                         HourForecastElement(
                             hours = forecastListDayList[0].hour,
-                            isTempC = weatherMainScreenState.isTempC
+                            isTempC = weatherMainScreenState.isTempC,
+                            isWindKmh = weatherMainScreenState.isWindKph
                         )
                         LazyVerticalGrid(
                             columns = GridCells.Fixed(2),
@@ -253,7 +254,8 @@ fun MainScreen(
                                     cloudsProgress = weatherMainScreenState.weatherItemList[3].progress,
                                     windRotation = weatherMainScreenState.weatherItemList[1].rotation,
                                     uvIndex = weatherMainScreenState.weatherItemList[4].uvIndex.toString(),
-                                    feelsLikeRotation = weatherMainScreenState.weatherItemList[5].rotation
+                                    feelsLikeRotation = weatherMainScreenState.weatherItemList[5].rotation,
+                                    isPressureMb = weatherMainScreenState.isPressureMb
                                 )
                             }
                         }

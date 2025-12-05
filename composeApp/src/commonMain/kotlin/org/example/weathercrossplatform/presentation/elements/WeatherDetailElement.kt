@@ -30,7 +30,8 @@ fun WeatherDetailElement(
     cloudsProgress: Float,
     windRotation: Float,
     feelsLikeRotation: Float,
-    uvIndex: String
+    uvIndex: String,
+    isPressureMb: Boolean
 ) {
     Column(
         modifier = Modifier
@@ -69,6 +70,7 @@ fun WeatherDetailElement(
                 PressureIndicator(
                     modifier = Modifier.align(Alignment.End),
                     progress = pressureProgress,
+                    isPressureMb = isPressureMb,
                 )
             }
 

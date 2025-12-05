@@ -16,6 +16,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.wind_arrow
 
@@ -82,4 +83,10 @@ fun WindIcon(
             ) {}
         }
     }
+}
+
+@Preview
+@Composable
+fun WindIconPreview() {
+    WindIcon(progress = 0.5f, rotation = 90f)
 }

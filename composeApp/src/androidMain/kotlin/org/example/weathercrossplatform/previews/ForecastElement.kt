@@ -16,5 +16,6 @@ private fun Preview() {
         previousTemp = -1f,
         maxTemp = 11f,
         minTemp = -2f,
+        isWindKmh = true,
     )
 }

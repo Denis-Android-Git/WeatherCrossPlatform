@@ -36,7 +36,8 @@ import weathercrossplatform.composeapp.generated.resources._24h_forecast
 @Composable
 fun HourForecastElement(
     hours: List<Hour>,
-    isTempC: Boolean
+    isTempC: Boolean,
+    isWindKmh: Boolean
 ) {
     val maxTemp = hours.maxOf { if (isTempC) it.tempC.toFloat() else it.tempF.toFloat() }
     val minTemp = hours.minOf { if (isTempC) it.tempC.toFloat() else it.tempF.toFloat() }
@@ -64,11 +65,12 @@ fun HourForecastElement(
                 ForecastRowItem(
                     temp = if (isTempC) item.tempC.toString() else item.tempF.toString(),
                     icon = icon,
-                    wind = item.windKph.toString(),
+                    wind = if (isWindKmh) item.windKph.toString() else item.windMph.toString(),
                     time = time,
                     previousTemp = prevTemp,
                     maxTemp = maxTemp,
-                    minTemp = minTemp
+                    minTemp = minTemp,
+                    isWindKmh = isWindKmh
                 )
             }
         }
@@ -83,7 +85,8 @@ fun ForecastRowItem(
     time: String,
     previousTemp: Float,
     maxTemp: Float,
-    minTemp: Float
+    minTemp: Float,
+    isWindKmh: Boolean
 ) {
     val tempRange = maxTemp - minTemp
     var boxHeight by remember {
@@ -127,7 +130,7 @@ fun ForecastRowItem(
             }
         }
         AsyncImage(model = icon, contentDescription = null, modifier = Modifier.size(40.dp))
-        Text(text = "$wind km/h", color = Color.White)
+        Text(text = if (isWindKmh) "$wind km/h" else "$wind mp/h", color = Color.White)
         Text(text = time, color = Color.White)
     }
 }

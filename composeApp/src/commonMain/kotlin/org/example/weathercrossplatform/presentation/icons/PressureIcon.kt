@@ -18,13 +18,16 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.arrow_downward
 
 @Composable
 fun PressureIndicator(
     modifier: Modifier = Modifier,
-    progress: Float, maxValue: Float = 1.1f) {
+    progress: Float, maxValue: Float = 1.1f,
+    isPressureMb: Boolean
+) {
     Box(
         modifier = modifier
             .padding(16.dp)
@@ -69,11 +72,20 @@ fun PressureIndicator(
             modifier = Modifier.size(35.dp)
         )
         Text(
-            text = "mmHg",
+            text = if (isPressureMb) "mmHg" else "inHg",
             fontSize = 7.sp,
             color = Color.White,
             modifier = Modifier
                 .align(Alignment.BottomCenter)
         )
     }
+}
+
+@Preview
+@Composable
+fun PressureIndicatorPreview() {
+    PressureIndicator(
+        progress = 0.5f,
+        isPressureMb = false
+    )
 }

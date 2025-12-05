@@ -84,7 +84,7 @@ kotlin {
             implementation(libs.datastore.preferences)
         }
         kotzilla {
-            versionName = "0.9.50" // add your app version name
+            versionName = "0.9.52" // add your app version name
             keyGeneration = KotzillaKeyGeneration.COMPOSE
             composeInstrumentation = true
         }
@@ -98,25 +98,6 @@ kotlin {
 //        }
     }
 }
-
-buildkonfig {
-    packageName = "com.example.weathercrossplatform"
-
-    defaultConfigs {
-        val properties = Properties()
-        val localPropertiesFile = rootProject.file("local.properties")
-        localPropertiesFile.inputStream().use { properties.load(it) }
-
-        val apiKey: String = properties.getProperty("API_KEY")
-            ?: error("API_KEY is required")
-        val apiKey2: String = properties.getProperty("API_KEY2")
-            ?: error("API_KEY is required")
-
-        buildConfigField(STRING, "API_KEY", apiKey)
-        buildConfigField(STRING, "API_KEY2", apiKey2)
-    }
-}
-
 android {
     namespace = "org.example.weathercrossplatform"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
@@ -125,8 +106,8 @@ android {
         applicationId = "org.example.weathercrossplatform"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 26
-        versionName = "0.9.50"
+        versionCode = 28
+        versionName = "0.9.52"
 
     }
     packaging {
@@ -145,6 +126,24 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 
+}
+
+buildkonfig {
+    packageName = "com.example.weathercrossplatform"
+
+    defaultConfigs {
+        val properties = Properties()
+        val localPropertiesFile = rootProject.file("local.properties")
+        localPropertiesFile.inputStream().use { properties.load(it) }
+
+        val apiKey: String = properties.getProperty("API_KEY")
+            ?: error("API_KEY is required")
+        val apiKey2: String = properties.getProperty("API_KEY2")
+            ?: error("API_KEY is required")
+
+        buildConfigField(STRING, "API_KEY", apiKey)
+        buildConfigField(STRING, "API_KEY2", apiKey2)
+    }
 }
 
 dependencies {
