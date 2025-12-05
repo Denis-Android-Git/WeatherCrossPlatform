@@ -40,7 +40,8 @@ fun SavedElement(
     onClick: () -> Unit,
     isLongPressed: Boolean,
     isListContainsElement: Boolean,
-    isCurrentLocation: Boolean
+    isCurrentLocation: Boolean,
+    isTempC: Boolean
 ) {
     Box(
         modifier = Modifier
@@ -83,7 +84,7 @@ fun SavedElement(
                 Spacer(modifier = Modifier.weight(1f))
                 Text(
                     text = if (weatherDescription.length > 20) "${weatherDescription.take(20)}..." else weatherDescription,
-                    color = Color.White, 
+                    color = Color.White,
                     maxLines = 1
                 )
             }
@@ -91,7 +92,7 @@ fun SavedElement(
             Column(
                 horizontalAlignment = Alignment.End
             ) {
-                Text(text = "$temperature°C", color = Color.White, fontSize = 20.sp)
+                Text(text = if (isTempC) "$temperature°C" else "$temperature°F", color = Color.White, fontSize = 20.sp)
                 Spacer(modifier = Modifier.weight(1f))
                 Text(text = "$high / $low", color = Color.White)
             }
@@ -120,7 +121,7 @@ fun SavedElement(
                         .align(Alignment.TopEnd)
                         .border(1.dp, Color.White, CircleShape)
                         .background(Color.DarkGray, shape = CircleShape)
-                    )
+                )
             }
         }
     }
@@ -139,8 +140,9 @@ fun PreviewSavedElement() {
         index = 0,
         onLongClick = {},
         onClick = {},
-        isLongPressed = true,
+        isLongPressed = false,
         isListContainsElement = true,
-        isCurrentLocation = false
+        isCurrentLocation = false,
+        isTempC = false
     )
 }

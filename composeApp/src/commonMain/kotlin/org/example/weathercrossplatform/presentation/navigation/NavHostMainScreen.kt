@@ -22,7 +22,6 @@ fun NavHostMainScreen(
     val navController = rememberNavController()
 
     NavHost(
-        modifier = modifier,
         navController = navController, startDestination = MainScreenRoute()
     ) {
         composable<MainScreenRoute> {

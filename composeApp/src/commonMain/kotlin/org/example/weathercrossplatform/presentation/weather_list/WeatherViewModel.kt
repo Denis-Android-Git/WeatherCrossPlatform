@@ -27,9 +27,9 @@ import org.example.weathercrossplatform.domain.repo.SettingsStorage
 
 
 private const val MAX_AIR_PRESSURE_MM = 825
-private const val MIN_AIR_PRESSURE_MM = 637
+private const val MIN_AIR_PRESSURE_MM = 700
 private const val MAX_AIR_PRESSURE_INCH = 32
-private const val MIN_AIR_PRESSURE_INCH = 25
+private const val MIN_AIR_PRESSURE_INCH = 28
 
 class WeatherViewModel(
     private val locationService: LocationService,

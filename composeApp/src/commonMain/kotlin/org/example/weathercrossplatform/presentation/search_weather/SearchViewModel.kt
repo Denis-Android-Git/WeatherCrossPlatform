@@ -17,12 +17,14 @@ import org.example.weathercrossplatform.domain.actions.SearchScreenActions
 import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.SearchScreenViewState
 import org.example.weathercrossplatform.domain.repo.DataBaseRepo
+import org.example.weathercrossplatform.domain.repo.SettingsStorage
 import org.example.weathercrossplatform.domain.repo.WeatherRepo
 
 class SearchViewModel(
     private val dataBaseRepo: DataBaseRepo,
     private val weatherRepo: WeatherRepo,
     private val myLogger: MyLogger,
+    private val settingsStorage: SettingsStorage,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
@@ -40,22 +42,36 @@ class SearchViewModel(
         }
 
     init {
+
+        viewModelScope.launch {
+            settingsStorage.observeSettingsInfo().collect { settingsInfo ->
+                settingsInfo?.let { info ->
+                    _searchScreenState.update {
+                        it.copy(
+                            isTempC = info.isTempC
+                        )
+                    }
+                }
+            }
+        }
+
         viewModelScope.launch {
             val savedCities = dataBaseRepo.getWeatherList().firstOrNull()
             savedCities?.let { list ->
+                val isTempC = searchScreenState.value.isTempC
                 list.forEach { savedWeatherItem ->
                     async {
                         weatherRepo.getCurrentWeather(savedWeatherItem.coordinates)
                             .onSuccess { newInfo ->
-                                myLogger.debug("SearchViewModel_newInfo = $${savedWeatherItem.cityName}, ${savedWeatherItem.cityId}, ${savedWeatherItem.temperature}, ${savedWeatherItem.highTemperature}")
+                                myLogger.debug("SearchViewModel_newInfo = $${savedWeatherItem.coordinates}, ${savedWeatherItem.cityId}, ${savedWeatherItem.temperature}, ${savedWeatherItem.highTemperature}")
                                 myLogger.debug("SearchViewModel_newInfo = $${newInfo.location.name}, ${newInfo.current.tempC}, ${newInfo.forecast.forecastday[0].day.maxTempC}")
                                 val item = SavedWeatherItem(
                                     cityId = savedWeatherItem.cityId,
                                     cityName = savedWeatherItem.cityName,
-                                    temperature = newInfo.current.tempC,
+                                    temperature = if (isTempC) newInfo.current.tempC else newInfo.current.tempF,
                                     weatherDescription = newInfo.current.condition.text,
-                                    highTemperature = newInfo.forecast.forecastday[0].day.maxTempC,
-                                    lowTemperature = newInfo.forecast.forecastday[0].day.minTempC,
+                                    highTemperature = if (isTempC) newInfo.forecast.forecastday[0].day.maxTempC else newInfo.forecast.forecastday[0].day.maxTempF,
+                                    lowTemperature = if (isTempC) newInfo.forecast.forecastday[0].day.minTempC else newInfo.forecast.forecastday[0].day.minTempF,
                                     coordinates = savedWeatherItem.coordinates,
                                     isCurrentLocation = savedWeatherItem.isCurrentLocation,
                                 )

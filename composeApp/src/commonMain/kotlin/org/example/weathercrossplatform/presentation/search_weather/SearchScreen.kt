@@ -242,7 +242,8 @@ fun SearchScreen(
                         },
                         isLongPressed = isLongPressed.value,
                         isListContainsElement = searchScreenState.tempListToDelete.contains(savedCity),
-                        isCurrentLocation = savedCity.isCurrentLocation
+                        isCurrentLocation = savedCity.isCurrentLocation,
+                        isTempC = searchScreenState.isTempC
                     )
                 }
             }

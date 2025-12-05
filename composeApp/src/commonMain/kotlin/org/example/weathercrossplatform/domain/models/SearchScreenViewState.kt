@@ -11,5 +11,6 @@ data class SearchScreenViewState(
     val tempListToDelete: List<SavedWeatherItem> = emptyList(),
     val pageNumber: Int? = null,
     val allCitiesInOriginalOrder: List<SavedWeatherItem> = emptyList(),
-    val allCities: List<SavedWeatherItem> = emptyList()
+    val allCities: List<SavedWeatherItem> = emptyList(),
+    val isTempC: Boolean = true
 )

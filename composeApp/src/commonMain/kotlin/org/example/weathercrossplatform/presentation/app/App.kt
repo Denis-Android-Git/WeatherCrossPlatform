@@ -1,12 +1,7 @@
 package org.example.weathercrossplatform.presentation.app
 
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.consumeWindowInsets
-import androidx.compose.foundation.layout.displayCutout
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.ime
-import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -40,17 +35,12 @@ fun App() {
         val permissionsViewModel = viewModel {
             PermissionsViewModel(controller)
         }
-        Scaffold(
-            modifier = Modifier.fillMaxSize()
-                .consumeWindowInsets(WindowInsets.navigationBars)
-                .consumeWindowInsets(WindowInsets.displayCutout),
-            contentWindowInsets = WindowInsets.ime
-        ) {
+        Scaffold {
             when (permissionsViewModel.state) {
                 PermissionState.Granted -> {
                     //Text(text = "Granted")
                     NavHostMainScreen(
-                        modifier = Modifier.padding(it),
+                        modifier = Modifier,//.padding(it),
                         isFirstLaunch = permissionsViewModel.isFirstLaunch
                     )
                     scope.launch {

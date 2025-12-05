@@ -23,6 +23,7 @@ fun SearchScreenState(
     val searchScreenState by searchViewModel.searchScreenState.collectAsStateWithLifecycle()
 
     SearchScreen(
+        modifier = modifier,
         onBackButtonClick = { onBackButtonClick(searchScreenState.pageNumber) },
         onQueryChange = {
             searchViewModel.onAction(SearchScreenActions.SetSearchQuery(it))
@@ -56,7 +57,6 @@ fun SearchScreenState(
             onSavedItemClick(it)
         },
         allCitiesInOriginalOrder = searchScreenState.allCitiesInOriginalOrder,
-        searchScreenState = searchScreenState,
-        modifier = modifier,
+        searchScreenState = searchScreenState
     )
 }

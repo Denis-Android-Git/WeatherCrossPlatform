@@ -10,7 +10,7 @@ import kotlinx.coroutines.IO
 
 @Database(
     entities = [SavedWeatherItem::class],
-    version = 11
+    version = 12
 )
 @ConstructedBy(AppDatabaseConstructor::class)
 abstract class WeatherDataBase : RoomDatabase() {
