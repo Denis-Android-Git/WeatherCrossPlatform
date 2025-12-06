@@ -18,6 +18,8 @@ import org.example.weathercrossplatform.domain.models.Routes.MainScreenRoute
 import org.example.weathercrossplatform.presentation.search_weather.SearchScreenState
 import org.example.weathercrossplatform.presentation.settings_screen.SettingsScreenRoot
 import org.example.weathercrossplatform.presentation.weather_list.MainScreenState
+import org.koin.compose.viewmodel.koinViewModel
+import org.koin.core.parameter.parametersOf
 
 @Composable
 fun NavHostMainScreen(
@@ -48,18 +50,24 @@ fun NavHostMainScreen(
             when (key) {
                 is MainScreenRoute -> {
                     NavEntry(key) {
+
                         MainScreenState(
                             onAddButtonClick = { pageNumber ->
                                 backStack.add(Routes.SearchScreenRoute(pageNumber))
                             },
                             onCancelButtonClick = {
-                                backStack.remove(MainScreenRoute())
+                                backStack.removeLastOrNull()
+                                backStack.add(MainScreenRoute(pageNumber = 0))
+                                backStack.add(Routes.SearchScreenRoute())
                             },
                             isFirstLaunch = isFirstLaunch,
                             onSettingsClick = {
                                 backStack.add(Routes.SettingsScreenRoute)
                             },
                             modifier = modifier,
+                            weatherViewModel = koinViewModel {
+                                parametersOf(key.pageNumber, key.cityId)
+                            },
                         )
                     }
                 }
@@ -68,14 +76,19 @@ fun NavHostMainScreen(
                     NavEntry(key) {
                         SearchScreenState(
                             onBackButtonClick = { pageNumber ->
-                                backStack.add(MainScreenRoute(pageNumber = pageNumber))
+                                backStack.removeLastOrNull()
+                                //backStack.add(MainScreenRoute(pageNumber = pageNumber))
                             },
                             onFoundItemClick = { location ->
+                                backStack.removeAll { it is Routes.SearchScreenRoute }
+                                backStack.removeFirst()
                                 backStack.add(MainScreenRoute(location.id))
                                 myLogger.debug("location_id: ${location.id}")
                             },
                             onSavedItemClick = { pageNumber ->
                                 myLogger.debug("page_number: $pageNumber")
+                                backStack.removeAll { it is Routes.SearchScreenRoute }
+                                backStack.removeFirst()
                                 backStack.add(MainScreenRoute(pageNumber = pageNumber))
                             },
                             modifier = modifier,
@@ -87,7 +100,7 @@ fun NavHostMainScreen(
                     NavEntry(key) {
                         SettingsScreenRoot(
                             onBackButtonClick = {
-                                backStack.add(MainScreenRoute())
+                                backStack.removeLastOrNull()
                             },
                             modifier = modifier,
                         )

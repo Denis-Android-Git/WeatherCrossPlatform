@@ -11,6 +11,7 @@ import org.example.weathercrossplatform.presentation.settings_screen.SettingsScr
 import org.example.weathercrossplatform.presentation.weather_list.WeatherViewModel
 import org.koin.core.module.Module
 import org.koin.core.module.dsl.singleOf
+import org.koin.core.module.dsl.viewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.bind
 import org.koin.dsl.module
@@ -21,7 +22,18 @@ val sharedModule = module {
     singleOf(::WeatherRepoImpl).bind<WeatherRepo>()
     singleOf(::DataBaseRepoImpl).bind<DataBaseRepo>()
     singleOf(::DataStoreSettingsStorage) bind SettingsStorage::class
-    viewModelOf(::WeatherViewModel)
+    //viewModelOf(::WeatherViewModel)
+    viewModel { (pageNumber: Int?, cityId: Int?) ->
+        WeatherViewModel(
+            locationService = get(),
+            weatherRepoImpl = get(),
+            dataBaseRepo = get(),
+            myLogger = get(),
+            settingsStorage = get(),
+            pageNumberFromSearchScreen = pageNumber,
+            cityIdFromSearchScreen = cityId
+        )
+    }
     viewModelOf(::SearchViewModel)
     viewModelOf(::SettingsScreenViewModel)
 }

@@ -37,11 +37,13 @@ class WeatherViewModel(
     private val dataBaseRepo: DataBaseRepo,
     private val myLogger: MyLogger,
     private val settingsStorage: SettingsStorage,
-    savedStateHandle: SavedStateHandle
+    pageNumberFromSearchScreen: Int?,
+    cityIdFromSearchScreen: Int?,
+    //savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-    private val pageNumberFromSearchScreen = savedStateHandle.get<Int>("pageNumber")
-    private val cityIdFromSearchScreen = savedStateHandle.get<Int>("cityId")
+    //private val pageNumberFromSearchScreen = savedStateHandle.get<Int>("pageNumber")
+    //private val cityIdFromSearchScreen = savedStateHandle.get<Int>("cityId")
 
     private val coordinates = MutableStateFlow<Coordinates?>(null)
     private val _weatherScreenState = MutableStateFlow(WeatherMainScreenState())
