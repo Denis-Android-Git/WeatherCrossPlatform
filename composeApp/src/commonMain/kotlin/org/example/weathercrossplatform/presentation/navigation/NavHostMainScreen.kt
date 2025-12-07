@@ -1,10 +1,6 @@
 package org.example.weathercrossplatform.presentation.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import androidx.navigation3.runtime.NavKey
@@ -31,11 +27,8 @@ fun NavHostMainScreen(
     modifier: Modifier,
     myLogger: MyLogger = MyLoggerImpl
 ) {
-    var currentPageNumber by remember {
-        mutableStateOf(0)
-    }
 
-    myLogger.debug("currentPageNumber: $currentPageNumber")
+    val navHostViewModel = koinViewModel<NavHostViewModel>()
 
     val backStack = rememberNavBackStack(
         configuration = SavedStateConfiguration {
@@ -62,11 +55,11 @@ fun NavHostMainScreen(
                 MainScreenState(
                     onAddButtonClick = { pageNumber ->
                         backStack.add(Routes.SearchScreenRoute(pageNumber))
-                        currentPageNumber = pageNumber
+                        navHostViewModel.pageNumber = pageNumber
                     },
                     onCancelButtonClick = {
                         backStack.removeAll { it is MainScreenRoute }
-                        backStack.add(MainScreenRoute(pageNumber = currentPageNumber))
+                        backStack.add(MainScreenRoute(pageNumber = navHostViewModel.pageNumber))
                         backStack.add(Routes.SearchScreenRoute())
                     },
                     isFirstLaunch = isFirstLaunch,
