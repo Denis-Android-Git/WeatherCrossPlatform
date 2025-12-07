@@ -27,8 +27,6 @@ import org.example.weathercrossplatform.domain.actions.MainScreenActions
 import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.presentation.elements.CustomIndicator
 import org.example.weathercrossplatform.presentation.elements.ErrorScreen
-import org.koin.compose.viewmodel.koinViewModel
-import org.koin.core.parameter.parametersOf
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable

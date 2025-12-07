@@ -1,10 +1,14 @@
 package org.example.weathercrossplatform.presentation.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
-import androidx.navigation3.runtime.NavEntry
 import androidx.navigation3.runtime.NavKey
+import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
@@ -27,6 +31,12 @@ fun NavHostMainScreen(
     modifier: Modifier,
     myLogger: MyLogger = MyLoggerImpl
 ) {
+    var currentPageNumber by remember {
+        mutableStateOf(0)
+    }
+
+    myLogger.debug("currentPageNumber: $currentPageNumber")
+
     val backStack = rememberNavBackStack(
         configuration = SavedStateConfiguration {
             serializersModule = SerializersModule {
@@ -46,68 +56,58 @@ fun NavHostMainScreen(
             rememberSaveableStateHolderNavEntryDecorator(),
             rememberViewModelStoreNavEntryDecorator()
         ),
-        entryProvider = { key ->
-            when (key) {
-                is MainScreenRoute -> {
-                    NavEntry(key) {
+        entryProvider = entryProvider {
 
-                        MainScreenState(
-                            onAddButtonClick = { pageNumber ->
-                                backStack.add(Routes.SearchScreenRoute(pageNumber))
-                            },
-                            onCancelButtonClick = {
-                                backStack.removeLastOrNull()
-                                backStack.add(MainScreenRoute(pageNumber = 0))
-                                backStack.add(Routes.SearchScreenRoute())
-                            },
-                            isFirstLaunch = isFirstLaunch,
-                            onSettingsClick = {
-                                backStack.add(Routes.SettingsScreenRoute)
-                            },
-                            modifier = modifier,
-                            weatherViewModel = koinViewModel {
-                                parametersOf(key.pageNumber, key.cityId)
-                            },
-                        )
-                    }
-                }
+            entry<MainScreenRoute> { mainScreen ->
+                MainScreenState(
+                    onAddButtonClick = { pageNumber ->
+                        backStack.add(Routes.SearchScreenRoute(pageNumber))
+                        currentPageNumber = pageNumber
+                    },
+                    onCancelButtonClick = {
+                        backStack.removeAll { it is MainScreenRoute }
+                        backStack.add(MainScreenRoute(pageNumber = currentPageNumber))
+                        backStack.add(Routes.SearchScreenRoute())
+                    },
+                    isFirstLaunch = isFirstLaunch,
+                    onSettingsClick = {
+                        backStack.add(Routes.SettingsScreenRoute)
+                    },
+                    modifier = modifier,
+                    weatherViewModel = koinViewModel {
+                        parametersOf(mainScreen.pageNumber, mainScreen.cityId)
+                    },
+                )
+            }
 
-                is Routes.SearchScreenRoute -> {
-                    NavEntry(key) {
-                        SearchScreenState(
-                            onBackButtonClick = { pageNumber ->
-                                backStack.removeLastOrNull()
-                                //backStack.add(MainScreenRoute(pageNumber = pageNumber))
-                            },
-                            onFoundItemClick = { location ->
-                                backStack.removeAll { it is Routes.SearchScreenRoute }
-                                backStack.removeFirst()
-                                backStack.add(MainScreenRoute(location.id))
-                                myLogger.debug("location_id: ${location.id}")
-                            },
-                            onSavedItemClick = { pageNumber ->
-                                myLogger.debug("page_number: $pageNumber")
-                                backStack.removeAll { it is Routes.SearchScreenRoute }
-                                backStack.removeFirst()
-                                backStack.add(MainScreenRoute(pageNumber = pageNumber))
-                            },
-                            modifier = modifier,
-                        )
-                    }
-                }
+            entry<Routes.SearchScreenRoute> {
+                SearchScreenState(
+                    onBackButtonClick = {
+                        backStack.removeLastOrNull()
+                    },
+                    onFoundItemClick = { location ->
+                        backStack.removeAll { it is Routes.SearchScreenRoute }
+                        backStack.removeAll { it is MainScreenRoute }
+                        backStack.add(MainScreenRoute(location.id))
+                        myLogger.debug("location_id: ${location.id}")
+                    },
+                    onSavedItemClick = { pageNumber ->
+                        myLogger.debug("page_number: $pageNumber")
+                        backStack.removeAll { it is Routes.SearchScreenRoute }
+                        backStack.removeFirst()
+                        backStack.add(MainScreenRoute(pageNumber = pageNumber))
+                    },
+                    modifier = modifier,
+                )
+            }
 
-                is Routes.SettingsScreenRoute -> {
-                    NavEntry(key) {
-                        SettingsScreenRoot(
-                            onBackButtonClick = {
-                                backStack.removeLastOrNull()
-                            },
-                            modifier = modifier,
-                        )
-                    }
-                }
-
-                else -> error("Unknown NavKey: $key")
+            entry<Routes.SettingsScreenRoute> {
+                SettingsScreenRoot(
+                    onBackButtonClick = {
+                        backStack.removeLastOrNull()
+                    },
+                    modifier = modifier,
+                )
             }
         }
     )

@@ -1,6 +1,5 @@
 package org.example.weathercrossplatform.presentation.weather_list
 
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
@@ -38,12 +37,8 @@ class WeatherViewModel(
     private val myLogger: MyLogger,
     private val settingsStorage: SettingsStorage,
     pageNumberFromSearchScreen: Int?,
-    cityIdFromSearchScreen: Int?,
-    //savedStateHandle: SavedStateHandle
+    cityIdFromSearchScreen: Int?
 ) : ViewModel() {
-
-    //private val pageNumberFromSearchScreen = savedStateHandle.get<Int>("pageNumber")
-    //private val cityIdFromSearchScreen = savedStateHandle.get<Int>("cityId")
 
     private val coordinates = MutableStateFlow<Coordinates?>(null)
     private val _weatherScreenState = MutableStateFlow(WeatherMainScreenState())
@@ -51,6 +46,7 @@ class WeatherViewModel(
     private val allCities = dataBaseRepo.getWeatherList()
 
     init {
+        myLogger.debug("WeatherViewModel_init")
         viewModelScope.launch {
             settingsStorage.observeSettingsInfo().collect { info ->
                 info?.let { settingsInfo ->
@@ -140,7 +136,7 @@ class WeatherViewModel(
     private fun addCity(city: SavedWeatherItem) {
         viewModelScope.launch {
             dataBaseRepo.saveWeather(city)
-            _weatherScreenState.update { it.copy(isAddCity = false) }
+            _weatherScreenState.update { it.copy(isAddCity = false, cityId = null) }
         }
     }
 
