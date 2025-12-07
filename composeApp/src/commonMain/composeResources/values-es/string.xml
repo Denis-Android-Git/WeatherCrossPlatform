@@ -37,7 +37,7 @@
     <string name="units">Unidades de medida</string>
     <string name="temp">Temperatura</string>
     <string name="wind_speed">Velocidad del viento</string>
-    <string name="pressure">Presión atmosférica</string>
+    <string name="pressure">Presión atmo</string>
     <string name="celc">°C</string>
     <string name="far">°F</string>
     <string name="kmh">Kilómetros por hora</string>

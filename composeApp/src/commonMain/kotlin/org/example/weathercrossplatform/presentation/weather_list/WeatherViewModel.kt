@@ -13,7 +13,6 @@ import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.locationservice.LocationService
 import org.example.weathercrossplatform.data.repo_impl.WeatherRepoImpl
-import org.example.weathercrossplatform.data.utils.UiText
 import org.example.weathercrossplatform.data.utils.onError
 import org.example.weathercrossplatform.data.utils.onSuccess
 import org.example.weathercrossplatform.data.utils.toUiText
@@ -26,7 +25,6 @@ import org.example.weathercrossplatform.domain.repo.DataBaseRepo
 import org.example.weathercrossplatform.domain.repo.SettingsStorage
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.clouds
-import weathercrossplatform.composeapp.generated.resources.error_unknown
 import weathercrossplatform.composeapp.generated.resources.extreme
 import weathercrossplatform.composeapp.generated.resources.feels_like
 import weathercrossplatform.composeapp.generated.resources.high

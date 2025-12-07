@@ -83,7 +83,9 @@ fun NavHostMainScreen(
             entry<Routes.SearchScreenRoute> {
                 SearchScreenState(
                     onBackButtonClick = {
-                        backStack.removeLastOrNull()
+                        if (backStack.size > 1) { //NavDisplay backstack cannot be empty
+                            backStack.removeLastOrNull()
+                        }
                     },
                     onFoundItemClick = { location ->
                         backStack.removeAll { it is Routes.SearchScreenRoute }
@@ -104,7 +106,9 @@ fun NavHostMainScreen(
             entry<Routes.SettingsScreenRoute> {
                 SettingsScreenRoot(
                     onBackButtonClick = {
-                        backStack.removeLastOrNull()
+                        if (backStack.size > 1) { //NavDisplay backstack cannot be empty
+                            backStack.removeLastOrNull()
+                        }
                     },
                     modifier = modifier,
                 )

@@ -37,7 +37,7 @@
     <string name="units">Единицы измерения</string>
     <string name="temp">Температура</string>
     <string name="wind_speed">Скорость ветра</string>
-    <string name="pressure">Атмосферное давление</string>
+    <string name="pressure">Атм. давление</string>
     <string name="celc">°C</string>
     <string name="far">°F</string>
     <string name="kmh">Километров в час</string>
