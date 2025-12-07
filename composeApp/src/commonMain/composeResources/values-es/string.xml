@@ -44,4 +44,12 @@
     <string name="mph">Millas por hora</string>
     <string name="mmrt">Milímetro de mercurio</string>
     <string name="inrt">Pulgada de mercurio</string>
+    <string name="humidity">Humedad</string>
+    <string name="wind">Viento</string>
+    <string name="clouds">Nubes</string>
+    <string name="uv">UV</string>
+    <string name="low">Bajo</string>
+    <string name="moderate">Moderado</string>
+    <string name="high">Alto</string>
+    <string name="extreme">Extremo</string>
 </resources>

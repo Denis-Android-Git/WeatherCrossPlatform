@@ -44,4 +44,12 @@
     <string name="mph">Милль в час</string>
     <string name="mmrt">Миллиметр ртутного столба</string>
     <string name="inrt">Дюйм ртутного столба</string>
+    <string name="humidity">Влажность</string>
+    <string name="wind">Ветер</string>
+    <string name="clouds">Облачность</string>
+    <string name="uv">Уф</string>
+    <string name="low">Низкий</string>
+    <string name="moderate">Умеренный</string>
+    <string name="high">Высокий</string>
+    <string name="extreme">Экстремальный</string>
 </resources>

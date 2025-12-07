@@ -44,5 +44,13 @@
     <string name="mph">Miles per hour</string>
     <string name="mmrt">Millimeter of mercury</string>
     <string name="inrt">Inch of mercury</string>
+    <string name="humidity">Humidity</string>
+    <string name="wind">Wind</string>
+    <string name="clouds">Clouds</string>
+    <string name="uv">Uv</string>
+    <string name="low">Low</string>
+    <string name="moderate">Moderate</string>
+    <string name="high">High</string>
+    <string name="extreme">Extreme</string>
 
 </resources>

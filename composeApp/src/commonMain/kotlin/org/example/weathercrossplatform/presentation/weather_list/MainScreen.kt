@@ -43,17 +43,17 @@ import coil3.compose.AsyncImage
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.data.utils.GetScreenHeight
+import org.example.weathercrossplatform.data.utils.UiText
 import org.example.weathercrossplatform.data.utils.toUiText
 import org.example.weathercrossplatform.domain.logger.MyLogger
-import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 import org.example.weathercrossplatform.presentation.elements.FloatingToolBar
 import org.example.weathercrossplatform.presentation.elements.ForecastElement
 import org.example.weathercrossplatform.presentation.elements.HourForecastElement
 import org.example.weathercrossplatform.presentation.elements.WeatherDetailElement
+import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.add
 import weathercrossplatform.composeapp.generated.resources.air_quality
@@ -247,7 +247,12 @@ fun MainScreen(
                             items(weatherMainScreenState.weatherItemList) { item ->
                                 WeatherDetailElement(
                                     title = item.title,
-                                    description = item.description,
+                                    description =
+                                        when (item.description) {
+                                            is String -> item.description
+                                            is StringResource -> UiText.MyStringResource(item.description).asString()
+                                            else -> ""
+                                        },
                                     humidity = weatherMainScreenState.weatherItemList[0].progress,
                                     windProgress = weatherMainScreenState.weatherItemList[1].progress,
                                     pressureProgress = weatherMainScreenState.weatherItemList[2].progress,
@@ -322,82 +327,82 @@ fun MainScreen(
         }
     }
 }
-
-@Preview
-@Composable
-fun MainScreenPreview() {
-    val mockWeatherItems = listOf(
-        WeatherItem(
-            title = "Влажность",
-            description = "45%",
-            progress = 0.45f,
-            rotation = 0f,
-            uvIndex = 0
-        ),
-        WeatherItem(
-            title = "Ветер",
-            description = "10 км/ч",
-            progress = 0.3f,
-            rotation = 315f,
-            uvIndex = 0
-        ),
-        WeatherItem(
-            title = "Давление",
-            description = "1013 мб",
-            progress = 0.65f,
-            rotation = 0f,
-            uvIndex = 0
-        ),
-        WeatherItem(
-            title = "Облачность",
-            description = "25%",
-            progress = 0.25f,
-            rotation = 0f,
-            uvIndex = 0
-        ),
-        WeatherItem(
-            title = "УФ индекс",
-            description = "Высокий",
-            progress = 0f,
-            rotation = 0f,
-            uvIndex = 6
-        ),
-        WeatherItem(
-            title = "Ощущается",
-            description = "27°",
-            progress = 0f,
-            rotation = 90f,
-            uvIndex = 0
-        )
-    )
-
-    val mockSavedCities = listOf(
-        SavedWeatherItem(
-            cityName = "Москва",
-            temperature = 22.0,
-            weatherDescription = "Солнечно",
-            highTemperature = 25.0,
-            lowTemperature = 18.0,
-            cityId = 1,
-            coordinates = "55.7558,37.6176",
-            isCurrentLocation = true
-        )
-    )
-
-    MainScreen(
-        cityId = 1,
-        savedCityList = mockSavedCities,
-        onAddButtonClick = { },
-        onCancelButtonClick = { },
-        onAddCityButtonClick = { },
-        isCurrentLocation = true,
-        weatherMainScreenState = WeatherMainScreenState(
-            weatherItemList = mockWeatherItems
-        ),
-        onSettingsClick = {},
-        modifier = Modifier,
-    )
-}
+//
+//@Preview
+//@Composable
+//fun MainScreenPreview() {
+//    val mockWeatherItems = listOf(
+//        WeatherItem(
+//            title = "Влажность",
+//            description = "45%",
+//            progress = 0.45f,
+//            rotation = 0f,
+//            uvIndex = 0
+//        ),
+//        WeatherItem(
+//            title = "Ветер",
+//            description = "10 км/ч",
+//            progress = 0.3f,
+//            rotation = 315f,
+//            uvIndex = 0
+//        ),
+//        WeatherItem(
+//            title = "Давление",
+//            description = "1013 мб",
+//            progress = 0.65f,
+//            rotation = 0f,
+//            uvIndex = 0
+//        ),
+//        WeatherItem(
+//            title = "Облачность",
+//            description = "25%",
+//            progress = 0.25f,
+//            rotation = 0f,
+//            uvIndex = 0
+//        ),
+//        WeatherItem(
+//            title = "УФ индекс",
+//            description = "Высокий",
+//            progress = 0f,
+//            rotation = 0f,
+//            uvIndex = 6
+//        ),
+//        WeatherItem(
+//            title = "Ощущается",
+//            description = "27°",
+//            progress = 0f,
+//            rotation = 90f,
+//            uvIndex = 0
+//        )
+//    )
+//
+//    val mockSavedCities = listOf(
+//        SavedWeatherItem(
+//            cityName = "Москва",
+//            temperature = 22.0,
+//            weatherDescription = "Солнечно",
+//            highTemperature = 25.0,
+//            lowTemperature = 18.0,
+//            cityId = 1,
+//            coordinates = "55.7558,37.6176",
+//            isCurrentLocation = true
+//        )
+//    )
+//
+//    MainScreen(
+//        cityId = 1,
+//        savedCityList = mockSavedCities,
+//        onAddButtonClick = { },
+//        onCancelButtonClick = { },
+//        onAddCityButtonClick = { },
+//        isCurrentLocation = true,
+//        weatherMainScreenState = WeatherMainScreenState(
+//            weatherItemList = mockWeatherItems
+//        ),
+//        onSettingsClick = {},
+//        modifier = Modifier,
+//    )
+//}
 //
 //val mockHours = listOf(
 //    Hour(
