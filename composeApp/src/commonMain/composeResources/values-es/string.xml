@@ -52,4 +52,6 @@
     <string name="moderate">Moderado</string>
     <string name="high">Alto</string>
     <string name="extreme">Extremo</string>
+    <string name="forecast_by">Pronóstico por</string>
+
 </resources>

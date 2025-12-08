@@ -52,5 +52,5 @@
     <string name="moderate">Moderate</string>
     <string name="high">High</string>
     <string name="extreme">Extreme</string>
-
+    <string name="forecast_by">Forecast by</string>
 </resources>

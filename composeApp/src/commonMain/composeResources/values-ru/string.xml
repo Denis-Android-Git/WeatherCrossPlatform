@@ -52,4 +52,6 @@
     <string name="moderate">Умеренный</string>
     <string name="high">Высокий</string>
     <string name="extreme">Экстремальный</string>
+    <string name="forecast_by">Прогноз предоставлен</string>
+
 </resources>

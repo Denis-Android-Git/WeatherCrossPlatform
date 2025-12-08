@@ -4,6 +4,7 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -15,6 +16,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -34,6 +36,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
@@ -65,6 +68,8 @@ import weathercrossplatform.composeapp.generated.resources.air_quality_level_5
 import weathercrossplatform.composeapp.generated.resources.air_quality_level_6
 import weathercrossplatform.composeapp.generated.resources.cancel
 import weathercrossplatform.composeapp.generated.resources.feels_like
+import weathercrossplatform.composeapp.generated.resources.forecast_by
+import weathercrossplatform.composeapp.generated.resources.weather_api
 
 @Composable
 fun MainScreen(
@@ -237,7 +242,7 @@ fun MainScreen(
                         )
                         LazyVerticalGrid(
                             columns = GridCells.Fixed(2),
-                            modifier = Modifier.height(600.dp)
+                            modifier = Modifier.height(520.dp)
                                 .fillMaxWidth()
                                 .padding(horizontal = 6.dp),
                             horizontalArrangement = Arrangement.spacedBy(6.dp),
@@ -263,7 +268,24 @@ fun MainScreen(
                                     isPressureMb = weatherMainScreenState.isPressureMb
                                 )
                             }
+                            item {
+
+                            }
                         }
+                        Text(
+                            text = UiText.MyStringResource(Res.string.forecast_by).asString(),
+                            fontSize = 11.sp,
+                            color = Color.White,
+                            modifier = Modifier.align(Alignment.CenterHorizontally)
+                        )
+                        Image(
+                            painterResource(Res.drawable.weather_api), contentDescription = null,
+                            modifier = Modifier
+                                .width(60.dp)
+                                .clip(RoundedCornerShape(6.dp))
+                                .align(Alignment.CenterHorizontally)
+
+                        )
                     }
                 }
             }
@@ -333,42 +355,42 @@ fun MainScreen(
 //fun MainScreenPreview() {
 //    val mockWeatherItems = listOf(
 //        WeatherItem(
-//            title = "Влажность",
+//            title = Res.string.humidity,
 //            description = "45%",
 //            progress = 0.45f,
 //            rotation = 0f,
 //            uvIndex = 0
 //        ),
 //        WeatherItem(
-//            title = "Ветер",
+//            title = Res.string.wind,
 //            description = "10 км/ч",
 //            progress = 0.3f,
 //            rotation = 315f,
 //            uvIndex = 0
 //        ),
 //        WeatherItem(
-//            title = "Давление",
+//            title = Res.string.pressure,
 //            description = "1013 мб",
 //            progress = 0.65f,
 //            rotation = 0f,
 //            uvIndex = 0
 //        ),
 //        WeatherItem(
-//            title = "Облачность",
+//            title = Res.string.clouds,
 //            description = "25%",
 //            progress = 0.25f,
 //            rotation = 0f,
 //            uvIndex = 0
 //        ),
 //        WeatherItem(
-//            title = "УФ индекс",
+//            title = Res.string.uv,
 //            description = "Высокий",
 //            progress = 0f,
 //            rotation = 0f,
 //            uvIndex = 6
 //        ),
 //        WeatherItem(
-//            title = "Ощущается",
+//            title = Res.string.feels_like,
 //            description = "27°",
 //            progress = 0f,
 //            rotation = 90f,
@@ -446,7 +468,7 @@ fun MainScreen(
 //        windChillF = 75.2
 //    )
 //)
-
+//
 //
 //val mockForecast = listOf(
 //    Forecastday(
