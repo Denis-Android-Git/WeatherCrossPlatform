@@ -1,7 +1,9 @@
 package org.example.weathercrossplatform.presentation.settings_screen
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
@@ -14,6 +16,7 @@ import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -32,6 +35,8 @@ import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.viewmodel.koinViewModel
 import weathercrossplatform.composeapp.generated.resources.Res
+import weathercrossplatform.composeapp.generated.resources.about_app
+import weathercrossplatform.composeapp.generated.resources.policy
 import weathercrossplatform.composeapp.generated.resources.settings
 import weathercrossplatform.composeapp.generated.resources.units
 
@@ -108,6 +113,35 @@ fun SettingsScreenScreen(
                 state = state,
                 settingsType = SettingsType.PRESSURE
             )
+        }
+        Spacer(modifier = Modifier.height(32.dp))
+        Text(
+            text = stringResource(Res.string.about_app),
+            modifier = Modifier.padding(start = 10.dp),
+            color = Color.Gray
+        )
+        Spacer(modifier = Modifier.height(6.dp))
+        Column(
+            modifier = Modifier.fillMaxWidth().wrapContentHeight()
+                .background(color = Color.DarkGray, shape = RoundedCornerShape(16.dp))
+                .padding(horizontal = 10.dp, vertical = 24.dp)
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth().clickable {
+                    openUrl(PRIVACY_POLICY_URL)
+                }
+            ) {
+                Text(
+                    text = stringResource(Res.string.policy),
+                    modifier = Modifier.weight(1f),
+                    color = Color.White, fontSize = 16.sp
+                )
+                Icon(
+                    imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
+                    contentDescription = null,
+                    tint = Color.Gray
+                )
+            }
         }
     }
 }

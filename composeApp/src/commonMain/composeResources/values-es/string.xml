@@ -53,5 +53,7 @@
     <string name="high">Alto</string>
     <string name="extreme">Extremo</string>
     <string name="forecast_by">Pronóstico por</string>
+    <string name="about_app">Acerca de la aplicación</string>
+    <string name="policy">Política de privacidad</string>
 
 </resources>

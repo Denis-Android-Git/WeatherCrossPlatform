@@ -53,5 +53,7 @@
     <string name="high">Высокий</string>
     <string name="extreme">Экстремальный</string>
     <string name="forecast_by">Прогноз предоставлен</string>
+    <string name="about_app">О приложении</string>
+    <string name="policy">Политика конфиденциальности</string>
 
 </resources>
