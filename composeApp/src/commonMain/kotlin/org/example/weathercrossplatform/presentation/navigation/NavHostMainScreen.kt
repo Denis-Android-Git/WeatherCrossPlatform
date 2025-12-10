@@ -77,7 +77,7 @@ fun NavHostMainScreen(
                 SearchScreenState(
                     onBackButtonClick = {
                         if (backStack.size > 1) { //NavDisplay backstack cannot be empty
-                            backStack.removeLastOrNull()
+                            backStack.removeAt(backStack.lastIndex)
                         }
                     },
                     onFoundItemClick = { location ->
@@ -89,7 +89,7 @@ fun NavHostMainScreen(
                     onSavedItemClick = { pageNumber ->
                         myLogger.debug("page_number: $pageNumber")
                         backStack.removeAll { it is Routes.SearchScreenRoute }
-                        backStack.removeFirst()
+                        backStack.removeAt(0)
                         backStack.add(MainScreenRoute(pageNumber = pageNumber))
                     },
                     modifier = modifier,
@@ -100,7 +100,7 @@ fun NavHostMainScreen(
                 SettingsScreenRoot(
                     onBackButtonClick = {
                         if (backStack.size > 1) { //NavDisplay backstack cannot be empty
-                            backStack.removeLastOrNull()
+                            backStack.removeAt(backStack.lastIndex)
                         }
                     },
                     modifier = modifier,
