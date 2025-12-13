@@ -227,7 +227,7 @@ fun MainScreen(
                 Column(
                     modifier = Modifier.fillMaxWidth()
                         .verticalScroll(scrollState)
-                        .padding(top = height, bottom = 20.dp),
+                        .padding(top = height, bottom = 20.dp, start = 6.dp, end = 6.dp),
                     verticalArrangement = Arrangement.spacedBy(6.dp)
                 ) {
                     weatherMainScreenState.weatherDto?.forecast?.forecastday?.let { forecastListDayList ->
@@ -243,8 +243,7 @@ fun MainScreen(
                         LazyVerticalGrid(
                             columns = GridCells.Fixed(2),
                             modifier = Modifier.height(520.dp)
-                                .fillMaxWidth()
-                                .padding(horizontal = 6.dp),
+                                .fillMaxWidth(),
                             horizontalArrangement = Arrangement.spacedBy(6.dp),
                             verticalArrangement = Arrangement.spacedBy(6.dp),
                             userScrollEnabled = false

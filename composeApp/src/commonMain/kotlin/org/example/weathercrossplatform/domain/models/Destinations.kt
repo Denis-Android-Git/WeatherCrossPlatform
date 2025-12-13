@@ -2,16 +2,17 @@ package org.example.weathercrossplatform.domain.models
 
 import androidx.navigation3.runtime.NavKey
 import kotlinx.serialization.Serializable
-import kotlin.random.Random
+import kotlin.uuid.ExperimentalUuidApi
+import kotlin.uuid.Uuid
 
 @Serializable
 
 sealed interface Routes : NavKey {
     @Serializable
-    data class MainScreenRoute(
+    data class MainScreenRoute @OptIn(ExperimentalUuidApi::class) constructor(
         val cityId: Int? = null,
         val pageNumber: Int? = null,
-        val forceKey: Long = Random.nextLong() //to recreate viewmodel each time
+        val forceKey: String = Uuid.random().toString()//Random.nextLong() //to recreate viewmodel each time
 
     ) : Routes, NavKey
 

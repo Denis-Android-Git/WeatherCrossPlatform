@@ -257,7 +257,10 @@ fun SearchScreen(
             ) {
                 IconButton(
                     modifier = Modifier.align(Alignment.CenterHorizontally),
-                    onClick = onDelete
+                    onClick = {
+                        onDelete()
+                        isLongPressed.value = false
+                    }
                 ) {
                     Icon(
                         imageVector = Icons.Default.Delete,

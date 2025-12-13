@@ -1,9 +1,11 @@
 package org.example.weathercrossplatform.presentation.elements
 
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -12,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 fun ForecastItem(
@@ -24,31 +27,36 @@ fun ForecastItem(
     val icon = image.replace("//", "https://")
 
     Column(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp)
     ) {
-        Box(
-            modifier = Modifier.fillMaxWidth()
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(text = date, color = Color.White)
-            AsyncImage(
-                model = icon, contentDescription = null,
-                modifier = Modifier.padding(start = 130.dp)
+            Text(
+                text = date,
+                modifier = Modifier.weight(1f),
+                color = Color.White
             )
+            AsyncImage(
+                model = icon,
+                contentDescription = null,
+            )
+            Spacer(modifier = Modifier.width(16.dp))
             Text(
                 text = when {
                     isTempC -> "$low ℃"
                     else -> "$low ℉"
                 },
-                color = Color.White,
-                modifier = Modifier.padding(start = 200.dp)
+                color = Color.White
             )
+            Spacer(modifier = Modifier.width(16.dp))
             Text(
                 text = when {
                     isTempC -> "$high ℃"
                     else -> "$high ℉"
                 },
                 color = Color.White,
-                modifier = Modifier.align(Alignment.CenterEnd)
             )
 
         }
@@ -58,4 +66,16 @@ fun ForecastItem(
             thickness = 1.dp
         )
     }
+}
+
+@Preview
+@Composable
+fun ForecastItemPreview() {
+    ForecastItem(
+        date = "Today",
+        low = "15",
+        high = "22",
+        image = "//cdn.weatherapi.com/weather/64x64/day/113.png",
+        isTempC = true
+    )
 }

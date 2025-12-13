@@ -1,5 +1,5 @@
 [versions]
-agp = "8.13.1"
+agp = "8.13.2"
 android-compileSdk = "36"
 android-minSdk = "24"
 android-targetSdk = "36"
@@ -23,7 +23,7 @@ cmpNavigation3 = "1.0.0-alpha06"
 
 coil = "3.3.0"
 #Firebase android
-firebase-android-bom = "34.6.0"
+firebase-android-bom = "34.7.0"
 #Gradle
 gradlePlugins-crashlytics = "3.0.6"
 gradlePlugins-google-services = "4.4.4"
