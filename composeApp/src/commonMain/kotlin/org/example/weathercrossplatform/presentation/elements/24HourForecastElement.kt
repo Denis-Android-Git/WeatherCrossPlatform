@@ -2,9 +2,7 @@ package org.example.weathercrossplatform.presentation.elements
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -35,13 +33,12 @@ fun HourForecastElement(
             .background(color = Color.Black.copy(alpha = 0.3f), shape = RoundedCornerShape(16.dp)),
     ) {
         Text(
-            modifier = Modifier.padding(start = 16.dp, top = 16.dp),
+            modifier = Modifier.padding(start = 16.dp, top = 16.dp, bottom = 26.dp),
             text = stringResource(Res.string._24h_forecast), color = Color.LightGray
         )
-        Spacer(modifier = Modifier.height(16.dp))
+
         LazyRow(
-            modifier = Modifier
-                .padding(bottom = 16.dp)
+            modifier = Modifier.padding(bottom = 16.dp)
         ) {
             itemsIndexed(hours) { index, item ->
                 val icon = item.condition.icon.replace("//", "https://")
@@ -397,3 +394,63 @@ fun HourForecastElementPreview() {
         isWindKmh = true
     )
 }
+
+
+//
+//@Composable
+//fun ForecastRowItem(
+//    temp: String,
+//    icon: Any,
+//    wind: String,
+//    time: String,
+//    previousTemp: Float,
+//    maxTemp: Float,
+//    minTemp: Float,
+//    isWindKmh: Boolean
+//) {
+//    val tempRange = maxTemp - minTemp
+//    var boxHeight by remember {
+//        mutableFloatStateOf(0f)
+//    }
+//
+//    Column(
+//        verticalArrangement = Arrangement.spacedBy(3.dp),
+//        horizontalAlignment = Alignment.CenterHorizontally
+//    ) {
+//        Box(
+//            modifier = Modifier
+//                .height(40.dp)
+//                .width(85.dp)
+//                .onGloballyPositioned { coordinates ->
+//                    boxHeight = coordinates.size.height.toFloat()
+//                }
+//                .drawBehind {
+//                    val normalizedPrevY =
+//                        size.height - ((previousTemp - minTemp) / tempRange) * size.height
+//                    val normalizedCurrentY =
+//                        size.height - ((temp.toFloat() - minTemp) / tempRange) * size.height
+//                    drawLine(
+//                        color = Color.Green,
+//                        start = Offset(0f, normalizedPrevY),
+//                        end = Offset(size.width, normalizedCurrentY),
+//                        strokeWidth = 4.dp.toPx()
+//                    )
+//                },
+//            contentAlignment = Alignment.Center
+//        ) {
+//            if (boxHeight > 0f) {
+//                Text(
+//                    modifier = Modifier
+//                        .offset(y = with(LocalDensity.current) {
+//                            (boxHeight - ((temp.toFloat() - minTemp) / tempRange) * boxHeight - 110).toDp()
+//                        }),
+//                    text = "$temp°",
+//                    color = Color.White
+//                )
+//            }
+//        }
+//        AsyncImage(model = icon, contentDescription = null, modifier = Modifier.size(40.dp))
+//        Text(text = if (isWindKmh) "$wind km/h" else "$wind mp/h", color = Color.White)
+//        Text(text = time, color = Color.White)
+//    }
+//}

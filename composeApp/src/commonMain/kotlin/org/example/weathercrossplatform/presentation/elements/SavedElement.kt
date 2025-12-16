@@ -144,7 +144,7 @@ fun SavedElement(
 @Composable
 fun PreviewSavedElement() {
     SavedElement(
-        cityName = "San Francisco CA USA",
+        cityName = "San Francisco",
         temperature = "18",
         weatherDescription = "Слабый переохлажденнный дождь с ветром и гроза и град",
         high = "20",
