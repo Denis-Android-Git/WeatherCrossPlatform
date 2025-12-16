@@ -87,7 +87,7 @@ kotlin {
             implementation(libs.datastore.preferences)
         }
         kotzilla {
-            versionName = "0.9.59" // add your app version name
+            versionName = "0.9.61" // add your app version name
             keyGeneration = KotzillaKeyGeneration.COMPOSE
             composeInstrumentation = true
         }
@@ -109,8 +109,8 @@ android {
         applicationId = "org.example.weathercrossplatform"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 35
-        versionName = "0.9.59"
+        versionCode = 37
+        versionName = "0.9.61"
 
     }
     packaging {
