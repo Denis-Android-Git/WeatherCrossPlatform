@@ -16,6 +16,8 @@ plugins {
     alias(libs.plugins.room)
     alias(libs.plugins.kotzilla)
 
+    // Add the Performance Monitoring Gradle plugin
+    alias(libs.plugins.firebase.perf)
 }
 
 kotlin {
@@ -50,7 +52,10 @@ kotlin {
             implementation(libs.koin.androidx.compose)
             implementation(libs.ktor.client.android)
             implementation(libs.core.splashscreen)
-
+            implementation(project.dependencies.platform(libs.firebase))
+            // Add the dependency for the Performance Monitoring library
+            // When using the BoM, you don't specify versions in Firebase library dependencies
+            implementation(libs.firebase.perf)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -75,7 +80,6 @@ kotlin {
 
             implementation(libs.coil.compose)
             implementation(libs.coil.network.ktor3)
-            api(libs.gitlive.firebase.kotlin.crashlytics)
             implementation(libs.androidx.room.runtime)
             implementation(libs.sqlite.bundled)
             implementation(libs.material.icons.core)
@@ -85,6 +89,7 @@ kotlin {
             implementation(libs.material3.expressive)
             implementation(libs.datastore)
             implementation(libs.datastore.preferences)
+            api(libs.gitlive.firebase.kotlin.crashlytics)
         }
         kotzilla {
             versionName = "0.9.61" // add your app version name

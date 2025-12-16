@@ -91,6 +91,7 @@ fun MainScreenState(
             weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(weatherMainScreenState.savedCities[weatherMainScreenState.pageNumber].coordinates))
         },
     ) {
+
         if (weatherMainScreenState.weatherDto?.location?.name != null) {
 
             HorizontalPager(state = pagerState) { pageNumber ->

@@ -37,6 +37,7 @@ kotzilla = "1.4.1"
 core-splashscreen = "1.2.0"
 material3-expressive = "1.9.0-alpha04"
 datastore = "1.2.0"
+firebase-perf = "2.0.2"
 #androidx-appcompat = "1.7.0"
 #androidx-constraintlayout = "2.2.1"
 #androidx-core-ktx = "1.15.0"
@@ -63,6 +64,7 @@ datastore-preferences = { module = "androidx.datastore:datastore-preferences", v
 #Firebase
 firebase = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-android-bom" }
 crashlytics = { module = "com.google.firebase:firebase-crashlytics" }
+firebase-perf = { module = "com.google.firebase:firebase-perf" }
 #Gitlive
 gitlive-firebase-kotlin-crashlytics = { module = "dev.gitlive:firebase-crashlytics", version.ref = "firebase-gitlive-sdk" }
 
@@ -129,8 +131,7 @@ play-services-location = { group = "com.google.android.gms", name = "play-servic
 
 [plugins]
 kotzilla = { id = "io.kotzilla.kotzilla-plugin", version.ref = "kotzilla" }
-
-
+firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "firebase-perf" }
 crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "gradlePlugins-crashlytics" }
 google-services = { id = "com.google.gms.google-services", version.ref = "gradlePlugins-google-services" }
 androidApplication = { id = "com.android.application", version.ref = "agp" }
