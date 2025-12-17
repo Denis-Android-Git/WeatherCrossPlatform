@@ -52,10 +52,12 @@ kotlin {
             implementation(libs.koin.androidx.compose)
             implementation(libs.ktor.client.android)
             implementation(libs.core.splashscreen)
-            implementation(project.dependencies.platform(libs.firebase))
             // Add the dependency for the Performance Monitoring library
             // When using the BoM, you don't specify versions in Firebase library dependencies
+            implementation(project.dependencies.platform(libs.firebase))
             implementation(libs.firebase.perf)
+            implementation(libs.firebase.analytics)
+
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -92,7 +94,7 @@ kotlin {
             api(libs.gitlive.firebase.kotlin.crashlytics)
         }
         kotzilla {
-            versionName = "0.9.61" // add your app version name
+            versionName = "0.9.62" // add your app version name
             keyGeneration = KotzillaKeyGeneration.COMPOSE
             composeInstrumentation = true
         }
@@ -114,8 +116,8 @@ android {
         applicationId = "org.example.weathercrossplatform"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 37
-        versionName = "0.9.61"
+        versionCode = 38
+        versionName = "0.9.62"
 
     }
     packaging {
