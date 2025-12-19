@@ -12,17 +12,26 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import org.example.weathercrossplatform.data.utils.UiText
 import org.example.weathercrossplatform.presentation.icons.CloudsIcon
 import org.example.weathercrossplatform.presentation.icons.FeelsLikeIcon
 import org.example.weathercrossplatform.presentation.icons.HumidityIcon
 import org.example.weathercrossplatform.presentation.icons.PressureIndicator
 import org.example.weathercrossplatform.presentation.icons.UvIcon
 import org.example.weathercrossplatform.presentation.icons.WindIcon
+import org.jetbrains.compose.resources.StringResource
+import weathercrossplatform.composeapp.generated.resources.Res
+import weathercrossplatform.composeapp.generated.resources.clouds
+import weathercrossplatform.composeapp.generated.resources.feels_like
+import weathercrossplatform.composeapp.generated.resources.humidity
+import weathercrossplatform.composeapp.generated.resources.pressure
+import weathercrossplatform.composeapp.generated.resources.uv
+import weathercrossplatform.composeapp.generated.resources.wind
 
 
 @Composable
 fun WeatherDetailElement(
-    title: String,
+    title: StringResource,
     description: String,
     humidity: Float,
     windProgress: Float,
@@ -43,7 +52,7 @@ fun WeatherDetailElement(
     ) {
         Text(
             modifier = Modifier.padding(start = 16.dp, top = 6.dp),
-            text = title, color = Color.LightGray
+            text = UiText.MyStringResource(title).asString(), color = Color.LightGray
         )
         Text(
             modifier = Modifier.padding(start = 16.dp, top = 16.dp),
@@ -51,14 +60,14 @@ fun WeatherDetailElement(
             text = description, color = Color.White
         )
         when (title) {
-            "Humidity" -> {
+            Res.string.humidity -> {
                 HumidityIcon(
                     modifier = Modifier.align(Alignment.End),
                     progress = humidity
                 )
             }
 
-            "Wind" -> {
+            Res.string.wind -> {
                 WindIcon(
                     modifier = Modifier.align(Alignment.End),
                     progress = windProgress,
@@ -66,7 +75,7 @@ fun WeatherDetailElement(
                 )
             }
 
-            "Pressure" -> {
+            Res.string.pressure -> {
                 PressureIndicator(
                     modifier = Modifier.align(Alignment.End),
                     progress = pressureProgress,
@@ -74,21 +83,21 @@ fun WeatherDetailElement(
                 )
             }
 
-            "Clouds" -> {
+            Res.string.clouds -> {
                 CloudsIcon(
                     modifier = Modifier.align(Alignment.End),
                     progress = cloudsProgress,
                 )
             }
 
-            "Uv" -> {
+            Res.string.uv -> {
                 UvIcon(
                     modifier = Modifier.align(Alignment.End),
                     uvIndex = uvIndex
                 )
             }
 
-            "Feels Like" -> {
+            Res.string.feels_like -> {
                 FeelsLikeIcon(
                     modifier = Modifier.align(Alignment.End),
                     rotationAngle = feelsLikeRotation

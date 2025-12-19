@@ -22,8 +22,10 @@ import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.LoadingIndicator
 import androidx.compose.material3.SearchBar
 import androidx.compose.material3.SearchBarDefaults
 import androidx.compose.material3.Text
@@ -53,7 +55,7 @@ import weathercrossplatform.composeapp.generated.resources.city_search
 import weathercrossplatform.composeapp.generated.resources.current_place
 import weathercrossplatform.composeapp.generated.resources.enter_city
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun SearchScreen(
     modifier: Modifier,
@@ -127,7 +129,6 @@ fun SearchScreen(
             SearchBar(
                 modifier = Modifier
                     .fillMaxWidth(),
-                //.padding(top = 16.dp),
                 shadowElevation = 10.dp,
                 colors = SearchBarDefaults.colors(
                     containerColor = Color.Black
@@ -187,7 +188,9 @@ fun SearchScreen(
                 }
             ) {
                 LazyColumn(
+                    modifier = Modifier.fillMaxWidth(),
                     verticalArrangement = Arrangement.spacedBy(8.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
                     contentPadding = PaddingValues(0.dp, 8.dp, 0.dp, 0.dp)
                 ) {
                     items(searchScreenState.cityList) {
@@ -198,6 +201,15 @@ fun SearchScreen(
                                 onFoundItemClick(it)
                             }
                         )
+                    }
+                    item {
+                        AnimatedVisibility(
+                            visible = searchScreenState.loading
+                        ) {
+                            LoadingIndicator(
+                                color = Color.White
+                            )
+                        }
                     }
                 }
 
@@ -257,7 +269,10 @@ fun SearchScreen(
             ) {
                 IconButton(
                     modifier = Modifier.align(Alignment.CenterHorizontally),
-                    onClick = onDelete
+                    onClick = {
+                        onDelete()
+                        isLongPressed.value = false
+                    }
                 ) {
                     Icon(
                         imageVector = Icons.Default.Delete,
@@ -314,6 +329,6 @@ fun Preview() {
         onSavedItemClick = {},
         allCitiesInOriginalOrder = emptyList(),
         searchScreenState = SearchScreenViewState(),
-        modifier = Modifier,
+        modifier = Modifier
     )
 }

@@ -27,7 +27,6 @@ import org.example.weathercrossplatform.domain.actions.MainScreenActions
 import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.presentation.elements.CustomIndicator
 import org.example.weathercrossplatform.presentation.elements.ErrorScreen
-import org.koin.compose.viewmodel.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
@@ -38,7 +37,7 @@ fun MainScreenState(
     onSettingsClick: () -> Unit,
     onCancelButtonClick: () -> Unit,
     myLogger: MyLogger = MyLoggerImpl,
-    weatherViewModel: WeatherViewModel = koinViewModel()
+    weatherViewModel: WeatherViewModel
 ) {
 
     LaunchedEffect(isFirstLaunch) {
@@ -92,6 +91,7 @@ fun MainScreenState(
             weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(weatherMainScreenState.savedCities[weatherMainScreenState.pageNumber].coordinates))
         },
     ) {
+
         if (weatherMainScreenState.weatherDto?.location?.name != null) {
 
             HorizontalPager(state = pagerState) { pageNumber ->

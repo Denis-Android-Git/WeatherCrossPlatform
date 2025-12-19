@@ -1,6 +1,5 @@
 package org.example.weathercrossplatform.presentation.weather_list
 
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
@@ -24,6 +23,17 @@ import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 import org.example.weathercrossplatform.domain.repo.DataBaseRepo
 import org.example.weathercrossplatform.domain.repo.SettingsStorage
+import weathercrossplatform.composeapp.generated.resources.Res
+import weathercrossplatform.composeapp.generated.resources.clouds
+import weathercrossplatform.composeapp.generated.resources.extreme
+import weathercrossplatform.composeapp.generated.resources.feels_like
+import weathercrossplatform.composeapp.generated.resources.high
+import weathercrossplatform.composeapp.generated.resources.humidity
+import weathercrossplatform.composeapp.generated.resources.low
+import weathercrossplatform.composeapp.generated.resources.moderate
+import weathercrossplatform.composeapp.generated.resources.pressure
+import weathercrossplatform.composeapp.generated.resources.uv
+import weathercrossplatform.composeapp.generated.resources.wind
 
 
 private const val MAX_AIR_PRESSURE_MM = 825
@@ -37,11 +47,9 @@ class WeatherViewModel(
     private val dataBaseRepo: DataBaseRepo,
     private val myLogger: MyLogger,
     private val settingsStorage: SettingsStorage,
-    savedStateHandle: SavedStateHandle
+    pageNumberFromSearchScreen: Int?,
+    cityIdFromSearchScreen: Int?
 ) : ViewModel() {
-
-    private val pageNumberFromSearchScreen = savedStateHandle.get<Int>("pageNumber")
-    private val cityIdFromSearchScreen = savedStateHandle.get<Int>("cityId")
 
     private val coordinates = MutableStateFlow<Coordinates?>(null)
     private val _weatherScreenState = MutableStateFlow(WeatherMainScreenState())
@@ -49,6 +57,7 @@ class WeatherViewModel(
     private val allCities = dataBaseRepo.getWeatherList()
 
     init {
+        myLogger.debug("WeatherViewModel_init")
         viewModelScope.launch {
             settingsStorage.observeSettingsInfo().collect { info ->
                 info?.let { settingsInfo ->
@@ -138,7 +147,7 @@ class WeatherViewModel(
     private fun addCity(city: SavedWeatherItem) {
         viewModelScope.launch {
             dataBaseRepo.saveWeather(city)
-            _weatherScreenState.update { it.copy(isAddCity = false) }
+            _weatherScreenState.update { it.copy(isAddCity = false, cityId = null) }
         }
     }
 
@@ -308,43 +317,43 @@ class WeatherViewModel(
     ): List<WeatherItem> {
         return listOf(
             WeatherItem(
-                title = "Humidity",
+                title = Res.string.humidity,
                 description = "$humidity %",
                 progress = humidity * 0.01.toFloat(),
                 rotation = 0f
             ),
             WeatherItem(
-                title = "Wind",
+                title = Res.string.wind,
                 description = if (isWindKmh) "$windSpeed km/h" else "$windSpeed mp/h",
                 progress = (windSpeed * if (isWindKmh) 0.01 else 0.016).toFloat(),
                 rotation = windRotation.toFloat()
             ),
             WeatherItem(
-                title = "Pressure",
+                title = Res.string.pressure,
                 description = if (isPressureMb) "$pressure mmHg" else "$pressure inHg",
                 progress = calcPressureProgress(pressure, isPressureMb),
                 rotation = 0f
             ),
             WeatherItem(
-                title = "Clouds",
+                title = Res.string.clouds,
                 description = "$clouds %",
                 progress = clouds * 0.01.toFloat(),
                 rotation = 0f
             ),
             WeatherItem(
-                title = "Uv",
+                title = Res.string.uv,
                 description = when (uvIndex) {
-                    in 0..2 -> "Low"
-                    in 3..5 -> "Moderate"
-                    in 6..8 -> "High"
-                    in 8..11 -> "Extreme"
-                    else -> ""
+                    in 0..2 -> Res.string.low
+                    in 3..5 -> Res.string.moderate
+                    in 6..8 -> Res.string.high
+                    in 8..11 -> Res.string.extreme
+                    else -> Res.string.uv
                 },
                 rotation = 0f,
                 uvIndex = uvIndex
             ),
             WeatherItem(
-                title = "Feels Like",
+                title = Res.string.feels_like,
                 description = if (isTempC) "$feelsLike°C" else "$feelsLike°F",
                 rotation = rotationFeelsLike,
             )

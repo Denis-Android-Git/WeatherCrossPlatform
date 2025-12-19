@@ -11,5 +11,6 @@ plugins {
     alias(libs.plugins.google.services) apply false
     alias(libs.plugins.crashlytics) apply false
     alias(libs.plugins.kotzilla) apply false
-
+    // Add the dependency for the Performance Monitoring Gradle plugin
+    alias(libs.plugins.firebase.perf) apply false
 }

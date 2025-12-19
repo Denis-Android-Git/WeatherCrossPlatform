@@ -16,6 +16,8 @@ plugins {
     alias(libs.plugins.room)
     alias(libs.plugins.kotzilla)
 
+    // Add the Performance Monitoring Gradle plugin
+    alias(libs.plugins.firebase.perf)
 }
 
 kotlin {
@@ -50,6 +52,11 @@ kotlin {
             implementation(libs.koin.androidx.compose)
             implementation(libs.ktor.client.android)
             implementation(libs.core.splashscreen)
+            // Add the dependency for the Performance Monitoring library
+            // When using the BoM, you don't specify versions in Firebase library dependencies
+            implementation(project.dependencies.platform(libs.firebase))
+            implementation(libs.firebase.perf)
+            implementation(libs.firebase.analytics)
 
         }
         commonMain.dependencies {
@@ -69,10 +76,12 @@ kotlin {
             api(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
-            implementation(libs.navigation.compose)
+            //implementation(libs.navigation.compose)
+            implementation(libs.jetbrains.navigation3.ui)
+            implementation(libs.jetbrains.lifecycle.viewmodel.nav3)
+
             implementation(libs.coil.compose)
             implementation(libs.coil.network.ktor3)
-            api(libs.gitlive.firebase.kotlin.crashlytics)
             implementation(libs.androidx.room.runtime)
             implementation(libs.sqlite.bundled)
             implementation(libs.material.icons.core)
@@ -82,9 +91,10 @@ kotlin {
             implementation(libs.material3.expressive)
             implementation(libs.datastore)
             implementation(libs.datastore.preferences)
+            api(libs.gitlive.firebase.kotlin.crashlytics)
         }
         kotzilla {
-            versionName = "0.9.54" // add your app version name
+            versionName = "0.9.63" // add your app version name
             keyGeneration = KotzillaKeyGeneration.COMPOSE
             composeInstrumentation = true
         }
@@ -106,8 +116,8 @@ android {
         applicationId = "org.example.weathercrossplatform"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 30
-        versionName = "0.9.54"
+        versionCode = 39
+        versionName = "0.9.63"
 
     }
     packaging {

@@ -1,11 +1,11 @@
 [versions]
-agp = "8.13.1"
+agp = "8.13.2"
 android-compileSdk = "36"
 android-minSdk = "24"
 android-targetSdk = "36"
-androidx-activityCompose = "1.12.1"
+androidx-activityCompose = "1.12.2"
 compose-multiplatform = "1.9.3"
-androidx-lifecycle = "2.9.6"
+androidx-lifecycle = "2.10.0-alpha06"
 kotlin = "2.2.21"
 kotlinSerialization = "1.9.0"
 kotlinx-coroutines = "1.10.2"
@@ -18,10 +18,12 @@ lifecycleViewModelCompose = "2.9.6"
 playServicesLocation = "21.3.0"
 koin = "4.1.1"
 koinComposeMultiplatform = "4.1.1"
-navigationCompose = "2.9.1"
+#navigationCompose = "2.9.1"
+cmpNavigation3 = "1.0.0-alpha06"
+
 coil = "3.3.0"
 #Firebase android
-firebase-android-bom = "34.6.0"
+firebase-android-bom = "34.7.0"
 #Gradle
 gradlePlugins-crashlytics = "3.0.6"
 gradlePlugins-google-services = "4.4.4"
@@ -35,6 +37,7 @@ kotzilla = "1.4.1"
 core-splashscreen = "1.2.0"
 material3-expressive = "1.9.0-alpha04"
 datastore = "1.2.0"
+firebase-perf = "2.0.2"
 #androidx-appcompat = "1.7.0"
 #androidx-constraintlayout = "2.2.1"
 #androidx-core-ktx = "1.15.0"
@@ -46,6 +49,7 @@ datastore = "1.2.0"
 
 [libraries]
 core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "core-splashscreen" }
+firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 material3-expressive = { module = "org.jetbrains.compose.material3:material3", version.ref = "material3-expressive" }
 kotzilla-sdk-compose = { group = "io.kotzilla", name = "kotzilla-sdk-compose", version.ref = "kotzilla" }
 # Logging
@@ -61,6 +65,7 @@ datastore-preferences = { module = "androidx.datastore:datastore-preferences", v
 #Firebase
 firebase = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-android-bom" }
 crashlytics = { module = "com.google.firebase:firebase-crashlytics" }
+firebase-perf = { module = "com.google.firebase:firebase-perf" }
 #Gitlive
 gitlive-firebase-kotlin-crashlytics = { module = "dev.gitlive:firebase-crashlytics", version.ref = "firebase-gitlive-sdk" }
 
@@ -107,7 +112,11 @@ koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koinComp
 koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koinComposeMultiplatform" }
 
 #Navigation
-navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+#navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+
+# For Compose Multiplatform
+jetbrains-navigation3-ui = { module = "org.jetbrains.androidx.navigation3:navigation3-ui", version.ref = "cmpNavigation3" }
+jetbrains-lifecycle-viewmodel-nav3 = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-navigation3", version.ref = "androidx-lifecycle" }
 
 #Ktor
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
@@ -123,8 +132,7 @@ play-services-location = { group = "com.google.android.gms", name = "play-servic
 
 [plugins]
 kotzilla = { id = "io.kotzilla.kotzilla-plugin", version.ref = "kotzilla" }
-
-
+firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "firebase-perf" }
 crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "gradlePlugins-crashlytics" }
 google-services = { id = "com.google.gms.google-services", version.ref = "gradlePlugins-google-services" }
 androidApplication = { id = "com.android.application", version.ref = "agp" }

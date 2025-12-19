@@ -37,11 +37,23 @@
     <string name="units">Единицы измерения</string>
     <string name="temp">Температура</string>
     <string name="wind_speed">Скорость ветра</string>
-    <string name="pressure">Атмосферное давление</string>
+    <string name="pressure">Атм. давление</string>
     <string name="celc">°C</string>
     <string name="far">°F</string>
     <string name="kmh">Километров в час</string>
     <string name="mph">Милль в час</string>
     <string name="mmrt">Миллиметр ртутного столба</string>
     <string name="inrt">Дюйм ртутного столба</string>
+    <string name="humidity">Влажность</string>
+    <string name="wind">Ветер</string>
+    <string name="clouds">Облачность</string>
+    <string name="uv">Уф</string>
+    <string name="low">Низкий</string>
+    <string name="moderate">Умеренный</string>
+    <string name="high">Высокий</string>
+    <string name="extreme">Экстремальный</string>
+    <string name="forecast_by">Прогноз предоставлен</string>
+    <string name="about_app">О приложении</string>
+    <string name="policy">Политика конфиденциальности</string>
+
 </resources>

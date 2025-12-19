@@ -37,11 +37,23 @@
     <string name="units">Unidades de medida</string>
     <string name="temp">Temperatura</string>
     <string name="wind_speed">Velocidad del viento</string>
-    <string name="pressure">Presión atmosférica</string>
+    <string name="pressure">Presión atmo</string>
     <string name="celc">°C</string>
     <string name="far">°F</string>
     <string name="kmh">Kilómetros por hora</string>
     <string name="mph">Millas por hora</string>
     <string name="mmrt">Milímetro de mercurio</string>
     <string name="inrt">Pulgada de mercurio</string>
+    <string name="humidity">Humedad</string>
+    <string name="wind">Viento</string>
+    <string name="clouds">Nubes</string>
+    <string name="uv">UV</string>
+    <string name="low">Bajo</string>
+    <string name="moderate">Moderado</string>
+    <string name="high">Alto</string>
+    <string name="extreme">Extremo</string>
+    <string name="forecast_by">Pronóstico por</string>
+    <string name="about_app">Acerca de la aplicación</string>
+    <string name="policy">Política de privacidad</string>
+
 </resources>
