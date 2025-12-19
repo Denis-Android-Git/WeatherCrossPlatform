@@ -94,7 +94,7 @@ kotlin {
             api(libs.gitlive.firebase.kotlin.crashlytics)
         }
         kotzilla {
-            versionName = "0.9.62" // add your app version name
+            versionName = "0.9.63" // add your app version name
             keyGeneration = KotzillaKeyGeneration.COMPOSE
             composeInstrumentation = true
         }
@@ -116,8 +116,8 @@ android {
         applicationId = "org.example.weathercrossplatform"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 38
-        versionName = "0.9.62"
+        versionCode = 39
+        versionName = "0.9.63"
 
     }
     packaging {
