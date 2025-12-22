@@ -1,5 +1,11 @@
 package org.example.weathercrossplatform.presentation.navigation
 
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.animation.togetherWith
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
@@ -45,6 +51,30 @@ fun NavHostMainScreen(
     NavDisplay(
         modifier = modifier,
         backStack = backStack,
+        transitionSpec = {
+            slideInHorizontally(
+                animationSpec = tween(durationMillis = 500)
+            ) { it } + fadeIn() togetherWith
+                    slideOutHorizontally(
+                        animationSpec = tween(durationMillis = 500)
+                    ) { -it } + fadeOut()
+        },
+        popTransitionSpec = {
+            slideInHorizontally(
+                animationSpec = tween(durationMillis = 500)
+            ) { -it } + fadeIn() togetherWith
+                    slideOutHorizontally(
+                        animationSpec = tween(durationMillis = 500)
+                    ) { it } + fadeOut()
+        },
+        predictivePopTransitionSpec = {
+            slideInHorizontally(
+                animationSpec = tween(durationMillis = 500)
+            ) { -it } + fadeIn() togetherWith
+                    slideOutHorizontally(
+                        animationSpec = tween(durationMillis = 500)
+                    ) { it } + fadeOut()
+        },
         entryDecorators = listOf(
             rememberSaveableStateHolderNavEntryDecorator(),
             rememberViewModelStoreNavEntryDecorator()
