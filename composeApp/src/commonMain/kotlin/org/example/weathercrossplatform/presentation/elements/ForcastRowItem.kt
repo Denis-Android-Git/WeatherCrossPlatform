@@ -3,6 +3,7 @@ package org.example.weathercrossplatform.presentation.elements
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
@@ -28,15 +29,30 @@ fun ForecastRowItem(
     minTemp: Float,
     isWindKmh: Boolean
 ) {
+    val tempFloat = temp.toFloat()
     val tempRange = maxTemp - minTemp
+    val graphHeight = 40.dp
+
+    val normalizedTemp =
+        if (tempRange == 0f) 0.5f
+        else (tempFloat - minTemp) / tempRange
+
+    val yOffset = (1f - normalizedTemp) * graphHeight.value
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(
-            text = "$temp°",
-            color = Color.White
-        )
+        Box(
+            modifier = Modifier
+                .height(graphHeight),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                text = "$temp°",
+                color = Color.White,
+                modifier = Modifier.offset(y = yOffset.dp)
+            )
+        }
         Box(
             modifier = Modifier
                 .height(40.dp)
@@ -63,13 +79,13 @@ fun ForecastRowItem(
 @Composable
 fun ForecastRowItemPreview() {
     ForecastRowItem(
-        temp = "20",
+        temp = "-20",
         icon = "https://cdn.weatherapi.com/weather/64x64/day/113.png",
         wind = "12",
         time = "12:00",
-        previousTemp = 18.0f,
-        maxTemp = 25.0f,
-        minTemp = 10.0f,
+        previousTemp = -18.0f,
+        maxTemp = -15.0f,
+        minTemp = -22.0f,
         isWindKmh = true
     )
 }

@@ -10,6 +10,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.example.weathercrossplatform.data.utils.UiText
@@ -20,6 +23,7 @@ import org.example.weathercrossplatform.presentation.icons.PressureIndicator
 import org.example.weathercrossplatform.presentation.icons.UvIcon
 import org.example.weathercrossplatform.presentation.icons.WindIcon
 import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.clouds
 import weathercrossplatform.composeapp.generated.resources.feels_like
@@ -42,6 +46,25 @@ fun WeatherDetailElement(
     uvIndex: String,
     isPressureMb: Boolean
 ) {
+
+    val descriptionList = description.split(" ")
+
+    val formattedDescription = if (descriptionList.size > 1) {
+        buildAnnotatedString {
+            withStyle(style = SpanStyle(color = Color.White, fontSize = 24.sp)) {
+                append(descriptionList[0])
+            }
+            withStyle(style = SpanStyle(color = Color.White, fontSize = 16.sp)) {
+                append(" ${descriptionList[1]}")
+            }
+        }
+    } else {
+        buildAnnotatedString {
+            withStyle(style = SpanStyle(color = Color.White, fontSize = 24.sp)) {
+                append(descriptionList[0])
+            }
+        }
+    }
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -56,8 +79,7 @@ fun WeatherDetailElement(
         )
         Text(
             modifier = Modifier.padding(start = 16.dp, top = 16.dp),
-            fontSize = 25.sp,
-            text = description, color = Color.White
+            text = formattedDescription
         )
         when (title) {
             Res.string.humidity -> {
@@ -105,4 +127,21 @@ fun WeatherDetailElement(
             }
         }
     }
+}
+
+@Preview
+@Composable
+fun WeatherDetailElementPreview() {
+    WeatherDetailElement(
+        title = Res.string.pressure,
+        description = "786.44 mmHg",
+        humidity = 0.78f,
+        windProgress = 0.5f,
+        pressureProgress = 0.5f,
+        cloudsProgress = 0.5f,
+        windRotation = 0.5f,
+        feelsLikeRotation = 0.5f,
+        uvIndex = "5",
+        isPressureMb = false
+    )
 }

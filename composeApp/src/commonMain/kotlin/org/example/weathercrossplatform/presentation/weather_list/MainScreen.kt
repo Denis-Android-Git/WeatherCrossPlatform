@@ -45,10 +45,21 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
+import org.example.weathercrossplatform.data.network.dto.ForecastDto
 import org.example.weathercrossplatform.data.utils.GetScreenHeight
 import org.example.weathercrossplatform.data.utils.UiText
 import org.example.weathercrossplatform.data.utils.toUiText
 import org.example.weathercrossplatform.domain.logger.MyLogger
+import org.example.weathercrossplatform.domain.models.AirQuality
+import org.example.weathercrossplatform.domain.models.Astro
+import org.example.weathercrossplatform.domain.models.Condition
+import org.example.weathercrossplatform.domain.models.Current
+import org.example.weathercrossplatform.domain.models.Day
+import org.example.weathercrossplatform.domain.models.Forecast
+import org.example.weathercrossplatform.domain.models.Forecastday
+import org.example.weathercrossplatform.domain.models.Hour
+import org.example.weathercrossplatform.domain.models.Location
+import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 import org.example.weathercrossplatform.presentation.elements.FloatingToolBar
 import org.example.weathercrossplatform.presentation.elements.ForecastElement
@@ -57,6 +68,7 @@ import org.example.weathercrossplatform.presentation.elements.WeatherDetailEleme
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.add
 import weathercrossplatform.composeapp.generated.resources.air_quality
@@ -67,9 +79,14 @@ import weathercrossplatform.composeapp.generated.resources.air_quality_level_4
 import weathercrossplatform.composeapp.generated.resources.air_quality_level_5
 import weathercrossplatform.composeapp.generated.resources.air_quality_level_6
 import weathercrossplatform.composeapp.generated.resources.cancel
+import weathercrossplatform.composeapp.generated.resources.clouds
 import weathercrossplatform.composeapp.generated.resources.feels_like
 import weathercrossplatform.composeapp.generated.resources.forecast_by
+import weathercrossplatform.composeapp.generated.resources.humidity
+import weathercrossplatform.composeapp.generated.resources.pressure
+import weathercrossplatform.composeapp.generated.resources.uv
 import weathercrossplatform.composeapp.generated.resources.weather_api
+import weathercrossplatform.composeapp.generated.resources.wind
 
 @Composable
 fun MainScreen(
@@ -89,7 +106,11 @@ fun MainScreen(
     val airQualityText by rememberUpdatedState(
         newValue = weatherMainScreenState.weatherDto?.current?.airQuality?.usEpaIndex?.toUiText()
     )
-
+    val scrollState = rememberScrollState()
+    val maxScrollToFade = 1000f
+    val animatedAlpha by animateFloatAsState(
+        targetValue = (1f - (scrollState.value / maxScrollToFade)).coerceIn(0f, 1f)
+    )
     Box(
         modifier = modifier.fillMaxSize()
     ) {
@@ -98,7 +119,6 @@ fun MainScreen(
             enter = fadeIn(),
             exit = fadeOut()
         ) {
-
             Box(modifier = Modifier.fillMaxSize()) {
                 AsyncImage(
                     model = weatherMainScreenState.image.ifEmpty {
@@ -109,15 +129,10 @@ fun MainScreen(
                     contentScale = ContentScale.FillBounds,
                     contentDescription = null
                 )
-                val scrollState = rememberScrollState()
-                val maxScrollToFade = 1000f
-                val animatedAlpha by animateFloatAsState(
-                    targetValue = (1f - (scrollState.value / maxScrollToFade)).coerceIn(0f, 1f)
-                )
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(top = 160.dp)
+                        .padding(top = 160.dp, start = 16.dp, end = 16.dp)
                         .graphicsLayer {
                             alpha = animatedAlpha
                         }
@@ -127,14 +142,16 @@ fun MainScreen(
                             imageVector = Icons.Outlined.Place,
                             contentDescription = null,
                             modifier = Modifier
-                                .padding(start = 52.dp, bottom = 3.dp)
+                                .padding(
+                                    start = 16.dp,
+                                    bottom = 3.dp
+                                )
                                 .size(15.dp),
                             tint = Color.White
                         )
                     }
                     Box(
                         modifier = Modifier
-                            .padding(start = 36.dp)
                             .background(
                                 color = Color.Black.copy(alpha = 0.2f),
                                 shape = RoundedCornerShape(16.dp)
@@ -150,7 +167,7 @@ fun MainScreen(
                     }
                     Box(
                         modifier = Modifier
-                            .padding(start = 36.dp, top = 16.dp)
+                            .padding(top = 16.dp)
                             .background(
                                 color = Color.Black.copy(alpha = 0.2f),
                                 shape = RoundedCornerShape(16.dp)
@@ -168,7 +185,7 @@ fun MainScreen(
                     }
                     Column(
                         modifier = Modifier
-                            .padding(start = 36.dp, top = 16.dp, end = 36.dp)
+                            .padding(top = 16.dp)
                             .background(
                                 color = Color.Black.copy(alpha = 0.2f),
                                 shape = RoundedCornerShape(16.dp)
@@ -267,9 +284,6 @@ fun MainScreen(
                                     isPressureMb = weatherMainScreenState.isPressureMb
                                 )
                             }
-                            item {
-
-                            }
                         }
                         Text(
                             text = UiText.MyStringResource(Res.string.forecast_by).asString(),
@@ -348,170 +362,226 @@ fun MainScreen(
         }
     }
 }
-//
-//@Preview
-//@Composable
-//fun MainScreenPreview() {
-//    val mockWeatherItems = listOf(
-//        WeatherItem(
-//            title = Res.string.humidity,
-//            description = "45%",
-//            progress = 0.45f,
-//            rotation = 0f,
-//            uvIndex = 0
-//        ),
-//        WeatherItem(
-//            title = Res.string.wind,
-//            description = "10 км/ч",
-//            progress = 0.3f,
-//            rotation = 315f,
-//            uvIndex = 0
-//        ),
-//        WeatherItem(
-//            title = Res.string.pressure,
-//            description = "1013 мб",
-//            progress = 0.65f,
-//            rotation = 0f,
-//            uvIndex = 0
-//        ),
-//        WeatherItem(
-//            title = Res.string.clouds,
-//            description = "25%",
-//            progress = 0.25f,
-//            rotation = 0f,
-//            uvIndex = 0
-//        ),
-//        WeatherItem(
-//            title = Res.string.uv,
-//            description = "Высокий",
-//            progress = 0f,
-//            rotation = 0f,
-//            uvIndex = 6
-//        ),
-//        WeatherItem(
-//            title = Res.string.feels_like,
-//            description = "27°",
-//            progress = 0f,
-//            rotation = 90f,
-//            uvIndex = 0
-//        )
-//    )
-//
-//    val mockSavedCities = listOf(
-//        SavedWeatherItem(
-//            cityName = "Москва",
-//            temperature = 22.0,
-//            weatherDescription = "Солнечно",
-//            highTemperature = 25.0,
-//            lowTemperature = 18.0,
-//            cityId = 1,
-//            coordinates = "55.7558,37.6176",
-//            isCurrentLocation = true
-//        )
-//    )
-//
-//    MainScreen(
-//        cityId = 1,
-//        savedCityList = mockSavedCities,
-//        onAddButtonClick = { },
-//        onCancelButtonClick = { },
-//        onAddCityButtonClick = { },
-//        isCurrentLocation = true,
-//        weatherMainScreenState = WeatherMainScreenState(
-//            weatherItemList = mockWeatherItems
-//        ),
-//        onSettingsClick = {},
-//        modifier = Modifier,
-//    )
-//}
-//
-//val mockHours = listOf(
-//    Hour(
-//        chanceOfRain = 0,
-//        chanceOfSnow = 0,
-//        cloud = 25,
-//        condition = Condition(
-//            text = "Sunny",
-//            icon = "//cdn.weatherapi.com/weather/64x64/day/116.png",
-//            code = 1000
-//        ),
-//        dewPointC = 12.0,
-//        dewPointF = 53.6,
-//        feelsLikeC = 27.0,
-//        feelsLikeF = 80.6,
-//        gustKph = 15.0,
-//        gustMph = 9.3,
-//        heatIndexC = 27.0,
-//        heatIndexF = 80.6,
-//        humidity = 45,
-//        isDay = 1,
-//        precipIn = 0.0,
-//        precipMm = 0.0,
-//        pressureIn = 29.91,
-//        pressureMb = 1013.0,
-//        snowCm = 0.0,
-//        tempC = 25.0,
-//        tempF = 77.0,
-//        time = "12:00",
-//        timeEpoch = 1705312800,
-//        uv = 6.0,
-//        visKm = 10.0,
-//        visMiles = 6.2,
-//        willItRain = 0,
-//        willItSnow = 0,
-//        windDegree = 315,
-//        windDir = "NW",
-//        windKph = 10.0,
-//        windMph = 6.2,
-//        windChillC = 24.0,
-//        windChillF = 75.2
-//    )
-//)
-//
-//
-//val mockForecast = listOf(
-//    Forecastday(
-//        astro = Astro(
-//            isMoonUp = 0,
-//            isSunUp = 1,
-//            moonIllumination = 25,
-//            moonPhase = "Waxing Crescent",
-//            moonrise = "02:15 AM",
-//            moonset = "01:30 PM",
-//            sunrise = "06:30 AM",
-//            sunset = "06:45 PM"
-//        ),
-//        date = "2024-01-15",
-//        dateEpoch = 1705276800,
-//        day = Day(
-//            avghumidity = 65,
-//            avgTempC = 23.0,
-//            avgTempF = 73.4,
-//            avgVisKm = 10.0,
-//            avgVisMiles = 6.2,
-//            condition = Condition(
-//                text = "Partly cloudy",
-//                icon = "//cdn.weatherapi.com/weather/64x64/day/116.png",
-//                code = 1003
-//            ),
-//            dailyChanceOfRain = 10,
-//            dailyChanceOfSnow = 0,
-//            dailyWillItRain = 0,
-//            dailyWillItSnow = 0,
-//            maxTempC = 28.0,
-//            maxTempF = 82.4,
-//            maxWindKph = 15.0,
-//            maxWindMph = 9.3,
-//            minTempC = 18.0,
-//            minTempF = 64.4,
-//            totalPrecipIn = 0.0,
-//            totalPrecipMm = 0.0,
-//            totalSnowCm = 0.0,
-//            uv = 6.0
-//        ),
-//        hour = mockHours
-//    )
-//)
+
+@Preview
+@Composable
+fun MainScreenPreview() {
+    val mockWeatherItems = listOf(
+        WeatherItem(
+            title = Res.string.humidity,
+            description = "45%",
+            progress = 0.45f,
+            rotation = 0f,
+            uvIndex = 0
+        ),
+        WeatherItem(
+            title = Res.string.wind,
+            description = "10 км/ч",
+            progress = 0.3f,
+            rotation = 315f,
+            uvIndex = 0
+        ),
+        WeatherItem(
+            title = Res.string.pressure,
+            description = "1013 мб",
+            progress = 0.65f,
+            rotation = 0f,
+            uvIndex = 0
+        ),
+        WeatherItem(
+            title = Res.string.clouds,
+            description = "25%",
+            progress = 0.25f,
+            rotation = 0f,
+            uvIndex = 0
+        ),
+        WeatherItem(
+            title = Res.string.uv,
+            description = "Высокий",
+            progress = 0f,
+            rotation = 0f,
+            uvIndex = 6
+        ),
+        WeatherItem(
+            title = Res.string.feels_like,
+            description = "27°",
+            progress = 0f,
+            rotation = 90f,
+            uvIndex = 0
+        )
+    )
+
+    val mockSavedCities = listOf(
+        SavedWeatherItem(
+            cityName = "Москва",
+            temperature = 22.0,
+            weatherDescription = "Солнечно",
+            highTemperature = 25.0,
+            lowTemperature = 18.0,
+            cityId = 1,
+            coordinates = "55.7558,37.6176",
+            isCurrentLocation = true
+        )
+    )
+    val dto = ForecastDto(
+        current = Current(
+            airQuality = AirQuality(
+                usEpaIndex = 2,
+                pm25 = 12.0,
+                pm10 = 18.0,
+                o3 = 40.0,
+                no2 = 8.0,
+                co = 0.4,
+                so2 = 2.0
+            ),
+            cloud = 25,
+            condition = Condition(
+                text = "Sunny",
+                icon = "//cdn.weatherapi.com/weather/64x64/day/116.png",
+                code = 1000
+            ),
+            dewPointC = 12.0,
+            dewPointF = 53.6,
+            feelsLikeC = 27.0,
+            feelsLikeF = 80.6,
+            gustKph = 15.0,
+            gustMph = 9.3,
+            heatIndexC = 27.0,
+            heatIndexF = 80.6,
+            humidity = 45,
+            isDay = 1,
+            lastUpdated = "2024-01-15 12:00",
+            lastUpdatedEpoch = 1705312800,
+            precipIn = 0.0,
+            precipMm = 0.0,
+            pressureIn = 29.91,
+            pressureMb = 1013.0,
+            tempC = 25.0,
+            tempF = 77.0,
+            uv = 6.0,
+            visKm = 10.0,
+            visMiles = 6.2,
+            windDegree = 315,
+            windDir = "NW",
+            windKph = 10.0,
+            windMph = 6.2,
+            windChillC = 24.0,
+            windChillF = 75.2
+        ),
+        forecast = Forecast(forecastday = mockForecast),
+        location = Location(
+            country = "Россия",
+            id = 1,
+            lat = 55.7558,
+            lon = 37.6176,
+            name = "Москва",
+            region = "Москва",
+            url = null
+        )
+    )
+    MainScreen(
+        cityId = 1,
+        savedCityList = mockSavedCities,
+        onAddButtonClick = { },
+        onCancelButtonClick = { },
+        onAddCityButtonClick = { },
+        isCurrentLocation = true,
+        weatherMainScreenState = WeatherMainScreenState(
+            weatherItemList = mockWeatherItems,
+            weatherDto = dto
+        ),
+        onSettingsClick = {},
+        modifier = Modifier,
+    )
+}
+
+val mockHours = listOf(
+    Hour(
+        chanceOfRain = 0,
+        chanceOfSnow = 0,
+        cloud = 25,
+        condition = Condition(
+            text = "Sunny",
+            icon = "//cdn.weatherapi.com/weather/64x64/day/116.png",
+            code = 1000
+        ),
+        dewPointC = 12.0,
+        dewPointF = 53.6,
+        feelsLikeC = 27.0,
+        feelsLikeF = 80.6,
+        gustKph = 15.0,
+        gustMph = 9.3,
+        heatIndexC = 27.0,
+        heatIndexF = 80.6,
+        humidity = 45,
+        isDay = 1,
+        precipIn = 0.0,
+        precipMm = 0.0,
+        pressureIn = 29.91,
+        pressureMb = 1013.0,
+        snowCm = 0.0,
+        tempC = 25.0,
+        tempF = 77.0,
+        time = "12:00",
+        timeEpoch = 1705312800,
+        uv = 6.0,
+        visKm = 10.0,
+        visMiles = 6.2,
+        willItRain = 0,
+        willItSnow = 0,
+        windDegree = 315,
+        windDir = "NW",
+        windKph = 10.0,
+        windMph = 6.2,
+        windChillC = 24.0,
+        windChillF = 75.2
+    )
+)
+
+
+val mockForecast = listOf(
+    Forecastday(
+        astro = Astro(
+            isMoonUp = 0,
+            isSunUp = 1,
+            moonIllumination = 25,
+            moonPhase = "Waxing Crescent",
+            moonrise = "02:15 AM",
+            moonset = "01:30 PM",
+            sunrise = "06:30 AM",
+            sunset = "06:45 PM"
+        ),
+        date = "2024-01-15",
+        dateEpoch = 1705276800,
+        day = Day(
+            avghumidity = 65,
+            avgTempC = 23.0,
+            avgTempF = 73.4,
+            avgVisKm = 10.0,
+            avgVisMiles = 6.2,
+            condition = Condition(
+                text = "Partly cloudy",
+                icon = "//cdn.weatherapi.com/weather/64x64/day/116.png",
+                code = 1003
+            ),
+            dailyChanceOfRain = 10,
+            dailyChanceOfSnow = 0,
+            dailyWillItRain = 0,
+            dailyWillItSnow = 0,
+            maxTempC = 28.0,
+            maxTempF = 82.4,
+            maxWindKph = 15.0,
+            maxWindMph = 9.3,
+            minTempC = 18.0,
+            minTempF = 64.4,
+            totalPrecipIn = 0.0,
+            totalPrecipMm = 0.0,
+            totalSnowCm = 0.0,
+            uv = 6.0
+        ),
+        hour = mockHours
+    )
+)
 
 //
 //@Composable

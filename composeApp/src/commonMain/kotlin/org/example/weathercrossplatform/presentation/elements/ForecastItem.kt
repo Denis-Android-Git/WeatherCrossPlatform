@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
@@ -12,9 +13,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
+import weathercrossplatform.composeapp.generated.resources.Res
+import weathercrossplatform.composeapp.generated.resources.clouds
+import weathercrossplatform.composeapp.generated.resources.im_1
+import weathercrossplatform.composeapp.generated.resources.weather_api
 
 @Composable
 fun ForecastItem(
@@ -27,7 +34,7 @@ fun ForecastItem(
     val icon = image.replace("//", "https://")
 
     Column(
-        modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp)
+        modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp)
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -35,28 +42,33 @@ fun ForecastItem(
         ) {
             Text(
                 text = date,
-                modifier = Modifier.weight(1f),
+                modifier = Modifier.weight(0.4f),
                 color = Color.White
             )
             AsyncImage(
                 model = icon,
+                modifier = Modifier.size(34.dp).weight(0.2f),
+                error = painterResource(Res.drawable.clouds),
                 contentDescription = null,
             )
-            Spacer(modifier = Modifier.width(16.dp))
+            Spacer(modifier = Modifier.width(9.dp))
             Text(
                 text = when {
                     isTempC -> "$low ℃"
                     else -> "$low ℉"
                 },
+                modifier = Modifier.weight(0.2f),
                 color = Color.White
             )
-            Spacer(modifier = Modifier.width(16.dp))
+            //Spacer(modifier = Modifier.width(16.dp))
             Text(
                 text = when {
                     isTempC -> "$high ℃"
                     else -> "$high ℉"
                 },
-                color = Color.White,
+                modifier = Modifier.weight(0.2f),
+                textAlign = TextAlign.End,
+                color = Color.White
             )
 
         }

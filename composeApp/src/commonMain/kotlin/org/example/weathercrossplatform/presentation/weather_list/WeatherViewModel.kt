@@ -354,7 +354,7 @@ class WeatherViewModel(
             ),
             WeatherItem(
                 title = Res.string.feels_like,
-                description = if (isTempC) "$feelsLike°C" else "$feelsLike°F",
+                description = if (isTempC) "$feelsLike °C" else "$feelsLike °F",
                 rotation = rotationFeelsLike,
             )
         )
