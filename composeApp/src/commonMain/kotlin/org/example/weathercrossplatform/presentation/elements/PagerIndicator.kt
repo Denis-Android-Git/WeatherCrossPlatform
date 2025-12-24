@@ -30,8 +30,9 @@ import weathercrossplatform.composeapp.generated.resources.location_arrow
 fun PagerIndicator(
     modifier: Modifier = Modifier,
     pagerState: PagerState,
-    visibleItems: Int = 6,
-    dotSize: Dp = 8.dp
+    visibleItems: Int = 5,
+    dotSize: Dp = 8.dp,
+    padding: Dp = 2.dp
 ) {
     val rowState = rememberLazyListState()
     LaunchedEffect(pagerState.currentPage) {
@@ -52,7 +53,7 @@ fun PagerIndicator(
 
     LazyRow(
         modifier
-            .width((dotSize + 4.dp) * visibleItems)
+            .width((dotSize + padding + padding) * visibleItems)
             .wrapContentHeight()
             .padding(vertical = 8.dp),
         state = rowState,
@@ -70,7 +71,7 @@ fun PagerIndicator(
             } else {
                 Box(
                     modifier = Modifier
-                        .padding(2.dp)
+                        .padding(padding)
                         .clip(CircleShape)
                         .background(color)
                         .size(dotSize)

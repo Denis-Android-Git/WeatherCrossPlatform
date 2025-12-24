@@ -94,7 +94,7 @@ fun MainScreenState(
         },
     ) {
 
-        if (weatherMainScreenState.weatherDto?.location?.name != null) {
+        if (weatherMainScreenState.weatherDto?.location?.name != null && weatherMainScreenState.savedCities.isNotEmpty()) {
 
             HorizontalPager(state = pagerState) { pageNumber ->
 

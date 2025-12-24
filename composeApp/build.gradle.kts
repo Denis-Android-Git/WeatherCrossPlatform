@@ -92,6 +92,9 @@ kotlin {
             implementation(libs.datastore)
             implementation(libs.datastore.preferences)
             api(libs.gitlive.firebase.kotlin.crashlytics)
+
+            implementation(libs.kotlinx.datetime)
+
         }
         kotzilla {
             versionName = "0.9.66" // add your app version name

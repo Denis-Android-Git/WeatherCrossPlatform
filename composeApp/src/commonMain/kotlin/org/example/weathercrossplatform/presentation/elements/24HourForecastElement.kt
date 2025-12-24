@@ -6,27 +6,45 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
+import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
+import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Condition
 import org.example.weathercrossplatform.domain.models.Hour
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources._24h_forecast
+import kotlin.time.Clock
 
 @Composable
 fun HourForecastElement(
     hours: List<Hour>,
     isTempC: Boolean,
-    isWindKmh: Boolean
+    isWindKmh: Boolean,
+    myLogger: MyLogger = MyLoggerImpl
 ) {
     val maxTemp = hours.maxOf { if (isTempC) it.tempC.toFloat() else it.tempF.toFloat() }
     val minTemp = hours.minOf { if (isTempC) it.tempC.toFloat() else it.tempF.toFloat() }
+    val rowState = rememberLazyListState()
+
+    val currentTime = Clock.System.now()
+    val hour = currentTime.toLocalDateTime(TimeZone.currentSystemDefault()).hour
+    myLogger.debug("currentTime: $hour")
+
+    LaunchedEffect(hour) {
+        rowState.animateScrollToItem(hour)
+    }
+
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -38,11 +56,13 @@ fun HourForecastElement(
         )
 
         LazyRow(
-            modifier = Modifier.padding(bottom = 16.dp)
+            modifier = Modifier.padding(bottom = 16.dp),
+            state = rowState
         ) {
             itemsIndexed(hours) { index, item ->
                 val icon = item.condition.icon.replace("//", "https://")
                 val time = item.time.substringAfter(" ")
+                myLogger.debug("item_time: ${item.time}")
                 val prevTemp = when {
                     isTempC -> if (index > 0) hours[index - 1].tempC.toFloat() else item.tempC.toFloat()
                     else -> if (index > 0) hours[index - 1].tempF.toFloat() else item.tempF.toFloat()
