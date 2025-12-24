@@ -1,0 +1,89 @@
+package org.example.weathercrossplatform.presentation.elements
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.pager.PagerState
+import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Icon
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
+import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import weathercrossplatform.composeapp.generated.resources.Res
+import weathercrossplatform.composeapp.generated.resources.location_arrow
+
+@Composable
+fun PagerIndicator(
+    modifier: Modifier = Modifier,
+    pagerState: PagerState,
+    visibleItems: Int = 6,
+    dotSize: Dp = 8.dp
+) {
+    val rowState = rememberLazyListState()
+    LaunchedEffect(pagerState.currentPage) {
+        val layoutInfo = rowState.layoutInfo
+        val visibleItems = layoutInfo.visibleItemsInfo
+
+        if (visibleItems.isNotEmpty()) {
+            val viewportCenter = layoutInfo.viewportEndOffset / 2
+            val itemSize = visibleItems.first().size
+            val itemCenterOffset = viewportCenter - itemSize / 2
+
+            rowState.animateScrollToItem(
+                index = pagerState.currentPage,
+                scrollOffset = -itemCenterOffset
+            )
+        }
+    }
+
+    LazyRow(
+        modifier
+            .width((dotSize + 4.dp) * visibleItems)
+            .wrapContentHeight()
+            .padding(vertical = 8.dp),
+        state = rowState,
+        horizontalArrangement = Arrangement.Center,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        items(pagerState.pageCount) { index ->
+            val color = if (pagerState.currentPage == index) Color.White else Color.DarkGray
+            if (index == 0) {
+                Icon(
+                    painter = painterResource(Res.drawable.location_arrow), contentDescription = null,
+                    modifier = Modifier.size(10.dp),
+                    tint = color
+                )
+            } else {
+                Box(
+                    modifier = Modifier
+                        .padding(2.dp)
+                        .clip(CircleShape)
+                        .background(color)
+                        .size(dotSize)
+                )
+            }
+        }
+    }
+}
+
+@Preview
+@Composable
+fun PagerIndicatorPreview() {
+    PagerIndicator(
+        pagerState = rememberPagerState(pageCount = { 10 })
+    )
+}
