@@ -26,6 +26,9 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
+    compilerOptions {
+        freeCompilerArgs.add("-XXLanguage:+ExplicitBackingFields")
+    }
 
     listOf(
         //iosX64(),
@@ -97,7 +100,7 @@ kotlin {
 
         }
         kotzilla {
-            versionName = "0.9.66" // add your app version name
+            versionName = "0.9.67" // add your app version name
             keyGeneration = KotzillaKeyGeneration.COMPOSE
             composeInstrumentation = true
         }
@@ -119,8 +122,8 @@ android {
         applicationId = "org.example.weathercrossplatform"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 42
-        versionName = "0.9.66"
+        versionCode = 43
+        versionName = "0.9.67"
 
     }
     packaging {

@@ -53,7 +53,7 @@ fun PagerIndicator(
 
     LazyRow(
         modifier
-            .width((dotSize + padding + padding) * visibleItems)
+            .width((dotSize + padding * 2) * visibleItems)
             .wrapContentHeight()
             .padding(vertical = 8.dp),
         state = rowState,
