@@ -39,6 +39,13 @@ class SettingsScreenViewModel(
             is SettingsScreenAction.SetPressureUnit -> setPressureUnit(action.value)
             is SettingsScreenAction.SetTempUnit -> setTempUnit(action.value)
             is SettingsScreenAction.SetWindSpeedUnit -> setWindSpeedUnit(action.value)
+            SettingsScreenAction.OpenPrivacyPolicy -> openPrivacyPolicy()
+        }
+    }
+
+    private fun openPrivacyPolicy() {
+        viewModelScope.launch {
+            openUrl(PRIVACY_POLICY_URL)
         }
     }
 
@@ -74,6 +81,7 @@ class SettingsScreenViewModel(
             }
         }
     }
+
     private fun setWindSpeedUnit(value: Boolean) {
         viewModelScope.launch {
             val settings = SettingsInfo(

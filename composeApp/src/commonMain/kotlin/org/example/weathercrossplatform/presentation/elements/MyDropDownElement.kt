@@ -4,6 +4,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -68,9 +69,10 @@ fun MyDropDownElement(
                         SettingsType.WIND -> if (state.isWindKph) stringResource(Res.string.kmh) else stringResource(Res.string.mph)
                         SettingsType.PRESSURE -> if (state.isPressureMb) stringResource(Res.string.mmrt) else stringResource(Res.string.inrt)
                     },
-                    modifier = Modifier.width(100.dp),
-                    color = Color.Gray, fontSize = 11.sp, lineHeight = 10.sp
+                    modifier = Modifier.width(120.dp),
+                    color = Color.Gray, fontSize = 13.sp, lineHeight = 10.sp
                 )
+                Spacer(modifier = Modifier.width(16.dp))
                 Icon(
                     painterResource(Res.drawable.expand),
                     modifier = Modifier.size(15.dp),
@@ -100,11 +102,13 @@ fun MyDropDownElement(
 @Preview
 @Composable
 fun MyDropDownElementPreview() {
-    MyDropDownElement(
-        onAction = {},
-        state = SettingsScreenState(),
-        settingsType = SettingsType.PRESSURE
-    )
+    Box(modifier = Modifier.fillMaxSize()) {
+        MyDropDownElement(
+            onAction = {},
+            state = SettingsScreenState(),
+            settingsType = SettingsType.PRESSURE
+        )
+    }
 }
 
 enum class SettingsType {

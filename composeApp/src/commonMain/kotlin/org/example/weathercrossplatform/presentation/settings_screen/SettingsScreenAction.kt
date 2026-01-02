@@ -7,4 +7,5 @@ sealed interface SettingsScreenAction {
     data class SetDropDownTempExpanded(val value: Boolean) : SettingsScreenAction
     data class SetDropDownWindExpanded(val value: Boolean) : SettingsScreenAction
     data class SetDropDownPressureExpanded(val value: Boolean) : SettingsScreenAction
+    data object OpenPrivacyPolicy : SettingsScreenAction
 }

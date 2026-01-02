@@ -128,7 +128,7 @@ fun SettingsScreenScreen(
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth().clickable {
-                    openUrl(PRIVACY_POLICY_URL)
+                    onAction(SettingsScreenAction.OpenPrivacyPolicy)
                 }
             ) {
                 Text(

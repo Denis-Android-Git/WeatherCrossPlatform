@@ -1,10 +1,13 @@
 package org.example.weathercrossplatform.presentation.elements
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.DropdownMenu
@@ -47,6 +50,7 @@ fun MyDropDownMenu(
                 SettingsType.PRESSURE -> onAction(SettingsScreenAction.SetDropDownPressureExpanded(false))
             }
         },
+        modifier = Modifier.width(200.dp),
         containerColor = Color.Gray
     ) {
         list.forEach { res ->
@@ -165,10 +169,12 @@ fun MyDropDownMenu(
 @Preview
 @Composable
 fun MyDropDownMenuPreview() {
-    MyDropDownMenu(
-        {}, SettingsScreenState(),
-        list = listOf(Res.string.celc, Res.string.far),
-        expanded = true,
-        settingsType = SettingsType.TEMPERATURE
-    )
+    Box(modifier = Modifier.fillMaxSize()) {
+        MyDropDownMenu(
+            {}, SettingsScreenState(),
+            list = listOf(Res.string.mmrt, Res.string.inrt),
+            expanded = true,
+            settingsType = SettingsType.PRESSURE
+        )
+    }
 }
