@@ -54,7 +54,9 @@ fun MainScreenState(
 
     val pagerState = rememberPagerState(
         initialPage = weatherMainScreenState.pageNumberFromSearchScreen ?: 0,
-        pageCount = { if (weatherMainScreenState.isAddCity) 1 else weatherMainScreenState.savedCities.size })
+        pageCount = {
+            if (weatherMainScreenState.isAddCity) 1 else weatherMainScreenState.savedCities.size
+        })
     val scope = rememberCoroutineScope()
 
     LaunchedEffect(pagerState) {
@@ -95,9 +97,10 @@ fun MainScreenState(
     ) {
 
         if (weatherMainScreenState.weatherDto?.location?.name != null && weatherMainScreenState.savedCities.isNotEmpty()) {
-
-            HorizontalPager(state = pagerState) { pageNumber ->
-
+            HorizontalPager(
+                state = pagerState,
+                userScrollEnabled = !weatherMainScreenState.isLoading
+            ) { pageNumber ->
                 val isCurrentLocation = weatherMainScreenState.savedCities[pageNumber].isCurrentLocation
                 MainScreen(
                     onAddButtonClick = { onAddButtonClick(pageNumber) },
