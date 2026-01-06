@@ -1,7 +1,6 @@
 package org.example.weathercrossplatform.presentation.icons
 
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
@@ -11,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.water_drop
 
@@ -20,8 +20,7 @@ fun HumidityIcon(
     progress: Float
 ) {
     Box(
-        modifier = modifier
-            .padding(16.dp),
+        modifier = modifier,
         contentAlignment = Alignment.Center
     ) {
         CircularProgressIndicator(
@@ -35,4 +34,12 @@ fun HumidityIcon(
             tint = Color(0xff0b63da)
         )
     }
+}
+
+@Preview
+@Composable
+fun HumidityIconPreview() {
+    HumidityIcon(
+        progress = 0.5f
+    )
 }

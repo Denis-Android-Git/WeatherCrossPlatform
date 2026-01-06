@@ -50,7 +50,7 @@ fun MyDropDownMenu(
                 SettingsType.PRESSURE -> onAction(SettingsScreenAction.SetDropDownPressureExpanded(false))
             }
         },
-        modifier = Modifier.width(200.dp),
+        modifier = Modifier.width(210.dp),
         containerColor = Color.Gray
     ) {
         list.forEach { res ->

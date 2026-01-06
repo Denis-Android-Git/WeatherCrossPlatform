@@ -30,8 +30,7 @@ fun WindIcon(
     val progressValue = (progress / 0.5f).coerceAtMost(1f)
 
     Box(
-        modifier = modifier
-            .padding(16.dp),
+        modifier = modifier,
         contentAlignment = Alignment.Center
     ) {
         CircularProgressIndicator(

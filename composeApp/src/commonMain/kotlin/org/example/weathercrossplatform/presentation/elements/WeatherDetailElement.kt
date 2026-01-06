@@ -1,6 +1,7 @@
 package org.example.weathercrossplatform.presentation.elements
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -72,13 +73,13 @@ fun WeatherDetailElement(
                 color = Color.Black.copy(alpha = 0.3f),
                 shape = RoundedCornerShape(16.dp)
             )
+            .padding(horizontal = 16.dp, vertical = 16.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Text(
-            modifier = Modifier.padding(start = 16.dp, top = 6.dp),
             text = UiText.MyStringResource(title).asString(), color = Color.LightGray
         )
         Text(
-            modifier = Modifier.padding(start = 16.dp, top = 16.dp),
             text = formattedDescription
         )
         when (title) {

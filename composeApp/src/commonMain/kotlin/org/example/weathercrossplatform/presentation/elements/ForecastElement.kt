@@ -29,7 +29,7 @@ import weathercrossplatform.composeapp.generated.resources.today
 import weathercrossplatform.composeapp.generated.resources.tomorrow
 
 @Composable
-fun ForecastElement(
+fun ThreeDaysForecast(
     forecastList: List<Forecastday>,
     isTempC: Boolean
 ) {
@@ -198,7 +198,7 @@ fun ForecastElementPreview() {
         )
     )
 
-    ForecastElement(
+    ThreeDaysForecast(
         forecastList = sampleForecastList,
         isTempC = true
     )

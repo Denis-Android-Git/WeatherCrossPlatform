@@ -3,7 +3,6 @@ package org.example.weathercrossplatform.presentation.icons
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
@@ -18,6 +17,7 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.speedometer
 
@@ -28,7 +28,6 @@ fun FeelsLikeIcon(
 ) {
     Box(
         modifier = modifier
-            .padding(16.dp)
             .size(60.dp),
         contentAlignment = Alignment.Center
     ) {
@@ -66,4 +65,12 @@ fun FeelsLikeIcon(
                 .size(45.dp).rotate(135f + rotationAngle)
         )
     }
+}
+
+@Preview
+@Composable
+fun FeelsLikeIconPreview() {
+    FeelsLikeIcon(
+        rotationAngle = 0.5f
+    )
 }

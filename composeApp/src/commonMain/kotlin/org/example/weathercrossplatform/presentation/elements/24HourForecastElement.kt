@@ -27,7 +27,7 @@ import weathercrossplatform.composeapp.generated.resources._24h_forecast
 import kotlin.time.Clock
 
 @Composable
-fun HourForecastElement(
+fun Forecast24Hour(
     hours: List<Hour>,
     isTempC: Boolean,
     isWindKmh: Boolean,
@@ -408,7 +408,7 @@ fun HourForecastElementPreview() {
         )
     )
 
-    HourForecastElement(
+    Forecast24Hour(
         hours = sampleHours,
         isTempC = true,
         isWindKmh = true

@@ -62,8 +62,8 @@ import org.example.weathercrossplatform.domain.models.Location
 import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 import org.example.weathercrossplatform.presentation.elements.FloatingToolBar
-import org.example.weathercrossplatform.presentation.elements.ForecastElement
-import org.example.weathercrossplatform.presentation.elements.HourForecastElement
+import org.example.weathercrossplatform.presentation.elements.ThreeDaysForecast
+import org.example.weathercrossplatform.presentation.elements.Forecast24Hour
 import org.example.weathercrossplatform.presentation.elements.WeatherDetailElement
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.painterResource
@@ -248,18 +248,18 @@ fun MainScreen(
                     verticalArrangement = Arrangement.spacedBy(6.dp)
                 ) {
                     weatherMainScreenState.weatherDto?.forecast?.forecastday?.let { forecastListDayList ->
-                        ForecastElement(
+                        ThreeDaysForecast(
                             forecastList = forecastListDayList,
                             isTempC = weatherMainScreenState.isTempC
                         )
-                        HourForecastElement(
+                        Forecast24Hour(
                             hours = forecastListDayList[0].hour,
                             isTempC = weatherMainScreenState.isTempC,
                             isWindKmh = weatherMainScreenState.isWindKph
                         )
                         LazyVerticalGrid(
                             columns = GridCells.Fixed(2),
-                            modifier = Modifier.height(520.dp)
+                            modifier = Modifier.height(500.dp)
                                 .fillMaxWidth(),
                             horizontalArrangement = Arrangement.spacedBy(6.dp),
                             verticalArrangement = Arrangement.spacedBy(6.dp),
