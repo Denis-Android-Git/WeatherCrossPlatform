@@ -31,9 +31,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -62,8 +59,8 @@ import org.example.weathercrossplatform.domain.models.Location
 import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 import org.example.weathercrossplatform.presentation.elements.FloatingToolBar
-import org.example.weathercrossplatform.presentation.elements.ThreeDaysForecast
 import org.example.weathercrossplatform.presentation.elements.Forecast24Hour
+import org.example.weathercrossplatform.presentation.elements.ThreeDaysForecast
 import org.example.weathercrossplatform.presentation.elements.WeatherDetailElement
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.painterResource
@@ -102,10 +99,8 @@ fun MainScreen(
     myLogger: MyLogger = MyLoggerImpl
 ) {
 
-    val textColor by remember { mutableStateOf(Color.White) }
-    val airQualityText by rememberUpdatedState(
-        newValue = weatherMainScreenState.weatherDto?.current?.airQuality?.usEpaIndex?.toUiText()
-    )
+    val textColor = Color.White
+    val airQualityText = weatherMainScreenState.weatherDto?.current?.airQuality?.usEpaIndex?.toUiText()
     val scrollState = rememberScrollState()
     val maxScrollToFade = 1000f
     val animatedAlpha by animateFloatAsState(
@@ -221,25 +216,16 @@ fun MainScreen(
                             Text(
                                 text = stringResource(Res.string.air_quality), color = textColor
                             )
-                            airQualityText?.asString()?.let {
+                            airQualityText?.asString()?.let { airQuality ->
                                 Text(
-                                    text = it, color = when (it) {
-                                        stringResource(Res.string.air_quality_level_1) -> Color.Green
-                                        stringResource(Res.string.air_quality_level_2) -> Color(0xff47e6d0)
-                                        stringResource(Res.string.air_quality_level_3) -> Color.Yellow
-                                        stringResource(Res.string.air_quality_level_4) -> Color(0xFF996600)
-                                        stringResource(Res.string.air_quality_level_5) -> Color(0xFFCC3300)
-                                        stringResource(Res.string.air_quality_level_6) -> Color(0xFFFF0000)
-                                        else -> Color.Green
-                                    }
+                                    text = airQuality, color = airQuality.toColor()
                                 )
                             }
                         }
                     }
                 }
 
-                val height =
-                    GetScreenHeight.getScreenHeight() - 160.dp - GetScreenHeight.getBottomBarHeight()
+                val height = GetScreenHeight.getScreenHeight() - 160.dp - GetScreenHeight.getBottomBarHeight()
 
                 Column(
                     modifier = Modifier.fillMaxWidth()
@@ -262,18 +248,16 @@ fun MainScreen(
                             modifier = Modifier.height(500.dp)
                                 .fillMaxWidth(),
                             horizontalArrangement = Arrangement.spacedBy(6.dp),
-                            verticalArrangement = Arrangement.spacedBy(6.dp),
-                            userScrollEnabled = false
+                            verticalArrangement = Arrangement.spacedBy(6.dp)
                         ) {
                             items(weatherMainScreenState.weatherItemList) { item ->
                                 WeatherDetailElement(
                                     title = item.title,
-                                    description =
-                                        when (item.description) {
-                                            is String -> item.description
-                                            is StringResource -> UiText.MyStringResource(item.description).asString()
-                                            else -> ""
-                                        },
+                                    description = when (item.description) {
+                                        is String -> item.description
+                                        is StringResource -> UiText.MyStringResource(item.description).asString()
+                                        else -> ""
+                                    },
                                     humidity = weatherMainScreenState.weatherItemList[0].progress,
                                     windProgress = weatherMainScreenState.weatherItemList[1].progress,
                                     pressureProgress = weatherMainScreenState.weatherItemList[2].progress,
@@ -286,9 +270,9 @@ fun MainScreen(
                             }
                         }
                         Text(
-                            text = UiText.MyStringResource(Res.string.forecast_by).asString(),
+                            text = stringResource(Res.string.forecast_by),
                             fontSize = 11.sp,
-                            color = Color.White,
+                            color = textColor,
                             modifier = Modifier.align(Alignment.CenterHorizontally)
                         )
                         Image(
@@ -360,6 +344,19 @@ fun MainScreen(
                 }
             }
         }
+    }
+}
+
+@Composable
+private fun String.toColor(): Color {
+    return when (this) {
+        stringResource(Res.string.air_quality_level_1) -> Color.Green
+        stringResource(Res.string.air_quality_level_2) -> Color(0xff47e6d0)
+        stringResource(Res.string.air_quality_level_3) -> Color.Yellow
+        stringResource(Res.string.air_quality_level_4) -> Color(0xFF996600)
+        stringResource(Res.string.air_quality_level_5) -> Color(0xFFCC3300)
+        stringResource(Res.string.air_quality_level_6) -> Color(0xFFFF0000)
+        else -> Color.Green
     }
 }
 

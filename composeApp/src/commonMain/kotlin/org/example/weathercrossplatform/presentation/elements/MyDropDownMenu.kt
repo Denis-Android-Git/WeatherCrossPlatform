@@ -50,7 +50,7 @@ fun MyDropDownMenu(
                 SettingsType.PRESSURE -> onAction(SettingsScreenAction.SetDropDownPressureExpanded(false))
             }
         },
-        modifier = Modifier.width(210.dp),
+        modifier = Modifier.width(230.dp),
         containerColor = Color.Gray
     ) {
         list.forEach { res ->
@@ -95,7 +95,7 @@ fun MyDropDownMenu(
                         Text(
                             text = stringResource(res),
                             color = Color.White,
-                            fontSize = 11.sp
+                            fontSize = 13.sp
                         )
                         Spacer(modifier = Modifier.weight(1f))
                         when (settingsType) {
