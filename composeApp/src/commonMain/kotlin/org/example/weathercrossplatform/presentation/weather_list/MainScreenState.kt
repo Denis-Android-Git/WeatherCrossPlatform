@@ -84,7 +84,7 @@ fun MainScreenState(
         isRefreshing = weatherMainScreenState.isLoading,
         indicator = {
             CustomIndicator(
-                modifier = Modifier.align(Alignment.TopCenter).padding(top = 16.dp),
+                modifier = Modifier.align(Alignment.TopCenter).systemBarsPadding(),//padding(top = 56.dp),
                 state = state,
                 isRefreshing = weatherMainScreenState.isLoading,
                 containerColor = Color.Transparent,

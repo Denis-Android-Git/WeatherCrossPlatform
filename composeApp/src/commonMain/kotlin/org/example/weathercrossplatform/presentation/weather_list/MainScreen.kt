@@ -120,6 +120,7 @@ fun MainScreen(
 
     val imageError = weatherMainScreenState.appPhotoList.random()
     Scaffold(
+        containerColor = Color.Black,
         topBar = {
             TopAppBar(
                 title = {
@@ -341,7 +342,7 @@ fun MainScreen(
                     myLogger.debug("it.cityId: ${it.cityId}, cityId: $cityId")
                     it.cityId == cityId
                 } && animatedAlpha != 0f,
-                modifier = Modifier.align(Alignment.TopEnd)//.padding(top = 50.dp)
+                modifier = Modifier.align(Alignment.TopEnd).padding(4.dp)
             ) {
                 FloatingToolBar(
                     onSearchClick = onAddButtonClick,
