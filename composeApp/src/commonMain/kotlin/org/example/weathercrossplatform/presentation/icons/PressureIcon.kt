@@ -16,10 +16,8 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import org.jetbrains.compose.resources.painterResource
+import org.example.weathercrossplatform.presentation.image_vectors.ArrowDownward
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import weathercrossplatform.composeapp.generated.resources.Res
-import weathercrossplatform.composeapp.generated.resources.arrow_downward
 
 @Composable
 fun PressureIndicator(
@@ -64,7 +62,7 @@ fun PressureIndicator(
             )
         }
         Icon(
-            painter = painterResource(Res.drawable.arrow_downward),
+            imageVector = ArrowDownward,
             contentDescription = "Wind Icon",
             tint = Color(0xff47e6d0),
             modifier = Modifier.size(35.dp)

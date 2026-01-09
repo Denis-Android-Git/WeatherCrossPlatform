@@ -25,7 +25,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
-import org.jetbrains.compose.resources.painterResource
+import org.example.weathercrossplatform.presentation.image_vectors.Pull
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
@@ -65,7 +65,7 @@ fun ErrorScreen(
         Text(text = stringResource(Res.string.pull), textAlign = TextAlign.Center, color = Color.White)
         Spacer(modifier = Modifier.height(16.dp))
         Icon(
-            painter = painterResource(Res.drawable.pull),
+            imageVector = Pull,
             contentDescription = null,
             tint = Color.White,
             modifier = Modifier.alpha(animateAlpha)

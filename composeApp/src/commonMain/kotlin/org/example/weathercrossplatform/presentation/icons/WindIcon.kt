@@ -15,10 +15,8 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import org.jetbrains.compose.resources.painterResource
+import org.example.weathercrossplatform.presentation.image_vectors.North
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import weathercrossplatform.composeapp.generated.resources.Res
-import weathercrossplatform.composeapp.generated.resources.wind_arrow
 
 @Composable
 fun WindIcon(
@@ -39,10 +37,10 @@ fun WindIcon(
             color = Color.Red
         )
         Icon(
+            imageVector = North,
             modifier = Modifier
-                .size(60.dp)
+                .size(45.dp)
                 .rotate((180 + rotation)),
-            painter = painterResource(Res.drawable.wind_arrow),
             contentDescription = "Wind Icon",
             tint = Color.Red
         )

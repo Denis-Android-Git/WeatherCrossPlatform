@@ -2,8 +2,11 @@ package org.example.weathercrossplatform.presentation.weather_list
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -27,12 +30,17 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Place
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
@@ -85,6 +93,7 @@ import weathercrossplatform.composeapp.generated.resources.uv
 import weathercrossplatform.composeapp.generated.resources.weather_api
 import weathercrossplatform.composeapp.generated.resources.wind
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(
     modifier: Modifier,
@@ -106,241 +115,283 @@ fun MainScreen(
     val animatedAlpha by animateFloatAsState(
         targetValue = (1f - (scrollState.value / maxScrollToFade)).coerceIn(0f, 1f)
     )
-    Box(
-        modifier = modifier.fillMaxSize()
-    ) {
-        AnimatedVisibility(
-            visible = !weatherMainScreenState.isLoading && weatherMainScreenState.weatherDto?.location?.name != null,
-            enter = fadeIn(),
-            exit = fadeOut()
-        ) {
-            Box(modifier = Modifier.fillMaxSize()) {
-                AsyncImage(
-                    model = weatherMainScreenState.image.ifEmpty {
-                        weatherMainScreenState.appPhotoList
-                    },
-                    error = painterResource(weatherMainScreenState.appPhotoList.random()),
-                    modifier = Modifier.fillMaxSize(),
-                    contentScale = ContentScale.FillBounds,
-                    contentDescription = null
-                )
-                Column(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(top = 160.dp, start = 16.dp, end = 16.dp)
-                        .graphicsLayer {
-                            alpha = animatedAlpha
-                        }
-                ) {
-                    if (isCurrentLocation) {
-                        Icon(
-                            imageVector = Icons.Outlined.Place,
-                            contentDescription = null,
-                            modifier = Modifier
-                                .padding(
-                                    start = 16.dp,
-                                    bottom = 3.dp
-                                )
-                                .size(15.dp),
-                            tint = Color.White
-                        )
-                    }
+    val titleAlpha by animateFloatAsState(
+        targetValue = if (animatedAlpha == 0f) 1f else 0f,
+        animationSpec = tween(durationMillis = 800)
+    )
+
+    val imageError = weatherMainScreenState.appPhotoList.random()
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
                     Box(
-                        modifier = Modifier
-                            .background(
-                                color = Color.Black.copy(alpha = 0.2f),
-                                shape = RoundedCornerShape(16.dp)
-                            )
+                        modifier = Modifier.fillMaxWidth(),
+                        contentAlignment = Alignment.Center
                     ) {
-                        Text(
-                            modifier = Modifier.padding(
-                                vertical = 2.dp,
-                                horizontal = 16.dp
+                        AnimatedVisibility(
+                            visible = animatedAlpha == 0f,
+                            enter = slideInVertically(
+                                initialOffsetY = { it },
                             ),
-                            text = weatherMainScreenState.weatherDto?.location?.name.toString(), color = textColor, fontSize = 20.sp
-                        )
-                    }
-                    Box(
-                        modifier = Modifier
-                            .padding(top = 8.dp)
-                            .background(
-                                color = Color.Black.copy(alpha = 0.2f),
-                                shape = RoundedCornerShape(16.dp)
-                            )
-                    ) {
-                        Text(
-                            modifier = Modifier.padding(
-                                vertical = 2.dp,
-                                horizontal = 16.dp
-                            ),
-                            text = if (weatherMainScreenState.isTempC) "${weatherMainScreenState.weatherDto?.current?.tempC} ℃" else "${weatherMainScreenState.weatherDto?.current?.tempF} ℉",
-                            color = textColor,
-                            fontSize = 85.sp
-                        )
-                    }
-                    Column(
-                        modifier = Modifier
-                            .padding(top = 16.dp)
-                            .background(
-                                color = Color.Black.copy(alpha = 0.2f),
-                                shape = RoundedCornerShape(16.dp)
-                            )
-                    ) {
-                        Text(
-                            modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 2.dp),
-                            text = when {
-                                weatherMainScreenState.isTempC -> "${stringResource(Res.string.feels_like)} ${weatherMainScreenState.weatherDto?.current?.feelsLikeC} ℃"
-                                else -> "${stringResource(Res.string.feels_like)} ${weatherMainScreenState.weatherDto?.current?.feelsLikeF} ℉"
-                            }, color = textColor
-                        )
-                        Text(
-                            modifier = Modifier.padding(start = 16.dp, bottom = 2.dp, end = 16.dp),
-                            text = weatherMainScreenState.weatherDto?.current?.condition?.text.toString(), color = textColor
-                        )
-                    }
-                    Box(
-                        modifier = Modifier
-                            .align(Alignment.CenterHorizontally)
-                            .padding(top = 16.dp)
-                            .background(
-                                color = Color.White.copy(alpha = 0.2f),
-                                shape = RoundedCornerShape(16.dp)
-                            )
-                    ) {
-                        Row(
-                            modifier = Modifier.padding(
-                                vertical = 6.dp,
-                                horizontal = 16.dp
+                            exit = slideOutVertically(
+                                targetOffsetY = { it }
                             )
                         ) {
                             Text(
-                                text = stringResource(Res.string.air_quality), color = textColor
+                                text = weatherMainScreenState.weatherDto?.location?.name.toString(),
+                                //modifier = Modifier.alpha(titleAlpha),
+                                color = Color.White, fontSize = 20.sp
                             )
-                            airQualityText?.asString()?.let { airQuality ->
-                                Text(
-                                    text = airQuality, color = airQuality.toColor()
+                        }
+                    }
+                },
+                expandedHeight = 30.dp,
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = Color.Black,
+                    scrolledContainerColor = Color.Black
+                )
+            )
+        }
+    )
+    { paddingValues ->
+        Box(
+            modifier = modifier.fillMaxSize().padding(paddingValues)
+        ) {
+            AnimatedVisibility(
+                visible = !weatherMainScreenState.isLoading && weatherMainScreenState.weatherDto?.location?.name != null,
+                enter = fadeIn(),
+                exit = fadeOut()
+            ) {
+                Box(modifier = Modifier.fillMaxSize()) {
+                    AsyncImage(
+                        model = weatherMainScreenState.image.ifEmpty {
+                            weatherMainScreenState.appPhotoList
+                        },
+                        error = painterResource(imageError),
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.FillBounds,
+                        contentDescription = null
+                    )
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 160.dp, start = 16.dp, end = 16.dp)
+                            .graphicsLayer {
+                                alpha = animatedAlpha
+                            }
+                    ) {
+                        if (isCurrentLocation) {
+                            Icon(
+                                imageVector = Icons.Outlined.Place,
+                                contentDescription = null,
+                                modifier = Modifier
+                                    .padding(
+                                        start = 16.dp,
+                                        bottom = 3.dp
+                                    )
+                                    .size(15.dp),
+                                tint = Color.White
+                            )
+                        }
+                        Box(
+                            modifier = Modifier
+                                .background(
+                                    color = Color.Black.copy(alpha = 0.2f),
+                                    shape = RoundedCornerShape(16.dp)
                                 )
+                        ) {
+                            Text(
+                                modifier = Modifier.padding(
+                                    vertical = 2.dp,
+                                    horizontal = 16.dp
+                                ),
+                                text = weatherMainScreenState.weatherDto?.location?.name.toString(), color = textColor, fontSize = 20.sp
+                            )
+                        }
+                        Box(
+                            modifier = Modifier
+                                .padding(top = 8.dp)
+                                .background(
+                                    color = Color.Black.copy(alpha = 0.2f),
+                                    shape = RoundedCornerShape(16.dp)
+                                )
+                        ) {
+                            Text(
+                                modifier = Modifier.padding(
+                                    vertical = 2.dp,
+                                    horizontal = 16.dp
+                                ),
+                                text = if (weatherMainScreenState.isTempC) "${weatherMainScreenState.weatherDto?.current?.tempC} ℃" else "${weatherMainScreenState.weatherDto?.current?.tempF} ℉",
+                                color = textColor,
+                                fontSize = 85.sp
+                            )
+                        }
+                        Column(
+                            modifier = Modifier
+                                .padding(top = 16.dp)
+                                .background(
+                                    color = Color.Black.copy(alpha = 0.2f),
+                                    shape = RoundedCornerShape(16.dp)
+                                )
+                        ) {
+                            Text(
+                                modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 2.dp),
+                                text = when {
+                                    weatherMainScreenState.isTempC -> "${stringResource(Res.string.feels_like)} ${weatherMainScreenState.weatherDto?.current?.feelsLikeC} ℃"
+                                    else -> "${stringResource(Res.string.feels_like)} ${weatherMainScreenState.weatherDto?.current?.feelsLikeF} ℉"
+                                }, color = textColor
+                            )
+                            Text(
+                                modifier = Modifier.padding(start = 16.dp, bottom = 2.dp, end = 16.dp),
+                                text = weatherMainScreenState.weatherDto?.current?.condition?.text.toString(), color = textColor
+                            )
+                        }
+                        Box(
+                            modifier = Modifier
+                                .align(Alignment.CenterHorizontally)
+                                .padding(top = 16.dp)
+                                .background(
+                                    color = Color.White.copy(alpha = 0.2f),
+                                    shape = RoundedCornerShape(16.dp)
+                                )
+                        ) {
+                            Row(
+                                modifier = Modifier.padding(
+                                    vertical = 6.dp,
+                                    horizontal = 16.dp
+                                )
+                            ) {
+                                Text(
+                                    text = stringResource(Res.string.air_quality), color = textColor
+                                )
+                                airQualityText?.asString()?.let { airQuality ->
+                                    Text(
+                                        text = airQuality, color = airQuality.toColor()
+                                    )
+                                }
                             }
                         }
                     }
-                }
 
-                val height = GetScreenHeight.getScreenHeight() - 160.dp - GetScreenHeight.getBottomBarHeight()
+                    val height = GetScreenHeight.getScreenHeight() - 360.dp - GetScreenHeight.getBottomBarHeight()
 
-                Column(
-                    modifier = Modifier.fillMaxWidth()
-                        .verticalScroll(scrollState)
-                        .padding(top = height, bottom = 20.dp, start = 6.dp, end = 6.dp),
-                    verticalArrangement = Arrangement.spacedBy(6.dp)
-                ) {
-                    weatherMainScreenState.weatherDto?.forecast?.forecastday?.let { forecastListDayList ->
-                        ThreeDaysForecast(
-                            forecastList = forecastListDayList,
-                            isTempC = weatherMainScreenState.isTempC
-                        )
-                        Forecast24Hour(
-                            hours = forecastListDayList[0].hour,
-                            isTempC = weatherMainScreenState.isTempC,
-                            isWindKmh = weatherMainScreenState.isWindKph
-                        )
-                        LazyVerticalGrid(
-                            columns = GridCells.Fixed(2),
-                            modifier = Modifier.height(500.dp)
-                                .fillMaxWidth(),
-                            horizontalArrangement = Arrangement.spacedBy(6.dp),
-                            verticalArrangement = Arrangement.spacedBy(6.dp)
-                        ) {
-                            items(weatherMainScreenState.weatherItemList) { item ->
-                                WeatherDetailElement(
-                                    title = item.title,
-                                    description = when (item.description) {
-                                        is String -> item.description
-                                        is StringResource -> UiText.MyStringResource(item.description).asString()
-                                        else -> ""
-                                    },
-                                    humidity = weatherMainScreenState.weatherItemList[0].progress,
-                                    windProgress = weatherMainScreenState.weatherItemList[1].progress,
-                                    pressureProgress = weatherMainScreenState.weatherItemList[2].progress,
-                                    cloudsProgress = weatherMainScreenState.weatherItemList[3].progress,
-                                    windRotation = weatherMainScreenState.weatherItemList[1].rotation,
-                                    uvIndex = weatherMainScreenState.weatherItemList[4].uvIndex.toString(),
-                                    feelsLikeRotation = weatherMainScreenState.weatherItemList[5].rotation,
-                                    isPressureMb = weatherMainScreenState.isPressureMb
-                                )
+                    Column(
+                        modifier = Modifier.fillMaxWidth()
+                            .verticalScroll(scrollState)
+                            .padding(top = height, bottom = 20.dp, start = 6.dp, end = 6.dp),
+                        verticalArrangement = Arrangement.spacedBy(6.dp)
+                    ) {
+                        weatherMainScreenState.weatherDto?.forecast?.forecastday?.let { forecastListDayList ->
+                            ThreeDaysForecast(
+                                forecastList = forecastListDayList,
+                                isTempC = weatherMainScreenState.isTempC
+                            )
+                            Forecast24Hour(
+                                hours = forecastListDayList[0].hour,
+                                isTempC = weatherMainScreenState.isTempC,
+                                isWindKmh = weatherMainScreenState.isWindKph
+                            )
+                            LazyVerticalGrid(
+                                columns = GridCells.Fixed(2),
+                                modifier = Modifier.height(500.dp)
+                                    .fillMaxWidth(),
+                                horizontalArrangement = Arrangement.spacedBy(6.dp),
+                                verticalArrangement = Arrangement.spacedBy(6.dp)
+                            ) {
+                                items(weatherMainScreenState.weatherItemList) { item ->
+                                    WeatherDetailElement(
+                                        title = item.title,
+                                        description = when (item.description) {
+                                            is String -> item.description
+                                            is StringResource -> UiText.MyStringResource(item.description).asString()
+                                            else -> ""
+                                        },
+                                        humidity = weatherMainScreenState.weatherItemList[0].progress,
+                                        windProgress = weatherMainScreenState.weatherItemList[1].progress,
+                                        pressureProgress = weatherMainScreenState.weatherItemList[2].progress,
+                                        cloudsProgress = weatherMainScreenState.weatherItemList[3].progress,
+                                        windRotation = weatherMainScreenState.weatherItemList[1].rotation,
+                                        uvIndex = weatherMainScreenState.weatherItemList[4].uvIndex.toString(),
+                                        feelsLikeRotation = weatherMainScreenState.weatherItemList[5].rotation,
+                                        isPressureMb = weatherMainScreenState.isPressureMb
+                                    )
+                                }
                             }
-                        }
-                        Text(
-                            text = stringResource(Res.string.forecast_by),
-                            fontSize = 11.sp,
-                            color = textColor,
-                            modifier = Modifier.align(Alignment.CenterHorizontally)
-                        )
-                        Image(
-                            painterResource(Res.drawable.weather_api), contentDescription = null,
-                            modifier = Modifier
-                                .width(60.dp)
-                                .clip(RoundedCornerShape(6.dp))
-                                .align(Alignment.CenterHorizontally)
+                            Text(
+                                text = stringResource(Res.string.forecast_by),
+                                fontSize = 11.sp,
+                                color = textColor,
+                                modifier = Modifier.align(Alignment.CenterHorizontally)
+                            )
+                            Image(
+                                painterResource(Res.drawable.weather_api),
+                                contentDescription = null,
+                                modifier = Modifier
+                                    .width(60.dp)
+                                    .clip(RoundedCornerShape(6.dp))
+                                    .align(Alignment.CenterHorizontally)
 
-                        )
+                            )
+                        }
                     }
                 }
             }
-        }
 
-        AnimatedVisibility(
-            visible = savedCityList.any {
-                myLogger.debug("it.cityId: ${it.cityId}, cityId: $cityId")
-                it.cityId == cityId
-            },
-            modifier = Modifier.align(Alignment.TopEnd).padding(top = 50.dp)
-        ) {
-            FloatingToolBar(
-                onSearchClick = onAddButtonClick,
-                onSettingsClick = onSettingsClick
-            )
-        }
-        AnimatedVisibility(
-            visible = !savedCityList.any {
-                myLogger.debug("it.cityId: ${it.cityId}, cityId: $cityId")
-                it.cityId == cityId
-            },
-            modifier = Modifier.align(Alignment.TopStart)
-        ) {
-            Row(
-                modifier = Modifier.fillMaxWidth().padding(top = 40.dp, start = 6.dp, end = 6.dp)
+            AnimatedVisibility(
+                visible = savedCityList.any {
+                    myLogger.debug("it.cityId: ${it.cityId}, cityId: $cityId")
+                    it.cityId == cityId
+                } && animatedAlpha != 0f,
+                modifier = Modifier.align(Alignment.TopEnd)//.padding(top = 50.dp)
             ) {
-                Button(
-                    onClick = onCancelButtonClick,
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = Color.Black.copy(alpha = 0.2f),
-                    )
+                FloatingToolBar(
+                    onSearchClick = onAddButtonClick,
+                    onSettingsClick = onSettingsClick
+                )
+            }
+            AnimatedVisibility(
+                visible = !savedCityList.any {
+                    myLogger.debug("it.cityId: ${it.cityId}, cityId: $cityId")
+                    it.cityId == cityId
+                },
+                modifier = Modifier.align(Alignment.TopStart)
+            ) {
+                Row(
+                    modifier = Modifier.fillMaxWidth().padding(top = 40.dp, start = 6.dp, end = 6.dp)
                 ) {
-                    Text(text = stringResource(Res.string.cancel), color = Color.White, fontSize = 20.sp)
-                }
-                Spacer(modifier = Modifier.weight(1f))
-                Button(
-                    onClick = {
-                        onAddCityButtonClick(
-                            SavedWeatherItem(
-                                cityName = weatherMainScreenState.weatherDto?.location?.name ?: "",
-                                //latitude = latitude,
-                                //longitude = longitude,
-                                temperature = weatherMainScreenState.weatherDto?.current?.tempC ?: 0.0,
-                                weatherDescription = weatherMainScreenState.weatherDto?.current?.condition?.text ?: "",
-                                highTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.maxTempC ?: 0.0,
-                                lowTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.minTempC ?: 0.0,
-                                cityId = cityId,
-                                coordinates = "${weatherMainScreenState.weatherDto?.location?.lat},${weatherMainScreenState.weatherDto?.location?.lon}",
-                                isCurrentLocation = false,
-                            )
+                    Button(
+                        onClick = onCancelButtonClick,
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = Color.Black.copy(alpha = 0.2f),
                         )
-                    },
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = Color.Black.copy(alpha = 0.2f),
-                    )
-                ) {
-                    Text(text = stringResource(Res.string.add), color = Color.White, fontSize = 20.sp)
+                    ) {
+                        Text(text = stringResource(Res.string.cancel), color = Color.White, fontSize = 20.sp)
+                    }
+                    Spacer(modifier = Modifier.weight(1f))
+                    Button(
+                        onClick = {
+                            onAddCityButtonClick(
+                                SavedWeatherItem(
+                                    cityName = weatherMainScreenState.weatherDto?.location?.name ?: "",
+                                    //latitude = latitude,
+                                    //longitude = longitude,
+                                    temperature = weatherMainScreenState.weatherDto?.current?.tempC ?: 0.0,
+                                    weatherDescription = weatherMainScreenState.weatherDto?.current?.condition?.text ?: "",
+                                    highTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.maxTempC ?: 0.0,
+                                    lowTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.minTempC ?: 0.0,
+                                    cityId = cityId,
+                                    coordinates = "${weatherMainScreenState.weatherDto?.location?.lat},${weatherMainScreenState.weatherDto?.location?.lon}",
+                                    isCurrentLocation = false,
+                                )
+                            )
+                        },
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = Color.Black.copy(alpha = 0.2f),
+                        )
+                    ) {
+                        Text(text = stringResource(Res.string.add), color = Color.White, fontSize = 20.sp)
+                    }
                 }
             }
         }
@@ -577,6 +628,39 @@ val mockForecast = listOf(
             uv = 6.0
         ),
         hour = mockHours
+    ),
+    Forecastday(
+        astro = Astro(
+            isMoonUp = 8847,
+            isSunUp = 1545, moonIllumination = 2751, moonPhase = "atqui", moonrise = "veri", moonset = "vivamus",
+            sunrise = "ceteros", sunset = "qui"
+        ), date = "eget", dateEpoch = 1295,
+        day = Day(
+            avghumidity = 7916,
+            avgTempC = 168.169,
+            avgTempF = 170.171,
+            avgVisKm = 172.173,
+            avgVisMiles = 174.175,
+            condition = Condition(
+                code = 1125, icon = "facilisi", text = "populo"
+
+            ),
+            dailyChanceOfRain = 7358,
+            dailyChanceOfSnow = 5564,
+            dailyWillItRain = 1626,
+            dailyWillItSnow = 9274,
+            maxTempC = 176.177,
+            maxTempF = 178.179,
+            maxWindKph = 180.181,
+            maxWindMph = 182.183,
+            minTempC = 184.185,
+            minTempF = 186.187,
+            totalPrecipIn = 188.189,
+            totalPrecipMm = 190.191,
+            totalSnowCm = 192.193,
+            uv = 194.195
+
+        ), hour = listOf()
     )
 )
 

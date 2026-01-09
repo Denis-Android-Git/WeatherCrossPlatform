@@ -20,8 +20,6 @@ import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.clouds
-import weathercrossplatform.composeapp.generated.resources.im_1
-import weathercrossplatform.composeapp.generated.resources.weather_api
 
 @Composable
 fun ForecastItem(

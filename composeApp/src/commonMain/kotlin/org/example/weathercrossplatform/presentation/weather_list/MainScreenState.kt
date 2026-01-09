@@ -1,5 +1,6 @@
 package org.example.weathercrossplatform.presentation.weather_list
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -28,7 +29,7 @@ import org.example.weathercrossplatform.domain.actions.MainScreenActions
 import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.presentation.elements.CustomIndicator
 import org.example.weathercrossplatform.presentation.elements.ErrorScreen
-import org.example.weathercrossplatform.presentation.elements.PagerIndicator
+import org.example.weathercrossplatform.presentation.elements.MyPagerIndicator
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
@@ -121,10 +122,14 @@ fun MainScreenState(
 
                 )
             }
-            PagerIndicator(
+            AnimatedVisibility(
+                visible = !weatherMainScreenState.isAddCity,
                 modifier = Modifier.align(Alignment.TopStart).systemBarsPadding().padding(start = 16.dp),
-                pagerState = pagerState
-            )
+            ) {
+                MyPagerIndicator(
+                    pagerState = pagerState
+                )
+            }
         }
         weatherMainScreenState.error?.let {
             ErrorScreen(errorMessage = it.asString())
