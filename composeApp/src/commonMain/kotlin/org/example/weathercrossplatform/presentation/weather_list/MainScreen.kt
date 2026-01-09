@@ -2,7 +2,6 @@ package org.example.weathercrossplatform.presentation.weather_list
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState
-import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
@@ -40,7 +39,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
@@ -115,10 +113,10 @@ fun MainScreen(
     val animatedAlpha by animateFloatAsState(
         targetValue = (1f - (scrollState.value / maxScrollToFade)).coerceIn(0f, 1f)
     )
-    val titleAlpha by animateFloatAsState(
-        targetValue = if (animatedAlpha == 0f) 1f else 0f,
-        animationSpec = tween(durationMillis = 800)
-    )
+//    val titleAlpha by animateFloatAsState(
+//        targetValue = if (animatedAlpha == 0f) 1f else 0f,
+//        animationSpec = tween(durationMillis = 800)
+//    )
 
     val imageError = weatherMainScreenState.appPhotoList.random()
     Scaffold(
@@ -274,7 +272,7 @@ fun MainScreen(
                         }
                     }
 
-                    val height = GetScreenHeight.getScreenHeight() - 360.dp - GetScreenHeight.getBottomBarHeight()
+                    val height = GetScreenHeight.getScreenHeight() - 300.dp - GetScreenHeight.getBottomBarHeight()
 
                     Column(
                         modifier = Modifier.fillMaxWidth()
