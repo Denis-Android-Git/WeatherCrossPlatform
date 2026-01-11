@@ -21,13 +21,11 @@ plugins {
 }
 
 kotlin {
+
     androidTarget {
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
         }
-    }
-    compilerOptions {
-        freeCompilerArgs.add("-XXLanguage:+ExplicitBackingFields")
     }
 
     listOf(

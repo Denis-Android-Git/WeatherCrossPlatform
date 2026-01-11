@@ -37,19 +37,23 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.data.network.dto.ForecastDto
-import org.example.weathercrossplatform.data.utils.GetScreenHeight
 import org.example.weathercrossplatform.data.utils.UiText
 import org.example.weathercrossplatform.data.utils.toUiText
 import org.example.weathercrossplatform.domain.logger.MyLogger
@@ -119,6 +123,7 @@ fun MainScreen(
 //    )
 
     val imageError = weatherMainScreenState.appPhotoList.random()
+
     Scaffold(
         containerColor = Color.Black,
         topBar = {
@@ -172,10 +177,30 @@ fun MainScreen(
                         contentScale = ContentScale.FillBounds,
                         contentDescription = null
                     )
+                    val density = LocalDensity.current
+
+                    var iconHeight by remember {
+                        mutableStateOf(0.dp)
+                    }
+                    var locationNameHeight by remember {
+                        mutableStateOf(0.dp)
+                    }
+                    var tempHeight by remember {
+                        mutableStateOf(0.dp)
+                    }
+                    var feelsLikeAndConditionHeight by remember {
+                        mutableStateOf(0.dp)
+                    }
+
+                    var airQualityHeight by remember {
+                        mutableStateOf(0.dp)
+                    }
+                    val topPadding = 160.dp
+                    val totalPadding = 100.dp
                     Column(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(top = 160.dp, start = 16.dp, end = 16.dp)
+                            .padding(top = topPadding, start = 16.dp, end = 16.dp)
                             .graphicsLayer {
                                 alpha = animatedAlpha
                             }
@@ -189,7 +214,10 @@ fun MainScreen(
                                         start = 16.dp,
                                         bottom = 3.dp
                                     )
-                                    .size(15.dp),
+                                    .size(15.dp)
+                                    .onGloballyPositioned {
+                                        iconHeight = with(density) { it.size.height.toDp() }
+                                    },
                                 tint = Color.White
                             )
                         }
@@ -199,6 +227,9 @@ fun MainScreen(
                                     color = Color.Black.copy(alpha = 0.2f),
                                     shape = RoundedCornerShape(16.dp)
                                 )
+                                .onGloballyPositioned {
+                                    locationNameHeight = with(density) { it.size.height.toDp() }
+                                }
                         ) {
                             Text(
                                 modifier = Modifier.padding(
@@ -215,6 +246,9 @@ fun MainScreen(
                                     color = Color.Black.copy(alpha = 0.2f),
                                     shape = RoundedCornerShape(16.dp)
                                 )
+                                .onGloballyPositioned {
+                                    tempHeight = with(density) { it.size.height.toDp() }
+                                }
                         ) {
                             Text(
                                 modifier = Modifier.padding(
@@ -233,6 +267,9 @@ fun MainScreen(
                                     color = Color.Black.copy(alpha = 0.2f),
                                     shape = RoundedCornerShape(16.dp)
                                 )
+                                .onGloballyPositioned {
+                                    feelsLikeAndConditionHeight = with(density) { it.size.height.toDp() }
+                                }
                         ) {
                             Text(
                                 modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 2.dp),
@@ -254,6 +291,9 @@ fun MainScreen(
                                     color = Color.White.copy(alpha = 0.2f),
                                     shape = RoundedCornerShape(16.dp)
                                 )
+                                .onGloballyPositioned {
+                                    airQualityHeight = with(density) { it.size.height.toDp() }
+                                }
                         ) {
                             Row(
                                 modifier = Modifier.padding(
@@ -272,13 +312,12 @@ fun MainScreen(
                             }
                         }
                     }
-
-                    val height = GetScreenHeight.getScreenHeight() - 300.dp - GetScreenHeight.getBottomBarHeight()
+                    val columnHeight = (iconHeight + locationNameHeight + tempHeight + feelsLikeAndConditionHeight + airQualityHeight + topPadding + totalPadding)
 
                     Column(
                         modifier = Modifier.fillMaxWidth()
                             .verticalScroll(scrollState)
-                            .padding(top = height, bottom = 20.dp, start = 6.dp, end = 6.dp),
+                            .padding(top = columnHeight, bottom = 20.dp, start = 6.dp, end = 6.dp),
                         verticalArrangement = Arrangement.spacedBy(6.dp)
                     ) {
                         weatherMainScreenState.weatherDto?.forecast?.forecastday?.let { forecastListDayList ->
