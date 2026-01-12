@@ -224,9 +224,15 @@ fun SearchScreen(
                         color = Color.Gray
                     )
                 }
-                itemsIndexed(cityList) { index, savedCity ->
+                itemsIndexed(
+                    cityList,
+                    key = { _, item ->
+                        item.coordinates
+                    }
+                ) { index, savedCity ->
                     val originalIndex = allCitiesInOriginalOrder.indexOf(savedCity)
                     SavedElement(
+                        modifier = Modifier.animateItem(),
                         cityName = savedCity.cityName,
                         temperature = savedCity.temperature.toString(),
                         weatherDescription = savedCity.weatherDescription,
@@ -317,7 +323,7 @@ fun Preview() {
                 highTemperature = 22.0,
                 lowTemperature = 12.0,
                 cityId = 2,
-                coordinates = "",
+                coordinates = "23232",
                 isCurrentLocation = false
             )
         ),
