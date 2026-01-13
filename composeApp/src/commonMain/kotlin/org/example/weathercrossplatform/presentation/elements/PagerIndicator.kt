@@ -21,13 +21,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import org.jetbrains.compose.resources.painterResource
+import org.example.weathercrossplatform.presentation.image_vectors.LocationArrow
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import weathercrossplatform.composeapp.generated.resources.Res
-import weathercrossplatform.composeapp.generated.resources.location_arrow
 
 @Composable
-fun PagerIndicator(
+fun MyPagerIndicator(
     modifier: Modifier = Modifier,
     pagerState: PagerState,
     visibleItems: Int = 5,
@@ -64,7 +62,8 @@ fun PagerIndicator(
             val color = if (pagerState.currentPage == index) Color.White else Color.DarkGray
             if (index == 0) {
                 Icon(
-                    painter = painterResource(Res.drawable.location_arrow), contentDescription = null,
+                    imageVector = LocationArrow,
+                    contentDescription = null,
                     modifier = Modifier.size(10.dp),
                     tint = color
                 )
@@ -84,7 +83,7 @@ fun PagerIndicator(
 @Preview
 @Composable
 fun PagerIndicatorPreview() {
-    PagerIndicator(
+    MyPagerIndicator(
         pagerState = rememberPagerState(pageCount = { 10 })
     )
 }

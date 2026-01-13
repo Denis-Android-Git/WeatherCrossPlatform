@@ -33,6 +33,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 fun SavedElement(
+    modifier: Modifier = Modifier,
     cityName: String,
     temperature: String,
     weatherDescription: String,
@@ -47,7 +48,7 @@ fun SavedElement(
     isTempC: Boolean
 ) {
     Box(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .height(100.dp)
             .background(

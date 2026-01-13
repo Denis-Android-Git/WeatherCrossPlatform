@@ -9,10 +9,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import org.jetbrains.compose.resources.painterResource
+import org.example.weathercrossplatform.presentation.image_vectors.WaterDrop
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import weathercrossplatform.composeapp.generated.resources.Res
-import weathercrossplatform.composeapp.generated.resources.water_drop
 
 @Composable
 fun HumidityIcon(
@@ -29,7 +27,7 @@ fun HumidityIcon(
             color = Color(0xff0b63da)
         )
         Icon(
-            painterResource(Res.drawable.water_drop), contentDescription = null,
+            imageVector = WaterDrop, contentDescription = null,
             modifier = Modifier.size(40.dp),
             tint = Color(0xff0b63da)
         )

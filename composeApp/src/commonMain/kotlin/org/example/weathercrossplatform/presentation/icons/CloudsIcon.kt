@@ -16,10 +16,8 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import org.jetbrains.compose.resources.painterResource
+import org.example.weathercrossplatform.presentation.image_vectors.Cloud
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import weathercrossplatform.composeapp.generated.resources.Res
-import weathercrossplatform.composeapp.generated.resources.clouds
 
 @Composable
 fun CloudsIcon(
@@ -63,8 +61,7 @@ fun CloudsIcon(
             )
         }
         Icon(
-            painter = painterResource(Res.drawable.clouds),
-            contentDescription = "Clouds Icon",
+            imageVector = Cloud, contentDescription = "Clouds Icon",
             tint = Color.LightGray,
             modifier = Modifier.size(30.dp)
         )

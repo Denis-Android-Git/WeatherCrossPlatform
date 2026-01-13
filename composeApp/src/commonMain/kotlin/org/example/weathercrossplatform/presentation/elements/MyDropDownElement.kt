@@ -16,14 +16,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import org.example.weathercrossplatform.presentation.image_vectors.Expand
 import org.example.weathercrossplatform.presentation.settings_screen.SettingsScreenAction
 import org.example.weathercrossplatform.presentation.settings_screen.SettingsScreenState
-import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.celc
-import weathercrossplatform.composeapp.generated.resources.expand
 import weathercrossplatform.composeapp.generated.resources.far
 import weathercrossplatform.composeapp.generated.resources.inrt
 import weathercrossplatform.composeapp.generated.resources.kmh
@@ -74,7 +73,7 @@ fun MyDropDownElement(
                 )
                 Spacer(modifier = Modifier.width(16.dp))
                 Icon(
-                    painterResource(Res.drawable.expand),
+                    imageVector = Expand,
                     modifier = Modifier.size(15.dp),
                     contentDescription = null,
                     tint = Color.Gray
