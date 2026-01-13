@@ -7,7 +7,6 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -27,8 +26,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Place
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
@@ -51,6 +48,8 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
+import com.kashif_e.backdrop.backdrops.layerBackdrop
+import com.kashif_e.backdrop.backdrops.rememberLayerBackdrop
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.data.network.dto.ForecastDto
@@ -70,8 +69,10 @@ import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 import org.example.weathercrossplatform.presentation.elements.FloatingToolBar
 import org.example.weathercrossplatform.presentation.elements.Forecast24Hour
+import org.example.weathercrossplatform.presentation.elements.LiquidButton
 import org.example.weathercrossplatform.presentation.elements.ThreeDaysForecast
 import org.example.weathercrossplatform.presentation.elements.WeatherDetailElement
+import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
@@ -129,6 +130,8 @@ fun MainScreen(
     var columnHeight by remember {
         mutableStateOf(0.dp)
     }
+    val backdrop = rememberLayerBackdrop()
+
     Scaffold(
         containerColor = Color.Black,
         topBar = {
@@ -178,7 +181,7 @@ fun MainScreen(
                             weatherMainScreenState.appPhotoList
                         },
                         error = painterResource(imageError),
-                        modifier = Modifier.fillMaxSize(),
+                        modifier = Modifier.layerBackdrop(backdrop).fillMaxSize(),
                         contentScale = ContentScale.FillBounds,
                         contentDescription = null
                     )
@@ -210,10 +213,7 @@ fun MainScreen(
                         }
                         Box(
                             modifier = Modifier
-                                .background(
-                                    color = Color.Black.copy(alpha = 0.2f),
-                                    shape = RoundedCornerShape(16.dp)
-                                )
+                                .myLiquidGlass(backdrop)
                         ) {
                             Text(
                                 modifier = Modifier.padding(
@@ -223,13 +223,11 @@ fun MainScreen(
                                 text = weatherMainScreenState.weatherDto?.location?.name.toString(), color = textColor, fontSize = 20.sp
                             )
                         }
+
                         Box(
                             modifier = Modifier
                                 .padding(top = 8.dp)
-                                .background(
-                                    color = Color.Black.copy(alpha = 0.2f),
-                                    shape = RoundedCornerShape(16.dp)
-                                )
+                                .myLiquidGlass(backdrop)
                         ) {
                             Text(
                                 modifier = Modifier.padding(
@@ -244,10 +242,7 @@ fun MainScreen(
                         Column(
                             modifier = Modifier
                                 .padding(top = 16.dp)
-                                .background(
-                                    color = Color.Black.copy(alpha = 0.2f),
-                                    shape = RoundedCornerShape(16.dp)
-                                )
+                                .myLiquidGlass(backdrop)
                         ) {
                             Text(
                                 modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 2.dp),
@@ -265,10 +260,7 @@ fun MainScreen(
                             modifier = Modifier
                                 .align(Alignment.CenterHorizontally)
                                 .padding(top = 16.dp)
-                                .background(
-                                    color = Color.White.copy(alpha = 0.2f),
-                                    shape = RoundedCornerShape(16.dp)
-                                )
+                                .myLiquidGlass(backdrop)
                         ) {
                             Row(
                                 modifier = Modifier.padding(
@@ -298,7 +290,8 @@ fun MainScreen(
                         weatherMainScreenState.weatherDto?.forecast?.forecastday?.let { forecastListDayList ->
                             ThreeDaysForecast(
                                 forecastList = forecastListDayList,
-                                isTempC = weatherMainScreenState.isTempC
+                                isTempC = weatherMainScreenState.isTempC,
+                                backdrop = backdrop
                             )
                             Forecast24Hour(
                                 hours = forecastListDayList[0].hour,
@@ -373,16 +366,18 @@ fun MainScreen(
                 Row(
                     modifier = Modifier.fillMaxWidth().padding(top = 40.dp, start = 6.dp, end = 6.dp)
                 ) {
-                    Button(
+                    LiquidButton(
                         onClick = onCancelButtonClick,
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = Color.Black.copy(alpha = 0.2f),
-                        )
+                        backdrop = backdrop
                     ) {
                         Text(text = stringResource(Res.string.cancel), color = Color.White, fontSize = 20.sp)
+//                        BasicText(
+//                            stringResource(Res.string.cancel),
+//                            style = TextStyle(Color.Black, 15.sp)
+//                        )
                     }
                     Spacer(modifier = Modifier.weight(1f))
-                    Button(
+                    LiquidButton(
                         onClick = {
                             onAddCityButtonClick(
                                 SavedWeatherItem(
@@ -399,11 +394,13 @@ fun MainScreen(
                                 )
                             )
                         },
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = Color.Black.copy(alpha = 0.2f),
-                        )
+                        backdrop = backdrop
                     ) {
                         Text(text = stringResource(Res.string.add), color = Color.White, fontSize = 20.sp)
+//                        BasicText(
+//                            stringResource(Res.string.add),
+//                            style = TextStyle(Color.Black, 15.sp)
+//                        )
                     }
                 }
             }

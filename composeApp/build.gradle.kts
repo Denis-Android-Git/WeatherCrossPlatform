@@ -95,6 +95,8 @@ kotlin {
             api(libs.gitlive.firebase.kotlin.crashlytics)
 
             implementation(libs.kotlinx.datetime)
+            //Liquid glass
+            implementation(libs.backdrop)
 
         }
         kotzilla {

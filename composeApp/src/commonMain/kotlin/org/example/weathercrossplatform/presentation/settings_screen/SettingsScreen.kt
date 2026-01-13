@@ -65,6 +65,7 @@ fun SettingsScreenScreen(
     onAction: (SettingsScreenAction) -> Unit,
     onBackButtonClick: () -> Unit
 ) {
+
     Column(
         modifier = modifier.fillMaxSize().background(color = Color.Black)
             .padding(WindowInsets.systemBars.asPaddingValues()).padding(horizontal = 8.dp)
@@ -122,7 +123,8 @@ fun SettingsScreenScreen(
         )
         Spacer(modifier = Modifier.height(6.dp))
         Column(
-            modifier = Modifier.fillMaxWidth().wrapContentHeight()
+            modifier = Modifier.fillMaxWidth()
+                .wrapContentHeight()
                 .background(color = Color.DarkGray, shape = RoundedCornerShape(16.dp))
                 .padding(horizontal = 10.dp, vertical = 24.dp)
         ) {

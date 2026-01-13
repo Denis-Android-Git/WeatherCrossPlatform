@@ -1,13 +1,11 @@
 package org.example.weathercrossplatform.presentation.elements
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material3.Icon
@@ -17,10 +15,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.kashif_e.backdrop.Backdrop
+import com.kashif_e.backdrop.backdrops.rememberLayerBackdrop
 import org.example.weathercrossplatform.domain.models.Astro
 import org.example.weathercrossplatform.domain.models.Condition
 import org.example.weathercrossplatform.domain.models.Day
 import org.example.weathercrossplatform.domain.models.Forecastday
+import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
@@ -31,12 +32,13 @@ import weathercrossplatform.composeapp.generated.resources.tomorrow
 @Composable
 fun ThreeDaysForecast(
     forecastList: List<Forecastday>,
-    isTempC: Boolean
+    isTempC: Boolean,
+    backdrop: Backdrop
 ) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .background(color = Color.Black.copy(alpha = 0.3f), shape = RoundedCornerShape(16.dp))
+            .myLiquidGlass(backdrop)
             .padding(horizontal = 6.dp, vertical = 12.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
@@ -200,6 +202,7 @@ fun ForecastElementPreview() {
 
     ThreeDaysForecast(
         forecastList = sampleForecastList,
-        isTempC = true
+        isTempC = true,
+        backdrop = rememberLayerBackdrop()
     )
 }
