@@ -7,6 +7,9 @@ import org.jetbrains.compose.resources.DrawableResource
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.im_1
 import weathercrossplatform.composeapp.generated.resources.im_10
+import weathercrossplatform.composeapp.generated.resources.im_11
+import weathercrossplatform.composeapp.generated.resources.im_12
+import weathercrossplatform.composeapp.generated.resources.im_13
 import weathercrossplatform.composeapp.generated.resources.im_2
 import weathercrossplatform.composeapp.generated.resources.im_3
 import weathercrossplatform.composeapp.generated.resources.im_4
@@ -37,7 +40,10 @@ data class WeatherMainScreenState(
         Res.drawable.im_7,
         Res.drawable.im_8,
         Res.drawable.im_9,
-        Res.drawable.im_10
+        Res.drawable.im_10,
+        Res.drawable.im_11,
+        Res.drawable.im_12,
+        Res.drawable.im_13
     ),
     val isTempC: Boolean = true,
     val isWindKph: Boolean = true,
