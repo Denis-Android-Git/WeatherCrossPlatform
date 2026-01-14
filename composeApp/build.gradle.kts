@@ -45,7 +45,7 @@ kotlin {
         //val desktopMain by getting
 
         androidMain.dependencies {
-            implementation(compose.preview)
+            implementation(libs.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.ktor.client.okhttp)
             implementation(libs.play.services.location)
@@ -61,12 +61,12 @@ kotlin {
 
         }
         commonMain.dependencies {
-            implementation(compose.runtime)
-            implementation(compose.foundation)
+            implementation(libs.runtime)
+            implementation(libs.foundation)
             //implementation(compose.material3)
-            implementation(compose.ui)
-            implementation(compose.components.resources)
-            implementation(compose.components.uiToolingPreview)
+            implementation(libs.ui)
+            implementation(libs.components.resources)
+            implementation(libs.ui.tooling.preview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(libs.bundles.ktor)
@@ -163,7 +163,7 @@ buildkonfig {
 }
 
 dependencies {
-    debugImplementation(compose.uiTooling)
+    debugImplementation(libs.ui.tooling)
     debugImplementation(libs.leakcanary.android)
 
 }

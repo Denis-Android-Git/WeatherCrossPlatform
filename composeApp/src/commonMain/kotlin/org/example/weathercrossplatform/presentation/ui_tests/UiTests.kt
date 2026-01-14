@@ -21,6 +21,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -32,7 +33,6 @@ import com.kashif_e.backdrop.effects.lens
 import com.kashif_e.backdrop.effects.vibrancy
 import org.example.weathercrossplatform.presentation.image_vectors.Cloud
 import org.jetbrains.compose.resources.painterResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.im_3
 

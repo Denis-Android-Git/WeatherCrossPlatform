@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.example.weathercrossplatform.data.utils.UiText
@@ -24,7 +25,6 @@ import org.example.weathercrossplatform.presentation.icons.PressureIndicator
 import org.example.weathercrossplatform.presentation.icons.UvIcon
 import org.example.weathercrossplatform.presentation.icons.WindIcon
 import org.jetbrains.compose.resources.StringResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.clouds
 import weathercrossplatform.composeapp.generated.resources.feels_like

@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
@@ -21,7 +22,6 @@ import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Condition
 import org.example.weathercrossplatform.domain.models.Hour
 import org.jetbrains.compose.resources.stringResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources._24h_forecast
 import kotlin.time.Clock

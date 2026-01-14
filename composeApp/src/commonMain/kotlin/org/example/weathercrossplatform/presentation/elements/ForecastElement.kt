@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.kashif_e.backdrop.Backdrop
 import com.kashif_e.backdrop.backdrops.rememberLayerBackdrop
@@ -23,7 +24,6 @@ import org.example.weathercrossplatform.domain.models.Day
 import org.example.weathercrossplatform.domain.models.Forecastday
 import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass
 import org.jetbrains.compose.resources.stringResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources._3_day_forecast
 import weathercrossplatform.composeapp.generated.resources.today
