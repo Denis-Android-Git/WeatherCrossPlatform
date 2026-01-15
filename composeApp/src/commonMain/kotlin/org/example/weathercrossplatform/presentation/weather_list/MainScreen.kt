@@ -12,10 +12,12 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -118,10 +120,6 @@ fun MainScreen(
     val animatedAlpha by animateFloatAsState(
         targetValue = (1f - (scrollState.value / maxScrollToFade)).coerceIn(0f, 1f)
     )
-//    val titleAlpha by animateFloatAsState(
-//        targetValue = if (animatedAlpha == 0f) 1f else 0f,
-//        animationSpec = tween(durationMillis = 800)
-//    )
 
     val imageError = weatherMainScreenState.appPhotoList.random()
     val density = LocalDensity.current
@@ -133,6 +131,7 @@ fun MainScreen(
     val backdrop = rememberLayerBackdrop()
 
     Scaffold(
+        contentWindowInsets = WindowInsets.safeDrawing,
         containerColor = Color.Black,
         topBar = {
             TopAppBar(
