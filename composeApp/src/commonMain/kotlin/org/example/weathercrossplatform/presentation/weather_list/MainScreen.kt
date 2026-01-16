@@ -10,6 +10,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
@@ -20,12 +21,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Place
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -38,6 +39,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -46,6 +48,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.layout.positionOnScreen
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -75,7 +78,7 @@ import org.example.weathercrossplatform.presentation.elements.Forecast24Hour
 import org.example.weathercrossplatform.presentation.elements.LiquidButton
 import org.example.weathercrossplatform.presentation.elements.ThreeDaysForecast
 import org.example.weathercrossplatform.presentation.elements.WeatherDetailElement
-import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass
+import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass2
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
@@ -98,6 +101,8 @@ import weathercrossplatform.composeapp.generated.resources.uv
 import weathercrossplatform.composeapp.generated.resources.weather_api
 import weathercrossplatform.composeapp.generated.resources.wind
 
+private const val ALPHA_THRESHOLD = 300
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(
@@ -115,10 +120,36 @@ fun MainScreen(
 
     val textColor = Color.White
     val airQualityText = weatherMainScreenState.weatherDto?.current?.airQuality?.usEpaIndex?.toUiText()
-    val scrollState = rememberScrollState()
-    val maxScrollToFade = 1000f
+    val lazyListState = rememberLazyListState()
+
+    var fabYPosition by remember {
+        mutableStateOf(0f)
+    }
+    var fabMaxYPosition by rememberSaveable {
+        mutableStateOf(0f)
+    }
+    if (fabYPosition > fabMaxYPosition) {
+        fabMaxYPosition = fabYPosition
+    }
+
+    var firstElementInLazyColumnYPosition by remember {
+        mutableStateOf(0f)
+    }
+    var firstElementMaxYPosition by rememberSaveable { mutableStateOf(0f) }
+    if (firstElementInLazyColumnYPosition > firstElementMaxYPosition) {
+        firstElementMaxYPosition = firstElementInLazyColumnYPosition
+    }
+
     val animatedAlpha by animateFloatAsState(
-        targetValue = (1f - (scrollState.value / maxScrollToFade)).coerceIn(0f, 1f)
+        targetValue = ((firstElementInLazyColumnYPosition - (fabMaxYPosition + ALPHA_THRESHOLD)) / (firstElementMaxYPosition - (fabMaxYPosition + ALPHA_THRESHOLD)))
+            .coerceIn(0f, 1f)
+    )
+
+    myLogger.debug(
+        "positions: firstElementInLazyColumnPosition = $firstElementInLazyColumnYPosition, " +
+                "firstElementMaxYPosition = $firstElementMaxYPosition, " +
+                "fabMaxYPosition = $fabMaxYPosition, " +
+                "animatedAlpha = $animatedAlpha"
     )
 
     val imageError = weatherMainScreenState.appPhotoList.random()
@@ -212,7 +243,7 @@ fun MainScreen(
                         }
                         Box(
                             modifier = Modifier
-                                .myLiquidGlass(backdrop)
+                                .myLiquidGlass2(backdrop)
                         ) {
                             Text(
                                 modifier = Modifier.padding(
@@ -226,7 +257,7 @@ fun MainScreen(
                         Box(
                             modifier = Modifier
                                 .padding(top = 8.dp)
-                                .myLiquidGlass(backdrop)
+                                .myLiquidGlass2(backdrop)
                         ) {
                             Text(
                                 modifier = Modifier.padding(
@@ -241,7 +272,7 @@ fun MainScreen(
                         Column(
                             modifier = Modifier
                                 .padding(top = 16.dp)
-                                .myLiquidGlass(backdrop)
+                                .myLiquidGlass2(backdrop)
                         ) {
                             Text(
                                 modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 2.dp),
@@ -259,7 +290,7 @@ fun MainScreen(
                             modifier = Modifier
                                 .align(Alignment.CenterHorizontally)
                                 .padding(top = 16.dp)
-                                .myLiquidGlass(backdrop)
+                                .myLiquidGlass2(backdrop)
                         ) {
                             Row(
                                 modifier = Modifier.padding(
@@ -280,64 +311,78 @@ fun MainScreen(
                     }
                     val paddingSum = (columnHeight + topPadding + totalPadding)
 
-                    Column(
-                        modifier = Modifier.fillMaxWidth()
-                            .verticalScroll(scrollState)
-                            .padding(top = paddingSum, bottom = 20.dp, start = 6.dp, end = 6.dp),
-                        verticalArrangement = Arrangement.spacedBy(6.dp)
+                    LazyColumn(
+                        state = lazyListState,
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        contentPadding = PaddingValues(top = paddingSum, bottom = 20.dp, start = 6.dp, end = 6.dp),
+                        verticalArrangement = Arrangement.spacedBy(6.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         weatherMainScreenState.weatherDto?.forecast?.forecastday?.let { forecastListDayList ->
-                            ThreeDaysForecast(
-                                forecastList = forecastListDayList,
-                                isTempC = weatherMainScreenState.isTempC,
-                                backdrop = backdrop
-                            )
-                            Forecast24Hour(
-                                hours = forecastListDayList[0].hour,
-                                isTempC = weatherMainScreenState.isTempC,
-                                isWindKmh = weatherMainScreenState.isWindKph
-                            )
-                            LazyVerticalGrid(
-                                columns = GridCells.Fixed(2),
-                                modifier = Modifier.height(500.dp)
-                                    .fillMaxWidth(),
-                                horizontalArrangement = Arrangement.spacedBy(6.dp),
-                                verticalArrangement = Arrangement.spacedBy(6.dp)
-                            ) {
-                                items(weatherMainScreenState.weatherItemList) { item ->
-                                    WeatherDetailElement(
-                                        title = item.title,
-                                        description = when (item.description) {
-                                            is String -> item.description
-                                            is StringResource -> UiText.MyStringResource(item.description).asString()
-                                            else -> ""
-                                        },
-                                        humidity = weatherMainScreenState.weatherItemList[0].progress,
-                                        windProgress = weatherMainScreenState.weatherItemList[1].progress,
-                                        pressureProgress = weatherMainScreenState.weatherItemList[2].progress,
-                                        cloudsProgress = weatherMainScreenState.weatherItemList[3].progress,
-                                        windRotation = weatherMainScreenState.weatherItemList[1].rotation,
-                                        uvIndex = weatherMainScreenState.weatherItemList[4].uvIndex.toString(),
-                                        feelsLikeRotation = weatherMainScreenState.weatherItemList[5].rotation,
-                                        isPressureMb = weatherMainScreenState.isPressureMb
-                                    )
+                            item {
+                                ThreeDaysForecast(
+                                    modifier = Modifier.onGloballyPositioned {
+                                        firstElementInLazyColumnYPosition = it.positionOnScreen().y
+                                    },
+                                    forecastList = forecastListDayList,
+                                    isTempC = weatherMainScreenState.isTempC,
+                                    backdrop = backdrop
+                                )
+                            }
+                            item {
+                                Forecast24Hour(
+                                    hours = forecastListDayList[0].hour,
+                                    isTempC = weatherMainScreenState.isTempC,
+                                    isWindKmh = weatherMainScreenState.isWindKph,
+                                    backdrop = backdrop
+                                )
+                            }
+                            item {
+                                LazyVerticalGrid(
+                                    columns = GridCells.Fixed(2),
+                                    modifier = Modifier.height(500.dp)
+                                        .fillMaxWidth(),
+                                    horizontalArrangement = Arrangement.spacedBy(6.dp),
+                                    verticalArrangement = Arrangement.spacedBy(6.dp)
+                                ) {
+                                    items(weatherMainScreenState.weatherItemList) { item ->
+                                        WeatherDetailElement(
+                                            title = item.title,
+                                            description = when (item.description) {
+                                                is String -> item.description
+                                                is StringResource -> UiText.MyStringResource(item.description).asString()
+                                                else -> ""
+                                            },
+                                            humidity = weatherMainScreenState.weatherItemList[0].progress,
+                                            windProgress = weatherMainScreenState.weatherItemList[1].progress,
+                                            pressureProgress = weatherMainScreenState.weatherItemList[2].progress,
+                                            cloudsProgress = weatherMainScreenState.weatherItemList[3].progress,
+                                            windRotation = weatherMainScreenState.weatherItemList[1].rotation,
+                                            uvIndex = weatherMainScreenState.weatherItemList[4].uvIndex.toString(),
+                                            feelsLikeRotation = weatherMainScreenState.weatherItemList[5].rotation,
+                                            isPressureMb = weatherMainScreenState.isPressureMb,
+                                            backdrop = backdrop
+                                        )
+                                    }
                                 }
                             }
-                            Text(
-                                text = stringResource(Res.string.forecast_by),
-                                fontSize = 11.sp,
-                                color = textColor,
-                                modifier = Modifier.align(Alignment.CenterHorizontally)
-                            )
-                            Image(
-                                painterResource(Res.drawable.weather_api),
-                                contentDescription = null,
-                                modifier = Modifier
-                                    .width(60.dp)
-                                    .clip(RoundedCornerShape(6.dp))
-                                    .align(Alignment.CenterHorizontally)
-
-                            )
+                            item {
+                                Text(
+                                    text = stringResource(Res.string.forecast_by),
+                                    fontSize = 11.sp,
+                                    color = textColor,
+                                )
+                            }
+                            item {
+                                Image(
+                                    painterResource(Res.drawable.weather_api),
+                                    contentDescription = null,
+                                    modifier = Modifier
+                                        .width(60.dp)
+                                        .clip(RoundedCornerShape(6.dp))
+                                )
+                            }
                         }
                     }
                 }
@@ -351,6 +396,9 @@ fun MainScreen(
                 modifier = Modifier.align(Alignment.TopEnd).padding(4.dp)
             ) {
                 FloatingToolBar(
+                    modifier = Modifier.onGloballyPositioned {
+                        fabYPosition = it.positionOnScreen().y
+                    },
                     onSearchClick = onAddButtonClick,
                     onSettingsClick = onSettingsClick
                 )

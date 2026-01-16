@@ -16,13 +16,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.kashif_e.backdrop.Backdrop
+import com.kashif_e.backdrop.backdrops.LayerBackdrop
 import com.kashif_e.backdrop.backdrops.rememberLayerBackdrop
 import org.example.weathercrossplatform.domain.models.Astro
 import org.example.weathercrossplatform.domain.models.Condition
 import org.example.weathercrossplatform.domain.models.Day
 import org.example.weathercrossplatform.domain.models.Forecastday
-import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass
+import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass2
 import org.jetbrains.compose.resources.stringResource
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources._3_day_forecast
@@ -33,12 +33,13 @@ import weathercrossplatform.composeapp.generated.resources.tomorrow
 fun ThreeDaysForecast(
     forecastList: List<Forecastday>,
     isTempC: Boolean,
-    backdrop: Backdrop
+    backdrop: LayerBackdrop,
+    modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
-            .myLiquidGlass(backdrop)
+            .myLiquidGlass2(backdrop)
             .padding(horizontal = 6.dp, vertical = 12.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {

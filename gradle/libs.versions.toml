@@ -1,5 +1,5 @@
 [versions]
-agp = "8.13.2"
+agp = "9.0.0"
 android-compileSdk = "36"
 android-minSdk = "24"
 android-targetSdk = "36"
@@ -34,7 +34,7 @@ gradlePlugins-google-services = "4.4.4"
 #Gitlive
 firebase-gitlive-sdk = "2.4.0"
 roomRuntime = "2.8.4"
-ksp = "2.3.0"
+ksp = "2.3.2"
 runtime = "1.10.0"
 sqlite = "2.6.2"
 kermit = "2.0.8"
