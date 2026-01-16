@@ -120,6 +120,7 @@ fun MainScreen(
 
     val textColor = Color.White
     val airQualityText = weatherMainScreenState.weatherDto?.current?.airQuality?.usEpaIndex?.toUiText()
+
     val lazyListState = rememberLazyListState()
 
     var fabYPosition by remember {
@@ -141,8 +142,8 @@ fun MainScreen(
     }
 
     val animatedAlpha by animateFloatAsState(
-        targetValue = ((firstElementInLazyColumnYPosition - (fabMaxYPosition + ALPHA_THRESHOLD)) / (firstElementMaxYPosition - (fabMaxYPosition + ALPHA_THRESHOLD)))
-            .coerceIn(0f, 1f)
+        targetValue = ((firstElementInLazyColumnYPosition - (fabMaxYPosition + ALPHA_THRESHOLD)) /
+                (firstElementMaxYPosition - (fabMaxYPosition + ALPHA_THRESHOLD))).coerceIn(0f, 1f)
     )
 
     myLogger.debug(

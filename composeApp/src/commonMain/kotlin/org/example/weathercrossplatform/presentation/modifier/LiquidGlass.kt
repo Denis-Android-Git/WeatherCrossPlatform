@@ -34,6 +34,8 @@ fun Modifier.myLiquidGlass2(
         shape = { RoundedCornerShape(16.dp) },
         effects = {
             vibrancy()
-            lens(16f.dp.toPx(), 32f.dp.toPx())
+            lens(
+                16f.dp.toPx(), 32f.dp.toPx(),
+            )
         }
     )
