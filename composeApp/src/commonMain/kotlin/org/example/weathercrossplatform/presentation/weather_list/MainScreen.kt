@@ -29,6 +29,8 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Place
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
@@ -79,6 +81,7 @@ import org.example.weathercrossplatform.presentation.elements.LiquidButton
 import org.example.weathercrossplatform.presentation.elements.ThreeDaysForecast
 import org.example.weathercrossplatform.presentation.elements.WeatherDetailElement
 import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass2
+import org.example.weathercrossplatform.presentation.modifier.noLiquidGlass
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
@@ -243,8 +246,13 @@ fun MainScreen(
                             )
                         }
                         Box(
-                            modifier = Modifier
-                                .myLiquidGlass2(backdrop)
+                            modifier = if (weatherMainScreenState.isLiquidGlassOn) {
+                                Modifier
+                                    .myLiquidGlass2(backdrop)
+                            } else {
+                                Modifier.noLiquidGlass()
+
+                            }
                         ) {
                             Text(
                                 modifier = Modifier.padding(
@@ -256,9 +264,15 @@ fun MainScreen(
                         }
 
                         Box(
-                            modifier = Modifier
-                                .padding(top = 8.dp)
-                                .myLiquidGlass2(backdrop)
+                            modifier = if (weatherMainScreenState.isLiquidGlassOn) {
+                                Modifier
+                                    .padding(top = 8.dp)
+                                    .myLiquidGlass2(backdrop)
+                            } else {
+                                Modifier
+                                    .padding(top = 8.dp)
+                                    .noLiquidGlass()
+                            }
                         ) {
                             Text(
                                 modifier = Modifier.padding(
@@ -271,9 +285,15 @@ fun MainScreen(
                             )
                         }
                         Column(
-                            modifier = Modifier
-                                .padding(top = 16.dp)
-                                .myLiquidGlass2(backdrop)
+                            modifier = if (weatherMainScreenState.isLiquidGlassOn) {
+                                Modifier
+                                    .padding(top = 16.dp)
+                                    .myLiquidGlass2(backdrop)
+                            } else {
+                                Modifier
+                                    .padding(top = 16.dp)
+                                    .noLiquidGlass()
+                            }
                         ) {
                             Text(
                                 modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 2.dp),
@@ -288,10 +308,17 @@ fun MainScreen(
                             )
                         }
                         Box(
-                            modifier = Modifier
-                                .align(Alignment.CenterHorizontally)
-                                .padding(top = 16.dp)
-                                .myLiquidGlass2(backdrop)
+                            modifier = if (weatherMainScreenState.isLiquidGlassOn) {
+                                Modifier
+                                    .align(Alignment.CenterHorizontally)
+                                    .padding(top = 16.dp)
+                                    .myLiquidGlass2(backdrop)
+                            } else {
+                                Modifier
+                                    .align(Alignment.CenterHorizontally)
+                                    .padding(top = 16.dp)
+                                    .noLiquidGlass()
+                            }
                         ) {
                             Row(
                                 modifier = Modifier.padding(
@@ -328,7 +355,8 @@ fun MainScreen(
                                     },
                                     forecastList = forecastListDayList,
                                     isTempC = weatherMainScreenState.isTempC,
-                                    backdrop = backdrop
+                                    backdrop = backdrop,
+                                    isLiquidGlassOn = weatherMainScreenState.isLiquidGlassOn
                                 )
                             }
                             item {
@@ -336,7 +364,8 @@ fun MainScreen(
                                     hours = forecastListDayList[0].hour,
                                     isTempC = weatherMainScreenState.isTempC,
                                     isWindKmh = weatherMainScreenState.isWindKph,
-                                    backdrop = backdrop
+                                    backdrop = backdrop,
+                                    isLiquidGlassOn = weatherMainScreenState.isLiquidGlassOn
                                 )
                             }
                             item {
@@ -363,7 +392,8 @@ fun MainScreen(
                                             uvIndex = weatherMainScreenState.weatherItemList[4].uvIndex.toString(),
                                             feelsLikeRotation = weatherMainScreenState.weatherItemList[5].rotation,
                                             isPressureMb = weatherMainScreenState.isPressureMb,
-                                            backdrop = backdrop
+                                            backdrop = backdrop,
+                                            isLiquidGlassOn = weatherMainScreenState.isLiquidGlassOn
                                         )
                                     }
                                 }
@@ -414,41 +444,78 @@ fun MainScreen(
                 Row(
                     modifier = Modifier.fillMaxWidth().padding(top = 40.dp, start = 6.dp, end = 6.dp)
                 ) {
-                    LiquidButton(
-                        onClick = onCancelButtonClick,
-                        backdrop = backdrop
-                    ) {
-                        Text(text = stringResource(Res.string.cancel), color = Color.White, fontSize = 20.sp)
+                    if (weatherMainScreenState.isLiquidGlassOn) {
+                        LiquidButton(
+                            onClick = onCancelButtonClick,
+                            backdrop = backdrop
+                        ) {
+                            Text(text = stringResource(Res.string.cancel), color = Color.White, fontSize = 20.sp)
 //                        BasicText(
 //                            stringResource(Res.string.cancel),
 //                            style = TextStyle(Color.Black, 15.sp)
 //                        )
+                        }
+                    } else {
+                        Button(
+                            onClick = onCancelButtonClick,
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = Color.Black.copy(alpha = 0.2f),
+                            )
+                        ) {
+                            Text(text = stringResource(Res.string.cancel), color = Color.White, fontSize = 20.sp)
+                        }
                     }
                     Spacer(modifier = Modifier.weight(1f))
-                    LiquidButton(
-                        onClick = {
-                            onAddCityButtonClick(
-                                SavedWeatherItem(
-                                    cityName = weatherMainScreenState.weatherDto?.location?.name ?: "",
-                                    //latitude = latitude,
-                                    //longitude = longitude,
-                                    temperature = weatherMainScreenState.weatherDto?.current?.tempC ?: 0.0,
-                                    weatherDescription = weatherMainScreenState.weatherDto?.current?.condition?.text ?: "",
-                                    highTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.maxTempC ?: 0.0,
-                                    lowTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.minTempC ?: 0.0,
-                                    cityId = cityId,
-                                    coordinates = "${weatherMainScreenState.weatherDto?.location?.lat},${weatherMainScreenState.weatherDto?.location?.lon}",
-                                    isCurrentLocation = false,
+                    if (weatherMainScreenState.isLiquidGlassOn) {
+                        LiquidButton(
+                            onClick = {
+                                onAddCityButtonClick(
+                                    SavedWeatherItem(
+                                        cityName = weatherMainScreenState.weatherDto?.location?.name ?: "",
+                                        //latitude = latitude,
+                                        //longitude = longitude,
+                                        temperature = weatherMainScreenState.weatherDto?.current?.tempC ?: 0.0,
+                                        weatherDescription = weatherMainScreenState.weatherDto?.current?.condition?.text ?: "",
+                                        highTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.maxTempC ?: 0.0,
+                                        lowTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.minTempC ?: 0.0,
+                                        cityId = cityId,
+                                        coordinates = "${weatherMainScreenState.weatherDto?.location?.lat},${weatherMainScreenState.weatherDto?.location?.lon}",
+                                        isCurrentLocation = false,
+                                    )
                                 )
-                            )
-                        },
-                        backdrop = backdrop
-                    ) {
-                        Text(text = stringResource(Res.string.add), color = Color.White, fontSize = 20.sp)
+                            },
+                            backdrop = backdrop
+                        ) {
+                            Text(text = stringResource(Res.string.add), color = Color.White, fontSize = 20.sp)
 //                        BasicText(
 //                            stringResource(Res.string.add),
 //                            style = TextStyle(Color.Black, 15.sp)
 //                        )
+                        }
+                    } else {
+                        Button(
+                            onClick = {
+                                onAddCityButtonClick(
+                                    SavedWeatherItem(
+                                        cityName = weatherMainScreenState.weatherDto?.location?.name ?: "",
+                                        //latitude = latitude,
+                                        //longitude = longitude,
+                                        temperature = weatherMainScreenState.weatherDto?.current?.tempC ?: 0.0,
+                                        weatherDescription = weatherMainScreenState.weatherDto?.current?.condition?.text ?: "",
+                                        highTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.maxTempC ?: 0.0,
+                                        lowTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.minTempC ?: 0.0,
+                                        cityId = cityId,
+                                        coordinates = "${weatherMainScreenState.weatherDto?.location?.lat},${weatherMainScreenState.weatherDto?.location?.lon}",
+                                        isCurrentLocation = false,
+                                    )
+                                )
+                            },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = Color.Black.copy(alpha = 0.2f),
+                            )
+                        ) {
+                            Text(text = stringResource(Res.string.add), color = Color.White, fontSize = 20.sp)
+                        }
                     }
                 }
             }

@@ -7,7 +7,8 @@ fun SettingsInfo.toSerializable(): SettingsInfoSerializable {
     return SettingsInfoSerializable(
         isTempC = isTempC,
         isWindKph = isWindKph,
-        isPressureMb = isPressureMb
+        isPressureMb = isPressureMb,
+        isLiquidGlassOn = isLiquidGlassOn
     )
 }
 
@@ -15,6 +16,7 @@ fun SettingsInfoSerializable.toDomain(): SettingsInfo {
     return SettingsInfo(
         isTempC = isTempC,
         isWindKph = isWindKph,
-        isPressureMb = isPressureMb
+        isPressureMb = isPressureMb,
+        isLiquidGlassOn = isLiquidGlassOn
     )
 }

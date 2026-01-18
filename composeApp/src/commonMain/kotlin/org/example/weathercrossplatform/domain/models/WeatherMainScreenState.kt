@@ -48,4 +48,5 @@ data class WeatherMainScreenState(
     val isTempC: Boolean = true,
     val isWindKph: Boolean = true,
     val isPressureMb: Boolean = true,
+    val isLiquidGlassOn: Boolean = false
 )

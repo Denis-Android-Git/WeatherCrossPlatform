@@ -65,7 +65,8 @@ class WeatherViewModel(
                         it.copy(
                             isTempC = settingsInfo.isTempC,
                             isWindKph = settingsInfo.isWindKph,
-                            isPressureMb = settingsInfo.isPressureMb
+                            isPressureMb = settingsInfo.isPressureMb,
+                            isLiquidGlassOn = settingsInfo.isLiquidGlassOn
                         )
                     }
                 }

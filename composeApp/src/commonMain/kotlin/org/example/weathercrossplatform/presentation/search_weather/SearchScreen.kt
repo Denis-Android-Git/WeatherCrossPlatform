@@ -286,7 +286,8 @@ fun SearchScreen(
                         isListContainsElement = searchScreenState.tempListToDelete.contains(savedCity),
                         isCurrentLocation = savedCity.isCurrentLocation,
                         isTempC = searchScreenState.isTempC,
-                        backdrop = backdrop
+                        backdrop = backdrop,
+                        isLiquidGlassOn = searchScreenState.isLiquidGlassOn
                     )
                 }
                 item {

@@ -23,6 +23,7 @@ import org.example.weathercrossplatform.domain.models.Condition
 import org.example.weathercrossplatform.domain.models.Day
 import org.example.weathercrossplatform.domain.models.Forecastday
 import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass2
+import org.example.weathercrossplatform.presentation.modifier.noLiquidGlass
 import org.jetbrains.compose.resources.stringResource
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources._3_day_forecast
@@ -31,16 +32,24 @@ import weathercrossplatform.composeapp.generated.resources.tomorrow
 
 @Composable
 fun ThreeDaysForecast(
+    modifier: Modifier = Modifier,
     forecastList: List<Forecastday>,
     isTempC: Boolean,
     backdrop: LayerBackdrop,
-    modifier: Modifier = Modifier
+    isLiquidGlassOn: Boolean
 ) {
     Column(
-        modifier = modifier
-            .fillMaxWidth()
-            .myLiquidGlass2(backdrop)
-            .padding(horizontal = 6.dp, vertical = 12.dp),
+        modifier = if (isLiquidGlassOn) {
+            modifier
+                .fillMaxWidth()
+                .myLiquidGlass2(backdrop)
+                .padding(horizontal = 6.dp, vertical = 12.dp)
+        } else {
+            modifier
+                .fillMaxWidth()
+                .noLiquidGlass()
+                .padding(horizontal = 6.dp, vertical = 12.dp)
+        },
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Row(
@@ -204,6 +213,7 @@ fun ForecastElementPreview() {
     ThreeDaysForecast(
         forecastList = sampleForecastList,
         isTempC = true,
-        backdrop = rememberLayerBackdrop()
+        backdrop = rememberLayerBackdrop(),
+        isLiquidGlassOn = false
     )
 }

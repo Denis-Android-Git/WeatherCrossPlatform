@@ -25,6 +25,7 @@ import org.example.weathercrossplatform.presentation.icons.PressureIndicator
 import org.example.weathercrossplatform.presentation.icons.UvIcon
 import org.example.weathercrossplatform.presentation.icons.WindIcon
 import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass2
+import org.example.weathercrossplatform.presentation.modifier.noLiquidGlass
 import org.jetbrains.compose.resources.StringResource
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.clouds
@@ -48,7 +49,8 @@ fun WeatherDetailElement(
     feelsLikeRotation: Float,
     uvIndex: String,
     isPressureMb: Boolean,
-    backdrop: LayerBackdrop
+    backdrop: LayerBackdrop,
+    isLiquidGlassOn: Boolean
 ) {
 
     val descriptionList = description.split(" ")
@@ -70,14 +72,25 @@ fun WeatherDetailElement(
         }
     }
     Column(
-        modifier = modifier
-            .fillMaxWidth()
-            .myLiquidGlass2(backdrop)
+        modifier = if (isLiquidGlassOn) {
+            modifier
+                .fillMaxWidth()
+                .myLiquidGlass2(backdrop)
 //            .background(
 //                color = Color.Black.copy(alpha = 0.3f),
 //                shape = RoundedCornerShape(16.dp)
 //            )
-            .padding(horizontal = 16.dp, vertical = 16.dp),
+                .padding(horizontal = 16.dp, vertical = 16.dp)
+        } else {
+            modifier
+                .fillMaxWidth()
+                .noLiquidGlass()
+//            .background(
+//                color = Color.Black.copy(alpha = 0.3f),
+//                shape = RoundedCornerShape(16.dp)
+//            )
+                .padding(horizontal = 16.dp, vertical = 16.dp)
+        },
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Text(
@@ -148,6 +161,7 @@ fun WeatherDetailElementPreview() {
         feelsLikeRotation = 0.5f,
         uvIndex = "5",
         isPressureMb = false,
-        backdrop = rememberLayerBackdrop()
+        backdrop = rememberLayerBackdrop(),
+        isLiquidGlassOn = false
     )
 }

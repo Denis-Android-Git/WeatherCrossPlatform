@@ -151,7 +151,7 @@ fun SettingsScreenScreen(
                             state.isLiquidGlassOn
                         },
                         onSelect = {
-
+                            onAction(SettingsScreenAction.SetLiquidGlass(it))
                         },
                         backdrop = rememberLayerBackdrop()
                     )

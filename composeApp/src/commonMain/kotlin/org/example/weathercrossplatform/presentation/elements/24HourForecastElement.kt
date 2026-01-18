@@ -22,6 +22,7 @@ import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Condition
 import org.example.weathercrossplatform.domain.models.Hour
 import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass2
+import org.example.weathercrossplatform.presentation.modifier.noLiquidGlass
 import org.jetbrains.compose.resources.stringResource
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources._24h_forecast
@@ -34,7 +35,8 @@ fun Forecast24Hour(
     isTempC: Boolean,
     isWindKmh: Boolean,
     myLogger: MyLogger = MyLoggerImpl,
-    backdrop: LayerBackdrop
+    backdrop: LayerBackdrop,
+    isLiquidGlassOn: Boolean
 ) {
     val maxTemp = hours.maxOf { if (isTempC) it.tempC.toFloat() else it.tempF.toFloat() }
     val minTemp = hours.minOf { if (isTempC) it.tempC.toFloat() else it.tempF.toFloat() }
@@ -49,9 +51,15 @@ fun Forecast24Hour(
     }
 
     Column(
-        modifier = modifier
-            .fillMaxWidth()
-            .myLiquidGlass2(backdrop)
+        modifier = if (isLiquidGlassOn) {
+            modifier
+                .fillMaxWidth()
+                .myLiquidGlass2(backdrop)
+        } else {
+            modifier
+                .fillMaxWidth()
+                .noLiquidGlass()
+        }
         //.background(color = Color.Black.copy(alpha = 0.3f), shape = RoundedCornerShape(16.dp)),
     ) {
         Text(
@@ -416,7 +424,8 @@ fun HourForecastElementPreview() {
         hours = sampleHours,
         isTempC = true,
         isWindKmh = true,
-        backdrop = rememberLayerBackdrop()
+        backdrop = rememberLayerBackdrop(),
+        isLiquidGlassOn = false
     )
 }
 

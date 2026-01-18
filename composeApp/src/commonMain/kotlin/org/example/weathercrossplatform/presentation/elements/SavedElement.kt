@@ -31,6 +31,7 @@ import androidx.compose.ui.unit.sp
 import com.kashif_e.backdrop.backdrops.LayerBackdrop
 import com.kashif_e.backdrop.backdrops.rememberLayerBackdrop
 import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass2
+import org.example.weathercrossplatform.presentation.modifier.noLiquidGlass
 
 @Composable
 fun SavedElement(
@@ -47,13 +48,15 @@ fun SavedElement(
     isListContainsElement: Boolean,
     isCurrentLocation: Boolean,
     isTempC: Boolean,
-    backdrop: LayerBackdrop
+    backdrop: LayerBackdrop,
+    isLiquidGlassOn: Boolean
 ) {
     Box(
-        modifier = modifier
-            .fillMaxWidth()
-            .height(100.dp)
-            .myLiquidGlass2(backdrop)
+        modifier = if (isLiquidGlassOn) {
+            modifier
+                .fillMaxWidth()
+                .height(100.dp)
+                .myLiquidGlass2(backdrop)
 //            .background(
 //                brush = Brush.verticalGradient(
 //                    colors = listOf(
@@ -62,10 +65,28 @@ fun SavedElement(
 //                    )
 //                ), shape = RoundedCornerShape(16.dp)
 //            )
-            .combinedClickable(
-                onClick = onClick,
-                onLongClick = onLongClick
-            )
+                .combinedClickable(
+                    onClick = onClick,
+                    onLongClick = onLongClick
+                )
+        } else {
+            modifier
+                .fillMaxWidth()
+                .height(100.dp)
+                .noLiquidGlass()
+//            .background(
+//                brush = Brush.verticalGradient(
+//                    colors = listOf(
+//                        Color(0xFF357BD9).copy(alpha = 1f),
+//                        Color(0xFF357BD9).copy(alpha = 0.0f)
+//                    )
+//                ), shape = RoundedCornerShape(16.dp)
+//            )
+                .combinedClickable(
+                    onClick = onClick,
+                    onLongClick = onLongClick
+                )
+        }
     ) {
         Row(
             modifier = Modifier
@@ -160,6 +181,7 @@ fun PreviewSavedElement() {
         isListContainsElement = true,
         isCurrentLocation = false,
         isTempC = false,
-        backdrop = rememberLayerBackdrop()
+        backdrop = rememberLayerBackdrop(),
+        isLiquidGlassOn = false
     )
 }
