@@ -18,5 +18,7 @@ data class SettingsScreenState(
     val isDropPressureExpanded: Boolean = false,
     val temperatureList: List<StringResource> = listOf(Res.string.celc, Res.string.far),
     val windList: List<StringResource> = listOf(Res.string.kmh, Res.string.mph),
-    val pressureList: List<StringResource> = listOf(Res.string.mmrt, Res.string.inrt)
+    val pressureList: List<StringResource> = listOf(Res.string.mmrt, Res.string.inrt),
+    val isLiquidGlassAvailable: Boolean = false,
+    val isLiquidGlassOn: Boolean = false
 )

@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import org.example.weathercrossplatform.data.sdk_checker.isLiquidGlassAvailable
 import org.example.weathercrossplatform.domain.models.SettingsInfo
 import org.example.weathercrossplatform.domain.repo.SettingsStorage
 
@@ -50,6 +51,13 @@ class SettingsScreenViewModel(
     }
 
     private fun observeSettings() {
+        viewModelScope.launch {
+            _state.update {
+                it.copy(
+                    isLiquidGlassAvailable = isLiquidGlassAvailable()
+                )
+            }
+        }
         viewModelScope.launch {
             settingsStorage.observeSettingsInfo().collect { info ->
                 info?.let { settings ->
