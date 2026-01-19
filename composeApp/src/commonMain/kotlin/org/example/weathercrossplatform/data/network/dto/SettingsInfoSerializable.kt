@@ -7,5 +7,5 @@ data class SettingsInfoSerializable(
     val isTempC: Boolean,
     val isWindKph: Boolean,
     val isPressureMb: Boolean,
-    val isLiquidGlassOn: Boolean
+    val isLiquidGlassOn: Boolean? = null
 )

@@ -17,6 +17,6 @@ fun SettingsInfoSerializable.toDomain(): SettingsInfo {
         isTempC = isTempC,
         isWindKph = isWindKph,
         isPressureMb = isPressureMb,
-        isLiquidGlassOn = isLiquidGlassOn
+        isLiquidGlassOn = isLiquidGlassOn == true
     )
 }
