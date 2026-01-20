@@ -22,6 +22,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -69,6 +70,8 @@ fun SettingsScreenScreen(
     onAction: (SettingsScreenAction) -> Unit,
     onBackButtonClick: () -> Unit
 ) {
+    val backdrop = rememberLayerBackdrop()
+    val toggle1 by rememberUpdatedState(newValue = state.isLiquidGlassOn)
 
     Column(
         modifier = modifier.fillMaxSize().background(color = Color.Black)
@@ -111,6 +114,32 @@ fun SettingsScreenScreen(
                 settingsType = SettingsType.PRESSURE
             )
         }
+        if (state.isLiquidGlassAvailable) {
+            Spacer(modifier = Modifier.height(32.dp))
+            SettingsElement(
+                title = stringResource(Res.string.liquid_glass)
+            ) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = stringResource(Res.string.liquid_glass_desc),
+                        modifier = Modifier.weight(1f),
+                        color = Color.White, fontSize = 16.sp
+                    )
+                    LiquidToggle(
+                        selected = {
+                            toggle1
+                        },
+                        onSelect = {
+                            onAction(SettingsScreenAction.SetLiquidGlass(it))
+                        },
+                        backdrop = backdrop
+                    )
+                }
+            }
+        }
         Spacer(modifier = Modifier.height(32.dp))
         SettingsElement(
             title = stringResource(Res.string.about_app)
@@ -130,32 +159,6 @@ fun SettingsScreenScreen(
                     contentDescription = null,
                     tint = Color.Gray
                 )
-            }
-        }
-        if (state.isLiquidGlassAvailable) {
-            Spacer(modifier = Modifier.height(32.dp))
-            SettingsElement(
-                title = stringResource(Res.string.liquid_glass)
-            ) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text(
-                        text = stringResource(Res.string.liquid_glass_desc),
-                        modifier = Modifier.weight(1f),
-                        color = Color.White, fontSize = 16.sp
-                    )
-                    LiquidToggle(
-                        selected = {
-                            state.isLiquidGlassOn
-                        },
-                        onSelect = {
-                            onAction(SettingsScreenAction.SetLiquidGlass(it))
-                        },
-                        backdrop = rememberLayerBackdrop()
-                    )
-                }
             }
         }
     }
