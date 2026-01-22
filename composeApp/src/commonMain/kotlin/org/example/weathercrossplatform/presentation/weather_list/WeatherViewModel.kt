@@ -154,7 +154,7 @@ class WeatherViewModel(
             val passedTime = now - initialTime
 
             myLogger.debug("time_check: now: $now, initialTime: $initialTime, passedTime: $passedTime")
-            if (passedTime > 30.toDuration(DurationUnit.SECONDS) && isCurrentLocation) {
+            if (passedTime > 30.toDuration(DurationUnit.MINUTES) && isCurrentLocation) {
                 coordinates.update {
                     null
                 }
