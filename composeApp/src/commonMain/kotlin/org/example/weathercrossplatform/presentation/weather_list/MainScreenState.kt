@@ -93,7 +93,9 @@ fun MainScreenState(
             )
         },
         onRefresh = {
-            weatherViewModel.onAction(MainScreenActions.GetWeatherByQuery(weatherMainScreenState.savedCities[weatherMainScreenState.pageNumber].coordinates))
+            val query = weatherMainScreenState.savedCities[weatherMainScreenState.pageNumber].coordinates
+            val isCurrentLocation = weatherMainScreenState.savedCities[weatherMainScreenState.pageNumber].isCurrentLocation
+            weatherViewModel.onAction(MainScreenActions.PullToRefresh(query, isCurrentLocation))
         },
     ) {
 

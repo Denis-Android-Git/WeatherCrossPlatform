@@ -18,6 +18,8 @@ import weathercrossplatform.composeapp.generated.resources.im_6
 import weathercrossplatform.composeapp.generated.resources.im_7
 import weathercrossplatform.composeapp.generated.resources.im_8
 import weathercrossplatform.composeapp.generated.resources.im_9
+import kotlin.time.Clock
+import kotlin.time.Instant
 
 data class WeatherMainScreenState(
     val isLoading: Boolean = false,
@@ -48,5 +50,6 @@ data class WeatherMainScreenState(
     val isTempC: Boolean = true,
     val isWindKph: Boolean = true,
     val isPressureMb: Boolean = true,
-    val isLiquidGlassOn: Boolean = false
+    val isLiquidGlassOn: Boolean = false,
+    val initialTime: Instant = Clock.System.now()
 )

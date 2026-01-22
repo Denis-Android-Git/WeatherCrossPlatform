@@ -34,6 +34,9 @@ import weathercrossplatform.composeapp.generated.resources.moderate
 import weathercrossplatform.composeapp.generated.resources.pressure
 import weathercrossplatform.composeapp.generated.resources.uv
 import weathercrossplatform.composeapp.generated.resources.wind
+import kotlin.time.Clock
+import kotlin.time.DurationUnit
+import kotlin.time.toDuration
 
 
 private const val MAX_AIR_PRESSURE_MM = 825
@@ -125,12 +128,11 @@ class WeatherViewModel(
             is MainScreenActions.AddCity -> addCity(actions.city)
             is MainScreenActions.GetWeatherByQuery -> {
                 myLogger.debug("fun_GetWeatherByQuery, MainScreenActions.GetWeatherByQuery")
-                viewModelScope.launch {
-                    getWeatherByQuery(actions.query)
-                }
+                getWeatherByQuery(actions.query)
             }
 
             is MainScreenActions.UpdatePage -> updatePage(actions.page)
+            is MainScreenActions.PullToRefresh -> pullToRefresh(actions.query, actions.isCurrentLocation)
         }
     }
 
@@ -141,6 +143,43 @@ class WeatherViewModel(
                 it.copy(
                     pageNumber = page
                 )
+            }
+        }
+    }
+
+    private fun pullToRefresh(query: String, isCurrentLocation: Boolean) {
+        viewModelScope.launch {
+            val now = Clock.System.now()
+            val initialTime = weatherScreenState.value.initialTime
+            val passedTime = now - initialTime
+
+            myLogger.debug("time_check: now: $now, initialTime: $initialTime, passedTime: $passedTime")
+            if (passedTime > 30.toDuration(DurationUnit.SECONDS) && isCurrentLocation) {
+                coordinates.update {
+                    null
+                }
+                refreshPosition()
+                coordinates.collectLatest { coordinates ->
+                    coordinates?.let {
+                        myLogger.debug("time_check: if block")
+                        val query = "${it.latitude},${it.longitude}"
+                        myLogger.debug("fun_GetWeatherByQuery, pullToRefresh")
+                        getWeatherByQuery(query, it.latitude, it.longitude)
+                        _weatherScreenState.update { state ->
+                            state.copy(
+                                initialTime = Clock.System.now()
+                            )
+                        }
+                    }
+                }
+            } else {
+                myLogger.debug("time_check: else block")
+                getWeatherByQuery(query)
+                _weatherScreenState.update { state ->
+                    state.copy(
+                        initialTime = Clock.System.now()
+                    )
+                }
             }
         }
     }
@@ -179,113 +218,115 @@ class WeatherViewModel(
         }
     }
 
-    private suspend fun getWeatherByQuery(
+    private fun getWeatherByQuery(
         query: String,
         latitude: Double? = null,
         longitude: Double? = null
     ) {
-        myLogger.debug("fun_getWeatherByQuery")
-        _weatherScreenState.value = _weatherScreenState.value.copy(isLoading = true)
-        weatherRepoImpl.getCurrentWeather(query)
-            .onSuccess { weather ->
-                myLogger.debug("location.id = ${weather.location.id}")
-                val isTempC = weatherScreenState.value.isTempC
-                val isWindKph = weatherScreenState.value.isWindKph
-                val isPressureMb = weatherScreenState.value.isPressureMb
-                myLogger.debug("check_settings isTempC = $isTempC, isWindKph = $isWindKph, isPressureMb = $isPressureMb")
-                if (latitude != null && longitude != null) {
-                    val desc = weather.current.condition.text.let {
-                        if (it.length > 100) it.take(100) else it //fix OutOfMemoryError
-                    }
-                    dataBaseRepo.clearCurrentLocation()
-                    val highTemp = if (isTempC) weather.forecast.forecastday[0].day.maxTempC else weather.forecast.forecastday[0].day.maxTempF
-                    val lowTemp = if (isTempC) weather.forecast.forecastday[0].day.minTempC else weather.forecast.forecastday[0].day.minTempF
-                    myLogger.debug("check_settings highTemp = $highTemp, lowTemp = $lowTemp")
-                    dataBaseRepo.saveWeather(
-                        weather = SavedWeatherItem(
-                            cityName = weather.location.name,
-                            temperature = if (isTempC) weather.current.tempC else weather.current.tempF,
-                            weatherDescription = desc,
-                            highTemperature = highTemp,
-                            lowTemperature = lowTemp,
-                            cityId = 111,
-                            coordinates = "${weather.location.lat},${weather.location.lon}",
-                            isCurrentLocation = true,
+        viewModelScope.launch {
+            myLogger.debug("fun_getWeatherByQuery")
+            _weatherScreenState.value = _weatherScreenState.value.copy(isLoading = true)
+            weatherRepoImpl.getCurrentWeather(query)
+                .onSuccess { weather ->
+                    myLogger.debug("location.id = ${weather.location.id}")
+                    val isTempC = weatherScreenState.value.isTempC
+                    val isWindKph = weatherScreenState.value.isWindKph
+                    val isPressureMb = weatherScreenState.value.isPressureMb
+                    myLogger.debug("check_settings isTempC = $isTempC, isWindKph = $isWindKph, isPressureMb = $isPressureMb")
+                    if (latitude != null && longitude != null) {
+                        val desc = weather.current.condition.text.let {
+                            if (it.length > 100) it.take(100) else it //fix OutOfMemoryError
+                        }
+                        dataBaseRepo.clearCurrentLocation()
+                        val highTemp = if (isTempC) weather.forecast.forecastday[0].day.maxTempC else weather.forecast.forecastday[0].day.maxTempF
+                        val lowTemp = if (isTempC) weather.forecast.forecastday[0].day.minTempC else weather.forecast.forecastday[0].day.minTempF
+                        myLogger.debug("check_settings highTemp = $highTemp, lowTemp = $lowTemp")
+                        dataBaseRepo.saveWeather(
+                            weather = SavedWeatherItem(
+                                cityName = weather.location.name,
+                                temperature = if (isTempC) weather.current.tempC else weather.current.tempF,
+                                weatherDescription = desc,
+                                highTemperature = highTemp,
+                                lowTemperature = lowTemp,
+                                cityId = 111,
+                                coordinates = "${weather.location.lat},${weather.location.lon}",
+                                isCurrentLocation = true,
+                            )
                         )
+                    }
+
+                    myLogger.debug("windRotation = ${weather.current.windDegree}, ${weather.current.windDir}")
+                    myLogger.debug("pressure = ${weather.current.pressureMb}, ${weather.current.pressureIn}")
+                    myLogger.debug("uv = ${weather.current.uv}")
+
+
+                    val weatherItemList = createWeatherItemList(
+                        humidity = weather.current.humidity,
+                        windSpeed = if (isWindKph) weather.current.windKph else weather.current.windMph,
+                        windRotation = weather.current.windDegree,
+                        pressure = if (isPressureMb) weather.current.pressureMb * 0.75 else weather.current.pressureIn,
+                        clouds = weather.current.cloud,
+                        uvIndex = weather.current.uv.toInt(),
+                        feelsLike = if (isTempC) weather.current.feelsLikeC else weather.current.feelsLikeF,
+                        rotationFeelsLike = calculateRotationAngle(
+                            if (isTempC) weather.current.tempC else weather.current.tempF,
+                            if (isTempC) weather.current.feelsLikeC else weather.current.feelsLikeF,
+                            isTempC
+                        ),
+                        isWindKmh = isWindKph,
+                        isPressureMb = isPressureMb,
+                        isTempC = isTempC
                     )
-                }
+                    _weatherScreenState.value = _weatherScreenState.value.copy(
+                        error = null,
+                        isLoading = false,
+                        weatherDto = weather,
+                        weatherItemList = weatherItemList
+                    )
+                    val imageQuery = when (weather.current.condition.text) {
+                        "Солнечно" -> "sunny"
+                        "Ясно" -> "clear sky"
+                        "Переменная облачность" -> "cloudy"
+                        "Местами грозы" -> "thunderstorm"
+                        "Небольшой дождь со снегом" -> "rain and snow"
+                        "Пасмурно" -> "overcast"
+                        "Дымка" -> "mist"
+                        else -> weather.current.condition.text
+                    }
 
-                myLogger.debug("windRotation = ${weather.current.windDegree}, ${weather.current.windDir}")
-                myLogger.debug("pressure = ${weather.current.pressureMb}, ${weather.current.pressureIn}")
-                myLogger.debug("uv = ${weather.current.uv}")
+                    myLogger.debug("imageQuery=$imageQuery")
 
+                    weatherRepoImpl.getImageList(imageQuery)
+                        .onSuccess { imageList ->
+                            myLogger.debug("imageList=${imageList.results.size}")
 
-                val weatherItemList = createWeatherItemList(
-                    humidity = weather.current.humidity,
-                    windSpeed = if (isWindKph) weather.current.windKph else weather.current.windMph,
-                    windRotation = weather.current.windDegree,
-                    pressure = if (isPressureMb) weather.current.pressureMb * 0.75 else weather.current.pressureIn,
-                    clouds = weather.current.cloud,
-                    uvIndex = weather.current.uv.toInt(),
-                    feelsLike = if (isTempC) weather.current.feelsLikeC else weather.current.feelsLikeF,
-                    rotationFeelsLike = calculateRotationAngle(
-                        if (isTempC) weather.current.tempC else weather.current.tempF,
-                        if (isTempC) weather.current.feelsLikeC else weather.current.feelsLikeF,
-                        isTempC
-                    ),
-                    isWindKmh = isWindKph,
-                    isPressureMb = isPressureMb,
-                    isTempC = isTempC
-                )
-                _weatherScreenState.value = _weatherScreenState.value.copy(
-                    error = null,
-                    isLoading = false,
-                    weatherDto = weather,
-                    weatherItemList = weatherItemList
-                )
-                val imageQuery = when (weather.current.condition.text) {
-                    "Солнечно" -> "sunny"
-                    "Ясно" -> "clear sky"
-                    "Переменная облачность" -> "cloudy"
-                    "Местами грозы" -> "thunderstorm"
-                    "Небольшой дождь со снегом" -> "rain and snow"
-                    "Пасмурно" -> "overcast"
-                    "Дымка" -> "mist"
-                    else -> weather.current.condition.text
-                }
-
-                myLogger.debug("imageQuery=$imageQuery")
-
-                weatherRepoImpl.getImageList(imageQuery)
-                    .onSuccess { imageList ->
-                        myLogger.debug("imageList=${imageList.results.size}")
-
-                        val photoList = imageList.results
-                        if (photoList.isEmpty()) {
+                            val photoList = imageList.results
+                            if (photoList.isEmpty()) {
+                                _weatherScreenState.value = _weatherScreenState.value.copy(
+                                    image = ""
+                                )
+                            } else {
+                                val image = photoList.random().urls.small
+                                _weatherScreenState.value = _weatherScreenState.value.copy(
+                                    image = image
+                                )
+                            }
+                        }
+                        .onError { _ ->
                             _weatherScreenState.value = _weatherScreenState.value.copy(
+                                error = null,
                                 image = ""
                             )
-                        } else {
-                            val image = photoList.random().urls.small
-                            _weatherScreenState.value = _weatherScreenState.value.copy(
-                                image = image
-                            )
                         }
-                    }
-                    .onError { _ ->
-                        _weatherScreenState.value = _weatherScreenState.value.copy(
-                            error = null,
-                            image = ""
-                        )
-                    }
-            }
-            .onError { networkError ->
-                val error = networkError.toUiText()
-                _weatherScreenState.value = _weatherScreenState.value.copy(
-                    isLoading = false,
-                    error = error
-                )
-            }
+                }
+                .onError { networkError ->
+                    val error = networkError.toUiText()
+                    _weatherScreenState.value = _weatherScreenState.value.copy(
+                        isLoading = false,
+                        error = error
+                    )
+                }
+        }
     }
 
     private fun refreshPosition() {
