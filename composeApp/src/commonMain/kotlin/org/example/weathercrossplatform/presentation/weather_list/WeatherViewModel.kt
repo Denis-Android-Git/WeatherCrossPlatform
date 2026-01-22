@@ -154,7 +154,7 @@ class WeatherViewModel(
             val passedTime = now - initialTime
 
             myLogger.debug("time_check: now: $now, initialTime: $initialTime, passedTime: $passedTime")
-            if (passedTime > 30.toDuration(DurationUnit.MINUTES) && isCurrentLocation) {
+            if (passedTime > 15.toDuration(DurationUnit.MINUTES) && isCurrentLocation) {
                 coordinates.update {
                     null
                 }
@@ -175,11 +175,6 @@ class WeatherViewModel(
             } else {
                 myLogger.debug("time_check: else block")
                 getWeatherByQuery(query)
-                _weatherScreenState.update { state ->
-                    state.copy(
-                        initialTime = Clock.System.now()
-                    )
-                }
             }
         }
     }
