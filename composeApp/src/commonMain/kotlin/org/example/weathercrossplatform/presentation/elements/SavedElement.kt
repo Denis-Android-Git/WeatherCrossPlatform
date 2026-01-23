@@ -15,7 +15,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Done
 import androidx.compose.material.icons.outlined.Place
@@ -24,12 +23,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import com.kashif_e.backdrop.backdrops.LayerBackdrop
+import com.kashif_e.backdrop.backdrops.rememberLayerBackdrop
+import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass2
+import org.example.weathercrossplatform.presentation.modifier.noLiquidGlass
 
 @Composable
 fun SavedElement(
@@ -45,24 +47,46 @@ fun SavedElement(
     isLongPressed: Boolean,
     isListContainsElement: Boolean,
     isCurrentLocation: Boolean,
-    isTempC: Boolean
+    isTempC: Boolean,
+    backdrop: LayerBackdrop,
+    isLiquidGlassOn: Boolean
 ) {
     Box(
-        modifier = modifier
-            .fillMaxWidth()
-            .height(100.dp)
-            .background(
-                brush = Brush.verticalGradient(
-                    colors = listOf(
-                        Color(0xFF357BD9).copy(alpha = 1f),
-                        Color(0xFF357BD9).copy(alpha = 0.0f)
-                    )
-                ), shape = RoundedCornerShape(16.dp)
-            )
-            .combinedClickable(
-                onClick = onClick,
-                onLongClick = onLongClick
-            )
+        modifier = if (isLiquidGlassOn) {
+            modifier
+                .fillMaxWidth()
+                .height(100.dp)
+                .myLiquidGlass2(backdrop)
+//            .background(
+//                brush = Brush.verticalGradient(
+//                    colors = listOf(
+//                        Color(0xFF357BD9).copy(alpha = 1f),
+//                        Color(0xFF357BD9).copy(alpha = 0.0f)
+//                    )
+//                ), shape = RoundedCornerShape(16.dp)
+//            )
+                .combinedClickable(
+                    onClick = onClick,
+                    onLongClick = onLongClick
+                )
+        } else {
+            modifier
+                .fillMaxWidth()
+                .height(100.dp)
+                .noLiquidGlass()
+//            .background(
+//                brush = Brush.verticalGradient(
+//                    colors = listOf(
+//                        Color(0xFF357BD9).copy(alpha = 1f),
+//                        Color(0xFF357BD9).copy(alpha = 0.0f)
+//                    )
+//                ), shape = RoundedCornerShape(16.dp)
+//            )
+                .combinedClickable(
+                    onClick = onClick,
+                    onLongClick = onLongClick
+                )
+        }
     ) {
         Row(
             modifier = Modifier
@@ -156,6 +180,8 @@ fun PreviewSavedElement() {
         isLongPressed = false,
         isListContainsElement = true,
         isCurrentLocation = false,
-        isTempC = false
+        isTempC = false,
+        backdrop = rememberLayerBackdrop(),
+        isLiquidGlassOn = false
     )
 }

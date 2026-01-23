@@ -8,5 +8,6 @@ sealed interface MainScreenActions {
     object RefreshPosition : MainScreenActions
     data class AddCity(val city: SavedWeatherItem) : MainScreenActions
     data class GetWeatherByQuery(val query: String) : MainScreenActions
+    data class PullToRefresh(val query: String, val isCurrentLocation: Boolean) : MainScreenActions
     data class UpdatePage(val page: Int) : MainScreenActions
 }

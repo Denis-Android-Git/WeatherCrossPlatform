@@ -1,37 +1,42 @@
 package org.example.weathercrossplatform.presentation.elements
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.kashif_e.backdrop.backdrops.LayerBackdrop
+import com.kashif_e.backdrop.backdrops.rememberLayerBackdrop
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Condition
 import org.example.weathercrossplatform.domain.models.Hour
+import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass2
+import org.example.weathercrossplatform.presentation.modifier.noLiquidGlass
 import org.jetbrains.compose.resources.stringResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources._24h_forecast
 import kotlin.time.Clock
 
 @Composable
 fun Forecast24Hour(
+    modifier: Modifier = Modifier,
     hours: List<Hour>,
     isTempC: Boolean,
     isWindKmh: Boolean,
-    myLogger: MyLogger = MyLoggerImpl
+    myLogger: MyLogger = MyLoggerImpl,
+    backdrop: LayerBackdrop,
+    isLiquidGlassOn: Boolean
 ) {
     val maxTemp = hours.maxOf { if (isTempC) it.tempC.toFloat() else it.tempF.toFloat() }
     val minTemp = hours.minOf { if (isTempC) it.tempC.toFloat() else it.tempF.toFloat() }
@@ -46,9 +51,16 @@ fun Forecast24Hour(
     }
 
     Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(color = Color.Black.copy(alpha = 0.3f), shape = RoundedCornerShape(16.dp)),
+        modifier = if (isLiquidGlassOn) {
+            modifier
+                .fillMaxWidth()
+                .myLiquidGlass2(backdrop)
+        } else {
+            modifier
+                .fillMaxWidth()
+                .noLiquidGlass()
+        }
+        //.background(color = Color.Black.copy(alpha = 0.3f), shape = RoundedCornerShape(16.dp)),
     ) {
         Text(
             modifier = Modifier.padding(start = 16.dp, top = 16.dp, bottom = 26.dp),
@@ -411,7 +423,9 @@ fun HourForecastElementPreview() {
     Forecast24Hour(
         hours = sampleHours,
         isTempC = true,
-        isWindKmh = true
+        isWindKmh = true,
+        backdrop = rememberLayerBackdrop(),
+        isLiquidGlassOn = false
     )
 }
 

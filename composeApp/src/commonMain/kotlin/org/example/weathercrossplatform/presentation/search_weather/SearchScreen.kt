@@ -1,16 +1,18 @@
 package org.example.weathercrossplatform.presentation.search_weather
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.background
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.lazy.LazyColumn
@@ -36,8 +38,12 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.kashif_e.backdrop.backdrops.layerBackdrop
+import com.kashif_e.backdrop.backdrops.rememberLayerBackdrop
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
@@ -46,14 +52,15 @@ import org.example.weathercrossplatform.domain.models.Location
 import org.example.weathercrossplatform.domain.models.SearchScreenViewState
 import org.example.weathercrossplatform.presentation.elements.FoundItem
 import org.example.weathercrossplatform.presentation.elements.SavedElement
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.cancel
 import weathercrossplatform.composeapp.generated.resources.chosen
 import weathercrossplatform.composeapp.generated.resources.city_search
 import weathercrossplatform.composeapp.generated.resources.current_place
 import weathercrossplatform.composeapp.generated.resources.enter_city
+import weathercrossplatform.composeapp.generated.resources.im_14
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
@@ -77,13 +84,27 @@ fun SearchScreen(
 
     val isLongPressed = remember { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
+    val backdrop = rememberLayerBackdrop()
     Box(
         modifier = modifier.fillMaxSize()
-            .background(color = Color.Black).padding(WindowInsets.systemBars.asPaddingValues())//padding between Box and systemBars
+        //.background(color = Color.Black)
     ) {
+        Image(
+            painter = painterResource(Res.drawable.im_14),
+            contentDescription = null,
+            modifier = Modifier
+                .layerBackdrop(backdrop),
+            contentScale = ContentScale.Crop
+        )
+
         Column(
-            modifier = Modifier.fillMaxSize()
-                .padding(horizontal = 8.dp)
+            modifier = if (searchScreenState.expanded) {
+                Modifier.fillMaxSize()
+            } else {
+                Modifier.fillMaxSize()
+                    .padding(WindowInsets.systemBars.asPaddingValues())//padding between Box and systemBars
+                    .padding(horizontal = 8.dp)
+            }
         ) {
             AnimatedVisibility(!searchScreenState.expanded && !isLongPressed.value) {
                 Column(
@@ -126,6 +147,7 @@ fun SearchScreen(
                     )
                 }
             }
+
             SearchBar(
                 modifier = Modifier
                     .fillMaxWidth(),
@@ -154,7 +176,8 @@ fun SearchScreen(
                             AnimatedVisibility(!searchScreenState.expanded) {
                                 Icon(
                                     imageVector = Icons.Default.Search,
-                                    contentDescription = "Search"
+                                    contentDescription = "Search",
+                                    tint = Color.White
                                 )
                             }
                         },
@@ -174,7 +197,7 @@ fun SearchScreen(
                             unfocusedTextColor = Color.White,
                             cursorColor = Color.White,
                             focusedContainerColor = Color.DarkGray,
-                            unfocusedContainerColor = Color.DarkGray,
+                            unfocusedContainerColor = Color.Black,
                             focusedPlaceholderColor = Color.White,
                             unfocusedPlaceholderColor = Color.White,
                             focusedTrailingIconColor = Color.White,
@@ -215,12 +238,13 @@ fun SearchScreen(
 
             }
             LazyColumn(
-                modifier = Modifier.padding(top = 16.dp)
+                modifier = Modifier.padding(top = 16.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 item {
                     Text(
                         text = stringResource(Res.string.current_place),
-                        modifier = Modifier.padding(start = 16.dp, bottom = 8.dp),
+                        modifier = Modifier.padding(start = 16.dp),
                         color = Color.Gray
                     )
                 }
@@ -261,8 +285,13 @@ fun SearchScreen(
                         isLongPressed = isLongPressed.value,
                         isListContainsElement = searchScreenState.tempListToDelete.contains(savedCity),
                         isCurrentLocation = savedCity.isCurrentLocation,
-                        isTempC = searchScreenState.isTempC
+                        isTempC = searchScreenState.isTempC,
+                        backdrop = backdrop,
+                        isLiquidGlassOn = searchScreenState.isLiquidGlassOn
                     )
+                }
+                item {
+                    Spacer(modifier = Modifier.height(16.dp))
                 }
             }
         }
@@ -334,7 +363,20 @@ fun Preview() {
         clearTempList = {},
         onSavedItemClick = {},
         allCitiesInOriginalOrder = emptyList(),
-        searchScreenState = SearchScreenViewState(),
+        searchScreenState = SearchScreenViewState(
+            expanded = false,
+            cityList = listOf(
+                Location(
+                    name = "Moscow",
+                    country = "Russia",
+                    lat = 55.7558,
+                    lon = 37.6173,
+                    id = 1,
+                    region = "Moscow",
+                    url = ""
+                )
+            )
+        ),
         modifier = Modifier
     )
 }

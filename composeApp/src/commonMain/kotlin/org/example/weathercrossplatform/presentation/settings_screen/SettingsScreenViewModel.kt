@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import org.example.weathercrossplatform.data.sdk_checker.isLiquidGlassAvailable
 import org.example.weathercrossplatform.domain.models.SettingsInfo
 import org.example.weathercrossplatform.domain.repo.SettingsStorage
 
@@ -40,6 +41,7 @@ class SettingsScreenViewModel(
             is SettingsScreenAction.SetTempUnit -> setTempUnit(action.value)
             is SettingsScreenAction.SetWindSpeedUnit -> setWindSpeedUnit(action.value)
             SettingsScreenAction.OpenPrivacyPolicy -> openPrivacyPolicy()
+            is SettingsScreenAction.SetLiquidGlass -> setLiquidGlass(action.value)
         }
     }
 
@@ -51,16 +53,42 @@ class SettingsScreenViewModel(
 
     private fun observeSettings() {
         viewModelScope.launch {
+            _state.update {
+                it.copy(
+                    isLiquidGlassAvailable = isLiquidGlassAvailable()
+                )
+            }
+        }
+        viewModelScope.launch {
             settingsStorage.observeSettingsInfo().collect { info ->
                 info?.let { settings ->
                     _state.update {
                         it.copy(
                             isTempC = settings.isTempC,
                             isPressureMb = settings.isPressureMb,
-                            isWindKph = settings.isWindKph
+                            isWindKph = settings.isWindKph,
+                            isLiquidGlassOn = settings.isLiquidGlassOn
                         )
                     }
                 }
+            }
+        }
+    }
+
+
+    private fun setLiquidGlass(value: Boolean) {
+        viewModelScope.launch {
+            val settings = SettingsInfo(
+                isTempC = state.value.isTempC,
+                isWindKph = state.value.isWindKph,
+                isPressureMb = state.value.isPressureMb,
+                isLiquidGlassOn = value
+            )
+            settingsStorage.set(settings)
+            _state.update {
+                it.copy(
+                    isLiquidGlassOn = value
+                )
             }
         }
     }
@@ -70,7 +98,8 @@ class SettingsScreenViewModel(
             val settings = SettingsInfo(
                 isTempC = value,
                 isWindKph = state.value.isWindKph,
-                isPressureMb = state.value.isPressureMb
+                isPressureMb = state.value.isPressureMb,
+                isLiquidGlassOn = state.value.isLiquidGlassOn
             )
             settingsStorage.set(settings)
             _state.update {
@@ -87,7 +116,8 @@ class SettingsScreenViewModel(
             val settings = SettingsInfo(
                 isTempC = state.value.isTempC,
                 isWindKph = value,
-                isPressureMb = state.value.isPressureMb
+                isPressureMb = state.value.isPressureMb,
+                isLiquidGlassOn = state.value.isLiquidGlassOn
             )
             settingsStorage.set(settings)
             _state.update {
@@ -104,7 +134,8 @@ class SettingsScreenViewModel(
             val settings = SettingsInfo(
                 isTempC = state.value.isTempC,
                 isWindKph = state.value.isWindKph,
-                isPressureMb = value
+                isPressureMb = value,
+                isLiquidGlassOn = state.value.isLiquidGlassOn
             )
             settingsStorage.set(settings)
             _state.update {

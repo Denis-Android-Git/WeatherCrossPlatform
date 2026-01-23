@@ -55,5 +55,7 @@
     <string name="forecast_by">Forecast by</string>
     <string name="about_app">About application</string>
     <string name="policy">Privacy policy</string>
+    <string name="liquid_glass">Liquid glass</string>
+    <string name="liquid_glass_desc">Toggle liquid glass effect</string>
 
 </resources>

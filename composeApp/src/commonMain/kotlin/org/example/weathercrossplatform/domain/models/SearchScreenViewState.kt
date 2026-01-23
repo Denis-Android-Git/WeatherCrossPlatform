@@ -12,5 +12,6 @@ data class SearchScreenViewState(
     val pageNumber: Int? = null,
     val allCitiesInOriginalOrder: List<SavedWeatherItem> = emptyList(),
     val allCities: List<SavedWeatherItem> = emptyList(),
-    val isTempC: Boolean = true
+    val isTempC: Boolean = true,
+    val isLiquidGlassOn: Boolean = false
 )

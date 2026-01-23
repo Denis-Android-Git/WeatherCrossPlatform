@@ -80,7 +80,8 @@ class SearchViewModel(
                 settingsInfo?.let { info ->
                     _searchScreenState.update {
                         it.copy(
-                            isTempC = info.isTempC
+                            isTempC = info.isTempC,
+                            isLiquidGlassOn = info.isLiquidGlassOn
                         )
                     }
                 }

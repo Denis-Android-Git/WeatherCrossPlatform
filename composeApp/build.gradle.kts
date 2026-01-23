@@ -45,7 +45,7 @@ kotlin {
         //val desktopMain by getting
 
         androidMain.dependencies {
-            implementation(compose.preview)
+            implementation(libs.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.ktor.client.okhttp)
             implementation(libs.play.services.location)
@@ -61,12 +61,12 @@ kotlin {
 
         }
         commonMain.dependencies {
-            implementation(compose.runtime)
-            implementation(compose.foundation)
+            implementation(libs.runtime)
+            implementation(libs.foundation)
             //implementation(compose.material3)
-            implementation(compose.ui)
-            implementation(compose.components.resources)
-            implementation(compose.components.uiToolingPreview)
+            implementation(libs.ui)
+            implementation(libs.components.resources)
+            implementation(libs.ui.tooling.preview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(libs.bundles.ktor)
@@ -95,10 +95,12 @@ kotlin {
             api(libs.gitlive.firebase.kotlin.crashlytics)
 
             implementation(libs.kotlinx.datetime)
+            //Liquid glass
+            implementation(libs.backdrop)
 
         }
         kotzilla {
-            versionName = "1.0.0" // add your app version name
+            versionName = "1.1.1" // add your app version name
             keyGeneration = KotzillaKeyGeneration.COMPOSE
             composeInstrumentation = true
         }
@@ -120,8 +122,8 @@ android {
         applicationId = "org.example.weathercrossplatform"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 51
-        versionName = "1.0.0"
+        versionCode = 55
+        versionName = "1.1.1"
 
     }
     packaging {
@@ -161,7 +163,7 @@ buildkonfig {
 }
 
 dependencies {
-    debugImplementation(compose.uiTooling)
+    debugImplementation(libs.ui.tooling)
     debugImplementation(libs.leakcanary.android)
 
 }

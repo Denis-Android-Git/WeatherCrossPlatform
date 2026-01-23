@@ -1,11 +1,9 @@
 package org.example.weathercrossplatform.presentation.elements
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -14,8 +12,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.kashif_e.backdrop.backdrops.LayerBackdrop
+import com.kashif_e.backdrop.backdrops.rememberLayerBackdrop
 import org.example.weathercrossplatform.data.utils.UiText
 import org.example.weathercrossplatform.presentation.icons.CloudsIcon
 import org.example.weathercrossplatform.presentation.icons.FeelsLikeIcon
@@ -23,8 +24,9 @@ import org.example.weathercrossplatform.presentation.icons.HumidityIcon
 import org.example.weathercrossplatform.presentation.icons.PressureIndicator
 import org.example.weathercrossplatform.presentation.icons.UvIcon
 import org.example.weathercrossplatform.presentation.icons.WindIcon
+import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass2
+import org.example.weathercrossplatform.presentation.modifier.noLiquidGlass
 import org.jetbrains.compose.resources.StringResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.clouds
 import weathercrossplatform.composeapp.generated.resources.feels_like
@@ -36,6 +38,7 @@ import weathercrossplatform.composeapp.generated.resources.wind
 
 @Composable
 fun WeatherDetailElement(
+    modifier: Modifier = Modifier,
     title: StringResource,
     description: String,
     humidity: Float,
@@ -45,7 +48,9 @@ fun WeatherDetailElement(
     windRotation: Float,
     feelsLikeRotation: Float,
     uvIndex: String,
-    isPressureMb: Boolean
+    isPressureMb: Boolean,
+    backdrop: LayerBackdrop,
+    isLiquidGlassOn: Boolean
 ) {
 
     val descriptionList = description.split(" ")
@@ -67,13 +72,25 @@ fun WeatherDetailElement(
         }
     }
     Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(
-                color = Color.Black.copy(alpha = 0.3f),
-                shape = RoundedCornerShape(16.dp)
-            )
-            .padding(horizontal = 16.dp, vertical = 16.dp),
+        modifier = if (isLiquidGlassOn) {
+            modifier
+                .fillMaxWidth()
+                .myLiquidGlass2(backdrop)
+//            .background(
+//                color = Color.Black.copy(alpha = 0.3f),
+//                shape = RoundedCornerShape(16.dp)
+//            )
+                .padding(horizontal = 16.dp, vertical = 16.dp)
+        } else {
+            modifier
+                .fillMaxWidth()
+                .noLiquidGlass()
+//            .background(
+//                color = Color.Black.copy(alpha = 0.3f),
+//                shape = RoundedCornerShape(16.dp)
+//            )
+                .padding(horizontal = 16.dp, vertical = 16.dp)
+        },
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Text(
@@ -143,6 +160,8 @@ fun WeatherDetailElementPreview() {
         windRotation = 0.5f,
         feelsLikeRotation = 0.5f,
         uvIndex = "5",
-        isPressureMb = false
+        isPressureMb = false,
+        backdrop = rememberLayerBackdrop(),
+        isLiquidGlassOn = false
     )
 }
