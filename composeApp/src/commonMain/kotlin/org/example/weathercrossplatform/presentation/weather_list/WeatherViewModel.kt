@@ -8,6 +8,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
@@ -49,11 +51,11 @@ class WeatherViewModel(
     private val weatherRepoImpl: WeatherRepoImpl,
     private val dataBaseRepo: DataBaseRepo,
     private val myLogger: MyLogger,
-    private val settingsStorage: SettingsStorage,
+    
+    settingsStorage: SettingsStorage,
     pageNumberFromSearchScreen: Int?,
     cityIdFromSearchScreen: Int?
 ) : ViewModel() {
-
     private val coordinates = MutableStateFlow<Coordinates?>(null)
     private val _weatherScreenState = MutableStateFlow(WeatherMainScreenState())
     val weatherScreenState = _weatherScreenState.asStateFlow()
@@ -61,20 +63,19 @@ class WeatherViewModel(
 
     init {
         myLogger.debug("WeatherViewModel_init")
-        viewModelScope.launch {
-            settingsStorage.observeSettingsInfo().collect { info ->
-                info?.let { settingsInfo ->
-                    _weatherScreenState.update {
-                        it.copy(
-                            isTempC = settingsInfo.isTempC,
-                            isWindKph = settingsInfo.isWindKph,
-                            isPressureMb = settingsInfo.isPressureMb,
-                            isLiquidGlassOn = settingsInfo.isLiquidGlassOn
-                        )
-                    }
+        settingsStorage.observeSettingsInfo().onEach { info ->
+            info?.let { settingsInfo ->
+                _weatherScreenState.update {
+                    it.copy(
+                        isTempC = settingsInfo.isTempC,
+                        isWindKph = settingsInfo.isWindKph,
+                        isPressureMb = settingsInfo.isPressureMb,
+                        isLiquidGlassOn = settingsInfo.isLiquidGlassOn
+                    )
                 }
             }
-        }
+        }.launchIn(viewModelScope)
+
         viewModelScope.launch {
             myLogger.debug("pageNumberFromSearchScreen = $pageNumberFromSearchScreen")
             myLogger.debug("cityIdFromSearchScreen = $cityIdFromSearchScreen")
@@ -132,7 +133,10 @@ class WeatherViewModel(
             }
 
             is MainScreenActions.UpdatePage -> updatePage(actions.page)
-            is MainScreenActions.PullToRefresh -> pullToRefresh(actions.query, actions.isCurrentLocation)
+            is MainScreenActions.PullToRefresh -> pullToRefresh(
+                actions.query,
+                actions.isCurrentLocation
+            )
         }
     }
 
@@ -233,8 +237,10 @@ class WeatherViewModel(
                             if (it.length > 100) it.take(100) else it //fix OutOfMemoryError
                         }
                         dataBaseRepo.clearCurrentLocation()
-                        val highTemp = if (isTempC) weather.forecast.forecastday[0].day.maxTempC else weather.forecast.forecastday[0].day.maxTempF
-                        val lowTemp = if (isTempC) weather.forecast.forecastday[0].day.minTempC else weather.forecast.forecastday[0].day.minTempF
+                        val highTemp =
+                            if (isTempC) weather.forecast.forecastday[0].day.maxTempC else weather.forecast.forecastday[0].day.maxTempF
+                        val lowTemp =
+                            if (isTempC) weather.forecast.forecastday[0].day.minTempC else weather.forecast.forecastday[0].day.minTempF
                         myLogger.debug("check_settings highTemp = $highTemp, lowTemp = $lowTemp")
                         dataBaseRepo.saveWeather(
                             weather = SavedWeatherItem(
@@ -403,7 +409,11 @@ class WeatherViewModel(
         return ((pressure - minPressure).toFloat() / (maxPressure - minPressure))
     }
 
-    private fun calculateRotationAngle(temperature: Double, feelsLike: Double, isTempC: Boolean): Float {
+    private fun calculateRotationAngle(
+        temperature: Double,
+        feelsLike: Double,
+        isTempC: Boolean
+    ): Float {
         val diff = feelsLike - temperature
         return (diff * if (isTempC) 20 else 11).toFloat()
     }
