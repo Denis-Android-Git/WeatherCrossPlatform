@@ -20,6 +20,10 @@ class DataBaseRepoImpl(
         weatherDao.deleteWeather(weather)
     }
 
+    override suspend fun deleteWeatherList(weatherList: List<SavedWeatherItem>) {
+        weatherDao.deleteWeatherList(weatherList)
+    }
+
     override suspend fun clearCurrentLocation() {
         weatherDao.clearCurrentLocation()
     }

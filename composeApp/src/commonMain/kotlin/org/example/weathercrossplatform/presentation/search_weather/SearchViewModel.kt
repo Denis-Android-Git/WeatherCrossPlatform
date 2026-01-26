@@ -157,10 +157,8 @@ class SearchViewModel(
 
     private fun deleteTempCityList(tempCityList: List<SavedWeatherItem>) {
         viewModelScope.launch {
-            tempCityList.forEach {
-                dataBaseRepo.deleteWeather(it)
-                setTempList(it)
-            }
+            dataBaseRepo.deleteWeatherList(tempCityList)
+            setTempList(null)
         }
     }
 
