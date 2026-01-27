@@ -84,7 +84,8 @@ fun MainScreenState(
         isRefreshing = weatherMainScreenState.isLoading,
         indicator = {
             CustomIndicator(
-                modifier = Modifier.align(Alignment.TopCenter).systemBarsPadding(),//padding(top = 56.dp),
+                modifier = Modifier.align(Alignment.TopCenter)
+                    .systemBarsPadding(),//padding(top = 56.dp),
                 state = state,
                 isRefreshing = weatherMainScreenState.isLoading,
                 containerColor = Color.Transparent,
@@ -93,9 +94,17 @@ fun MainScreenState(
             )
         },
         onRefresh = {
-            val query = weatherMainScreenState.savedCities[weatherMainScreenState.pageNumber].coordinates
-            val isCurrentLocation = weatherMainScreenState.savedCities[weatherMainScreenState.pageNumber].isCurrentLocation
-            weatherViewModel.onAction(MainScreenActions.PullToRefresh(query, isCurrentLocation))
+            if (weatherMainScreenState.savedCities.isNotEmpty()) {
+                myLogger.debug("onRefresh isNotEmpty")
+                val query =
+                    weatherMainScreenState.savedCities[weatherMainScreenState.pageNumber].coordinates
+                val isCurrentLocation =
+                    weatherMainScreenState.savedCities[weatherMainScreenState.pageNumber].isCurrentLocation
+                weatherViewModel.onAction(MainScreenActions.PullToRefresh(query, isCurrentLocation))
+            } else {
+                myLogger.debug("onRefresh else")
+                weatherViewModel.onAction(MainScreenActions.Init)
+            }
         },
     ) {
 
@@ -104,7 +113,8 @@ fun MainScreenState(
                 state = pagerState,
                 userScrollEnabled = !weatherMainScreenState.isLoading
             ) { pageNumber ->
-                val isCurrentLocation = weatherMainScreenState.savedCities[pageNumber].isCurrentLocation
+                val isCurrentLocation =
+                    weatherMainScreenState.savedCities[pageNumber].isCurrentLocation
                 MainScreen(
                     onAddButtonClick = { onAddButtonClick(pageNumber) },
                     onCancelButtonClick = onCancelButtonClick,
@@ -116,7 +126,8 @@ fun MainScreenState(
                         }
                     },
                     savedCityList = weatherMainScreenState.savedCities,
-                    cityId = weatherMainScreenState.cityId ?: weatherMainScreenState.savedCities[pageNumber].cityId,
+                    cityId = weatherMainScreenState.cityId
+                        ?: weatherMainScreenState.savedCities[pageNumber].cityId,
                     isCurrentLocation = isCurrentLocation,
                     weatherMainScreenState = weatherMainScreenState,
                     onSettingsClick = onSettingsClick,
@@ -126,7 +137,8 @@ fun MainScreenState(
             }
             AnimatedVisibility(
                 visible = !weatherMainScreenState.isAddCity,
-                modifier = Modifier.align(Alignment.TopStart).systemBarsPadding().padding(start = 16.dp),
+                modifier = Modifier.align(Alignment.TopStart).systemBarsPadding()
+                    .padding(start = 16.dp),
             ) {
                 MyPagerIndicator(
                     pagerState = pagerState
