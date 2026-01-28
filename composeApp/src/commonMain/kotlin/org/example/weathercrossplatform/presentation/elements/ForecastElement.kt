@@ -22,8 +22,8 @@ import org.example.weathercrossplatform.domain.models.Astro
 import org.example.weathercrossplatform.domain.models.Condition
 import org.example.weathercrossplatform.domain.models.Day
 import org.example.weathercrossplatform.domain.models.Forecastday
-import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass2
-import org.example.weathercrossplatform.presentation.modifier.noLiquidGlass
+import org.example.weathercrossplatform.presentation.utils.myLiquidGlass2
+import org.example.weathercrossplatform.presentation.utils.noLiquidGlass
 import org.jetbrains.compose.resources.stringResource
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources._3_day_forecast

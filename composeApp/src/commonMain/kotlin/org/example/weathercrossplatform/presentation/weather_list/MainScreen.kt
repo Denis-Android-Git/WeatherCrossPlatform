@@ -80,8 +80,8 @@ import org.example.weathercrossplatform.presentation.elements.Forecast24Hour
 import org.example.weathercrossplatform.presentation.elements.LiquidButton
 import org.example.weathercrossplatform.presentation.elements.ThreeDaysForecast
 import org.example.weathercrossplatform.presentation.elements.WeatherDetailElement
-import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass2
-import org.example.weathercrossplatform.presentation.modifier.noLiquidGlass
+import org.example.weathercrossplatform.presentation.utils.myLiquidGlass2
+import org.example.weathercrossplatform.presentation.utils.noLiquidGlass
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource

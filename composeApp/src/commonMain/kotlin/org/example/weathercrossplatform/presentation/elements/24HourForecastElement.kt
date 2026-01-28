@@ -21,8 +21,8 @@ import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Condition
 import org.example.weathercrossplatform.domain.models.Hour
-import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass2
-import org.example.weathercrossplatform.presentation.modifier.noLiquidGlass
+import org.example.weathercrossplatform.presentation.utils.myLiquidGlass2
+import org.example.weathercrossplatform.presentation.utils.noLiquidGlass
 import org.jetbrains.compose.resources.stringResource
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources._24h_forecast

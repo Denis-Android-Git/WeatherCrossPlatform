@@ -1,4 +1,4 @@
-package org.example.weathercrossplatform.presentation.modifier
+package org.example.weathercrossplatform.presentation.utils
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.shape.RoundedCornerShape

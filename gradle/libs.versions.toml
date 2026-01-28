@@ -53,9 +53,15 @@ uiToolingPreview = "1.10.0"
 #androidx-material = "1.12.0"
 #androidx-test-junit = "1.2.1"
 #junit = "4.13.2"
+adaptive = "1.2.0"
 
 
 [libraries]
+
+# Material3 Adaptive
+material3-adaptive = { module = "org.jetbrains.compose.material3.adaptive:adaptive", version.ref = "adaptive" }
+material3-adaptive-layout = { module = "org.jetbrains.compose.material3.adaptive:adaptive-layout", version.ref = "adaptive" }
+material3-adaptive-navigation = { module = "org.jetbrains.compose.material3.adaptive:adaptive-navigation", version.ref = "adaptive" }
 backdrop = { module = "io.github.kashif-mehmood-km:backdrop", version.ref = "backdrop" }
 components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "componentsResources" }
 core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "core-splashscreen" }

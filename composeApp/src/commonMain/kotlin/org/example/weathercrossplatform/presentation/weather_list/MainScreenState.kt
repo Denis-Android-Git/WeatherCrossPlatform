@@ -94,16 +94,23 @@ fun MainScreenState(
             )
         },
         onRefresh = {
-            if (weatherMainScreenState.savedCities.isNotEmpty()) {
-                myLogger.debug("onRefresh isNotEmpty")
-                val query =
-                    weatherMainScreenState.savedCities[weatherMainScreenState.pageNumber].coordinates
-                val isCurrentLocation =
-                    weatherMainScreenState.savedCities[weatherMainScreenState.pageNumber].isCurrentLocation
-                weatherViewModel.onAction(MainScreenActions.PullToRefresh(query, isCurrentLocation))
-            } else {
-                myLogger.debug("onRefresh else")
-                weatherViewModel.onAction(MainScreenActions.Init)
+            scope.launch {
+                if (weatherMainScreenState.savedCities.isNotEmpty()) {
+                    myLogger.debug("onRefresh isNotEmpty")
+                    val query =
+                        weatherMainScreenState.savedCities[weatherMainScreenState.pageNumber].coordinates
+                    val isCurrentLocation =
+                        weatherMainScreenState.savedCities[weatherMainScreenState.pageNumber].isCurrentLocation
+                    weatherViewModel.onAction(
+                        MainScreenActions.PullToRefresh(
+                            query,
+                            isCurrentLocation
+                        )
+                    )
+                } else {
+                    myLogger.debug("onRefresh else")
+                    weatherViewModel.onAction(MainScreenActions.Init)
+                }
             }
         },
     ) {

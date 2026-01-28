@@ -30,8 +30,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kashif_e.backdrop.backdrops.LayerBackdrop
 import com.kashif_e.backdrop.backdrops.rememberLayerBackdrop
-import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass2
-import org.example.weathercrossplatform.presentation.modifier.noLiquidGlass
+import org.example.weathercrossplatform.presentation.utils.myLiquidGlass2
+import org.example.weathercrossplatform.presentation.utils.noLiquidGlass
 
 @Composable
 fun SavedElement(

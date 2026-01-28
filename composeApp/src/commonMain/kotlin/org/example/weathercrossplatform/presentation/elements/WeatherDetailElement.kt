@@ -24,8 +24,8 @@ import org.example.weathercrossplatform.presentation.icons.HumidityIcon
 import org.example.weathercrossplatform.presentation.icons.PressureIndicator
 import org.example.weathercrossplatform.presentation.icons.UvIcon
 import org.example.weathercrossplatform.presentation.icons.WindIcon
-import org.example.weathercrossplatform.presentation.modifier.myLiquidGlass2
-import org.example.weathercrossplatform.presentation.modifier.noLiquidGlass
+import org.example.weathercrossplatform.presentation.utils.myLiquidGlass2
+import org.example.weathercrossplatform.presentation.utils.noLiquidGlass
 import org.jetbrains.compose.resources.StringResource
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.clouds

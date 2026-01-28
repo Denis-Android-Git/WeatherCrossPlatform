@@ -97,6 +97,10 @@ kotlin {
             implementation(libs.kotlinx.datetime)
             //Liquid glass
             implementation(libs.backdrop)
+            //Adaptive
+            implementation(libs.material3.adaptive)
+            implementation(libs.material3.adaptive.layout)
+            implementation(libs.material3.adaptive.navigation)
 
         }
         kotzilla {
