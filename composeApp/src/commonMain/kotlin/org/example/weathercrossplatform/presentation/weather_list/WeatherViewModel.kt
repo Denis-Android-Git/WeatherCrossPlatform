@@ -51,10 +51,10 @@ class WeatherViewModel(
     private val weatherRepoImpl: WeatherRepoImpl,
     private val dataBaseRepo: DataBaseRepo,
     private val myLogger: MyLogger,
-    
     settingsStorage: SettingsStorage,
     pageNumberFromSearchScreen: Int?,
-    cityIdFromSearchScreen: Int?
+    cityIdFromSearchScreen: Int?,
+    orientation: String
 ) : ViewModel() {
     private val coordinates = MutableStateFlow<Coordinates?>(null)
     private val _weatherScreenState = MutableStateFlow(WeatherMainScreenState())
@@ -104,7 +104,7 @@ class WeatherViewModel(
                 val savedCities = allCities.firstOrNull() ?: emptyList()
                 //myLogger.debug("getWeatherByQuery savedCities = ${savedCities.joinToString("\n") { item -> item.cityName }}")
                 if (page in savedCities.indices) {
-                    getWeatherByQuery(savedCities[page].coordinates)
+                    getWeatherByQuery(savedCities[page].coordinates, orientation)
                 }
                 _weatherScreenState.update {
                     it.copy(
@@ -116,26 +116,27 @@ class WeatherViewModel(
         viewModelScope.launch {
             weatherScreenState.value.cityId?.let { cityId ->
                 myLogger.debug("getWeatherByQuery in let block")
-                getWeatherByQuery("id:$cityId")
+                getWeatherByQuery("id:$cityId", orientation)
             }
         }
     }
 
     fun onAction(actions: MainScreenActions) {
         when (actions) {
-            MainScreenActions.Init -> init()
+            is MainScreenActions.Init -> init(actions.orientation)
             MainScreenActions.RefreshPosition -> refreshPosition()
             is MainScreenActions.SetCityId -> setCityId(actions.cityId)
             is MainScreenActions.AddCity -> addCity(actions.city)
             is MainScreenActions.GetWeatherByQuery -> {
                 myLogger.debug("fun_GetWeatherByQuery, MainScreenActions.GetWeatherByQuery")
-                getWeatherByQuery(actions.query)
+                getWeatherByQuery(actions.query, actions.orientation)
             }
 
             is MainScreenActions.UpdatePage -> updatePage(actions.page)
             is MainScreenActions.PullToRefresh -> pullToRefresh(
                 actions.query,
-                actions.isCurrentLocation
+                actions.isCurrentLocation,
+                actions.orientation
             )
         }
     }
@@ -151,7 +152,7 @@ class WeatherViewModel(
         }
     }
 
-    private fun pullToRefresh(query: String, isCurrentLocation: Boolean) {
+    private fun pullToRefresh(query: String, isCurrentLocation: Boolean, orientation: String) {
         viewModelScope.launch {
             val now = Clock.System.now()
             val initialTime = weatherScreenState.value.initialTime
@@ -168,7 +169,12 @@ class WeatherViewModel(
                         myLogger.debug("time_check: if block")
                         val query = "${it.latitude},${it.longitude}"
                         myLogger.debug("fun_GetWeatherByQuery, pullToRefresh")
-                        getWeatherByQuery(query, it.latitude, it.longitude)
+                        getWeatherByQuery(
+                            query,
+                            orientation = orientation,
+                            it.latitude,
+                            it.longitude
+                        )
                         _weatherScreenState.update { state ->
                             state.copy(
                                 initialTime = Clock.System.now()
@@ -178,7 +184,7 @@ class WeatherViewModel(
                 }
             } else {
                 myLogger.debug("time_check: else block")
-                getWeatherByQuery(query)
+                getWeatherByQuery(query, orientation)
             }
         }
     }
@@ -190,7 +196,7 @@ class WeatherViewModel(
         }
     }
 
-    private fun init() {
+    private fun init(orientation: String) {
         myLogger.debug("fun_init")
         viewModelScope.launch(Dispatchers.IO) {
             myLogger.debug("city_id = ${_weatherScreenState.value.cityId}")
@@ -200,12 +206,12 @@ class WeatherViewModel(
                     coordinates?.let {
                         val query = "${it.latitude},${it.longitude}"
                         myLogger.debug("fun_GetWeatherByQuery, init cityId == null")
-                        getWeatherByQuery(query, it.latitude, it.longitude)
+                        getWeatherByQuery(query, orientation, it.latitude, it.longitude)
                     }
                 }
             } else {
                 myLogger.debug("fun_GetWeatherByQuery, init cityId not null")
-                getWeatherByQuery("id:${_weatherScreenState.value.cityId}")
+                getWeatherByQuery("id:${_weatherScreenState.value.cityId}", orientation)
             }
         }
     }
@@ -219,6 +225,7 @@ class WeatherViewModel(
 
     private fun getWeatherByQuery(
         query: String,
+        orientation: String,
         latitude: Double? = null,
         longitude: Double? = null
     ) {
@@ -297,7 +304,7 @@ class WeatherViewModel(
 
                     myLogger.debug("imageQuery=$imageQuery")
 
-                    weatherRepoImpl.getImageList(imageQuery)
+                    weatherRepoImpl.getImageList(imageQuery, orientation)
                         .onSuccess { imageList ->
                             myLogger.debug("imageList=${imageList.results.size}")
 

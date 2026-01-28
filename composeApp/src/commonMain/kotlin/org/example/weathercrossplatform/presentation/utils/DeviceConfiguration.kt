@@ -25,6 +25,9 @@ enum class DeviceConfiguration {
     val isMobile: Boolean
         get() = this in listOf(MOBILE_LANDSCAPE, MOBILE_PORTRAIT)
 
+    val isPortrait: Boolean
+        get() = this in listOf(MOBILE_PORTRAIT, TABLET_PORTRAIT)
+
     val isWideScreen: Boolean
         get() = this in listOf(TABLET_LANDSCAPE, DESKTOP)
 

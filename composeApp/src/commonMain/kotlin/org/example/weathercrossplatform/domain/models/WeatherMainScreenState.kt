@@ -18,6 +18,20 @@ import weathercrossplatform.composeapp.generated.resources.im_6
 import weathercrossplatform.composeapp.generated.resources.im_7
 import weathercrossplatform.composeapp.generated.resources.im_8
 import weathercrossplatform.composeapp.generated.resources.im_9
+import weathercrossplatform.composeapp.generated.resources.landscape_1
+import weathercrossplatform.composeapp.generated.resources.landscape_10
+import weathercrossplatform.composeapp.generated.resources.landscape_11
+import weathercrossplatform.composeapp.generated.resources.landscape_12
+import weathercrossplatform.composeapp.generated.resources.landscape_13
+import weathercrossplatform.composeapp.generated.resources.landscape_14
+import weathercrossplatform.composeapp.generated.resources.landscape_2
+import weathercrossplatform.composeapp.generated.resources.landscape_3
+import weathercrossplatform.composeapp.generated.resources.landscape_4
+import weathercrossplatform.composeapp.generated.resources.landscape_5
+import weathercrossplatform.composeapp.generated.resources.landscape_6
+import weathercrossplatform.composeapp.generated.resources.landscape_7
+import weathercrossplatform.composeapp.generated.resources.landscape_8
+import weathercrossplatform.composeapp.generated.resources.landscape_9
 import kotlin.time.Clock
 import kotlin.time.Instant
 
@@ -46,6 +60,22 @@ data class WeatherMainScreenState(
         Res.drawable.im_11,
         Res.drawable.im_12,
         Res.drawable.im_13
+    ),
+    val landscapePhotoList: List<DrawableResource> = listOf(
+        Res.drawable.landscape_1,
+        Res.drawable.landscape_2,
+        Res.drawable.landscape_3,
+        Res.drawable.landscape_4,
+        Res.drawable.landscape_5,
+        Res.drawable.landscape_6,
+        Res.drawable.landscape_7,
+        Res.drawable.landscape_8,
+        Res.drawable.landscape_9,
+        Res.drawable.landscape_10,
+        Res.drawable.landscape_11,
+        Res.drawable.landscape_12,
+        Res.drawable.landscape_13,
+        Res.drawable.landscape_14,
     ),
     val isTempC: Boolean = true,
     val isWindKph: Boolean = true,
