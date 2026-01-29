@@ -8,6 +8,8 @@ import io.ktor.client.request.get
 import io.ktor.client.request.parameter
 import io.ktor.client.request.url
 import io.ktor.client.statement.HttpResponse
+import org.example.weathercrossplatform.data.constants.Constants.BASE_URL_IMAGES
+import org.example.weathercrossplatform.data.constants.Constants.BASE_URL_WEATHER
 import org.example.weathercrossplatform.data.utils.NetworkError
 import org.example.weathercrossplatform.data.utils.Result
 
@@ -29,9 +31,9 @@ suspend inline fun <reified Response : Any> HttpClient.getWeather(
 
 fun constructRouteWeather(route: String): String {
     return when {
-        route.contains(UrlConstant.BASE_URL_WEATHER) -> route
-        route.startsWith("/") -> "${UrlConstant.BASE_URL_WEATHER}$route"
-        else -> "${UrlConstant.BASE_URL_WEATHER}/$route"
+        route.contains(BASE_URL_WEATHER) -> route
+        route.startsWith("/") -> "${BASE_URL_WEATHER}$route"
+        else -> "${BASE_URL_WEATHER}/$route"
     }
 }
 
@@ -53,9 +55,9 @@ suspend inline fun <reified Response : Any> HttpClient.getImage(
 
 fun constructRouteImage(route: String): String {
     return when {
-        route.contains(UrlConstant.BASE_URL_IMAGES) -> route
-        route.startsWith("/") -> "${UrlConstant.BASE_URL_IMAGES}$route"
-        else -> "${UrlConstant.BASE_URL_IMAGES}/$route"
+        route.contains(BASE_URL_IMAGES) -> route
+        route.startsWith("/") -> "${BASE_URL_IMAGES}$route"
+        else -> "${BASE_URL_IMAGES}/$route"
     }
 }
 
