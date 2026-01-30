@@ -8,13 +8,12 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.systemBars
+import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -52,6 +51,7 @@ import org.example.weathercrossplatform.domain.models.Location
 import org.example.weathercrossplatform.domain.models.SearchScreenViewState
 import org.example.weathercrossplatform.presentation.elements.FoundItem
 import org.example.weathercrossplatform.presentation.elements.SavedElement
+import org.example.weathercrossplatform.presentation.utils.currentDeviceConfiguration
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import weathercrossplatform.composeapp.generated.resources.Res
@@ -61,6 +61,7 @@ import weathercrossplatform.composeapp.generated.resources.city_search
 import weathercrossplatform.composeapp.generated.resources.current_place
 import weathercrossplatform.composeapp.generated.resources.enter_city
 import weathercrossplatform.composeapp.generated.resources.im_14
+import weathercrossplatform.composeapp.generated.resources.im_14_landscape
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
@@ -85,12 +86,15 @@ fun SearchScreen(
     val isLongPressed = remember { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
     val backdrop = rememberLayerBackdrop()
+    val configuration = currentDeviceConfiguration()
+    val backGround =
+        if (configuration.isPortrait) Res.drawable.im_14 else Res.drawable.im_14_landscape
     Box(
         modifier = modifier.fillMaxSize()
         //.background(color = Color.Black)
     ) {
         Image(
-            painter = painterResource(Res.drawable.im_14),
+            painter = painterResource(backGround),
             contentDescription = null,
             modifier = Modifier
                 .layerBackdrop(backdrop),
@@ -102,7 +106,7 @@ fun SearchScreen(
                 Modifier.fillMaxSize()
             } else {
                 Modifier.fillMaxSize()
-                    .padding(WindowInsets.systemBars.asPaddingValues())//padding between Box and systemBars
+                    .systemBarsPadding()//padding between Box and systemBars
                     .padding(horizontal = 8.dp)
             }
         ) {
@@ -150,7 +154,9 @@ fun SearchScreen(
 
             SearchBar(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .widthIn(max = 600.dp)
+                    .fillMaxWidth()
+                    .align(Alignment.CenterHorizontally),
                 shadowElevation = 10.dp,
                 colors = SearchBarDefaults.colors(
                     containerColor = Color.Black
@@ -169,10 +175,13 @@ fun SearchScreen(
                         onExpandedChange = {
                             onExpandedChange(it)
                         },
+                        modifier = Modifier
+                            .padding(horizontal = 16.dp),
                         placeholder = {
                             Text(text = stringResource(Res.string.enter_city))
                         },
                         leadingIcon = {
+
                             AnimatedVisibility(!searchScreenState.expanded) {
                                 Icon(
                                     imageVector = Icons.Default.Search,
@@ -182,7 +191,7 @@ fun SearchScreen(
                             }
                         },
                         trailingIcon = {
-                            AnimatedVisibility(searchScreenState.expanded) {
+                            androidx.compose.animation.AnimatedVisibility(searchScreenState.expanded) {
                                 Text(
                                     text = stringResource(Res.string.cancel),
                                     modifier = Modifier
@@ -238,7 +247,10 @@ fun SearchScreen(
 
             }
             LazyColumn(
-                modifier = Modifier.padding(top = 16.dp),
+                modifier = Modifier
+                    .widthIn(max = 600.dp)
+                    .padding(top = 16.dp)
+                    .align(Alignment.CenterHorizontally),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 item {
@@ -283,7 +295,9 @@ fun SearchScreen(
                             }
                         },
                         isLongPressed = isLongPressed.value,
-                        isListContainsElement = searchScreenState.tempListToDelete.contains(savedCity),
+                        isListContainsElement = searchScreenState.tempListToDelete.contains(
+                            savedCity
+                        ),
                         isCurrentLocation = savedCity.isCurrentLocation,
                         isTempC = searchScreenState.isTempC,
                         backdrop = backdrop,

@@ -9,5 +9,5 @@ import org.example.weathercrossplatform.domain.models.Location
 interface WeatherRepo {
     suspend fun getCurrentWeather(query: String): Result<ForecastDto, NetworkError>
     suspend fun searchPlaces(query: String): Result<List<Location>, NetworkError>
-    suspend fun getImageList(query: String): Result<ImageListDto, NetworkError>
+    suspend fun getImageList(query: String, orientation: String): Result<ImageListDto, NetworkError>
 }

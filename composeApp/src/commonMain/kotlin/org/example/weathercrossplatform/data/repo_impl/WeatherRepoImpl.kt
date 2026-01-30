@@ -2,8 +2,8 @@ package org.example.weathercrossplatform.data.repo_impl
 
 import com.example.weathercrossplatform.BuildKonfig
 import io.ktor.client.HttpClient
+import org.example.weathercrossplatform.data.constants.Constants.BASE_URL_IMAGES
 import org.example.weathercrossplatform.data.locale.SystemLocale
-import org.example.weathercrossplatform.data.network.UrlConstant.BASE_URL_IMAGES
 import org.example.weathercrossplatform.data.network.dto.ForecastDto
 import org.example.weathercrossplatform.data.network.dto.ImageListDto
 import org.example.weathercrossplatform.data.network.getImage
@@ -47,13 +47,13 @@ class WeatherRepoImpl(
         )
     }
 
-    override suspend fun getImageList(query: String): Result<ImageListDto, NetworkError> {
+    override suspend fun getImageList(query: String, orientation: String): Result<ImageListDto, NetworkError> {
 
         val randomPage = (1..5).random().toString()
         val queryParams = mapOf(
             "client_id" to BuildKonfig.API_KEY2,
             "query" to query,
-            "orientation" to "portrait",
+            "orientation" to orientation,
             "page" to randomPage
         )
 

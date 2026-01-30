@@ -7,6 +7,8 @@ import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.togetherWith
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import androidx.navigation3.runtime.NavKey
@@ -35,14 +37,16 @@ fun NavHostMainScreen(
 ) {
 
     val navHostViewModel = koinViewModel<NavHostViewModel>()
-
     val backStack = rememberNavBackStack(
         configuration = SavedStateConfiguration {
             serializersModule = SerializersModule {
                 polymorphic(NavKey::class) {
                     subclass(MainScreenRoute::class, MainScreenRoute.serializer())
                     subclass(Routes.SearchScreenRoute::class, Routes.SearchScreenRoute.serializer())
-                    subclass(Routes.SettingsScreenRoute::class, Routes.SettingsScreenRoute.serializer())
+                    subclass(
+                        Routes.SettingsScreenRoute::class,
+                        Routes.SettingsScreenRoute.serializer()
+                    )
                 }
             }
         },
@@ -82,6 +86,11 @@ fun NavHostMainScreen(
         entryProvider = entryProvider {
 
             entry<MainScreenRoute> { mainScreen ->
+
+                val orientation = remember {
+                    mutableStateOf("")
+                }
+
                 MainScreenState(
                     onAddButtonClick = { pageNumber ->
                         backStack.add(Routes.SearchScreenRoute(pageNumber))
@@ -98,8 +107,9 @@ fun NavHostMainScreen(
                     },
                     modifier = modifier,
                     weatherViewModel = koinViewModel {
-                        parametersOf(mainScreen.pageNumber, mainScreen.cityId)
+                        parametersOf(mainScreen.pageNumber, mainScreen.cityId, orientation.value)
                     },
+                    orientation = orientation,
                 )
             }
 
