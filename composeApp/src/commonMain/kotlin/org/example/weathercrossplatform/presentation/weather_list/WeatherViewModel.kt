@@ -14,7 +14,6 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.locationservice.LocationService
-import org.example.weathercrossplatform.data.repo_impl.WeatherRepoImpl
 import org.example.weathercrossplatform.data.utils.onError
 import org.example.weathercrossplatform.data.utils.onSuccess
 import org.example.weathercrossplatform.data.utils.toUiText
@@ -25,6 +24,7 @@ import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 import org.example.weathercrossplatform.domain.repo.DataBaseRepo
 import org.example.weathercrossplatform.domain.repo.SettingsStorage
+import org.example.weathercrossplatform.domain.repo.WeatherRepo
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.clouds
 import weathercrossplatform.composeapp.generated.resources.extreme
@@ -48,7 +48,7 @@ private const val MIN_AIR_PRESSURE_INCH = 28
 
 class WeatherViewModel(
     private val locationService: LocationService,
-    private val weatherRepoImpl: WeatherRepoImpl,
+    private val weatherRepo: WeatherRepo,
     private val dataBaseRepo: DataBaseRepo,
     private val myLogger: MyLogger,
     settingsStorage: SettingsStorage,
@@ -232,7 +232,7 @@ class WeatherViewModel(
         viewModelScope.launch {
             myLogger.debug("fun_getWeatherByQuery")
             _weatherScreenState.value = _weatherScreenState.value.copy(isLoading = true)
-            weatherRepoImpl.getCurrentWeather(query)
+            weatherRepo.getCurrentWeather(query)
                 .onSuccess { weather ->
                     myLogger.debug("location.id = ${weather.location.id}")
                     val isTempC = weatherScreenState.value.isTempC
@@ -304,7 +304,7 @@ class WeatherViewModel(
 
                     myLogger.debug("imageQuery=$imageQuery")
 
-                    weatherRepoImpl.getImageList(imageQuery, orientation)
+                    weatherRepo.getImageList(imageQuery, orientation)
                         .onSuccess { imageList ->
                             myLogger.debug("imageList=${imageList.results.size}")
 

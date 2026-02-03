@@ -1,5 +1,9 @@
 package org.example.weathercrossplatform.di
 
+import androidx.sqlite.driver.bundled.BundledSQLiteDriver
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.IO
+import org.example.weathercrossplatform.data.database.DbFactory
 import org.example.weathercrossplatform.data.repo_impl.DataBaseRepoImpl
 import org.example.weathercrossplatform.data.repo_impl.DataStoreSettingsStorage
 import org.example.weathercrossplatform.data.repo_impl.WeatherRepoImpl
@@ -20,14 +24,23 @@ import org.koin.dsl.module
 expect val platformModule: Module
 
 val sharedModule = module {
+    single {
+        get<DbFactory>()
+            .create()
+            .setDriver(BundledSQLiteDriver())
+            .fallbackToDestructiveMigration(
+                dropAllTables = true
+            )
+            .setQueryCoroutineContext(Dispatchers.IO)
+            .build()
+    }
     singleOf(::WeatherRepoImpl).bind<WeatherRepo>()
     singleOf(::DataBaseRepoImpl).bind<DataBaseRepo>()
     singleOf(::DataStoreSettingsStorage) bind SettingsStorage::class
-    //viewModelOf(::WeatherViewModel)
     viewModel { (pageNumber: Int?, cityId: Int?, orientation: String) ->
         WeatherViewModel(
             locationService = get(),
-            weatherRepoImpl = get(),
+            weatherRepo = get(),
             dataBaseRepo = get(),
             myLogger = get(),
             settingsStorage = get(),

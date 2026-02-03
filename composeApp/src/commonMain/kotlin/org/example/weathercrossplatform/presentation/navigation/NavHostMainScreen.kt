@@ -19,12 +19,14 @@ import androidx.navigation3.ui.NavDisplay
 import androidx.savedstate.serialization.SavedStateConfiguration
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
+import org.example.weathercrossplatform.data.constants.Constants
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Routes
 import org.example.weathercrossplatform.domain.models.Routes.MainScreenRoute
 import org.example.weathercrossplatform.presentation.search_weather.SearchScreenState
 import org.example.weathercrossplatform.presentation.settings_screen.SettingsScreenRoot
+import org.example.weathercrossplatform.presentation.utils.currentDeviceConfiguration
 import org.example.weathercrossplatform.presentation.weather_list.MainScreenState
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.parameter.parametersOf
@@ -87,8 +89,11 @@ fun NavHostMainScreen(
 
             entry<MainScreenRoute> { mainScreen ->
 
+                val configuration = currentDeviceConfiguration()
                 val orientation = remember {
-                    mutableStateOf("")
+                    mutableStateOf(
+                        if (configuration.isPortrait) Constants.PORTRAIT else Constants.LANDSCAPE
+                    )
                 }
 
                 MainScreenState(

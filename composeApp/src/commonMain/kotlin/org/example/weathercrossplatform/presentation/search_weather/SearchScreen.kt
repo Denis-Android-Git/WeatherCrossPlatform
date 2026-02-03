@@ -82,7 +82,6 @@ fun SearchScreen(
     onSavedItemClick: (Int) -> Unit,
     myLogger: MyLogger = MyLoggerImpl
 ) {
-
     val isLongPressed = remember { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
     val backdrop = rememberLayerBackdrop()
