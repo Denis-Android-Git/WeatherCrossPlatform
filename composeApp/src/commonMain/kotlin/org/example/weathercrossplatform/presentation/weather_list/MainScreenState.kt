@@ -25,10 +25,10 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import org.example.weathercrossplatform.data.constants.Constants
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.domain.actions.MainScreenActions
 import org.example.weathercrossplatform.domain.logger.MyLogger
+import org.example.weathercrossplatform.domain.models.Orientation
 import org.example.weathercrossplatform.presentation.elements.CustomIndicator
 import org.example.weathercrossplatform.presentation.elements.ErrorScreen
 import org.example.weathercrossplatform.presentation.elements.MyAdaptiveLayout
@@ -48,7 +48,8 @@ fun MainScreenState(
     orientation: MutableState<String>
 ) {
     val configuration = currentDeviceConfiguration()
-    orientation.value = if (configuration.isPortrait) Constants.PORTRAIT else Constants.LANDSCAPE
+
+    orientation.value = if (configuration.isPortrait) Orientation.Portrait.value else Orientation.Landscape.value
     LaunchedEffect(isFirstLaunch) {
         if (isFirstLaunch) {
             weatherViewModel.onAction(MainScreenActions.RefreshPosition)
@@ -58,6 +59,7 @@ fun MainScreenState(
     }
 
     val weatherMainScreenState by weatherViewModel.weatherScreenState.collectAsStateWithLifecycle()
+    myLogger.debug("pageNumberFromSearchScreen MainScreenState: ${weatherMainScreenState.pageNumberFromSearchScreen}")
 
     val pagerState = rememberPagerState(
         initialPage = weatherMainScreenState.pageNumberFromSearchScreen ?: 0,

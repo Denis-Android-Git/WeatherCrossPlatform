@@ -8,13 +8,14 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.kashif_e.backdrop.backdrops.LayerBackdrop
 import com.kashif_e.backdrop.backdrops.rememberLayerBackdrop
+import kotlinx.coroutines.launch
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
@@ -38,15 +39,17 @@ fun Forecast24Hour(
     backdrop: LayerBackdrop,
     isLiquidGlassOn: Boolean
 ) {
+
     val maxTemp = hours.maxOf { if (isTempC) it.tempC.toFloat() else it.tempF.toFloat() }
     val minTemp = hours.minOf { if (isTempC) it.tempC.toFloat() else it.tempF.toFloat() }
     val rowState = rememberLazyListState()
 
     val currentTime = Clock.System.now()
     val hour = currentTime.toLocalDateTime(TimeZone.currentSystemDefault()).hour
-    myLogger.debug("currentTime: $hour")
 
-    LaunchedEffect(hour) {
+    val scope = rememberCoroutineScope()
+    scope.launch {
+        myLogger.debug("currentTime: animateScrollToItem")
         rowState.animateScrollToItem(hour)
     }
 
