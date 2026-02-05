@@ -7,6 +7,7 @@ import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.togetherWith
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -39,6 +40,9 @@ fun NavHostMainScreen(
 ) {
 
     val navHostViewModel = koinViewModel<NavHostViewModel>()
+    LaunchedEffect(navHostViewModel.pageNumber) {
+        myLogger.debug("check_state navHostViewModel - page num ${navHostViewModel.pageNumber}")
+    }
     val backStack = rememberNavBackStack(
         configuration = SavedStateConfiguration {
             serializersModule = SerializersModule {
@@ -112,9 +116,11 @@ fun NavHostMainScreen(
                     },
                     modifier = modifier,
                     weatherViewModel = koinViewModel {
-                        parametersOf(mainScreen.pageNumber, mainScreen.cityId, orientation.value)
+                        parametersOf(mainScreen.pageNumber, orientation.value)
                     },
                     orientation = orientation,
+                    pageNumberFromSearchScreen = mainScreen.pageNumber,
+                    cityIdFromSearchScreen = mainScreen.cityId,
                 )
             }
 

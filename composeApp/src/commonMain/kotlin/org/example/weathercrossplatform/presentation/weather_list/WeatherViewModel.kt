@@ -5,11 +5,11 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.firstOrNull
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
@@ -53,33 +53,30 @@ class WeatherViewModel(
     private val myLogger: MyLogger,
     settingsStorage: SettingsStorage,
     pageNumberFromSearchScreen: Int?,
-    cityIdFromSearchScreen: Int?,
     orientation: String
 ) : ViewModel() {
     private val coordinates = MutableStateFlow<Coordinates?>(null)
     private val _weatherScreenState = MutableStateFlow(WeatherMainScreenState())
-    val weatherScreenState = _weatherScreenState.asStateFlow()
-    private val allCities = dataBaseRepo.getWeatherList()
+    val weatherScreenState = combine( //_weatherScreenState.asStateFlow()
+        _weatherScreenState,
+        settingsStorage.observeSettingsInfo(),
+        dataBaseRepo.getWeatherList()
+    ) { state, settings, savedCities ->
+        state.copy(
+            savedCities = savedCities,
+            isTempC = settings?.isTempC ?: true,
+            isWindKph = settings?.isWindKph ?: true,
+            isPressureMb = settings?.isPressureMb ?: true,
+            isLiquidGlassOn = settings?.isLiquidGlassOn ?: false
+        )
+    }.stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(5_000L),
+        initialValue = WeatherMainScreenState()
+    )
 
     init {
-        myLogger.debug("WeatherViewModel_init")
-        settingsStorage.observeSettingsInfo().onEach { info ->
-            info?.let { settingsInfo ->
-                _weatherScreenState.update {
-                    it.copy(
-                        isTempC = settingsInfo.isTempC,
-                        isWindKph = settingsInfo.isWindKph,
-                        isPressureMb = settingsInfo.isPressureMb,
-                        isLiquidGlassOn = settingsInfo.isLiquidGlassOn
-                    )
-                }
-            }
-        }.launchIn(viewModelScope)
-
         viewModelScope.launch {
-            myLogger.debug("pageNumberFromSearchScreen = $pageNumberFromSearchScreen")
-            myLogger.debug("cityIdFromSearchScreen = $cityIdFromSearchScreen")
-
             _weatherScreenState.update {
                 it.copy(
                     pageNumberFromSearchScreen = pageNumberFromSearchScreen
@@ -87,22 +84,8 @@ class WeatherViewModel(
             }
         }
         viewModelScope.launch {
-            allCities.collectLatest { savedCities ->
-                _weatherScreenState.update {
-                    it.copy(
-                        savedCities = savedCities
-                    )
-                }
-            }
-        }
-        cityIdFromSearchScreen?.let {
-            setCityId(it)
-        }
-        viewModelScope.launch {
-            myLogger.debug("getWeatherByQuery in pageNumberFromSearchScreen let block = $pageNumberFromSearchScreen")
             pageNumberFromSearchScreen?.let { page ->
-                val savedCities = allCities.firstOrNull() ?: emptyList()
-                //myLogger.debug("getWeatherByQuery savedCities = ${savedCities.joinToString("\n") { item -> item.cityName }}")
+                val savedCities = dataBaseRepo.getWeatherList().first()
                 if (page in savedCities.indices) {
                     getWeatherByQuery(savedCities[page].coordinates, orientation)
                 }
@@ -115,7 +98,6 @@ class WeatherViewModel(
         }
         viewModelScope.launch {
             weatherScreenState.value.cityId?.let { cityId ->
-                myLogger.debug("getWeatherByQuery in let block")
                 getWeatherByQuery("id:$cityId", orientation)
             }
         }
@@ -128,7 +110,6 @@ class WeatherViewModel(
             is MainScreenActions.SetCityId -> setCityId(actions.cityId)
             is MainScreenActions.AddCity -> addCity(actions.city)
             is MainScreenActions.GetWeatherByQuery -> {
-                myLogger.debug("fun_GetWeatherByQuery, MainScreenActions.GetWeatherByQuery")
                 getWeatherByQuery(actions.query, actions.orientation)
             }
 
@@ -143,7 +124,6 @@ class WeatherViewModel(
 
     fun updatePage(page: Int) {
         viewModelScope.launch {
-            myLogger.debug("fun_GetWeatherByQuery, pageNumber in updatePage $page")
             _weatherScreenState.update {
                 it.copy(
                     pageNumber = page
@@ -157,8 +137,6 @@ class WeatherViewModel(
             val now = Clock.System.now()
             val initialTime = weatherScreenState.value.initialTime
             val passedTime = now - initialTime
-
-            myLogger.debug("time_check: now: $now, initialTime: $initialTime, passedTime: $passedTime")
             if (passedTime > 10.toDuration(DurationUnit.MINUTES) && isCurrentLocation) {
                 coordinates.update {
                     null
@@ -166,9 +144,7 @@ class WeatherViewModel(
                 refreshPosition()
                 coordinates.collectLatest { coordinates ->
                     coordinates?.let {
-                        myLogger.debug("time_check: if block")
                         val query = "${it.latitude},${it.longitude}"
-                        myLogger.debug("fun_GetWeatherByQuery, pullToRefresh")
                         getWeatherByQuery(
                             query,
                             orientation = orientation,
@@ -183,7 +159,6 @@ class WeatherViewModel(
                     }
                 }
             } else {
-                myLogger.debug("time_check: else block")
                 getWeatherByQuery(query, orientation)
             }
         }
@@ -197,20 +172,15 @@ class WeatherViewModel(
     }
 
     private fun init(orientation: String) {
-        myLogger.debug("fun_init")
         viewModelScope.launch(Dispatchers.IO) {
-            myLogger.debug("city_id = ${_weatherScreenState.value.cityId}")
             if (_weatherScreenState.value.cityId == null) {
-                myLogger.debug("cityId == null")
                 coordinates.collect { coordinates ->
                     coordinates?.let {
                         val query = "${it.latitude},${it.longitude}"
-                        myLogger.debug("fun_GetWeatherByQuery, init cityId == null")
                         getWeatherByQuery(query, orientation, it.latitude, it.longitude)
                     }
                 }
             } else {
-                myLogger.debug("fun_GetWeatherByQuery, init cityId not null")
                 getWeatherByQuery("id:${_weatherScreenState.value.cityId}", orientation)
             }
         }
@@ -218,7 +188,6 @@ class WeatherViewModel(
 
     private fun setCityId(cityId: Int?) {
         viewModelScope.launch {
-            myLogger.debug("fun_setCityId: cityId = $cityId")
             _weatherScreenState.update { it.copy(cityId = cityId, isAddCity = true) }
         }
     }
@@ -230,15 +199,13 @@ class WeatherViewModel(
         longitude: Double? = null
     ) {
         viewModelScope.launch {
-            myLogger.debug("fun_getWeatherByQuery")
             _weatherScreenState.value = _weatherScreenState.value.copy(isLoading = true)
+            myLogger.debug("getWeatherByQuery fun in VM")
             weatherRepo.getCurrentWeather(query)
                 .onSuccess { weather ->
-                    myLogger.debug("location.id = ${weather.location.id}")
                     val isTempC = weatherScreenState.value.isTempC
                     val isWindKph = weatherScreenState.value.isWindKph
                     val isPressureMb = weatherScreenState.value.isPressureMb
-                    myLogger.debug("check_settings isTempC = $isTempC, isWindKph = $isWindKph, isPressureMb = $isPressureMb")
                     if (latitude != null && longitude != null) {
                         val desc = weather.current.condition.text.let {
                             if (it.length > 100) it.take(100) else it //fix OutOfMemoryError
@@ -248,7 +215,6 @@ class WeatherViewModel(
                             if (isTempC) weather.forecast.forecastday[0].day.maxTempC else weather.forecast.forecastday[0].day.maxTempF
                         val lowTemp =
                             if (isTempC) weather.forecast.forecastday[0].day.minTempC else weather.forecast.forecastday[0].day.minTempF
-                        myLogger.debug("check_settings highTemp = $highTemp, lowTemp = $lowTemp")
                         dataBaseRepo.saveWeather(
                             weather = SavedWeatherItem(
                                 cityName = weather.location.name,
@@ -262,12 +228,6 @@ class WeatherViewModel(
                             )
                         )
                     }
-
-                    myLogger.debug("windRotation = ${weather.current.windDegree}, ${weather.current.windDir}")
-                    myLogger.debug("pressure = ${weather.current.pressureMb}, ${weather.current.pressureIn}")
-                    myLogger.debug("uv = ${weather.current.uv}")
-
-
                     val weatherItemList = createWeatherItemList(
                         humidity = weather.current.humidity,
                         windSpeed = if (isWindKph) weather.current.windKph else weather.current.windMph,
@@ -302,12 +262,8 @@ class WeatherViewModel(
                         else -> weather.current.condition.text
                     }
 
-                    myLogger.debug("imageQuery=$imageQuery")
-
                     weatherRepo.getImageList(imageQuery, orientation)
                         .onSuccess { imageList ->
-                            myLogger.debug("imageList=${imageList.results.size}")
-
                             val photoList = imageList.results
                             if (photoList.isEmpty()) {
                                 _weatherScreenState.value = _weatherScreenState.value.copy(
@@ -338,13 +294,11 @@ class WeatherViewModel(
     }
 
     private fun refreshPosition() {
-        myLogger.debug("refreshPosition")
         viewModelScope.launch(Dispatchers.IO) {
             _weatherScreenState.value = _weatherScreenState.value.copy(
                 isLoading = true
             )
             locationService.getLocation().collectLatest { position ->
-                myLogger.debug("refreshPosition collectLatest position")
                 coordinates.update {
                     position
                 }

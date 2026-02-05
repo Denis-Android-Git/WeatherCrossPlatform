@@ -45,24 +45,42 @@ fun MainScreenState(
     onCancelButtonClick: () -> Unit,
     myLogger: MyLogger = MyLoggerImpl,
     weatherViewModel: WeatherViewModel,
-    orientation: MutableState<String>
+    orientation: MutableState<String>,
+    pageNumberFromSearchScreen: Int?,
+    cityIdFromSearchScreen: Int?,
 ) {
     val configuration = currentDeviceConfiguration()
+    val weatherMainScreenState by weatherViewModel.weatherScreenState.collectAsStateWithLifecycle()
 
-    orientation.value = if (configuration.isPortrait) Orientation.Portrait.value else Orientation.Landscape.value
+    LaunchedEffect(weatherMainScreenState) {
+        myLogger.debug("check_state pageNumberFromSearchScreen MainScreenState: $pageNumberFromSearchScreen")
+        myLogger.debug("check_state savedCities_size ${weatherMainScreenState.savedCities.size}")
+        myLogger.debug("check_state isAddCity ${weatherMainScreenState.isAddCity}")
+    }
+
+    orientation.value =
+        if (configuration.isPortrait) Orientation.Portrait.value else Orientation.Landscape.value
     LaunchedEffect(isFirstLaunch) {
         if (isFirstLaunch) {
             weatherViewModel.onAction(MainScreenActions.RefreshPosition)
             weatherViewModel.onAction(MainScreenActions.Init(orientation.value))
         }
-        myLogger.debug("isFirstLaunch: $isFirstLaunch")
     }
 
-    val weatherMainScreenState by weatherViewModel.weatherScreenState.collectAsStateWithLifecycle()
-    myLogger.debug("pageNumberFromSearchScreen MainScreenState: ${weatherMainScreenState.pageNumberFromSearchScreen}")
+    cityIdFromSearchScreen?.let {
+        LaunchedEffect(Unit) {
+            weatherViewModel.onAction(MainScreenActions.SetCityId(cityIdFromSearchScreen))
+            weatherViewModel.onAction(
+                MainScreenActions.GetWeatherByQuery(
+                    query = "id:$cityIdFromSearchScreen",
+                    orientation = orientation.value
+                )
+            )
+        }
+    }
 
     val pagerState = rememberPagerState(
-        initialPage = weatherMainScreenState.pageNumberFromSearchScreen ?: 0,
+        initialPage = pageNumberFromSearchScreen ?: 0,
         pageCount = {
             if (weatherMainScreenState.isAddCity) 1 else weatherMainScreenState.savedCities.size
         })
