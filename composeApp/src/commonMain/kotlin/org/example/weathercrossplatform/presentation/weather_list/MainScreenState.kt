@@ -48,6 +48,7 @@ fun MainScreenState(
     orientation: MutableState<String>,
     pageNumberFromSearchScreen: Int?,
     cityIdFromSearchScreen: Int?,
+    onAddCityButtonClick: () -> Unit
 ) {
     val configuration = currentDeviceConfiguration()
     val weatherMainScreenState by weatherViewModel.weatherScreenState.collectAsStateWithLifecycle()
@@ -164,6 +165,7 @@ fun MainScreenState(
                                 delay(150)
                                 pagerState.animateScrollToPage(weatherMainScreenState.savedCities.lastIndex)
                             }
+                            onAddCityButtonClick()
                         },
                         savedCityList = weatherMainScreenState.savedCities,
                         cityId = weatherMainScreenState.cityId

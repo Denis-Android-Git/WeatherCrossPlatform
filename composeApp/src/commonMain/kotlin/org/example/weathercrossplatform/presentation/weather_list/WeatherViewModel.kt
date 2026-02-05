@@ -57,7 +57,7 @@ class WeatherViewModel(
 ) : ViewModel() {
     private val coordinates = MutableStateFlow<Coordinates?>(null)
     private val _weatherScreenState = MutableStateFlow(WeatherMainScreenState())
-    val weatherScreenState = combine( //_weatherScreenState.asStateFlow()
+    val weatherScreenState = combine(
         _weatherScreenState,
         settingsStorage.observeSettingsInfo(),
         dataBaseRepo.getWeatherList()
@@ -188,6 +188,7 @@ class WeatherViewModel(
 
     private fun setCityId(cityId: Int?) {
         viewModelScope.launch {
+            myLogger.debug("fun_setCityId $cityId")
             _weatherScreenState.update { it.copy(cityId = cityId, isAddCity = true) }
         }
     }
