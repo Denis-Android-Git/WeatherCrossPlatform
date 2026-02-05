@@ -8,13 +8,17 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.kashif_e.backdrop.backdrops.LayerBackdrop
 import com.kashif_e.backdrop.backdrops.rememberLayerBackdrop
+import kotlinx.coroutines.flow.filter
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
@@ -47,9 +51,11 @@ fun Forecast24Hour(
     val currentTime = Clock.System.now()
     val hour = currentTime.toLocalDateTime(TimeZone.currentSystemDefault()).hour
 
-    val scope = rememberCoroutineScope()
-    scope.launch {
-        myLogger.debug("currentTime: animateScrollToItem")
+    LaunchedEffect(hours) {
+        snapshotFlow { rowState.layoutInfo.totalItemsCount }
+            .filter { it > 0 }
+            .first()
+        myLogger.debug("LazyRow ready, scroll to $hour")
         rowState.animateScrollToItem(hour)
     }
 
@@ -63,7 +69,6 @@ fun Forecast24Hour(
                 .fillMaxWidth()
                 .noLiquidGlass()
         }
-        //.background(color = Color.Black.copy(alpha = 0.3f), shape = RoundedCornerShape(16.dp)),
     ) {
         Text(
             modifier = Modifier.padding(start = 16.dp, top = 16.dp, bottom = 26.dp),
