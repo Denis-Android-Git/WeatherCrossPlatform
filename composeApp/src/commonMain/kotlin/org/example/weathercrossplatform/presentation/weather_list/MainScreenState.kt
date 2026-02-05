@@ -59,8 +59,11 @@ fun MainScreenState(
     }
 
     val weatherMainScreenState by weatherViewModel.weatherScreenState.collectAsStateWithLifecycle()
-    myLogger.debug("pageNumberFromSearchScreen MainScreenState: ${weatherMainScreenState.pageNumberFromSearchScreen}")
-
+    LaunchedEffect(weatherMainScreenState) {
+        myLogger.debug("check_state pageNumberFromSearchScreen MainScreenState: $weatherMainScreenState.pageNumberFromSearchScreen")
+        myLogger.debug("check_state savedCities_size ${weatherMainScreenState.savedCities.size}")
+        myLogger.debug("check_state isAddCity ${weatherMainScreenState.isAddCity}")
+    }
     val pagerState = rememberPagerState(
         initialPage = weatherMainScreenState.pageNumberFromSearchScreen ?: 0,
         pageCount = {
