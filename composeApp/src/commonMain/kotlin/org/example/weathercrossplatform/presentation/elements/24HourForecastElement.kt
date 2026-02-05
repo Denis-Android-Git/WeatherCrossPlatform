@@ -67,7 +67,6 @@ fun Forecast24Hour(
                 .fillMaxWidth()
                 .noLiquidGlass()
         }
-        //.background(color = Color.Black.copy(alpha = 0.3f), shape = RoundedCornerShape(16.dp)),
     ) {
         Text(
             modifier = Modifier.padding(start = 16.dp, top = 16.dp, bottom = 26.dp),
@@ -78,7 +77,12 @@ fun Forecast24Hour(
             modifier = Modifier.padding(bottom = 16.dp),
             state = rowState
         ) {
-            itemsIndexed(hours) { index, item ->
+            itemsIndexed(
+                items = hours,
+                key = { index, _ ->
+                    index
+                }
+            ) { index, item ->
                 val icon = item.condition.icon.replace("//", "https://")
                 val time = item.time.substringAfter(" ")
                 myLogger.debug("item_time: ${item.time}")

@@ -325,25 +325,29 @@ class WeatherViewModel(
                 title = Res.string.humidity,
                 description = "$humidity %",
                 progress = humidity * 0.01.toFloat(),
-                rotation = 0f
+                rotation = 0f,
+                id = 1
             ),
             WeatherItem(
                 title = Res.string.wind,
                 description = if (isWindKmh) "$windSpeed km/h" else "$windSpeed mp/h",
                 progress = (windSpeed * if (isWindKmh) 0.01 else 0.016).toFloat(),
-                rotation = windRotation.toFloat()
+                rotation = windRotation.toFloat(),
+                id = 2
             ),
             WeatherItem(
                 title = Res.string.pressure,
                 description = if (isPressureMb) "$pressure mmHg" else "$pressure inHg",
                 progress = calcPressureProgress(pressure, isPressureMb),
-                rotation = 0f
+                rotation = 0f,
+                id = 3
             ),
             WeatherItem(
                 title = Res.string.clouds,
                 description = "$clouds %",
                 progress = clouds * 0.01.toFloat(),
-                rotation = 0f
+                rotation = 0f,
+                id = 4
             ),
             WeatherItem(
                 title = Res.string.uv,
@@ -355,12 +359,14 @@ class WeatherViewModel(
                     else -> Res.string.uv
                 },
                 rotation = 0f,
-                uvIndex = uvIndex
+                uvIndex = uvIndex,
+                id = 5
             ),
             WeatherItem(
                 title = Res.string.feels_like,
                 description = if (isTempC) "$feelsLike °C" else "$feelsLike °F",
                 rotation = rotationFeelsLike,
+                id = 6
             )
         )
     }

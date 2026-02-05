@@ -62,8 +62,12 @@ import weathercrossplatform.composeapp.generated.resources.current_place
 import weathercrossplatform.composeapp.generated.resources.enter_city
 import weathercrossplatform.composeapp.generated.resources.im_14
 import weathercrossplatform.composeapp.generated.resources.im_14_landscape
+import kotlin.uuid.ExperimentalUuidApi
+import kotlin.uuid.Uuid
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class,
+    ExperimentalUuidApi::class
+)
 @Composable
 fun SearchScreen(
     modifier: Modifier,
@@ -224,7 +228,13 @@ fun SearchScreen(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     contentPadding = PaddingValues(0.dp, 8.dp, 0.dp, 0.dp)
                 ) {
-                    items(searchScreenState.cityList) {
+                    items(
+                        searchScreenState.cityList,
+                        key = {
+                            myLogger.debug("it.id ${it.id}")
+                            it.id ?: Uuid.random()
+                        }
+                    ) {
                         FoundItem(
                             city = it.name,
                             country = it.country,

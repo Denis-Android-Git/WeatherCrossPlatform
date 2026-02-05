@@ -404,7 +404,12 @@ fun MainScreen(
                                         horizontalArrangement = Arrangement.spacedBy(6.dp),
                                         verticalArrangement = Arrangement.spacedBy(6.dp)
                                     ) {
-                                        items(weatherMainScreenState.weatherItemList) { item ->
+                                        items(
+                                            weatherMainScreenState.weatherItemList,
+                                            key = {
+                                                it.id
+                                            }
+                                        ) { item ->
                                             WeatherDetailElement(
                                                 title = item.title,
                                                 description = when (item.description) {
@@ -605,42 +610,48 @@ fun MainScreenPreview() {
             description = "45%",
             progress = 0.45f,
             rotation = 0f,
-            uvIndex = 0
+            uvIndex = 0,
+            id = 1
         ),
         WeatherItem(
             title = Res.string.wind,
             description = "10 км/ч",
             progress = 0.3f,
             rotation = 315f,
-            uvIndex = 0
+            uvIndex = 0,
+            id = 2
         ),
         WeatherItem(
             title = Res.string.pressure,
             description = "1013 мб",
             progress = 0.65f,
             rotation = 0f,
-            uvIndex = 0
+            uvIndex = 0,
+            id = 3
         ),
         WeatherItem(
             title = Res.string.clouds,
             description = "25%",
             progress = 0.25f,
             rotation = 0f,
-            uvIndex = 0
+            uvIndex = 0,
+            id = 4
         ),
         WeatherItem(
             title = Res.string.uv,
             description = "Высокий",
             progress = 0f,
             rotation = 0f,
-            uvIndex = 6
+            uvIndex = 6,
+            id = 5
         ),
         WeatherItem(
             title = Res.string.feels_like,
             description = "27°",
             progress = 0f,
             rotation = 90f,
-            uvIndex = 0
+            uvIndex = 0,
+            id = 6
         )
     )
 
