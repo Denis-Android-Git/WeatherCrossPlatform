@@ -101,7 +101,7 @@ fun MainScreenState(
 
         val index = snapshotFlow { weatherMainScreenState.savedCities }
             .map { list -> list.indexOfFirst { it.cityId == targetId } }
-            .filter { it >= 0 }
+            .filter { it > 0 }
             .first()
 
         snapshotFlow { pagerState.pageCount }
@@ -118,7 +118,6 @@ fun MainScreenState(
 
     LaunchedEffect(pagerState) {
         snapshotFlow { pagerState.currentPage }
-            .distinctUntilChanged()
             .collect { pageNumber ->
                 if (weatherMainScreenState.savedCities.isNotEmpty()) {
                     weatherViewModel.onAction(MainScreenActions.UpdatePage(pageNumber))
