@@ -708,8 +708,8 @@ fun MainScreenPreview() {
 
 val mockHours = listOf(
     Hour(
-        chanceOfRain = 0,
-        chanceOfSnow = 0,
+        chanceOfRain = 0.0,
+        chanceOfSnow = 0.0,
         cloud = 25,
         condition = Condition(
             text = "Sunny",
@@ -775,8 +775,8 @@ val mockForecast = listOf(
                 icon = "//cdn.weatherapi.com/weather/64x64/day/116.png",
                 code = 1003
             ),
-            dailyChanceOfRain = 10,
-            dailyChanceOfSnow = 0,
+            dailyChanceOfRain = 1.0,
+            dailyChanceOfSnow = 0.0,
             dailyWillItRain = 0,
             dailyWillItSnow = 0,
             maxTempC = 28.0,
@@ -813,8 +813,8 @@ val mockForecast = listOf(
                 code = 1125, icon = "facilisi", text = "populo"
 
             ),
-            dailyChanceOfRain = 7358,
-            dailyChanceOfSnow = 5564,
+            dailyChanceOfRain = 7.358,
+            dailyChanceOfSnow = 5.564,
             dailyWillItRain = 1626,
             dailyWillItSnow = 9274,
             maxTempC = 176.177,

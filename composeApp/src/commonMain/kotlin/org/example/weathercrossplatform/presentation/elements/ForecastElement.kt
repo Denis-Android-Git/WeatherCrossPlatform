@@ -109,8 +109,8 @@ fun ForecastElementPreview() {
                     icon = "//cdn.weatherapi.com/weather/64x64/day/113.png",
                     text = "Sunny"
                 ),
-                dailyChanceOfRain = 0,
-                dailyChanceOfSnow = 0,
+                dailyChanceOfRain = 0.0,
+                dailyChanceOfSnow = 0.0,
                 dailyWillItRain = 0,
                 dailyWillItSnow = 0,
                 maxTempC = -22.0,
@@ -150,8 +150,8 @@ fun ForecastElementPreview() {
                     icon = "//cdn.weatherapi.com/weather/64x64/day/176.png",
                     text = "Patchy rain possible"
                 ),
-                dailyChanceOfRain = 60,
-                dailyChanceOfSnow = 0,
+                dailyChanceOfRain = 6.0,
+                dailyChanceOfSnow = 0.0,
                 dailyWillItRain = 1,
                 dailyWillItSnow = 0,
                 maxTempC = 19.0,
@@ -191,8 +191,8 @@ fun ForecastElementPreview() {
                     icon = "//cdn.weatherapi.com/weather/64x64/day/116.png",
                     text = "Partly cloudy"
                 ),
-                dailyChanceOfRain = 30,
-                dailyChanceOfSnow = 0,
+                dailyChanceOfRain = 3.0,
+                dailyChanceOfSnow = 0.0,
                 dailyWillItRain = 0,
                 dailyWillItSnow = 0,
                 maxTempC = 17.0,

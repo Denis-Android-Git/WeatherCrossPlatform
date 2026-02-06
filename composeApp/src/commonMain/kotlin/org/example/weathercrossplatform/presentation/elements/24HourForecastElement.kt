@@ -20,8 +20,6 @@ import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.first
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
-import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
-import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Condition
 import org.example.weathercrossplatform.domain.models.Hour
 import org.example.weathercrossplatform.presentation.utils.myLiquidGlass2
@@ -37,7 +35,6 @@ fun Forecast24Hour(
     hours: List<Hour>,
     isTempC: Boolean,
     isWindKmh: Boolean,
-    myLogger: MyLogger = MyLoggerImpl,
     backdrop: LayerBackdrop,
     isLiquidGlassOn: Boolean
 ) {
@@ -108,8 +105,8 @@ fun Forecast24Hour(
 fun HourForecastElementPreview() {
     val sampleHours = listOf(
         Hour(
-            chanceOfRain = 0,
-            chanceOfSnow = 0,
+            chanceOfRain = 0.0,
+            chanceOfSnow = 0.0,
             cloud = 10,
             condition = Condition(
                 code = 1000,
@@ -148,8 +145,8 @@ fun HourForecastElementPreview() {
             windChillF = 64.4
         ),
         Hour(
-            chanceOfRain = 0,
-            chanceOfSnow = 0,
+            chanceOfRain = 0.0,
+            chanceOfSnow = 0.0,
             cloud = 5,
             condition = Condition(
                 code = 1000,
@@ -188,8 +185,8 @@ fun HourForecastElementPreview() {
             windChillF = 60.8
         ),
         Hour(
-            chanceOfRain = 0,
-            chanceOfSnow = 0,
+            chanceOfRain = 0.0,
+            chanceOfSnow = 0.0,
             cloud = 0,
             condition = Condition(
                 code = 1000,
@@ -228,8 +225,8 @@ fun HourForecastElementPreview() {
             windChillF = 57.2
         ),
         Hour(
-            chanceOfRain = 0,
-            chanceOfSnow = 0,
+            chanceOfRain = 0.0,
+            chanceOfSnow = 0.0,
             cloud = 5,
             condition = Condition(
                 code = 1000,
@@ -268,8 +265,8 @@ fun HourForecastElementPreview() {
             windChillF = 60.8
         ),
         Hour(
-            chanceOfRain = 0,
-            chanceOfSnow = 0,
+            chanceOfRain = 0.0,
+            chanceOfSnow = 0.0,
             cloud = 10,
             condition = Condition(
                 code = 1000,
@@ -308,8 +305,8 @@ fun HourForecastElementPreview() {
             windChillF = 68.0
         ),
         Hour(
-            chanceOfRain = 0,
-            chanceOfSnow = 0,
+            chanceOfRain = 0.0,
+            chanceOfSnow = 0.0,
             cloud = 15,
             condition = Condition(
                 code = 1000,
@@ -348,8 +345,8 @@ fun HourForecastElementPreview() {
             windChillF = 71.6
         ),
         Hour(
-            chanceOfRain = 0,
-            chanceOfSnow = 0,
+            chanceOfRain = 0.0,
+            chanceOfSnow = 0.0,
             cloud = 20,
             condition = Condition(
                 code = 1003,
@@ -388,8 +385,8 @@ fun HourForecastElementPreview() {
             windChillF = 69.8
         ),
         Hour(
-            chanceOfRain = 0,
-            chanceOfSnow = 0,
+            chanceOfRain = 0.0,
+            chanceOfSnow = 0.0,
             cloud = 25,
             condition = Condition(
                 code = 1003,

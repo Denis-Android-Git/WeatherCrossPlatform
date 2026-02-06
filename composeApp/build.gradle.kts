@@ -104,7 +104,7 @@ kotlin {
 
         }
         kotzilla {
-            versionName = "test_viewmodels" // add your app version name
+            versionName = "1.1.5" // add your app version name
             keyGeneration = KotzillaKeyGeneration.COMPOSE
             composeInstrumentation = true
         }
@@ -127,7 +127,7 @@ android {
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 59
-        versionName = "test_viewmodels"
+        versionName = "1.1.5"
 
     }
     packaging {
