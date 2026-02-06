@@ -168,8 +168,7 @@ fun MainScreenState(
                             onAddCityButtonClick()
                         },
                         savedCityList = weatherMainScreenState.savedCities,
-                        cityId = weatherMainScreenState.cityId
-                            ?: weatherMainScreenState.savedCities[pageNumber].cityId,
+                        cityId = cityId,
                         isCurrentLocation = isCurrentLocation,
                         weatherMainScreenState = weatherMainScreenState,
                         onSettingsClick = onSettingsClick,
