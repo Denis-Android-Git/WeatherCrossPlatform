@@ -15,11 +15,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.rememberUpdatedState
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -27,14 +24,10 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.filter
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
+import org.example.weathercrossplatform.data.constants.Constants.SAVED_CITIES_LIST_UPDATE_TIME
 import org.example.weathercrossplatform.domain.actions.MainScreenActions
-import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Orientation
 import org.example.weathercrossplatform.presentation.elements.CustomIndicator
 import org.example.weathercrossplatform.presentation.elements.ErrorScreen
@@ -55,7 +48,7 @@ fun MainScreenState(
     pageNumberFromSearchScreen: Int?,
     cityIdFromSearchScreen: Int?,
     onAddCityButtonClick: () -> Unit,
-    myLogger: MyLogger = MyLoggerImpl
+    //myLogger: MyLogger = MyLoggerImpl
 ) {
     val configuration = currentDeviceConfiguration()
     val weatherMainScreenState by weatherViewModel.weatherScreenState.collectAsStateWithLifecycle()
@@ -85,8 +78,6 @@ fun MainScreenState(
             )
         }
     }
-    var pendingScrollToNewCity by rememberSaveable { mutableStateOf(false) }
-    var pendingCityId by rememberSaveable { mutableStateOf<Int?>(null) }
     val savedCities by rememberUpdatedState(newValue = weatherMainScreenState.savedCities)
     val savedCitiesSize by rememberUpdatedState(newValue = weatherMainScreenState.savedCities.size)
 
@@ -95,25 +86,7 @@ fun MainScreenState(
         pageCount = {
             if (weatherMainScreenState.isAddCity) 1 else savedCitiesSize
         })
-    LaunchedEffect(savedCities, pendingScrollToNewCity) {
-        if (!pendingScrollToNewCity) return@LaunchedEffect
-        val targetId = pendingCityId ?: return@LaunchedEffect
 
-        val index = snapshotFlow { weatherMainScreenState.savedCities }
-            .map { list -> list.indexOfFirst { it.cityId == targetId } }
-            .filter { it > 0 }
-            .first()
-
-        snapshotFlow { pagerState.pageCount }
-            .filter {
-                it > index
-            }
-            .first()
-        myLogger.debug("getWeatherByQuery: targetId = $targetId, index = $index")
-        pagerState.animateScrollToPage(index)
-        pendingScrollToNewCity = false
-        pendingCityId = null
-    }
     val scope = rememberCoroutineScope()
 
     LaunchedEffect(pagerState) {
@@ -192,9 +165,9 @@ fun MainScreenState(
                         onCancelButtonClick = onCancelButtonClick,
                         onAddCityButtonClick = {
                             scope.launch {
-                                pendingCityId = cityId
                                 weatherViewModel.onAction(MainScreenActions.AddCity(cityId))
-                                pendingScrollToNewCity = true
+                                delay(SAVED_CITIES_LIST_UPDATE_TIME)
+                                pagerState.animateScrollToPage(savedCities.lastIndex)
                             }
                             onAddCityButtonClick()
                         },
