@@ -96,9 +96,7 @@ class SearchViewModel(
                     async {
                         weatherRepo.getCurrentWeather(savedWeatherItem.coordinates)
                             .onSuccess { newInfo ->
-                                myLogger.debug("SearchViewModel_newInfo = $${savedWeatherItem.coordinates}, ${savedWeatherItem.cityId}, ${savedWeatherItem.temperature}, ${savedWeatherItem.highTemperature}")
-                                myLogger.debug("SearchViewModel_newInfo = $${newInfo.location.name}, ${newInfo.current.tempC}, ${newInfo.forecast.forecastday[0].day.maxTempC}")
-                                val item = SavedWeatherItem(
+                               val item = SavedWeatherItem(
                                     cityId = savedWeatherItem.cityId,
                                     cityName = savedWeatherItem.cityName,
                                     temperature = if (isTempC) newInfo.current.tempC else newInfo.current.tempF,
@@ -118,7 +116,6 @@ class SearchViewModel(
             }
         }
         viewModelScope.launch {
-            myLogger.debug("SearchViewModel_pageNum = $pageNum")
             _searchScreenState.update {
                 it.copy(
                     pageNumber = pageNum
@@ -176,7 +173,6 @@ class SearchViewModel(
                 _searchScreenState.update {
                     it.copy(tempListToDelete = newCurrentList)
                 }
-                myLogger.debug("tempList: ${currentList.size}")
 
             } else {
                 _searchScreenState.update {
@@ -199,7 +195,6 @@ class SearchViewModel(
     }
 
     private fun searchCities(query: String) {
-        myLogger.debug("searchCities: $query")
         viewModelScope.launch {
             _searchScreenState.update {
                 it.copy(loading = true)

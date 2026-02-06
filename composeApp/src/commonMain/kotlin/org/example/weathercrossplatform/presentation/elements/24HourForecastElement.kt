@@ -53,7 +53,6 @@ fun Forecast24Hour(
         snapshotFlow { rowState.layoutInfo.totalItemsCount }
             .filter { it > 0 }
             .first()
-        myLogger.debug("LazyRow ready, scroll to $hour")
         rowState.animateScrollToItem(hour)
     }
 
@@ -85,7 +84,6 @@ fun Forecast24Hour(
             ) { index, item ->
                 val icon = item.condition.icon.replace("//", "https://")
                 val time = item.time.substringAfter(" ")
-                myLogger.debug("item_time: ${item.time}")
                 val prevTemp = when {
                     isTempC -> if (index > 0) hours[index - 1].tempC.toFloat() else item.tempC.toFloat()
                     else -> if (index > 0) hours[index - 1].tempF.toFloat() else item.tempF.toFloat()

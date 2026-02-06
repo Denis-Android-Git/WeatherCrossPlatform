@@ -42,7 +42,6 @@ val sharedModule = module {
             locationService = get(),
             weatherRepo = get(),
             dataBaseRepo = get(),
-            myLogger = get(),
             settingsStorage = get(),
             pageNumberFromSearchScreen = pageNumber,
             orientation = orientation

@@ -61,11 +61,9 @@ import coil3.compose.AsyncImage
 import com.kashif_e.backdrop.backdrops.layerBackdrop
 import com.kashif_e.backdrop.backdrops.rememberLayerBackdrop
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
-import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.data.network.dto.ForecastDto
 import org.example.weathercrossplatform.data.utils.UiText
 import org.example.weathercrossplatform.data.utils.toUiText
-import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.AirQuality
 import org.example.weathercrossplatform.domain.models.Astro
 import org.example.weathercrossplatform.domain.models.Condition
@@ -119,9 +117,8 @@ fun MainScreen(
     onAddButtonClick: () -> Unit,
     onSettingsClick: () -> Unit,
     onCancelButtonClick: () -> Unit,
-    onAddCityButtonClick: (SavedWeatherItem) -> Unit,
+    onAddCityButtonClick: () -> Unit,
     isCurrentLocation: Boolean,
-    myLogger: MyLogger = MyLoggerImpl,
     topPadding: Dp
 ) {
 
@@ -154,17 +151,28 @@ fun MainScreen(
                 (firstElementMaxYPosition - (fabMaxYPosition + ALPHA_THRESHOLD))).coerceIn(0f, 1f)
     )
 
-    myLogger.debug(
-        "positions: firstElementInLazyColumnPosition = $firstElementInLazyColumnYPosition, " +
-                "firstElementMaxYPosition = $firstElementMaxYPosition, " +
-                "fabMaxYPosition = $fabMaxYPosition, " +
-                "animatedAlpha = $animatedAlpha"
-    )
     val configuration = currentDeviceConfiguration()
-    val imageError =
-        if (configuration.isPortrait) weatherMainScreenState.appPhotoList.random() else weatherMainScreenState.landscapePhotoList.random()
+    val cityKey = weatherMainScreenState.weatherDto?.location?.name
+    val updatedKey = weatherMainScreenState.weatherDto?.current?.lastUpdatedEpoch
+
+    val photoPool = if (configuration.isPortrait) {
+        weatherMainScreenState.appPhotoList
+    } else {
+        weatherMainScreenState.landscapePhotoList
+    }
+
+    val imageError = remember(cityKey, updatedKey, configuration.isPortrait) {
+        photoPool.random()
+    }
+
+    val stableImageModel =
+        remember(cityKey, updatedKey, configuration.isPortrait, weatherMainScreenState.image) {
+            weatherMainScreenState.image.ifEmpty {
+                imageError
+            }
+        }
+
     val density = LocalDensity.current
-    //val topPadding = 160.dp
     val totalPadding = 100.dp
     var columnHeight by remember {
         mutableStateOf(0.dp)
@@ -192,7 +200,6 @@ fun MainScreen(
                         ) {
                             Text(
                                 text = weatherMainScreenState.weatherDto?.location?.name.toString(),
-                                //modifier = Modifier.alpha(titleAlpha),
                                 color = Color.White, fontSize = 20.sp
                             )
                         }
@@ -217,9 +224,7 @@ fun MainScreen(
             ) {
                 Box(modifier = Modifier.fillMaxSize()) {
                     AsyncImage(
-                        model = weatherMainScreenState.image.ifEmpty {
-                            weatherMainScreenState.appPhotoList
-                        },
+                        model = stableImageModel,
                         error = painterResource(imageError),
                         modifier = Modifier.fillMaxSize().layerBackdrop(backdrop),
                         contentScale = ContentScale.Crop,
@@ -456,12 +461,12 @@ fun MainScreen(
                     }
                 }
             }
-
+            val cityIdList = savedCityList.associateBy {
+                it.cityId
+            }
+            val isCityIdListContainsCityId = cityIdList.containsKey(cityId)
             AnimatedVisibility(
-                visible = savedCityList.any {
-                    myLogger.debug("it.cityId: ${it.cityId}, cityId: $cityId")
-                    it.cityId == cityId
-                } && animatedAlpha != 0f,
+                visible = isCityIdListContainsCityId && animatedAlpha != 0f,
                 modifier = Modifier.align(Alignment.TopEnd).padding(4.dp)
             ) {
                 FloatingToolBar(
@@ -473,10 +478,7 @@ fun MainScreen(
                 )
             }
             AnimatedVisibility(
-                visible = !savedCityList.any {
-                    myLogger.debug("it.cityId: ${it.cityId}, cityId: $cityId")
-                    it.cityId == cityId
-                },
+                visible = !isCityIdListContainsCityId,
                 modifier = Modifier.align(Alignment.TopStart)
             ) {
                 Row(
@@ -516,25 +518,7 @@ fun MainScreen(
                     if (weatherMainScreenState.isLiquidGlassOn) {
                         LiquidButton(
                             onClick = {
-                                onAddCityButtonClick(
-                                    SavedWeatherItem(
-                                        cityName = weatherMainScreenState.weatherDto?.location?.name
-                                            ?: "",
-                                        //latitude = latitude,
-                                        //longitude = longitude,
-                                        temperature = weatherMainScreenState.weatherDto?.current?.tempC
-                                            ?: 0.0,
-                                        weatherDescription = weatherMainScreenState.weatherDto?.current?.condition?.text
-                                            ?: "",
-                                        highTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.maxTempC
-                                            ?: 0.0,
-                                        lowTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.minTempC
-                                            ?: 0.0,
-                                        cityId = cityId,
-                                        coordinates = "${weatherMainScreenState.weatherDto?.location?.lat},${weatherMainScreenState.weatherDto?.location?.lon}",
-                                        isCurrentLocation = false,
-                                    )
-                                )
+                                onAddCityButtonClick()
                             },
                             backdrop = backdrop
                         ) {
@@ -551,25 +535,7 @@ fun MainScreen(
                     } else {
                         Button(
                             onClick = {
-                                onAddCityButtonClick(
-                                    SavedWeatherItem(
-                                        cityName = weatherMainScreenState.weatherDto?.location?.name
-                                            ?: "",
-                                        //latitude = latitude,
-                                        //longitude = longitude,
-                                        temperature = weatherMainScreenState.weatherDto?.current?.tempC
-                                            ?: 0.0,
-                                        weatherDescription = weatherMainScreenState.weatherDto?.current?.condition?.text
-                                            ?: "",
-                                        highTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.maxTempC
-                                            ?: 0.0,
-                                        lowTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.minTempC
-                                            ?: 0.0,
-                                        cityId = cityId,
-                                        coordinates = "${weatherMainScreenState.weatherDto?.location?.lat},${weatherMainScreenState.weatherDto?.location?.lon}",
-                                        isCurrentLocation = false,
-                                    )
-                                )
+                                onAddCityButtonClick()
                             },
                             colors = ButtonDefaults.buttonColors(
                                 containerColor = Color.Black.copy(alpha = 0.2f),

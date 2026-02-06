@@ -45,8 +45,6 @@ import com.kashif_e.backdrop.backdrops.layerBackdrop
 import com.kashif_e.backdrop.backdrops.rememberLayerBackdrop
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
-import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
-import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Location
 import org.example.weathercrossplatform.domain.models.SearchScreenViewState
 import org.example.weathercrossplatform.presentation.elements.FoundItem
@@ -84,7 +82,6 @@ fun SearchScreen(
     onDelete: () -> Unit,
     clearTempList: () -> Unit,
     onSavedItemClick: (Int) -> Unit,
-    myLogger: MyLogger = MyLoggerImpl
 ) {
     val isLongPressed = remember { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
@@ -168,7 +165,6 @@ fun SearchScreen(
                     SearchBarDefaults.InputField(
                         query = searchScreenState.searchQuery,
                         onQueryChange = {
-                            myLogger.debug("onQueryChange: $it")
                             onQueryChange(it)
                         },
                         onSearch = {
@@ -231,7 +227,6 @@ fun SearchScreen(
                     items(
                         searchScreenState.cityList,
                         key = {
-                            myLogger.debug("it.id ${it.id}")
                             it.id ?: Uuid.random()
                         }
                     ) {
@@ -294,11 +289,9 @@ fun SearchScreen(
                             scope.launch {
                                 if (isLongPressed.value) {
                                     if (!savedCity.isCurrentLocation) {
-                                        myLogger.debug("onClick_isLongPressed.value")
                                         onClick(savedCity)
                                     }
                                 } else {
-                                    myLogger.debug("onClick_onSavedItemClick $originalIndex")
                                     onSavedItemClick(originalIndex)
                                 }
                             }

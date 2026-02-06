@@ -16,6 +16,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -24,10 +25,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
-import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.domain.actions.MainScreenActions
-import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Orientation
 import org.example.weathercrossplatform.presentation.elements.CustomIndicator
 import org.example.weathercrossplatform.presentation.elements.ErrorScreen
@@ -43,7 +43,6 @@ fun MainScreenState(
     onAddButtonClick: (Int) -> Unit,
     onSettingsClick: () -> Unit,
     onCancelButtonClick: () -> Unit,
-    myLogger: MyLogger = MyLoggerImpl,
     weatherViewModel: WeatherViewModel,
     orientation: MutableState<String>,
     pageNumberFromSearchScreen: Int?,
@@ -52,15 +51,14 @@ fun MainScreenState(
 ) {
     val configuration = currentDeviceConfiguration()
     val weatherMainScreenState by weatherViewModel.weatherScreenState.collectAsStateWithLifecycle()
+    val currentOrientation = rememberUpdatedState(
+        if (configuration.isPortrait) Orientation.Portrait.value
+        else Orientation.Landscape.value
+    )
 
-    LaunchedEffect(weatherMainScreenState) {
-        myLogger.debug("check_state pageNumberFromSearchScreen MainScreenState: $pageNumberFromSearchScreen")
-        myLogger.debug("check_state savedCities_size ${weatherMainScreenState.savedCities.size}")
-        myLogger.debug("check_state isAddCity ${weatherMainScreenState.isAddCity}")
+    LaunchedEffect(currentOrientation.value) {
+        orientation.value = currentOrientation.value
     }
-
-    orientation.value =
-        if (configuration.isPortrait) Orientation.Portrait.value else Orientation.Landscape.value
     LaunchedEffect(isFirstLaunch) {
         if (isFirstLaunch) {
             weatherViewModel.onAction(MainScreenActions.RefreshPosition)
@@ -68,8 +66,8 @@ fun MainScreenState(
         }
     }
 
-    cityIdFromSearchScreen?.let {
-        LaunchedEffect(Unit) {
+    LaunchedEffect(cityIdFromSearchScreen) {
+        if (cityIdFromSearchScreen != null) {
             weatherViewModel.onAction(MainScreenActions.SetCityId(cityIdFromSearchScreen))
             weatherViewModel.onAction(
                 MainScreenActions.GetWeatherByQuery(
@@ -88,19 +86,21 @@ fun MainScreenState(
     val scope = rememberCoroutineScope()
 
     LaunchedEffect(pagerState) {
-        snapshotFlow { pagerState.currentPage }.collect { pageNumber ->
-            if (weatherMainScreenState.savedCities.isNotEmpty()) {
-                weatherViewModel.onAction(MainScreenActions.UpdatePage(pageNumber))
-                myLogger.debug("fun_GetWeatherByQuery, pageNumber= in pagerState $pageNumber")
-                weatherViewModel.onAction(
-                    MainScreenActions.GetWeatherByQuery(
-                        weatherMainScreenState.savedCities[pageNumber].coordinates,
-                        orientation.value
+        snapshotFlow { pagerState.currentPage }
+            .distinctUntilChanged()
+            .collect { pageNumber ->
+                if (weatherMainScreenState.savedCities.isNotEmpty()) {
+                    weatherViewModel.onAction(MainScreenActions.UpdatePage(pageNumber))
+                    weatherViewModel.onAction(
+                        MainScreenActions.GetWeatherByQuery(
+                            weatherMainScreenState.savedCities[pageNumber].coordinates,
+                            orientation.value
+                        )
                     )
-                )
+                }
             }
-        }
     }
+
     val state = rememberPullToRefreshState()
     PullToRefreshBox(
         state = state,
@@ -128,11 +128,10 @@ fun MainScreenState(
         onRefresh = {
             scope.launch {
                 if (weatherMainScreenState.savedCities.isNotEmpty()) {
-                    myLogger.debug("onRefresh isNotEmpty")
                     val query =
-                        weatherMainScreenState.savedCities[weatherMainScreenState.pageNumber].coordinates
+                        weatherMainScreenState.savedCities[pagerState.currentPage].coordinates
                     val isCurrentLocation =
-                        weatherMainScreenState.savedCities[weatherMainScreenState.pageNumber].isCurrentLocation
+                        weatherMainScreenState.savedCities[pagerState.currentPage].isCurrentLocation
                     weatherViewModel.onAction(
                         MainScreenActions.PullToRefresh(
                             query,
@@ -141,7 +140,6 @@ fun MainScreenState(
                         )
                     )
                 } else {
-                    myLogger.debug("onRefresh else")
                     weatherViewModel.onAction(MainScreenActions.Init(orientation.value))
                 }
             }
@@ -156,12 +154,14 @@ fun MainScreenState(
                 ) { pageNumber ->
                     val isCurrentLocation =
                         weatherMainScreenState.savedCities[pageNumber].isCurrentLocation
+                    val cityId = weatherMainScreenState.cityId
+                        ?: weatherMainScreenState.savedCities[pageNumber].cityId
                     MainScreen(
                         onAddButtonClick = { onAddButtonClick(pageNumber) },
                         onCancelButtonClick = onCancelButtonClick,
                         onAddCityButtonClick = {
                             scope.launch {
-                                weatherViewModel.onAction(MainScreenActions.AddCity(it))
+                                weatherViewModel.onAction(MainScreenActions.AddCity(cityId))
                                 delay(150)
                                 pagerState.animateScrollToPage(weatherMainScreenState.savedCities.lastIndex)
                             }

@@ -14,6 +14,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.locationservice.LocationService
+import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.data.utils.onError
 import org.example.weathercrossplatform.data.utils.onSuccess
 import org.example.weathercrossplatform.data.utils.toUiText
@@ -50,7 +51,7 @@ class WeatherViewModel(
     private val locationService: LocationService,
     private val weatherRepo: WeatherRepo,
     private val dataBaseRepo: DataBaseRepo,
-    private val myLogger: MyLogger,
+    private val myLogger: MyLogger = MyLoggerImpl,
     settingsStorage: SettingsStorage,
     pageNumberFromSearchScreen: Int?,
     orientation: String
@@ -108,7 +109,7 @@ class WeatherViewModel(
             is MainScreenActions.Init -> init(actions.orientation)
             MainScreenActions.RefreshPosition -> refreshPosition()
             is MainScreenActions.SetCityId -> setCityId(actions.cityId)
-            is MainScreenActions.AddCity -> addCity(actions.city)
+            is MainScreenActions.AddCity -> buildCityAndSaveInDb(actions.cityId)
             is MainScreenActions.GetWeatherByQuery -> {
                 getWeatherByQuery(actions.query, actions.orientation)
             }
@@ -164,13 +165,6 @@ class WeatherViewModel(
         }
     }
 
-    private fun addCity(city: SavedWeatherItem) {
-        viewModelScope.launch {
-            dataBaseRepo.saveWeather(city)
-            _weatherScreenState.update { it.copy(isAddCity = false, cityId = null) }
-        }
-    }
-
     private fun init(orientation: String) {
         viewModelScope.launch(Dispatchers.IO) {
             if (_weatherScreenState.value.cityId == null) {
@@ -188,8 +182,37 @@ class WeatherViewModel(
 
     private fun setCityId(cityId: Int?) {
         viewModelScope.launch {
-            myLogger.debug("fun_setCityId $cityId")
             _weatherScreenState.update { it.copy(cityId = cityId, isAddCity = true) }
+        }
+    }
+
+    private fun buildCityAndSaveInDb(cityId: Int?) {
+        viewModelScope.launch {
+            _weatherScreenState.update { it.copy(isLoading = true) }
+            val dto = weatherScreenState.value.weatherDto
+            val item = SavedWeatherItem(
+                cityName = dto?.location?.name
+                    ?: "",
+                temperature = dto?.current?.tempC
+                    ?: 0.0,
+                weatherDescription = dto?.current?.condition?.text
+                    ?: "",
+                highTemperature = dto?.forecast?.forecastday[0]?.day?.maxTempC
+                    ?: 0.0,
+                lowTemperature = dto?.forecast?.forecastday[0]?.day?.minTempC
+                    ?: 0.0,
+                cityId = cityId,
+                coordinates = "${dto?.location?.lat},${dto?.location?.lon}",
+                isCurrentLocation = false
+            )
+            dataBaseRepo.saveWeather(item)
+            _weatherScreenState.update {
+                it.copy(
+                    isAddCity = false,
+                    cityId = null,
+                    isLoading = false
+                )
+            }
         }
     }
 
@@ -200,8 +223,8 @@ class WeatherViewModel(
         longitude: Double? = null
     ) {
         viewModelScope.launch {
+            myLogger.debug("getWeatherByQuery: $query")
             _weatherScreenState.value = _weatherScreenState.value.copy(isLoading = true)
-            myLogger.debug("getWeatherByQuery fun in VM")
             weatherRepo.getCurrentWeather(query)
                 .onSuccess { weather ->
                     val isTempC = weatherScreenState.value.isTempC
