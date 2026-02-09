@@ -100,8 +100,7 @@ fun MainScreenState(
             .distinctUntilChanged()
             .collect { pageNumber ->
                 if (skipNextPageEvent) {
-                    skipNextPageEvent =
-                        false// чтобы не вызывать GetWeatherByQuery 2 раза при добавлении города
+                    skipNextPageEvent = false// чтобы не вызывать GetWeatherByQuery 2 раза при добавлении города
                     return@collect
                 }
                 if (pageNumber !in savedCities.indices) return@collect

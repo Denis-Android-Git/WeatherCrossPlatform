@@ -1,16 +1,15 @@
 package org.example.weathercrossplatform.presentation.search_weather
 
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.firstOrNull
-import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onStart
@@ -21,7 +20,6 @@ import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.utils.onError
 import org.example.weathercrossplatform.data.utils.onSuccess
 import org.example.weathercrossplatform.domain.actions.SearchScreenActions
-import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.SearchScreenViewState
 import org.example.weathercrossplatform.domain.repo.DataBaseRepo
 import org.example.weathercrossplatform.domain.repo.SettingsStorage
@@ -31,13 +29,10 @@ import kotlin.time.Duration.Companion.seconds
 class SearchViewModel(
     private val dataBaseRepo: DataBaseRepo,
     private val weatherRepo: WeatherRepo,
-    private val myLogger: MyLogger,
-    private val settingsStorage: SettingsStorage,
-    savedStateHandle: SavedStateHandle
+    //private val myLogger: MyLogger = MyLoggerImpl,
+    private val settingsStorage: SettingsStorage
 ) : ViewModel() {
     private var hasLoadedInitialData = false
-
-    private val pageNum = savedStateHandle.get<Int>("pageNumber") ?: 0
     private val allCitiesInOriginalOrder = dataBaseRepo.getWeatherList()
     private val allCities = dataBaseRepo.getWeatherList()
         .map { list ->
@@ -61,10 +56,23 @@ class SearchViewModel(
                 searchCities(it)
             }
         }
-    val searchScreenState = _searchScreenState    //.asStateFlow()
+    val searchScreenState = combine(
+        _searchScreenState,
+        allCities,
+        allCitiesInOriginalOrder,
+        searchFlow,
+        settingsStorage.observeSettingsInfo()
+    ) { currentState, allCities, allCitiesInOriginalOrder, _, settingsInfo ->
+        currentState.copy(
+            allCities = allCities,
+            allCitiesInOriginalOrder = allCitiesInOriginalOrder,
+            isTempC = settingsInfo?.isTempC ?: true,
+            isLiquidGlassOn = settingsInfo?.isLiquidGlassOn ?: false
+        )
+    }
         .onStart {
             if (!hasLoadedInitialData) {
-                searchFlow.launchIn(viewModelScope)
+                updateSavedList()
                 hasLoadedInitialData = true
             }
         }
@@ -74,69 +82,30 @@ class SearchViewModel(
             initialValue = SearchScreenViewState()
         )
 
-    init {
+    fun updateSavedList() {
         viewModelScope.launch {
-            settingsStorage.observeSettingsInfo().collect { settingsInfo ->
-                settingsInfo?.let { info ->
-                    _searchScreenState.update {
-                        it.copy(
-                            isTempC = info.isTempC,
-                            isLiquidGlassOn = info.isLiquidGlassOn
-                        )
-                    }
-                }
-            }
-        }
+            val allCities = allCities.first()
+            val settings = settingsStorage.observeSettingsInfo().first()
+            val isTempC = settings?.isTempC ?: true
+            allCities.forEach { savedWeatherItem ->
+                async {
+                    weatherRepo.getCurrentWeather(savedWeatherItem.coordinates)
+                        .onSuccess { newInfo ->
+                            val item = SavedWeatherItem(
+                                cityId = savedWeatherItem.cityId,
+                                cityName = savedWeatherItem.cityName,
+                                temperature = if (isTempC) newInfo.current.tempC else newInfo.current.tempF,
+                                weatherDescription = newInfo.current.condition.text,
+                                highTemperature = if (isTempC) newInfo.forecast.forecastday[0].day.maxTempC else newInfo.forecast.forecastday[0].day.maxTempF,
+                                lowTemperature = if (isTempC) newInfo.forecast.forecastday[0].day.minTempC else newInfo.forecast.forecastday[0].day.minTempF,
+                                coordinates = savedWeatherItem.coordinates,
+                                isCurrentLocation = savedWeatherItem.isCurrentLocation,
+                            )
+                            dataBaseRepo.saveWeather(item)
+                        }
+                        .onError {
 
-        viewModelScope.launch {
-            val savedCities = dataBaseRepo.getWeatherList().firstOrNull()
-            savedCities?.let { list ->
-                val isTempC = searchScreenState.value.isTempC
-                list.forEach { savedWeatherItem ->
-                    async {
-                        weatherRepo.getCurrentWeather(savedWeatherItem.coordinates)
-                            .onSuccess { newInfo ->
-                               val item = SavedWeatherItem(
-                                    cityId = savedWeatherItem.cityId,
-                                    cityName = savedWeatherItem.cityName,
-                                    temperature = if (isTempC) newInfo.current.tempC else newInfo.current.tempF,
-                                    weatherDescription = newInfo.current.condition.text,
-                                    highTemperature = if (isTempC) newInfo.forecast.forecastday[0].day.maxTempC else newInfo.forecast.forecastday[0].day.maxTempF,
-                                    lowTemperature = if (isTempC) newInfo.forecast.forecastday[0].day.minTempC else newInfo.forecast.forecastday[0].day.minTempF,
-                                    coordinates = savedWeatherItem.coordinates,
-                                    isCurrentLocation = savedWeatherItem.isCurrentLocation,
-                                )
-                                dataBaseRepo.saveWeather(item)
-                            }
-                            .onError {
-
-                            }
-                    }
-                }
-            }
-        }
-        viewModelScope.launch {
-            _searchScreenState.update {
-                it.copy(
-                    pageNumber = pageNum
-                )
-            }
-        }
-        viewModelScope.launch {
-            allCitiesInOriginalOrder.collect { allCitiesInOriginalOrderList ->
-                _searchScreenState.update {
-                    it.copy(
-                        allCitiesInOriginalOrder = allCitiesInOriginalOrderList
-                    )
-                }
-            }
-        }
-        viewModelScope.launch {
-            allCities.collect { allCitiesList ->
-                _searchScreenState.update {
-                    it.copy(
-                        allCities = allCitiesList
-                    )
+                        }
                 }
             }
         }
@@ -188,9 +157,6 @@ class SearchViewModel(
             _searchScreenState.update {
                 it.copy(searchQuery = query)
             }
-//            if (query.length > 2) {
-//                searchCities(query)
-//            }
         }
     }
 
