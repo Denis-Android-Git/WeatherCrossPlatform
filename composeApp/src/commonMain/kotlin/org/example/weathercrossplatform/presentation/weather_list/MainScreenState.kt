@@ -32,9 +32,7 @@ import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
-import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.domain.actions.MainScreenActions
-import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Orientation
 import org.example.weathercrossplatform.presentation.elements.CustomIndicator
 import org.example.weathercrossplatform.presentation.elements.ErrorScreen
@@ -54,8 +52,7 @@ fun MainScreenState(
     orientation: MutableState<String>,
     pageNumberFromSearchScreen: Int?,
     cityIdFromSearchScreen: Int?,
-    onAddCityButtonClick: () -> Unit,
-    myLogger: MyLogger = MyLoggerImpl
+    onAddCityButtonClick: () -> Unit
 ) {
     val configuration = currentDeviceConfiguration()
     val weatherMainScreenState by weatherViewModel.weatherScreenState.collectAsStateWithLifecycle()
@@ -102,9 +99,9 @@ fun MainScreenState(
         snapshotFlow { pagerState.currentPage }
             .distinctUntilChanged()
             .collect { pageNumber ->
-                myLogger.debug("getWeatherByQuery: skipNextPageEvent = $skipNextPageEvent")
                 if (skipNextPageEvent) {
-                    skipNextPageEvent = false
+                    skipNextPageEvent =
+                        false// чтобы не вызывать GetWeatherByQuery 2 раза при добавлении города
                     return@collect
                 }
                 if (pageNumber !in savedCities.indices) return@collect
@@ -185,7 +182,6 @@ fun MainScreenState(
 
                                 skipNextPageEvent = true
                                 pagerState.animateScrollToPage(index)
-                                myLogger.debug("getWeatherByQuery: animateScrollToPage")
                             }
                             onAddCityButtonClick()
                         },

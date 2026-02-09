@@ -104,7 +104,7 @@ kotlin {
 
         }
         kotzilla {
-            versionName = "1.1.5" // add your app version name
+            versionName = "1.1.6" // add your app version name
             keyGeneration = KotzillaKeyGeneration.COMPOSE
             composeInstrumentation = true
         }
@@ -126,8 +126,8 @@ android {
         applicationId = "org.example.weathercrossplatform"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 59
-        versionName = "1.1.5"
+        versionCode = 60
+        versionName = "1.1.6"
 
     }
     packaging {

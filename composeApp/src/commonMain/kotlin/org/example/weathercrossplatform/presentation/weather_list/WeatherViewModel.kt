@@ -14,12 +14,10 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.locationservice.LocationService
-import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.data.utils.onError
 import org.example.weathercrossplatform.data.utils.onSuccess
 import org.example.weathercrossplatform.data.utils.toUiText
 import org.example.weathercrossplatform.domain.actions.MainScreenActions
-import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Coordinates
 import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
@@ -51,7 +49,6 @@ class WeatherViewModel(
     private val locationService: LocationService,
     private val weatherRepo: WeatherRepo,
     private val dataBaseRepo: DataBaseRepo,
-    private val myLogger: MyLogger = MyLoggerImpl,
     settingsStorage: SettingsStorage,
     pageNumberFromSearchScreen: Int?,
     orientation: String
@@ -223,7 +220,6 @@ class WeatherViewModel(
         longitude: Double? = null
     ) {
         viewModelScope.launch {
-            myLogger.debug("getWeatherByQuery: $query")
             _weatherScreenState.value = _weatherScreenState.value.copy(isLoading = true)
             weatherRepo.getCurrentWeather(query)
                 .onSuccess { weather ->
