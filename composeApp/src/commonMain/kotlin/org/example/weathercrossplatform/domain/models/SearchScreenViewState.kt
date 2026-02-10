@@ -6,6 +6,7 @@ data class SearchScreenViewState(
     val searchQuery: String = "",
     val expanded: Boolean = false,
     val loading: Boolean = false,
+    val loadingSavedList: Boolean = true,
     val cityList: List<Location> = emptyList(),
     val error: String? = null,
     val tempListToDelete: List<SavedWeatherItem> = emptyList(),

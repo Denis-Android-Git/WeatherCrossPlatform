@@ -67,7 +67,8 @@ class SearchViewModel(
             allCities = allCities,
             allCitiesInOriginalOrder = allCitiesInOriginalOrder,
             isTempC = settingsInfo?.isTempC ?: true,
-            isLiquidGlassOn = settingsInfo?.isLiquidGlassOn ?: false
+            isLiquidGlassOn = settingsInfo?.isLiquidGlassOn ?: false,
+            loadingSavedList = false
         )
     }
         .onStart {
