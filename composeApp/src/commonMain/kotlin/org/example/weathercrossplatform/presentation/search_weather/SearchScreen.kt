@@ -265,24 +265,13 @@ fun SearchScreen(
                     .align(Alignment.CenterHorizontally),
                 verticalArrangement = Arrangement.spacedBy(8.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
-                ) {
+            ) {
                 item {
                     Text(
                         text = stringResource(Res.string.current_place),
                         modifier = Modifier.padding(start = 16.dp),
                         color = Color.Gray
                     )
-                }
-                item {
-                    AnimatedVisibility(
-                        visible = searchScreenState.loadingSavedList
-                    ) {
-                        CircularWavyProgressIndicator(
-                            color = Color.White,
-                            wavelength = 50.dp,
-                            waveSpeed = 50.dp
-                        )
-                    }
                 }
                 itemsIndexed(
                     cityList,
