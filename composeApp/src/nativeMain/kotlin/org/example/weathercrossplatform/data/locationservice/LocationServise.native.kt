@@ -5,8 +5,6 @@ import kotlinx.cinterop.useContents
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
-import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
-import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Coordinates
 import platform.CoreLocation.CLLocation
 import platform.CoreLocation.CLLocationManager
@@ -16,8 +14,6 @@ import platform.Foundation.NSError
 import platform.darwin.NSObject
 
 actual class LocationService {
-
-    private val myLogger = MyLoggerImpl
     private val locationManager = CLLocationManager()
     private var delegateWrapper: LocationDelegateWrapper? = null
 
@@ -27,7 +23,6 @@ actual class LocationService {
 
     @OptIn(ExperimentalForeignApi::class)
     actual suspend fun getLocation(): Flow<Coordinates> = callbackFlow {
-        myLogger.debug("Requesting location...")
         val delegate = LocationDelegateWrapper { coordinates, error ->
             if (coordinates != null) {
                 trySend(coordinates)
@@ -42,30 +37,25 @@ actual class LocationService {
         locationManager.requestLocation()
 
         awaitClose {
-            myLogger.debug("Closing location flow")
             locationManager.delegate = null
             delegateWrapper = null
         }
     }
 
     private class LocationDelegateWrapper(
-        private val myLogger: MyLogger = MyLoggerImpl,
         private val onLocationReceived: (Coordinates?, Throwable?) -> Unit
     ) : NSObject(), CLLocationManagerDelegateProtocol {
 
         @OptIn(ExperimentalForeignApi::class)
         override fun locationManager(manager: CLLocationManager, didUpdateLocations: List<*>) {
             val location = didUpdateLocations.lastOrNull() as? CLLocation
-            myLogger.debug("Location updated: $location")
             location?.coordinate?.useContents {
                 val coords = Coordinates(this.latitude, this.longitude)
-                myLogger.debug("Latitude: ${coords.latitude}, Longitude: ${coords.longitude}")
                 onLocationReceived(coords, null)
             }
         }
 
         override fun locationManager(manager: CLLocationManager, didFailWithError: NSError) {
-            myLogger.debug("Location failed with error: ${didFailWithError.localizedDescription}")
             onLocationReceived(
                 null,
                 Exception("Location error: ${didFailWithError.localizedDescription}")

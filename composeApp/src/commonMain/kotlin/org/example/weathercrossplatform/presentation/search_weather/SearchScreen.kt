@@ -22,6 +22,7 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.CircularWavyProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
@@ -45,8 +46,6 @@ import com.kashif_e.backdrop.backdrops.layerBackdrop
 import com.kashif_e.backdrop.backdrops.rememberLayerBackdrop
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
-import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
-import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Location
 import org.example.weathercrossplatform.domain.models.SearchScreenViewState
 import org.example.weathercrossplatform.presentation.elements.FoundItem
@@ -62,8 +61,13 @@ import weathercrossplatform.composeapp.generated.resources.current_place
 import weathercrossplatform.composeapp.generated.resources.enter_city
 import weathercrossplatform.composeapp.generated.resources.im_14
 import weathercrossplatform.composeapp.generated.resources.im_14_landscape
+import kotlin.uuid.ExperimentalUuidApi
+import kotlin.uuid.Uuid
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
+@OptIn(
+    ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class,
+    ExperimentalUuidApi::class
+)
 @Composable
 fun SearchScreen(
     modifier: Modifier,
@@ -79,8 +83,7 @@ fun SearchScreen(
     onClick: (SavedWeatherItem) -> Unit,
     onDelete: () -> Unit,
     clearTempList: () -> Unit,
-    onSavedItemClick: (Int) -> Unit,
-    myLogger: MyLogger = MyLoggerImpl
+    onSavedItemClick: (Int) -> Unit
 ) {
     val isLongPressed = remember { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
@@ -88,9 +91,9 @@ fun SearchScreen(
     val configuration = currentDeviceConfiguration()
     val backGround =
         if (configuration.isPortrait) Res.drawable.im_14 else Res.drawable.im_14_landscape
+
     Box(
         modifier = modifier.fillMaxSize()
-        //.background(color = Color.Black)
     ) {
         Image(
             painter = painterResource(backGround),
@@ -164,7 +167,6 @@ fun SearchScreen(
                     SearchBarDefaults.InputField(
                         query = searchScreenState.searchQuery,
                         onQueryChange = {
-                            myLogger.debug("onQueryChange: $it")
                             onQueryChange(it)
                         },
                         onSearch = {
@@ -224,7 +226,12 @@ fun SearchScreen(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     contentPadding = PaddingValues(0.dp, 8.dp, 0.dp, 0.dp)
                 ) {
-                    items(searchScreenState.cityList) {
+                    items(
+                        searchScreenState.cityList,
+                        key = {
+                            it.id ?: Uuid.random()
+                        }
+                    ) {
                         FoundItem(
                             city = it.name,
                             country = it.country,
@@ -248,9 +255,11 @@ fun SearchScreen(
             LazyColumn(
                 modifier = Modifier
                     .widthIn(max = 600.dp)
+                    .fillMaxWidth()
                     .padding(top = 16.dp)
                     .align(Alignment.CenterHorizontally),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 item {
                     Text(
@@ -284,11 +293,9 @@ fun SearchScreen(
                             scope.launch {
                                 if (isLongPressed.value) {
                                     if (!savedCity.isCurrentLocation) {
-                                        myLogger.debug("onClick_isLongPressed.value")
                                         onClick(savedCity)
                                     }
                                 } else {
-                                    myLogger.debug("onClick_onSavedItemClick $originalIndex")
                                     onSavedItemClick(originalIndex)
                                 }
                             }
@@ -339,9 +346,15 @@ fun SearchScreen(
     }
 }
 
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Preview
 @Composable
 fun Preview() {
+    CircularWavyProgressIndicator(
+        color = Color.White,
+        wavelength = 5.dp,
+        waveSpeed = 5.dp
+    )
     SearchScreen(
         onBackButtonClick = { },
         onQueryChange = {},

@@ -61,11 +61,9 @@ import coil3.compose.AsyncImage
 import com.kashif_e.backdrop.backdrops.layerBackdrop
 import com.kashif_e.backdrop.backdrops.rememberLayerBackdrop
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
-import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.data.network.dto.ForecastDto
 import org.example.weathercrossplatform.data.utils.UiText
 import org.example.weathercrossplatform.data.utils.toUiText
-import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.AirQuality
 import org.example.weathercrossplatform.domain.models.Astro
 import org.example.weathercrossplatform.domain.models.Condition
@@ -119,9 +117,8 @@ fun MainScreen(
     onAddButtonClick: () -> Unit,
     onSettingsClick: () -> Unit,
     onCancelButtonClick: () -> Unit,
-    onAddCityButtonClick: (SavedWeatherItem) -> Unit,
+    onAddCityButtonClick: () -> Unit,
     isCurrentLocation: Boolean,
-    myLogger: MyLogger = MyLoggerImpl,
     topPadding: Dp
 ) {
 
@@ -154,17 +151,28 @@ fun MainScreen(
                 (firstElementMaxYPosition - (fabMaxYPosition + ALPHA_THRESHOLD))).coerceIn(0f, 1f)
     )
 
-    myLogger.debug(
-        "positions: firstElementInLazyColumnPosition = $firstElementInLazyColumnYPosition, " +
-                "firstElementMaxYPosition = $firstElementMaxYPosition, " +
-                "fabMaxYPosition = $fabMaxYPosition, " +
-                "animatedAlpha = $animatedAlpha"
-    )
     val configuration = currentDeviceConfiguration()
-    val imageError =
-        if (configuration.isPortrait) weatherMainScreenState.appPhotoList.random() else weatherMainScreenState.landscapePhotoList.random()
+    val cityKey = weatherMainScreenState.weatherDto?.location?.name
+    val updatedKey = weatherMainScreenState.weatherDto?.current?.lastUpdatedEpoch
+
+    val photoPool = if (configuration.isPortrait) {
+        weatherMainScreenState.appPhotoList
+    } else {
+        weatherMainScreenState.landscapePhotoList
+    }
+
+    val imageError = remember(cityKey, updatedKey, configuration.isPortrait) {
+        photoPool.random()
+    }
+
+    val stableImageModel =
+        remember(cityKey, updatedKey, configuration.isPortrait, weatherMainScreenState.image) {
+            weatherMainScreenState.image.ifEmpty {
+                imageError
+            }
+        }
+
     val density = LocalDensity.current
-    //val topPadding = 160.dp
     val totalPadding = 100.dp
     var columnHeight by remember {
         mutableStateOf(0.dp)
@@ -192,7 +200,6 @@ fun MainScreen(
                         ) {
                             Text(
                                 text = weatherMainScreenState.weatherDto?.location?.name.toString(),
-                                //modifier = Modifier.alpha(titleAlpha),
                                 color = Color.White, fontSize = 20.sp
                             )
                         }
@@ -217,9 +224,7 @@ fun MainScreen(
             ) {
                 Box(modifier = Modifier.fillMaxSize()) {
                     AsyncImage(
-                        model = weatherMainScreenState.image.ifEmpty {
-                            weatherMainScreenState.appPhotoList
-                        },
+                        model = stableImageModel,
                         error = painterResource(imageError),
                         modifier = Modifier.fillMaxSize().layerBackdrop(backdrop),
                         contentScale = ContentScale.Crop,
@@ -404,7 +409,12 @@ fun MainScreen(
                                         horizontalArrangement = Arrangement.spacedBy(6.dp),
                                         verticalArrangement = Arrangement.spacedBy(6.dp)
                                     ) {
-                                        items(weatherMainScreenState.weatherItemList) { item ->
+                                        items(
+                                            weatherMainScreenState.weatherItemList,
+                                            key = {
+                                                it.id
+                                            }
+                                        ) { item ->
                                             WeatherDetailElement(
                                                 title = item.title,
                                                 description = when (item.description) {
@@ -451,12 +461,12 @@ fun MainScreen(
                     }
                 }
             }
-
+            val cityIdList = savedCityList.associateBy {
+                it.cityId
+            }
+            val isCityIdListContainsCityId = cityIdList.containsKey(cityId)
             AnimatedVisibility(
-                visible = savedCityList.any {
-                    myLogger.debug("it.cityId: ${it.cityId}, cityId: $cityId")
-                    it.cityId == cityId
-                } && animatedAlpha != 0f,
+                visible = isCityIdListContainsCityId && animatedAlpha != 0f,
                 modifier = Modifier.align(Alignment.TopEnd).padding(4.dp)
             ) {
                 FloatingToolBar(
@@ -468,10 +478,7 @@ fun MainScreen(
                 )
             }
             AnimatedVisibility(
-                visible = !savedCityList.any {
-                    myLogger.debug("it.cityId: ${it.cityId}, cityId: $cityId")
-                    it.cityId == cityId
-                },
+                visible = !isCityIdListContainsCityId,
                 modifier = Modifier.align(Alignment.TopStart)
             ) {
                 Row(
@@ -511,25 +518,7 @@ fun MainScreen(
                     if (weatherMainScreenState.isLiquidGlassOn) {
                         LiquidButton(
                             onClick = {
-                                onAddCityButtonClick(
-                                    SavedWeatherItem(
-                                        cityName = weatherMainScreenState.weatherDto?.location?.name
-                                            ?: "",
-                                        //latitude = latitude,
-                                        //longitude = longitude,
-                                        temperature = weatherMainScreenState.weatherDto?.current?.tempC
-                                            ?: 0.0,
-                                        weatherDescription = weatherMainScreenState.weatherDto?.current?.condition?.text
-                                            ?: "",
-                                        highTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.maxTempC
-                                            ?: 0.0,
-                                        lowTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.minTempC
-                                            ?: 0.0,
-                                        cityId = cityId,
-                                        coordinates = "${weatherMainScreenState.weatherDto?.location?.lat},${weatherMainScreenState.weatherDto?.location?.lon}",
-                                        isCurrentLocation = false,
-                                    )
-                                )
+                                onAddCityButtonClick()
                             },
                             backdrop = backdrop
                         ) {
@@ -546,25 +535,7 @@ fun MainScreen(
                     } else {
                         Button(
                             onClick = {
-                                onAddCityButtonClick(
-                                    SavedWeatherItem(
-                                        cityName = weatherMainScreenState.weatherDto?.location?.name
-                                            ?: "",
-                                        //latitude = latitude,
-                                        //longitude = longitude,
-                                        temperature = weatherMainScreenState.weatherDto?.current?.tempC
-                                            ?: 0.0,
-                                        weatherDescription = weatherMainScreenState.weatherDto?.current?.condition?.text
-                                            ?: "",
-                                        highTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.maxTempC
-                                            ?: 0.0,
-                                        lowTemperature = weatherMainScreenState.weatherDto?.forecast?.forecastday[0]?.day?.minTempC
-                                            ?: 0.0,
-                                        cityId = cityId,
-                                        coordinates = "${weatherMainScreenState.weatherDto?.location?.lat},${weatherMainScreenState.weatherDto?.location?.lon}",
-                                        isCurrentLocation = false,
-                                    )
-                                )
+                                onAddCityButtonClick()
                             },
                             colors = ButtonDefaults.buttonColors(
                                 containerColor = Color.Black.copy(alpha = 0.2f),
@@ -605,42 +576,48 @@ fun MainScreenPreview() {
             description = "45%",
             progress = 0.45f,
             rotation = 0f,
-            uvIndex = 0
+            uvIndex = 0,
+            id = 1
         ),
         WeatherItem(
             title = Res.string.wind,
             description = "10 км/ч",
             progress = 0.3f,
             rotation = 315f,
-            uvIndex = 0
+            uvIndex = 0,
+            id = 2
         ),
         WeatherItem(
             title = Res.string.pressure,
             description = "1013 мб",
             progress = 0.65f,
             rotation = 0f,
-            uvIndex = 0
+            uvIndex = 0,
+            id = 3
         ),
         WeatherItem(
             title = Res.string.clouds,
             description = "25%",
             progress = 0.25f,
             rotation = 0f,
-            uvIndex = 0
+            uvIndex = 0,
+            id = 4
         ),
         WeatherItem(
             title = Res.string.uv,
             description = "Высокий",
             progress = 0f,
             rotation = 0f,
-            uvIndex = 6
+            uvIndex = 6,
+            id = 5
         ),
         WeatherItem(
             title = Res.string.feels_like,
             description = "27°",
             progress = 0f,
             rotation = 90f,
-            uvIndex = 0
+            uvIndex = 0,
+            id = 6
         )
     )
 
@@ -731,8 +708,8 @@ fun MainScreenPreview() {
 
 val mockHours = listOf(
     Hour(
-        chanceOfRain = 0,
-        chanceOfSnow = 0,
+        chanceOfRain = 0.0,
+        chanceOfSnow = 0.0,
         cloud = 25,
         condition = Condition(
             text = "Sunny",
@@ -798,8 +775,8 @@ val mockForecast = listOf(
                 icon = "//cdn.weatherapi.com/weather/64x64/day/116.png",
                 code = 1003
             ),
-            dailyChanceOfRain = 10,
-            dailyChanceOfSnow = 0,
+            dailyChanceOfRain = 1.0,
+            dailyChanceOfSnow = 0.0,
             dailyWillItRain = 0,
             dailyWillItSnow = 0,
             maxTempC = 28.0,
@@ -836,8 +813,8 @@ val mockForecast = listOf(
                 code = 1125, icon = "facilisi", text = "populo"
 
             ),
-            dailyChanceOfRain = 7358,
-            dailyChanceOfSnow = 5564,
+            dailyChanceOfRain = 7.358,
+            dailyChanceOfSnow = 5.564,
             dailyWillItRain = 1626,
             dailyWillItSnow = 9274,
             maxTempC = 176.177,

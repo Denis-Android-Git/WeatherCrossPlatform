@@ -10,7 +10,7 @@ import kotlin.uuid.Uuid
 sealed interface Routes : NavKey {
     @Serializable
     data class MainScreenRoute @OptIn(ExperimentalUuidApi::class) constructor(
-        val cityId: Int? = null,
+        //val cityId: Int? = null,
         val pageNumber: Int? = null,
         val forceKey: String = Uuid.random().toString()//Random.nextLong() //to recreate viewmodel each time
 

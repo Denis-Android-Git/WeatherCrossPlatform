@@ -7,4 +7,5 @@ import androidx.lifecycle.ViewModel
 
 class NavHostViewModel : ViewModel() {
     var pageNumber by mutableStateOf(0)
+    var cityId by mutableStateOf<Int?>(null)
 }

@@ -16,9 +16,9 @@ data class Day(
     val avgVisMiles: Double,
     val condition: Condition,
     @SerialName("daily_chance_of_rain")
-    val dailyChanceOfRain: Int,
+    val dailyChanceOfRain: Double,
     @SerialName("daily_chance_of_snow")
-    val dailyChanceOfSnow: Int,
+    val dailyChanceOfSnow: Double,
     @SerialName("daily_will_it_rain")
     val dailyWillItRain: Int,
     @SerialName("daily_will_it_snow")

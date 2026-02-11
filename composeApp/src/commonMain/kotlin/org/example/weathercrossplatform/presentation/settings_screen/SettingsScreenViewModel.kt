@@ -4,6 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
@@ -35,7 +37,10 @@ class SettingsScreenViewModel(
     fun onAction(action: SettingsScreenAction) {
         when (action) {
             is SettingsScreenAction.SetDropDownTempExpanded -> setDropDownTempExpanded(action.value)
-            is SettingsScreenAction.SetDropDownPressureExpanded -> setDropDownPressureExpanded(action.value)
+            is SettingsScreenAction.SetDropDownPressureExpanded -> setDropDownPressureExpanded(
+                action.value
+            )
+
             is SettingsScreenAction.SetDropDownWindExpanded -> setDropDownWindExpanded(action.value)
             is SettingsScreenAction.SetPressureUnit -> setPressureUnit(action.value)
             is SettingsScreenAction.SetTempUnit -> setTempUnit(action.value)
@@ -59,20 +64,18 @@ class SettingsScreenViewModel(
                 )
             }
         }
-        viewModelScope.launch {
-            settingsStorage.observeSettingsInfo().collect { info ->
-                info?.let { settings ->
-                    _state.update {
-                        it.copy(
-                            isTempC = settings.isTempC,
-                            isPressureMb = settings.isPressureMb,
-                            isWindKph = settings.isWindKph,
-                            isLiquidGlassOn = settings.isLiquidGlassOn
-                        )
-                    }
+        settingsStorage.observeSettingsInfo().onEach { info ->
+            info?.let { settings ->
+                _state.update {
+                    it.copy(
+                        isTempC = settings.isTempC,
+                        isPressureMb = settings.isPressureMb,
+                        isWindKph = settings.isWindKph,
+                        isLiquidGlassOn = settings.isLiquidGlassOn
+                    )
                 }
             }
-        }
+        }.launchIn(viewModelScope)
     }
 
 

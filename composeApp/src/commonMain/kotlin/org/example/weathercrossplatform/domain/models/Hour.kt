@@ -6,10 +6,10 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Hour(
     @SerialName("chance_of_rain")
-    val chanceOfRain: Int,
+    val chanceOfRain: Double,
 
     @SerialName("chance_of_snow")
-    val chanceOfSnow: Int,
+    val chanceOfSnow: Double,
 
     val cloud: Int,
     val condition: Condition,

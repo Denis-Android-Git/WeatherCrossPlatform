@@ -37,15 +37,13 @@ val sharedModule = module {
     singleOf(::WeatherRepoImpl).bind<WeatherRepo>()
     singleOf(::DataBaseRepoImpl).bind<DataBaseRepo>()
     singleOf(::DataStoreSettingsStorage) bind SettingsStorage::class
-    viewModel { (pageNumber: Int?, cityId: Int?, orientation: String) ->
+    viewModel { (pageNumber: Int?, orientation: String) ->
         WeatherViewModel(
             locationService = get(),
             weatherRepo = get(),
             dataBaseRepo = get(),
-            myLogger = get(),
             settingsStorage = get(),
             pageNumberFromSearchScreen = pageNumber,
-            cityIdFromSearchScreen = cityId,
             orientation = orientation
         )
     }

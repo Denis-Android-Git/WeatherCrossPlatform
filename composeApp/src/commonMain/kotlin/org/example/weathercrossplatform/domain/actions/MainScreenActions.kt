@@ -1,12 +1,10 @@
 package org.example.weathercrossplatform.domain.actions
 
-import org.example.weathercrossplatform.data.database.SavedWeatherItem
-
 sealed interface MainScreenActions {
     data class Init(val orientation: String) : MainScreenActions
     data class SetCityId(val cityId: Int?) : MainScreenActions
     object RefreshPosition : MainScreenActions
-    data class AddCity(val city: SavedWeatherItem) : MainScreenActions
+    data class AddCity(val cityId: Int?) : MainScreenActions
     data class GetWeatherByQuery(
         val query: String, val orientation: String,
     ) : MainScreenActions

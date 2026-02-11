@@ -19,8 +19,6 @@ import androidx.navigation3.ui.NavDisplay
 import androidx.savedstate.serialization.SavedStateConfiguration
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
-import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
-import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Orientation
 import org.example.weathercrossplatform.domain.models.Routes
 import org.example.weathercrossplatform.domain.models.Routes.MainScreenRoute
@@ -34,8 +32,8 @@ import org.koin.core.parameter.parametersOf
 @Composable
 fun NavHostMainScreen(
     isFirstLaunch: Boolean,
-    modifier: Modifier,
-    myLogger: MyLogger = MyLoggerImpl
+    modifier: Modifier
+    //myLogger: MyLogger = MyLoggerImpl
 ) {
 
     val navHostViewModel = koinViewModel<NavHostViewModel>()
@@ -102,6 +100,7 @@ fun NavHostMainScreen(
                         navHostViewModel.pageNumber = pageNumber
                     },
                     onCancelButtonClick = {
+                        navHostViewModel.cityId = null
                         backStack.removeAll { it is MainScreenRoute }
                         backStack.add(MainScreenRoute(pageNumber = navHostViewModel.pageNumber))
                         backStack.add(Routes.SearchScreenRoute())
@@ -112,9 +111,14 @@ fun NavHostMainScreen(
                     },
                     modifier = modifier,
                     weatherViewModel = koinViewModel {
-                        parametersOf(mainScreen.pageNumber, mainScreen.cityId, orientation.value)
+                        parametersOf(mainScreen.pageNumber, orientation.value)
                     },
                     orientation = orientation,
+                    pageNumberFromSearchScreen = mainScreen.pageNumber,
+                    cityIdFromSearchScreen = navHostViewModel.cityId,
+                    onAddCityButtonClick = {
+                        navHostViewModel.cityId = null
+                    },
                 )
             }
 
@@ -126,13 +130,12 @@ fun NavHostMainScreen(
                         }
                     },
                     onFoundItemClick = { location ->
+                        navHostViewModel.cityId = location.id
                         backStack.removeAll { it is Routes.SearchScreenRoute }
                         backStack.removeAll { it is MainScreenRoute }
-                        backStack.add(MainScreenRoute(location.id))
-                        myLogger.debug("location_id: ${location.id}")
+                        backStack.add(MainScreenRoute())
                     },
                     onSavedItemClick = { pageNumber ->
-                        myLogger.debug("page_number: $pageNumber")
                         backStack.removeAll { it is Routes.SearchScreenRoute }
                         backStack.removeAt(0)
                         backStack.add(MainScreenRoute(pageNumber = pageNumber))

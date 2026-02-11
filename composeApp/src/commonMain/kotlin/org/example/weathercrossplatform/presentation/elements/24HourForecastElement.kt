@@ -9,7 +9,6 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -19,11 +18,8 @@ import com.kashif_e.backdrop.backdrops.LayerBackdrop
 import com.kashif_e.backdrop.backdrops.rememberLayerBackdrop
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.launch
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
-import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
-import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Condition
 import org.example.weathercrossplatform.domain.models.Hour
 import org.example.weathercrossplatform.presentation.utils.myLiquidGlass2
@@ -39,7 +35,6 @@ fun Forecast24Hour(
     hours: List<Hour>,
     isTempC: Boolean,
     isWindKmh: Boolean,
-    myLogger: MyLogger = MyLoggerImpl,
     backdrop: LayerBackdrop,
     isLiquidGlassOn: Boolean
 ) {
@@ -55,7 +50,6 @@ fun Forecast24Hour(
         snapshotFlow { rowState.layoutInfo.totalItemsCount }
             .filter { it > 0 }
             .first()
-        myLogger.debug("LazyRow ready, scroll to $hour")
         rowState.animateScrollToItem(hour)
     }
 
@@ -79,10 +73,14 @@ fun Forecast24Hour(
             modifier = Modifier.padding(bottom = 16.dp),
             state = rowState
         ) {
-            itemsIndexed(hours) { index, item ->
+            itemsIndexed(
+                items = hours,
+                key = { index, _ ->
+                    index
+                }
+            ) { index, item ->
                 val icon = item.condition.icon.replace("//", "https://")
                 val time = item.time.substringAfter(" ")
-                myLogger.debug("item_time: ${item.time}")
                 val prevTemp = when {
                     isTempC -> if (index > 0) hours[index - 1].tempC.toFloat() else item.tempC.toFloat()
                     else -> if (index > 0) hours[index - 1].tempF.toFloat() else item.tempF.toFloat()
@@ -107,8 +105,8 @@ fun Forecast24Hour(
 fun HourForecastElementPreview() {
     val sampleHours = listOf(
         Hour(
-            chanceOfRain = 0,
-            chanceOfSnow = 0,
+            chanceOfRain = 0.0,
+            chanceOfSnow = 0.0,
             cloud = 10,
             condition = Condition(
                 code = 1000,
@@ -147,8 +145,8 @@ fun HourForecastElementPreview() {
             windChillF = 64.4
         ),
         Hour(
-            chanceOfRain = 0,
-            chanceOfSnow = 0,
+            chanceOfRain = 0.0,
+            chanceOfSnow = 0.0,
             cloud = 5,
             condition = Condition(
                 code = 1000,
@@ -187,8 +185,8 @@ fun HourForecastElementPreview() {
             windChillF = 60.8
         ),
         Hour(
-            chanceOfRain = 0,
-            chanceOfSnow = 0,
+            chanceOfRain = 0.0,
+            chanceOfSnow = 0.0,
             cloud = 0,
             condition = Condition(
                 code = 1000,
@@ -227,8 +225,8 @@ fun HourForecastElementPreview() {
             windChillF = 57.2
         ),
         Hour(
-            chanceOfRain = 0,
-            chanceOfSnow = 0,
+            chanceOfRain = 0.0,
+            chanceOfSnow = 0.0,
             cloud = 5,
             condition = Condition(
                 code = 1000,
@@ -267,8 +265,8 @@ fun HourForecastElementPreview() {
             windChillF = 60.8
         ),
         Hour(
-            chanceOfRain = 0,
-            chanceOfSnow = 0,
+            chanceOfRain = 0.0,
+            chanceOfSnow = 0.0,
             cloud = 10,
             condition = Condition(
                 code = 1000,
@@ -307,8 +305,8 @@ fun HourForecastElementPreview() {
             windChillF = 68.0
         ),
         Hour(
-            chanceOfRain = 0,
-            chanceOfSnow = 0,
+            chanceOfRain = 0.0,
+            chanceOfSnow = 0.0,
             cloud = 15,
             condition = Condition(
                 code = 1000,
@@ -347,8 +345,8 @@ fun HourForecastElementPreview() {
             windChillF = 71.6
         ),
         Hour(
-            chanceOfRain = 0,
-            chanceOfSnow = 0,
+            chanceOfRain = 0.0,
+            chanceOfSnow = 0.0,
             cloud = 20,
             condition = Condition(
                 code = 1003,
@@ -387,8 +385,8 @@ fun HourForecastElementPreview() {
             windChillF = 69.8
         ),
         Hour(
-            chanceOfRain = 0,
-            chanceOfSnow = 0,
+            chanceOfRain = 0.0,
+            chanceOfSnow = 0.0,
             cloud = 25,
             condition = Condition(
                 code = 1003,
