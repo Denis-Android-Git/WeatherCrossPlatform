@@ -12,6 +12,10 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import org.example.weathercrossplatform.data.constants.Constants.MAX_AIR_PRESSURE_INCH
+import org.example.weathercrossplatform.data.constants.Constants.MAX_AIR_PRESSURE_MM
+import org.example.weathercrossplatform.data.constants.Constants.MIN_AIR_PRESSURE_INCH
+import org.example.weathercrossplatform.data.constants.Constants.MIN_AIR_PRESSURE_MM
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.locationservice.LocationService
 import org.example.weathercrossplatform.data.utils.onError
@@ -38,12 +42,6 @@ import weathercrossplatform.composeapp.generated.resources.wind
 import kotlin.time.Clock
 import kotlin.time.DurationUnit
 import kotlin.time.toDuration
-
-
-private const val MAX_AIR_PRESSURE_MM = 825
-private const val MIN_AIR_PRESSURE_MM = 700
-private const val MAX_AIR_PRESSURE_INCH = 32
-private const val MIN_AIR_PRESSURE_INCH = 28
 
 class WeatherViewModel(
     private val locationService: LocationService,

@@ -60,6 +60,7 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.kashif_e.backdrop.backdrops.layerBackdrop
 import com.kashif_e.backdrop.backdrops.rememberLayerBackdrop
+import org.example.weathercrossplatform.data.constants.Constants.ALPHA_THRESHOLD
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.network.dto.ForecastDto
 import org.example.weathercrossplatform.data.utils.UiText
@@ -104,9 +105,6 @@ import weathercrossplatform.composeapp.generated.resources.pressure
 import weathercrossplatform.composeapp.generated.resources.uv
 import weathercrossplatform.composeapp.generated.resources.weather_api
 import weathercrossplatform.composeapp.generated.resources.wind
-
-private const val ALPHA_THRESHOLD = 300
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(

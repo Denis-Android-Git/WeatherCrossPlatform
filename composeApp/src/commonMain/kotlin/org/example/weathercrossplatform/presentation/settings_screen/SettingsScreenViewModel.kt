@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import org.example.weathercrossplatform.data.constants.Constants.PRIVACY_POLICY_URL
 import org.example.weathercrossplatform.data.sdk_checker.isLiquidGlassAvailable
 import org.example.weathercrossplatform.domain.models.SettingsInfo
 import org.example.weathercrossplatform.domain.repo.SettingsStorage
