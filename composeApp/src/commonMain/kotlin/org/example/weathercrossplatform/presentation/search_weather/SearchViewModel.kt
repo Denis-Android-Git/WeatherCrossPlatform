@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onStart
@@ -17,9 +18,11 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
+import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.data.utils.onError
 import org.example.weathercrossplatform.data.utils.onSuccess
 import org.example.weathercrossplatform.domain.actions.SearchScreenActions
+import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.SearchScreenViewState
 import org.example.weathercrossplatform.domain.repo.DataBaseRepo
 import org.example.weathercrossplatform.domain.repo.SettingsStorage
@@ -29,7 +32,7 @@ import kotlin.time.Duration.Companion.seconds
 class SearchViewModel(
     private val dataBaseRepo: DataBaseRepo,
     private val weatherRepo: WeatherRepo,
-    //private val myLogger: MyLogger = MyLoggerImpl,
+    private val myLogger: MyLogger = MyLoggerImpl,
     private val settingsStorage: SettingsStorage
 ) : ViewModel() {
     private var hasLoadedInitialData = false
@@ -55,14 +58,16 @@ class SearchViewModel(
             if (it.length > 2) {
                 searchCities(it)
             }
-        }
+        }.launchIn(viewModelScope)
     val searchScreenState = combine(
         _searchScreenState,
         allCities,
         allCitiesInOriginalOrder,
-        searchFlow,
         settingsStorage.observeSettingsInfo()
-    ) { currentState, allCities, allCitiesInOriginalOrder, _, settingsInfo ->
+    ) { currentState, allCities, allCitiesInOriginalOrder,
+        settingsInfo ->
+
+        myLogger.debug("SearchViewModel: ${allCities.joinToString(", ")}")
         currentState.copy(
             allCities = allCities,
             allCitiesInOriginalOrder = allCitiesInOriginalOrder,
