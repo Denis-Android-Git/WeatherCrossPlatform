@@ -30,7 +30,6 @@ import kotlin.time.Duration.Companion.seconds
 class SearchViewModel(
     private val dataBaseRepo: DataBaseRepo,
     private val weatherRepo: WeatherRepo,
-    //private val myLogger: MyLogger = MyLoggerImpl,
     private val settingsStorage: SettingsStorage
 ) : ViewModel() {
     private var hasLoadedInitialData = false

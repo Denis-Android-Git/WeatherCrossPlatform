@@ -46,8 +46,6 @@ import com.kashif_e.backdrop.backdrops.layerBackdrop
 import com.kashif_e.backdrop.backdrops.rememberLayerBackdrop
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
-import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
-import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Location
 import org.example.weathercrossplatform.domain.models.SearchScreenViewState
 import org.example.weathercrossplatform.presentation.elements.FoundItem
@@ -85,8 +83,7 @@ fun SearchScreen(
     onClick: (SavedWeatherItem) -> Unit,
     onDelete: () -> Unit,
     clearTempList: () -> Unit,
-    onSavedItemClick: (Int) -> Unit,
-    myLogger: MyLogger = MyLoggerImpl
+    onSavedItemClick: (Int) -> Unit
 ) {
     val isLongPressed = remember { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
@@ -95,10 +92,8 @@ fun SearchScreen(
     val backGround =
         if (configuration.isPortrait) Res.drawable.im_14 else Res.drawable.im_14_landscape
 
-    myLogger.debug("loading = ${searchScreenState.loading}")
     Box(
         modifier = modifier.fillMaxSize()
-        //.background(color = Color.Black)
     ) {
         Image(
             painter = painterResource(backGround),
