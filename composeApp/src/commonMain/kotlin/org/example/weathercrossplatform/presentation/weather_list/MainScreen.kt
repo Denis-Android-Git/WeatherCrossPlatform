@@ -42,6 +42,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -105,6 +106,7 @@ import weathercrossplatform.composeapp.generated.resources.pressure
 import weathercrossplatform.composeapp.generated.resources.uv
 import weathercrossplatform.composeapp.generated.resources.weather_api
 import weathercrossplatform.composeapp.generated.resources.wind
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(
@@ -117,7 +119,7 @@ fun MainScreen(
     onCancelButtonClick: () -> Unit,
     onAddCityButtonClick: () -> Unit,
     isCurrentLocation: Boolean,
-    topPadding: Dp
+    topPadding: Dp,
 ) {
 
     val textColor = Color.White
@@ -132,6 +134,7 @@ fun MainScreen(
     var fabMaxYPosition by rememberSaveable {
         mutableStateOf(0f)
     }
+
     if (fabYPosition > fabMaxYPosition) {
         fabMaxYPosition = fabYPosition
     }
@@ -153,14 +156,11 @@ fun MainScreen(
     val cityKey = weatherMainScreenState.weatherDto?.location?.name
     val updatedKey = weatherMainScreenState.weatherDto?.current?.lastUpdatedEpoch
 
-    val photoPool = if (configuration.isPortrait) {
-        weatherMainScreenState.appPhotoList
+    val randomPicNumber by rememberUpdatedState(newValue = weatherMainScreenState.randomPicNumber)
+    val imageError = if (configuration.isPortrait) {
+        weatherMainScreenState.appPhotoList[randomPicNumber]
     } else {
-        weatherMainScreenState.landscapePhotoList
-    }
-
-    val imageError = remember(cityKey, updatedKey, configuration.isPortrait) {
-        photoPool.random()
+        weatherMainScreenState.landscapePhotoList[randomPicNumber]
     }
 
     val stableImageModel =

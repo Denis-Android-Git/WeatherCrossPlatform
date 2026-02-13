@@ -59,8 +59,8 @@ import weathercrossplatform.composeapp.generated.resources.chosen
 import weathercrossplatform.composeapp.generated.resources.city_search
 import weathercrossplatform.composeapp.generated.resources.current_place
 import weathercrossplatform.composeapp.generated.resources.enter_city
-import weathercrossplatform.composeapp.generated.resources.im_14
-import weathercrossplatform.composeapp.generated.resources.im_14_landscape
+import weathercrossplatform.composeapp.generated.resources.im_13
+import weathercrossplatform.composeapp.generated.resources.landscape_13
 import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
@@ -90,7 +90,7 @@ fun SearchScreen(
     val backdrop = rememberLayerBackdrop()
     val configuration = currentDeviceConfiguration()
     val backGround =
-        if (configuration.isPortrait) Res.drawable.im_14 else Res.drawable.im_14_landscape
+        if (configuration.isPortrait) Res.drawable.im_13 else Res.drawable.landscape_13
 
     Box(
         modifier = modifier.fillMaxSize()

@@ -118,6 +118,17 @@ class WeatherViewModel(
         }
     }
 
+    private fun generateRandomPicNumber() {
+        viewModelScope.launch {
+            val randomNumber = (0..<_weatherScreenState.value.appPhotoList.size).random()
+            _weatherScreenState.update {
+                it.copy(
+                    randomPicNumber = randomNumber
+                )
+            }
+        }
+    }
+
     fun updatePage(page: Int) {
         viewModelScope.launch {
             _weatherScreenState.update {
@@ -125,6 +136,7 @@ class WeatherViewModel(
                     pageNumber = page
                 )
             }
+            generateRandomPicNumber()
         }
     }
 
