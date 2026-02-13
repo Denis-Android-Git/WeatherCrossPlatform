@@ -120,6 +120,7 @@ fun MainScreen(
     onAddCityButtonClick: () -> Unit,
     isCurrentLocation: Boolean,
     topPadding: Dp,
+    //myLogger: MyLogger = MyLoggerImpl
 ) {
 
     val textColor = Color.White
@@ -162,6 +163,8 @@ fun MainScreen(
     } else {
         weatherMainScreenState.landscapePhotoList[randomPicNumber]
     }
+
+    //myLogger.debug("imageError = $imageError")
 
     val stableImageModel =
         remember(cityKey, updatedKey, configuration.isPortrait, weatherMainScreenState.image) {
