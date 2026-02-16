@@ -14,6 +14,6 @@ plugins {
     // Add the dependency for the Performance Monitoring Gradle plugin
     alias(libs.plugins.firebase.perf) apply false
     alias(libs.plugins.androidKmpLibrary) apply false
-    alias(libs.plugins.kotlinAndroid) apply false
+    //alias(libs.plugins.kotlinAndroid) apply false
 
 }
