@@ -57,5 +57,6 @@
     <string name="policy">Privacy policy</string>
     <string name="liquid_glass">Liquid glass</string>
     <string name="liquid_glass_desc">Toggle liquid glass effect</string>
+    <string name="delete">Delete</string>
 
 </resources>

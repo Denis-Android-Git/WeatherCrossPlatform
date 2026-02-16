@@ -39,6 +39,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -136,16 +137,21 @@ fun MainScreen(
         mutableStateOf(0f)
     }
 
-    if (fabYPosition > fabMaxYPosition) {
-        fabMaxYPosition = fabYPosition
+    LaunchedEffect(fabYPosition) {
+        if (fabYPosition > fabMaxYPosition) {
+            fabMaxYPosition = fabYPosition
+        }
     }
 
     var firstElementInLazyColumnYPosition by remember {
         mutableStateOf(0f)
     }
     var firstElementMaxYPosition by rememberSaveable { mutableStateOf(0f) }
-    if (firstElementInLazyColumnYPosition > firstElementMaxYPosition) {
-        firstElementMaxYPosition = firstElementInLazyColumnYPosition
+
+    LaunchedEffect(firstElementInLazyColumnYPosition) {
+        if (firstElementInLazyColumnYPosition > firstElementMaxYPosition) {
+            firstElementMaxYPosition = firstElementInLazyColumnYPosition
+        }
     }
 
     val animatedAlpha by animateFloatAsState(

@@ -11,6 +11,7 @@ import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.key
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -66,17 +67,19 @@ fun ThreeDaysForecast(
             Text(text = stringResource(Res.string._3_day_forecast), color = Color.LightGray)
         }
         forecastList.forEachIndexed { index, it ->
-            ForecastItem(
-                date = when (index) {
-                    0 -> stringResource(Res.string.today)
-                    1 -> stringResource(Res.string.tomorrow)
-                    else -> it.date
-                },
-                low = if (isTempC) it.day.minTempC.toString() else it.day.minTempF.toString(),
-                high = if (isTempC) it.day.maxTempC.toString() else it.day.maxTempF.toString(),
-                image = it.day.condition.icon,
-                isTempC = isTempC
-            )
+            key(it.date) {
+                ForecastItem(
+                    date = when (index) {
+                        0 -> stringResource(Res.string.today)
+                        1 -> stringResource(Res.string.tomorrow)
+                        else -> it.date
+                    },
+                    low = if (isTempC) it.day.minTempC.toString() else it.day.minTempF.toString(),
+                    high = if (isTempC) it.day.maxTempC.toString() else it.day.maxTempF.toString(),
+                    image = it.day.condition.icon,
+                    isTempC = isTempC
+                )
+            }
         }
     }
 }
@@ -214,6 +217,6 @@ fun ForecastElementPreview() {
         forecastList = sampleForecastList,
         isTempC = true,
         backdrop = rememberLayerBackdrop(),
-        isLiquidGlassOn = false
+        isLiquidGlassOn = true
     )
 }

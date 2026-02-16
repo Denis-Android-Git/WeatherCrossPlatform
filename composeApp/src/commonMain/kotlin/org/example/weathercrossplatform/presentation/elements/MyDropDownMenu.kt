@@ -22,7 +22,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.example.weathercrossplatform.presentation.settings_screen.SettingsScreenAction
-import org.example.weathercrossplatform.presentation.settings_screen.SettingsScreenState
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
 import weathercrossplatform.composeapp.generated.resources.Res
@@ -36,8 +35,11 @@ import weathercrossplatform.composeapp.generated.resources.mph
 @Composable
 fun MyDropDownMenu(
     onAction: (SettingsScreenAction) -> Unit,
-    state: SettingsScreenState,
     expanded: Boolean,
+    isTempC: Boolean,
+    isWindKph: Boolean,
+    isPressureMb: Boolean,
+
     list: List<StringResource>,
     settingsType: SettingsType
 ) {
@@ -45,9 +47,18 @@ fun MyDropDownMenu(
         expanded = expanded,
         onDismissRequest = {
             when (settingsType) {
-                SettingsType.TEMPERATURE -> onAction(SettingsScreenAction.SetDropDownTempExpanded(false))
+                SettingsType.TEMPERATURE -> onAction(
+                    SettingsScreenAction.SetDropDownTempExpanded(
+                        false
+                    )
+                )
+
                 SettingsType.WIND -> onAction(SettingsScreenAction.SetDropDownWindExpanded(false))
-                SettingsType.PRESSURE -> onAction(SettingsScreenAction.SetDropDownPressureExpanded(false))
+                SettingsType.PRESSURE -> onAction(
+                    SettingsScreenAction.SetDropDownPressureExpanded(
+                        false
+                    )
+                )
             }
         },
         modifier = Modifier.width(230.dp),
@@ -59,7 +70,7 @@ fun MyDropDownMenu(
                     color =
                         when (settingsType) {
                             SettingsType.TEMPERATURE -> {
-                                if (state.isTempC && res == Res.string.celc || !state.isTempC && res == Res.string.far) {
+                                if (isTempC && res == Res.string.celc || !isTempC && res == Res.string.far) {
                                     Color(0xFF357BD9).copy(alpha = 0.3f)
                                 } else {
                                     Color.Transparent
@@ -67,7 +78,7 @@ fun MyDropDownMenu(
                             }
 
                             SettingsType.WIND -> {
-                                if (state.isWindKph && res == Res.string.kmh || !state.isWindKph && res == Res.string.mph) {
+                                if (isWindKph && res == Res.string.kmh || !isWindKph && res == Res.string.mph) {
                                     Color(0xFF357BD9).copy(alpha = 0.3f)
 
                                 } else {
@@ -77,7 +88,7 @@ fun MyDropDownMenu(
                             }
 
                             SettingsType.PRESSURE -> {
-                                if (state.isPressureMb && res == Res.string.mmrt || !state.isPressureMb && res == Res.string.inrt) {
+                                if (isPressureMb && res == Res.string.mmrt || !isPressureMb && res == Res.string.inrt) {
                                     Color(0xFF357BD9).copy(alpha = 0.3f)
 
                                 } else {
@@ -100,7 +111,7 @@ fun MyDropDownMenu(
                         Spacer(modifier = Modifier.weight(1f))
                         when (settingsType) {
                             SettingsType.TEMPERATURE -> {
-                                if (state.isTempC && res == Res.string.celc || !state.isTempC && res == Res.string.far) {
+                                if (isTempC && res == Res.string.celc || !isTempC && res == Res.string.far) {
                                     Icon(
                                         imageVector = Icons.Default.Check,
                                         contentDescription = null,
@@ -111,7 +122,7 @@ fun MyDropDownMenu(
                             }
 
                             SettingsType.WIND -> {
-                                if (state.isWindKph && res == Res.string.kmh || !state.isWindKph && res == Res.string.mph) {
+                                if (isWindKph && res == Res.string.kmh || !isWindKph && res == Res.string.mph) {
                                     Icon(
                                         imageVector = Icons.Default.Check,
                                         contentDescription = null,
@@ -122,7 +133,7 @@ fun MyDropDownMenu(
                             }
 
                             SettingsType.PRESSURE -> {
-                                if (state.isPressureMb && res == Res.string.mmrt || !state.isPressureMb && res == Res.string.inrt) {
+                                if (isPressureMb && res == Res.string.mmrt || !isPressureMb && res == Res.string.inrt) {
                                     Icon(
                                         imageVector = Icons.Default.Check,
                                         contentDescription = null,
@@ -171,10 +182,13 @@ fun MyDropDownMenu(
 fun MyDropDownMenuPreview() {
     Box(modifier = Modifier.fillMaxSize()) {
         MyDropDownMenu(
-            {}, SettingsScreenState(),
+            {},
             list = listOf(Res.string.mmrt, Res.string.inrt),
             expanded = true,
-            settingsType = SettingsType.PRESSURE
+            settingsType = SettingsType.PRESSURE,
+            isTempC = true,
+            isWindKph = true,
+            isPressureMb = true
         )
     }
 }

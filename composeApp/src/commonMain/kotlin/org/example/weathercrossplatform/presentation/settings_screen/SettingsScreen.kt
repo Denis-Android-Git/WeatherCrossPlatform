@@ -152,20 +152,35 @@ fun SettingsScreenScreen(
                     ) {
                         MyDropDownElement(
                             onAction = onAction,
-                            state = state,
-                            settingsType = SettingsType.TEMPERATURE
+                            settingsType = SettingsType.TEMPERATURE,
+                            isTempC = state.isTempC,
+                            isWindKph = state.isWindKph,
+                            isPressureMb = state.isPressureMb,
+                            isDropTempExpanded = state.isDropTempExpanded,
+                            isDropWindExpanded = state.isDropWindExpanded,
+                            isDropPressureExpanded = state.isDropPressureExpanded
                         )
                         Spacer(modifier = Modifier.height(24.dp))
                         MyDropDownElement(
                             onAction = onAction,
-                            state = state,
-                            settingsType = SettingsType.WIND
+                            settingsType = SettingsType.WIND,
+                            isTempC = state.isTempC,
+                            isWindKph = state.isWindKph,
+                            isPressureMb = state.isPressureMb,
+                            isDropTempExpanded = state.isDropTempExpanded,
+                            isDropWindExpanded = state.isDropWindExpanded,
+                            isDropPressureExpanded = state.isDropPressureExpanded
                         )
                         Spacer(modifier = Modifier.height(24.dp))
                         MyDropDownElement(
                             onAction = onAction,
-                            state = state,
-                            settingsType = SettingsType.PRESSURE
+                            settingsType = SettingsType.PRESSURE,
+                            isTempC = state.isTempC,
+                            isWindKph = state.isWindKph,
+                            isPressureMb = state.isPressureMb,
+                            isDropTempExpanded = state.isDropTempExpanded,
+                            isDropWindExpanded = state.isDropWindExpanded,
+                            isDropPressureExpanded = state.isDropPressureExpanded
                         )
                     }
                     if (state.isLiquidGlassAvailable) {

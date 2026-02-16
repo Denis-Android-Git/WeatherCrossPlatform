@@ -32,9 +32,11 @@ import androidx.compose.material3.SearchBar
 import androidx.compose.material3.SearchBarDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -58,6 +60,7 @@ import weathercrossplatform.composeapp.generated.resources.cancel
 import weathercrossplatform.composeapp.generated.resources.chosen
 import weathercrossplatform.composeapp.generated.resources.city_search
 import weathercrossplatform.composeapp.generated.resources.current_place
+import weathercrossplatform.composeapp.generated.resources.delete
 import weathercrossplatform.composeapp.generated.resources.enter_city
 import weathercrossplatform.composeapp.generated.resources.im_13
 import weathercrossplatform.composeapp.generated.resources.landscape_13
@@ -89,8 +92,9 @@ fun SearchScreen(
     val scope = rememberCoroutineScope()
     val backdrop = rememberLayerBackdrop()
     val configuration = currentDeviceConfiguration()
-    val backGround =
+    val backGround by rememberUpdatedState(
         if (configuration.isPortrait) Res.drawable.im_13 else Res.drawable.landscape_13
+    )
 
     Box(
         modifier = modifier.fillMaxSize()
@@ -336,7 +340,7 @@ fun SearchScreen(
                     )
                 }
                 Text(
-                    text = "Delete",
+                    text = stringResource(Res.string.delete),
                     modifier = Modifier.align(Alignment.CenterHorizontally),
                     color = Color.White,
                     fontSize = 11.sp

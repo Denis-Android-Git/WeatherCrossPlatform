@@ -56,4 +56,5 @@
     <string name="about_app">アプリについて</string>
     <string name="policy">プライバシーポリシー</string>
     <string name="liquid_glass_desc">リキッドガラス効果</string>
+    <string name="delete">削除</string>
 </resources>

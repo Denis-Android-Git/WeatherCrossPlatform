@@ -3,7 +3,6 @@ package org.example.weathercrossplatform.presentation.search_weather
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.FlowPreview
-import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.combine
@@ -89,7 +88,7 @@ class SearchViewModel(
             val settings = settingsStorage.observeSettingsInfo().first()
             val isTempC = settings?.isTempC ?: true
             allCities.forEach { savedWeatherItem ->
-                async {
+                launch {
                     weatherRepo.getCurrentWeather(savedWeatherItem.coordinates)
                         .onSuccess { newInfo ->
                             val item = SavedWeatherItem(

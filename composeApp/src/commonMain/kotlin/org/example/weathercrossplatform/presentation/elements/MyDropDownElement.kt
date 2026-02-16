@@ -19,7 +19,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.example.weathercrossplatform.presentation.image_vectors.Expand
 import org.example.weathercrossplatform.presentation.settings_screen.SettingsScreenAction
-import org.example.weathercrossplatform.presentation.settings_screen.SettingsScreenState
 import org.jetbrains.compose.resources.stringResource
 import weathercrossplatform.composeapp.generated.resources.Res
 import weathercrossplatform.composeapp.generated.resources.celc
@@ -35,7 +34,12 @@ import weathercrossplatform.composeapp.generated.resources.wind_speed
 @Composable
 fun MyDropDownElement(
     onAction: (SettingsScreenAction) -> Unit,
-    state: SettingsScreenState,
+    isTempC: Boolean,
+    isWindKph: Boolean,
+    isPressureMb: Boolean,
+    isDropTempExpanded: Boolean,
+    isDropWindExpanded: Boolean,
+    isDropPressureExpanded: Boolean,
     settingsType: SettingsType
 ) {
     Row(
@@ -55,18 +59,40 @@ fun MyDropDownElement(
             Row(
                 modifier = Modifier.clickable {
                     when (settingsType) {
-                        SettingsType.TEMPERATURE -> onAction(SettingsScreenAction.SetDropDownTempExpanded(true))
-                        SettingsType.WIND -> onAction(SettingsScreenAction.SetDropDownWindExpanded(true))
-                        SettingsType.PRESSURE -> onAction(SettingsScreenAction.SetDropDownPressureExpanded(true))
+                        SettingsType.TEMPERATURE -> onAction(
+                            SettingsScreenAction.SetDropDownTempExpanded(
+                                true
+                            )
+                        )
+
+                        SettingsType.WIND -> onAction(
+                            SettingsScreenAction.SetDropDownWindExpanded(
+                                true
+                            )
+                        )
+
+                        SettingsType.PRESSURE -> onAction(
+                            SettingsScreenAction.SetDropDownPressureExpanded(
+                                true
+                            )
+                        )
                     }
                 },
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
                     text = when (settingsType) {
-                        SettingsType.TEMPERATURE -> if (state.isTempC) stringResource(Res.string.celc) else stringResource(Res.string.far)
-                        SettingsType.WIND -> if (state.isWindKph) stringResource(Res.string.kmh) else stringResource(Res.string.mph)
-                        SettingsType.PRESSURE -> if (state.isPressureMb) stringResource(Res.string.mmrt) else stringResource(Res.string.inrt)
+                        SettingsType.TEMPERATURE -> if (isTempC) stringResource(Res.string.celc) else stringResource(
+                            Res.string.far
+                        )
+
+                        SettingsType.WIND -> if (isWindKph) stringResource(Res.string.kmh) else stringResource(
+                            Res.string.mph
+                        )
+
+                        SettingsType.PRESSURE -> if (isPressureMb) stringResource(Res.string.mmrt) else stringResource(
+                            Res.string.inrt
+                        )
                     },
                     modifier = Modifier.width(120.dp),
                     color = Color.Gray, fontSize = 13.sp, lineHeight = 10.sp
@@ -81,18 +107,20 @@ fun MyDropDownElement(
             }
             MyDropDownMenu(
                 onAction = onAction,
-                state = state,
                 list = when (settingsType) {
                     SettingsType.TEMPERATURE -> listOf(Res.string.celc, Res.string.far)
                     SettingsType.WIND -> listOf(Res.string.kmh, Res.string.mph)
                     SettingsType.PRESSURE -> listOf(Res.string.mmrt, Res.string.inrt)
                 },
                 expanded = when (settingsType) {
-                    SettingsType.TEMPERATURE -> state.isDropTempExpanded
-                    SettingsType.WIND -> state.isDropWindExpanded
-                    SettingsType.PRESSURE -> state.isDropPressureExpanded
+                    SettingsType.TEMPERATURE -> isDropTempExpanded
+                    SettingsType.WIND -> isDropWindExpanded
+                    SettingsType.PRESSURE -> isDropPressureExpanded
                 },
-                settingsType = settingsType
+                settingsType = settingsType,
+                isTempC = isTempC,
+                isWindKph = isWindKph,
+                isPressureMb = isPressureMb
             )
         }
     }
@@ -104,8 +132,13 @@ fun MyDropDownElementPreview() {
     Box(modifier = Modifier.fillMaxSize()) {
         MyDropDownElement(
             onAction = {},
-            state = SettingsScreenState(),
-            settingsType = SettingsType.PRESSURE
+            settingsType = SettingsType.PRESSURE,
+            isTempC = true,
+            isWindKph = true,
+            isPressureMb = true,
+            isDropTempExpanded = true,
+            isDropWindExpanded = true,
+            isDropPressureExpanded = true
         )
     }
 }

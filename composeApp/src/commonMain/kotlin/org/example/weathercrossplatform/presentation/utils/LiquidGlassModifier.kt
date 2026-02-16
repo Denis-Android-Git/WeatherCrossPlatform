@@ -41,6 +41,10 @@ fun Modifier.myLiquidGlass2(
             )
         }
     )
+        .background(
+            color = Color.Black.copy(alpha = 0.1f),
+            shape = RoundedCornerShape(16.dp)
+        )
 
 fun Modifier.noLiquidGlass(): Modifier =
     this.background(
