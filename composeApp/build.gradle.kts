@@ -37,13 +37,14 @@ kotlin {
 
         androidMain.dependencies {
             implementation(libs.ui.tooling.preview)
+            implementation(libs.ui.tooling)
             implementation(libs.androidx.activity.compose)
             implementation(libs.ktor.client.okhttp)
             implementation(libs.play.services.location)
             implementation(libs.koin.android)
             implementation(libs.koin.androidx.compose)
             implementation(libs.ktor.client.android)
-            implementation(libs.core.splashscreen)
+            //implementation(libs.core.splashscreen)
             implementation(project.dependencies.platform(libs.firebase))
             implementation(libs.firebase.perf)
             implementation(libs.firebase.analytics)
