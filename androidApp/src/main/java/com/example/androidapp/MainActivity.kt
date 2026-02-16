@@ -1,4 +1,4 @@
-package org.example.weathercrossplatform
+package com.example.androidapp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -12,12 +12,6 @@ class MainActivity : ComponentActivity() {
         installSplashScreen()
         setContent {
             App()
-//            InfiniteNumberPicker(
-//                range = 1..24,
-//                itemHeight = 50.dp,
-//                visibleItems = 5,
-//
-//            )
         }
     }
 }

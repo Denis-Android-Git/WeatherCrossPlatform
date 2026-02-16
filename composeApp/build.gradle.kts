@@ -1,35 +1,29 @@
 import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
 import io.kotzilla.gradle.ext.KotzillaKeyGeneration
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import java.util.Properties
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.buildkonfig)
     alias(libs.plugins.google.services)
-    alias(libs.plugins.crashlytics)
     alias(libs.plugins.ksp)
     alias(libs.plugins.room)
     alias(libs.plugins.kotzilla)
-
-    // Add the Performance Monitoring Gradle plugin
-    alias(libs.plugins.firebase.perf)
+    alias(libs.plugins.androidKmpLibrary)
 }
 
 kotlin {
-
-    androidTarget {
-        compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_11)
-        }
+    androidLibrary {
+        compileSdk = 36
+        minSdk = 24
+        namespace = "org.example.weathercrossplatform.common"
+        experimentalProperties["android.experimental.kmp.enableAndroidResources"] = true
     }
 
     listOf(
-        //iosX64(),
         iosArm64(),
         iosSimulatorArm64()
     ).forEach { iosTarget ->
@@ -39,10 +33,7 @@ kotlin {
         }
     }
 
-    //jvm("desktop")
-
     sourceSets {
-        //val desktopMain by getting
 
         androidMain.dependencies {
             implementation(libs.ui.tooling.preview)
@@ -53,8 +44,6 @@ kotlin {
             implementation(libs.koin.androidx.compose)
             implementation(libs.ktor.client.android)
             implementation(libs.core.splashscreen)
-            // Add the dependency for the Performance Monitoring library
-            // When using the BoM, you don't specify versions in Firebase library dependencies
             implementation(project.dependencies.platform(libs.firebase))
             implementation(libs.firebase.perf)
             implementation(libs.firebase.analytics)
@@ -63,7 +52,6 @@ kotlin {
         commonMain.dependencies {
             implementation(libs.runtime)
             implementation(libs.foundation)
-            //implementation(compose.material3)
             implementation(libs.ui)
             implementation(libs.components.resources)
             implementation(libs.ui.tooling.preview)
@@ -77,7 +65,6 @@ kotlin {
             api(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
-            //implementation(libs.navigation.compose)
             implementation(libs.jetbrains.navigation3.ui)
             implementation(libs.jetbrains.lifecycle.viewmodel.nav3)
 
@@ -104,48 +91,14 @@ kotlin {
 
         }
         kotzilla {
-            versionName = "1.1.9" // add your app version name
+            versionName = "gradle_9" // add your app version name
             keyGeneration = KotzillaKeyGeneration.COMPOSE
             composeInstrumentation = true
         }
         nativeMain.dependencies {
             implementation(libs.ktor.client.darwin)
         }
-//        desktopMain.dependencies {
-//            implementation(compose.desktop.currentOs)
-//            implementation(libs.kotlinx.coroutines.swing)
-//            implementation(libs.ktor.client.okhttp)
-//        }
     }
-}
-android {
-    namespace = "org.example.weathercrossplatform"
-    compileSdk = libs.versions.android.compileSdk.get().toInt()
-
-    defaultConfig {
-        applicationId = "org.example.weathercrossplatform"
-        minSdk = libs.versions.android.minSdk.get().toInt()
-        targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 63
-        versionName = "1.1.9"
-
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = true
-            signingConfig = signingConfigs.getByName("debug")
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-
 }
 
 buildkonfig {
@@ -166,32 +119,13 @@ buildkonfig {
     }
 }
 
-dependencies {
-    debugImplementation(libs.ui.tooling)
-    debugImplementation(libs.leakcanary.android)
-
-}
-
-//compose.desktop {
-//    application {
-//        mainClass = "org.example.weathercrossplatform.MainKt"
-//
-//        nativeDistributions {
-//            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-//            packageName = "org.example.weathercrossplatform"
-//            packageVersion = "1.0.0"
-//        }
-//    }
-//}
 room {
     schemaDirectory("$projectDir/schemas")
 }
 
 dependencies {
     add("kspCommonMainMetadata", libs.androidx.room.compiler)
-
     add("kspAndroid", libs.androidx.room.compiler)
-    //add("kspIosX64", libs.androidx.room.compiler)
     add("kspIosArm64", libs.androidx.room.compiler)
     add("kspIosSimulatorArm64", libs.androidx.room.compiler)
 
