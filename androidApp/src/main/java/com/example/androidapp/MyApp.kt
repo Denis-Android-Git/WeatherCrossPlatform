@@ -1,8 +1,8 @@
-package org.example.weathercrossplatform
+package com.example.androidapp
 
 import android.app.Application
-import android.content.Context
 import org.example.weathercrossplatform.di.initKoin
+import org.example.weathercrossplatform.presentation.settings_screen.appContext
 import org.koin.android.ext.koin.androidContext
 
 class MyApp : Application() {
@@ -15,4 +15,3 @@ class MyApp : Application() {
         }
     }
 }
-lateinit var appContext: Context

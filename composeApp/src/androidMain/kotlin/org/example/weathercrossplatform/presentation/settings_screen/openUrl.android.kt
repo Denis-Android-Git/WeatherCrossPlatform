@@ -1,8 +1,9 @@
 package org.example.weathercrossplatform.presentation.settings_screen
 
+import android.content.Context
 import android.content.Intent
 import androidx.core.net.toUri
-import org.example.weathercrossplatform.appContext
+lateinit var appContext: Context
 
 actual fun openUrl(url: String) {
     val context = appContext
