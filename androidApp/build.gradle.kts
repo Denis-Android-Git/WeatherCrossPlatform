@@ -24,8 +24,8 @@ configure<ApplicationExtension> {
         applicationId = "org.example.weathercrossplatform"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 63
-        versionName = "gradle_9"
+        versionCode = 64
+        versionName = "1.2.0"
 
     }
     packaging {

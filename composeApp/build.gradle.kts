@@ -92,7 +92,7 @@ kotlin {
 
         }
         kotzilla {
-            versionName = "gradle_9" // add your app version name
+            versionName = "1.2.0" // add your app version name
             keyGeneration = KotzillaKeyGeneration.COMPOSE
             composeInstrumentation = true
         }
