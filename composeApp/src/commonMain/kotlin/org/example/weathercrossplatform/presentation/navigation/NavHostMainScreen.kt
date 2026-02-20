@@ -32,7 +32,7 @@ import org.koin.core.parameter.parametersOf
 @Composable
 fun NavHostMainScreen(
     isFirstLaunch: Boolean,
-    modifier: Modifier
+    modifier: Modifier,
     //myLogger: MyLogger = MyLoggerImpl
 ) {
 

@@ -44,7 +44,8 @@ val sharedModule = module {
             dataBaseRepo = get(),
             settingsStorage = get(),
             pageNumberFromSearchScreen = pageNumber,
-            orientation = orientation
+            orientation = orientation,
+            lifeCycleObserver = get()
         )
     }
     viewModelOf(::SearchViewModel)

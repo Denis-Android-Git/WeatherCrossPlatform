@@ -48,6 +48,7 @@ kotlin {
             implementation(project.dependencies.platform(libs.firebase))
             implementation(libs.firebase.perf)
             implementation(libs.firebase.analytics)
+            implementation(libs.androidx.lifecycle.process)
 
         }
         commonMain.dependencies {
@@ -92,7 +93,7 @@ kotlin {
 
         }
         kotzilla {
-            versionName = "1.2.0" // add your app version name
+            versionName = "new_test_version" // add your app version name
             keyGeneration = KotzillaKeyGeneration.COMPOSE
             composeInstrumentation = true
         }

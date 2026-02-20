@@ -85,4 +85,6 @@ data class WeatherMainScreenState(
     val isLiquidGlassOn: Boolean = false,
     val initialTime: Instant = Clock.System.now(),
     val randomPicNumber: Int = (0..<appPhotoList.size).random(),
+    val currentCoordinates: String? = null,
+    val currentOrientation: String = Orientation.Portrait.value
 )

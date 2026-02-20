@@ -9,6 +9,8 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -17,11 +19,14 @@ import org.example.weathercrossplatform.data.constants.Constants.MAX_AIR_PRESSUR
 import org.example.weathercrossplatform.data.constants.Constants.MIN_AIR_PRESSURE_INCH
 import org.example.weathercrossplatform.data.constants.Constants.MIN_AIR_PRESSURE_MM
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
+import org.example.weathercrossplatform.data.lifecycleObserver.LifeCycleObserver
 import org.example.weathercrossplatform.data.locationservice.LocationService
+import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.data.utils.onError
 import org.example.weathercrossplatform.data.utils.onSuccess
 import org.example.weathercrossplatform.data.utils.toUiText
 import org.example.weathercrossplatform.domain.actions.MainScreenActions
+import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Coordinates
 import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
@@ -47,9 +52,11 @@ class WeatherViewModel(
     private val locationService: LocationService,
     private val weatherRepo: WeatherRepo,
     private val dataBaseRepo: DataBaseRepo,
+    lifeCycleObserver: LifeCycleObserver,
     settingsStorage: SettingsStorage,
     pageNumberFromSearchScreen: Int?,
-    orientation: String
+    orientation: String,
+    private val myLogger: MyLogger = MyLoggerImpl
 ) : ViewModel() {
     private val coordinates = MutableStateFlow<Coordinates?>(null)
     private val _weatherScreenState = MutableStateFlow(WeatherMainScreenState())
@@ -58,6 +65,7 @@ class WeatherViewModel(
         settingsStorage.observeSettingsInfo(),
         dataBaseRepo.getWeatherList()
     ) { state, settings, savedCities ->
+
         state.copy(
             savedCities = savedCities,
             isTempC = settings?.isTempC ?: true,
@@ -72,6 +80,19 @@ class WeatherViewModel(
     )
 
     init {
+        myLogger.debug("orientation_VM $orientation")
+        lifeCycleObserver.isInForeGround.onEach {
+            val currentCoordinates = weatherScreenState.value.currentCoordinates
+            val currentOrientation = weatherScreenState.value.currentOrientation
+            myLogger.debug("check_isInForeGround isInForeGround = $it, currentCoordinates = $currentCoordinates, orientation = $orientation, currentOrientation = $currentOrientation")
+            if (it && currentCoordinates != null) {
+                getWeatherByQuery(
+                    query = currentCoordinates,
+                    orientation = currentOrientation
+                )
+            }
+        }.launchIn(viewModelScope)
+
         viewModelScope.launch {
             _weatherScreenState.update {
                 it.copy(
@@ -229,7 +250,21 @@ class WeatherViewModel(
         latitude: Double? = null,
         longitude: Double? = null
     ) {
+        myLogger.debug("check_isInForeGround getWeatherByQuery query = $query, orientation = $orientation")
+
         viewModelScope.launch {
+            _weatherScreenState.update {
+                it.copy(
+                    currentOrientation = orientation
+                )
+            }
+            if (!query.contains("id:")) {
+                _weatherScreenState.update {
+                    it.copy(
+                        currentCoordinates = query
+                    )
+                }
+            }
             _weatherScreenState.value = _weatherScreenState.value.copy(isLoading = true)
             weatherRepo.getCurrentWeather(query)
                 .onSuccess { weather ->
