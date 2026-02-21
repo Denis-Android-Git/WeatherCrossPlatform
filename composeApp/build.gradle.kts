@@ -93,7 +93,7 @@ kotlin {
 
         }
         kotzilla {
-            versionName = "new_test_version" // add your app version name
+            versionName = "1.2.0" // add your app version name
             keyGeneration = KotzillaKeyGeneration.COMPOSE
             composeInstrumentation = true
         }

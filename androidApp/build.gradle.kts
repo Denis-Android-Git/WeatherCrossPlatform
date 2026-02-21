@@ -25,7 +25,7 @@ configure<ApplicationExtension> {
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 64
-        versionName = "new_test_version"
+        versionName = "1.2.0"
 
     }
     packaging {
