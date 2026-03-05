@@ -1,5 +1,4 @@
 import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
-import io.kotzilla.gradle.ext.KotzillaKeyGeneration
 import java.util.Properties
 
 plugins {
@@ -16,7 +15,7 @@ plugins {
 }
 
 kotlin {
-    androidLibrary {
+    android {
         compileSdk = 36
         minSdk = 24
         namespace = "org.example.weathercrossplatform.common"
@@ -94,7 +93,6 @@ kotlin {
         }
         kotzilla {
             versionName = "1.2.0" // add your app version name
-            keyGeneration = KotzillaKeyGeneration.COMPOSE
             composeInstrumentation = true
         }
         nativeMain.dependencies {
@@ -131,4 +129,8 @@ dependencies {
     add("kspIosArm64", libs.androidx.room.compiler)
     add("kspIosSimulatorArm64", libs.androidx.room.compiler)
 
+}
+
+tasks.matching { it.name.startsWith("ksp") }.configureEach {
+    dependsOn(tasks.named("generateKotzillaConfig"))
 }

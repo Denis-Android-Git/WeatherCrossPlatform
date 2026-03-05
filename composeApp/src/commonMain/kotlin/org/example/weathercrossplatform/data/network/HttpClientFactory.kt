@@ -29,8 +29,8 @@ class HttpClientFactory(
                 )
             }
             install(HttpTimeout) {
-                connectTimeoutMillis = 20000
-                requestTimeoutMillis = 20000
+                connectTimeoutMillis = 10000
+                requestTimeoutMillis = 10000
             }
             install(Logging) {
                 logger = object : Logger {
