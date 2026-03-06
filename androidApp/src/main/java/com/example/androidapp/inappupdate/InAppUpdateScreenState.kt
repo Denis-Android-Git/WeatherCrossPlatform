@@ -9,7 +9,7 @@ import org.example.weathercrossplatform.R
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
-fun UpdateProgressIndicatorState(
+fun InAppUpdateScreenState(
     inAppUpdateViewModel: InAppUpdateViewModel,
     onConfirmation: () -> Unit,
     onDismissRequest: () -> Unit

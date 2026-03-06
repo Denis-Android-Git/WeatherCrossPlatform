@@ -8,7 +8,7 @@ import androidx.activity.viewModels
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.androidapp.inappupdate.InAppUpdateViewModel
-import com.example.androidapp.inappupdate.UpdateProgressIndicatorState
+import com.example.androidapp.inappupdate.InAppUpdateScreenState
 import com.example.androidapp.ui.theme.MyAppTheme
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
@@ -39,7 +39,9 @@ class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3ExpressiveApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         appUpdateManager = AppUpdateManagerFactory.create(applicationContext)
+
         if (updateType == AppUpdateType.FLEXIBLE) {
             appUpdateManager.registerListener(installStateListener)
         }
@@ -48,7 +50,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyAppTheme {
                 App()
-                UpdateProgressIndicatorState(
+                InAppUpdateScreenState(
                     inAppUpdateViewModel,
                     onConfirmation = {
                         appUpdateManager.completeUpdate()
@@ -92,7 +94,7 @@ class MainActivity : ComponentActivity() {
                 )
             }
 
-            else -> {}
+            else -> Unit
         }
     }
 

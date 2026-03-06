@@ -24,7 +24,7 @@ fun UpdateProgressIndicator(
     ) {
         LinearWavyProgressIndicator(
             progress = { progress },
-            modifier = Modifier.systemBarsPadding().padding(top = 30.dp),
+            modifier = Modifier.systemBarsPadding().padding(top = 40.dp, start = 16.dp),
             color = Color(0xFF357BD9),
             stopSize = 0.dp
         )
