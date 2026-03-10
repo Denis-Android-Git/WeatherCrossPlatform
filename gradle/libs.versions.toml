@@ -4,6 +4,7 @@ android-compileSdk = "36"
 android-minSdk = "24"
 android-targetSdk = "36"
 androidx-activityCompose = "1.12.4"
+appUpdate = "2.1.0"
 backdrop = "0.0.1-alpha02"
 componentsResources = "1.10.1"
 compose-multiplatform = "1.10.1"
@@ -18,6 +19,7 @@ kotlinxDatetime = "0.7.1"
 ktor = "3.4.1"
 buildkonfig = "0.17.1"
 leakcanaryAndroid = "2.14"
+material3 = "1.5.0-alpha15"
 materialIconsCore = "1.7.3"
 moko = "0.20.1"
 lifecycleViewModelCompose = "2.9.6"
@@ -67,6 +69,9 @@ material = "1.13.0"
 [libraries]
 
 # Material3 Adaptive
+androidx-material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
+app-update = { module = "com.google.android.play:app-update", version.ref = "appUpdate" }
+app-update-ktx = { module = "com.google.android.play:app-update-ktx", version.ref = "appUpdate" }
 material3-adaptive = { module = "org.jetbrains.compose.material3.adaptive:adaptive", version.ref = "adaptive" }
 material3-adaptive-layout = { module = "org.jetbrains.compose.material3.adaptive:adaptive-layout", version.ref = "adaptive" }
 material3-adaptive-navigation = { module = "org.jetbrains.compose.material3.adaptive:adaptive-navigation", version.ref = "adaptive" }
