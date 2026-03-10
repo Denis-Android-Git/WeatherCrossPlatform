@@ -1,11 +1,17 @@
 package com.example.androidapp.inappupdate
 
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import org.example.weathercrossplatform.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -19,10 +25,10 @@ fun InstallUpdateDialog(
 ) {
     AlertDialog(
         title = {
-            Text(text = dialogTitle)
+            Text(text = dialogTitle, color = Color.White)
         },
         text = {
-            Text(text = dialogText)
+            Text(text = dialogText, color = Color.White)
         },
         onDismissRequest = {
             onDismissRequest()
@@ -31,7 +37,10 @@ fun InstallUpdateDialog(
             TextButton(
                 onClick = {
                     onConfirmation()
-                }
+                },
+                colors = ButtonDefaults.textButtonColors(
+                    contentColor = Color.White
+                )
             ) {
                 Text(confirmButtonText)
             }
@@ -40,11 +49,16 @@ fun InstallUpdateDialog(
             TextButton(
                 onClick = {
                     onDismissRequest()
-                }
+                },
+                colors = ButtonDefaults.textButtonColors(
+                    contentColor = Color.White
+                )
             ) {
                 Text(dismissButtonText)
             }
-        }
+        },
+        containerColor = Color(0xFF357BD9),
+        shape = RoundedCornerShape(6.dp)
     )
 }
 
@@ -54,8 +68,8 @@ fun PreviewInstallUpdateDialog() {
     InstallUpdateDialog(
         onDismissRequest = {},
         onConfirmation = {},
-        dialogTitle = " Title",
-        dialogText = "Text",
+        dialogTitle = stringResource(R.string.update_downloaded),
+        dialogText = stringResource(R.string.install),
         confirmButtonText = "Confirm",
         dismissButtonText = "Dismiss",
     )
