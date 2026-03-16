@@ -82,6 +82,7 @@ fun SearchScreen(
     cityList: List<SavedWeatherItem>,
     allCitiesInOriginalOrder: List<SavedWeatherItem>,
     onFoundItemClick: (Location) -> Unit,
+    onSearchedItemClick: (Int?) -> Unit,
     onLongClick: (SavedWeatherItem) -> Unit,
     onClick: (SavedWeatherItem) -> Unit,
     onDelete: () -> Unit,
@@ -196,7 +197,7 @@ fun SearchScreen(
                             }
                         },
                         trailingIcon = {
-                            androidx.compose.animation.AnimatedVisibility(searchScreenState.expanded) {
+                            AnimatedVisibility(searchScreenState.expanded) {
                                 Text(
                                     text = stringResource(Res.string.cancel),
                                     modifier = Modifier
@@ -230,8 +231,25 @@ fun SearchScreen(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     contentPadding = PaddingValues(0.dp, 8.dp, 0.dp, 0.dp)
                 ) {
+                    if (searchScreenState.foundCityList.isEmpty()) {
+                        items(
+                            searchScreenState.searchedCities,
+                            key = {
+                                it.cityId ?: Uuid.random()
+                            }
+                        ) {
+                            FoundItem(
+                                city = it.name,
+                                country = it.country,
+                                hasBeenSearched = true,
+                                onClick = {
+                                    onSearchedItemClick(it.cityId)
+                                }
+                            )
+                        }
+                    }
                     items(
-                        searchScreenState.cityList,
+                        searchScreenState.foundCityList,
                         key = {
                             it.id ?: Uuid.random()
                         }
@@ -395,7 +413,7 @@ fun Preview() {
         allCitiesInOriginalOrder = emptyList(),
         searchScreenState = SearchScreenViewState(
             expanded = false,
-            cityList = listOf(
+            foundCityList = listOf(
                 Location(
                     name = "Moscow",
                     country = "Russia",
@@ -407,6 +425,7 @@ fun Preview() {
                 )
             )
         ),
-        modifier = Modifier
+        modifier = Modifier,
+        onSearchedItemClick = {}
     )
 }

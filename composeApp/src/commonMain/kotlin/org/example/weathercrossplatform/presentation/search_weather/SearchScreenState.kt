@@ -16,6 +16,7 @@ fun SearchScreenState(
     searchViewModel: SearchViewModel = koinViewModel(),
     onBackButtonClick: (Int?) -> Unit,
     onFoundItemClick: (Location) -> Unit,
+    onSearchedItemClick: (Int?) -> Unit,
     onSavedItemClick: (Int) -> Unit
 ) {
 
@@ -36,7 +37,14 @@ fun SearchScreenState(
             searchViewModel.onAction(SearchScreenActions.SearchCities(it))
         },
         cityList = searchScreenState.allCities,
-        onFoundItemClick = onFoundItemClick,
+        onFoundItemClick = {
+            onFoundItemClick(it)
+            searchViewModel.onAction(
+                SearchScreenActions.AddFoundLocationToDb(
+                    name = it.name, country = it.country, cityId = it.id
+                )
+            )
+        },
         onLongClick = {
             scope.launch {
                 searchViewModel.onAction(SearchScreenActions.SetTempList(it))
@@ -57,6 +65,7 @@ fun SearchScreenState(
             onSavedItemClick(it)
         },
         allCitiesInOriginalOrder = searchScreenState.allCitiesInOriginalOrder,
-        searchScreenState = searchScreenState
+        searchScreenState = searchScreenState,
+        onSearchedItemClick = onSearchedItemClick
     )
 }

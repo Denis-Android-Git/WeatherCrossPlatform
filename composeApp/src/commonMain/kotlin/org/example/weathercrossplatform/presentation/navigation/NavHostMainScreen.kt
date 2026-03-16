@@ -135,6 +135,12 @@ fun NavHostMainScreen(
                         backStack.removeAll { it is MainScreenRoute }
                         backStack.add(MainScreenRoute())
                     },
+                    onSearchedItemClick = { cityId ->
+                        navHostViewModel.cityId = cityId
+                        backStack.removeAll { it is Routes.SearchScreenRoute }
+                        backStack.removeAll { it is MainScreenRoute }
+                        backStack.add(MainScreenRoute())
+                    },
                     onSavedItemClick = { pageNumber ->
                         backStack.removeAll { it is Routes.SearchScreenRoute }
                         backStack.removeAt(0)

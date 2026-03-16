@@ -17,6 +17,7 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
+import org.example.weathercrossplatform.data.database.SearchedWeatherItem
 import org.example.weathercrossplatform.data.utils.onError
 import org.example.weathercrossplatform.data.utils.onSuccess
 import org.example.weathercrossplatform.domain.actions.SearchScreenActions
@@ -24,6 +25,7 @@ import org.example.weathercrossplatform.domain.models.SearchScreenViewState
 import org.example.weathercrossplatform.domain.repo.DataBaseRepo
 import org.example.weathercrossplatform.domain.repo.SettingsStorage
 import org.example.weathercrossplatform.domain.repo.WeatherRepo
+import kotlin.time.Clock
 import kotlin.time.Duration.Companion.seconds
 
 class SearchViewModel(
@@ -33,6 +35,7 @@ class SearchViewModel(
 ) : ViewModel() {
     private var hasLoadedInitialData = false
     private val allCitiesInOriginalOrder = dataBaseRepo.getWeatherList()
+    private val searchedCities = dataBaseRepo.getSearchedItems()
     private val allCities = dataBaseRepo.getWeatherList()
         .map { list ->
             if (list.size <= 1) {
@@ -59,12 +62,17 @@ class SearchViewModel(
         _searchScreenState,
         allCities,
         allCitiesInOriginalOrder,
+        searchedCities,
         settingsStorage.observeSettingsInfo()
-    ) { currentState, allCities, allCitiesInOriginalOrder,
-        settingsInfo ->
+    ) { currentState, allCities, allCitiesInOriginalOrder, searchedCities, settingsInfo ->
+
+        val savedCityIds = allCitiesInOriginalOrder.map { it.cityId }
+
         currentState.copy(
+            savedCityIds = savedCityIds,
             allCities = allCities,
             allCitiesInOriginalOrder = allCitiesInOriginalOrder,
+            searchedCities = searchedCities,
             isTempC = settingsInfo?.isTempC ?: true,
             isLiquidGlassOn = settingsInfo?.isLiquidGlassOn ?: false
         )
@@ -118,6 +126,23 @@ class SearchViewModel(
             is SearchScreenActions.SetSearchQuery -> setSearchQuery(action.query)
             is SearchScreenActions.SetTempList -> setTempList(action.item)
             is SearchScreenActions.DeleteTempCityList -> deleteTempCityList(action.tempList)
+            is SearchScreenActions.AddFoundLocationToDb -> addFoundLocationToDb(
+                action.name,
+                action.country,
+                action.cityId
+            )
+        }
+    }
+
+    private fun addFoundLocationToDb(name: String, country: String, cityId: Int?) {
+        viewModelScope.launch {
+            val item = SearchedWeatherItem(
+                cityId = cityId,
+                name = name,
+                country = country,
+                timeStamp = Clock.System.now().toEpochMilliseconds()
+            )
+            dataBaseRepo.saveSearchedItem(item)
         }
     }
 
@@ -167,8 +192,11 @@ class SearchViewModel(
             }
             weatherRepo.searchPlaces(query)
                 .onSuccess { locationList ->
+                    val filteredList = locationList.filter { location ->
+                        location.id !in searchScreenState.value.savedCityIds
+                    }
                     _searchScreenState.update {
-                        it.copy(loading = false, cityList = locationList)
+                        it.copy(loading = false, foundCityList = filteredList)
                     }
                 }
                 .onError { error ->

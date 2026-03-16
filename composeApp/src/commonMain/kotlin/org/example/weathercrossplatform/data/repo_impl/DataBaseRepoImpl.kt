@@ -2,6 +2,7 @@ package org.example.weathercrossplatform.data.repo_impl
 
 import kotlinx.coroutines.flow.Flow
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
+import org.example.weathercrossplatform.data.database.SearchedWeatherItem
 import org.example.weathercrossplatform.data.database.WeatherDataBase
 import org.example.weathercrossplatform.domain.repo.DataBaseRepo
 
@@ -26,5 +27,17 @@ class DataBaseRepoImpl(
 
     override suspend fun clearCurrentLocation() {
         weatherDataBase.weatherDao().clearCurrentLocation()
+    }
+
+    override fun getSearchedItems(): Flow<List<SearchedWeatherItem>> {
+        return weatherDataBase.searchedDao().getAllItems()
+    }
+
+    override suspend fun saveSearchedItem(item: SearchedWeatherItem) {
+        weatherDataBase.searchedDao().upsertItem(item)
+    }
+
+    override suspend fun deleteSearchedItem(id: Int) {
+        weatherDataBase.searchedDao().deleteCityById(id)
     }
 }

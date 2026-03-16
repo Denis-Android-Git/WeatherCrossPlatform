@@ -231,6 +231,9 @@ class WeatherViewModel(
                 isCurrentLocation = false
             )
             dataBaseRepo.saveWeather(item)
+            cityId?.let {
+                dataBaseRepo.deleteSearchedItem(cityId)
+            }
             _weatherScreenState.update {
                 it.copy(
                     isAddCity = false,

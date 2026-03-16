@@ -8,4 +8,6 @@ sealed interface SearchScreenActions {
     data class SetExpanded(val expanded: Boolean) : SearchScreenActions
     data class SetTempList(val item: SavedWeatherItem?) : SearchScreenActions
     data class DeleteTempCityList(val tempList: List<SavedWeatherItem>) : SearchScreenActions
+
+    data class AddFoundLocationToDb(val name: String, val country: String, val cityId: Int?) : SearchScreenActions
 }

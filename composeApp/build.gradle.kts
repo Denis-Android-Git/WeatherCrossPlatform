@@ -92,7 +92,7 @@ kotlin {
 
         }
         kotzilla {
-            versionName = "1.2.1" // add your app version name
+            versionName = "1.2.2" // add your app version name
             composeInstrumentation = true
         }
         nativeMain.dependencies {
@@ -124,7 +124,6 @@ room {
 }
 
 dependencies {
-    add("kspCommonMainMetadata", libs.androidx.room.compiler)
     add("kspAndroid", libs.androidx.room.compiler)
     add("kspIosArm64", libs.androidx.room.compiler)
     add("kspIosSimulatorArm64", libs.androidx.room.compiler)
