@@ -34,7 +34,7 @@ class DataBaseRepoImpl(
     }
 
     override suspend fun saveSearchedItem(item: SearchedWeatherItem) {
-        weatherDataBase.searchedDao().upsertItem(item)
+        weatherDataBase.searchedDao().upsertAndKeepLastSixItems(item)
     }
 
     override suspend fun deleteSearchedItem(id: Int) {

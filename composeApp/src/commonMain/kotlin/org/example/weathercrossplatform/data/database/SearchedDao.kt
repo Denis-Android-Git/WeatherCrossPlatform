@@ -2,6 +2,7 @@ package org.example.weathercrossplatform.data.database
 
 import androidx.room.Dao
 import androidx.room.Query
+import androidx.room.Transaction
 import androidx.room.Upsert
 import kotlinx.coroutines.flow.Flow
 
@@ -15,4 +16,13 @@ interface SearchedDao {
 
     @Query("SELECT * FROM searchedweatheritem ORDER BY timeStamp DESC")
     fun getAllItems(): Flow<List<SearchedWeatherItem>>
+
+    @Query("DELETE FROM searchedweatheritem WHERE cityId NOT IN (SELECT cityId FROM searchedweatheritem ORDER BY timeStamp DESC LIMIT 6)")
+    suspend fun keepLastSixItems()
+
+    @Transaction
+    suspend fun upsertAndKeepLastSixItems(item: SearchedWeatherItem) {
+        upsertItem(item)
+        keepLastSixItems()
+    }
 }

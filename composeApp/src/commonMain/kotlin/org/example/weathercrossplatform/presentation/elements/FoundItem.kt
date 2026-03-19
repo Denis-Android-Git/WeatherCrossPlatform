@@ -51,7 +51,7 @@ fun FoundItem(
             if (hasBeenSearched) {
                 Icon(
                     painterResource(Res.drawable.search_history), contentDescription = null,
-                    modifier = Modifier.size(40.dp),
+                    modifier = Modifier.size(25.dp),
                     tint = Color.White
                 )
             }
