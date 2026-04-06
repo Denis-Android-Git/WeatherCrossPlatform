@@ -20,52 +20,56 @@ import dev.icerock.moko.permissions.compose.rememberPermissionsControllerFactory
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.presentation.navigation.NavHostMainScreen
+import org.example.weathercrossplatform.presentation.rain_map_screen.RainMapRoot
 
 @Composable
 @Preview
 fun App() {
     MaterialTheme {
 
-        val factory = rememberPermissionsControllerFactory()
-        val controller by rememberUpdatedState(newValue = factory.createPermissionsController())
-        val scope = rememberCoroutineScope()
+        RainMapRoot()
 
-        BindEffect(controller)
 
-        val permissionsViewModel = viewModel {
-            PermissionsViewModel(controller)
-        }
-        Scaffold {
-            when (permissionsViewModel.state) {
-                PermissionState.Granted -> {
-                    //Text(text = "Granted")
-                    NavHostMainScreen(
-                        modifier = Modifier,//.padding(it),
-                        isFirstLaunch = permissionsViewModel.isFirstLaunch
-                    )
-                    scope.launch {
-                        delay(100)
-                        permissionsViewModel.isFirstLaunch = false
-                    }
-                }
-
-                PermissionState.DeniedAlways -> {
-                    Box(
-                        modifier = Modifier.fillMaxSize().padding(it),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(text = "Denied forever")
-                    }
-                }
-
-                else -> {
-                    //Text(text = "Else")
-                    scope.launch {
-                        delay(100)
-                        permissionsViewModel.checkPermissions()
-                    }
-                }
-            }
-        }
+//        val factory = rememberPermissionsControllerFactory()
+//        val controller by rememberUpdatedState(newValue = factory.createPermissionsController())
+//        val scope = rememberCoroutineScope()
+//
+//        BindEffect(controller)
+//
+//        val permissionsViewModel = viewModel {
+//            PermissionsViewModel(controller)
+//        }
+//        Scaffold {
+//            when (permissionsViewModel.state) {
+//                PermissionState.Granted -> {
+//                    //Text(text = "Granted")
+//                    NavHostMainScreen(
+//                        modifier = Modifier,//.padding(it),
+//                        isFirstLaunch = permissionsViewModel.isFirstLaunch
+//                    )
+//                    scope.launch {
+//                        delay(100)
+//                        permissionsViewModel.isFirstLaunch = false
+//                    }
+//                }
+//
+//                PermissionState.DeniedAlways -> {
+//                    Box(
+//                        modifier = Modifier.fillMaxSize().padding(it),
+//                        contentAlignment = Alignment.Center
+//                    ) {
+//                        Text(text = "Denied forever")
+//                    }
+//                }
+//
+//                else -> {
+//                    //Text(text = "Else")
+//                    scope.launch {
+//                        delay(100)
+//                        permissionsViewModel.checkPermissions()
+//                    }
+//                }
+//            }
+//        }
     }
 }
