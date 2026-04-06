@@ -23,5 +23,8 @@ sealed interface Routes : NavKey {
 
     @Serializable
     data object SettingsScreenRoute : Routes, NavKey
+
+    @Serializable
+    data object MapScreenRoute : Routes, NavKey
 }
 

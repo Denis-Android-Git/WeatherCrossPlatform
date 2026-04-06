@@ -19,9 +19,12 @@ import androidx.navigation3.ui.NavDisplay
 import androidx.savedstate.serialization.SavedStateConfiguration
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
+import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
+import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Orientation
 import org.example.weathercrossplatform.domain.models.Routes
 import org.example.weathercrossplatform.domain.models.Routes.MainScreenRoute
+import org.example.weathercrossplatform.presentation.rain_map_screen.RainMapRoot
 import org.example.weathercrossplatform.presentation.search_weather.SearchScreenState
 import org.example.weathercrossplatform.presentation.settings_screen.SettingsScreenRoot
 import org.example.weathercrossplatform.presentation.utils.currentDeviceConfiguration
@@ -33,7 +36,7 @@ import org.koin.core.parameter.parametersOf
 fun NavHostMainScreen(
     isFirstLaunch: Boolean,
     modifier: Modifier,
-    //myLogger: MyLogger = MyLoggerImpl
+    myLogger: MyLogger = MyLoggerImpl
 ) {
 
     val navHostViewModel = koinViewModel<NavHostViewModel>()
@@ -119,6 +122,11 @@ fun NavHostMainScreen(
                     onAddCityButtonClick = {
                         navHostViewModel.cityId = null
                     },
+                    onGoToMapClick = {
+                        myLogger.debug("check_coordinates coordinates to viewmodel = $it")
+                        navHostViewModel.coordinates = it
+                        backStack.add(Routes.MapScreenRoute)
+                    },
                 )
             }
 
@@ -158,6 +166,14 @@ fun NavHostMainScreen(
                         }
                     },
                     modifier = modifier,
+                )
+            }
+            entry<Routes.MapScreenRoute> {
+                RainMapRoot(
+                    viewModel = koinViewModel {
+                        myLogger.debug("check_coordinates coordinates to RainMapRoot = ${navHostViewModel.coordinates}")
+                        parametersOf(navHostViewModel.coordinates)
+                    }
                 )
             }
         }

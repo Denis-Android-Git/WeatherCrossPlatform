@@ -9,8 +9,14 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
+import org.example.weathercrossplatform.domain.logger.MyLogger
+import org.example.weathercrossplatform.domain.models.Coordinates
 
-class RainMapViewModel : ViewModel() {
+class RainMapViewModel(
+    private val coordinates: Coordinates?,
+    private val myLogger: MyLogger = MyLoggerImpl
+) : ViewModel() {
 
     private var hasLoadedInitialData = false
 
@@ -18,7 +24,7 @@ class RainMapViewModel : ViewModel() {
     val state = _state
         .onStart {
             if (!hasLoadedInitialData) {
-                /** Load initial data here **/
+                updateCoordinates(coordinates)
                 hasLoadedInitialData = true
             }
         }
@@ -38,6 +44,14 @@ class RainMapViewModel : ViewModel() {
                     delay(1500)
                 }
             }
+        }
+    }
+
+    private fun updateCoordinates(coordinates: Coordinates?) {
+        myLogger.debug("check_coordinates coordinates in RainMapViewModel = $coordinates")
+        if (coordinates == null) return
+        _state.update {
+            it.copy(latitude = coordinates.latitude, longitude = coordinates.longitude)
         }
     }
 
@@ -71,6 +85,8 @@ class RainMapViewModel : ViewModel() {
 //            current.hour.toIntOrNull()?.coerceIn(0, 23)?.toString()?.padStart(2, '0')
 //                ?: currentUtcHour()
         val normalizedDate = current.date.takeIf { it.matches(Regex("\\d{8}")) } ?: currentUtcDate()
+        myLogger.debug("check_coordinates coordinates in RainMapState = latitude = ${current.latitude}, longitude = ${current.longitude}")
+
         _state.value = current.copy(
             date = normalizedDate,
             hour = hour,//normalizedHour,

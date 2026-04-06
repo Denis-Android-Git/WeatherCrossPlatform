@@ -6,14 +6,14 @@ import kotlin.time.Clock
 import kotlin.time.Duration.Companion.hours
 
 data class RainMapState(
-    val latitude: Double = 35.6528,
-    val longitude: Double = 139.8394,
+    val latitude: Double = 0.0,
+    val longitude: Double = 0.0,
     val zoom: Int = 6,
     val date: String = currentUtcDate(),
     val hour: String = currentUtcHour(),
     val mapHtml: String = buildRainMapHtmlAndroid(
-        latitude = 55.7558,
-        longitude = 37.6173,
+        latitude = 0.0,
+        longitude = 0.0,
         zoom = 5,
         date = currentUtcDate(),
         hour = currentUtcHour()

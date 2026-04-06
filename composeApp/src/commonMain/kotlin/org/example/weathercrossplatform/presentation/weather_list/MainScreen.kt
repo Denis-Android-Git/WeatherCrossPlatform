@@ -121,6 +121,7 @@ fun MainScreen(
     onAddCityButtonClick: () -> Unit,
     isCurrentLocation: Boolean,
     topPadding: Dp,
+    onGoToMapClick: () -> Unit
     //myLogger: MyLogger = MyLoggerImpl
 ) {
 
@@ -371,6 +372,7 @@ fun MainScreen(
                                 }
                             }
                         }
+
                         val paddingSum = (columnHeight + topPadding + totalPadding)
 
                         LazyColumn(
@@ -467,6 +469,12 @@ fun MainScreen(
                         }
                     }
                 }
+            }
+            Button(
+                modifier = Modifier.align(Alignment.Center),
+                onClick = onGoToMapClick
+            ) {
+                Text(text = "Go to map")
             }
             val cityIdList = savedCityList.associateBy {
                 it.cityId
@@ -709,7 +717,8 @@ fun MainScreenPreview() {
         ),
         onSettingsClick = {},
         modifier = Modifier,
-        topPadding = 50.dp
+        topPadding = 50.dp,
+        onGoToMapClick = {}
     )
 }
 

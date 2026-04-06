@@ -56,7 +56,7 @@ class WeatherViewModel(
     orientation: String,
     //private val myLogger: MyLogger = MyLoggerImpl
 ) : ViewModel() {
-    private val coordinates = MutableStateFlow<Coordinates?>(null)
+    val coordinates = MutableStateFlow<Coordinates?>(null)
     private val _weatherScreenState = MutableStateFlow(WeatherMainScreenState())
     val weatherScreenState = combine(
         _weatherScreenState,
