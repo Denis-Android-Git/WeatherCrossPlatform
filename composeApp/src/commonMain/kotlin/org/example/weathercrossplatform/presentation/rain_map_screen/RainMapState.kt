@@ -1,9 +1,11 @@
 package org.example.weathercrossplatform.presentation.rain_map_screen
 
+import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.TimeZone
 import kotlinx.datetime.number
+import kotlinx.datetime.toInstant
 import kotlinx.datetime.toLocalDateTime
 import kotlin.time.Clock
-import kotlin.time.Duration.Companion.hours
 
 data class RainMapState(
     val latitude: Double = 0.0,
@@ -184,7 +186,7 @@ internal fun buildRainMapHtmlAndroid(
                 '$tileUrl',
                 {
                   maxZoom: 19,
-                  opacity: 0.65,
+                  opacity: 0.45,
                 }
               );
 
@@ -309,7 +311,7 @@ internal fun buildRainMapHtmlIos(
               box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
             }
             #rain-layer .tile {
-              opacity: 0.65;
+              opacity: 0.45;
             }
           </style>
         </head>
@@ -465,7 +467,7 @@ internal fun buildRainMapHtmlIos(
 
 internal fun currentUtcDate(): String {
     val now = weatherMapTimestamp()
-        .toLocalDateTime(kotlinx.datetime.TimeZone.UTC)
+        .toLocalDateTime(TimeZone.UTC)
     return buildString {
         append(now.year.toString().padStart(4, '0'))
         append(now.month.number.toString().padStart(2, '0'))
@@ -475,8 +477,44 @@ internal fun currentUtcDate(): String {
 
 internal fun currentUtcHour(): String {
     val now = weatherMapTimestamp()
-        .toLocalDateTime(kotlinx.datetime.TimeZone.UTC)
+        .toLocalDateTime(TimeZone.UTC)
     return now.hour.toString().padStart(2, '0')
 }
 
-private fun weatherMapTimestamp() = Clock.System.now() - 1.hours
+internal data class UtcRainMapDateTime(
+    val date: String,
+    val hour: String,
+)
+
+internal fun currentTimeToUtcDateTime(currentHour: Int): UtcRainMapDateTime {
+    val normalizedHour = currentHour.coerceIn(0, 23)
+    val localZone = TimeZone.currentSystemDefault()
+    val localNow = weatherMapTimestamp().toLocalDateTime(localZone)
+    val localDateTime = LocalDateTime(
+        year = localNow.year,
+        month = localNow.month.number,
+        day = localNow.day,
+        hour = normalizedHour,
+        minute = 0,
+        second = 0,
+        nanosecond = 0
+    )
+    val utcDateTime = localDateTime
+        .toInstant(localZone)
+        .toLocalDateTime(TimeZone.UTC)
+
+    return UtcRainMapDateTime(
+        date = formatDate(utcDateTime.year, utcDateTime.month.number, utcDateTime.day),
+        hour = utcDateTime.hour.toString().padStart(2, '0')
+    )
+}
+
+private fun formatDate(year: Int, month: Int, day: Int): String {
+    return buildString {
+        append(year.toString().padStart(4, '0'))
+        append(month.toString().padStart(2, '0'))
+        append(day.toString().padStart(2, '0'))
+    }
+}
+
+private fun weatherMapTimestamp() = Clock.System.now()

@@ -8,10 +8,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Slider
+import androidx.compose.material3.SliderDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -63,6 +65,10 @@ fun RainMapScreen(
             enabled = false,
             //steps = 22,
             valueRange = 0f..23f,
+            colors = SliderDefaults.colors(
+                disabledActiveTrackColor = Color.Black.copy(alpha = 0.5f),
+                disabledInactiveTrackColor = Color.Black.copy(alpha = 0.2f)
+            ),
             thumb = {
                 WeatherSliderThumb(
                     value = animatedSliderValue.toInt().toString()

@@ -94,7 +94,7 @@ fun WeatherSliderThumb(
                         ),
                         shape = RoundedCornerShape(14.dp)
                     )
-                    .padding(horizontal = 5.dp, vertical = 6.dp)
+                    .padding(horizontal = 5.dp, vertical = 2.dp)
             ) {
                 Text(
                     text = value,

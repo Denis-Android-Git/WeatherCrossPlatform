@@ -38,8 +38,7 @@ class RainMapViewModel(
         viewModelScope.launch {
             while (true) {
                 for (i in 0..23) {
-                    val hour = i.toString().padStart(2, '0')
-                    reloadMap(hour)
+                    reloadMap(i)
                     _state.update { it.copy(sliderValue = i.toFloat()) }
                     delay(1500)
                 }
@@ -79,27 +78,24 @@ class RainMapViewModel(
         }
     }
 
-    private fun reloadMap(hour: String) {
+    private fun reloadMap(localHour: Int) {
         val current = _state.value
-//        val normalizedHour =
-//            current.hour.toIntOrNull()?.coerceIn(0, 23)?.toString()?.padStart(2, '0')
-//                ?: currentUtcHour()
-        val normalizedDate = current.date.takeIf { it.matches(Regex("\\d{8}")) } ?: currentUtcDate()
+        val utcDateTime = currentTimeToUtcDateTime(localHour)
         myLogger.debug("check_coordinates coordinates in RainMapState = latitude = ${current.latitude}, longitude = ${current.longitude}")
-
+        myLogger.debug("check_time localHour = $localHour, UTC hour = ${utcDateTime.hour} UTC date = ${utcDateTime.date}")
         _state.value = current.copy(
-            date = normalizedDate,
-            hour = hour,//normalizedHour,
+            date = utcDateTime.date,
+            hour = utcDateTime.hour,
             currentTileUrl = buildTileTemplate(
-                date = normalizedDate,
-                hour = hour,//normalizedHour
+                date = utcDateTime.date,
+                hour = utcDateTime.hour
             ),
             mapHtml = buildRainMapHtml(
                 latitude = current.latitude,
                 longitude = current.longitude,
                 zoom = current.zoom,
-                date = normalizedDate,
-                hour = hour//normalizedHour
+                date = utcDateTime.date,
+                hour = utcDateTime.hour
             )
         )
     }
