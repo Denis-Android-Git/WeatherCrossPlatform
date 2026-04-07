@@ -8,6 +8,7 @@ import kotlin.time.Duration.Companion.hours
 data class RainMapState(
     val latitude: Double = 0.0,
     val longitude: Double = 0.0,
+    val sliderValue: Float = 0f,
     val zoom: Int = 6,
     val date: String = currentUtcDate(),
     val hour: String = currentUtcHour(),

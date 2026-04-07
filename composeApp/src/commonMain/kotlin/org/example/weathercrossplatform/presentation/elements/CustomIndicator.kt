@@ -9,7 +9,6 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.LoadingIndicator
 import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults.IndicatorBox
-import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults.PositionalThreshold
 import androidx.compose.material3.pulltorefresh.PullToRefreshState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
@@ -44,7 +43,7 @@ fun CustomIndicator(
     modifier: Modifier = Modifier,
     containerColor: Color,
     color: Color,
-    threshold: Dp = PositionalThreshold,
+    //threshold: Dp = PositionalThreshold,
     size: Dp
 ) {
     IndicatorBox(
@@ -52,7 +51,7 @@ fun CustomIndicator(
         state = state,
         isRefreshing = isRefreshing,
         containerColor = containerColor,
-        threshold = threshold,
+      //  threshold = threshold,
     ) {
         Crossfade(
             targetState = isRefreshing,

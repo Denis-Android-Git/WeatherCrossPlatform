@@ -39,8 +39,8 @@ class RainMapViewModel(
             while (true) {
                 for (i in 0..23) {
                     val hour = i.toString().padStart(2, '0')
-                    println("testing = $hour")
                     reloadMap(hour)
+                    _state.update { it.copy(sliderValue = i.toFloat()) }
                     delay(1500)
                 }
             }
