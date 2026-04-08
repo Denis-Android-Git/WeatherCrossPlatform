@@ -24,7 +24,8 @@ data class RainMapState(
     val currentTileUrl: String = buildTileTemplate(
         date = currentUtcDate(),
         hour = currentUtcHour()
-    )
+    ),
+    val isAutoSlide: Boolean = true
 )
 
 internal fun buildTileTemplate(date: String, hour: String): String {

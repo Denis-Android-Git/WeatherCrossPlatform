@@ -2,16 +2,25 @@ package org.example.weathercrossplatform.presentation.rain_map_screen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
+import org.example.weathercrossplatform.data.constants.Constants.MAP_REFRESH_INTERVAL
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Coordinates
+import kotlin.time.Clock
 
 class RainMapViewModel(
     private val coordinates: Coordinates?,
@@ -20,11 +29,17 @@ class RainMapViewModel(
 
     private var hasLoadedInitialData = false
 
+    private val currentHour =
+        Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault()).hour
+
+    private var autoSlideJob: Job? = null
+
     private val _state = MutableStateFlow(RainMapState())
     val state = _state
         .onStart {
             if (!hasLoadedInitialData) {
                 updateCoordinates(coordinates)
+                observeAutoSlide()
                 hasLoadedInitialData = true
             }
         }
@@ -34,15 +49,32 @@ class RainMapViewModel(
             initialValue = RainMapState()
         )
 
-    init {
-        viewModelScope.launch {
-            while (true) {
-                for (i in 0..23) {
-                    reloadMap(i)
-                    _state.update { it.copy(sliderValue = i.toFloat()) }
-                    delay(1500)
+    private fun observeAutoSlide() {
+        state
+            .map { it.isAutoSlide }
+            .distinctUntilChanged()
+            .onEach { isAuto ->
+                myLogger.debug("check_auto_slide isAuto = $isAuto")
+                if (isAuto) {
+                    if (autoSlideJob?.isActive == true) return@onEach
+                    autoSlideJob = viewModelScope.launch {
+                        slideOverMap(currentHour, 23)
+                        while (true) {
+                            slideOverMap(0, 23)
+                        }
+                    }
+                } else {
+                    autoSlideJob?.cancel()
+                    autoSlideJob = null
                 }
-            }
+            }.launchIn(viewModelScope)
+    }
+
+    private suspend fun slideOverMap(from: Int, to: Int) {
+        for (i in from..to) {
+            reloadMap(i)
+            _state.update { it.copy(sliderValue = i.toFloat()) }
+            delay(MAP_REFRESH_INTERVAL)
         }
     }
 
@@ -56,24 +88,14 @@ class RainMapViewModel(
 
     fun onAction(action: RainMapAction) {
         when (action) {
-            is RainMapAction.OnDateChanged -> {
-                _state.value = _state.value.copy(date = action.value)
-            }
-
-            is RainMapAction.OnHourChanged -> {
-                val normalizedHour = action.value.filter { it.isDigit() }.take(2)
-                _state.value = _state.value.copy(hour = normalizedHour)
-            }
-
-            is RainMapAction.OnZoomChanged -> {
-                _state.value = _state.value.copy(
-                    zoom = (_state.value.zoom + action.delta).coerceIn(3, 8)
-                )
-                //reloadMap()
-            }
-
-            RainMapAction.OnReloadClick -> {
-                //reloadMap()
+            is RainMapAction.OnSliderChanged -> {
+                _state.update {
+                    it.copy(
+                        isAutoSlide = false,
+                        sliderValue = action.value,
+                    )
+                }
+                reloadMap(action.value.toInt())
             }
         }
     }

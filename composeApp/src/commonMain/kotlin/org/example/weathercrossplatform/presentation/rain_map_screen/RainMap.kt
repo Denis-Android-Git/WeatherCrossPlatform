@@ -18,6 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.example.weathercrossplatform.presentation.rain_map_screen.components.WeatherSliderThumb
+import kotlin.math.roundToInt
 
 @Composable
 fun RainMapRoot(
@@ -58,12 +59,12 @@ fun RainMapScreen(
 
         Slider(
             value = animatedSliderValue,
-            onValueChange = {},
+            onValueChange = {
+                onAction(RainMapAction.OnSliderChanged(it.roundToInt().toFloat()))
+            },
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .padding(bottom = 46.dp),
-            enabled = false,
-            //steps = 22,
             valueRange = 0f..23f,
             colors = SliderDefaults.colors(
                 disabledActiveTrackColor = Color.Black.copy(alpha = 0.5f),
