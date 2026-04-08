@@ -88,16 +88,18 @@ class RainMapViewModel(
 
     fun onAction(action: RainMapAction) {
         when (action) {
-            is RainMapAction.OnSliderChanged -> {
-                _state.update {
-                    it.copy(
-                        isAutoSlide = false,
-                        sliderValue = action.value,
-                    )
-                }
-                reloadMap(action.value.toInt())
-            }
+            is RainMapAction.OnSliderChanged -> sliderChanged(action.value)
         }
+    }
+
+    private fun sliderChanged(value: Float) {
+        _state.update {
+            it.copy(
+                sliderValue = value,
+                isAutoSlide = false
+            )
+        }
+        reloadMap(value.toInt())
     }
 
     private fun reloadMap(localHour: Int) {
