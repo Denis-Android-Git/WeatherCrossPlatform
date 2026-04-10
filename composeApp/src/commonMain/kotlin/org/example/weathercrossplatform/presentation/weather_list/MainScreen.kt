@@ -80,6 +80,7 @@ import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 import org.example.weathercrossplatform.presentation.elements.FloatingToolBar
 import org.example.weathercrossplatform.presentation.elements.Forecast24Hour
+import org.example.weathercrossplatform.presentation.elements.GoToRainMapElement
 import org.example.weathercrossplatform.presentation.elements.LiquidButton
 import org.example.weathercrossplatform.presentation.elements.ThreeDaysForecast
 import org.example.weathercrossplatform.presentation.elements.WeatherDetailElement
@@ -410,6 +411,16 @@ fun MainScreen(
                                         isLiquidGlassOn = weatherMainScreenState.isLiquidGlassOn
                                     )
                                 }
+                                if (!weatherMainScreenState.isAddCity) {
+                                    item {
+                                        GoToRainMapElement(
+                                            backdrop = backdrop,
+                                            isLiquidGlassOn = weatherMainScreenState.isLiquidGlassOn,
+                                            text = "Карта осадков",
+                                            onGoToMapClick = onGoToMapClick
+                                        )
+                                    }
+                                }
                                 item {
                                     LazyVerticalGrid(
                                         columns = GridCells.Fixed(2),
@@ -469,12 +480,6 @@ fun MainScreen(
                         }
                     }
                 }
-            }
-            Button(
-                modifier = Modifier.align(Alignment.Center),
-                onClick = onGoToMapClick
-            ) {
-                Text(text = "Go to map")
             }
             val cityIdList = savedCityList.associateBy {
                 it.cityId

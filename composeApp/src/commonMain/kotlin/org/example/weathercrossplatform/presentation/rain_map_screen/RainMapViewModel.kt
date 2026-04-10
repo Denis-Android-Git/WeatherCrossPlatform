@@ -20,6 +20,7 @@ import org.example.weathercrossplatform.data.constants.Constants.MAP_REFRESH_INT
 import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Coordinates
+import kotlin.math.roundToInt
 import kotlin.time.Clock
 
 class RainMapViewModel(
@@ -88,7 +89,7 @@ class RainMapViewModel(
 
     fun onAction(action: RainMapAction) {
         when (action) {
-            is RainMapAction.OnSliderChanged -> sliderChanged(action.value)
+            is RainMapAction.OnSliderChanged -> sliderChanged(action.value.roundToInt().toFloat())
         }
     }
 

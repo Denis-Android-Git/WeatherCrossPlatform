@@ -61,7 +61,6 @@ fun MainScreenState(
 ) {
     val configuration = currentDeviceConfiguration()
     val weatherMainScreenState by weatherViewModel.weatherScreenState.collectAsStateWithLifecycle()
-    val coordinates by weatherViewModel.coordinates.collectAsStateWithLifecycle()
     val currentOrientation by rememberUpdatedState(
         if (configuration.isPortrait) Orientation.Portrait.value
         else Orientation.Landscape.value
@@ -199,8 +198,16 @@ fun MainScreenState(
                         modifier = modifier,
                         topPadding = topPadding,
                         onGoToMapClick = {
-                            myLogger.debug("check_coordinates onGoToMapClick = $coordinates")
-                            onGoToMapClick(coordinates)
+                            scope.launch {
+                                val coordinatesList =
+                                    weatherMainScreenState.currentCoordinates?.split(",")
+                                val coordinates = Coordinates(
+                                    latitude = coordinatesList?.get(0)?.toDouble() ?: 0.0,
+                                    longitude = coordinatesList?.get(1)?.toDouble() ?: 0.0
+                                )
+                                myLogger.debug("check_coordinates onGoToMapClick = $coordinates")
+                                onGoToMapClick(coordinates)
+                            }
                         }
                     )
                 }

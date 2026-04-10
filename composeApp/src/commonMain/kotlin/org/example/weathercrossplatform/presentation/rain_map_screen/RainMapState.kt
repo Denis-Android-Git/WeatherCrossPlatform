@@ -86,19 +86,6 @@ internal fun buildRainMapHtmlAndroid(
               height: 100%;
               background: #d9e6f2;
             }
-            #status {
-              position: fixed;
-              top: 10px;
-              left: 10px;
-              z-index: 9999;
-              background: rgba(255, 255, 255, 0.94);
-              color: #122033;
-              padding: 8px 10px;
-              border-radius: 8px;
-              font-size: 14px;
-              line-height: 1.35;
-              box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-            }
             .leaflet-container {
               background: #d9e6f2;
             }
@@ -108,7 +95,6 @@ internal fun buildRainMapHtmlAndroid(
           </style>
         </head>
         <body>
-          <div id="status">Loading rain map...</div>
           <div id="map"></div>
 
           <script>
@@ -116,17 +102,14 @@ internal fun buildRainMapHtmlAndroid(
           </script>
           <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
           <script>
-            const status = document.getElementById('status');
             const mapElement = document.getElementById('map');
             let rainMapInstance = null;
 
             window.onerror = function(message, source, line, column) {
-              status.textContent = 'Map error: ' + message + ' @' + line + ':' + column;
               console.log('window.onerror', message, source, line, column);
             };
 
             function setStatus(message) {
-              status.textContent = message;
               console.log(message);
             }
 
@@ -299,32 +282,18 @@ internal fun buildRainMapHtmlIos(
               user-select: none;
               -webkit-user-drag: none;
             }
-            #status {
-              position: fixed;
-              top: 10px;
-              left: 10px;
-              z-index: 9999;
-              background: rgba(255, 255, 255, 0.95);
-              color: #122033;
-              padding: 8px 10px;
-              border-radius: 8px;
-              font: 14px sans-serif;
-              box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-            }
             #rain-layer .tile {
               opacity: 0.45;
             }
           </style>
         </head>
         <body>
-          <div id="status">Loading rain map...</div>
           <div id="map">
             <div id="base-layer"></div>
             <div id="rain-layer"></div>
           </div>
 
           <script>
-            const status = document.getElementById('status');
             const map = document.getElementById('map');
             const baseLayer = document.getElementById('base-layer');
             const rainLayer = document.getElementById('rain-layer');
@@ -336,7 +305,6 @@ internal fun buildRainMapHtmlIos(
             const rainTemplate = '$tileUrl';
 
             window.onerror = function(message, source, line) {
-              status.textContent = 'Map error: ' + message;
               console.log('window.onerror', message, source, line);
             };
 
@@ -405,9 +373,9 @@ internal fun buildRainMapHtmlIos(
               function markLoaded() {
                 pendingTiles -= 1;
                 if (pendingTiles <= 0) {
-                  status.textContent = failedTiles > 0
+                  console.log(failedTiles > 0
                     ? 'Map loaded with ' + failedTiles + ' tile errors'
-                    : 'Map ready UTC $date $hour';
+                    : 'Map ready UTC $date $hour');
                 }
               }
 
@@ -452,9 +420,9 @@ internal fun buildRainMapHtmlIos(
               }
 
               if (pendingTiles === 0) {
-                status.textContent = 'No tiles for selected viewport';
+                console.log('No tiles for selected viewport');
               } else {
-                status.textContent = 'Loading ' + pendingTiles + ' tiles...';
+                console.log('Loading ' + pendingTiles + ' tiles...');
               }
             }
 
