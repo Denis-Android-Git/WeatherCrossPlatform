@@ -173,6 +173,11 @@ fun NavHostMainScreen(
                     viewModel = koinViewModel {
                         myLogger.debug("check_coordinates coordinates to RainMapRoot = ${navHostViewModel.coordinates}")
                         parametersOf(navHostViewModel.coordinates)
+                    },
+                    onBackButtonClick = {
+                        if (backStack.size > 1) { //NavDisplay backstack cannot be empty
+                            backStack.removeAt(backStack.lastIndex)
+                        }
                     }
                 )
             }

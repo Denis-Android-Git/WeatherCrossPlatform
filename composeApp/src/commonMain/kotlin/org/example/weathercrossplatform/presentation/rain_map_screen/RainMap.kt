@@ -21,69 +21,14 @@ import org.example.weathercrossplatform.presentation.rain_map_screen.components.
 
 @Composable
 fun RainMapRoot(
-    viewModel: RainMapViewModel
+    viewModel: RainMapViewModel,
+    onBackButtonClick: () -> Unit
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 
     RainMapScreen(
         state = state,
-        onAction = viewModel::onAction
-    )
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun RainMapScreen(
-    state: RainMapState,
-    onAction: (RainMapAction) -> Unit,
-) {
-    val animatedSliderValue by animateFloatAsState(
-        targetValue = state.sliderValue,
-        animationSpec = tween(
-            durationMillis = 500,
-            easing = FastOutSlowInEasing
-        ),
-        label = "weather_slider"
-    )
-
-    Box(modifier = Modifier.fillMaxSize()) {
-        RainMapWebView(
-            modifier = Modifier.matchParentSize(),
-            latitude = state.latitude,
-            longitude = state.longitude,
-            zoom = state.zoom,
-            date = state.date,
-            hour = state.hour
-        )
-
-        Slider(
-            value = animatedSliderValue,
-            onValueChange = {
-                onAction(RainMapAction.OnSliderChanged(it))
-            },
-            modifier = Modifier
-                .align(Alignment.BottomCenter)
-                .padding(bottom = 46.dp),
-            valueRange = 0f..23f,
-            colors = SliderDefaults.colors(
-                disabledActiveTrackColor = Color.Black.copy(alpha = 0.5f),
-                disabledInactiveTrackColor = Color.Black.copy(alpha = 0.2f)
-            ),
-            thumb = {
-                WeatherSliderThumb(
-                    value = state.sliderValue.toInt().toString()
-                )
-            }
-        )
-    }
-
-}
-
-@Preview
-@Composable
-fun RainMapScreenPreview() {
-    RainMapScreen(
-        state = RainMapState(),
-        onAction = {}
+        onAction = viewModel::onAction,
+        onBackButtonClick = onBackButtonClick
     )
 }
