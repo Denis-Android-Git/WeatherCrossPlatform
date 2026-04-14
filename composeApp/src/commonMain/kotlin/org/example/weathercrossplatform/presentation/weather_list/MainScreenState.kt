@@ -33,6 +33,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import org.example.weathercrossplatform.domain.actions.MainScreenActions
+import org.example.weathercrossplatform.domain.models.Coordinates
 import org.example.weathercrossplatform.domain.models.Orientation
 import org.example.weathercrossplatform.presentation.elements.CustomIndicator
 import org.example.weathercrossplatform.presentation.elements.ErrorScreen
@@ -52,7 +53,9 @@ fun MainScreenState(
     orientation: MutableState<String>,
     pageNumberFromSearchScreen: Int?,
     cityIdFromSearchScreen: Int?,
-    onAddCityButtonClick: () -> Unit
+    onAddCityButtonClick: () -> Unit,
+    onGoToMapClick: (Coordinates?) -> Unit
+    //myLogger: MyLogger = MyLoggerImpl
 ) {
     val configuration = currentDeviceConfiguration()
     val weatherMainScreenState by weatherViewModel.weatherScreenState.collectAsStateWithLifecycle()
@@ -100,7 +103,8 @@ fun MainScreenState(
             .distinctUntilChanged()
             .collect { pageNumber ->
                 if (skipNextPageEvent) {
-                    skipNextPageEvent = false// чтобы не вызывать GetWeatherByQuery 2 раза при добавлении города
+                    skipNextPageEvent =
+                        false// чтобы не вызывать GetWeatherByQuery 2 раза при добавлении города
                     return@collect
                 }
                 if (pageNumber !in savedCities.indices) return@collect
@@ -190,8 +194,19 @@ fun MainScreenState(
                         weatherMainScreenState = weatherMainScreenState,
                         onSettingsClick = onSettingsClick,
                         modifier = modifier,
-                        topPadding = topPadding
-
+                        topPadding = topPadding,
+                        onGoToMapClick = {
+                            scope.launch {
+                                val coordinatesList =
+                                    weatherMainScreenState.currentCoordinates?.split(",")
+                                val coordinates = Coordinates(
+                                    latitude = coordinatesList?.get(0)?.toDouble() ?: 0.0,
+                                    longitude = coordinatesList?.get(1)?.toDouble() ?: 0.0
+                                )
+                                //myLogger.debug("check_coordinates onGoToMapClick = $coordinates")
+                                onGoToMapClick(coordinates)
+                            }
+                        }
                     )
                 }
                 AnimatedVisibility(

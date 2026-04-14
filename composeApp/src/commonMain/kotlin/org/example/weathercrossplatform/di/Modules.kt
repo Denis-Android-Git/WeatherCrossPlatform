@@ -11,6 +11,7 @@ import org.example.weathercrossplatform.domain.repo.DataBaseRepo
 import org.example.weathercrossplatform.domain.repo.SettingsStorage
 import org.example.weathercrossplatform.domain.repo.WeatherRepo
 import org.example.weathercrossplatform.presentation.navigation.NavHostViewModel
+import org.example.weathercrossplatform.presentation.rain_map_screen.RainMapViewModel
 import org.example.weathercrossplatform.presentation.search_weather.SearchViewModel
 import org.example.weathercrossplatform.presentation.settings_screen.SettingsScreenViewModel
 import org.example.weathercrossplatform.presentation.weather_list.WeatherViewModel
@@ -51,4 +52,6 @@ val sharedModule = module {
     viewModelOf(::SearchViewModel)
     viewModelOf(::SettingsScreenViewModel)
     viewModelOf(::NavHostViewModel)
+    viewModelOf(::RainMapViewModel)
+
 }

@@ -26,6 +26,7 @@ import org.example.weathercrossplatform.presentation.navigation.NavHostMainScree
 fun App() {
     MaterialTheme {
 
+
         val factory = rememberPermissionsControllerFactory()
         val controller by rememberUpdatedState(newValue = factory.createPermissionsController())
         val scope = rememberCoroutineScope()

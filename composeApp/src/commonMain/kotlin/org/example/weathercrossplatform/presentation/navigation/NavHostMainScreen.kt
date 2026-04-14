@@ -22,6 +22,7 @@ import kotlinx.serialization.modules.polymorphic
 import org.example.weathercrossplatform.domain.models.Orientation
 import org.example.weathercrossplatform.domain.models.Routes
 import org.example.weathercrossplatform.domain.models.Routes.MainScreenRoute
+import org.example.weathercrossplatform.presentation.rain_map_screen.RainMapRoot
 import org.example.weathercrossplatform.presentation.search_weather.SearchScreenState
 import org.example.weathercrossplatform.presentation.settings_screen.SettingsScreenRoot
 import org.example.weathercrossplatform.presentation.utils.currentDeviceConfiguration
@@ -32,7 +33,7 @@ import org.koin.core.parameter.parametersOf
 @Composable
 fun NavHostMainScreen(
     isFirstLaunch: Boolean,
-    modifier: Modifier,
+    modifier: Modifier
     //myLogger: MyLogger = MyLoggerImpl
 ) {
 
@@ -119,6 +120,11 @@ fun NavHostMainScreen(
                     onAddCityButtonClick = {
                         navHostViewModel.cityId = null
                     },
+                    onGoToMapClick = {
+                        //myLogger.debug("check_coordinates coordinates to viewmodel = $it")
+                        navHostViewModel.coordinates = it
+                        backStack.add(Routes.MapScreenRoute)
+                    },
                 )
             }
 
@@ -158,6 +164,19 @@ fun NavHostMainScreen(
                         }
                     },
                     modifier = modifier,
+                )
+            }
+            entry<Routes.MapScreenRoute> {
+                RainMapRoot(
+                    viewModel = koinViewModel {
+                        //myLogger.debug("check_coordinates coordinates to RainMapRoot = ${navHostViewModel.coordinates}")
+                        parametersOf(navHostViewModel.coordinates)
+                    },
+                    onBackButtonClick = {
+                        if (backStack.size > 1) { //NavDisplay backstack cannot be empty
+                            backStack.removeAt(backStack.lastIndex)
+                        }
+                    }
                 )
             }
         }

@@ -11,4 +11,5 @@ object Constants {
     const val ALPHA_THRESHOLD = 300
     const val PRIVACY_POLICY_URL =
         "https://docs.google.com/document/d/e/2PACX-1vT0n8JWKnZgGV08e2QfIzjcHzCli0HpqmSMJjMosr8nEcz-1_keRflBdVLqtNaLlpqGQU3hWWU4C8C3/pub"
+    const val MAP_REFRESH_INTERVAL = 1500L
 }

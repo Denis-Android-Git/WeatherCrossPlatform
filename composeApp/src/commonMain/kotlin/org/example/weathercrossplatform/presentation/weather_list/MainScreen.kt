@@ -80,6 +80,7 @@ import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
 import org.example.weathercrossplatform.presentation.elements.FloatingToolBar
 import org.example.weathercrossplatform.presentation.elements.Forecast24Hour
+import org.example.weathercrossplatform.presentation.elements.GoToRainMapElement
 import org.example.weathercrossplatform.presentation.elements.LiquidButton
 import org.example.weathercrossplatform.presentation.elements.ThreeDaysForecast
 import org.example.weathercrossplatform.presentation.elements.WeatherDetailElement
@@ -104,6 +105,7 @@ import weathercrossplatform.composeapp.generated.resources.feels_like
 import weathercrossplatform.composeapp.generated.resources.forecast_by
 import weathercrossplatform.composeapp.generated.resources.humidity
 import weathercrossplatform.composeapp.generated.resources.pressure
+import weathercrossplatform.composeapp.generated.resources.rain_map
 import weathercrossplatform.composeapp.generated.resources.uv
 import weathercrossplatform.composeapp.generated.resources.weather_api
 import weathercrossplatform.composeapp.generated.resources.wind
@@ -121,6 +123,7 @@ fun MainScreen(
     onAddCityButtonClick: () -> Unit,
     isCurrentLocation: Boolean,
     topPadding: Dp,
+    onGoToMapClick: () -> Unit
     //myLogger: MyLogger = MyLoggerImpl
 ) {
 
@@ -371,6 +374,7 @@ fun MainScreen(
                                 }
                             }
                         }
+
                         val paddingSum = (columnHeight + topPadding + totalPadding)
 
                         LazyColumn(
@@ -407,6 +411,16 @@ fun MainScreen(
                                         backdrop = backdrop,
                                         isLiquidGlassOn = weatherMainScreenState.isLiquidGlassOn
                                     )
+                                }
+                                if (!weatherMainScreenState.isAddCity) {
+                                    item {
+                                        GoToRainMapElement(
+                                            backdrop = backdrop,
+                                            isLiquidGlassOn = weatherMainScreenState.isLiquidGlassOn,
+                                            text = stringResource(Res.string.rain_map),
+                                            onGoToMapClick = onGoToMapClick
+                                        )
+                                    }
                                 }
                                 item {
                                     LazyVerticalGrid(
@@ -709,7 +723,8 @@ fun MainScreenPreview() {
         ),
         onSettingsClick = {},
         modifier = Modifier,
-        topPadding = 50.dp
+        topPadding = 50.dp,
+        onGoToMapClick = {}
     )
 }
 

@@ -53,7 +53,7 @@ class WeatherViewModel(
     lifeCycleObserver: LifeCycleObserver,
     settingsStorage: SettingsStorage,
     pageNumberFromSearchScreen: Int?,
-    orientation: String,
+    orientation: String
     //private val myLogger: MyLogger = MyLoggerImpl
 ) : ViewModel() {
     private val coordinates = MutableStateFlow<Coordinates?>(null)
@@ -81,7 +81,6 @@ class WeatherViewModel(
         lifeCycleObserver.isInForeGround.onEach {
             val currentCoordinates = weatherScreenState.value.currentCoordinates
             val currentOrientation = weatherScreenState.value.currentOrientation
-            //myLogger.debug("check_isInForeGround isInForeGround = $it, currentCoordinates = $currentCoordinates, orientation = $orientation, currentOrientation = $currentOrientation")
             if (it && currentCoordinates != null) {
                 getWeatherByQuery(
                     query = currentCoordinates,
