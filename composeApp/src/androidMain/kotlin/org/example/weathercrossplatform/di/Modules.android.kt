@@ -21,7 +21,7 @@ actual val platformModule = module {
     single<MyLogger> { MyLoggerImpl }
 
     single {
-        HttpClientFactory(get()).createHttpClient(OkHttp.create())
+        HttpClientFactory().createHttpClient(OkHttp.create())
     }
     single {
         DbFactory(androidContext())

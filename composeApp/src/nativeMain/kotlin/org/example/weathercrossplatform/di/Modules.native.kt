@@ -19,7 +19,7 @@ actual val platformModule = module {
     single<MyLogger> { MyLoggerImpl }
 
     single {
-        HttpClientFactory(get()).createHttpClient(Darwin.create())
+        HttpClientFactory().createHttpClient(Darwin.create())
     }
 
     single {
