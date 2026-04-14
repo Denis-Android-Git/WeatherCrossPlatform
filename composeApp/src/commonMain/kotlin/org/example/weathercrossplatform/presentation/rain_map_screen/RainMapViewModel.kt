@@ -17,15 +17,13 @@ import kotlinx.coroutines.launch
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 import org.example.weathercrossplatform.data.constants.Constants.MAP_REFRESH_INTERVAL
-import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
-import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Coordinates
 import kotlin.math.roundToInt
 import kotlin.time.Clock
 
 class RainMapViewModel(
-    private val coordinates: Coordinates?,
-    private val myLogger: MyLogger = MyLoggerImpl
+    private val coordinates: Coordinates?
+    //private val myLogger: MyLogger = MyLoggerImpl
 ) : ViewModel() {
 
     private var hasLoadedInitialData = false
@@ -55,7 +53,7 @@ class RainMapViewModel(
             .map { it.isAutoSlide }
             .distinctUntilChanged()
             .onEach { isAuto ->
-                myLogger.debug("check_auto_slide isAuto = $isAuto")
+                //myLogger.debug("check_auto_slide isAuto = $isAuto")
                 if (isAuto) {
                     if (autoSlideJob?.isActive == true) return@onEach
                     autoSlideJob = viewModelScope.launch {
@@ -80,7 +78,7 @@ class RainMapViewModel(
     }
 
     private fun updateCoordinates(coordinates: Coordinates?) {
-        myLogger.debug("check_coordinates coordinates in RainMapViewModel = $coordinates")
+        //myLogger.debug("check_coordinates coordinates in RainMapViewModel = $coordinates")
         if (coordinates == null) return
         _state.update {
             it.copy(latitude = coordinates.latitude, longitude = coordinates.longitude)
@@ -106,8 +104,8 @@ class RainMapViewModel(
     private fun reloadMap(localHour: Int) {
         val current = _state.value
         val utcDateTime = currentTimeToUtcDateTime(localHour)
-        myLogger.debug("check_coordinates coordinates in RainMapState = latitude = ${current.latitude}, longitude = ${current.longitude}")
-        myLogger.debug("check_time localHour = $localHour, UTC hour = ${utcDateTime.hour} UTC date = ${utcDateTime.date}")
+        //myLogger.debug("check_coordinates coordinates in RainMapState = latitude = ${current.latitude}, longitude = ${current.longitude}")
+        //myLogger.debug("check_time localHour = $localHour, UTC hour = ${utcDateTime.hour} UTC date = ${utcDateTime.date}")
         _state.value = current.copy(
             date = utcDateTime.date,
             hour = utcDateTime.hour,

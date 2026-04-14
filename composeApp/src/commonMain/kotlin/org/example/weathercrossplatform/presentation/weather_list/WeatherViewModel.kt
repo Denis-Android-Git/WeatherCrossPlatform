@@ -21,12 +21,10 @@ import org.example.weathercrossplatform.data.constants.Constants.MIN_AIR_PRESSUR
 import org.example.weathercrossplatform.data.database.SavedWeatherItem
 import org.example.weathercrossplatform.data.lifecycleObserver.LifeCycleObserver
 import org.example.weathercrossplatform.data.locationservice.LocationService
-import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.data.utils.onError
 import org.example.weathercrossplatform.data.utils.onSuccess
 import org.example.weathercrossplatform.data.utils.toUiText
 import org.example.weathercrossplatform.domain.actions.MainScreenActions
-import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Coordinates
 import org.example.weathercrossplatform.domain.models.WeatherItem
 import org.example.weathercrossplatform.domain.models.WeatherMainScreenState
@@ -55,8 +53,8 @@ class WeatherViewModel(
     lifeCycleObserver: LifeCycleObserver,
     settingsStorage: SettingsStorage,
     pageNumberFromSearchScreen: Int?,
-    orientation: String,
-    private val myLogger: MyLogger = MyLoggerImpl
+    orientation: String
+    //private val myLogger: MyLogger = MyLoggerImpl
 ) : ViewModel() {
     private val coordinates = MutableStateFlow<Coordinates?>(null)
     private val _weatherScreenState = MutableStateFlow(WeatherMainScreenState())
@@ -251,7 +249,7 @@ class WeatherViewModel(
         latitude: Double? = null,
         longitude: Double? = null
     ) {
-        myLogger.debug("check_isInForeGround getWeatherByQuery query = $query, orientation = $orientation")
+        //myLogger.debug("check_isInForeGround getWeatherByQuery query = $query, orientation = $orientation")
 
         viewModelScope.launch {
             _weatherScreenState.update {

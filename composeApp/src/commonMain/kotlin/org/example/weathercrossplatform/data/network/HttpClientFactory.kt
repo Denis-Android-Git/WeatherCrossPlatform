@@ -14,11 +14,8 @@ import io.ktor.http.ContentType
 import io.ktor.http.contentType
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
-import org.example.weathercrossplatform.domain.logger.MyLogger
 
-class HttpClientFactory(
-    private val myLogger: MyLogger
-) {
+class HttpClientFactory {
     fun createHttpClient(engine: HttpClientEngine): HttpClient {
         return HttpClient(engine) {
             install(ContentNegotiation) {
@@ -35,7 +32,7 @@ class HttpClientFactory(
             install(Logging) {
                 logger = object : Logger {
                     override fun log(message: String) {
-                        myLogger.debug(message)
+                        //myLogger.debug(message)
                     }
                 }
                 level = LogLevel.ALL

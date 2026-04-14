@@ -19,8 +19,6 @@ import androidx.navigation3.ui.NavDisplay
 import androidx.savedstate.serialization.SavedStateConfiguration
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
-import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
-import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Orientation
 import org.example.weathercrossplatform.domain.models.Routes
 import org.example.weathercrossplatform.domain.models.Routes.MainScreenRoute
@@ -35,8 +33,8 @@ import org.koin.core.parameter.parametersOf
 @Composable
 fun NavHostMainScreen(
     isFirstLaunch: Boolean,
-    modifier: Modifier,
-    myLogger: MyLogger = MyLoggerImpl
+    modifier: Modifier
+    //myLogger: MyLogger = MyLoggerImpl
 ) {
 
     val navHostViewModel = koinViewModel<NavHostViewModel>()
@@ -123,7 +121,7 @@ fun NavHostMainScreen(
                         navHostViewModel.cityId = null
                     },
                     onGoToMapClick = {
-                        myLogger.debug("check_coordinates coordinates to viewmodel = $it")
+                        //myLogger.debug("check_coordinates coordinates to viewmodel = $it")
                         navHostViewModel.coordinates = it
                         backStack.add(Routes.MapScreenRoute)
                     },
@@ -171,7 +169,7 @@ fun NavHostMainScreen(
             entry<Routes.MapScreenRoute> {
                 RainMapRoot(
                     viewModel = koinViewModel {
-                        myLogger.debug("check_coordinates coordinates to RainMapRoot = ${navHostViewModel.coordinates}")
+                        //myLogger.debug("check_coordinates coordinates to RainMapRoot = ${navHostViewModel.coordinates}")
                         parametersOf(navHostViewModel.coordinates)
                     },
                     onBackButtonClick = {

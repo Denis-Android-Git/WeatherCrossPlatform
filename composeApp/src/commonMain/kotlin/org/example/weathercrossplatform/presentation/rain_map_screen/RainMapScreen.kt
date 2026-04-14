@@ -71,7 +71,7 @@ fun RainMapScreen(
             }
         )
         Box(
-            modifier = Modifier.systemBarsPadding().padding(start = 10.dp)
+            modifier = Modifier.systemBarsPadding().padding(10.dp)
                 .noLiquidGlass()
         ) {
             IconButton(

@@ -32,9 +32,7 @@ import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
-import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.domain.actions.MainScreenActions
-import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Coordinates
 import org.example.weathercrossplatform.domain.models.Orientation
 import org.example.weathercrossplatform.presentation.elements.CustomIndicator
@@ -56,8 +54,8 @@ fun MainScreenState(
     pageNumberFromSearchScreen: Int?,
     cityIdFromSearchScreen: Int?,
     onAddCityButtonClick: () -> Unit,
-    onGoToMapClick: (Coordinates?) -> Unit,
-    myLogger: MyLogger = MyLoggerImpl
+    onGoToMapClick: (Coordinates?) -> Unit
+    //myLogger: MyLogger = MyLoggerImpl
 ) {
     val configuration = currentDeviceConfiguration()
     val weatherMainScreenState by weatherViewModel.weatherScreenState.collectAsStateWithLifecycle()
@@ -205,7 +203,7 @@ fun MainScreenState(
                                     latitude = coordinatesList?.get(0)?.toDouble() ?: 0.0,
                                     longitude = coordinatesList?.get(1)?.toDouble() ?: 0.0
                                 )
-                                myLogger.debug("check_coordinates onGoToMapClick = $coordinates")
+                                //myLogger.debug("check_coordinates onGoToMapClick = $coordinates")
                                 onGoToMapClick(coordinates)
                             }
                         }

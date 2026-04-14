@@ -55,6 +55,7 @@
     <string name="forecast_by">Прогноз предоставлен</string>
     <string name="about_app">О приложении</string>
     <string name="policy">Политика конфиденциальности</string>
+    <string name="rain_map">Карта дождя</string>
     <string name="liquid_glass_desc">Включить эффект жидкого стекла</string>
     <string name="delete">Удалить</string>
 

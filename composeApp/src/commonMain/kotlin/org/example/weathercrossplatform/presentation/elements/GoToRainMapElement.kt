@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -41,7 +42,7 @@ fun GoToRainMapElement(
                 .fillMaxWidth()
                 .height(150.dp)
                 .myLiquidGlass2(backdrop)
-                .padding(horizontal = 26.dp, vertical = 8.dp)
+                .padding(vertical = 8.dp)
                 .clickable {
                     onGoToMapClick()
                 }
@@ -50,19 +51,25 @@ fun GoToRainMapElement(
                 .fillMaxWidth()
                 .height(150.dp)
                 .noLiquidGlass()
-                .padding(horizontal = 26.dp, vertical = 8.dp)
+                .padding(vertical = 8.dp)
                 .clickable {
                     onGoToMapClick()
                 }
         },
         contentAlignment = Alignment.Center
     ) {
-        Image(
-            painter = painterResource(Res.drawable.rainmap), contentDescription = null,
-            modifier = Modifier.clip(RoundedCornerShape(6.dp)).fillMaxSize(),
-            contentScale = ContentScale.FillBounds,
-            alpha = 0.7f,
-        )
+        Box(
+            modifier = Modifier
+                .size(250.dp)
+                .clip(RoundedCornerShape(6.dp))
+        ) {
+            Image(
+                painter = painterResource(Res.drawable.rainmap), contentDescription = null,
+                modifier = Modifier.matchParentSize(),
+                contentScale = ContentScale.Crop,
+                alpha = 0.7f,
+            )
+        }
         Box(
             modifier = Modifier
                 .wrapContentSize()
@@ -79,13 +86,17 @@ fun GoToRainMapElement(
     }
 }
 
-@Preview
+@Preview(widthDp = 1024, heightDp = 768)
 @Composable
 fun GoToRainMapElementPreview() {
-    GoToRainMapElement(
-        isLiquidGlassOn = true,
-        backdrop = rememberLayerBackdrop(),
-        text = "Карта осадков",
-        onGoToMapClick = {}
-    )
+    Box(
+        modifier = Modifier.fillMaxSize()
+    ) {
+        GoToRainMapElement(
+            isLiquidGlassOn = true,
+            backdrop = rememberLayerBackdrop(),
+            text = "Карта осадков",
+            onGoToMapClick = {}
+        )
+    }
 }

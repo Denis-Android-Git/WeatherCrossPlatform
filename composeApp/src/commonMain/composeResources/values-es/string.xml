@@ -55,6 +55,7 @@
     <string name="forecast_by">Pronóstico por</string>
     <string name="about_app">Acerca de la aplicación</string>
     <string name="policy">Política de privacidad</string>
+    <string name="rain_map">Mapa de lluvia</string>
     <string name="liquid_glass_desc">Efecto de vidrio líquido</string>
     <string name="delete">Borrar</string>
 </resources>

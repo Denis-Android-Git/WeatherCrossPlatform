@@ -105,6 +105,7 @@ import weathercrossplatform.composeapp.generated.resources.feels_like
 import weathercrossplatform.composeapp.generated.resources.forecast_by
 import weathercrossplatform.composeapp.generated.resources.humidity
 import weathercrossplatform.composeapp.generated.resources.pressure
+import weathercrossplatform.composeapp.generated.resources.rain_map
 import weathercrossplatform.composeapp.generated.resources.uv
 import weathercrossplatform.composeapp.generated.resources.weather_api
 import weathercrossplatform.composeapp.generated.resources.wind
@@ -416,7 +417,7 @@ fun MainScreen(
                                         GoToRainMapElement(
                                             backdrop = backdrop,
                                             isLiquidGlassOn = weatherMainScreenState.isLiquidGlassOn,
-                                            text = "Карта осадков",
+                                            text = stringResource(Res.string.rain_map),
                                             onGoToMapClick = onGoToMapClick
                                         )
                                     }
