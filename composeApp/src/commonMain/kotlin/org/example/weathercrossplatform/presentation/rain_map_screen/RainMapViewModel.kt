@@ -28,8 +28,7 @@ class RainMapViewModel(
 
     private var hasLoadedInitialData = false
 
-    private val currentHour =
-        Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault()).hour
+    private val currentHour = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault()).hour
 
     private var autoSlideJob: Job? = null
 
