@@ -93,7 +93,7 @@ kotlin {
 
         }
         kotzilla {
-            versionName = "1.2.4" // add your app version name
+            versionName = "1.2.5" // add your app version name
             composeInstrumentation = true
         }
         nativeMain.dependencies {

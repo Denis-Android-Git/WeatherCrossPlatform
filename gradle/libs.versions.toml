@@ -50,6 +50,7 @@ firebase-perf = "2.0.2"
 ui = "1.10.3"
 uiTooling = "1.10.3"
 uiToolingPreview = "1.10.3"
+uiTest = "1.10.3"
 #androidx-appcompat = "1.7.0"
 #androidx-constraintlayout = "2.2.1"
 #androidx-core-ktx = "1.15.0"
@@ -163,6 +164,8 @@ ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktor" }
 #GPS
 play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
 ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "ui" }
+ui-test-junit4 = { module = "org.jetbrains.compose.ui:ui-test-junit4", version.ref = "uiTest" }
+ui-test-manifest = { module = "org.jetbrains.compose.ui:ui-test-manifest", version.ref = "uiTest" }
 ui-tooling = { module = "org.jetbrains.compose.ui:ui-tooling", version.ref = "uiTooling" }
 ui-tooling-preview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "uiToolingPreview" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }

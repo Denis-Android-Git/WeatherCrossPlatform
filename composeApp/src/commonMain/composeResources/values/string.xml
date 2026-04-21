@@ -58,6 +58,6 @@
     <string name="liquid_glass">Liquid glass</string>
     <string name="liquid_glass_desc">Toggle liquid glass effect</string>
     <string name="delete">Delete</string>
-    <string name="rain_map">Rain map</string>
+    <string name="rain_map">Precipitation map</string>
 
 </resources>

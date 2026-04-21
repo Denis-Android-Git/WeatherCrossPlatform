@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -42,6 +43,17 @@ fun MyDropDownElement(
     isDropPressureExpanded: Boolean,
     settingsType: SettingsType
 ) {
+    val dropdownTag = when (settingsType) {
+        SettingsType.TEMPERATURE -> "settings_temperature_dropdown"
+        SettingsType.WIND -> "settings_wind_dropdown"
+        SettingsType.PRESSURE -> "settings_pressure_dropdown"
+    }
+    val valueTag = when (settingsType) {
+        SettingsType.TEMPERATURE -> "settings_temperature_value"
+        SettingsType.WIND -> "settings_wind_value"
+        SettingsType.PRESSURE -> "settings_pressure_value"
+    }
+
     Row(
         modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
@@ -57,27 +69,29 @@ fun MyDropDownElement(
         Spacer(modifier = Modifier.weight(1f))
         Box {
             Row(
-                modifier = Modifier.clickable {
-                    when (settingsType) {
-                        SettingsType.TEMPERATURE -> onAction(
-                            SettingsScreenAction.SetDropDownTempExpanded(
-                                true
+                modifier = Modifier
+                    .testTag(dropdownTag)
+                    .clickable {
+                        when (settingsType) {
+                            SettingsType.TEMPERATURE -> onAction(
+                                SettingsScreenAction.SetDropDownTempExpanded(
+                                    true
+                                )
                             )
-                        )
 
-                        SettingsType.WIND -> onAction(
-                            SettingsScreenAction.SetDropDownWindExpanded(
-                                true
+                            SettingsType.WIND -> onAction(
+                                SettingsScreenAction.SetDropDownWindExpanded(
+                                    true
+                                )
                             )
-                        )
 
-                        SettingsType.PRESSURE -> onAction(
-                            SettingsScreenAction.SetDropDownPressureExpanded(
-                                true
+                            SettingsType.PRESSURE -> onAction(
+                                SettingsScreenAction.SetDropDownPressureExpanded(
+                                    true
+                                )
                             )
-                        )
-                    }
-                },
+                        }
+                    },
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
@@ -94,7 +108,9 @@ fun MyDropDownElement(
                             Res.string.inrt
                         )
                     },
-                    modifier = Modifier.width(120.dp),
+                    modifier = Modifier
+                        .testTag(valueTag)
+                        .width(120.dp),
                     color = Color.Gray, fontSize = 13.sp, lineHeight = 10.sp
                 )
                 Spacer(modifier = Modifier.width(16.dp))
