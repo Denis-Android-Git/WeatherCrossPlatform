@@ -61,6 +61,8 @@ fun RainMapScreen(
                 .padding(bottom = 46.dp),
             valueRange = 0f..23f,
             colors = SliderDefaults.colors(
+                activeTrackColor = Color.Black.copy(alpha = 0.5f),
+                inactiveTrackColor = Color.Black.copy(alpha = 0.2f),
                 disabledActiveTrackColor = Color.Black.copy(alpha = 0.5f),
                 disabledInactiveTrackColor = Color.Black.copy(alpha = 0.2f)
             ),

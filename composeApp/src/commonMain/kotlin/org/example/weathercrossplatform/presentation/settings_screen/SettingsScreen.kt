@@ -35,6 +35,7 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -63,7 +64,7 @@ fun SettingsScreenRoot(
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 
-    SettingsScreenScreen(
+    SettingsScreen(
         state = state,
         onAction = viewModel::onAction,
         onBackButtonClick = onBackButtonClick,
@@ -73,7 +74,7 @@ fun SettingsScreenRoot(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SettingsScreenScreen(
+fun SettingsScreen(
     modifier: Modifier = Modifier,
     state: SettingsScreenState,
     onAction: (SettingsScreenAction) -> Unit,
@@ -214,9 +215,12 @@ fun SettingsScreenScreen(
                         title = stringResource(Res.string.about_app)
                     ) {
                         Row(
-                            modifier = Modifier.fillMaxWidth().clickable {
-                                onAction(SettingsScreenAction.OpenPrivacyPolicy)
-                            }
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .testTag("settings_privacy_policy")
+                                .clickable {
+                                    onAction(SettingsScreenAction.OpenPrivacyPolicy)
+                                }
                         ) {
                             Text(
                                 text = stringResource(Res.string.policy),
@@ -240,7 +244,7 @@ fun SettingsScreenScreen(
 @Composable
 private fun Preview() {
     MaterialTheme {
-        SettingsScreenScreen(
+        SettingsScreen(
             state = SettingsScreenState(
                 isLiquidGlassAvailable = true
             ),

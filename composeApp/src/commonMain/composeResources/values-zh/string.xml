@@ -55,7 +55,7 @@
     <string name="forecast_by">预报提供方</string>
     <string name="about_app">关于应用</string>
     <string name="policy">隐私政策</string>
-    <string name="rain_map">降雨地图</string>
+    <string name="rain_map">降水地图</string>
     <string name="liquid_glass_desc">开启/关闭液态玻璃效果</string>
     <string name="delete">删除</string>
 </resources>
