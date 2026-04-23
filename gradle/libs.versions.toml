@@ -1,5 +1,5 @@
 [versions]
-agp = "9.1.1"
+agp = "9.2.0"
 android-compileSdk = "36"
 android-minSdk = "24"
 android-targetSdk = "36"
@@ -27,7 +27,7 @@ playServicesLocation = "21.3.0"
 koin = "4.2.1"
 koinComposeMultiplatform = "4.2.1"
 #navigationCompose = "2.9.1"
-cmpNavigation3 = "1.0.0-alpha06"
+cmpNavigation3 = "1.1.0"
 
 coil = "3.4.0"
 #Firebase android
