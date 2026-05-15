@@ -132,8 +132,6 @@ class WeatherViewModel(
                 actions.isCurrentLocation,
                 actions.orientation
             )
-
-            MainScreenActions.Exception -> exception()
         }
     }
 
@@ -243,10 +241,6 @@ class WeatherViewModel(
                 )
             }
         }
-    }
-
-    private fun exception() {
-        throw RuntimeException("Release Test 2")
     }
 
     private fun getWeatherByQuery(

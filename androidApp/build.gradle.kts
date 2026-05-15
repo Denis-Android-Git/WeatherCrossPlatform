@@ -25,8 +25,8 @@ configure<ApplicationExtension> {
         applicationId = "org.example.weathercrossplatform"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 70
-        versionName = "1.2.6"
+        versionCode = 71
+        versionName = "1.2.7"
 
     }
     packaging {
@@ -38,9 +38,6 @@ configure<ApplicationExtension> {
         getByName("release") {
             isMinifyEnabled = true
             isShrinkResources = true
-            configure<CrashlyticsExtension> {
-                //mappingFileUploadEnabled = true
-            }
             signingConfig = signingConfigs.getByName("debug")
         }
     }

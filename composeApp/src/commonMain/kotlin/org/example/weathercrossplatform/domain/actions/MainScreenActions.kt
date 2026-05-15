@@ -14,5 +14,4 @@ sealed interface MainScreenActions {
     ) : MainScreenActions
 
     data class UpdatePage(val page: Int) : MainScreenActions
-    data object Exception : MainScreenActions
 }
