@@ -2,13 +2,18 @@ package org.example.weathercrossplatform.presentation.weather_list
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
+import androidx.compose.material3.Text
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import androidx.compose.runtime.Composable
@@ -16,6 +21,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -27,12 +33,15 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
+import org.example.weathercrossplatform.data.logger_impl.MyLoggerImpl
 import org.example.weathercrossplatform.domain.actions.MainScreenActions
+import org.example.weathercrossplatform.domain.logger.MyLogger
 import org.example.weathercrossplatform.domain.models.Coordinates
 import org.example.weathercrossplatform.domain.models.Orientation
 import org.example.weathercrossplatform.presentation.elements.CustomIndicator
@@ -54,8 +63,8 @@ fun MainScreenState(
     pageNumberFromSearchScreen: Int?,
     cityIdFromSearchScreen: Int?,
     onAddCityButtonClick: () -> Unit,
-    onGoToMapClick: (Coordinates?) -> Unit
-    //myLogger: MyLogger = MyLoggerImpl
+    onGoToMapClick: (Coordinates?) -> Unit,
+    myLogger: MyLogger = MyLoggerImpl
 ) {
     val configuration = currentDeviceConfiguration()
     val weatherMainScreenState by weatherViewModel.weatherScreenState.collectAsStateWithLifecycle()
@@ -75,6 +84,29 @@ fun MainScreenState(
     val scope = rememberCoroutineScope()
     var skipNextPageEvent by rememberSaveable { mutableStateOf(false) }
     val state = rememberPullToRefreshState()
+
+    var showCrashButton by remember {
+        mutableStateOf(false)
+    }
+
+    val interaction = MutableInteractionSource()
+
+    val isPressed by interaction.collectIsPressedAsState()
+
+    var counter by remember { mutableStateOf(0) }
+
+    LaunchedEffect(isPressed) {
+        if (isPressed) {
+            while (counter < 11) {
+                delay(500)
+                counter++
+                if (counter == 10) {
+                    showCrashButton = true
+                }
+                myLogger.info("button_counter: $counter")
+            }
+        }
+    }
 
     LaunchedEffect(currentOrientation) {
         orientation.value = currentOrientation
@@ -161,7 +193,14 @@ fun MainScreenState(
         },
     ) {
 
-        MyAdaptiveLayout { topPadding ->
+        MyAdaptiveLayout(
+            modifier = Modifier
+                .clickable(
+                    interactionSource = interaction,
+                    indication = null,
+                    onClick = {}
+                )
+        ) { topPadding ->
             if (weatherMainScreenState.weatherDto?.location?.name != null && weatherMainScreenState.savedCities.isNotEmpty()) {
                 HorizontalPager(
                     state = pagerState,
@@ -221,6 +260,16 @@ fun MainScreenState(
             }
             weatherMainScreenState.error?.let {
                 ErrorScreen(errorMessage = it.asString())
+            }
+        }
+        if (showCrashButton) {
+            Button(
+                onClick = {
+                    weatherViewModel.onAction(MainScreenActions.Exception)
+                },
+                modifier = Modifier.align(Alignment.Center)
+            ) {
+                Text("Crash me")
             }
         }
     }

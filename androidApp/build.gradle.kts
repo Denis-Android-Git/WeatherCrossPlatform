@@ -1,4 +1,5 @@
 import com.android.build.api.dsl.ApplicationExtension
+import com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsExtension
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -24,8 +25,8 @@ configure<ApplicationExtension> {
         applicationId = "org.example.weathercrossplatform"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 69
-        versionName = "1.2.5"
+        versionCode = 70
+        versionName = "1.2.6"
 
     }
     packaging {
@@ -37,6 +38,9 @@ configure<ApplicationExtension> {
         getByName("release") {
             isMinifyEnabled = true
             isShrinkResources = true
+            configure<CrashlyticsExtension> {
+                //mappingFileUploadEnabled = true
+            }
             signingConfig = signingConfigs.getByName("debug")
         }
     }
