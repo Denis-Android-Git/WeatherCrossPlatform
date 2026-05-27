@@ -6,13 +6,13 @@ import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
 @Serializable
-
 sealed interface Routes : NavKey {
     @Serializable
     data class MainScreenRoute @OptIn(ExperimentalUuidApi::class) constructor(
         //val cityId: Int? = null,
         val pageNumber: Int? = null,
-        val forceKey: String = Uuid.random().toString()//Random.nextLong() //to recreate viewmodel each time
+        val forceKey: String = Uuid.random()
+            .toString()//Random.nextLong() //to recreate viewmodel each time
 
     ) : Routes, NavKey
 
@@ -27,4 +27,3 @@ sealed interface Routes : NavKey {
     @Serializable
     data object MapScreenRoute : Routes, NavKey
 }
-

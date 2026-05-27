@@ -44,10 +44,8 @@ fun NavHostMainScreen(
                 polymorphic(NavKey::class) {
                     subclass(MainScreenRoute::class, MainScreenRoute.serializer())
                     subclass(Routes.SearchScreenRoute::class, Routes.SearchScreenRoute.serializer())
-                    subclass(
-                        Routes.SettingsScreenRoute::class,
-                        Routes.SettingsScreenRoute.serializer()
-                    )
+                    subclass(Routes.SettingsScreenRoute::class, Routes.SettingsScreenRoute.serializer())
+                    subclass(Routes.MapScreenRoute::class, Routes.MapScreenRoute.serializer())
                 }
             }
         },
