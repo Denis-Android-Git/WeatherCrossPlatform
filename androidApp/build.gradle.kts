@@ -24,8 +24,8 @@ configure<ApplicationExtension> {
         applicationId = "org.example.weathercrossplatform"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 69
-        versionName = "1.2.5"
+        versionCode = 72
+        versionName = "1.2.8"
 
     }
     packaging {

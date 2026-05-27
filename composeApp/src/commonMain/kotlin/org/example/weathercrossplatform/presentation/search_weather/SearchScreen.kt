@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -138,24 +139,51 @@ fun SearchScreen(
                 }
             }
             AnimatedVisibility(isLongPressed.value) {
-                Column {
-                    IconButton(
-                        onClick = {
-                            isLongPressed.value = false
-                            clearTempList()
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Column {
+                        IconButton(
+                            onClick = {
+                                isLongPressed.value = false
+                                clearTempList()
+                            }
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Clear,
+                                contentDescription = "Clear",
+                                tint = Color.White
+                            )
                         }
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Clear,
-                            contentDescription = "Clear",
-                            tint = Color.White
+                        Text(
+                            text = "${stringResource(Res.string.chosen)} ${searchScreenState.tempListToDelete.size}",
+                            color = Color.White,
+                            fontSize = 24.sp
                         )
                     }
-                    Text(
-                        text = "${stringResource(Res.string.chosen)} ${searchScreenState.tempListToDelete.size}",
-                        color = Color.White,
-                        fontSize = 24.sp
-                    )
+                    Spacer(modifier = Modifier.weight(1f))
+                    Column {
+                        IconButton(
+                            modifier = Modifier.align(Alignment.CenterHorizontally),
+                            onClick = {
+                                onDelete()
+                                isLongPressed.value = false
+                            }
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Delete,
+                                contentDescription = "More",
+                                tint = Color.White
+                            )
+                        }
+                        Text(
+                            text = stringResource(Res.string.delete),
+                            modifier = Modifier.align(Alignment.CenterHorizontally),
+                            color = Color.White,
+                            fontSize = 11.sp
+                        )
+                    }
                 }
             }
 
@@ -337,34 +365,34 @@ fun SearchScreen(
                 }
             }
         }
-        AnimatedVisibility(
-            isLongPressed.value,
-            modifier = Modifier.align(Alignment.BottomCenter)
-        ) {
-            Column(
-                modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp)
-            ) {
-                IconButton(
-                    modifier = Modifier.align(Alignment.CenterHorizontally),
-                    onClick = {
-                        onDelete()
-                        isLongPressed.value = false
-                    }
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Delete,
-                        contentDescription = "More",
-                        tint = Color.White
-                    )
-                }
-                Text(
-                    text = stringResource(Res.string.delete),
-                    modifier = Modifier.align(Alignment.CenterHorizontally),
-                    color = Color.White,
-                    fontSize = 11.sp
-                )
-            }
-        }
+//        AnimatedVisibility(
+//            isLongPressed.value,
+//            modifier = Modifier.align(Alignment.BottomCenter)
+//        ) {
+//            Column(
+//                modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp)
+//            ) {
+//                IconButton(
+//                    modifier = Modifier.align(Alignment.CenterHorizontally),
+//                    onClick = {
+//                        onDelete()
+//                        isLongPressed.value = false
+//                    }
+//                ) {
+//                    Icon(
+//                        imageVector = Icons.Default.Delete,
+//                        contentDescription = "More",
+//                        tint = Color.White
+//                    )
+//                }
+//                Text(
+//                    text = stringResource(Res.string.delete),
+//                    modifier = Modifier.align(Alignment.CenterHorizontally),
+//                    color = Color.White,
+//                    fontSize = 11.sp
+//                )
+//            }
+//        }
     }
 }
 

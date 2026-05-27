@@ -54,7 +54,7 @@ fun MainScreenState(
     pageNumberFromSearchScreen: Int?,
     cityIdFromSearchScreen: Int?,
     onAddCityButtonClick: () -> Unit,
-    onGoToMapClick: (Coordinates?) -> Unit
+    onGoToMapClick: (Coordinates?) -> Unit,
     //myLogger: MyLogger = MyLoggerImpl
 ) {
     val configuration = currentDeviceConfiguration()

@@ -33,6 +33,7 @@ class RainMapViewModel(
     private var autoSlideJob: Job? = null
 
     private val _state = MutableStateFlow(RainMapState())
+
     val state = _state
         .onStart {
             if (!hasLoadedInitialData) {

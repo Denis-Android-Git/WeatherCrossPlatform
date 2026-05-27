@@ -16,7 +16,7 @@ plugins {
 
 kotlin {
     android {
-        compileSdk = 36
+        compileSdk = 37
         minSdk = 24
         namespace = "org.example.weathercrossplatform.common"
         experimentalProperties["android.experimental.kmp.enableAndroidResources"] = true
@@ -93,7 +93,7 @@ kotlin {
 
         }
         kotzilla {
-            versionName = "1.2.5" // add your app version name
+            versionName = "1.2.8" // add your app version name
             composeInstrumentation = true
         }
         nativeMain.dependencies {
